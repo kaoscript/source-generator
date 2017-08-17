@@ -1,0 +1,137 @@
+{
+  "kind": 62,
+  "attributes": [],
+  "body": [
+    {
+      "kind": 102,
+      "rebindable": true,
+      "variables": [
+        {
+          "kind": 103,
+          "name": {
+            "kind": 42,
+            "name": "foo",
+            "start": {
+              "line": 1,
+              "column": 5
+            },
+            "end": {
+              "line": 1,
+              "column": 8
+            }
+          },
+          "type": {
+            "kind": 96,
+            "typeName": {
+              "kind": 42,
+              "name": "string",
+              "start": {
+                "line": 1,
+                "column": 10
+              },
+              "end": {
+                "line": 1,
+                "column": 16
+              }
+            },
+            "start": {
+              "line": 1,
+              "column": 10
+            },
+            "end": {
+              "line": 1,
+              "column": 16
+            }
+          },
+          "start": {
+            "line": 1,
+            "column": 5
+          },
+          "end": {
+            "line": 1,
+            "column": 16
+          }
+        }
+      ],
+      "autotype": false,
+      "await": false,
+      "init": {
+        "kind": 55,
+        "value": "bar",
+        "start": {
+          "line": 1,
+          "column": 19
+        },
+        "end": {
+          "line": 1,
+          "column": 24
+        }
+      },
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 1,
+        "column": 24
+      },
+      "attributes": []
+    },
+    {
+      "kind": 10,
+      "operator": {
+        "kind": 3,
+        "assignment": 8,
+        "start": {
+          "line": 3,
+          "column": 5
+        },
+        "end": {
+          "line": 3,
+          "column": 6
+        }
+      },
+      "left": {
+        "kind": 42,
+        "name": "foo",
+        "start": {
+          "line": 3,
+          "column": 1
+        },
+        "end": {
+          "line": 3,
+          "column": 4
+        }
+      },
+      "right": {
+        "kind": 55,
+        "value": "qux",
+        "start": {
+          "line": 3,
+          "column": 7
+        },
+        "end": {
+          "line": 3,
+          "column": 12
+        }
+      },
+      "start": {
+        "line": 3,
+        "column": 1
+      },
+      "end": {
+        "line": 3,
+        "column": 12
+      },
+      "attributes": []
+    }
+  ],
+  "start": {
+    "line": 1,
+    "column": 1
+  },
+  "end": {
+    "line": 3,
+    "column": 12
+  }
+}

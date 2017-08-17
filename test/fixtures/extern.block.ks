@@ -1,0 +1,3 @@
+extern {
+	func foo(): string
+}

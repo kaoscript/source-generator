@@ -1,0 +1,66 @@
+{
+  "kind": 62,
+  "attributes": [],
+  "body": [
+    {
+      "kind": 102,
+      "rebindable": true,
+      "variables": [
+        {
+          "kind": 103,
+          "name": {
+            "kind": 42,
+            "name": "r",
+            "start": {
+              "line": 1,
+              "column": 5
+            },
+            "end": {
+              "line": 1,
+              "column": 6
+            }
+          },
+          "start": {
+            "line": 1,
+            "column": 5
+          },
+          "end": {
+            "line": 1,
+            "column": 6
+          }
+        }
+      ],
+      "autotype": false,
+      "await": false,
+      "init": {
+        "kind": 74,
+        "value": "/foobar/gim",
+        "start": {
+          "line": 1,
+          "column": 9
+        },
+        "end": {
+          "line": 1,
+          "column": 20
+        }
+      },
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 1,
+        "column": 20
+      },
+      "attributes": []
+    }
+  ],
+  "start": {
+    "line": 1,
+    "column": 1
+  },
+  "end": {
+    "line": 1,
+    "column": 20
+  }
+}

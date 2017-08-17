@@ -1,0 +1,30 @@
+{
+  "kind": 62,
+  "attributes": [],
+  "body": [
+    {
+      "kind": 52,
+      "files": [
+        "./module1",
+        "./module2"
+      ],
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 4,
+        "column": 2
+      },
+      "attributes": []
+    }
+  ],
+  "start": {
+    "line": 1,
+    "column": 1
+  },
+  "end": {
+    "line": 4,
+    "column": 2
+  }
+}
