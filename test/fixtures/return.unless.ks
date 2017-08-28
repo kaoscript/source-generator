@@ -1,1 +1,1 @@
-return 'bonjour' unless lang == 'en'
+return "bonjour" unless lang == "en"

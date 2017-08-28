@@ -1,2 +1,2 @@
-if foo(x => x * x) {
+if foo((x) => x * x) {
 }

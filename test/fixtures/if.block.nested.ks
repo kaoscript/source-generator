@@ -1,5 +1,4 @@
 let x, y, z, foo, bar, qux
-
 if x {
 	if foo {
 	}

@@ -1,6 +1,8 @@
-let a: {foo: int, bar: string} = {
+let a: {
+	foo: int
+	bar: string
+} = {
 	foo: 3.14
-	bar: 'hello'
+	bar: "hello"
 }
-
 console.log(a)

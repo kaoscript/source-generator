@@ -1,3 +1,0 @@
-extern {
-	func foo(): string
-}

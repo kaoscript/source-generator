@@ -1,8 +1,6 @@
-let hero = 'you'
+let hero = "you"
 let index = 42
-
-heroes = ['leto', 'duncan', 'goku']
-
+heroes = ["leto", "duncan", "goku"]
 for let hero, index in heroes {
-	console.log('The hero at index %d is %s', index, hero)
+	console.log("The hero at index %d is %s", index, hero)
 }

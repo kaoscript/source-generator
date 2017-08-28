@@ -1,1 +1,1 @@
-let foo = lang ? 'hello' : 'bonjour'
+let foo = lang ? "hello" : "bonjour"

@@ -1,6 +1,6 @@
 try {
-	console.log('foobar')
+	console.log("foobar")
 }
 catch {
-	console.log('error')
+	console.log("error")
 }

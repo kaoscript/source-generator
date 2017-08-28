@@ -1,1 +1,1 @@
-let a : number | string
+let a: number | string

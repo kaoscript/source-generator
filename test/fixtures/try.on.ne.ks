@@ -1,9 +1,9 @@
 try {
-	console.log('foobar')
+	console.log("foobar")
 }
 on RangeError {
-	console.log('RangeError')
+	console.log("RangeError")
 }
 catch {
-	console.log('Error')
+	console.log("Error")
 }

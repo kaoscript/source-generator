@@ -1,3 +1,3 @@
 func foo() {
-	let bar = 'hello'
+	let bar = "hello"
 }

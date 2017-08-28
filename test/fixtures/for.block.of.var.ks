@@ -1,9 +1,8 @@
 likes = {
-	leto: 'spice'
-	paul: 'chani'
-	duncan: 'murbella'
+	leto: "spice"
+	paul: "chani"
+	duncan: "murbella"
 }
-
 for key of likes {
 	console.log(key)
 }

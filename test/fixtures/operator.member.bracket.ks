@@ -1,2 +1,2 @@
-let m = 'qux'
+let m = "qux"
 let qux = foo?[m]()

@@ -1,4 +1,4 @@
 let foo = {
-	bar: 'hello'
-	'qux': 'world'
+	bar: "hello"
+	"qux": "world"
 }

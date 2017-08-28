@@ -1,3 +1,3 @@
 try {
-	console.log('foobar')
+	console.log("foobar")
 }

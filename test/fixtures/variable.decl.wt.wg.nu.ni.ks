@@ -1,1 +1,1 @@
-let a : Array<Number>
+let a: Array<Number>

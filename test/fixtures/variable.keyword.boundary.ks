@@ -1,3 +1,2 @@
 let domain = {}
-
 domain.foo()

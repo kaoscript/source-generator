@@ -1,6 +1,6 @@
 try {
-	console.log('foobar')
+	console.log("foobar")
 }
 finally {
-	console.log('finally')
+	console.log("finally")
 }

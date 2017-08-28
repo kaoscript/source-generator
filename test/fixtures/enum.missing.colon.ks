@@ -3,5 +3,4 @@ enum Kind {
 	B
 	C
 }
-
 let k = Kind:A

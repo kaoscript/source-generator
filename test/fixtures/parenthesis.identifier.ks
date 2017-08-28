@@ -1,4 +1,3 @@
 let a = 4
 let b = 5
-
-let c = (b) * a
+let c = b * a

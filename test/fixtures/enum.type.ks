@@ -4,8 +4,5 @@ enum CardSuit<string> {
 	Hearts
 	Spades
 }
-
 let card = CardSuit::Clubs
-
 console.log(card)
-// <- clubs

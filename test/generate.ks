@@ -31,7 +31,7 @@ describe('generate', func() {
 				
 				return value
 			}))
-			console.log(data)
+			//console.log(data)
 			
 			const source = fs.readFileSync(path.join(__dirname, 'fixtures', name + '.ks'), {
 				encoding: 'utf8'

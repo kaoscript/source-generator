@@ -1,7 +1,8 @@
-import '@kaoscript/runtime' for Helper, Type
-
-
-import '@kaoscript/runtime' {
+import "@kaoscript/runtime" {
+	Helper
+	Type
+}
+import "@kaoscript/runtime" {
 	Helper
 	Type
 }

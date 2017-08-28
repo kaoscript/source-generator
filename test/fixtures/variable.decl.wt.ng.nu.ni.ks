@@ -1,1 +1,1 @@
-let a : Array
+let a: Array

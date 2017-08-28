@@ -1,7 +1,5 @@
 class ClassA {
-	private {
-		_x
-	}
+	private _x
 	foo() {
 		delete @x
 	}

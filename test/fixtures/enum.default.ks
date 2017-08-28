@@ -3,7 +3,6 @@ enum Color {
 	Green
 	Blue
 }
-
 enum Color {
 	DarkRed = 3
 	DarkGreen

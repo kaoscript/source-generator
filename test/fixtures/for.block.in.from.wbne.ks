@@ -1,9 +1,7 @@
 extern console: {
 	log(...args)
 }
-
-heroes = ['leto', 'duncan', 'goku']
-
+heroes = ["leto", "duncan", "goku"]
 for hero, index in heroes from 2 {
-	console.log('The hero at index %d is %s', index, hero)
+	console.log("The hero at index %d is %s", index, hero)
 }

@@ -9,7 +9,6 @@ enum ANSIColor {
 	white
 	default
 }
-
 func color(fg: ANSIColor, bg: ANSIColor): String {
 	let fg_code = switch fg {
 		black => 30
@@ -22,7 +21,6 @@ func color(fg: ANSIColor, bg: ANSIColor): String {
 		white => 37
 		default => 39
 	}
-	
 	let bg_code = switch bg {
 		black => 40
 		red => 41
@@ -34,6 +32,5 @@ func color(fg: ANSIColor, bg: ANSIColor): String {
 		white => 47
 		default => 49
 	}
-
 	return `\(fg_code);\(bg_code)m`
 }

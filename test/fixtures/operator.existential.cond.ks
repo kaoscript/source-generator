@@ -1,3 +1,5 @@
-extern foo, bar
-
+extern {
+	foo
+	bar
+}
 let tt = ?foo && ?bar

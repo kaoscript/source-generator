@@ -1,3 +1,3 @@
-const foo = (a:Number, b:Number): Number => {
+const foo = (a: Number, b: Number): Number => {
 	return a - b
 }

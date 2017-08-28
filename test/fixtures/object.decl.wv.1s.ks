@@ -1,3 +1,3 @@
 let foo = {
-	bar: 'hello'
+	bar: "hello"
 }
