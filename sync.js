@@ -29,6 +29,7 @@ function sync(file) {
 			write(file, file + '.no')
 		}
 		catch(error) {
+			console.log(file)
 		}
 	}
 }

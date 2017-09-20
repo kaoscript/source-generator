@@ -7,14 +7,12 @@
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
  **/
-#![runtime(type(alias='KSType'))]
-
-include once {
+include {
 	'@kaoscript/ast'
 	'@kaoscript/source-writer'
 }
 
-//extern console
+extern console
 
 export namespace Generator {
 	const AssignmentOperatorSymbol = {
@@ -134,6 +132,7 @@ export namespace Generator {
 			
 			return this
 		} // }}}
+		filterExpression(data) => @writer.filterExpression(data, this)
 		filterStatement(data) => @writer.filterStatement(data, this)
 		mode() => @writer.mode()
 		popMode() => @writer.popMode()
@@ -191,6 +190,7 @@ export namespace Generator {
 			return this
 		} // }}}
 		filterExpression(data) => @writer.filterExpression(data, this)
+		filterStatement(data) => @writer.filterStatement(data, this)
 		mode() => @writer.mode()
 		popMode() => @writer.popMode()
 		pushMode(mode: KSWriterMode) => @writer.pushMode(mode)
@@ -213,6 +213,7 @@ export namespace Generator {
 	
 	class KSObjectWriter extends ObjectWriter {
 		filterExpression(data) => @writer.filterExpression(data, this)
+		filterStatement(data) => @writer.filterStatement(data, this)
 		popMode() => @writer.popMode()
 		pushMode(mode: KSWriterMode) => @writer.pushMode(mode)
 		statement(data) { // {{{
@@ -255,7 +256,6 @@ export namespace Generator {
 	} // }}}
 	
 	func toExpression(data, writer) {
-		//console.log(data)
 		if !writer.filterExpression(data) {
 			switch data.kind {
 				NodeKind::ArrayBinding => { // {{{
@@ -505,12 +505,6 @@ export namespace Generator {
 						.expression(data.enum)
 						.code('::')
 						.expression(data.member)
-				} // }}}
-				NodeKind::ExportAlias => { // {{{
-					writer
-						.expression(data.name)
-						.code(' as ')
-						.expression(data.alias)
 				} // }}}
 				NodeKind::FunctionDeclaration => { // {{{
 					toFunctionHeader(data, writer => {
@@ -1100,7 +1094,6 @@ export namespace Generator {
 	} // }}}
 	
 	func toStatement(data, writer) {
-		//console.log(data)
 		if !writer.filterStatement(data) {
 			switch data.kind {
 				NodeKind::AccessorDeclaration => { // {{{
@@ -1266,6 +1259,40 @@ export namespace Generator {
 					}
 					
 					line.done()
+				} // }}}
+				NodeKind::ExportDeclarationSpecifier => { // {{{
+					writer.newLine().statement(data.declaration).done()
+				} // }}}
+				NodeKind::ExportNamedSpecifier => { // {{{
+					if data.local.kind == data.exported.kind && data.local.name == data.exported.name {
+						writer.newLine().code(data.local.name).done()
+					}
+					else {
+						writer.newLine().expression(data.local).code(` => \(data.exported.name)`).done()
+					}
+				} // }}}
+				NodeKind::ExportPropertiesSpecifier => { // {{{
+					const line = writer.newLine()
+					
+					line.expression(data.object)
+					
+					if data.properties.length == 1 {
+						line.code(' for ').statement(data.dpropertieseclarations[0])
+					}
+					else {
+						const block = line.code(' for').newBlock()
+						
+						for property in data.properties {
+							block.statement(property)
+						}
+						
+						block.done()
+					}
+					
+					line.done()
+				} // }}}
+				NodeKind::ExportWildcardSpecifier => { // {{{
+					writer.newLine().expression(data.local).code(' for *').done()
 				} // }}}
 				NodeKind::ExternDeclaration => { // {{{
 					const line = writer.newLine()
@@ -1604,14 +1631,14 @@ export namespace Generator {
 					
 					line.done()
 				} // }}}
-				NodeKind::IncludeDeclaration => { // {{{
+				NodeKind::IncludeAgainDeclaration => { // {{{
 					const line = writer.newLine()
 					
 					if data.files.length == 1 {
-						line.code('include ').code(toQuote(data.files[0]))
+						line.code('include again ').code(toQuote(data.files[0]))
 					}
 					else {
-						const block = line.code('include').newBlock()
+						const block = line.code('include again').newBlock()
 						
 						for file in data.files {
 							block.newLine().code(toQuote(file)).done()
@@ -1622,14 +1649,14 @@ export namespace Generator {
 					
 					line.done()
 				} // }}}
-				NodeKind::IncludeOnceDeclaration => { // {{{
+				NodeKind::IncludeDeclaration => { // {{{
 					const line = writer.newLine()
 					
 					if data.files.length == 1 {
-						line.code('include once ').code(toQuote(data.files[0]))
+						line.code('include ').code(toQuote(data.files[0]))
 					}
 					else {
-						const block = line.code('include once').newBlock()
+						const block = line.code('include').newBlock()
 						
 						for file in data.files {
 							block.newLine().code(toQuote(file)).done()
@@ -2070,4 +2097,4 @@ export namespace Generator {
 	export generate, KSWriter
 }
 
-export const generate = Generator.generate
+export Generator.generate
