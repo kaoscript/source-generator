@@ -78,8 +78,12 @@ export namespace Generator {
 		Property
 	}
 	
-	func $nil(...) { // {{{
+	func $nilFilter(...) { // {{{
 		return false
+	} // }}}
+	
+	func $nilTransformer(...args) { // {{{
+		return args[0]
 	} // }}}
 	
 	class KSWriter extends Writer {
@@ -97,12 +101,16 @@ export namespace Generator {
 					object: KSObjectWriter
 				}
 				filters: {
-					expression: $nil
-					statement: $nil
+					expression: $nilFilter
+					statement: $nilFilter
 				}
 				terminators: {
 					line: ''
 					list: ''
+				}
+				transformers: {
+					expression: $nilTransformer
+					statement: $nilTransformer
 				}
 			}, options))
 		} // }}}
@@ -124,6 +132,22 @@ export namespace Generator {
 			
 			return this
 		} // }}}
+		toSource() { // {{{
+			let source = ''
+			
+			for fragment in this.toArray() {
+				source += fragment.code
+			}
+			
+			if source.length != 0 {
+				return source.substr(0, source.length - 1)
+			}
+			else {
+				return source
+			}
+		} // }}}
+		transformExpression(data, writer = this) => @options.transformers.expression(data, writer)
+		transformStatement(data, writer = this) => @options.transformers.statement(data, writer)
 	}
 	
 	class KSBlockWriter extends BlockWriter {
@@ -144,6 +168,8 @@ export namespace Generator {
 			
 			return this
 		} // }}}
+		transformExpression(data, writer = this) => @writer.transformExpression(data, this)
+		transformStatement(data, writer = this) => @writer.transformStatement(data, this)
 	}
 	
 	class KSControlWriter extends ControlWriter {
@@ -161,6 +187,8 @@ export namespace Generator {
 			
 			return this
 		} // }}}
+		transformExpression(data, writer = this) => @writer.transformExpression(data, this)
+		transformStatement(data, writer = this) => @writer.transformStatement(data, this)
 		wrap(data) { // {{{
 			toWrap(data, this)
 			
@@ -176,6 +204,7 @@ export namespace Generator {
 		} // }}}
 		filterExpression(data) => @writer.filterExpression(data, this)
 		mode() => @writer.mode()
+		transformExpression(data, writer = this) => @writer.transformExpression(data, this)
 		wrap(data) { // {{{
 			toWrap(data, this)
 			
@@ -204,6 +233,8 @@ export namespace Generator {
 			
 			return this
 		} // }}}
+		transformExpression(data, writer = this) => @writer.transformExpression(data, this)
+		transformStatement(data, writer = this) => @writer.transformStatement(data, this)
 		wrap(data) { // {{{
 			toWrap(data, this)
 			
@@ -219,12 +250,18 @@ export namespace Generator {
 		statement(data) { // {{{
 			toStatement(data, this)
 		} // }}}
+		transformExpression(data, writer = this) => @writer.transformExpression(data, this)
+		transformStatement(data, writer = this) => @writer.transformStatement(data, this)
 	}
 	
-	func generate(data) { // {{{
-		const writer = new KSWriter()
+	func generate(data, options = null) { // {{{
+		const writer = new KSWriter(options)
 		
-		toStatement(data, writer)
+		writer.statement(data)
+		
+		return writer.toSource()
+		
+		/* toStatement(data, writer)
 		
 		let source = ''
 		
@@ -237,7 +274,7 @@ export namespace Generator {
 		}
 		else {
 			return source
-		}
+		} */
 	} // }}}
 	
 	func toAttribute(data, global, writer) { // {{{
@@ -257,6 +294,8 @@ export namespace Generator {
 	
 	func toExpression(data, writer) {
 		if !writer.filterExpression(data) {
+			data = writer.transformExpression(data)
+			
 			switch data.kind {
 				NodeKind::ArrayBinding => { // {{{
 					writer.code('[')
@@ -1095,6 +1134,8 @@ export namespace Generator {
 	
 	func toStatement(data, writer) {
 		if !writer.filterStatement(data) {
+			data = writer.transformStatement(data)
+			
 			switch data.kind {
 				NodeKind::AccessorDeclaration => { // {{{
 					const line = writer
@@ -2075,22 +2116,26 @@ export namespace Generator {
 	}
 	
 	func toWrap(data, writer) {
-		switch data.kind {
-			NodeKind::BinaryExpression where data.operator.kind != BinaryOperatorKind::TypeCasting => { // {{{
-				writer
-					.code('(')
-					.expression(data)
-					.code(')')
-			} // }}}
-			NodeKind::ConditionalExpression, NodeKind::PolyadicExpression => { // {{{
-				writer
-					.code('(')
-					.expression(data)
-					.code(')')
-			} // }}}
-			=> { // {{{
-				writer.expression(data)
-			} // }}}
+		if !writer.filterExpression(data) {
+			data = writer.transformExpression(data)
+			
+			switch data.kind {
+				NodeKind::BinaryExpression where data.operator.kind != BinaryOperatorKind::TypeCasting => { // {{{
+					writer
+						.code('(')
+						.expression(data)
+						.code(')')
+				} // }}}
+				NodeKind::ConditionalExpression, NodeKind::PolyadicExpression => { // {{{
+					writer
+						.code('(')
+						.expression(data)
+						.code(')')
+				} // }}}
+				=> { // {{{
+					writer.expression(data)
+				} // }}}
+			}
 		}
 	}
 	
