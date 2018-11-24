@@ -1,0 +1,1 @@
+export sealed class Foobar

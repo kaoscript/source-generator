@@ -33,7 +33,7 @@ export namespace Generator {
 		`\(AssignmentOperatorKind::NullCoalescing)`		: ' ??= '
 		`\(AssignmentOperatorKind::Subtraction)`		: ' -= '
 	}
-	
+
 	const BinaryOperatorSymbol = {
 		`\(BinaryOperatorKind::Addition)`			: ' + '
 		`\(BinaryOperatorKind::And)`				: ' && '
@@ -58,7 +58,7 @@ export namespace Generator {
 		`\(BinaryOperatorKind::TypeEquality)`		: ' is '
 		`\(BinaryOperatorKind::TypeInequality)`		: ' is not '
 	}
-	
+
 	const UnaryPrefixOperatorSymbol = {
 		`\(UnaryOperatorKind::BitwiseNot)`			: '~'
 		`\(UnaryOperatorKind::DecrementPrefix)`		: '--'
@@ -68,26 +68,26 @@ export namespace Generator {
 		`\(UnaryOperatorKind::Negative)`			: '-'
 		`\(UnaryOperatorKind::Spread)`				: '...'
 	}
-	
+
 	const UnaryPostfixOperatorSymbol = {
 		`\(UnaryOperatorKind::DecrementPostfix)`	: '--'
 		`\(UnaryOperatorKind::IncrementPostfix)`	: '++'
 	}
-	
+
 	enum KSWriterMode {
 		Default
 		Extern
 		Property
 	}
-	
+
 	func $nilFilter(...) { // {{{
 		return false
 	} // }}}
-	
+
 	func $nilTransformer(...args) { // {{{
 		return args[0]
 	} // }}}
-	
+
 	class KSWriter extends Writer {
 		private {
 			_mode: KSWriterMode
@@ -116,7 +116,7 @@ export namespace Generator {
 					statement: $nilTransformer
 				}
 			}, options))
-			
+
 			@mode = @options.mode
 		} // }}}
 		filterExpression(data, writer = this) => @options.filters.expression(data, writer)
@@ -127,25 +127,25 @@ export namespace Generator {
 		} // }}}
 		pushMode(mode: KSWriterMode) { // {{{
 			@stack.push(@mode)
-			
+
 			@mode = mode
 		} // }}}
 		statement(data) { // {{{
 			if !this.filterStatement(data) {
 				toAttributes(data, false, this)
-				
+
 				toStatement(this.transformStatement(data), this)
 			}
-			
+
 			return this
 		} // }}}
 		toSource() { // {{{
 			let source = ''
-			
+
 			for fragment in this.toArray() {
 				source += fragment.code
 			}
-			
+
 			if source.length != 0 {
 				return source.substr(0, source.length - 1)
 			}
@@ -156,13 +156,13 @@ export namespace Generator {
 		transformExpression(data, writer = this) => @options.transformers.expression(data, writer)
 		transformStatement(data, writer = this) => @options.transformers.statement(data, writer)
 	}
-	
+
 	class KSBlockWriter extends BlockWriter {
 		expression(data) { // {{{
 			if !this.filterExpression(data) {
 				toExpression(this.transformExpression(data), this)
 			}
-			
+
 			return this
 		} // }}}
 		filterExpression(data) => @writer.filterExpression(data, this)
@@ -173,22 +173,22 @@ export namespace Generator {
 		statement(data) { // {{{
 			if !this.filterStatement(data) {
 				toAttributes(data, false, this)
-				
+
 				toStatement(this.transformStatement(data), this)
 			}
-			
+
 			return this
 		} // }}}
 		transformExpression(data, writer = this) => @writer.transformExpression(data, this)
 		transformStatement(data, writer = this) => @writer.transformStatement(data, this)
 	}
-	
+
 	class KSControlWriter extends ControlWriter {
 		expression(data) { // {{{
 			if !this.filterExpression(data) {
 				toExpression(this.transformExpression(data), this)
 			}
-			
+
 			return this
 		} // }}}
 		filterExpression(data) => @writer.filterExpression(data, this)
@@ -199,10 +199,10 @@ export namespace Generator {
 		statement(data) { // {{{
 			if !this.filterStatement(data) {
 				toAttributes(data, false, this)
-				
+
 				toStatement(this.transformStatement(data), this)
 			}
-			
+
 			return this
 		} // }}}
 		transformExpression(data, writer = this) => @writer.transformExpression(data, this)
@@ -211,17 +211,17 @@ export namespace Generator {
 			if !this.filterExpression(data) {
 				toWrap(this.transformExpression(data), this)
 			}
-			
+
 			return this
 		} // }}}
 	}
-	
+
 	class KSExpressionWriter extends ExpressionWriter {
 		expression(data) { // {{{
 			if !this.filterExpression(data) {
 				toExpression(this.transformExpression(data), this)
 			}
-			
+
 			return this
 		} // }}}
 		filterExpression(data) => @writer.filterExpression(data, this)
@@ -233,17 +233,17 @@ export namespace Generator {
 			if !this.filterExpression(data) {
 				toWrap(this.transformExpression(data), this)
 			}
-			
+
 			return this
 		} // }}}
 	}
-	
+
 	class KSLineWriter extends LineWriter {
 		expression(data) { // {{{
 			if !this.filterExpression(data) {
 				toExpression(this.transformExpression(data), this)
 			}
-			
+
 			return this
 		} // }}}
 		filterExpression(data) => @writer.filterExpression(data, this)
@@ -253,16 +253,16 @@ export namespace Generator {
 		pushMode(mode: KSWriterMode) => @writer.pushMode(mode)
 		run(data, fn) { // {{{
 			fn(data, this)
-			
+
 			return this
 		} // }}}
 		statement(data) { // {{{
 			if !this.filterStatement(data) {
 				toAttributes(data, false, this)
-				
+
 				toStatement(this.transformStatement(data), this)
 			}
-			
+
 			return this
 		} // }}}
 		transformExpression(data, writer = this) => @writer.transformExpression(data, this)
@@ -271,11 +271,11 @@ export namespace Generator {
 			if !this.filterExpression(data) {
 				toWrap(this.transformExpression(data), this)
 			}
-			
+
 			return this
 		} // }}}
 	}
-	
+
 	class KSObjectWriter extends ObjectWriter {
 		filterExpression(data) => @writer.filterExpression(data, this)
 		filterStatement(data) => @writer.filterStatement(data, this)
@@ -285,31 +285,31 @@ export namespace Generator {
 		statement(data) { // {{{
 			if !this.filterStatement(data) {
 				toAttributes(data, false, this)
-				
+
 				toStatement(this.transformStatement(data), this)
 			}
-			
+
 			return this
 		} // }}}
 		transformExpression(data, writer = this) => @writer.transformExpression(data, this)
 		transformStatement(data, writer = this) => @writer.transformStatement(data, this)
 	}
-	
+
 	func generate(data, options = null) { // {{{
 		const writer = new KSWriter(options)
-		
+
 		toStatement(data, writer)
-		
+
 		return writer.toSource()
 	} // }}}
-	
+
 	func toAttribute(data, global, writer) { // {{{
 		return writer
 			.code(global ? '#![' : '#[')
 			.expression(data.declaration)
 			.code(']')
 	} // }}}
-	
+
 	func toAttributes(data, global, writer) { // {{{
 		if data.attributes? {
 			for attribute in data.attributes {
@@ -317,20 +317,20 @@ export namespace Generator {
 			}
 		}
 	} // }}}
-	
-	func toExpression(data, writer) {
+
+	func toExpression(data, writer, header = null) {
 		switch data.kind {
 			NodeKind::ArrayBinding => { // {{{
 				writer.code('[')
-				
+
 				for element, index in data.elements {
 					if index != 0 {
 						writer.code(', ')
 					}
-					
+
 					writer.expression(element)
 				}
-				
+
 				writer.code(']')
 			} // }}}
 			NodeKind::ArrayComprehension => { // {{{
@@ -342,51 +342,51 @@ export namespace Generator {
 			} // }}}
 			NodeKind::ArrayExpression => { // {{{
 				writer.code('[')
-				
+
 				for value, index in data.values {
 					if index != 0 {
 						writer.code(', ')
 					}
-					
+
 					writer.expression(value)
 				}
-				
+
 				writer.code(']')
 			} // }}}
 			NodeKind::ArrayRange => { // {{{
 				writer.code('[')
-				
+
 				if data.from? {
 					writer.expression(data.from)
 				}
 				else {
 					writer.expression(data.then).code('<')
 				}
-				
+
 				if data.to? {
 					writer.code('..').expression(data.to)
 				}
 				else {
 					writer.code('..<').expression(data.til)
 				}
-				
+
 				if data.by? {
 					writer.code('..').expression(data.by)
 				}
-				
+
 				writer.code(']')
 			} // }}}
 			NodeKind::AttributeExpression => { // {{{
 				writer.expression(data.name).code('(')
-				
+
 				for argument, index in data.arguments {
 					if index != 0 {
 						writer.code(', ')
 					}
-					
+
 					writer.expression(argument)
 				}
-				
+
 				writer.code(')')
 			} // }}}
 			NodeKind::AttributeOperation => { // {{{
@@ -400,14 +400,14 @@ export namespace Generator {
 			} // }}}
 			NodeKind::BinaryExpression => { // {{{
 				writer.wrap(data.left)
-				
+
 				if data.operator.kind == BinaryOperatorKind::Assignment {
 					writer.code(AssignmentOperatorSymbol[data.operator.assignment])
 				}
 				else {
 					writer.code(BinaryOperatorSymbol[data.operator.kind])
 				}
-				
+
 				writer.wrap(data.right)
 			} // }}}
 			NodeKind::BindingElement => { // {{{
@@ -422,9 +422,9 @@ export namespace Generator {
 						writer.expression(data.alias).code(': ')
 					}
 				}
-				
+
 				writer.expression(data.name)
-				
+
 				if data.defaultValue? {
 					writer.code(' = ').expression(data.defaultValue)
 				}
@@ -436,17 +436,17 @@ export namespace Generator {
 			} // }}}
 			NodeKind::CallExpression => { // {{{
 				writer.expression(data.callee)
-				
+
 				if data.nullable {
 					writer.code('?')
 				}
-				
+
 				switch data.scope.kind {
 					ScopeKind::Argument => {
 						writer
 							.code('*$(')
 							.expression(data.scope.value)
-						
+
 						if data.arguments.length {
 							writer.code(', ')
 						}
@@ -458,30 +458,30 @@ export namespace Generator {
 						writer.code('(')
 					}
 				}
-				
+
 				for argument, index in data.arguments {
 					if index != 0 {
 						writer.code(', ')
 					}
-					
+
 					writer.expression(argument)
 				}
-				
+
 				writer.code(')')
 			} // }}}
 			NodeKind::CallMacroExpression => { // {{{
 				writer
 					.expression(data.callee)
 					.code('!(')
-				
+
 				for argument, index in data.arguments {
 					if index != 0 {
 						writer.code(', ')
 					}
-					
+
 					writer.expression(argument)
 				}
-				
+
 				writer.code(')')
 			} // }}}
 			NodeKind::ClassDeclaration => { // {{{
@@ -495,12 +495,18 @@ export namespace Generator {
 						}
 					}
 				}
-				
+
 				writer.code('class ').expression(data.name)
 			} // }}}
 			NodeKind::ConditionalExpression => { // {{{
+				if data.condition.kind == NodeKind::BinaryExpression && data.condition.operator.kind == BinaryOperatorKind::Assignment {
+					writer.code('(').expression(data.condition).code(')')
+				}
+				else {
+					writer.expression(data.condition)
+				}
+
 				writer
-					.expression(data.condition)
 					.code(' ? ')
 					.expression(data.whenTrue)
 					.code(' : ')
@@ -508,7 +514,7 @@ export namespace Generator {
 			} // }}}
 			NodeKind::CreateExpression => { // {{{
 				writer.code('new ')
-				
+
 				if	data.class.kind == NodeKind::Identifier ||
 					data.class.kind == NodeKind::MemberExpression ||
 					data.class.kind == NodeKind::ThisExpression
@@ -518,28 +524,28 @@ export namespace Generator {
 				else {
 					writer.code('(').expression(data.class).code(')')
 				}
-				
+
 				writer.code('(')
-				
+
 				for argument, index in data.arguments {
 					if index != 0 {
 						writer.code(', ')
 					}
-					
+
 					writer.expression(argument)
 				}
-				
+
 				writer.code(')')
 			} // }}}
 			NodeKind::CurryExpression => { // {{{
 				writer.expression(data.callee)
-				
+
 				switch data.scope.kind {
 					ScopeKind::Argument => {
 						writer
 							.code('^$(')
 							.expression(data.scope.value)
-						
+
 						if data.arguments.length {
 							writer.code(', ')
 						}
@@ -551,15 +557,15 @@ export namespace Generator {
 						writer.code('^@(')
 					}
 				}
-				
+
 				for argument, index in data.arguments {
 					if index != 0 {
 						writer.code(', ')
 					}
-					
+
 					writer.expression(argument)
 				}
-				
+
 				writer.code(')')
 			} // }}}
 			NodeKind::EnumExpression => { // {{{
@@ -569,17 +575,18 @@ export namespace Generator {
 					.expression(data.member)
 			} // }}}
 			NodeKind::FunctionDeclaration => { // {{{
-				toFunctionHeader(data, writer => {
-					writer.code('func ')
-				}, writer)
+				toFunctionHeader(data, writer => writer.code('func '), writer)
 			} // }}}
 			NodeKind::FunctionExpression => { // {{{
 				toFunctionHeader(data, writer => {
-					if writer.mode() != KSWriterMode::Property {
+					if writer.mode() == KSWriterMode::Property {
+						header(writer)
+					}
+					else {
 						writer.code('func')
 					}
 				}, writer)
-				
+
 				if data.body? {
 					if data.body.kind == NodeKind::Block {
 						writer.newBlock().expression(data.body).done()
@@ -597,7 +604,7 @@ export namespace Generator {
 					.expression(data.whenTrue)
 					.code(' if ')
 					.expression(data.condition)
-				
+
 				if data.whenFalse? {
 					writer
 						.code(' else ')
@@ -606,59 +613,59 @@ export namespace Generator {
 			} // }}}
 			NodeKind::ImportDeclarator => { // {{{
 				writer.expression(data.source)
-				
+
 				if data.arguments?.length != 0 {
 					writer.code('(')
-					
+
 					for argument, index in data.arguments {
 						if index != 0 {
 							writer.code(', ')
 						}
-						
+
 						writer.expression(argument)
 					}
-					
+
 					writer.code(')')
 				}
-				
+
 				if data.specifiers.length == 1 {
 					const specifier = data.specifiers[0]
-					
+
 					switch specifier.kind {
 						NodeKind::ImportSpecifier => {
 							writer.code(' for ').expression(specifier)
 						}
 						NodeKind::ImportNamespaceSpecifier => {
-							writer.code(' as ').expression(specifier)
+							writer.code(' => ').expression(specifier)
 						}
 					}
 				}
 				else if data.specifiers.length != 0 {
 					const block = writer.newBlock()
-					
+
 					for specifier in data.specifiers {
 						block.newLine().expression(specifier).done()
 					}
-					
+
 					block.done()
 				}
 			} // }}}
 			NodeKind::ImportNamespaceSpecifier => { // {{{
 				writer.expression(data.local)
-				
+
 				if data.specifiers?.length != 0 {
 					const block = writer.newBlock()
-					
+
 					for specifier in data.specifiers {
 						block.newLine().expression(specifier).done()
 					}
-					
+
 					block.done()
 				}
 			} // }}}
 			NodeKind::ImportSpecifier => { // {{{
 				writer.expression(data.imported)
-				
+
 				if
 					!(
 						data.imported.kind == NodeKind::ClassDeclaration ||
@@ -672,7 +679,7 @@ export namespace Generator {
 			} // }}}
 			NodeKind::LambdaExpression => { // {{{
 				toFunctionHeader(data, writer => {}, writer)
-				
+
 				if data.body.kind == NodeKind::Block {
 					writer
 						.code(' =>')
@@ -689,16 +696,16 @@ export namespace Generator {
 			} // }}}
 			NodeKind::MacroExpression => { // {{{
 				writer.code('macro ')
-				
+
 				if data.multilines {
 					const o = writer.newObject()
-					
+
 					let line = o.newLine()
-					
+
 					for element in data.elements til data.elements.length - 1 {
 						line = toMacroElement(element, line, o)
 					}
-					
+
 					o.done()
 				}
 				else {
@@ -709,11 +716,11 @@ export namespace Generator {
 			} // }}}
 			NodeKind::MemberExpression => { // {{{
 				writer.wrap(data.object)
-				
+
 				if data.nullable {
 					writer.code('?')
 				}
-				
+
 				if data.computed {
 					writer.code('[').expression(data.property).code(']')
 				}
@@ -732,52 +739,46 @@ export namespace Generator {
 			} // }}}
 			NodeKind::ObjectBinding => { // {{{
 				writer.code('{')
-				
+
 				for element, index in data.elements {
 					if index != 0 {
 						writer.code(', ')
 					}
-					
+
 					writer.expression(element)
 				}
-				
+
 				writer.code('}')
 			} // }}}
 			NodeKind::ObjectExpression => { // {{{
 				const o = writer.newObject()
-				
+
 				o.pushMode(KSWriterMode::Property)
-				
+
 				for property in data.properties {
 					toAttributes(property, false, o)
-					
+
 					o.newLine().expression(property).done()
 				}
-				
+
 				o.popMode()
-				
+
 				o.done()
 			} // }}}
 			NodeKind::ObjectMember => { // {{{
-				writer.expression(data.name)
-				
-				if data.value? {
-					const element = writer.transformExpression(data.value)
-					
-					if element.kind != NodeKind::FunctionExpression {
-						writer.code(': ')
+				const value = data.value ?? data.type
+				if value? {
+					const element = writer.transformExpression(value)
+
+					if element.kind == NodeKind::FunctionExpression {
+						toExpression(element, writer, writer => writer.expression(data.name))
 					}
-					
-					toExpression(element, writer)
+					else {
+						writer.expression(data.name).code(': ').expression(element)
+					}
 				}
-				else if data.type? {
-					const element = writer.transformExpression(data.type)
-					
-					if element.kind != NodeKind::FunctionExpression {
-						writer.code(': ')
-					}
-					
-					toExpression(element, writer)
+				else {
+					writer.expression(data.name)
 				}
 			} // }}}
 			NodeKind::OmittedExpression => { // {{{
@@ -793,10 +794,10 @@ export namespace Generator {
 						}
 						ModifierKind::Rest => {
 							writer.code('...')
-							
+
 							if modifier.arity.min != 0 || modifier.arity.max != Infinity {
 								writer.code('{')
-								
+
 								if modifier.arity.min == modifier.arity.max {
 									writer.code(modifier.arity.min)
 								}
@@ -804,14 +805,14 @@ export namespace Generator {
 									if modifier.arity.min != 0 {
 										writer.code(modifier.arity.min)
 									}
-									
+
 									writer.code(',')
-									
+
 									if modifier.arity.max != Infinity {
 										writer.code(modifier.arity.max)
 									}
 								}
-								
+
 								writer.code('}')
 							}
 						}
@@ -820,10 +821,10 @@ export namespace Generator {
 						}
 					}
 				}
-				
+
 				if data.name? {
 					writer.expression(data.name)
-					
+
 					for modifier in data.modifiers {
 						switch modifier.kind {
 							ModifierKind::SetterAlias => {
@@ -832,18 +833,18 @@ export namespace Generator {
 						}
 					}
 				}
-				
+
 				if data.type? {
 					writer.code(': ').expression(data.type)
 				}
-				
+
 				if data.defaultValue? {
 					writer.code(' = ').expression(data.defaultValue)
 				}
 			} // }}}
 			NodeKind::PolyadicExpression => { // {{{
 				writer.expression(data.operands[0])
-				
+
 				for operand in data.operands from 1 {
 					writer
 						.code(BinaryOperatorSymbol[data.operator.kind])
@@ -855,41 +856,41 @@ export namespace Generator {
 			} // }}}
 			NodeKind::SequenceExpression => { // {{{
 				writer.code('(')
-				
+
 				for expression, index in data.expressions {
 					if index != 0 {
 						writer.code(', ')
 					}
-					
+
 					writer.expression(expression)
 				}
-				
+
 				writer.code(')')
 			} // }}}
 			NodeKind::SwitchConditionArray => { // {{{
 				writer.code('[')
-				
+
 				for value, index in data.values {
 					if index != 0 {
 						writer.code(', ')
 					}
-					
+
 					writer.expression(value)
 				}
-				
+
 				writer.code(']')
 			} // }}}
 			NodeKind::SwitchConditionObject => { // {{{
 				writer.code('{')
-				
+
 				for member, index in data.members {
 					if index != 0 {
 						writer.code(', ')
 					}
-					
+
 					writer.expression(member)
 				}
-				
+
 				writer.code('}')
 			} // }}}
 			NodeKind::SwitchConditionRange => { // {{{
@@ -899,14 +900,14 @@ export namespace Generator {
 				else {
 					writer.expression(data.then).code('<')
 				}
-				
+
 				if data.to? {
 					writer.code('..').expression(data.to)
 				}
 				else {
 					writer.code('..<').expression(data.til)
 				}
-				
+
 				if data.by? {
 					writer.code('..').expression(data.by)
 				}
@@ -920,13 +921,13 @@ export namespace Generator {
 				writer
 					.code('switch ')
 					.expression(data.expression)
-				
+
 				const block = writer.newBlock()
-				
+
 				for clause in data.clauses {
 					block.statement(clause)
 				}
-				
+
 				block.done()
 			} // }}}
 			NodeKind::SwitchTypeCasting => { // {{{
@@ -935,9 +936,12 @@ export namespace Generator {
 					.code(' as ')
 					.expression(data.type)
 			} // }}}
+			NodeKind::TaggedTemplateExpression => { // {{{
+				writer.expression(data.tag).expression(data.template)
+			} // }}}
 			NodeKind::TemplateExpression => { // {{{
 				writer.code('`')
-				
+
 				for element in data.elements {
 					if element.kind == NodeKind::Literal {
 						writer.code(element.value)
@@ -946,7 +950,7 @@ export namespace Generator {
 						writer.code('\\(').expression(element).code(')')
 					}
 				}
-				
+
 				writer.code('`')
 			} // }}}
 			NodeKind::ThisExpression => { // {{{
@@ -955,34 +959,34 @@ export namespace Generator {
 			NodeKind::TypeReference => { // {{{
 				if data.properties? {
 					const o = writer.newObject()
-					
+
 					o.pushMode(KSWriterMode::Property)
-					
+
 					for property in data.properties {
 						o.statement(property)
 					}
-					
+
 					o.popMode()
-					
+
 					o.done()
 				}
 				else {
 					writer.expression(data.typeName)
-					
+
 					if data.typeParameters? {
 						writer.code('<')
-						
+
 						for parameter, index in data.typeParameters {
 							if index != 0 {
 								writer.code(', ')
 							}
-							
+
 							writer.expression(parameter)
 						}
-						
+
 						writer.code('>')
 					}
-					
+
 					if data.nullable {
 						writer.code('?')
 					}
@@ -1003,9 +1007,9 @@ export namespace Generator {
 			NodeKind::UnionType => { // {{{
 				for type, index in data.types {
 					if index != 0 {
-						writer.code(' | ')
+						writer.code(type.kind == NodeKind::FunctionExpression ? ' || ' : ' | ')
 					}
-					
+
 					writer.expression(type)
 				}
 			} // }}}
@@ -1016,8 +1020,12 @@ export namespace Generator {
 					.expression(data.condition)
 			} // }}}
 			NodeKind::VariableDeclarator => { // {{{
+				if data.sealed {
+					writer.code('const ')
+				}
+
 				writer.expression(data.name)
-				
+
 				if data.type? {
 					writer.code(': ').expression(data.type)
 				}
@@ -1028,13 +1036,19 @@ export namespace Generator {
 			} // }}}
 		}
 	}
-	
+
 	func toFunctionHeader(data, header, writer) { // {{{
 		if data.modifiers? {
 			for modifier in data.modifiers {
 				switch modifier.kind {
 					ModifierKind::Abstract => {
 						writer.code('abstract ')
+					}
+					ModifierKind::Async => {
+						writer.code('async ')
+					}
+					ModifierKind::Override => {
+						writer.code('override ')
 					}
 					ModifierKind::Private => {
 						writer.code('private ')
@@ -1051,60 +1065,52 @@ export namespace Generator {
 				}
 			}
 		}
-		
+
 		header(writer)
-		
+
 		if data.name? {
 			writer.expression(data.name)
 		}
-		
-		writer.code('(')
-		
-		for parameter, i in data.parameters {
-			if i != 0 {
-				writer.code(', ')
-			}
-			
-			writer.expression(parameter)
-		}
-		
-		writer.code(')')
-		
-		if data.modifiers? {
-			for modifier in data.modifiers {
-				switch modifier.kind {
-					ModifierKind::Async => {
-						writer.code(' async')
-					}
+
+		if data.parameters? {
+			writer.code('(')
+
+			for parameter, i in data.parameters {
+				if i != 0 {
+					writer.code(', ')
 				}
+
+				writer.expression(parameter)
 			}
+
+			writer.code(')')
 		}
-		
+
 		if data.type? {
 			writer.code(': ').expression(data.type)
 		}
-		
+
 		if data.throws?.length > 0 {
 			writer.code(' ~ ')
-			
+
 			for throw, index in data.throws {
 				if index != 0 {
 					writer.code(', ')
 				}
-				
+
 				writer.expression(throw)
 			}
 		}
 	} // }}}
-	
+
 	func toLoopHeader(data, writer) { // {{{
 		switch data.kind {
 			NodeKind::ForInStatement => {
 				writer.code(' for ')
-				
+
 				if data.value? {
 					writer.expression(data.value)
-					
+
 					if data.index? {
 						writer.code(', ').expression(data.index)
 					}
@@ -1112,9 +1118,9 @@ export namespace Generator {
 				else {
 					writer.code(':').expression(data.index)
 				}
-				
+
 				writer.code(' in ').expression(data.expression)
-				
+
 				if data.when? {
 					writer.code(' when ').expression(data.when)
 				}
@@ -1125,19 +1131,19 @@ export namespace Generator {
 			}
 		}
 	} // }}}
-	
+
 	func toMacroElement(data, writer, parent = null) { // {{{
 		switch data.kind {
 			MacroElementKind::Expression => {
 				writer.code('#')
-				
+
 				if data.reification.kind == ReificationKind::Identifier && data.expression.kind == NodeKind::Identifier {
 					writer.expression(data.expression)
 				}
 				else {
 					switch data.reification.kind {
 					}
-					
+
 					writer.expression(data.expression)
 				}
 			}
@@ -1148,21 +1154,21 @@ export namespace Generator {
 				return parent.newLine()
 			}
 		}
-		
+
 		return writer
 	} // }}}
-	
+
 	func toQuote(value) { // {{{
 		return '"' + value.replace(/"/g, '\\"').replace(/\n/g, '\\n') + '"'
 	} // }}}
-	
+
 	func toStatement(data, writer) {
 		switch data.kind {
 			NodeKind::AccessorDeclaration => { // {{{
 				const line = writer
 					.newLine()
 					.code('get')
-				
+
 				if data.body? {
 					if data.body.kind == NodeKind::Block {
 						line.newBlock().expression(data.body).done()
@@ -1171,7 +1177,7 @@ export namespace Generator {
 						line.code(' => ').expression(data.body)
 					}
 				}
-				
+
 				line.done()
 			} // }}}
 			NodeKind::BreakStatement => { // {{{
@@ -1182,7 +1188,7 @@ export namespace Generator {
 					writer
 						.code('on ')
 						.expression(data.type)
-					
+
 					if data.binding? {
 						writer
 							.code(' catch ')
@@ -1191,21 +1197,21 @@ export namespace Generator {
 				}
 				else {
 					writer.code('catch')
-					
+
 					if data.binding? {
 						writer
 							.code(' ')
 							.expression(data.binding)
 					}
 				}
-				
+
 				writer
 					.step()
 					.expression(data.body)
 			} // }}}
 			NodeKind::ClassDeclaration => { // {{{
 				const line = writer.newLine()
-				
+
 				for modifier in data.modifiers {
 					switch modifier.kind {
 						ModifierKind::Abstract => {
@@ -1216,27 +1222,27 @@ export namespace Generator {
 						}
 					}
 				}
-				
+
 				line.code('class ').expression(data.name)
-				
+
 				if data.version? {
 					line.code(`@\(data.version.major).\(data.version.minor).\(data.version.patch)`)
 				}
-				
+
 				if data.extends? {
 					line.code(' extends ').expression(data.extends)
 				}
-				
-				if data.members.length != 0 || writer.mode() != KSWriterMode::Extern {
+
+				if data.members.length != 0/*  || writer.mode() != KSWriterMode::Extern */ {
 					const block = line.newBlock()
-					
+
 					for member in data.members {
 						block.statement(member)
 					}
-					
+
 					block.done()
 				}
-				
+
 				line.done()
 			} // }}}
 			NodeKind::ContinueStatement => { // {{{
@@ -1276,20 +1282,20 @@ export namespace Generator {
 					.newLine()
 					.code('enum ')
 					.expression(data.name)
-				
+
 				if data.type? {
 					line
 						.code('<')
 						.expression(data.type)
 						.code('>')
 				}
-				
+
 				const block = line.newBlock()
-				
+
 				for member in data.members {
 					block.statement(member)
 				}
-				
+
 				block.done()
 				line.done()
 			} // }}}
@@ -1297,29 +1303,29 @@ export namespace Generator {
 				const line = writer
 					.newLine()
 					.expression(data.name)
-				
+
 				if data.value? {
 					line.code(' = ').expression(data.value)
 				}
-				
+
 				line.done()
 			} // }}}
 			NodeKind::ExportDeclaration => { // {{{
 				const line = writer.newLine()
-				
+
 				if data.declarations.length == 1 {
 					line.code('export ').statement(data.declarations[0])
 				}
 				else {
 					const block = line.code('export').newBlock()
-					
+
 					for declaration in data.declarations {
 						block.statement(declaration)
 					}
-					
+
 					block.done()
 				}
-				
+
 				line.done()
 			} // }}}
 			NodeKind::ExportDeclarationSpecifier => { // {{{
@@ -1335,22 +1341,22 @@ export namespace Generator {
 			} // }}}
 			NodeKind::ExportPropertiesSpecifier => { // {{{
 				const line = writer.newLine()
-				
+
 				line.expression(data.object)
-				
+
 				if data.properties.length == 1 {
 					line.code(' for ').statement(data.dpropertieseclarations[0])
 				}
 				else {
 					const block = line.code(' for').newBlock()
-					
+
 					for property in data.properties {
 						block.statement(property)
 					}
-					
+
 					block.done()
 				}
-				
+
 				line.done()
 			} // }}}
 			NodeKind::ExportWildcardSpecifier => { // {{{
@@ -1358,51 +1364,51 @@ export namespace Generator {
 			} // }}}
 			NodeKind::ExternDeclaration => { // {{{
 				const line = writer.newLine()
-				
+
 				if data.declarations.length == 1 {
 					line.code('extern ').statement(data.declarations[0])
 				}
 				else {
 					writer.pushMode(KSWriterMode::Extern)
-					
+
 					const block = line.code('extern').newBlock()
-					
+
 					for declaration in data.declarations {
 						block.statement(declaration)
 					}
-					
+
 					block.done()
-					
+
 					writer.popMode()
 				}
-				
+
 				line.done()
 			} // }}}
 			NodeKind::ExternOrRequireDeclaration => { // {{{
 				const line = writer.newLine()
-				
+
 				if data.declarations.length == 1 {
 					line.code('extern|require ').statement(data.declarations[0])
 				}
 				else {
 					writer.pushMode(KSWriterMode::Extern)
-					
+
 					const block = line.code('extern|require').newBlock()
-					
+
 					for declaration in data.declarations {
 						block.statement(declaration)
 					}
-					
+
 					block.done()
-					
+
 					writer.popMode()
 				}
-				
+
 				line.done()
 			} // }}}
 			NodeKind::FieldDeclaration => { // {{{
 				const line = writer.newLine()
-				
+
 				for modifier in data.modifiers {
 					switch modifier.kind {
 						ModifierKind::Private => {
@@ -1419,44 +1425,44 @@ export namespace Generator {
 						}
 					}
 				}
-				
+
 				line.expression(data.name)
-				
+
 				if data.type? {
 					line.code(': ').expression(data.type)
 				}
-				
+
 				if data.defaultValue? {
 					line.code(' = ').expression(data.defaultValue)
 				}
-				
+
 				line.done()
 			} // }}}
 			NodeKind::ForFromStatement => { // {{{
 				const ctrl = writer
 					.newControl()
 					.code('for ')
-				
+
 				if data.declaration {
 					ctrl.code('let ')
 				}
-				
+
 				ctrl
 					.expression(data.variable)
 					.code(' from ')
 					.expression(data.from)
-				
+
 				if data.til? {
 					ctrl.code(' til ').expression(data.til)
 				}
 				else {
 					ctrl.code(' to ').expression(data.to)
 				}
-				
+
 				if data.by? {
 					ctrl.code(' by ').expression(data.by)
 				}
-				
+
 				ctrl
 					.step()
 					.expression(data.body)
@@ -1464,7 +1470,7 @@ export namespace Generator {
 			} // }}}
 			NodeKind::ForInStatement => { // {{{
 				let ctrl
-				
+
 				if data.body.kind == NodeKind::Block {
 					ctrl = writer
 						.newControl()
@@ -1476,14 +1482,14 @@ export namespace Generator {
 						.expression(data.body)
 						.code(' for ')
 				}
-				
+
 				if data.declaration {
 					ctrl.code('let ')
 				}
-				
+
 				if data.value? {
 					ctrl.expression(data.value)
-					
+
 					if data.index? {
 						ctrl.code(', ').expression(data.index)
 					}
@@ -1491,41 +1497,41 @@ export namespace Generator {
 				else {
 					ctrl.code(':').expression(data.index)
 				}
-				
+
 				ctrl.code(' in ').expression(data.expression)
-				
+
 				if data.desc {
 					ctrl.code(' desc')
 				}
-				
+
 				if data.from? {
 					ctrl.code(' from ').expression(data.from)
 				}
-				
+
 				if data.til? {
 					ctrl.code(' til ').expression(data.til)
 				}
 				else if data.to? {
 					ctrl.code(' to ').expression(data.to)
 				}
-				
+
 				if data.until? {
 					ctrl.code(' until ').expression(data.until)
 				}
 				else if data.while? {
 					ctrl.code(' while ').expression(data.while)
 				}
-				
+
 				if data.when? {
 					ctrl.code(' when ').expression(data.when)
 				}
-				
+
 				if data.body.kind == NodeKind::Block {
 					ctrl
 						.step()
 						.expression(data.body)
 				}
-				
+
 				ctrl.done()
 			} // }}}
 			NodeKind::ForRangeStatement => { // {{{
@@ -1543,7 +1549,7 @@ export namespace Generator {
 			} // }}}
 			NodeKind::ForOfStatement => { // {{{
 				let ctrl
-				
+
 				if data.body.kind == NodeKind::Block {
 					ctrl = writer
 						.newControl()
@@ -1555,14 +1561,14 @@ export namespace Generator {
 						.expression(data.body)
 						.code(' for ')
 				}
-				
+
 				if data.declaration {
 					ctrl.code('let ')
 				}
-				
+
 				if data.key? {
 					ctrl.expression(data.key)
-					
+
 					if data.value? {
 						ctrl.code(', ').expression(data.value)
 					}
@@ -1570,26 +1576,26 @@ export namespace Generator {
 				else {
 					ctrl.code(':').expression(data.value)
 				}
-				
+
 				ctrl.code(' of ').expression(data.expression)
-				
+
 				if data.body.kind == NodeKind::Block {
 					ctrl
 						.step()
 						.expression(data.body)
 				}
-				
+
 				ctrl.done()
 			} // }}}
 			NodeKind::FunctionDeclaration => { // {{{
 				const line = writer.newLine()
-				
+
 				toFunctionHeader(data, writer => {
 					if writer.mode() != KSWriterMode::Extern {
 						writer.code('func ')
 					}
 				}, line)
-				
+
 				if data.body? {
 					if data.body.kind == NodeKind::Block {
 						line
@@ -1601,7 +1607,7 @@ export namespace Generator {
 						line.code(' => ').expression(data.body)
 					}
 				}
-				
+
 				line.done()
 			} // }}}
 			NodeKind::IfStatement => { // {{{
@@ -1613,12 +1619,12 @@ export namespace Generator {
 							.expression(data.condition)
 							.step()
 							.expression(data.whenTrue)
-						
+
 						if data.whenFalse? {
 							do {
 								if data.whenFalse.kind == NodeKind::IfStatement {
 									data = data.whenFalse
-									
+
 									ctrl
 										.step()
 										.code('else if ')
@@ -1632,13 +1638,13 @@ export namespace Generator {
 										.code('else')
 										.step()
 										.expression(data.whenFalse)
-									
+
 									data = null
 								}
 							}
 							while data != null
 						}
-						
+
 						ctrl.done()
 					}
 					NodeKind::ThrowStatement => {
@@ -1665,80 +1671,80 @@ export namespace Generator {
 					.newLine()
 					.code('impl ')
 					.expression(data.variable)
-				
+
 				const block = line.newBlock()
-				
+
 				for property in data.properties {
 					block.statement(property)
 				}
-				
+
 				block.done()
 				line.done()
 			} // }}}
 			NodeKind::ImportDeclaration => { // {{{
 				const line = writer.newLine()
-				
+
 				if data.declarations.length == 1 {
 					line.code('import ').expression(data.declarations[0])
 				}
 				else {
 					const block = line.code('import').newBlock()
-					
+
 					for declaration in data.declarations {
 						block.newLine().expression(declaration).done()
 					}
-					
+
 					block.done()
 				}
-				
+
 				line.done()
 			} // }}}
 			NodeKind::IncludeAgainDeclaration => { // {{{
 				const line = writer.newLine()
-				
+
 				if data.files.length == 1 {
 					line.code('include again ').code(toQuote(data.files[0]))
 				}
 				else {
 					const block = line.code('include again').newBlock()
-					
+
 					for file in data.files {
 						block.newLine().code(toQuote(file)).done()
 					}
-					
+
 					block.done()
 				}
-				
+
 				line.done()
 			} // }}}
 			NodeKind::IncludeDeclaration => { // {{{
 				const line = writer.newLine()
-				
+
 				if data.files.length == 1 {
 					line.code('include ').code(toQuote(data.files[0]))
 				}
 				else {
 					const block = line.code('include').newBlock()
-					
+
 					for file in data.files {
 						block.newLine().code(toQuote(file)).done()
 					}
-					
+
 					block.done()
 				}
-				
+
 				line.done()
 			} // }}}
 			NodeKind::MacroDeclaration => { // {{{
 				const line = writer.newLine()
-				
+
 				toFunctionHeader(data, writer => {
 					writer.code('macro ')
 				}, line)
-				
+
 				if data.body.kind == NodeKind::MacroExpression {
 					line.code(' => ')
-					
+
 					for element in data.body.elements {
 						toMacroElement(element, line)
 					}
@@ -1749,14 +1755,14 @@ export namespace Generator {
 						.expression(data.body)
 						.done()
 				}
-				
+
 				line.done()
 			} // }}}
 			NodeKind::MethodDeclaration => { // {{{
 				const line = writer.newLine()
-				
+
 				toFunctionHeader(data, writer => {}, line)
-				
+
 				if data.body? {
 					if data.body.kind == NodeKind::Block {
 						line
@@ -1768,12 +1774,12 @@ export namespace Generator {
 						line.code(' => ').expression(data.body)
 					}
 				}
-				
+
 				line.done()
 			} // }}}
 			NodeKind::Module => { // {{{
 				toAttributes(data, true, writer)
-				
+
 				for node in data.body {
 					writer.statement(node)
 				}
@@ -1782,7 +1788,7 @@ export namespace Generator {
 				const line = writer
 					.newLine()
 					.code('set')
-				
+
 				if data.body? {
 					if data.body.kind == NodeKind::Block {
 						line.newBlock().expression(data.body).done()
@@ -1791,12 +1797,12 @@ export namespace Generator {
 						line.code(' => ').expression(data.body)
 					}
 				}
-				
+
 				line.done()
 			} // }}}
 			NodeKind::NamespaceDeclaration => { // {{{
 				const line = writer.newLine()
-				
+
 				for modifier in data.modifiers {
 					switch modifier.kind {
 						ModifierKind::Sealed => {
@@ -1804,24 +1810,24 @@ export namespace Generator {
 						}
 					}
 				}
-				
+
 				line.code('namespace ').expression(data.name)
-				
+
 				if data.statements.length != 0 {
 					const block = line.newBlock()
-					
+
 					for statement in data.statements {
 						block.statement(statement)
 					}
-					
+
 					block.done()
 				}
-				
+
 				line.done()
 			} // }}}
 			NodeKind::PropertyDeclaration => { // {{{
 				const line = writer.newLine()
-				
+
 				for modifier in data.modifiers {
 					switch modifier.kind {
 						ModifierKind::Private => {
@@ -1835,86 +1841,86 @@ export namespace Generator {
 						}
 					}
 				}
-				
+
 				line.expression(data.name)
-				
+
 				if data.type? {
 					line.code(': ').expression(data.type)
 				}
-				
+
 				const block = line.newBlock()
-				
+
 				if data.accessor? {
 					block.statement(data.accessor)
 				}
-				
+
 				if data.mutator? {
 					block.statement(data.mutator)
 				}
-				
+
 				block.done()
 				line.done()
 			} // }}}
 			NodeKind::RequireDeclaration => { // {{{
 				const line = writer.newLine()
-				
+
 				if data.declarations.length == 1 {
 					line.code('require ').statement(data.declarations[0])
 				}
 				else {
 					writer.pushMode(KSWriterMode::Extern)
-					
+
 					const block = line.code('require').newBlock()
-					
+
 					for declaration in data.declarations {
 						block.statement(declaration)
 					}
-					
+
 					block.done()
-					
+
 					writer.popMode()
 				}
-				
+
 				line.done()
 			} // }}}
 			NodeKind::RequireOrExternDeclaration => { // {{{
 				const line = writer.newLine()
-				
+
 				if data.declarations.length == 1 {
 					line.code('require|extern ').statement(data.declarations[0])
 				}
 				else {
 					writer.pushMode(KSWriterMode::Extern)
-					
+
 					const block = line.code('require|extern').newBlock()
-					
+
 					for declaration in data.declarations {
 						block.statement(declaration)
 					}
-					
+
 					block.done()
-					
+
 					writer.popMode()
 				}
-				
+
 				line.done()
 			} // }}}
 			NodeKind::RequireOrImportDeclaration => { // {{{
 				const line = writer.newLine()
-				
+
 				if data.declarations.length == 1 {
 					line.code('require|import ').expression(data.declarations[0])
 				}
 				else {
 					const block = line.code('require|import').newBlock()
-					
+
 					for declaration in data.declarations {
 						block.newLine().expression(declaration).done()
 					}
-					
+
 					block.done()
 				}
-				
+
 				line.done()
 			} // }}}
 			NodeKind::ReturnStatement => { // {{{
@@ -1934,40 +1940,40 @@ export namespace Generator {
 			} // }}}
 			NodeKind::SwitchClause => { // {{{
 				const line = writer.newLine()
-				
+
 				if data.conditions.length != 0 {
 					for condition, index in data.conditions {
 						if index != 0 {
 							line.code(', ')
 						}
-						
+
 						line.expression(condition)
 					}
-					
+
 					line.code(' ')
 				}
-				
+
 				if data.bindings.length != 0 {
 					line.code('with ')
-					
+
 					for binding, index in data.bindings {
 						if index != 0 {
 							line.code(', ')
 						}
-						
+
 						line.expression(binding)
 					}
-					
+
 					line.code(' ')
 				}
-				
+
 				if data.filter? {
 					line
 						.code('where ')
 						.expression(data.filter)
 						.code(' ')
 				}
-				
+
 				if data.body.kind == NodeKind::Block {
 					line
 						.code('=>')
@@ -1980,7 +1986,7 @@ export namespace Generator {
 						.code('=> ')
 						.statement(data.body)
 				}
-				
+
 				line.done()
 			} // }}}
 			NodeKind::SwitchStatement => { // {{{
@@ -1989,11 +1995,11 @@ export namespace Generator {
 					.code('switch ')
 					.expression(data.expression)
 					.step()
-				
+
 				for clause in data.clauses {
 					ctrl.statement(clause)
 				}
-				
+
 				ctrl.done()
 			} // }}}
 			NodeKind::ThrowStatement => { // {{{
@@ -2009,19 +2015,19 @@ export namespace Generator {
 					.code('try')
 					.step()
 					.expression(data.body)
-				
+
 				for clause in data.catchClauses {
 					ctrl
 						.step()
 						.statement(clause)
 				}
-				
+
 				if data.catchClause? {
 					ctrl
 						.step()
 						.statement(data.catchClause)
 				}
-				
+
 				if data.finalizer? {
 					ctrl
 						.step()
@@ -2029,7 +2035,7 @@ export namespace Generator {
 						.step()
 						.expression(data.finalizer)
 				}
-				
+
 				ctrl.done()
 			} // }}}
 			NodeKind::TypeAliasDeclaration => { // {{{
@@ -2050,7 +2056,7 @@ export namespace Generator {
 							.expression(data.condition)
 							.step()
 							.expression(data.whenFalse)
-						
+
 						ctrl.done()
 					}
 					NodeKind::ReturnStatement => {
@@ -2094,25 +2100,25 @@ export namespace Generator {
 				const line = writer
 					.newLine()
 					.code(data.rebindable ? 'let ' : 'const ')
-				
+
 				for variable, index in data.variables {
 					if index != 0 {
 						line.code(', ')
 					}
-					
+
 					line.expression(variable)
 				}
-				
+
 				if data.init? {
 					line.code(data.autotype ? ' := ' : ' = ')
-					
+
 					if data.await {
 						line.code('await ')
 					}
-					
+
 					line.expression(data.init)
 				}
-				
+
 				line.done()
 			} // }}}
 			NodeKind::WhileStatement => { // {{{
@@ -2132,7 +2138,7 @@ export namespace Generator {
 			} // }}}
 		}
 	}
-	
+
 	func toWrap(data, writer) {
 		switch data.kind {
 			NodeKind::BinaryExpression where data.operator.kind != BinaryOperatorKind::TypeCasting => { // {{{
@@ -2152,7 +2158,7 @@ export namespace Generator {
 			} // }}}
 		}
 	}
-	
+
 	export generate, KSWriter, KSWriterMode
 }
 
