@@ -579,7 +579,7 @@ export namespace Generator {
 			} // }}}
 			NodeKind::FunctionExpression => { // {{{
 				toFunctionHeader(data, writer => {
-					if writer.mode() == KSWriterMode::Property {
+					if writer.mode() == KSWriterMode::Property && header? {
 						header(writer)
 					}
 					else {
