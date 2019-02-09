@@ -1,4 +1,5 @@
 #![bin]
+#![error(off)]
 
 extern {
 	__dirname: String
@@ -9,10 +10,11 @@ extern {
 }
 
 import {
-	'..'		for generate
-	'chai'		for expect
+	'..'				for generate
+	'@kaoscript/parser'	for parse
+	'chai'				for expect
 	'fs'
-	'klaw-sync'	=> klaw
+	'klaw-sync'			=> klaw
 	'path'
 }
 
@@ -27,7 +29,7 @@ describe('generate', func() {
 			})
 
 			const data = generate(JSON.parse(json, (key, value) => value == 'Infinity' ? Infinity : value))
-			console.log(data)
+			// console.log(data)
 
 			const source = fs.readFileSync(path.join(root, name + '.ks'), {
 				encoding: 'utf8'

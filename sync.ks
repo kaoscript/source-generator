@@ -39,11 +39,13 @@ func update(srcPath) { // {{{
 				encoding: 'utf8'
 			})
 
-			console.log(`--> \(path.join(dirname, filename)).no`)
+			console.log(`- no: \(path.join(dirname, filename))`)
 
 			write(dirname, filename, `\(filename).no`)
 		}
 		catch {
+			console.log(`- new: \(path.join(dirname, filename))`)
+
 			write(dirname, filename, filename)
 		}
 	}
@@ -80,7 +82,7 @@ func check(destPath) { // {{{
 	catch {
 		// delete
 
-		console.log(`deleting \(path.join(dirname, filename.slice(-3))).json`)
+		console.log(`- deleting: \(path.join(dirname, filename.slice(-3))).json`)
 
 		fs.unlinkSync(path.join(destPath, dirname, `\(filename.slice(-3)).json`))
 		fs.unlinkSync(path.join(destPath, dirname, filename))
