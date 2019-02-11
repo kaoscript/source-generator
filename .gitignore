@@ -3,3 +3,4 @@ node_modules
 *.ksh
 *.ksm
 coverage
+.coveralls.yml
