@@ -82,9 +82,9 @@ func check(destPath) { // {{{
 	catch {
 		// delete
 
-		console.log(`- deleting: \(path.join(dirname, filename.slice(-3))).json`)
+		console.log(`- deleting: \(path.join(dirname, filename.slice(0, -3))).json`)
 
-		fs.unlinkSync(path.join(destPath, dirname, `\(filename.slice(-3)).json`))
-		fs.unlinkSync(path.join(destPath, dirname, filename))
+		fs.unlinkSync(path.join(destRoot, dirname, `\(filename.slice(0, -3)).json`))
+		fs.unlinkSync(path.join(destRoot, dirname, filename))
 	}
 } // }}}

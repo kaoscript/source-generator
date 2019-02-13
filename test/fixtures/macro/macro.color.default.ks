@@ -6,19 +6,18 @@ class Color {
 			let field
 			for name, component in data.components {
 				field = `_\(name)`
-				fields.push(macro private #field: Number)
+				fields.push(macro private #i(field): Number)
 				methods.push(macro {
-					#name() => this.getField(#name)
-					#name(value) => this.setField(#name, value)
+					#i(name)() => this.getField(#name)
+					#i(name)(value) => this.setField(#name, value)
 				})
 				data.components[name].field = field
 			}
 			macro {
 				Color.registerSpace(#data)
-				
 				impl Color {
-				#fields
-				#methods
+				#b(fields)
+				#b(methods)
 				}
 			}
 		}

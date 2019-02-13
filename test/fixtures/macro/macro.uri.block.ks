@@ -3,7 +3,7 @@ class URI {
 		import "@zokugun/test-import"
 		const name = `\(scheme[0].toUpperCase())\(scheme.substr().toLowerCase())URI`
 		macro {
-			class #name extends URI {
+			class #i(name) extends URI {
 			private {
 			_e: Number	= #PI
 			}

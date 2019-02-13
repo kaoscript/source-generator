@@ -704,16 +704,12 @@ export namespace Generator {
 
 					let line = o.newLine()
 
-					for element in data.elements til data.elements.length - 1 {
-						line = toMacroElement(element, line, o)
-					}
+					toMacroElements(data.elements, line, o)
 
 					o.done()
 				}
 				else {
-					for element in data.elements {
-						toMacroElement(element, writer)
-					}
+					toMacroElements(data.elements, writer)
 				}
 			} // }}}
 			NodeKind::MemberExpression => { // {{{
@@ -1134,30 +1130,46 @@ export namespace Generator {
 		}
 	} // }}}
 
-	func toMacroElement(data, writer, parent = null) { // {{{
-		switch data.kind {
-			MacroElementKind::Expression => {
-				writer.code('#')
+	func toMacroElements(elements, writer, parent = null) { // {{{
+		const last = elements.length - 1
 
-				if data.reification.kind == ReificationKind::Identifier && data.expression.kind == NodeKind::Identifier {
-					writer.expression(data.expression)
-				}
-				else {
-					switch data.reification.kind {
+		for element, index in elements {
+			switch element.kind {
+				MacroElementKind::Expression => {
+					writer.code('#')
+
+					if element.reification.kind == ReificationKind::Expression && element.expression.kind == NodeKind::Identifier {
+						writer.expression(element.expression)
 					}
+					else {
+						switch element.reification.kind {
+							ReificationKind::Arguments => {
+								writer.code('a')
+							}
+							ReificationKind::Block => {
+								writer.code('b')
+							}
+							ReificationKind::Expression => {
+								writer.code('e')
+							}
+							ReificationKind::Identifier => {
+								writer.code('i')
+							}
+						}
 
-					writer.expression(data.expression)
+						writer.code('(').expression(element.expression).code(')')
+					}
 				}
-			}
-			MacroElementKind::Literal => {
-				writer.code(data.value)
-			}
-			MacroElementKind::NewLine => {
-				return parent.newLine()
+				MacroElementKind::Literal => {
+					writer.code(element.value)
+				}
+				MacroElementKind::NewLine => {
+					if index != 0 && index != last && elements[index - 1].kind != MacroElementKind::NewLine {
+						parent.newLine()
+					}
+				}
 			}
 		}
-
-		return writer
 	} // }}}
 
 	func toQuote(value) { // {{{
@@ -1235,7 +1247,7 @@ export namespace Generator {
 					line.code(' extends ').expression(data.extends)
 				}
 
-				if data.members.length != 0/*  || writer.mode() != KSWriterMode::Extern */ {
+				if data.members.length != 0 {
 					const block = line.newBlock()
 
 					for member in data.members {
@@ -1622,29 +1634,26 @@ export namespace Generator {
 							.step()
 							.expression(data.whenTrue)
 
-						if data.whenFalse? {
-							do {
-								if data.whenFalse.kind == NodeKind::IfStatement {
-									data = data.whenFalse
+						while data?.whenFalse? {
+							if data.whenFalse.kind == NodeKind::IfStatement {
+								data = data.whenFalse
 
-									ctrl
-										.step()
-										.code('else if ')
-										.expression(data.condition)
-										.step()
-										.expression(data.whenTrue)
-								}
-								else {
-									ctrl
-										.step()
-										.code('else')
-										.step()
-										.expression(data.whenFalse)
-
-									data = null
-								}
+								ctrl
+									.step()
+									.code('else if ')
+									.expression(data.condition)
+									.step()
+									.expression(data.whenTrue)
 							}
-							while data != null
+							else {
+								ctrl
+									.step()
+									.code('else')
+									.step()
+									.expression(data.whenFalse)
+
+								data = null
+							}
 						}
 
 						ctrl.done()
@@ -1747,9 +1756,7 @@ export namespace Generator {
 				if data.body.kind == NodeKind::MacroExpression {
 					line.code(' => ')
 
-					for element in data.body.elements {
-						toMacroElement(element, line)
-					}
+					toMacroElements(data.body.elements, line)
 				}
 				else {
 					line
