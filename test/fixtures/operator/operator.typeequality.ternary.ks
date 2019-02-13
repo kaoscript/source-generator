@@ -1,2 +1,2 @@
-if value is string ? foo : bar {
+if (value is string) ? foo : bar {
 }

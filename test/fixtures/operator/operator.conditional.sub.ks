@@ -1,1 +1,1 @@
-let text = foo && bar ? qux || corge ? "a" : "b" : grault + garply ? "c" : waldo ? "d" : "e"
+let text = (foo && bar) ? ((qux || corge) ? "a" : "b") : ((grault + garply) ? "c" : (waldo ? "d" : "e"))

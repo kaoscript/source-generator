@@ -499,18 +499,12 @@ export namespace Generator {
 				writer.code('class ').expression(data.name)
 			} // }}}
 			NodeKind::ConditionalExpression => { // {{{
-				if data.condition.kind == NodeKind::BinaryExpression && data.condition.operator.kind == BinaryOperatorKind::Assignment {
-					writer.code('(').expression(data.condition).code(')')
-				}
-				else {
-					writer.expression(data.condition)
-				}
-
 				writer
+					.wrap(data.condition)
 					.code(' ? ')
-					.expression(data.whenTrue)
+					.wrap(data.whenTrue)
 					.code(' : ')
-					.expression(data.whenFalse)
+					.wrap(data.whenFalse)
 			} // }}}
 			NodeKind::CreateExpression => { // {{{
 				writer.code('new ')
@@ -841,12 +835,12 @@ export namespace Generator {
 				}
 			} // }}}
 			NodeKind::PolyadicExpression => { // {{{
-				writer.expression(data.operands[0])
+				writer.wrap(data.operands[0])
 
 				for operand in data.operands from 1 {
 					writer
 						.code(BinaryOperatorSymbol[data.operator.kind])
-						.expression(operand)
+						.wrap(operand)
 				}
 			} // }}}
 			NodeKind::RegularExpression => { // {{{
@@ -994,11 +988,11 @@ export namespace Generator {
 				if UnaryPrefixOperatorSymbol[data.operator.kind]? {
 					writer
 						.code(UnaryPrefixOperatorSymbol[data.operator.kind])
-						.expression(data.argument)
+						.wrap(data.argument)
 				}
 				else {
 					writer
-						.expression(data.argument)
+						.wrap(data.argument)
 						.code(UnaryPostfixOperatorSymbol[data.operator.kind])
 				}
 			} // }}}

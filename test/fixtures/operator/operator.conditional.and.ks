@@ -1,1 +1,1 @@
-let text = foo && bar ? "hello" : "bonjour"
+let text = (foo && bar) ? "hello" : "bonjour"
