@@ -1477,6 +1477,17 @@ export namespace Generator {
 					ctrl.code(' by ').expression(data.by)
 				}
 
+				if data.until? {
+					ctrl.code(' until ').expression(data.until)
+				}
+				else if data.while? {
+					ctrl.code(' while ').expression(data.while)
+				}
+
+				if data.when? {
+					ctrl.code(' when ').expression(data.when)
+				}
+
 				ctrl
 					.step()
 					.expression(data.body)
@@ -1549,17 +1560,47 @@ export namespace Generator {
 				ctrl.done()
 			} // }}}
 			NodeKind::ForRangeStatement => { // {{{
-				writer
-					.newControl()
+				const ctrl = writer.newControl()
+
+				ctrl
 					.code('for ')
 					.expression(data.value)
 					.code(' in ')
 					.expression(data.from)
-					.code('..')
-					.expression(data.to)
+
+				if data.to? {
+					ctrl
+						.code('..')
+						.expression(data.to)
+				}
+				else {
+					ctrl
+						.code('...')
+						.expression(data.til)
+				}
+
+				if data.by? {
+					ctrl
+						.code('..')
+						.expression(data.by)
+				}
+
+				if data.until? {
+					ctrl.code(' until ').expression(data.until)
+				}
+				else if data.while? {
+					ctrl.code(' while ').expression(data.while)
+				}
+
+				if data.when? {
+					ctrl.code(' when ').expression(data.when)
+				}
+
+				ctrl
 					.step()
 					.expression(data.body)
-					.done()
+
+				ctrl.done()
 			} // }}}
 			NodeKind::ForOfStatement => { // {{{
 				let ctrl
@@ -1592,6 +1633,17 @@ export namespace Generator {
 				}
 
 				ctrl.code(' of ').expression(data.expression)
+
+				if data.until? {
+					ctrl.code(' until ').expression(data.until)
+				}
+				else if data.while? {
+					ctrl.code(' while ').expression(data.while)
+				}
+
+				if data.when? {
+					ctrl.code(' when ').expression(data.when)
+				}
 
 				if data.body.kind == NodeKind::Block {
 					ctrl
