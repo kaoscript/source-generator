@@ -498,6 +498,12 @@ export namespace Generator {
 
 				writer.code('class ').expression(data.name)
 			} // }}}
+			NodeKind::ComputedPropertyName => { // {{{
+				writer
+					.code('[')
+					.expression(data.expression)
+					.code(']')
+			} // }}}
 			NodeKind::ConditionalExpression => { // {{{
 				writer
 					.wrap(data.condition)

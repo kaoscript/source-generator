@@ -9,8 +9,6 @@ extern __dirname, console
 const srcRoot = path.join(__dirname, '..', 'parser', 'test', 'fixtures')
 const destRoot = path.join(__dirname, 'test', 'fixtures')
 
-const files = []
-
 // 1. update existing files
 for file in klaw(srcRoot, {
 	nodir: true,
@@ -21,10 +19,10 @@ for file in klaw(srcRoot, {
 }
 
 func update(srcPath) { // {{{
+	return unless fs.existsSync(srcPath.slice(0, -5) + '.ks')
+
 	const dirname = path.basename(path.dirname(srcPath).substr(srcRoot.length))
 	const filename = path.basename(srcPath)
-
-	files[`\(path.join(dirname, filename))`] = true
 
 	try {
 		fs.readFileSync(path.join(destRoot, dirname, filename), {
