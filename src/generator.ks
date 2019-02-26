@@ -311,9 +311,13 @@ export namespace Generator {
 	} // }}}
 
 	func toAttributes(data, global, writer) { // {{{
-		if data.attributes? {
+		if data.attributes?.length > 0 {
 			for attribute in data.attributes {
 				toAttribute(attribute, global, writer.newLine()).done()
+			}
+
+			if global {
+				writer.newLine().done()
 			}
 		}
 	} // }}}
@@ -430,6 +434,8 @@ export namespace Generator {
 				}
 			} // }}}
 			NodeKind::Block => { // {{{
+				toAttributes(data, true, writer)
+
 				for statement in data.statements {
 					writer.statement(statement)
 				}
@@ -1458,7 +1464,12 @@ export namespace Generator {
 					.code('for ')
 
 				if data.declaration {
-					ctrl.code('let ')
+					if data.rebindable {
+						ctrl.code('let ')
+					}
+					else {
+						ctrl.code('const ')
+					}
 				}
 
 				ctrl
@@ -1509,7 +1520,12 @@ export namespace Generator {
 				}
 
 				if data.declaration {
-					ctrl.code('let ')
+					if data.rebindable {
+						ctrl.code('let ')
+					}
+					else {
+						ctrl.code('const ')
+					}
 				}
 
 				if data.value? {
@@ -1560,10 +1576,20 @@ export namespace Generator {
 				ctrl.done()
 			} // }}}
 			NodeKind::ForRangeStatement => { // {{{
-				const ctrl = writer.newControl()
+				const ctrl = writer
+					.newControl()
+					.code('for ')
+
+				if data.declaration {
+					if data.rebindable {
+						ctrl.code('let ')
+					}
+					else {
+						ctrl.code('const ')
+					}
+				}
 
 				ctrl
-					.code('for ')
 					.expression(data.value)
 					.code(' in ')
 					.expression(data.from)
@@ -1618,7 +1644,12 @@ export namespace Generator {
 				}
 
 				if data.declaration {
-					ctrl.code('let ')
+					if data.rebindable {
+						ctrl.code('let ')
+					}
+					else {
+						ctrl.code('const ')
+					}
 				}
 
 				if data.key? {
