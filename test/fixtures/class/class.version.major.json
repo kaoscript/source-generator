@@ -54,7 +54,7 @@
             "column": 25
           },
           "type": {
-            "kind": 100,
+            "kind": 101,
             "typeName": {
               "kind": 46,
               "name": "String",
@@ -209,7 +209,7 @@
               {
                 "kind": 81,
                 "value": {
-                  "kind": 94,
+                  "kind": 95,
                   "elements": [
                     {
                       "kind": 59,
@@ -224,7 +224,7 @@
                       }
                     },
                     {
-                      "kind": 95,
+                      "kind": 96,
                       "name": {
                         "kind": 46,
                         "name": "color",
@@ -300,15 +300,15 @@
       },
       "version": {
         "major": "1",
-        "minor": "0",
-        "patch": "0",
+        "minor": 0,
+        "patch": 0,
         "start": {
           "line": 1,
           "column": 17
         },
         "end": {
           "line": 1,
-          "column": 22
+          "column": 18
         }
       },
       "attributes": []

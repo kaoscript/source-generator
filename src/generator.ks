@@ -871,6 +871,9 @@ export namespace Generator {
 
 				writer.code(')')
 			} // }}}
+			NodeKind::ShorthandProperty => { // {{{
+				writer.expression(data.name)
+			} // }}}
 			NodeKind::SwitchConditionArray => { // {{{
 				writer.code('[')
 
@@ -1951,6 +1954,13 @@ export namespace Generator {
 				}
 
 				block.done()
+
+				if data.defaultValue? {
+					line.code(' = ')
+
+					line.expression(data.defaultValue)
+				}
+
 				line.done()
 			} // }}}
 			NodeKind::RequireDeclaration => { // {{{
