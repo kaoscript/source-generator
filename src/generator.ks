@@ -619,6 +619,21 @@ export namespace Generator {
 						.expression(data.whenFalse)
 				}
 			} // }}}
+			NodeKind::ImportArgument => { // {{{
+				if data.seeped {
+					writer.code('seep ')
+				}
+
+				if data.imported.start.column == data.local.start.column {
+					writer.expression(data.local)
+				}
+				else {
+					writer
+						.expression(data.imported)
+						.code(': ')
+						.expression(data.local)
+				}
+			} // }}}
 			NodeKind::ImportDeclarator => { // {{{
 				writer.expression(data.source)
 
@@ -731,12 +746,6 @@ export namespace Generator {
 				else {
 					writer.code('.').expression(data.property)
 				}
-			} // }}}
-			NodeKind::NamedArgument => { // {{{
-				writer
-					.expression(data.name)
-					.code(': ')
-					.expression(data.value)
 			} // }}}
 			NodeKind::NumericExpression => { // {{{
 				writer.code(data.value)
@@ -1595,7 +1604,15 @@ export namespace Generator {
 				ctrl
 					.expression(data.value)
 					.code(' in ')
-					.expression(data.from)
+
+				if data.from? {
+					ctrl.expression(data.from)
+				}
+				else {
+					ctrl
+						.expression(data.then)
+						.code('<')
+				}
 
 				if data.to? {
 					ctrl
@@ -1604,7 +1621,7 @@ export namespace Generator {
 				}
 				else {
 					ctrl
-						.code('...')
+						.code('..<')
 						.expression(data.til)
 				}
 
