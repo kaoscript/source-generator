@@ -1035,6 +1035,25 @@ export namespace Generator {
 					.code(' unless ')
 					.expression(data.condition)
 			} // }}}
+			NodeKind::VariableDeclaration => { // {{{
+				writer.code(data.rebindable ? 'let ' : 'const ')
+
+				for variable, index in data.variables {
+					if index != 0 {
+						writer.code(', ')
+					}
+
+					writer.expression(variable)
+				}
+
+				writer.code(data.autotype ? ' := ' : ' = ')
+
+				if data.await {
+					writer.code('await ')
+				}
+
+				writer.expression(data.init)
+			} // }}}
 			NodeKind::VariableDeclarator => { // {{{
 				if data.sealed {
 					writer.code('const ')
@@ -1286,6 +1305,21 @@ export namespace Generator {
 					.code('delete ')
 					.expression(data.variable)
 					.done()
+			} // }}}
+			NodeKind::DiscloseDeclaration => { // {{{
+				const line = writer
+					.newLine()
+					.code('disclose ')
+					.expression(data.name)
+
+				const block = line.newBlock()
+
+				for member in data.members {
+					block.statement(member)
+				}
+
+				block.done()
+				line.done()
 			} // }}}
 			NodeKind::DoUntilStatement => { // {{{
 				writer

@@ -6,7 +6,7 @@ class Color {
 			let field
 			for name, component in data.components {
 				field = `_\(name)`
-				fields.push(macro private #i(field): Number)
+				fields.push(macro private #i(field): #i(component.type))
 				methods.push(macro {
 					#i(name)() => this.getField(#name)
 					#i(name)(value) => this.setField(#name, value)

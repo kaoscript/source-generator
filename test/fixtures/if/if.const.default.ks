@@ -1,0 +1,2 @@
+if const x = foobar() {
+}

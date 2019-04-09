@@ -1,9 +1,9 @@
 {
-  "kind": 65,
+  "kind": 66,
   "attributes": [],
   "body": [
     {
-      "kind": 27,
+      "kind": 28,
       "condition": {
         "kind": 10,
         "operator": {
@@ -26,7 +26,7 @@
           "column": 22
         },
         "left": {
-          "kind": 46,
+          "kind": 47,
           "name": "supply",
           "start": {
             "line": 4,
@@ -38,7 +38,7 @@
           }
         },
         "right": {
-          "kind": 46,
+          "kind": 47,
           "name": "demand",
           "start": {
             "line": 4,
@@ -60,7 +60,7 @@
               "kind": 3
             },
             "callee": {
-              "kind": 46,
+              "kind": 47,
               "name": "sell",
               "start": {
                 "line": 2,
@@ -102,6 +102,58 @@
         "column": 22
       },
       "attributes": []
+    },
+    {
+      "kind": 107,
+      "rebindable": false,
+      "variables": [
+        {
+          "kind": 108,
+          "name": {
+            "kind": 47,
+            "name": "price",
+            "start": {
+              "line": 6,
+              "column": 7
+            },
+            "end": {
+              "line": 6,
+              "column": 12
+            }
+          },
+          "start": {
+            "line": 6,
+            "column": 7
+          },
+          "end": {
+            "line": 6,
+            "column": 12
+          }
+        }
+      ],
+      "autotype": false,
+      "await": false,
+      "init": {
+        "kind": 69,
+        "value": 42,
+        "start": {
+          "line": 6,
+          "column": 15
+        },
+        "end": {
+          "line": 6,
+          "column": 17
+        }
+      },
+      "start": {
+        "line": 6,
+        "column": 1
+      },
+      "end": {
+        "line": 6,
+        "column": 17
+      },
+      "attributes": []
     }
   ],
   "start": {
@@ -109,7 +161,7 @@
     "column": 1
   },
   "end": {
-    "line": 4,
-    "column": 22
+    "line": 6,
+    "column": 17
   }
 }
