@@ -1140,8 +1140,56 @@ export namespace Generator {
 
 	func toLoopHeader(data, writer) { // {{{
 		switch data.kind {
+			NodeKind::ForFromStatement => {
+				writer.code(' for ')
+
+				if data.declaration {
+					if data.rebindable {
+						writer.code('let ')
+					}
+					else {
+						writer.code('const ')
+					}
+				}
+
+				writer
+					.expression(data.variable)
+					.code(' from ')
+					.expression(data.from)
+
+				if data.til? {
+					writer.code(' til ').expression(data.til)
+				}
+				else if data.to? {
+					writer.code(' to ').expression(data.to)
+				}
+
+				if data.by? {
+					writer.code(' by ').expression(data.by)
+				}
+
+				if data.until? {
+					writer.code(' until ').expression(data.until)
+				}
+				else if data.while? {
+					writer.code(' while ').expression(data.while)
+				}
+
+				if data.when? {
+					writer.code(' when ').expression(data.when)
+				}
+			}
 			NodeKind::ForInStatement => {
 				writer.code(' for ')
+
+				if data.declaration {
+					if data.rebindable {
+						writer.code('let ')
+					}
+					else {
+						writer.code('const ')
+					}
+				}
 
 				if data.value? {
 					writer.expression(data.value)
@@ -1156,13 +1204,112 @@ export namespace Generator {
 
 				writer.code(' in ').expression(data.expression)
 
+				if data.desc {
+					writer.code(' desc')
+				}
+
+				if data.from? {
+					writer.code(' from ').expression(data.from)
+				}
+
+				if data.til? {
+					writer.code(' til ').expression(data.til)
+				}
+				else if data.to? {
+					writer.code(' to ').expression(data.to)
+				}
+
+				if data.until? {
+					writer.code(' until ').expression(data.until)
+				}
+				else if data.while? {
+					writer.code(' while ').expression(data.while)
+				}
+
 				if data.when? {
 					writer.code(' when ').expression(data.when)
 				}
 			}
-			=> {
-				console.error(data)
-				throw new Error('Not Implemented')
+			NodeKind::ForOfStatement => {
+				writer.code(' for ')
+
+				if data.declaration {
+					if data.rebindable {
+						writer.code('let ')
+					}
+					else {
+						writer.code('const ')
+					}
+				}
+
+				if data.key? {
+					writer.expression(data.key)
+
+					if data.value? {
+						writer.code(', ').expression(data.value)
+					}
+				}
+				else {
+					writer.code(':').expression(data.value)
+				}
+
+				writer.code(' of ').expression(data.expression)
+
+				if data.until? {
+					writer.code(' until ').expression(data.until)
+				}
+				else if data.while? {
+					writer.code(' while ').expression(data.while)
+				}
+
+				if data.when? {
+					writer.code(' when ').expression(data.when)
+				}
+			}
+			NodeKind::ForRangeStatement => {
+				writer.code(' for ')
+
+				if data.declaration {
+					if data.rebindable {
+						writer.code('let ')
+					}
+					else {
+						writer.code('const ')
+					}
+				}
+
+				writer
+					.expression(data.value)
+					.code(' in ')
+
+				if data.from? {
+					writer.expression(data.from).code('..')
+				}
+				else if data.then? {
+					writer.expression(data.then).code('<..')
+				}
+
+				if data.til? {
+					writer.code('<').expression(data.til)
+				}
+				else if data.to? {
+					writer.code('').expression(data.to)
+				}
+
+				if data.by? {
+					writer.code('..').expression(data.by)
+				}
+
+				if data.until? {
+					writer.code(' until ').expression(data.until)
+				}
+				else if data.while? {
+					writer.code(' while ').expression(data.while)
+				}
+
+				if data.when? {
+					writer.code(' when ').expression(data.when)
+				}
 			}
 		}
 	} // }}}

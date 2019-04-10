@@ -45,6 +45,9 @@ func update(srcPath) { // {{{
 			console.log(`- new: \(path.join(dirname, filename))`)
 
 			write(dirname, filename, filename)
+
+			const ksfile = `\(filename.slice(0, -5)).ks`
+			write(dirname, ksfile, ksfile)
 		}
 	}
 } // }}}
