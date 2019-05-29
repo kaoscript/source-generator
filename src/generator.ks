@@ -47,7 +47,7 @@ export namespace Generator {
 		`\(BinaryOperatorKind::Equality)`			: ' == '
 		`\(BinaryOperatorKind::GreaterThan)`		: ' > '
 		`\(BinaryOperatorKind::GreaterThanOrEqual)`	: ' >= '
-		`\(BinaryOperatorKind::Implies)`			: ' -> '
+		`\(BinaryOperatorKind::Imply)`				: ' -> '
 		`\(BinaryOperatorKind::Inequality)`			: ' != '
 		`\(BinaryOperatorKind::LessThan)`			: ' < '
 		`\(BinaryOperatorKind::LessThanOrEqual)`	: ' <= '
