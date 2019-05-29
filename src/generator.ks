@@ -31,6 +31,7 @@ export namespace Generator {
 		`\(AssignmentOperatorKind::Multiplication)`		: ' *= '
 		`\(AssignmentOperatorKind::NonExistential)`		: ' !?= '
 		`\(AssignmentOperatorKind::NullCoalescing)`		: ' ??= '
+		`\(AssignmentOperatorKind::Quotient)`			: ' /.= '
 		`\(AssignmentOperatorKind::Subtraction)`		: ' -= '
 	}
 
@@ -46,6 +47,7 @@ export namespace Generator {
 		`\(BinaryOperatorKind::Equality)`			: ' == '
 		`\(BinaryOperatorKind::GreaterThan)`		: ' > '
 		`\(BinaryOperatorKind::GreaterThanOrEqual)`	: ' >= '
+		`\(BinaryOperatorKind::Implies)`			: ' -> '
 		`\(BinaryOperatorKind::Inequality)`			: ' != '
 		`\(BinaryOperatorKind::LessThan)`			: ' < '
 		`\(BinaryOperatorKind::LessThanOrEqual)`	: ' <= '
@@ -53,10 +55,12 @@ export namespace Generator {
 		`\(BinaryOperatorKind::Multiplication)`		: ' * '
 		`\(BinaryOperatorKind::NullCoalescing)`		: ' ?? '
 		`\(BinaryOperatorKind::Or)`					: ' || '
+		`\(BinaryOperatorKind::Quotient)`			: ' /. '
 		`\(BinaryOperatorKind::Subtraction)`		: ' - '
 		`\(BinaryOperatorKind::TypeCasting)`		: ':'
 		`\(BinaryOperatorKind::TypeEquality)`		: ' is '
 		`\(BinaryOperatorKind::TypeInequality)`		: ' is not '
+		`\(BinaryOperatorKind::Xor)`				: ' ^^ '
 	}
 
 	const UnaryPrefixOperatorSymbol = {
@@ -503,6 +507,16 @@ export namespace Generator {
 				}
 
 				writer.code('class ').expression(data.name)
+			} // }}}
+			NodeKind::ComparisonExpression => { // {{{
+				for const value, i in data.values {
+					if i % 2 == 0 {
+						writer.wrap(value)
+					}
+					else {
+						writer.code(BinaryOperatorSymbol[value.kind])
+					}
+				}
 			} // }}}
 			NodeKind::ComputedPropertyName => { // {{{
 				writer
@@ -2447,7 +2461,7 @@ export namespace Generator {
 					.expression(data)
 					.code(')')
 			} // }}}
-			NodeKind::ConditionalExpression, NodeKind::PolyadicExpression => { // {{{
+			NodeKind::ComparisonExpression, NodeKind::ConditionalExpression, NodeKind::PolyadicExpression => { // {{{
 				writer
 					.code('(')
 					.expression(data)
