@@ -26,7 +26,7 @@
 	"main": "src/generator.ks",
 	"dependencies": {
 		"@kaoscript/ast": "github:kaoscript/ast",
-		"@kaoscript/source-writer": "^0.1.0"
+		"@kaoscript/source-writer": "github:kaoscript/source-writer"
 	},
 	"devDependencies": {
 		"@kaoscript/coverage-istanbul": "github:kaoscript/coverage-istanbul",
