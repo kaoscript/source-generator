@@ -1256,15 +1256,15 @@ export namespace Generator {
 					}
 				}
 
-				if data.key? {
-					writer.expression(data.key)
+				if data.value? {
+					writer.expression(data.value)
 
-					if data.value? {
-						writer.code(', ').expression(data.value)
+					if data.key? {
+						writer.code(', ').expression(data.key)
 					}
 				}
 				else {
-					writer.code(':').expression(data.value)
+					writer.code(':').expression(data.key)
 				}
 
 				writer.code(' of ').expression(data.expression)
@@ -1763,6 +1763,10 @@ export namespace Generator {
 					ctrl.code(' to ').expression(data.to)
 				}
 
+				if data.by? {
+					ctrl.code(' by ').expression(data.by)
+				}
+
 				if data.until? {
 					ctrl.code(' until ').expression(data.until)
 				}
@@ -1867,15 +1871,15 @@ export namespace Generator {
 					}
 				}
 
-				if data.key? {
-					ctrl.expression(data.key)
+				if data.value? {
+					ctrl.expression(data.value)
 
-					if data.value? {
-						ctrl.code(', ').expression(data.value)
+					if data.key? {
+						ctrl.code(', ').expression(data.key)
 					}
 				}
 				else {
-					ctrl.code(':').expression(data.value)
+					ctrl.code(':').expression(data.key)
 				}
 
 				ctrl.code(' of ').expression(data.expression)
@@ -1955,6 +1959,24 @@ export namespace Generator {
 						}
 
 						ctrl.done()
+					}
+					NodeKind::ReturnStatement => {
+						if data.whenTrue.value? {
+							writer
+								.newLine()
+								.code('return ')
+								.expression(data.whenTrue.value)
+								.code(' if ')
+								.expression(data.condition)
+								.done()
+						}
+						else {
+							writer
+								.newLine()
+								.code('return if ')
+								.expression(data.condition)
+								.done()
+						}
 					}
 					NodeKind::ThrowStatement => {
 						writer
@@ -2374,13 +2396,22 @@ export namespace Generator {
 						ctrl.done()
 					}
 					NodeKind::ReturnStatement => {
-						writer
-							.newLine()
-							.code('return ')
-							.expression(data.whenFalse.value)
-							.code(' unless ')
-							.expression(data.condition)
-							.done()
+						if data.whenFalse.value? {
+							writer
+								.newLine()
+								.code('return ')
+								.expression(data.whenFalse.value)
+								.code(' unless ')
+								.expression(data.condition)
+								.done()
+						}
+						else {
+							writer
+								.newLine()
+								.code('return unless ')
+								.expression(data.condition)
+								.done()
+						}
 					}
 					NodeKind::ThrowStatement => {
 						writer

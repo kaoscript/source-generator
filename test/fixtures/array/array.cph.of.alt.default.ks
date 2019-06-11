@@ -3,4 +3,4 @@ likes = {
 	paul: "chani"
 	duncan: "murbella"
 }
-spicyLikes = [like for :like of likes]
+names = [name for :name of likes]

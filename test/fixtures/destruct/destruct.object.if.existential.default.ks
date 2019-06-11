@@ -1,0 +1,2 @@
+if {bar, baz} ?= foo {
+}

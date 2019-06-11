@@ -3,4 +3,4 @@ likes = {
 	paul: "chani"
 	duncan: "murbella"
 }
-spicyHeroes = [hero for const hero, like of likes]
+spicyHeroes = [hero for const like, hero of likes]

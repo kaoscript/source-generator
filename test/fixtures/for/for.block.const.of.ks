@@ -5,6 +5,6 @@ likes = {
 	paul: "chani"
 	duncan: "murbella"
 }
-for const key, value of likes {
+for const value, key of likes {
 	console.log(`\(key) likes \(value)`)
 }

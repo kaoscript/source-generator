@@ -13,7 +13,7 @@ else
 endif
 
 sync:
-	npx kaoscript sync.ks
+	npx kaoscript scripts/sync.ks
 
 clean:
 	find -L . -type f \( -name "*.ksb" -o -name "*.ksh" -o -name "*.ksm" \) -exec rm {} \;

@@ -3,6 +3,6 @@ likes = {
 	paul: "chani"
 	duncan: "murbella"
 }
-for key, value of likes until key == "duncan" {
+for value, key of likes until key == "duncan" {
 	console.log(`\(key) likes \(value)`)
 }

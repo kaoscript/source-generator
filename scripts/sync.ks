@@ -6,8 +6,8 @@ import 'path'
 
 extern __dirname, console
 
-const srcRoot = path.join(__dirname, '..', 'parser', 'test', 'fixtures')
-const destRoot = path.join(__dirname, 'test', 'fixtures')
+const srcRoot = path.join(__dirname, '..', '..', 'parser', 'test', 'fixtures')
+const destRoot = path.join(__dirname, '..', 'test', 'fixtures')
 
 // 1. update existing files
 func update(srcPath) { // {{{
