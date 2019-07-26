@@ -4,6 +4,7 @@
   "body": [
     {
       "kind": 108,
+      "attributes": [],
       "rebindable": true,
       "variables": [
         {
@@ -112,11 +113,11 @@
       "end": {
         "line": 1,
         "column": 24
-      },
-      "attributes": []
+      }
     },
     {
       "kind": 93,
+      "attributes": [],
       "expression": {
         "kind": 48,
         "name": "v",
@@ -237,6 +238,15 @@
               "elements": [
                 {
                   "kind": 11,
+                  "modifiers": [],
+                  "start": {
+                    "line": 4,
+                    "column": 8
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 13
+                  },
                   "name": {
                     "kind": 48,
                     "name": "first",
@@ -248,18 +258,31 @@
                       "line": 4,
                       "column": 13
                     }
-                  },
-                  "start": {
-                    "line": 4,
-                    "column": 8
-                  },
-                  "end": {
-                    "line": 4,
-                    "column": 13
                   }
                 },
                 {
                   "kind": 11,
+                  "modifiers": [
+                    {
+                      "kind": 10,
+                      "start": {
+                        "line": 4,
+                        "column": 15
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 18
+                      }
+                    }
+                  ],
+                  "start": {
+                    "line": 4,
+                    "column": 15
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 24
+                  },
                   "name": {
                     "kind": 48,
                     "name": "middle",
@@ -271,19 +294,19 @@
                       "line": 4,
                       "column": 24
                     }
-                  },
-                  "start": {
-                    "line": 4,
-                    "column": 15
-                  },
-                  "end": {
-                    "line": 4,
-                    "column": 24
-                  },
-                  "spread": true
+                  }
                 },
                 {
                   "kind": 11,
+                  "modifiers": [],
+                  "start": {
+                    "line": 4,
+                    "column": 26
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 30
+                  },
                   "name": {
                     "kind": 48,
                     "name": "last",
@@ -295,14 +318,6 @@
                       "line": 4,
                       "column": 30
                     }
-                  },
-                  "start": {
-                    "line": 4,
-                    "column": 26
-                  },
-                  "end": {
-                    "line": 4,
-                    "column": 30
                   }
                 }
               ],
@@ -404,8 +419,7 @@
       "end": {
         "line": 6,
         "column": 2
-      },
-      "attributes": []
+      }
     }
   ],
   "start": {

@@ -5,4 +5,4 @@ let foo = {
 	}
 }
 let {bar: {n1, n2: qux}} = foo
-consoloe.log(n1, qux)
+console.log(n1, qux)

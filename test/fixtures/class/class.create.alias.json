@@ -4,6 +4,7 @@
   "body": [
     {
       "kind": 17,
+      "attributes": [],
       "name": {
         "kind": 48,
         "name": "Writer",
@@ -20,9 +21,10 @@
       "members": [
         {
           "kind": 41,
+          "attributes": [],
           "modifiers": [
             {
-              "kind": 5,
+              "kind": 6,
               "start": {
                 "line": 2,
                 "column": 2
@@ -79,6 +81,7 @@
         },
         {
           "kind": 65,
+          "attributes": [],
           "modifiers": [],
           "name": {
             "kind": 48,
@@ -97,7 +100,7 @@
               "kind": 75,
               "modifiers": [
                 {
-                  "kind": 12,
+                  "kind": 14,
                   "start": {
                     "line": 5,
                     "column": 14
@@ -142,6 +145,7 @@
         },
         {
           "kind": 65,
+          "attributes": [],
           "modifiers": [],
           "name": {
             "kind": 48,
@@ -160,7 +164,7 @@
               "kind": 75,
               "modifiers": [
                 {
-                  "kind": 8,
+                  "kind": 10,
                   "arity": {
                     "min": 0,
                     "max": "Infinity"
@@ -285,8 +289,7 @@
       "end": {
         "line": 7,
         "column": 2
-      },
-      "attributes": []
+      }
     }
   ],
   "start": {

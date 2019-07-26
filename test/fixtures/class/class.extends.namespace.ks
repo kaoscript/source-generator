@@ -1,4 +1,6 @@
 namespace T {
-	export class FooX
+	export class FooX {
+	}
 }
-class FooY extends T.FooX
+class FooY extends T.FooX {
+}

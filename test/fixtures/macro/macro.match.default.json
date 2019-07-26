@@ -68,6 +68,7 @@
       ],
       "body": {
         "kind": 63,
+        "attributes": [],
         "elements": [
           {
             "kind": 2,
@@ -121,7 +122,7 @@
           "kind": 75,
           "modifiers": [
             {
-              "kind": 8,
+              "kind": 10,
               "arity": {
                 "min": 0,
                 "max": "Infinity"
@@ -160,6 +161,7 @@
       ],
       "body": {
         "kind": 63,
+        "attributes": [],
         "elements": [
           {
             "kind": 2,

@@ -4,6 +4,7 @@
   "body": [
     {
       "kind": 17,
+      "attributes": [],
       "name": {
         "kind": 48,
         "name": "Shape",
@@ -20,9 +21,10 @@
       "members": [
         {
           "kind": 41,
+          "attributes": [],
           "modifiers": [
             {
-              "kind": 5,
+              "kind": 6,
               "start": {
                 "line": 2,
                 "column": 2
@@ -91,9 +93,10 @@
         },
         {
           "kind": 41,
+          "attributes": [],
           "modifiers": [
             {
-              "kind": 5,
+              "kind": 6,
               "start": {
                 "line": 2,
                 "column": 2
@@ -162,9 +165,10 @@
         },
         {
           "kind": 65,
+          "attributes": [],
           "modifiers": [
             {
-              "kind": 11,
+              "kind": 13,
               "start": {
                 "line": 7,
                 "column": 2
@@ -320,6 +324,7 @@
         },
         {
           "kind": 65,
+          "attributes": [],
           "modifiers": [],
           "name": {
             "kind": 48,
@@ -338,7 +343,7 @@
               "kind": 75,
               "modifiers": [
                 {
-                  "kind": 12,
+                  "kind": 14,
                   "start": {
                     "line": 11,
                     "column": 14
@@ -374,7 +379,7 @@
               "kind": 75,
               "modifiers": [
                 {
-                  "kind": 12,
+                  "kind": 14,
                   "start": {
                     "line": 11,
                     "column": 21
@@ -425,11 +430,11 @@
       "end": {
         "line": 12,
         "column": 2
-      },
-      "attributes": []
+      }
     },
     {
       "kind": 108,
+      "attributes": [],
       "rebindable": true,
       "variables": [
         {
@@ -531,8 +536,7 @@
       "end": {
         "line": 14,
         "column": 37
-      },
-      "attributes": []
+      }
     },
     {
       "kind": 14,

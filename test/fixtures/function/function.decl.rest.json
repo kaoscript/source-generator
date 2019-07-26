@@ -4,6 +4,7 @@
   "body": [
     {
       "kind": 46,
+      "attributes": [],
       "name": {
         "kind": 48,
         "name": "foo",
@@ -53,7 +54,7 @@
           "kind": 75,
           "modifiers": [
             {
-              "kind": 8,
+              "kind": 10,
               "arity": {
                 "min": 0,
                 "max": "Infinity"
@@ -104,8 +105,7 @@
           "line": 2,
           "column": 2
         }
-      },
-      "attributes": []
+      }
     }
   ],
   "start": {

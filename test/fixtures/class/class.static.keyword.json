@@ -4,6 +4,7 @@
   "body": [
     {
       "kind": 17,
+      "attributes": [],
       "name": {
         "kind": 48,
         "name": "Foobar",
@@ -20,9 +21,10 @@
       "members": [
         {
           "kind": 65,
+          "attributes": [],
           "modifiers": [
             {
-              "kind": 7,
+              "kind": 8,
               "start": {
                 "line": 2,
                 "column": 2
@@ -76,8 +78,7 @@
       "end": {
         "line": 3,
         "column": 2
-      },
-      "attributes": []
+      }
     }
   ],
   "start": {

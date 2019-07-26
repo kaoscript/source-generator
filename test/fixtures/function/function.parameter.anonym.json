@@ -4,6 +4,7 @@
   "body": [
     {
       "kind": 46,
+      "attributes": [],
       "name": {
         "kind": 48,
         "name": "foo",
@@ -180,11 +181,11 @@
           "line": 3,
           "column": 2
         }
-      },
-      "attributes": []
+      }
     },
     {
       "kind": 46,
+      "attributes": [],
       "name": {
         "kind": 48,
         "name": "bar",
@@ -361,11 +362,11 @@
           "line": 7,
           "column": 2
         }
-      },
-      "attributes": []
+      }
     },
     {
       "kind": 46,
+      "attributes": [],
       "name": {
         "kind": 48,
         "name": "baz",
@@ -542,11 +543,11 @@
           "line": 11,
           "column": 2
         }
-      },
-      "attributes": []
+      }
     },
     {
       "kind": 46,
+      "attributes": [],
       "name": {
         "kind": 48,
         "name": "qux",
@@ -596,7 +597,7 @@
           "kind": 75,
           "modifiers": [
             {
-              "kind": 8,
+              "kind": 10,
               "arity": {
                 "min": 0,
                 "max": "Infinity"
@@ -739,11 +740,11 @@
           "line": 15,
           "column": 2
         }
-      },
-      "attributes": []
+      }
     },
     {
       "kind": 46,
+      "attributes": [],
       "name": {
         "kind": 48,
         "name": "quux",
@@ -769,7 +770,7 @@
           "kind": 75,
           "modifiers": [
             {
-              "kind": 8,
+              "kind": 10,
               "arity": {
                 "min": 0,
                 "max": "Infinity"
@@ -936,11 +937,11 @@
           "line": 19,
           "column": 2
         }
-      },
-      "attributes": []
+      }
     },
     {
       "kind": 46,
+      "attributes": [],
       "name": {
         "kind": 48,
         "name": "corge",
@@ -1014,7 +1015,7 @@
           "kind": 75,
           "modifiers": [
             {
-              "kind": 8,
+              "kind": 10,
               "arity": {
                 "min": 0,
                 "max": "Infinity"
@@ -1031,7 +1032,7 @@
           ],
           "start": {
             "line": 21,
-            "column": 21
+            "column": 18
           },
           "end": {
             "line": 21,
@@ -1133,11 +1134,11 @@
           "line": 23,
           "column": 2
         }
-      },
-      "attributes": []
+      }
     },
     {
       "kind": 46,
+      "attributes": [],
       "name": {
         "kind": 48,
         "name": "grault",
@@ -1163,7 +1164,7 @@
           "kind": 75,
           "modifiers": [
             {
-              "kind": 8,
+              "kind": 10,
               "arity": {
                 "min": 0,
                 "max": "Infinity"
@@ -1180,7 +1181,7 @@
           ],
           "start": {
             "line": 25,
-            "column": 16
+            "column": 13
           },
           "end": {
             "line": 25,
@@ -1202,8 +1203,7 @@
           "line": 26,
           "column": 2
         }
-      },
-      "attributes": []
+      }
     }
   ],
   "start": {

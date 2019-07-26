@@ -1,0 +1,90 @@
+{
+  "kind": 67,
+  "attributes": [],
+  "body": [
+    {
+      "kind": 53,
+      "attributes": [],
+      "declarations": [
+        {
+          "kind": 54,
+          "source": {
+            "kind": 61,
+            "value": "module1",
+            "start": {
+              "line": 1,
+              "column": 8
+            },
+            "end": {
+              "line": 1,
+              "column": 17
+            }
+          },
+          "specifiers": [],
+          "start": {
+            "line": 1,
+            "column": 8
+          },
+          "end": {
+            "line": 1,
+            "column": 17
+          },
+          "arguments": [
+            {
+              "kind": 52,
+              "modifiers": [
+                {
+                  "kind": 9,
+                  "start": {
+                    "line": 1,
+                    "column": 18
+                  },
+                  "end": {
+                    "line": 1,
+                    "column": 25
+                  }
+                }
+              ],
+              "value": {
+                "kind": 48,
+                "name": "Foobar",
+                "start": {
+                  "line": 1,
+                  "column": 26
+                },
+                "end": {
+                  "line": 1,
+                  "column": 32
+                }
+              },
+              "start": {
+                "line": 1,
+                "column": 18
+              },
+              "end": {
+                "line": 1,
+                "column": 32
+              }
+            }
+          ]
+        }
+      ],
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 1,
+        "column": 17
+      }
+    }
+  ],
+  "start": {
+    "line": 1,
+    "column": 1
+  },
+  "end": {
+    "line": 1,
+    "column": 33
+  }
+}

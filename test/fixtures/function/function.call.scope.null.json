@@ -4,6 +4,7 @@
   "body": [
     {
       "kind": 46,
+      "attributes": [],
       "name": {
         "kind": 48,
         "name": "log",
@@ -29,7 +30,7 @@
           "kind": 75,
           "modifiers": [
             {
-              "kind": 8,
+              "kind": 10,
               "arity": {
                 "min": 0,
                 "max": "Infinity"
@@ -170,8 +171,7 @@
           "line": 3,
           "column": 2
         }
-      },
-      "attributes": []
+      }
     },
     {
       "kind": 14,

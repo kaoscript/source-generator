@@ -1,4 +1,5 @@
-extern|require sealed class Array
+extern|require sealed class Array {
+}
 impl Array {
 	contains(item, from = 0) {
 		return this.indexOf(item, from) != -1

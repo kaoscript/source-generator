@@ -4,9 +4,11 @@
   "body": [
     {
       "kind": 39,
+      "attributes": [],
       "declarations": [
         {
           "kind": 17,
+          "attributes": [],
           "name": {
             "kind": 48,
             "name": "Array",
@@ -21,7 +23,7 @@
           },
           "modifiers": [
             {
-              "kind": 9,
+              "kind": 11,
               "start": {
                 "line": 2,
                 "column": 2
@@ -44,6 +46,7 @@
         },
         {
           "kind": 17,
+          "attributes": [],
           "name": {
             "kind": 48,
             "name": "Function",
@@ -58,7 +61,7 @@
           },
           "modifiers": [
             {
-              "kind": 9,
+              "kind": 11,
               "start": {
                 "line": 3,
                 "column": 2
@@ -81,6 +84,7 @@
         },
         {
           "kind": 17,
+          "attributes": [],
           "name": {
             "kind": 48,
             "name": "Object",
@@ -95,7 +99,7 @@
           },
           "modifiers": [
             {
-              "kind": 9,
+              "kind": 11,
               "start": {
                 "line": 4,
                 "column": 2
@@ -124,8 +128,7 @@
       "end": {
         "line": 5,
         "column": 2
-      },
-      "attributes": []
+      }
     }
   ],
   "start": {

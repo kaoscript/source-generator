@@ -4,6 +4,7 @@
   "body": [
     {
       "kind": 108,
+      "attributes": [],
       "rebindable": true,
       "variables": [
         {
@@ -12,7 +13,8 @@
             "kind": 2,
             "elements": [
               {
-                "kind": 74,
+                "kind": 11,
+                "modifiers": [],
                 "start": {
                   "line": 1,
                   "column": 6
@@ -23,7 +25,8 @@
                 }
               },
               {
-                "kind": 74,
+                "kind": 11,
+                "modifiers": [],
                 "start": {
                   "line": 1,
                   "column": 7
@@ -35,6 +38,15 @@
               },
               {
                 "kind": 11,
+                "modifiers": [],
+                "start": {
+                  "line": 1,
+                  "column": 8
+                },
+                "end": {
+                  "line": 1,
+                  "column": 9
+                },
                 "name": {
                   "kind": 48,
                   "name": "a",
@@ -46,18 +58,19 @@
                     "line": 1,
                     "column": 9
                   }
-                },
-                "start": {
-                  "line": 1,
-                  "column": 8
-                },
-                "end": {
-                  "line": 1,
-                  "column": 9
                 }
               },
               {
                 "kind": 11,
+                "modifiers": [],
+                "start": {
+                  "line": 1,
+                  "column": 10
+                },
+                "end": {
+                  "line": 1,
+                  "column": 11
+                },
                 "name": {
                   "kind": 48,
                   "name": "b",
@@ -69,14 +82,6 @@
                     "line": 1,
                     "column": 11
                   }
-                },
-                "start": {
-                  "line": 1,
-                  "column": 10
-                },
-                "end": {
-                  "line": 1,
-                  "column": 11
                 }
               }
             ],
@@ -181,8 +186,7 @@
       "end": {
         "line": 1,
         "column": 26
-      },
-      "attributes": []
+      }
     },
     {
       "kind": 14,

@@ -1,1 +1,2 @@
-export sealed class Foobar
+export sealed class Foobar {
+}

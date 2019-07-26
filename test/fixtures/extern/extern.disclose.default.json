@@ -4,9 +4,11 @@
   "body": [
     {
       "kind": 39,
+      "attributes": [],
       "declarations": [
         {
           "kind": 17,
+          "attributes": [],
           "name": {
             "kind": 48,
             "name": "String",
@@ -21,7 +23,7 @@
           },
           "modifiers": [
             {
-              "kind": 9,
+              "kind": 11,
               "start": {
                 "line": 1,
                 "column": 8
@@ -50,11 +52,11 @@
       "end": {
         "line": 1,
         "column": 27
-      },
-      "attributes": []
+      }
     },
     {
       "kind": 28,
+      "attributes": [],
       "name": {
         "kind": 48,
         "name": "String",
@@ -70,6 +72,7 @@
       "members": [
         {
           "kind": 65,
+          "attributes": [],
           "modifiers": [],
           "name": {
             "kind": 48,
@@ -88,7 +91,7 @@
               "kind": 75,
               "modifiers": [
                 {
-                  "kind": 8,
+                  "kind": 10,
                   "arity": {
                     "min": 0,
                     "max": "Infinity"
@@ -105,7 +108,7 @@
               ],
               "start": {
                 "line": 4,
-                "column": 11
+                "column": 8
               },
               "end": {
                 "line": 4,
@@ -173,6 +176,7 @@
         },
         {
           "kind": 65,
+          "attributes": [],
           "modifiers": [],
           "name": {
             "kind": 48,
@@ -191,7 +195,7 @@
               "kind": 75,
               "modifiers": [
                 {
-                  "kind": 8,
+                  "kind": 10,
                   "arity": {
                     "min": 0,
                     "max": "Infinity"
@@ -208,7 +212,7 @@
               ],
               "start": {
                 "line": 5,
-                "column": 13
+                "column": 10
               },
               "end": {
                 "line": 5,
@@ -251,6 +255,7 @@
         },
         {
           "kind": 65,
+          "attributes": [],
           "modifiers": [],
           "name": {
             "kind": 48,
@@ -306,8 +311,7 @@
       "end": {
         "line": 7,
         "column": 2
-      },
-      "attributes": []
+      }
     }
   ],
   "start": {

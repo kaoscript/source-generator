@@ -4,6 +4,7 @@
   "body": [
     {
       "kind": 39,
+      "attributes": [],
       "declarations": [
         {
           "kind": 109,
@@ -18,6 +19,14 @@
               "line": 1,
               "column": 15
             }
+          },
+          "start": {
+            "line": 1,
+            "column": 8
+          },
+          "end": {
+            "line": 3,
+            "column": 2
           },
           "type": {
             "kind": 102,
@@ -47,7 +56,7 @@
                       "kind": 75,
                       "modifiers": [
                         {
-                          "kind": 8,
+                          "kind": 10,
                           "arity": {
                             "min": 0,
                             "max": "Infinity"
@@ -113,14 +122,6 @@
               "line": 3,
               "column": 2
             }
-          },
-          "start": {
-            "line": 1,
-            "column": 8
-          },
-          "end": {
-            "line": 3,
-            "column": 2
           }
         }
       ],
@@ -131,8 +132,7 @@
       "end": {
         "line": 3,
         "column": 2
-      },
-      "attributes": []
+      }
     },
     {
       "kind": 10,
@@ -221,6 +221,7 @@
     },
     {
       "kind": 43,
+      "attributes": [],
       "expression": {
         "kind": 48,
         "name": "heroes",
@@ -395,8 +396,7 @@
           "line": 9,
           "column": 2
         }
-      },
-      "attributes": []
+      }
     }
   ],
   "start": {

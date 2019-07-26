@@ -4,6 +4,7 @@
   "body": [
     {
       "kind": 108,
+      "attributes": [],
       "rebindable": true,
       "variables": [
         {
@@ -19,6 +20,14 @@
               "line": 1,
               "column": 6
             }
+          },
+          "start": {
+            "line": 1,
+            "column": 5
+          },
+          "end": {
+            "line": 1,
+            "column": 24
           },
           "type": {
             "kind": 107,
@@ -78,14 +87,6 @@
               "line": 1,
               "column": 24
             }
-          },
-          "start": {
-            "line": 1,
-            "column": 5
-          },
-          "end": {
-            "line": 1,
-            "column": 24
           }
         }
       ],
@@ -96,8 +97,7 @@
       "end": {
         "line": 1,
         "column": 24
-      },
-      "attributes": []
+      }
     }
   ],
   "start": {

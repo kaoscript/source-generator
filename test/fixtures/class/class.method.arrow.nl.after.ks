@@ -1,0 +1,3 @@
+class Foobar {
+	hello() => "Hello :)"
+}

@@ -4,6 +4,7 @@
   "body": [
     {
       "kind": 108,
+      "attributes": [],
       "rebindable": true,
       "variables": [
         {
@@ -51,11 +52,11 @@
       "end": {
         "line": 1,
         "column": 14
-      },
-      "attributes": []
+      }
     },
     {
       "kind": 108,
+      "attributes": [],
       "rebindable": true,
       "variables": [
         {
@@ -103,11 +104,11 @@
       "end": {
         "line": 2,
         "column": 15
-      },
-      "attributes": []
+      }
     },
     {
       "kind": 50,
+      "attributes": [],
       "condition": {
         "kind": 21,
         "values": [
@@ -179,6 +180,15 @@
               "elements": [
                 {
                   "kind": 11,
+                  "modifiers": [],
+                  "start": {
+                    "line": 5,
+                    "column": 3
+                  },
+                  "end": {
+                    "line": 5,
+                    "column": 7
+                  },
                   "name": {
                     "kind": 48,
                     "name": "left",
@@ -190,18 +200,19 @@
                       "line": 5,
                       "column": 7
                     }
-                  },
-                  "start": {
-                    "line": 5,
-                    "column": 3
-                  },
-                  "end": {
-                    "line": 5,
-                    "column": 7
                   }
                 },
                 {
                   "kind": 11,
+                  "modifiers": [],
+                  "start": {
+                    "line": 5,
+                    "column": 9
+                  },
+                  "end": {
+                    "line": 5,
+                    "column": 14
+                  },
                   "name": {
                     "kind": 48,
                     "name": "right",
@@ -213,14 +224,6 @@
                       "line": 5,
                       "column": 14
                     }
-                  },
-                  "start": {
-                    "line": 5,
-                    "column": 9
-                  },
-                  "end": {
-                    "line": 5,
-                    "column": 14
                   }
                 }
               ],
@@ -297,8 +300,7 @@
       "end": {
         "line": 6,
         "column": 2
-      },
-      "attributes": []
+      }
     }
   ],
   "start": {

@@ -4,6 +4,7 @@
   "body": [
     {
       "kind": 108,
+      "attributes": [],
       "rebindable": true,
       "variables": [
         {
@@ -19,6 +20,14 @@
               "line": 1,
               "column": 12
             }
+          },
+          "start": {
+            "line": 1,
+            "column": 5
+          },
+          "end": {
+            "line": 1,
+            "column": 20
           },
           "type": {
             "kind": 102,
@@ -42,14 +51,6 @@
               "line": 1,
               "column": 20
             }
-          },
-          "start": {
-            "line": 1,
-            "column": 5
-          },
-          "end": {
-            "line": 1,
-            "column": 20
           }
         }
       ],
@@ -74,11 +75,11 @@
       "end": {
         "line": 1,
         "column": 24
-      },
-      "attributes": []
+      }
     },
     {
       "kind": 108,
+      "attributes": [],
       "rebindable": true,
       "variables": [
         {
@@ -94,6 +95,14 @@
               "line": 2,
               "column": 8
             }
+          },
+          "start": {
+            "line": 2,
+            "column": 5
+          },
+          "end": {
+            "line": 2,
+            "column": 16
           },
           "type": {
             "kind": 102,
@@ -117,14 +126,6 @@
               "line": 2,
               "column": 16
             }
-          },
-          "start": {
-            "line": 2,
-            "column": 5
-          },
-          "end": {
-            "line": 2,
-            "column": 16
           }
         }
       ],
@@ -149,11 +150,11 @@
       "end": {
         "line": 2,
         "column": 25
-      },
-      "attributes": []
+      }
     },
     {
       "kind": 108,
+      "attributes": [],
       "rebindable": true,
       "variables": [
         {
@@ -169,6 +170,14 @@
               "line": 3,
               "column": 11
             }
+          },
+          "start": {
+            "line": 3,
+            "column": 5
+          },
+          "end": {
+            "line": 3,
+            "column": 19
           },
           "type": {
             "kind": 102,
@@ -192,14 +201,6 @@
               "line": 3,
               "column": 19
             }
-          },
-          "start": {
-            "line": 3,
-            "column": 5
-          },
-          "end": {
-            "line": 3,
-            "column": 19
           }
         }
       ],
@@ -224,11 +225,11 @@
       "end": {
         "line": 3,
         "column": 28
-      },
-      "attributes": []
+      }
     },
     {
       "kind": 108,
+      "attributes": [],
       "rebindable": true,
       "variables": [
         {
@@ -244,6 +245,14 @@
               "line": 4,
               "column": 10
             }
+          },
+          "start": {
+            "line": 4,
+            "column": 5
+          },
+          "end": {
+            "line": 4,
+            "column": 18
           },
           "type": {
             "kind": 102,
@@ -267,14 +276,6 @@
               "line": 4,
               "column": 18
             }
-          },
-          "start": {
-            "line": 4,
-            "column": 5
-          },
-          "end": {
-            "line": 4,
-            "column": 18
           }
         }
       ],
@@ -299,11 +300,11 @@
       "end": {
         "line": 4,
         "column": 26
-      },
-      "attributes": []
+      }
     },
     {
       "kind": 108,
+      "attributes": [],
       "rebindable": true,
       "variables": [
         {
@@ -319,6 +320,14 @@
               "line": 6,
               "column": 7
             }
+          },
+          "start": {
+            "line": 6,
+            "column": 5
+          },
+          "end": {
+            "line": 6,
+            "column": 15
           },
           "type": {
             "kind": 102,
@@ -342,14 +351,6 @@
               "line": 6,
               "column": 15
             }
-          },
-          "start": {
-            "line": 6,
-            "column": 5
-          },
-          "end": {
-            "line": 6,
-            "column": 15
           }
         }
       ],
@@ -374,8 +375,7 @@
       "end": {
         "line": 6,
         "column": 22
-      },
-      "attributes": []
+      }
     }
   ],
   "start": {

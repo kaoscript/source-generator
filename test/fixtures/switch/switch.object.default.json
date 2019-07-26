@@ -4,6 +4,7 @@
   "body": [
     {
       "kind": 108,
+      "attributes": [],
       "rebindable": true,
       "variables": [
         {
@@ -34,9 +35,11 @@
       "await": false,
       "init": {
         "kind": 72,
+        "attributes": [],
         "properties": [
           {
             "kind": 73,
+            "attributes": [],
             "name": {
               "kind": 48,
               "name": "foo",
@@ -72,6 +75,7 @@
           },
           {
             "kind": 73,
+            "attributes": [],
             "name": {
               "kind": 48,
               "name": "bar",
@@ -136,11 +140,11 @@
       "end": {
         "line": 4,
         "column": 2
-      },
-      "attributes": []
+      }
     },
     {
       "kind": 93,
+      "attributes": [],
       "expression": {
         "kind": 48,
         "name": "value",
@@ -313,16 +317,17 @@
                   "kind": 11,
                   "name": {
                     "kind": 48,
-                    "name": "n",
+                    "name": "qux",
                     "start": {
                       "line": 7,
-                      "column": 22
+                      "column": 17
                     },
                     "end": {
                       "line": 7,
-                      "column": 23
+                      "column": 20
                     }
                   },
+                  "modifiers": [],
                   "start": {
                     "line": 7,
                     "column": 17
@@ -333,14 +338,14 @@
                   },
                   "alias": {
                     "kind": 48,
-                    "name": "qux",
+                    "name": "n",
                     "start": {
                       "line": 7,
-                      "column": 17
+                      "column": 22
                     },
                     "end": {
                       "line": 7,
-                      "column": 20
+                      "column": 23
                     }
                   }
                 }
@@ -971,8 +976,7 @@
       "end": {
         "line": 13,
         "column": 2
-      },
-      "attributes": []
+      }
     }
   ],
   "start": {

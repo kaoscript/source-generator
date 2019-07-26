@@ -1,5 +1,8 @@
 extern {
-	sealed class Array
-	sealed class Function
-	sealed class Object
+	sealed class Array {
+	}
+	sealed class Function {
+	}
+	sealed class Object {
+	}
 }

@@ -1,1 +1,2 @@
-export abstract class Foobar
+export abstract class Foobar {
+}
