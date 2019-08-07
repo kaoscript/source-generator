@@ -21,7 +21,7 @@
 		}
 	],
 	"files": [
-		"src"
+		"src/generator.ks"
 	],
 	"main": "src/generator.ks",
 	"dependencies": {
