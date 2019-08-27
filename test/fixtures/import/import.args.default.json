@@ -1,16 +1,16 @@
 {
-  "kind": 67,
+  "kind": 69,
   "attributes": [],
   "body": [
     {
-      "kind": 108,
+      "kind": 110,
       "attributes": [],
       "rebindable": true,
       "variables": [
         {
-          "kind": 109,
+          "kind": 111,
           "name": {
-            "kind": 48,
+            "kind": 49,
             "name": "foo1",
             "start": {
               "line": 1,
@@ -32,9 +32,8 @@
         }
       ],
       "autotype": false,
-      "await": false,
       "init": {
-        "kind": 70,
+        "kind": 72,
         "value": 1,
         "start": {
           "line": 1,
@@ -55,14 +54,14 @@
       }
     },
     {
-      "kind": 108,
+      "kind": 110,
       "attributes": [],
       "rebindable": true,
       "variables": [
         {
-          "kind": 109,
+          "kind": 111,
           "name": {
-            "kind": 48,
+            "kind": 49,
             "name": "foo2",
             "start": {
               "line": 2,
@@ -84,9 +83,8 @@
         }
       ],
       "autotype": false,
-      "await": false,
       "init": {
-        "kind": 70,
+        "kind": 72,
         "value": 2,
         "start": {
           "line": 2,
@@ -107,13 +105,14 @@
       }
     },
     {
-      "kind": 53,
+      "kind": 54,
       "attributes": [],
       "declarations": [
         {
-          "kind": 54,
+          "kind": 55,
+          "attributes": [],
           "source": {
-            "kind": 61,
+            "kind": 63,
             "value": "module1",
             "start": {
               "line": 4,
@@ -135,10 +134,10 @@
           },
           "arguments": [
             {
-              "kind": 52,
+              "kind": 53,
               "modifiers": [],
               "value": {
-                "kind": 48,
+                "kind": 49,
                 "name": "foo1",
                 "start": {
                   "line": 4,
@@ -159,10 +158,10 @@
               }
             },
             {
-              "kind": 52,
+              "kind": 53,
               "modifiers": [],
               "value": {
-                "kind": 48,
+                "kind": 49,
                 "name": "foo2",
                 "start": {
                   "line": 4,

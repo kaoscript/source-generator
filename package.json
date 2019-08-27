@@ -25,12 +25,12 @@
 	],
 	"main": "src/generator.ks",
 	"dependencies": {
-		"@kaoscript/ast": "^0.8.0",
-		"@kaoscript/source-writer": "^0.2.0"
+		"@kaoscript/ast": "github:kaoscript/ast",
+		"@kaoscript/source-writer": "github:kaoscript/source-writer"
 	},
 	"devDependencies": {
 		"@kaoscript/coverage-istanbul": "^0.2.0",
-		"@kaoscript/parser": "^0.7.0",
+		"@kaoscript/parser": "github:kaoscript/parser",
 		"@zokugun/istanbul.cover": "^0.5.0",
 		"@zokugun/istanbul.cover.cmd.mocha": "^0.4.0",
 		"@zokugun/istanbul.reporter.minimap": "^0.5.0",

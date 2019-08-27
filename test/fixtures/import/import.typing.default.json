@@ -1,15 +1,16 @@
 {
-  "kind": 67,
+  "kind": 69,
   "attributes": [],
   "body": [
     {
-      "kind": 53,
+      "kind": 54,
       "attributes": [],
       "declarations": [
         {
-          "kind": 54,
+          "kind": 55,
+          "attributes": [],
           "source": {
-            "kind": 61,
+            "kind": 63,
             "value": "benchmark",
             "start": {
               "line": 1,
@@ -22,9 +23,10 @@
           },
           "specifiers": [
             {
-              "kind": 55,
+              "kind": 57,
+              "attributes": [],
               "local": {
-                "kind": 48,
+                "kind": 49,
                 "name": "Benchmark",
                 "start": {
                   "line": 1,
@@ -65,13 +67,14 @@
       }
     },
     {
-      "kind": 53,
+      "kind": 54,
       "attributes": [],
       "declarations": [
         {
-          "kind": 54,
+          "kind": 55,
+          "attributes": [],
           "source": {
-            "kind": 61,
+            "kind": 63,
             "value": "fs",
             "start": {
               "line": 2,
@@ -103,13 +106,14 @@
       }
     },
     {
-      "kind": 53,
+      "kind": 54,
       "attributes": [],
       "declarations": [
         {
-          "kind": 54,
+          "kind": 55,
+          "attributes": [],
           "source": {
-            "kind": 61,
+            "kind": 63,
             "value": "chevrotain",
             "start": {
               "line": 3,
@@ -122,12 +126,13 @@
           },
           "specifiers": [
             {
-              "kind": 57,
+              "kind": 59,
+              "attributes": [],
               "imported": {
-                "kind": 46,
+                "kind": 47,
                 "attributes": [],
                 "name": {
-                  "kind": 48,
+                  "kind": 49,
                   "name": "createToken",
                   "start": {
                     "line": 4,
@@ -150,7 +155,7 @@
                 "throws": []
               },
               "local": {
-                "kind": 48,
+                "kind": 49,
                 "name": "createToken",
                 "start": {
                   "line": 4,
@@ -171,12 +176,13 @@
               }
             },
             {
-              "kind": 57,
+              "kind": 59,
+              "attributes": [],
               "imported": {
                 "kind": 17,
                 "attributes": [],
                 "name": {
-                  "kind": 48,
+                  "kind": 49,
                   "name": "Lexer",
                   "start": {
                     "line": 5,
@@ -211,7 +217,7 @@
                 }
               },
               "local": {
-                "kind": 48,
+                "kind": 49,
                 "name": "Lexer",
                 "start": {
                   "line": 5,
@@ -232,12 +238,13 @@
               }
             },
             {
-              "kind": 57,
+              "kind": 59,
+              "attributes": [],
               "imported": {
                 "kind": 17,
                 "attributes": [],
                 "name": {
-                  "kind": 48,
+                  "kind": 49,
                   "name": "Parser",
                   "start": {
                     "line": 6,
@@ -272,7 +279,7 @@
                 }
               },
               "local": {
-                "kind": 48,
+                "kind": 49,
                 "name": "Parser",
                 "start": {
                   "line": 6,
@@ -293,12 +300,13 @@
               }
             },
             {
-              "kind": 57,
+              "kind": 59,
+              "attributes": [],
               "imported": {
                 "kind": 17,
                 "attributes": [],
                 "name": {
-                  "kind": 48,
+                  "kind": 49,
                   "name": "Token",
                   "start": {
                     "line": 7,
@@ -333,7 +341,7 @@
                 }
               },
               "local": {
-                "kind": 48,
+                "kind": 49,
                 "name": "Token",
                 "start": {
                   "line": 7,

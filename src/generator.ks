@@ -702,12 +702,15 @@ export namespace Generator {
 					writer.code(')')
 				}
 
-				if data.specifiers.length == 1 {
+				if data.specifiers.length == 1 && data.specifiers[0].attributes.length == 0 {
 					const specifier = data.specifiers[0]
 
 					switch specifier.kind {
 						NodeKind::ImportSpecifier => {
 							writer.code(' for ').expression(specifier)
+						}
+						NodeKind::ImportExclusionSpecifier => {
+							writer.code(' but ').expression(specifier)
 						}
 						NodeKind::ImportNamespaceSpecifier => {
 							writer.code(' => ').expression(specifier)
@@ -717,11 +720,22 @@ export namespace Generator {
 				else if data.specifiers.length != 0 {
 					const block = writer.newBlock()
 
-					for specifier in data.specifiers {
+					for const specifier in data.specifiers {
+						toAttributes(specifier, false, block)
+
 						block.newLine().expression(specifier).done()
 					}
 
 					block.done()
+				}
+			} // }}}
+			NodeKind::ImportExclusionSpecifier => { // {{{
+				for const exclusion, i in data.exclusions {
+					if i != 0 {
+						writer.code(', ')
+					}
+
+					writer.expression(exclusion)
 				}
 			} // }}}
 			NodeKind::ImportNamespaceSpecifier => { // {{{
@@ -1622,7 +1636,7 @@ export namespace Generator {
 			NodeKind::ExportDeclaration => { // {{{
 				const line = writer.newLine()
 
-				if data.declarations.length == 1 {
+				if data.declarations.length == 1 && (!?data.declarations[0].declaration || data.declarations[0].declaration.attributes.length == 0) {
 					line.code('export ').statement(data.declarations[0])
 				}
 				else {
@@ -1638,7 +1652,24 @@ export namespace Generator {
 				line.done()
 			} // }}}
 			NodeKind::ExportDeclarationSpecifier => { // {{{
-				writer.newLine().statement(data.declaration).done()
+				writer.statement(data.declaration)
+			} // }}}
+			NodeKind::ExportExclusionSpecifier => { // {{{
+				const line = writer.newLine().code('*')
+
+				if data.exclusions.length != 0 {
+					line.code(' but ')
+
+					for const exclusion, i in data.exclusions {
+						if i != 0 {
+							line.code(', ')
+						}
+
+						line.expression(exclusion)
+					}
+				}
+
+				line.done()
 			} // }}}
 			NodeKind::ExportNamedSpecifier => { // {{{
 				if data.local.kind == data.exported.kind && data.local.name == data.exported.name {
@@ -1696,7 +1727,7 @@ export namespace Generator {
 			NodeKind::ExternOrRequireDeclaration => { // {{{
 				const line = writer.newLine()
 
-				if data.declarations.length == 1 {
+				if data.declarations.length == 1 && data.declarations[0].attributes.length == 0 {
 					line.code('extern|require ').statement(data.declarations[0])
 				}
 				else {
@@ -1704,7 +1735,7 @@ export namespace Generator {
 
 					const block = line.code('extern|require').newBlock()
 
-					for declaration in data.declarations {
+					for const declaration in data.declarations {
 						block.statement(declaration)
 					}
 
@@ -2097,13 +2128,15 @@ export namespace Generator {
 			NodeKind::ImportDeclaration => { // {{{
 				const line = writer.newLine()
 
-				if data.declarations.length == 1 {
+				if data.declarations.length == 1 && data.declarations[0].attributes.length == 0 {
 					line.code('import ').expression(data.declarations[0])
 				}
 				else {
 					const block = line.code('import').newBlock()
 
-					for declaration in data.declarations {
+					for const declaration in data.declarations {
+						toAttributes(declaration, false, block)
+
 						block.newLine().expression(declaration).done()
 					}
 
@@ -2274,7 +2307,7 @@ export namespace Generator {
 			NodeKind::RequireDeclaration => { // {{{
 				const line = writer.newLine()
 
-				if data.declarations.length == 1 {
+				if data.declarations.length == 1 && data.declarations[0].attributes.length == 0 {
 					line.code('require ').statement(data.declarations[0])
 				}
 				else {
@@ -2296,7 +2329,7 @@ export namespace Generator {
 			NodeKind::RequireOrExternDeclaration => { // {{{
 				const line = writer.newLine()
 
-				if data.declarations.length == 1 {
+				if data.declarations.length == 1 && data.declarations[0].attributes.length == 0 {
 					line.code('require|extern ').statement(data.declarations[0])
 				}
 				else {
@@ -2304,7 +2337,7 @@ export namespace Generator {
 
 					const block = line.code('require|extern').newBlock()
 
-					for declaration in data.declarations {
+					for const declaration in data.declarations {
 						block.statement(declaration)
 					}
 
@@ -2318,13 +2351,15 @@ export namespace Generator {
 			NodeKind::RequireOrImportDeclaration => { // {{{
 				const line = writer.newLine()
 
-				if data.declarations.length == 1 {
+				if data.declarations.length == 1 && data.declarations[0].attributes.length == 0 {
 					line.code('require|import ').expression(data.declarations[0])
 				}
 				else {
 					const block = line.code('require|import').newBlock()
 
-					for declaration in data.declarations {
+					for const declaration in data.declarations {
+						toAttributes(declaration, false, block)
+
 						block.newLine().expression(declaration).done()
 					}
 

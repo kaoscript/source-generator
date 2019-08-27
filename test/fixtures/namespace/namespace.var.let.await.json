@@ -1,15 +1,15 @@
 {
-  "kind": 67,
+  "kind": 69,
   "attributes": [],
   "body": [
     {
-      "kind": 39,
+      "kind": 40,
       "attributes": [],
       "declarations": [
         {
-          "kind": 109,
+          "kind": 111,
           "name": {
-            "kind": 48,
+            "kind": 49,
             "name": "console",
             "start": {
               "line": 1,
@@ -40,10 +40,10 @@
       }
     },
     {
-      "kind": 46,
+      "kind": 47,
       "attributes": [],
       "name": {
-        "kind": 48,
+        "kind": 49,
         "name": "min",
         "start": {
           "line": 3,
@@ -78,7 +78,7 @@
       ],
       "throws": [],
       "body": {
-        "kind": 61,
+        "kind": 63,
         "value": "female",
         "start": {
           "line": 3,
@@ -91,11 +91,11 @@
       }
     },
     {
-      "kind": 69,
+      "kind": 71,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 48,
+        "kind": 49,
         "name": "foo",
         "start": {
           "line": 5,
@@ -108,14 +108,14 @@
       },
       "statements": [
         {
-          "kind": 108,
+          "kind": 110,
           "attributes": [],
           "rebindable": true,
           "variables": [
             {
-              "kind": 109,
+              "kind": 111,
               "name": {
-                "kind": 48,
+                "kind": 49,
                 "name": "gender",
                 "start": {
                   "line": 6,
@@ -135,9 +135,9 @@
                 "column": 20
               },
               "type": {
-                "kind": 102,
+                "kind": 104,
                 "typeName": {
-                  "kind": 48,
+                  "kind": 49,
                   "name": "String",
                   "start": {
                     "line": 6,
@@ -160,34 +160,92 @@
             }
           ],
           "autotype": false,
-          "await": true,
           "init": {
-            "kind": 14,
-            "scope": {
-              "kind": 3
-            },
-            "callee": {
-              "kind": 48,
-              "name": "min",
+            "kind": 9,
+            "operation": {
+              "kind": 14,
+              "scope": {
+                "kind": 3
+              },
+              "callee": {
+                "kind": 49,
+                "name": "min",
+                "start": {
+                  "line": 6,
+                  "column": 29
+                },
+                "end": {
+                  "line": 6,
+                  "column": 32
+                }
+              },
+              "arguments": [],
+              "nullable": false,
               "start": {
                 "line": 6,
                 "column": 29
               },
               "end": {
                 "line": 6,
-                "column": 32
+                "column": 34
               }
             },
-            "arguments": [],
-            "nullable": false,
             "start": {
               "line": 6,
-              "column": 29
+              "column": 6
             },
             "end": {
               "line": 6,
               "column": 34
-            }
+            },
+            "variables": [
+              {
+                "kind": 111,
+                "name": {
+                  "kind": 49,
+                  "name": "gender",
+                  "start": {
+                    "line": 6,
+                    "column": 6
+                  },
+                  "end": {
+                    "line": 6,
+                    "column": 12
+                  }
+                },
+                "start": {
+                  "line": 6,
+                  "column": 6
+                },
+                "end": {
+                  "line": 6,
+                  "column": 20
+                },
+                "type": {
+                  "kind": 104,
+                  "typeName": {
+                    "kind": 49,
+                    "name": "String",
+                    "start": {
+                      "line": 6,
+                      "column": 14
+                    },
+                    "end": {
+                      "line": 6,
+                      "column": 20
+                    }
+                  },
+                  "start": {
+                    "line": 6,
+                    "column": 14
+                  },
+                  "end": {
+                    "line": 6,
+                    "column": 20
+                  }
+                }
+              }
+            ]
           },
           "start": {
             "line": 6,
@@ -214,9 +272,9 @@
         "kind": 3
       },
       "callee": {
-        "kind": 64,
+        "kind": 66,
         "object": {
-          "kind": 48,
+          "kind": 49,
           "name": "console",
           "start": {
             "line": 9,
@@ -228,7 +286,7 @@
           }
         },
         "property": {
-          "kind": 48,
+          "kind": 49,
           "name": "log",
           "start": {
             "line": 9,
@@ -252,12 +310,12 @@
       },
       "arguments": [
         {
-          "kind": 96,
+          "kind": 98,
           "elements": [
             {
-              "kind": 64,
+              "kind": 66,
               "object": {
-                "kind": 48,
+                "kind": 49,
                 "name": "foo",
                 "start": {
                   "line": 9,
@@ -269,7 +327,7 @@
                 }
               },
               "property": {
-                "kind": 48,
+                "kind": 49,
                 "name": "gender",
                 "start": {
                   "line": 9,

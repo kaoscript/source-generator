@@ -1,0 +1,5 @@
+require {
+	#[foobar]
+	class Foobar {
+	}
+}
