@@ -2049,7 +2049,7 @@ export namespace Generator {
 							.step()
 							.expression(data.whenTrue)
 
-						while data?.whenFalse? {
+						while data.whenFalse? {
 							if data.whenFalse.kind == NodeKind::IfStatement {
 								data = data.whenFalse
 
@@ -2067,7 +2067,7 @@ export namespace Generator {
 									.step()
 									.expression(data.whenFalse)
 
-								data = null
+								break
 							}
 						}
 
