@@ -1,16 +1,29 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [
+        {
+          "kind": 10,
+          "start": {
+            "line": 1,
+            "column": 1
+          },
+          "end": {
+            "line": 1,
+            "column": 6
+          }
+        }
+      ],
       "attributes": [],
-      "rebindable": false,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "original",
             "start": {
               "line": 1,
@@ -31,16 +44,23 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 1,
+        "column": 32
+      },
       "init": {
-        "kind": 74,
+        "kind": 75,
         "attributes": [],
         "properties": [
           {
-            "kind": 75,
+            "kind": 76,
             "attributes": [],
             "name": {
-              "kind": 49,
+              "kind": 50,
               "name": "a",
               "start": {
                 "line": 1,
@@ -52,7 +72,7 @@
               }
             },
             "value": {
-              "kind": 72,
+              "kind": 73,
               "value": 1,
               "start": {
                 "line": 1,
@@ -73,10 +93,10 @@
             }
           },
           {
-            "kind": 75,
+            "kind": 76,
             "attributes": [],
             "name": {
-              "kind": 49,
+              "kind": 50,
               "name": "b",
               "start": {
                 "line": 1,
@@ -88,7 +108,7 @@
               }
             },
             "value": {
-              "kind": 72,
+              "kind": 73,
               "value": 2,
               "start": {
                 "line": 1,
@@ -117,25 +137,30 @@
           "line": 1,
           "column": 32
         }
-      },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 1,
-        "column": 32
       }
     },
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [
+        {
+          "kind": 10,
+          "start": {
+            "line": 2,
+            "column": 1
+          },
+          "end": {
+            "line": 2,
+            "column": 6
+          }
+        }
+      ],
       "attributes": [],
-      "rebindable": false,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "copy",
             "start": {
               "line": 2,
@@ -156,15 +181,22 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 2,
+        "column": 1
+      },
+      "end": {
+        "line": 2,
+        "column": 35
+      },
       "init": {
-        "kind": 74,
+        "kind": 75,
         "attributes": [],
         "properties": [
           {
-            "kind": 105,
+            "kind": 107,
             "operator": {
-              "kind": 9,
+              "kind": 11,
               "start": {
                 "line": 2,
                 "column": 16
@@ -175,7 +207,7 @@
               }
             },
             "argument": {
-              "kind": 49,
+              "kind": 50,
               "name": "original",
               "start": {
                 "line": 2,
@@ -196,10 +228,10 @@
             }
           },
           {
-            "kind": 75,
+            "kind": 76,
             "attributes": [],
             "name": {
-              "kind": 49,
+              "kind": 50,
               "name": "c",
               "start": {
                 "line": 2,
@@ -211,7 +243,7 @@
               }
             },
             "value": {
-              "kind": 72,
+              "kind": 73,
               "value": 3,
               "start": {
                 "line": 2,
@@ -240,14 +272,6 @@
           "line": 2,
           "column": 35
         }
-      },
-      "start": {
-        "line": 2,
-        "column": 1
-      },
-      "end": {
-        "line": 2,
-        "column": 35
       }
     }
   ],

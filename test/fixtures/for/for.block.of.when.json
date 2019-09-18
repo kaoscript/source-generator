@@ -1,5 +1,5 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
@@ -17,7 +17,7 @@
         }
       },
       "left": {
-        "kind": 49,
+        "kind": 50,
         "name": "likes",
         "start": {
           "line": 1,
@@ -29,14 +29,14 @@
         }
       },
       "right": {
-        "kind": 74,
+        "kind": 75,
         "attributes": [],
         "properties": [
           {
-            "kind": 75,
+            "kind": 76,
             "attributes": [],
             "name": {
-              "kind": 49,
+              "kind": 50,
               "name": "leto",
               "start": {
                 "line": 2,
@@ -48,7 +48,7 @@
               }
             },
             "value": {
-              "kind": 63,
+              "kind": 64,
               "value": "spice",
               "start": {
                 "line": 2,
@@ -69,10 +69,10 @@
             }
           },
           {
-            "kind": 75,
+            "kind": 76,
             "attributes": [],
             "name": {
-              "kind": 49,
+              "kind": 50,
               "name": "paul",
               "start": {
                 "line": 3,
@@ -84,7 +84,7 @@
               }
             },
             "value": {
-              "kind": 63,
+              "kind": 64,
               "value": "chani",
               "start": {
                 "line": 3,
@@ -105,10 +105,10 @@
             }
           },
           {
-            "kind": 75,
+            "kind": 76,
             "attributes": [],
             "name": {
-              "kind": 49,
+              "kind": 50,
               "name": "duncan",
               "start": {
                 "line": 4,
@@ -120,7 +120,7 @@
               }
             },
             "value": {
-              "kind": 63,
+              "kind": 64,
               "value": "murbella",
               "start": {
                 "line": 4,
@@ -163,8 +163,9 @@
     {
       "kind": 45,
       "attributes": [],
+      "modifiers": [],
       "expression": {
-        "kind": 49,
+        "kind": 50,
         "name": "likes",
         "start": {
           "line": 7,
@@ -175,7 +176,6 @@
           "column": 24
         }
       },
-      "declaration": false,
       "start": {
         "line": 7,
         "column": 1
@@ -185,7 +185,7 @@
         "column": 2
       },
       "value": {
-        "kind": 49,
+        "kind": 50,
         "name": "value",
         "start": {
           "line": 7,
@@ -197,7 +197,7 @@
         }
       },
       "key": {
-        "kind": 49,
+        "kind": 50,
         "name": "key",
         "start": {
           "line": 7,
@@ -210,11 +210,12 @@
       },
       "when": {
         "kind": 14,
+        "modifiers": [],
         "scope": {
           "kind": 3
         },
         "callee": {
-          "kind": 49,
+          "kind": 50,
           "name": "isFremen",
           "start": {
             "line": 7,
@@ -227,7 +228,7 @@
         },
         "arguments": [
           {
-            "kind": 49,
+            "kind": 50,
             "name": "key",
             "start": {
               "line": 7,
@@ -239,7 +240,6 @@
             }
           }
         ],
-        "nullable": false,
         "start": {
           "line": 7,
           "column": 25
@@ -255,13 +255,15 @@
         "statements": [
           {
             "kind": 14,
+            "modifiers": [],
             "scope": {
               "kind": 3
             },
             "callee": {
-              "kind": 66,
+              "kind": 67,
+              "modifiers": [],
               "object": {
-                "kind": 49,
+                "kind": 50,
                 "name": "console",
                 "start": {
                   "line": 8,
@@ -273,7 +275,7 @@
                 }
               },
               "property": {
-                "kind": 49,
+                "kind": 50,
                 "name": "log",
                 "start": {
                   "line": 8,
@@ -284,8 +286,6 @@
                   "column": 13
                 }
               },
-              "computed": false,
-              "nullable": false,
               "start": {
                 "line": 8,
                 "column": 2
@@ -297,10 +297,10 @@
             },
             "arguments": [
               {
-                "kind": 98,
+                "kind": 99,
                 "elements": [
                   {
-                    "kind": 49,
+                    "kind": 50,
                     "name": "key",
                     "start": {
                       "line": 8,
@@ -312,7 +312,7 @@
                     }
                   },
                   {
-                    "kind": 63,
+                    "kind": 64,
                     "value": " likes ",
                     "start": {
                       "line": 8,
@@ -324,7 +324,7 @@
                     }
                   },
                   {
-                    "kind": 49,
+                    "kind": 50,
                     "name": "value",
                     "start": {
                       "line": 8,
@@ -346,7 +346,6 @@
                 }
               }
             ],
-            "nullable": false,
             "start": {
               "line": 8,
               "column": 2

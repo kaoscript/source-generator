@@ -1,9 +1,9 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
-      "kind": 51,
+      "kind": 52,
       "attributes": [],
       "condition": {
         "kind": 23,
@@ -29,7 +29,7 @@
             }
           },
           "left": {
-            "kind": 49,
+            "kind": 50,
             "name": "value",
             "start": {
               "line": 1,
@@ -41,9 +41,10 @@
             }
           },
           "right": {
-            "kind": 104,
+            "kind": 106,
+            "modifiers": [],
             "typeName": {
-              "kind": 49,
+              "kind": 50,
               "name": "string",
               "start": {
                 "line": 1,
@@ -73,7 +74,7 @@
           }
         },
         "whenTrue": {
-          "kind": 49,
+          "kind": 50,
           "name": "foo",
           "start": {
             "line": 1,
@@ -85,7 +86,7 @@
           }
         },
         "whenFalse": {
-          "kind": 49,
+          "kind": 50,
           "name": "bar",
           "start": {
             "line": 1,

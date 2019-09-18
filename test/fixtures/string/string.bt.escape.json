@@ -1,16 +1,17 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "foobar",
             "start": {
               "line": 1,
@@ -31,12 +32,19 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 1,
+        "column": 29
+      },
       "init": {
-        "kind": 98,
+        "kind": 99,
         "elements": [
           {
-            "kind": 63,
+            "kind": 64,
             "value": "abc\\\\(xyz)def",
             "start": {
               "line": 1,
@@ -56,14 +64,6 @@
           "line": 1,
           "column": 29
         }
-      },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 1,
-        "column": 29
       }
     }
   ],

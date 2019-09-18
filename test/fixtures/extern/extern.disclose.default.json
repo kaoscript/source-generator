@@ -1,5 +1,5 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
@@ -10,7 +10,7 @@
           "kind": 17,
           "attributes": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "String",
             "start": {
               "line": 1,
@@ -23,7 +23,7 @@
           },
           "modifiers": [
             {
-              "kind": 11,
+              "kind": 19,
               "start": {
                 "line": 1,
                 "column": 8
@@ -58,7 +58,7 @@
       "kind": 28,
       "attributes": [],
       "name": {
-        "kind": 49,
+        "kind": 50,
         "name": "String",
         "start": {
           "line": 3,
@@ -71,11 +71,11 @@
       },
       "members": [
         {
-          "kind": 67,
+          "kind": 68,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "split",
             "start": {
               "line": 4,
@@ -88,10 +88,10 @@
           },
           "parameters": [
             {
-              "kind": 77,
+              "kind": 78,
               "modifiers": [
                 {
-                  "kind": 10,
+                  "kind": 18,
                   "arity": {
                     "min": 0,
                     "max": "Infinity"
@@ -125,9 +125,10 @@
             "column": 27
           },
           "type": {
-            "kind": 104,
+            "kind": 106,
+            "modifiers": [],
             "typeName": {
-              "kind": 49,
+              "kind": 50,
               "name": "Array",
               "start": {
                 "line": 4,
@@ -138,11 +139,20 @@
                 "column": 19
               }
             },
+            "start": {
+              "line": 4,
+              "column": 14
+            },
+            "end": {
+              "line": 4,
+              "column": 27
+            },
             "typeParameters": [
               {
-                "kind": 104,
+                "kind": 106,
+                "modifiers": [],
                 "typeName": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "String",
                   "start": {
                     "line": 4,
@@ -162,24 +172,16 @@
                   "column": 26
                 }
               }
-            ],
-            "start": {
-              "line": 4,
-              "column": 14
-            },
-            "end": {
-              "line": 4,
-              "column": 27
-            }
+            ]
           },
           "throws": []
         },
         {
-          "kind": 67,
+          "kind": 68,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "replace",
             "start": {
               "line": 5,
@@ -192,10 +194,10 @@
           },
           "parameters": [
             {
-              "kind": 77,
+              "kind": 78,
               "modifiers": [
                 {
-                  "kind": 10,
+                  "kind": 18,
                   "arity": {
                     "min": 0,
                     "max": "Infinity"
@@ -229,9 +231,10 @@
             "column": 22
           },
           "type": {
-            "kind": 104,
+            "kind": 106,
+            "modifiers": [],
             "typeName": {
-              "kind": 49,
+              "kind": 50,
               "name": "String",
               "start": {
                 "line": 5,
@@ -254,11 +257,11 @@
           "throws": []
         },
         {
-          "kind": 67,
+          "kind": 68,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "trim",
             "start": {
               "line": 6,
@@ -279,9 +282,10 @@
             "column": 16
           },
           "type": {
-            "kind": 104,
+            "kind": 106,
+            "modifiers": [],
             "typeName": {
-              "kind": 49,
+              "kind": 50,
               "name": "String",
               "start": {
                 "line": 6,

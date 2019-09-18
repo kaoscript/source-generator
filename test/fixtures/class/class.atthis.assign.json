@@ -1,12 +1,12 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
       "kind": 17,
       "attributes": [],
       "name": {
-        "kind": 49,
+        "kind": 50,
         "name": "Greetings",
         "start": {
           "line": 1,
@@ -24,7 +24,7 @@
           "attributes": [],
           "modifiers": [
             {
-              "kind": 6,
+              "kind": 14,
               "start": {
                 "line": 2,
                 "column": 2
@@ -36,7 +36,7 @@
             }
           ],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "_message",
             "start": {
               "line": 3,
@@ -56,9 +56,10 @@
             "column": 24
           },
           "type": {
-            "kind": 104,
+            "kind": 106,
+            "modifiers": [],
             "typeName": {
-              "kind": 49,
+              "kind": 50,
               "name": "String",
               "start": {
                 "line": 3,
@@ -79,7 +80,7 @@
             }
           },
           "defaultValue": {
-            "kind": 63,
+            "kind": 64,
             "value": "",
             "start": {
               "line": 3,
@@ -92,11 +93,11 @@
           }
         },
         {
-          "kind": 67,
+          "kind": 68,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "constructor",
             "start": {
               "line": 6,
@@ -109,7 +110,7 @@
           },
           "parameters": [
             {
-              "kind": 77,
+              "kind": 78,
               "modifiers": [],
               "start": {
                 "line": 6,
@@ -120,7 +121,7 @@
                 "column": 30
               },
               "name": {
-                "kind": 49,
+                "kind": 50,
                 "name": "message",
                 "start": {
                   "line": 6,
@@ -132,9 +133,22 @@
                 }
               },
               "type": {
-                "kind": 104,
+                "kind": 106,
+                "modifiers": [
+                  {
+                    "kind": 11,
+                    "start": {
+                      "line": 6,
+                      "column": 29
+                    },
+                    "end": {
+                      "line": 6,
+                      "column": 30
+                    }
+                  }
+                ],
                 "typeName": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "String",
                   "start": {
                     "line": 6,
@@ -152,8 +166,7 @@
                 "end": {
                   "line": 6,
                   "column": 30
-                },
-                "nullable": true
+                }
               }
             }
           ],
@@ -185,9 +198,9 @@
                   }
                 },
                 "left": {
-                  "kind": 99,
+                  "kind": 100,
                   "name": {
-                    "kind": 49,
+                    "kind": 50,
                     "name": "message",
                     "start": {
                       "line": 7,
@@ -221,7 +234,7 @@
                     "kind": 21,
                     "values": [
                       {
-                        "kind": 49,
+                        "kind": 50,
                         "name": "message",
                         "start": {
                           "line": 7,
@@ -244,7 +257,7 @@
                         }
                       },
                       {
-                        "kind": 49,
+                        "kind": 50,
                         "name": "null",
                         "start": {
                           "line": 7,
@@ -266,7 +279,7 @@
                     }
                   },
                   "whenTrue": {
-                    "kind": 63,
+                    "kind": 64,
                     "value": "Hello!",
                     "start": {
                       "line": 7,
@@ -278,7 +291,7 @@
                     }
                   },
                   "whenFalse": {
-                    "kind": 49,
+                    "kind": 50,
                     "name": "message",
                     "start": {
                       "line": 7,

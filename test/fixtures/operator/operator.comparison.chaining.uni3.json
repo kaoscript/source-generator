@@ -1,16 +1,17 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "isHealthy",
             "start": {
               "line": 1,
@@ -31,12 +32,19 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 1,
+        "column": 39
+      },
       "init": {
         "kind": 21,
         "values": [
           {
-            "kind": 72,
+            "kind": 73,
             "value": 200,
             "start": {
               "line": 1,
@@ -59,7 +67,7 @@
             }
           },
           {
-            "kind": 49,
+            "kind": 50,
             "name": "cholesterol",
             "start": {
               "line": 1,
@@ -82,7 +90,7 @@
             }
           },
           {
-            "kind": 72,
+            "kind": 73,
             "value": 60,
             "start": {
               "line": 1,
@@ -102,14 +110,6 @@
           "line": 1,
           "column": 39
         }
-      },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 1,
-        "column": 39
       }
     }
   ],

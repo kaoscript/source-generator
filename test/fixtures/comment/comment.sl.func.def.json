@@ -1,12 +1,12 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
       "kind": 47,
       "attributes": [],
       "name": {
-        "kind": 49,
+        "kind": 50,
         "name": "foo",
         "start": {
           "line": 1,
@@ -33,14 +33,15 @@
         "attributes": [],
         "statements": [
           {
-            "kind": 110,
+            "kind": 112,
+            "modifiers": [],
             "attributes": [],
-            "rebindable": true,
             "variables": [
               {
-                "kind": 111,
+                "kind": 113,
+                "modifiers": [],
                 "name": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "foo",
                   "start": {
                     "line": 3,
@@ -61,9 +62,16 @@
                 }
               }
             ],
-            "autotype": false,
+            "start": {
+              "line": 3,
+              "column": 2
+            },
+            "end": {
+              "line": 3,
+              "column": 14
+            },
             "init": {
-              "kind": 72,
+              "kind": 73,
               "value": 42,
               "start": {
                 "line": 3,
@@ -73,25 +81,18 @@
                 "line": 3,
                 "column": 14
               }
-            },
-            "start": {
-              "line": 3,
-              "column": 2
-            },
-            "end": {
-              "line": 3,
-              "column": 14
             }
           },
           {
-            "kind": 110,
+            "kind": 112,
+            "modifiers": [],
             "attributes": [],
-            "rebindable": true,
             "variables": [
               {
-                "kind": 111,
+                "kind": 113,
+                "modifiers": [],
                 "name": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "bar",
                   "start": {
                     "line": 5,
@@ -112,9 +113,16 @@
                 }
               }
             ],
-            "autotype": false,
+            "start": {
+              "line": 5,
+              "column": 2
+            },
+            "end": {
+              "line": 5,
+              "column": 14
+            },
             "init": {
-              "kind": 72,
+              "kind": 73,
               "value": 24,
               "start": {
                 "line": 5,
@@ -124,14 +132,6 @@
                 "line": 5,
                 "column": 14
               }
-            },
-            "start": {
-              "line": 5,
-              "column": 2
-            },
-            "end": {
-              "line": 5,
-              "column": 14
             }
           }
         ],

@@ -1,5 +1,5 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
@@ -7,9 +7,10 @@
       "attributes": [],
       "declarations": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "console",
             "start": {
               "line": 1,
@@ -40,11 +41,11 @@
       }
     },
     {
-      "kind": 71,
+      "kind": 72,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 49,
+        "kind": 50,
         "name": "Float",
         "start": {
           "line": 3,
@@ -57,14 +58,15 @@
       },
       "statements": [
         {
-          "kind": 110,
+          "kind": 112,
+          "modifiers": [],
           "attributes": [],
-          "rebindable": true,
           "variables": [
             {
-              "kind": 111,
+              "kind": 113,
+              "modifiers": [],
               "name": {
-                "kind": 49,
+                "kind": 50,
                 "name": "PI",
                 "start": {
                   "line": 4,
@@ -84,9 +86,10 @@
                 "column": 16
               },
               "type": {
-                "kind": 104,
+                "kind": 106,
+                "modifiers": [],
                 "typeName": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "Number",
                   "start": {
                     "line": 4,
@@ -108,9 +111,16 @@
               }
             }
           ],
-          "autotype": false,
+          "start": {
+            "line": 4,
+            "column": 2
+          },
+          "end": {
+            "line": 4,
+            "column": 23
+          },
           "init": {
-            "kind": 72,
+            "kind": 73,
             "value": 3.14,
             "start": {
               "line": 4,
@@ -120,25 +130,18 @@
               "line": 4,
               "column": 23
             }
-          },
-          "start": {
-            "line": 4,
-            "column": 2
-          },
-          "end": {
-            "line": 4,
-            "column": 23
           }
         },
         {
-          "kind": 110,
+          "kind": 112,
+          "modifiers": [],
           "attributes": [],
-          "rebindable": true,
           "variables": [
             {
-              "kind": 111,
+              "kind": 113,
+              "modifiers": [],
               "name": {
-                "kind": 49,
+                "kind": 50,
                 "name": "name",
                 "start": {
                   "line": 5,
@@ -158,9 +161,10 @@
                 "column": 18
               },
               "type": {
-                "kind": 104,
+                "kind": 106,
+                "modifiers": [],
                 "typeName": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "String",
                   "start": {
                     "line": 5,
@@ -182,9 +186,16 @@
               }
             }
           ],
-          "autotype": false,
+          "start": {
+            "line": 5,
+            "column": 2
+          },
+          "end": {
+            "line": 5,
+            "column": 27
+          },
           "init": {
-            "kind": 63,
+            "kind": 64,
             "value": "john",
             "start": {
               "line": 5,
@@ -194,14 +205,6 @@
               "line": 5,
               "column": 27
             }
-          },
-          "start": {
-            "line": 5,
-            "column": 2
-          },
-          "end": {
-            "line": 5,
-            "column": 27
           }
         }
       ],
@@ -216,13 +219,15 @@
     },
     {
       "kind": 14,
+      "modifiers": [],
       "scope": {
         "kind": 3
       },
       "callee": {
-        "kind": 66,
+        "kind": 67,
+        "modifiers": [],
         "object": {
-          "kind": 49,
+          "kind": 50,
           "name": "console",
           "start": {
             "line": 8,
@@ -234,7 +239,7 @@
           }
         },
         "property": {
-          "kind": 49,
+          "kind": 50,
           "name": "log",
           "start": {
             "line": 8,
@@ -245,8 +250,6 @@
             "column": 12
           }
         },
-        "computed": false,
-        "nullable": false,
         "start": {
           "line": 8,
           "column": 1
@@ -258,9 +261,10 @@
       },
       "arguments": [
         {
-          "kind": 66,
+          "kind": 67,
+          "modifiers": [],
           "object": {
-            "kind": 49,
+            "kind": 50,
             "name": "Float",
             "start": {
               "line": 8,
@@ -272,7 +276,7 @@
             }
           },
           "property": {
-            "kind": 49,
+            "kind": 50,
             "name": "PI",
             "start": {
               "line": 8,
@@ -283,8 +287,6 @@
               "column": 21
             }
           },
-          "computed": false,
-          "nullable": false,
           "start": {
             "line": 8,
             "column": 13
@@ -295,7 +297,6 @@
           }
         }
       ],
-      "nullable": false,
       "start": {
         "line": 8,
         "column": 1
@@ -308,13 +309,15 @@
     },
     {
       "kind": 14,
+      "modifiers": [],
       "scope": {
         "kind": 3
       },
       "callee": {
-        "kind": 66,
+        "kind": 67,
+        "modifiers": [],
         "object": {
-          "kind": 49,
+          "kind": 50,
           "name": "console",
           "start": {
             "line": 9,
@@ -326,7 +329,7 @@
           }
         },
         "property": {
-          "kind": 49,
+          "kind": 50,
           "name": "log",
           "start": {
             "line": 9,
@@ -337,8 +340,6 @@
             "column": 12
           }
         },
-        "computed": false,
-        "nullable": false,
         "start": {
           "line": 9,
           "column": 1
@@ -350,12 +351,13 @@
       },
       "arguments": [
         {
-          "kind": 98,
+          "kind": 99,
           "elements": [
             {
-              "kind": 66,
+              "kind": 67,
+              "modifiers": [],
               "object": {
-                "kind": 49,
+                "kind": 50,
                 "name": "Float",
                 "start": {
                   "line": 9,
@@ -367,7 +369,7 @@
                 }
               },
               "property": {
-                "kind": 49,
+                "kind": 50,
                 "name": "name",
                 "start": {
                   "line": 9,
@@ -378,8 +380,6 @@
                   "column": 26
                 }
               },
-              "computed": false,
-              "nullable": false,
               "start": {
                 "line": 9,
                 "column": 16
@@ -400,7 +400,6 @@
           }
         }
       ],
-      "nullable": false,
       "start": {
         "line": 9,
         "column": 1

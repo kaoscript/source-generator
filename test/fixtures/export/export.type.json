@@ -1,5 +1,5 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
@@ -9,10 +9,10 @@
         {
           "kind": 35,
           "declaration": {
-            "kind": 103,
+            "kind": 105,
             "attributes": [],
             "name": {
-              "kind": 49,
+              "kind": 50,
               "name": "T",
               "start": {
                 "line": 1,
@@ -24,12 +24,13 @@
               }
             },
             "type": {
-              "kind": 109,
+              "kind": 111,
               "types": [
                 {
-                  "kind": 104,
+                  "kind": 106,
+                  "modifiers": [],
                   "typeName": {
-                    "kind": 49,
+                    "kind": 50,
                     "name": "number",
                     "start": {
                       "line": 1,
@@ -50,9 +51,10 @@
                   }
                 },
                 {
-                  "kind": 104,
+                  "kind": 106,
+                  "modifiers": [],
                   "typeName": {
-                    "kind": 49,
+                    "kind": 50,
                     "name": "string",
                     "start": {
                       "line": 1,

@@ -1,16 +1,17 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "arr",
             "start": {
               "line": 1,
@@ -31,12 +32,19 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 1,
+        "column": 24
+      },
       "init": {
         "kind": 4,
         "values": [
           {
-            "kind": 72,
+            "kind": 73,
             "value": 1,
             "start": {
               "line": 1,
@@ -48,7 +56,7 @@
             }
           },
           {
-            "kind": 63,
+            "kind": 64,
             "value": "",
             "start": {
               "line": 1,
@@ -60,7 +68,7 @@
             }
           },
           {
-            "kind": 49,
+            "kind": 50,
             "name": "true",
             "start": {
               "line": 1,
@@ -80,23 +88,16 @@
           "line": 1,
           "column": 24
         }
-      },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 1,
-        "column": 24
       }
     },
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
             "kind": 2,
             "elements": [
@@ -112,7 +113,7 @@
                   "column": 7
                 },
                 "name": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "a",
                   "start": {
                     "line": 3,
@@ -136,7 +137,7 @@
                   "column": 10
                 },
                 "name": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "b",
                   "start": {
                     "line": 3,
@@ -160,7 +161,7 @@
                   "column": 13
                 },
                 "name": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "c",
                   "start": {
                     "line": 3,
@@ -192,9 +193,16 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 3,
+        "column": 1
+      },
+      "end": {
+        "line": 3,
+        "column": 20
+      },
       "init": {
-        "kind": 49,
+        "kind": 50,
         "name": "arr",
         "start": {
           "line": 3,
@@ -204,14 +212,6 @@
           "line": 3,
           "column": 20
         }
-      },
-      "start": {
-        "line": 3,
-        "column": 1
-      },
-      "end": {
-        "line": 3,
-        "column": 20
       }
     }
   ],

@@ -1,12 +1,13 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
       "kind": 43,
+      "modifiers": [],
       "attributes": [],
       "variable": {
-        "kind": 49,
+        "kind": 50,
         "name": "x",
         "start": {
           "line": 1,
@@ -18,7 +19,7 @@
         }
       },
       "from": {
-        "kind": 72,
+        "kind": 73,
         "value": 0,
         "start": {
           "line": 1,
@@ -29,7 +30,6 @@
           "column": 13
         }
       },
-      "declaration": false,
       "start": {
         "line": 1,
         "column": 1
@@ -39,7 +39,7 @@
         "column": 2
       },
       "til": {
-        "kind": 72,
+        "kind": 73,
         "value": 10,
         "start": {
           "line": 1,
@@ -52,11 +52,12 @@
       },
       "when": {
         "kind": 14,
+        "modifiers": [],
         "scope": {
           "kind": 3
         },
         "callee": {
-          "kind": 49,
+          "kind": 50,
           "name": "test",
           "start": {
             "line": 1,
@@ -69,7 +70,7 @@
         },
         "arguments": [
           {
-            "kind": 49,
+            "kind": 50,
             "name": "x",
             "start": {
               "line": 1,
@@ -81,7 +82,6 @@
             }
           }
         ],
-        "nullable": false,
         "start": {
           "line": 1,
           "column": 21

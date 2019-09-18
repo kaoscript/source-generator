@@ -1,16 +1,17 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "m",
             "start": {
               "line": 1,
@@ -31,9 +32,16 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 1,
+        "column": 14
+      },
       "init": {
-        "kind": 63,
+        "kind": 64,
         "value": "qux",
         "start": {
           "line": 1,
@@ -43,25 +51,18 @@
           "line": 1,
           "column": 14
         }
-      },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 1,
-        "column": 14
       }
     },
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "qux",
             "start": {
               "line": 2,
@@ -82,7 +83,14 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 2,
+        "column": 1
+      },
+      "end": {
+        "line": 2,
+        "column": 24
+      },
       "init": {
         "kind": 23,
         "start": {
@@ -94,7 +102,7 @@
           "column": 24
         },
         "condition": {
-          "kind": 49,
+          "kind": 50,
           "name": "foo",
           "start": {
             "line": 2,
@@ -109,7 +117,7 @@
           "kind": 4,
           "values": [
             {
-              "kind": 49,
+              "kind": 50,
               "name": "m",
               "start": {
                 "line": 2,
@@ -131,7 +139,7 @@
           }
         },
         "whenFalse": {
-          "kind": 49,
+          "kind": 50,
           "name": "m",
           "start": {
             "line": 2,
@@ -142,14 +150,6 @@
             "column": 24
           }
         }
-      },
-      "start": {
-        "line": 2,
-        "column": 1
-      },
-      "end": {
-        "line": 2,
-        "column": 24
       }
     }
   ],

@@ -1,14 +1,15 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
             "kind": 2,
             "elements": [
@@ -36,7 +37,7 @@
                   "column": 9
                 },
                 "name": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "y",
                   "start": {
                     "line": 1,
@@ -60,7 +61,7 @@
                   "column": 12
                 },
                 "name": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "z",
                   "start": {
                     "line": 1,
@@ -92,14 +93,22 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 1,
+        "column": 24
+      },
       "init": {
         "kind": 14,
+        "modifiers": [],
         "scope": {
           "kind": 3
         },
         "callee": {
-          "kind": 49,
+          "kind": 50,
           "name": "foobar",
           "start": {
             "line": 1,
@@ -111,7 +120,6 @@
           }
         },
         "arguments": [],
-        "nullable": false,
         "start": {
           "line": 1,
           "column": 16
@@ -120,14 +128,6 @@
           "line": 1,
           "column": 24
         }
-      },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 1,
-        "column": 24
       }
     }
   ],

@@ -1,16 +1,17 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "x",
             "start": {
               "line": 1,
@@ -31,9 +32,16 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 1,
+        "column": 10
+      },
       "init": {
-        "kind": 72,
+        "kind": 73,
         "value": 5,
         "start": {
           "line": 1,
@@ -43,25 +51,18 @@
           "line": 1,
           "column": 10
         }
-      },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 1,
-        "column": 10
       }
     },
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "y",
             "start": {
               "line": 3,
@@ -82,14 +83,21 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 3,
+        "column": 1
+      },
+      "end": {
+        "line": 3,
+        "column": 21
+      },
       "init": {
-        "kind": 50,
+        "kind": 51,
         "condition": {
           "kind": 21,
           "values": [
             {
-              "kind": 49,
+              "kind": 50,
               "name": "x",
               "start": {
                 "line": 3,
@@ -112,7 +120,7 @@
               }
             },
             {
-              "kind": 72,
+              "kind": 73,
               "value": 5,
               "start": {
                 "line": 3,
@@ -134,7 +142,7 @@
           }
         },
         "whenTrue": {
-          "kind": 72,
+          "kind": 73,
           "value": 10,
           "start": {
             "line": 3,
@@ -153,14 +161,6 @@
           "line": 3,
           "column": 21
         }
-      },
-      "start": {
-        "line": 3,
-        "column": 1
-      },
-      "end": {
-        "line": 3,
-        "column": 21
       }
     }
   ],

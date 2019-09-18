@@ -1,12 +1,12 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
       "kind": 47,
       "attributes": [],
       "name": {
-        "kind": 49,
+        "kind": 50,
         "name": "foo",
         "start": {
           "line": 1,
@@ -27,10 +27,10 @@
       },
       "parameters": [
         {
-          "kind": 77,
+          "kind": 78,
           "modifiers": [
             {
-              "kind": 9,
+              "kind": 17,
               "start": {
                 "line": 1,
                 "column": 11
@@ -50,7 +50,7 @@
             "column": 23
           },
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "x",
             "start": {
               "line": 1,
@@ -62,7 +62,7 @@
             }
           },
           "defaultValue": {
-            "kind": 63,
+            "kind": 64,
             "value": "foobar",
             "start": {
               "line": 1,
@@ -95,7 +95,7 @@
       "kind": 47,
       "attributes": [],
       "name": {
-        "kind": 49,
+        "kind": 50,
         "name": "bar",
         "start": {
           "line": 4,
@@ -116,10 +116,10 @@
       },
       "parameters": [
         {
-          "kind": 77,
+          "kind": 78,
           "modifiers": [
             {
-              "kind": 9,
+              "kind": 17,
               "start": {
                 "line": 4,
                 "column": 11
@@ -139,7 +139,7 @@
             "column": 24
           },
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "x",
             "start": {
               "line": 4,
@@ -151,12 +151,24 @@
             }
           },
           "type": {
-            "kind": 104,
+            "kind": 106,
+            "modifiers": [
+              {
+                "kind": 11,
+                "start": {
+                  "line": 4,
+                  "column": 12
+                },
+                "end": {
+                  "line": 4,
+                  "column": 13
+                }
+              }
+            ],
             "typeName": {
-              "kind": 49,
+              "kind": 50,
               "name": "any"
             },
-            "nullable": true,
             "start": {
               "line": 4,
               "column": 12
@@ -167,7 +179,7 @@
             }
           },
           "defaultValue": {
-            "kind": 63,
+            "kind": 64,
             "value": "foobar",
             "start": {
               "line": 4,
@@ -200,7 +212,7 @@
       "kind": 47,
       "attributes": [],
       "name": {
-        "kind": 49,
+        "kind": 50,
         "name": "baz",
         "start": {
           "line": 7,
@@ -221,10 +233,10 @@
       },
       "parameters": [
         {
-          "kind": 77,
+          "kind": 78,
           "modifiers": [
             {
-              "kind": 9,
+              "kind": 17,
               "start": {
                 "line": 7,
                 "column": 11
@@ -244,7 +256,7 @@
             "column": 31
           },
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "x",
             "start": {
               "line": 7,
@@ -256,9 +268,10 @@
             }
           },
           "type": {
-            "kind": 104,
+            "kind": 106,
+            "modifiers": [],
             "typeName": {
-              "kind": 49,
+              "kind": 50,
               "name": "String",
               "start": {
                 "line": 7,
@@ -279,7 +292,7 @@
             }
           },
           "defaultValue": {
-            "kind": 63,
+            "kind": 64,
             "value": "foobar",
             "start": {
               "line": 7,
@@ -312,7 +325,7 @@
       "kind": 47,
       "attributes": [],
       "name": {
-        "kind": 49,
+        "kind": 50,
         "name": "qux",
         "start": {
           "line": 10,
@@ -333,10 +346,10 @@
       },
       "parameters": [
         {
-          "kind": 77,
+          "kind": 78,
           "modifiers": [
             {
-              "kind": 9,
+              "kind": 17,
               "start": {
                 "line": 10,
                 "column": 11
@@ -356,7 +369,7 @@
             "column": 32
           },
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "x",
             "start": {
               "line": 10,
@@ -368,9 +381,22 @@
             }
           },
           "type": {
-            "kind": 104,
+            "kind": 106,
+            "modifiers": [
+              {
+                "kind": 11,
+                "start": {
+                  "line": 10,
+                  "column": 20
+                },
+                "end": {
+                  "line": 10,
+                  "column": 21
+                }
+              }
+            ],
             "typeName": {
-              "kind": 49,
+              "kind": 50,
               "name": "String",
               "start": {
                 "line": 10,
@@ -388,11 +414,10 @@
             "end": {
               "line": 10,
               "column": 21
-            },
-            "nullable": true
+            }
           },
           "defaultValue": {
-            "kind": 63,
+            "kind": 64,
             "value": "foobar",
             "start": {
               "line": 10,

@@ -1,5 +1,5 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
@@ -7,9 +7,10 @@
       "attributes": [],
       "declarations": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "foo",
             "start": {
               "line": 1,
@@ -40,10 +41,10 @@
       }
     },
     {
-      "kind": 51,
+      "kind": 52,
       "attributes": [],
       "condition": {
-        "kind": 105,
+        "kind": 107,
         "operator": {
           "kind": 4,
           "start": {
@@ -56,7 +57,7 @@
           }
         },
         "argument": {
-          "kind": 49,
+          "kind": 50,
           "name": "foo",
           "start": {
             "line": 3,
@@ -82,13 +83,15 @@
         "statements": [
           {
             "kind": 14,
+            "modifiers": [],
             "scope": {
               "kind": 3
             },
             "callee": {
-              "kind": 66,
+              "kind": 67,
+              "modifiers": [],
               "object": {
-                "kind": 49,
+                "kind": 50,
                 "name": "console",
                 "start": {
                   "line": 4,
@@ -100,7 +103,7 @@
                 }
               },
               "property": {
-                "kind": 49,
+                "kind": 50,
                 "name": "log",
                 "start": {
                   "line": 4,
@@ -111,8 +114,6 @@
                   "column": 13
                 }
               },
-              "computed": false,
-              "nullable": false,
               "start": {
                 "line": 4,
                 "column": 2
@@ -124,7 +125,7 @@
             },
             "arguments": [
               {
-                "kind": 49,
+                "kind": 50,
                 "name": "foo",
                 "start": {
                   "line": 4,
@@ -136,7 +137,6 @@
                 }
               }
             ],
-            "nullable": false,
             "start": {
               "line": 4,
               "column": 2
@@ -167,10 +167,10 @@
       }
     },
     {
-      "kind": 51,
+      "kind": 52,
       "attributes": [],
       "condition": {
-        "kind": 105,
+        "kind": 107,
         "operator": {
           "kind": 4,
           "start": {
@@ -183,7 +183,7 @@
           }
         },
         "argument": {
-          "kind": 49,
+          "kind": 50,
           "name": "foo",
           "start": {
             "line": 7,
@@ -205,13 +205,15 @@
       },
       "whenTrue": {
         "kind": 14,
+        "modifiers": [],
         "scope": {
           "kind": 3
         },
         "callee": {
-          "kind": 66,
+          "kind": 67,
+          "modifiers": [],
           "object": {
-            "kind": 49,
+            "kind": 50,
             "name": "console",
             "start": {
               "line": 7,
@@ -223,7 +225,7 @@
             }
           },
           "property": {
-            "kind": 49,
+            "kind": 50,
             "name": "log",
             "start": {
               "line": 7,
@@ -234,8 +236,6 @@
               "column": 12
             }
           },
-          "computed": false,
-          "nullable": false,
           "start": {
             "line": 7,
             "column": 1
@@ -247,7 +247,7 @@
         },
         "arguments": [
           {
-            "kind": 49,
+            "kind": 50,
             "name": "foo",
             "start": {
               "line": 7,
@@ -259,7 +259,6 @@
             }
           }
         ],
-        "nullable": false,
         "start": {
           "line": 7,
           "column": 1

@@ -1,16 +1,29 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [
+        {
+          "kind": 10,
+          "start": {
+            "line": 1,
+            "column": 1
+          },
+          "end": {
+            "line": 1,
+            "column": 6
+          }
+        }
+      ],
       "attributes": [],
-      "rebindable": false,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "foobar",
             "start": {
               "line": 1,
@@ -31,16 +44,23 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 9,
+        "column": 2
+      },
       "init": {
-        "kind": 74,
+        "kind": 75,
         "attributes": [
           {
             "kind": 6,
             "declaration": {
               "kind": 7,
               "name": {
-                "kind": 49,
+                "kind": 50,
                 "name": "error",
                 "start": {
                   "line": 2,
@@ -53,7 +73,7 @@
               },
               "arguments": [
                 {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "off",
                   "start": {
                     "line": 2,
@@ -86,10 +106,10 @@
         ],
         "properties": [
           {
-            "kind": 75,
+            "kind": 76,
             "attributes": [],
             "name": {
-              "kind": 49,
+              "kind": 50,
               "name": "foo",
               "start": {
                 "line": 4,
@@ -137,10 +157,10 @@
             }
           },
           {
-            "kind": 75,
+            "kind": 76,
             "attributes": [],
             "name": {
-              "kind": 49,
+              "kind": 50,
               "name": "bar",
               "start": {
                 "line": 7,
@@ -196,14 +216,6 @@
           "line": 9,
           "column": 2
         }
-      },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 9,
-        "column": 2
       }
     }
   ],

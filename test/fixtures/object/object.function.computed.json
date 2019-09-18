@@ -1,16 +1,17 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "foo",
             "start": {
               "line": 1,
@@ -31,18 +32,25 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 5,
+        "column": 2
+      },
       "init": {
-        "kind": 74,
+        "kind": 75,
         "attributes": [],
         "properties": [
           {
-            "kind": 75,
+            "kind": 76,
             "attributes": [],
             "name": {
               "kind": 22,
               "expression": {
-                "kind": 49,
+                "kind": 50,
                 "name": "bar",
                 "start": {
                   "line": 2,
@@ -66,7 +74,7 @@
               "kind": 48,
               "parameters": [
                 {
-                  "kind": 77,
+                  "kind": 78,
                   "modifiers": [],
                   "start": {
                     "line": 2,
@@ -77,7 +85,7 @@
                     "column": 20
                   },
                   "name": {
-                    "kind": 49,
+                    "kind": 50,
                     "name": "name",
                     "start": {
                       "line": 2,
@@ -89,9 +97,10 @@
                     }
                   },
                   "type": {
-                    "kind": 104,
+                    "kind": 106,
+                    "modifiers": [],
                     "typeName": {
-                      "kind": 49,
+                      "kind": 50,
                       "name": "String",
                       "start": {
                         "line": 2,
@@ -128,10 +137,10 @@
                 "attributes": [],
                 "statements": [
                   {
-                    "kind": 84,
+                    "kind": 85,
                     "attributes": [],
                     "value": {
-                      "kind": 49,
+                      "kind": 50,
                       "name": "name",
                       "start": {
                         "line": 3,
@@ -180,14 +189,6 @@
           "line": 5,
           "column": 2
         }
-      },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 5,
-        "column": 2
       }
     }
   ],

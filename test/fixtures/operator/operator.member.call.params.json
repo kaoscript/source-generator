@@ -1,5 +1,5 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
@@ -7,9 +7,10 @@
       "attributes": [],
       "declarations": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "foo",
             "start": {
               "line": 1,
@@ -40,14 +41,15 @@
       }
     },
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "tt",
             "start": {
               "line": 3,
@@ -68,14 +70,34 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 3,
+        "column": 1
+      },
+      "end": {
+        "line": 3,
+        "column": 23
+      },
       "init": {
         "kind": 14,
+        "modifiers": [
+          {
+            "kind": 11,
+            "start": {
+              "line": 3,
+              "column": 13
+            },
+            "end": {
+              "line": 3,
+              "column": 15
+            }
+          }
+        ],
         "scope": {
           "kind": 3
         },
         "callee": {
-          "kind": 49,
+          "kind": 50,
           "name": "foo",
           "start": {
             "line": 3,
@@ -88,7 +110,7 @@
         },
         "arguments": [
           {
-            "kind": 72,
+            "kind": 73,
             "value": 1,
             "start": {
               "line": 3,
@@ -100,7 +122,7 @@
             }
           },
           {
-            "kind": 72,
+            "kind": 73,
             "value": 2,
             "start": {
               "line": 3,
@@ -112,7 +134,7 @@
             }
           },
           {
-            "kind": 72,
+            "kind": 73,
             "value": 3,
             "start": {
               "line": 3,
@@ -124,7 +146,6 @@
             }
           }
         ],
-        "nullable": true,
         "start": {
           "line": 3,
           "column": 10
@@ -133,25 +154,18 @@
           "line": 3,
           "column": 23
         }
-      },
-      "start": {
-        "line": 3,
-        "column": 1
-      },
-      "end": {
-        "line": 3,
-        "column": 23
       }
     },
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "uu",
             "start": {
               "line": 5,
@@ -172,14 +186,34 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 5,
+        "column": 1
+      },
+      "end": {
+        "line": 5,
+        "column": 17
+      },
       "init": {
         "kind": 14,
+        "modifiers": [
+          {
+            "kind": 11,
+            "start": {
+              "line": 5,
+              "column": 13
+            },
+            "end": {
+              "line": 5,
+              "column": 15
+            }
+          }
+        ],
         "scope": {
           "kind": 3
         },
         "callee": {
-          "kind": 49,
+          "kind": 50,
           "name": "foo",
           "start": {
             "line": 5,
@@ -192,7 +226,7 @@
         },
         "arguments": [
           {
-            "kind": 72,
+            "kind": 73,
             "value": 1,
             "start": {
               "line": 5,
@@ -204,7 +238,6 @@
             }
           }
         ],
-        "nullable": true,
         "start": {
           "line": 5,
           "column": 10
@@ -213,14 +246,6 @@
           "line": 5,
           "column": 17
         }
-      },
-      "start": {
-        "line": 5,
-        "column": 1
-      },
-      "end": {
-        "line": 5,
-        "column": 17
       }
     }
   ],

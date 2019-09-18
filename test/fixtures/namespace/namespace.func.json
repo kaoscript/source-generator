@@ -1,5 +1,5 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
@@ -7,9 +7,10 @@
       "attributes": [],
       "declarations": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "console",
             "start": {
               "line": 1,
@@ -40,11 +41,11 @@
       }
     },
     {
-      "kind": 71,
+      "kind": 72,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 49,
+        "kind": 50,
         "name": "Float",
         "start": {
           "line": 3,
@@ -60,7 +61,7 @@
           "kind": 47,
           "attributes": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "toString",
             "start": {
               "line": 4,
@@ -81,7 +82,7 @@
           },
           "parameters": [
             {
-              "kind": 77,
+              "kind": 78,
               "modifiers": [],
               "start": {
                 "line": 4,
@@ -92,7 +93,7 @@
                 "column": 29
               },
               "name": {
-                "kind": 49,
+                "kind": 50,
                 "name": "value",
                 "start": {
                   "line": 4,
@@ -104,9 +105,10 @@
                 }
               },
               "type": {
-                "kind": 104,
+                "kind": 106,
+                "modifiers": [],
                 "typeName": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "Number",
                   "start": {
                     "line": 4,
@@ -130,9 +132,10 @@
           ],
           "modifiers": [],
           "type": {
-            "kind": 104,
+            "kind": 106,
+            "modifiers": [],
             "typeName": {
-              "kind": 49,
+              "kind": 50,
               "name": "String",
               "start": {
                 "line": 4,
@@ -155,13 +158,15 @@
           "throws": [],
           "body": {
             "kind": 14,
+            "modifiers": [],
             "scope": {
               "kind": 3
             },
             "callee": {
-              "kind": 66,
+              "kind": 67,
+              "modifiers": [],
               "object": {
-                "kind": 49,
+                "kind": 50,
                 "name": "value",
                 "start": {
                   "line": 4,
@@ -173,7 +178,7 @@
                 }
               },
               "property": {
-                "kind": 49,
+                "kind": 50,
                 "name": "toString",
                 "start": {
                   "line": 4,
@@ -184,8 +189,6 @@
                   "column": 56
                 }
               },
-              "computed": false,
-              "nullable": false,
               "start": {
                 "line": 4,
                 "column": 42
@@ -196,7 +199,6 @@
               }
             },
             "arguments": [],
-            "nullable": false,
             "start": {
               "line": 4,
               "column": 42
@@ -219,13 +221,15 @@
     },
     {
       "kind": 14,
+      "modifiers": [],
       "scope": {
         "kind": 3
       },
       "callee": {
-        "kind": 66,
+        "kind": 67,
+        "modifiers": [],
         "object": {
-          "kind": 49,
+          "kind": 50,
           "name": "console",
           "start": {
             "line": 7,
@@ -237,7 +241,7 @@
           }
         },
         "property": {
-          "kind": 49,
+          "kind": 50,
           "name": "log",
           "start": {
             "line": 7,
@@ -248,8 +252,6 @@
             "column": 12
           }
         },
-        "computed": false,
-        "nullable": false,
         "start": {
           "line": 7,
           "column": 1
@@ -261,17 +263,19 @@
       },
       "arguments": [
         {
-          "kind": 98,
+          "kind": 99,
           "elements": [
             {
               "kind": 14,
+              "modifiers": [],
               "scope": {
                 "kind": 3
               },
               "callee": {
-                "kind": 66,
+                "kind": 67,
+                "modifiers": [],
                 "object": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "Float",
                   "start": {
                     "line": 7,
@@ -283,7 +287,7 @@
                   }
                 },
                 "property": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "toString",
                   "start": {
                     "line": 7,
@@ -294,8 +298,6 @@
                     "column": 30
                   }
                 },
-                "computed": false,
-                "nullable": false,
                 "start": {
                   "line": 7,
                   "column": 16
@@ -307,7 +309,7 @@
               },
               "arguments": [
                 {
-                  "kind": 72,
+                  "kind": 73,
                   "value": 3.14,
                   "start": {
                     "line": 7,
@@ -319,7 +321,6 @@
                   }
                 }
               ],
-              "nullable": false,
               "start": {
                 "line": 7,
                 "column": 16
@@ -340,7 +341,6 @@
           }
         }
       ],
-      "nullable": false,
       "start": {
         "line": 7,
         "column": 1

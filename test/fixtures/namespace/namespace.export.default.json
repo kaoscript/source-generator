@@ -1,5 +1,5 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
@@ -7,9 +7,10 @@
       "attributes": [],
       "declarations": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "parseFloat",
             "start": {
               "line": 1,
@@ -46,11 +47,11 @@
         {
           "kind": 35,
           "declaration": {
-            "kind": 71,
+            "kind": 72,
             "attributes": [],
             "modifiers": [],
             "name": {
-              "kind": 49,
+              "kind": 50,
               "name": "Float",
               "start": {
                 "line": 3,
@@ -72,7 +73,7 @@
                       "kind": 47,
                       "attributes": [],
                       "name": {
-                        "kind": 49,
+                        "kind": 50,
                         "name": "toFloat",
                         "start": {
                           "line": 4,
@@ -93,7 +94,7 @@
                       },
                       "parameters": [
                         {
-                          "kind": 77,
+                          "kind": 78,
                           "modifiers": [],
                           "start": {
                             "line": 4,
@@ -104,7 +105,7 @@
                             "column": 35
                           },
                           "name": {
-                            "kind": 49,
+                            "kind": 50,
                             "name": "value",
                             "start": {
                               "line": 4,
@@ -116,9 +117,10 @@
                             }
                           },
                           "type": {
-                            "kind": 104,
+                            "kind": 106,
+                            "modifiers": [],
                             "typeName": {
-                              "kind": 49,
+                              "kind": 50,
                               "name": "String",
                               "start": {
                                 "line": 4,
@@ -142,9 +144,10 @@
                       ],
                       "modifiers": [],
                       "type": {
-                        "kind": 104,
+                        "kind": 106,
+                        "modifiers": [],
                         "typeName": {
-                          "kind": 49,
+                          "kind": 50,
                           "name": "Number",
                           "start": {
                             "line": 4,
@@ -167,11 +170,12 @@
                       "throws": [],
                       "body": {
                         "kind": 14,
+                        "modifiers": [],
                         "scope": {
                           "kind": 3
                         },
                         "callee": {
-                          "kind": 49,
+                          "kind": 50,
                           "name": "parseFloat",
                           "start": {
                             "line": 4,
@@ -184,7 +188,7 @@
                         },
                         "arguments": [
                           {
-                            "kind": 49,
+                            "kind": 50,
                             "name": "value",
                             "start": {
                               "line": 4,
@@ -196,7 +200,6 @@
                             }
                           }
                         ],
-                        "nullable": false,
                         "start": {
                           "line": 4,
                           "column": 48

@@ -1,14 +1,15 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
             "kind": 2,
             "elements": [
@@ -24,7 +25,7 @@
                   "column": 7
                 },
                 "name": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "x",
                   "start": {
                     "line": 1,
@@ -48,7 +49,7 @@
                   "column": 10
                 },
                 "name": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "y",
                   "start": {
                     "line": 1,
@@ -79,16 +80,18 @@
             "column": 29
           },
           "type": {
-            "kind": 104,
+            "kind": 106,
+            "modifiers": [],
             "typeName": {
-              "kind": 49,
+              "kind": 50,
               "name": "array"
             },
             "elements": [
               {
-                "kind": 104,
+                "kind": 106,
+                "modifiers": [],
                 "typeName": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "Number",
                   "start": {
                     "line": 1,
@@ -109,9 +112,10 @@
                 }
               },
               {
-                "kind": 104,
+                "kind": 106,
+                "modifiers": [],
                 "typeName": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "Number",
                   "start": {
                     "line": 1,
@@ -143,14 +147,22 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 1,
+        "column": 37
+      },
       "init": {
         "kind": 14,
+        "modifiers": [],
         "scope": {
           "kind": 3
         },
         "callee": {
-          "kind": 49,
+          "kind": 50,
           "name": "foo",
           "start": {
             "line": 1,
@@ -162,7 +174,6 @@
           }
         },
         "arguments": [],
-        "nullable": false,
         "start": {
           "line": 1,
           "column": 32
@@ -171,23 +182,16 @@
           "line": 1,
           "column": 37
         }
-      },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 1,
-        "column": 37
       }
     },
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
             "kind": 2,
             "elements": [
@@ -203,7 +207,7 @@
                   "column": 7
                 },
                 "name": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "x",
                   "start": {
                     "line": 3,
@@ -227,7 +231,7 @@
                   "column": 10
                 },
                 "name": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "y",
                   "start": {
                     "line": 3,
@@ -258,9 +262,10 @@
             "column": 26
           },
           "type": {
-            "kind": 104,
+            "kind": 106,
+            "modifiers": [],
             "typeName": {
-              "kind": 49,
+              "kind": 50,
               "name": "Array",
               "start": {
                 "line": 3,
@@ -271,11 +276,20 @@
                 "column": 18
               }
             },
+            "start": {
+              "line": 3,
+              "column": 13
+            },
+            "end": {
+              "line": 3,
+              "column": 26
+            },
             "typeParameters": [
               {
-                "kind": 104,
+                "kind": 106,
+                "modifiers": [],
                 "typeName": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "Number",
                   "start": {
                     "line": 3,
@@ -295,26 +309,26 @@
                   "column": 25
                 }
               }
-            ],
-            "start": {
-              "line": 3,
-              "column": 13
-            },
-            "end": {
-              "line": 3,
-              "column": 26
-            }
+            ]
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 3,
+        "column": 1
+      },
+      "end": {
+        "line": 3,
+        "column": 34
+      },
       "init": {
         "kind": 14,
+        "modifiers": [],
         "scope": {
           "kind": 3
         },
         "callee": {
-          "kind": 49,
+          "kind": 50,
           "name": "foo",
           "start": {
             "line": 3,
@@ -326,7 +340,6 @@
           }
         },
         "arguments": [],
-        "nullable": false,
         "start": {
           "line": 3,
           "column": 29
@@ -335,30 +348,23 @@
           "line": 3,
           "column": 34
         }
-      },
-      "start": {
-        "line": 3,
-        "column": 1
-      },
-      "end": {
-        "line": 3,
-        "column": 34
       }
     },
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 73,
+            "kind": 74,
             "elements": [
               {
                 "kind": 11,
                 "name": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "x",
                   "start": {
                     "line": 5,
@@ -382,7 +388,7 @@
               {
                 "kind": 11,
                 "name": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "y",
                   "start": {
                     "line": 5,
@@ -422,16 +428,17 @@
             "column": 35
           },
           "type": {
-            "kind": 104,
+            "kind": 106,
+            "modifiers": [],
             "typeName": {
-              "kind": 49,
+              "kind": 50,
               "name": "object"
             },
             "properties": [
               {
-                "kind": 75,
+                "kind": 76,
                 "name": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "x",
                   "start": {
                     "line": 5,
@@ -443,9 +450,10 @@
                   }
                 },
                 "type": {
-                  "kind": 104,
+                  "kind": 106,
+                  "modifiers": [],
                   "typeName": {
-                    "kind": 49,
+                    "kind": 50,
                     "name": "Number",
                     "start": {
                       "line": 5,
@@ -475,9 +483,9 @@
                 }
               },
               {
-                "kind": 75,
+                "kind": 76,
                 "name": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "y",
                   "start": {
                     "line": 5,
@@ -489,9 +497,10 @@
                   }
                 },
                 "type": {
-                  "kind": 104,
+                  "kind": 106,
+                  "modifiers": [],
                   "typeName": {
-                    "kind": 49,
+                    "kind": 50,
                     "name": "Number",
                     "start": {
                       "line": 5,
@@ -532,14 +541,22 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 5,
+        "column": 1
+      },
+      "end": {
+        "line": 5,
+        "column": 43
+      },
       "init": {
         "kind": 14,
+        "modifiers": [],
         "scope": {
           "kind": 3
         },
         "callee": {
-          "kind": 49,
+          "kind": 50,
           "name": "foo",
           "start": {
             "line": 5,
@@ -551,7 +568,6 @@
           }
         },
         "arguments": [],
-        "nullable": false,
         "start": {
           "line": 5,
           "column": 38
@@ -560,30 +576,23 @@
           "line": 5,
           "column": 43
         }
-      },
-      "start": {
-        "line": 5,
-        "column": 1
-      },
-      "end": {
-        "line": 5,
-        "column": 43
       }
     },
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 73,
+            "kind": 74,
             "elements": [
               {
                 "kind": 11,
                 "name": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "x",
                   "start": {
                     "line": 7,
@@ -607,7 +616,7 @@
               {
                 "kind": 11,
                 "name": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "y",
                   "start": {
                     "line": 7,
@@ -647,9 +656,10 @@
             "column": 27
           },
           "type": {
-            "kind": 104,
+            "kind": 106,
+            "modifiers": [],
             "typeName": {
-              "kind": 49,
+              "kind": 50,
               "name": "Object",
               "start": {
                 "line": 7,
@@ -660,11 +670,20 @@
                 "column": 19
               }
             },
+            "start": {
+              "line": 7,
+              "column": 13
+            },
+            "end": {
+              "line": 7,
+              "column": 27
+            },
             "typeParameters": [
               {
-                "kind": 104,
+                "kind": 106,
+                "modifiers": [],
                 "typeName": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "Number",
                   "start": {
                     "line": 7,
@@ -684,26 +703,26 @@
                   "column": 26
                 }
               }
-            ],
-            "start": {
-              "line": 7,
-              "column": 13
-            },
-            "end": {
-              "line": 7,
-              "column": 27
-            }
+            ]
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 7,
+        "column": 1
+      },
+      "end": {
+        "line": 7,
+        "column": 35
+      },
       "init": {
         "kind": 14,
+        "modifiers": [],
         "scope": {
           "kind": 3
         },
         "callee": {
-          "kind": 49,
+          "kind": 50,
           "name": "foo",
           "start": {
             "line": 7,
@@ -715,7 +734,6 @@
           }
         },
         "arguments": [],
-        "nullable": false,
         "start": {
           "line": 7,
           "column": 30
@@ -724,14 +742,6 @@
           "line": 7,
           "column": 35
         }
-      },
-      "start": {
-        "line": 7,
-        "column": 1
-      },
-      "end": {
-        "line": 7,
-        "column": 35
       }
     }
   ],

@@ -1,16 +1,17 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "a",
             "start": {
               "line": 1,
@@ -30,9 +31,10 @@
             "column": 21
           },
           "type": {
-            "kind": 104,
+            "kind": 106,
+            "modifiers": [],
             "typeName": {
-              "kind": 49,
+              "kind": 50,
               "name": "Array",
               "start": {
                 "line": 1,
@@ -43,11 +45,20 @@
                 "column": 13
               }
             },
+            "start": {
+              "line": 1,
+              "column": 8
+            },
+            "end": {
+              "line": 1,
+              "column": 21
+            },
             "typeParameters": [
               {
-                "kind": 104,
+                "kind": 106,
+                "modifiers": [],
                 "typeName": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "number",
                   "start": {
                     "line": 1,
@@ -67,24 +78,23 @@
                   "column": 20
                 }
               }
-            ],
-            "start": {
-              "line": 1,
-              "column": 8
-            },
-            "end": {
-              "line": 1,
-              "column": 21
-            }
+            ]
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 1,
+        "column": 36
+      },
       "init": {
         "kind": 4,
         "values": [
           {
-            "kind": 72,
+            "kind": 73,
             "value": 1,
             "start": {
               "line": 1,
@@ -96,7 +106,7 @@
             }
           },
           {
-            "kind": 72,
+            "kind": 73,
             "value": 2,
             "start": {
               "line": 1,
@@ -108,7 +118,7 @@
             }
           },
           {
-            "kind": 72,
+            "kind": 73,
             "value": 3,
             "start": {
               "line": 1,
@@ -120,7 +130,7 @@
             }
           },
           {
-            "kind": 72,
+            "kind": 73,
             "value": 4,
             "start": {
               "line": 1,
@@ -140,25 +150,19 @@
           "line": 1,
           "column": 36
         }
-      },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 1,
-        "column": 36
       }
     },
     {
       "kind": 14,
+      "modifiers": [],
       "scope": {
         "kind": 3
       },
       "callee": {
-        "kind": 66,
+        "kind": 67,
+        "modifiers": [],
         "object": {
-          "kind": 49,
+          "kind": 50,
           "name": "console",
           "start": {
             "line": 3,
@@ -170,7 +174,7 @@
           }
         },
         "property": {
-          "kind": 49,
+          "kind": 50,
           "name": "log",
           "start": {
             "line": 3,
@@ -181,8 +185,6 @@
             "column": 12
           }
         },
-        "computed": false,
-        "nullable": false,
         "start": {
           "line": 3,
           "column": 1
@@ -194,7 +196,7 @@
       },
       "arguments": [
         {
-          "kind": 49,
+          "kind": 50,
           "name": "a",
           "start": {
             "line": 3,
@@ -206,7 +208,6 @@
           }
         }
       ],
-      "nullable": false,
       "start": {
         "line": 3,
         "column": 1

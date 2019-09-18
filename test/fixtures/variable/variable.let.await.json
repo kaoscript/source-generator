@@ -1,16 +1,17 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "a",
             "start": {
               "line": 1,
@@ -31,9 +32,10 @@
           }
         },
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "b",
             "start": {
               "line": 1,
@@ -54,16 +56,25 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 1,
+        "column": 23
+      },
       "init": {
         "kind": 9,
+        "modifiers": [],
         "operation": {
           "kind": 14,
+          "modifiers": [],
           "scope": {
             "kind": 3
           },
           "callee": {
-            "kind": 49,
+            "kind": 50,
             "name": "foo",
             "start": {
               "line": 1,
@@ -75,7 +86,6 @@
             }
           },
           "arguments": [],
-          "nullable": false,
           "start": {
             "line": 1,
             "column": 18
@@ -95,9 +105,10 @@
         },
         "variables": [
           {
-            "kind": 111,
+            "kind": 113,
+            "modifiers": [],
             "name": {
-              "kind": 49,
+              "kind": 50,
               "name": "a",
               "start": {
                 "line": 1,
@@ -118,9 +129,10 @@
             }
           },
           {
-            "kind": 111,
+            "kind": 113,
+            "modifiers": [],
             "name": {
-              "kind": 49,
+              "kind": 50,
               "name": "b",
               "start": {
                 "line": 1,
@@ -141,14 +153,6 @@
             }
           }
         ]
-      },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 1,
-        "column": 23
       }
     }
   ],

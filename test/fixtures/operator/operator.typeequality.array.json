@@ -1,9 +1,9 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
-      "kind": 51,
+      "kind": 52,
       "attributes": [],
       "condition": {
         "kind": 10,
@@ -19,7 +19,7 @@
           }
         },
         "left": {
-          "kind": 49,
+          "kind": 50,
           "name": "value",
           "start": {
             "line": 1,
@@ -31,9 +31,10 @@
           }
         },
         "right": {
-          "kind": 104,
+          "kind": 106,
+          "modifiers": [],
           "typeName": {
-            "kind": 49,
+            "kind": 50,
             "name": "array",
             "start": {
               "line": 1,
@@ -44,11 +45,20 @@
               "column": 18
             }
           },
+          "start": {
+            "line": 1,
+            "column": 13
+          },
+          "end": {
+            "line": 1,
+            "column": 26
+          },
           "typeParameters": [
             {
-              "kind": 104,
+              "kind": 106,
+              "modifiers": [],
               "typeName": {
-                "kind": 49,
+                "kind": 50,
                 "name": "string",
                 "start": {
                   "line": 1,
@@ -68,15 +78,7 @@
                 "column": 25
               }
             }
-          ],
-          "start": {
-            "line": 1,
-            "column": 13
-          },
-          "end": {
-            "line": 1,
-            "column": 26
-          }
+          ]
         },
         "start": {
           "line": 1,

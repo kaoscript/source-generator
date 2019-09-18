@@ -1,14 +1,27 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
       "kind": 27,
       "attributes": [],
       "variable": {
-        "kind": 66,
+        "kind": 67,
+        "modifiers": [
+          {
+            "kind": 5,
+            "start": {
+              "line": 1,
+              "column": 11
+            },
+            "end": {
+              "line": 1,
+              "column": 12
+            }
+          }
+        ],
         "object": {
-          "kind": 49,
+          "kind": 50,
           "name": "foo",
           "start": {
             "line": 1,
@@ -20,7 +33,7 @@
           }
         },
         "property": {
-          "kind": 49,
+          "kind": 50,
           "name": "bar",
           "start": {
             "line": 1,
@@ -31,8 +44,6 @@
             "column": 15
           }
         },
-        "computed": true,
-        "nullable": false,
         "start": {
           "line": 1,
           "column": 8

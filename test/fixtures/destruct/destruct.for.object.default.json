@@ -1,12 +1,13 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
       "kind": 44,
       "attributes": [],
+      "modifiers": [],
       "expression": {
-        "kind": 49,
+        "kind": 50,
         "name": "foo",
         "start": {
           "line": 1,
@@ -17,8 +18,6 @@
           "column": 22
         }
       },
-      "desc": false,
-      "declaration": false,
       "start": {
         "line": 1,
         "column": 1
@@ -28,12 +27,12 @@
         "column": 2
       },
       "value": {
-        "kind": 73,
+        "kind": 74,
         "elements": [
           {
             "kind": 11,
             "name": {
-              "kind": 49,
+              "kind": 50,
               "name": "bar",
               "start": {
                 "line": 1,
@@ -57,7 +56,7 @@
           {
             "kind": 11,
             "name": {
-              "kind": 49,
+              "kind": 50,
               "name": "baz",
               "start": {
                 "line": 1,

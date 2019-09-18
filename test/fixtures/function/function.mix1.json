@@ -1,16 +1,17 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "a",
             "start": {
               "line": 1,
@@ -31,12 +32,19 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 6,
+        "column": 2
+      },
       "init": {
         "kind": 4,
         "values": [
           {
-            "kind": 63,
+            "kind": 64,
             "value": "Hydrogen",
             "start": {
               "line": 2,
@@ -48,7 +56,7 @@
             }
           },
           {
-            "kind": 63,
+            "kind": 64,
             "value": "Helium",
             "start": {
               "line": 3,
@@ -60,7 +68,7 @@
             }
           },
           {
-            "kind": 63,
+            "kind": 64,
             "value": "Lithium",
             "start": {
               "line": 4,
@@ -72,7 +80,7 @@
             }
           },
           {
-            "kind": 63,
+            "kind": 64,
             "value": "Beryl­lium",
             "start": {
               "line": 5,
@@ -92,25 +100,18 @@
           "line": 6,
           "column": 2
         }
-      },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 6,
-        "column": 2
       }
     },
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "a2",
             "start": {
               "line": 8,
@@ -131,16 +132,25 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 8,
+        "column": 1
+      },
+      "end": {
+        "line": 10,
+        "column": 3
+      },
       "init": {
         "kind": 14,
+        "modifiers": [],
         "scope": {
           "kind": 3
         },
         "callee": {
-          "kind": 66,
+          "kind": 67,
+          "modifiers": [],
           "object": {
-            "kind": 49,
+            "kind": 50,
             "name": "a",
             "start": {
               "line": 8,
@@ -152,7 +162,7 @@
             }
           },
           "property": {
-            "kind": 49,
+            "kind": 50,
             "name": "map",
             "start": {
               "line": 8,
@@ -163,8 +173,6 @@
               "column": 15
             }
           },
-          "computed": false,
-          "nullable": false,
           "start": {
             "line": 8,
             "column": 10
@@ -179,7 +187,7 @@
             "kind": 48,
             "parameters": [
               {
-                "kind": 77,
+                "kind": 78,
                 "modifiers": [],
                 "start": {
                   "line": 8,
@@ -190,7 +198,7 @@
                   "column": 22
                 },
                 "name": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "s",
                   "start": {
                     "line": 8,
@@ -218,12 +226,13 @@
               "attributes": [],
               "statements": [
                 {
-                  "kind": 84,
+                  "kind": 85,
                   "attributes": [],
                   "value": {
-                    "kind": 66,
+                    "kind": 67,
+                    "modifiers": [],
                     "object": {
-                      "kind": 49,
+                      "kind": 50,
                       "name": "s",
                       "start": {
                         "line": 9,
@@ -235,7 +244,7 @@
                       }
                     },
                     "property": {
-                      "kind": 49,
+                      "kind": 50,
                       "name": "length",
                       "start": {
                         "line": 9,
@@ -246,8 +255,6 @@
                         "column": 17
                       }
                     },
-                    "computed": false,
-                    "nullable": false,
                     "start": {
                       "line": 9,
                       "column": 9
@@ -278,7 +285,6 @@
             }
           }
         ],
-        "nullable": false,
         "start": {
           "line": 8,
           "column": 10
@@ -287,25 +293,18 @@
           "line": 10,
           "column": 3
         }
-      },
-      "start": {
-        "line": 8,
-        "column": 1
-      },
-      "end": {
-        "line": 10,
-        "column": 3
       }
     },
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "a3",
             "start": {
               "line": 12,
@@ -326,16 +325,25 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 12,
+        "column": 1
+      },
+      "end": {
+        "line": 14,
+        "column": 3
+      },
       "init": {
         "kind": 14,
+        "modifiers": [],
         "scope": {
           "kind": 3
         },
         "callee": {
-          "kind": 66,
+          "kind": 67,
+          "modifiers": [],
           "object": {
-            "kind": 49,
+            "kind": 50,
             "name": "a",
             "start": {
               "line": 12,
@@ -347,7 +355,7 @@
             }
           },
           "property": {
-            "kind": 49,
+            "kind": 50,
             "name": "map",
             "start": {
               "line": 12,
@@ -358,8 +366,6 @@
               "column": 15
             }
           },
-          "computed": false,
-          "nullable": false,
           "start": {
             "line": 12,
             "column": 10
@@ -371,11 +377,11 @@
         },
         "arguments": [
           {
-            "kind": 62,
+            "kind": 63,
             "modifiers": [],
             "parameters": [
               {
-                "kind": 77,
+                "kind": 78,
                 "modifiers": [],
                 "start": {
                   "line": 12,
@@ -386,7 +392,7 @@
                   "column": 18
                 },
                 "name": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "s",
                   "start": {
                     "line": 12,
@@ -404,12 +410,13 @@
               "attributes": [],
               "statements": [
                 {
-                  "kind": 84,
+                  "kind": 85,
                   "attributes": [],
                   "value": {
-                    "kind": 66,
+                    "kind": 67,
+                    "modifiers": [],
                     "object": {
-                      "kind": 49,
+                      "kind": 50,
                       "name": "s",
                       "start": {
                         "line": 13,
@@ -421,7 +428,7 @@
                       }
                     },
                     "property": {
-                      "kind": 49,
+                      "kind": 50,
                       "name": "length",
                       "start": {
                         "line": 13,
@@ -432,8 +439,6 @@
                         "column": 17
                       }
                     },
-                    "computed": false,
-                    "nullable": false,
                     "start": {
                       "line": 13,
                       "column": 9
@@ -472,7 +477,6 @@
             }
           }
         ],
-        "nullable": false,
         "start": {
           "line": 12,
           "column": 10
@@ -481,25 +485,18 @@
           "line": 14,
           "column": 3
         }
-      },
-      "start": {
-        "line": 12,
-        "column": 1
-      },
-      "end": {
-        "line": 14,
-        "column": 3
       }
     },
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "a3",
             "start": {
               "line": 16,
@@ -520,16 +517,25 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 16,
+        "column": 1
+      },
+      "end": {
+        "line": 16,
+        "column": 36
+      },
       "init": {
         "kind": 14,
+        "modifiers": [],
         "scope": {
           "kind": 3
         },
         "callee": {
-          "kind": 66,
+          "kind": 67,
+          "modifiers": [],
           "object": {
-            "kind": 49,
+            "kind": 50,
             "name": "a",
             "start": {
               "line": 16,
@@ -541,7 +547,7 @@
             }
           },
           "property": {
-            "kind": 49,
+            "kind": 50,
             "name": "map",
             "start": {
               "line": 16,
@@ -552,8 +558,6 @@
               "column": 15
             }
           },
-          "computed": false,
-          "nullable": false,
           "start": {
             "line": 16,
             "column": 10
@@ -568,7 +572,7 @@
             "kind": 48,
             "parameters": [
               {
-                "kind": 77,
+                "kind": 78,
                 "modifiers": [],
                 "start": {
                   "line": 16,
@@ -579,7 +583,7 @@
                   "column": 22
                 },
                 "name": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "s",
                   "start": {
                     "line": 16,
@@ -603,9 +607,10 @@
             "modifiers": [],
             "throws": [],
             "body": {
-              "kind": 66,
+              "kind": 67,
+              "modifiers": [],
               "object": {
-                "kind": 49,
+                "kind": 50,
                 "name": "s",
                 "start": {
                   "line": 16,
@@ -617,7 +622,7 @@
                 }
               },
               "property": {
-                "kind": 49,
+                "kind": 50,
                 "name": "length",
                 "start": {
                   "line": 16,
@@ -628,8 +633,6 @@
                   "column": 35
                 }
               },
-              "computed": false,
-              "nullable": false,
               "start": {
                 "line": 16,
                 "column": 27
@@ -641,7 +644,6 @@
             }
           }
         ],
-        "nullable": false,
         "start": {
           "line": 16,
           "column": 10
@@ -650,25 +652,18 @@
           "line": 16,
           "column": 36
         }
-      },
-      "start": {
-        "line": 16,
-        "column": 1
-      },
-      "end": {
-        "line": 16,
-        "column": 36
       }
     },
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "a4",
             "start": {
               "line": 18,
@@ -689,16 +684,25 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 18,
+        "column": 1
+      },
+      "end": {
+        "line": 18,
+        "column": 32
+      },
       "init": {
         "kind": 14,
+        "modifiers": [],
         "scope": {
           "kind": 3
         },
         "callee": {
-          "kind": 66,
+          "kind": 67,
+          "modifiers": [],
           "object": {
-            "kind": 49,
+            "kind": 50,
             "name": "a",
             "start": {
               "line": 18,
@@ -710,7 +714,7 @@
             }
           },
           "property": {
-            "kind": 49,
+            "kind": 50,
             "name": "map",
             "start": {
               "line": 18,
@@ -721,8 +725,6 @@
               "column": 15
             }
           },
-          "computed": false,
-          "nullable": false,
           "start": {
             "line": 18,
             "column": 10
@@ -734,11 +736,11 @@
         },
         "arguments": [
           {
-            "kind": 62,
+            "kind": 63,
             "modifiers": [],
             "parameters": [
               {
-                "kind": 77,
+                "kind": 78,
                 "modifiers": [],
                 "start": {
                   "line": 18,
@@ -749,7 +751,7 @@
                   "column": 18
                 },
                 "name": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "s",
                   "start": {
                     "line": 18,
@@ -763,9 +765,10 @@
               }
             ],
             "body": {
-              "kind": 66,
+              "kind": 67,
+              "modifiers": [],
               "object": {
-                "kind": 49,
+                "kind": 50,
                 "name": "s",
                 "start": {
                   "line": 18,
@@ -777,7 +780,7 @@
                 }
               },
               "property": {
-                "kind": 49,
+                "kind": 50,
                 "name": "length",
                 "start": {
                   "line": 18,
@@ -788,8 +791,6 @@
                   "column": 31
                 }
               },
-              "computed": false,
-              "nullable": false,
               "start": {
                 "line": 18,
                 "column": 23
@@ -809,7 +810,6 @@
             }
           }
         ],
-        "nullable": false,
         "start": {
           "line": 18,
           "column": 10
@@ -818,25 +818,18 @@
           "line": 18,
           "column": 32
         }
-      },
-      "start": {
-        "line": 18,
-        "column": 1
-      },
-      "end": {
-        "line": 18,
-        "column": 32
       }
     },
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "a5",
             "start": {
               "line": 20,
@@ -857,16 +850,25 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 20,
+        "column": 1
+      },
+      "end": {
+        "line": 20,
+        "column": 30
+      },
       "init": {
         "kind": 14,
+        "modifiers": [],
         "scope": {
           "kind": 3
         },
         "callee": {
-          "kind": 66,
+          "kind": 67,
+          "modifiers": [],
           "object": {
-            "kind": 49,
+            "kind": 50,
             "name": "a",
             "start": {
               "line": 20,
@@ -878,7 +880,7 @@
             }
           },
           "property": {
-            "kind": 49,
+            "kind": 50,
             "name": "map",
             "start": {
               "line": 20,
@@ -889,8 +891,6 @@
               "column": 15
             }
           },
-          "computed": false,
-          "nullable": false,
           "start": {
             "line": 20,
             "column": 10
@@ -902,14 +902,14 @@
         },
         "arguments": [
           {
-            "kind": 62,
+            "kind": 63,
             "modifiers": [],
             "parameters": [
               {
-                "kind": 77,
+                "kind": 78,
                 "modifiers": [],
                 "name": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "s",
                   "start": {
                     "line": 20,
@@ -931,9 +931,10 @@
               }
             ],
             "body": {
-              "kind": 66,
+              "kind": 67,
+              "modifiers": [],
               "object": {
-                "kind": 49,
+                "kind": 50,
                 "name": "s",
                 "start": {
                   "line": 20,
@@ -945,7 +946,7 @@
                 }
               },
               "property": {
-                "kind": 49,
+                "kind": 50,
                 "name": "length",
                 "start": {
                   "line": 20,
@@ -956,8 +957,6 @@
                   "column": 29
                 }
               },
-              "computed": false,
-              "nullable": false,
               "start": {
                 "line": 20,
                 "column": 21
@@ -977,7 +976,6 @@
             }
           }
         ],
-        "nullable": false,
         "start": {
           "line": 20,
           "column": 10
@@ -986,14 +984,6 @@
           "line": 20,
           "column": 30
         }
-      },
-      "start": {
-        "line": 20,
-        "column": 1
-      },
-      "end": {
-        "line": 20,
-        "column": 30
       }
     }
   ],

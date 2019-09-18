@@ -75,7 +75,9 @@ export namespace Generator {
 
 	const UnaryPostfixOperatorSymbol = {
 		`\(UnaryOperatorKind::DecrementPostfix)`	: '--'
+		`\(UnaryOperatorKind::ForcedTypeCasting)`	: '!!'
 		`\(UnaryOperatorKind::IncrementPostfix)`	: '++'
+		`\(UnaryOperatorKind::NullableTypeCasting)`	: '!?'
 	}
 
 	enum KSWriterMode {
@@ -486,7 +488,7 @@ export namespace Generator {
 			NodeKind::CallExpression => { // {{{
 				writer.expression(data.callee)
 
-				if data.nullable {
+				if data.modifiers.some(modifier => modifier.kind == ModifierKind::Nullable) {
 					writer.code('?')
 				}
 
@@ -657,6 +659,15 @@ export namespace Generator {
 					}
 				}
 			} // }}}
+			NodeKind::FusionType => { // {{{
+				for type, index in data.types {
+					if index != 0 {
+						writer.code(type.kind == NodeKind::FunctionExpression ? ' && ' : ' & ')
+					}
+
+					writer.expression(type)
+				}
+			} // }}}
 			NodeKind::Identifier => { // {{{
 				writer.code(data.name)
 			} // }}}
@@ -785,7 +796,10 @@ export namespace Generator {
 			NodeKind::MacroExpression => { // {{{
 				writer.code('macro ')
 
-				if data.multilines {
+				if data.elements[0].start.line == data.elements[data.elements.length - 1].end.line {
+					toMacroElements(data.elements, writer)
+				}
+				else {
 					const o = writer.newObject()
 
 					let line = o.newLine()
@@ -794,19 +808,28 @@ export namespace Generator {
 
 					o.done()
 				}
-				else {
-					toMacroElements(data.elements, writer)
-				}
 			} // }}}
 			NodeKind::MemberExpression => { // {{{
+				let nullable = false
+				let computed = false
+
+				for const modifier in data.modifiers {
+					if modifier.kind == ModifierKind::Computed {
+						computed = true
+					}
+					else if modifier.kind == ModifierKind::Nullable {
+						nullable = true
+					}
+				}
+
 				writer.wrap(data.object)
 
-				if data.nullable {
+				if nullable {
 					writer.code('?')
 				}
 
 
-				if data.computed {
+				if computed {
 					writer.code('[').expression(data.property).code(']')
 				}
 				else {
@@ -1043,6 +1066,19 @@ export namespace Generator {
 			NodeKind::ThisExpression => { // {{{
 				writer.code('@').expression(data.name)
 			} // }}}
+			NodeKind::TryExpression => { // {{{
+				writer.code('try')
+
+				if data.modifiers.some(modifier => modifier.kind == ModifierKind::Disabled) {
+					writer.code('!')
+				}
+
+				writer.code(' ').expression(data.argument)
+
+				if data.defaultValue? {
+					writer.code(' ~~ ').expression(data.defaultValue)
+				}
+			} // }}}
 			NodeKind::TypeReference => { // {{{
 				if data.properties? {
 					const o = writer.newObject()
@@ -1087,7 +1123,7 @@ export namespace Generator {
 						writer.code('>')
 					}
 
-					if data.nullable {
+					if data.modifiers.some(modifier => modifier.kind == ModifierKind::Nullable) {
 						writer.code('?')
 					}
 				}
@@ -1120,7 +1156,19 @@ export namespace Generator {
 					.expression(data.condition)
 			} // }}}
 			NodeKind::VariableDeclaration => { // {{{
-				writer.code(data.rebindable ? 'let ' : 'const ')
+				let immutable = false
+				let autoTyping = false
+
+				for const modifier in data.modifiers {
+					if modifier.kind == ModifierKind::AutoTyping {
+						autoTyping = true
+					}
+					else if modifier.kind == ModifierKind::Immutable {
+						immutable = true
+					}
+				}
+
+				writer.code(immutable ? 'const ' : 'let ')
 
 				for variable, index in data.variables {
 					if index != 0 {
@@ -1130,7 +1178,7 @@ export namespace Generator {
 					writer.expression(variable)
 				}
 
-				writer.code(data.autotype ? ' := ' : ' = ')
+				writer.code(autoTyping ? ' := ' : ' = ')
 
 				if data.await {
 					writer.code('await ')
@@ -1139,7 +1187,7 @@ export namespace Generator {
 				writer.expression(data.init)
 			} // }}}
 			NodeKind::VariableDeclarator => { // {{{
-				if data.sealed {
+				if data.modifiers.some(modifier => modifier.kind == ModifierKind::Immutable) {
 					writer.code('const ')
 				}
 
@@ -1166,8 +1214,14 @@ export namespace Generator {
 					ModifierKind::Async => {
 						writer.code('async ')
 					}
+					ModifierKind::Final => {
+						writer.code('final ')
+					}
 					ModifierKind::Override => {
 						writer.code('override ')
+					}
+					ModifierKind::Overwrite => {
+						writer.code('overwrite ')
 					}
 					ModifierKind::Private => {
 						writer.code('private ')
@@ -1253,14 +1307,26 @@ export namespace Generator {
 	func toLoopHeader(data, writer) { // {{{
 		switch data.kind {
 			NodeKind::ForFromStatement => {
+				let declaration = false
+				let immutable = false
+
+				for const modifier in data.modifiers {
+					if modifier.kind == ModifierKind::Declarative {
+						declaration = true
+					}
+					else if modifier.kind == ModifierKind::Immutable {
+						immutable = true
+					}
+				}
+
 				writer.code(' for ')
 
-				if data.declaration {
-					if data.rebindable {
-						writer.code('let ')
+				if declaration {
+					if immutable {
+						writer.code('const ')
 					}
 					else {
-						writer.code('const ')
+						writer.code('let ')
 					}
 				}
 
@@ -1292,14 +1358,30 @@ export namespace Generator {
 				}
 			}
 			NodeKind::ForInStatement => {
+				let declaration = false
+				let descending = false
+				let immutable = false
+
+				for const modifier in data.modifiers {
+					if modifier.kind == ModifierKind::Declarative {
+						declaration = true
+					}
+					else if modifier.kind == ModifierKind::Descending {
+						descending = true
+					}
+					else if modifier.kind == ModifierKind::Immutable {
+						immutable = true
+					}
+				}
+
 				writer.code(' for ')
 
-				if data.declaration {
-					if data.rebindable {
-						writer.code('let ')
+				if declaration {
+					if immutable {
+						writer.code('const ')
 					}
 					else {
-						writer.code('const ')
+						writer.code('let ')
 					}
 				}
 
@@ -1316,7 +1398,7 @@ export namespace Generator {
 
 				writer.code(' in ').expression(data.expression)
 
-				if data.desc {
+				if descending {
 					writer.code(' desc')
 				}
 
@@ -1343,14 +1425,26 @@ export namespace Generator {
 				}
 			}
 			NodeKind::ForOfStatement => {
+				let declaration = false
+				let immutable = false
+
+				for const modifier in data.modifiers {
+					if modifier.kind == ModifierKind::Declarative {
+						declaration = true
+					}
+					else if modifier.kind == ModifierKind::Immutable {
+						immutable = true
+					}
+				}
+
 				writer.code(' for ')
 
-				if data.declaration {
-					if data.rebindable {
-						writer.code('let ')
+				if declaration {
+					if immutable {
+						writer.code('const ')
 					}
 					else {
-						writer.code('const ')
+						writer.code('let ')
 					}
 				}
 
@@ -1379,14 +1473,26 @@ export namespace Generator {
 				}
 			}
 			NodeKind::ForRangeStatement => {
+				let declaration = false
+				let immutable = false
+
+				for const modifier in data.modifiers {
+					if modifier.kind == ModifierKind::Declarative {
+						declaration = true
+					}
+					else if modifier.kind == ModifierKind::Immutable {
+						immutable = true
+					}
+				}
+
 				writer.code(' for ')
 
-				if data.declaration {
-					if data.rebindable {
-						writer.code('let ')
+				if declaration {
+					if immutable {
+						writer.code('const ')
 					}
 					else {
-						writer.code('const ')
+						writer.code('let ')
 					}
 				}
 
@@ -1526,6 +1632,9 @@ export namespace Generator {
 					switch modifier.kind {
 						ModifierKind::Abstract => {
 							line.code('abstract ')
+						}
+						ModifierKind::Final => {
+							line.code('final ')
 						}
 						ModifierKind::Sealed => {
 							line.code('sealed ')
@@ -1787,16 +1896,28 @@ export namespace Generator {
 				line.done()
 			} // }}}
 			NodeKind::ForFromStatement => { // {{{
+				let declaration = false
+				let immutable = false
+
+				for const modifier in data.modifiers {
+					if modifier.kind == ModifierKind::Declarative {
+						declaration = true
+					}
+					else if modifier.kind == ModifierKind::Immutable {
+						immutable = true
+					}
+				}
+
 				const ctrl = writer
 					.newControl()
 					.code('for ')
 
-				if data.declaration {
-					if data.rebindable {
-						ctrl.code('let ')
+				if declaration {
+					if immutable {
+						ctrl.code('const ')
 					}
 					else {
-						ctrl.code('const ')
+						ctrl.code('let ')
 					}
 				}
 
@@ -1833,6 +1954,22 @@ export namespace Generator {
 					.done()
 			} // }}}
 			NodeKind::ForInStatement => { // {{{
+				let declaration = false
+				let descending = false
+				let immutable = false
+
+				for const modifier in data.modifiers {
+					if modifier.kind == ModifierKind::Declarative {
+						declaration = true
+					}
+					else if modifier.kind == ModifierKind::Descending {
+						descending = true
+					}
+					else if modifier.kind == ModifierKind::Immutable {
+						immutable = true
+					}
+				}
+
 				let ctrl
 
 				if data.body.kind == NodeKind::Block {
@@ -1847,12 +1984,12 @@ export namespace Generator {
 						.code(' for ')
 				}
 
-				if data.declaration {
-					if data.rebindable {
-						ctrl.code('let ')
+				if declaration {
+					if immutable {
+						ctrl.code('const ')
 					}
 					else {
-						ctrl.code('const ')
+						ctrl.code('let ')
 					}
 				}
 
@@ -1869,7 +2006,7 @@ export namespace Generator {
 
 				ctrl.code(' in ').expression(data.expression)
 
-				if data.desc {
+				if descending {
 					ctrl.code(' desc')
 				}
 
@@ -1908,16 +2045,28 @@ export namespace Generator {
 				ctrl.done()
 			} // }}}
 			NodeKind::ForRangeStatement => { // {{{
+				let declaration = false
+				let immutable = false
+
+				for const modifier in data.modifiers {
+					if modifier.kind == ModifierKind::Declarative {
+						declaration = true
+					}
+					else if modifier.kind == ModifierKind::Immutable {
+						immutable = true
+					}
+				}
+
 				const ctrl = writer
 					.newControl()
 					.code('for ')
 
-				if data.declaration {
-					if data.rebindable {
-						ctrl.code('let ')
+				if declaration {
+					if immutable {
+						ctrl.code('const ')
 					}
 					else {
-						ctrl.code('const ')
+						ctrl.code('let ')
 					}
 				}
 
@@ -1969,6 +2118,18 @@ export namespace Generator {
 				ctrl.done()
 			} // }}}
 			NodeKind::ForOfStatement => { // {{{
+				let declaration = false
+				let immutable = false
+
+				for const modifier in data.modifiers {
+					if modifier.kind == ModifierKind::Declarative {
+						declaration = true
+					}
+					else if modifier.kind == ModifierKind::Immutable {
+						immutable = true
+					}
+				}
+
 				let ctrl
 
 				if data.body.kind == NodeKind::Block {
@@ -1983,12 +2144,12 @@ export namespace Generator {
 						.code(' for ')
 				}
 
-				if data.declaration {
-					if data.rebindable {
-						ctrl.code('let ')
+				if declaration {
+					if immutable {
+						ctrl.code('const ')
 					}
 					else {
-						ctrl.code('const ')
+						ctrl.code('let ')
 					}
 				}
 
@@ -2551,9 +2712,21 @@ export namespace Generator {
 					.done()
 			} // }}}
 			NodeKind::VariableDeclaration => { // {{{
+				let immutable = false
+				let autoTyping = false
+
+				for const modifier in data.modifiers {
+					if modifier.kind == ModifierKind::AutoTyping {
+						autoTyping = true
+					}
+					else if modifier.kind == ModifierKind::Immutable {
+						immutable = true
+					}
+				}
+
 				const line = writer
 					.newLine()
-					.code(data.rebindable ? 'let ' : 'const ')
+					.code(immutable ? 'const ' : 'let ')
 
 				for variable, index in data.variables {
 					if index != 0 {
@@ -2564,7 +2737,7 @@ export namespace Generator {
 				}
 
 				if data.init? {
-					line.code(data.autotype ? ' := ' : ' = ')
+					line.code(autoTyping ? ' := ' : ' = ')
 
 					if data.await {
 						line.code('await ')

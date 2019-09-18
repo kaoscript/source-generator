@@ -1,16 +1,17 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "number",
             "start": {
               "line": 1,
@@ -31,9 +32,16 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 1,
+        "column": 16
+      },
       "init": {
-        "kind": 72,
+        "kind": 73,
         "value": 13,
         "start": {
           "line": 1,
@@ -43,21 +51,13 @@
           "line": 1,
           "column": 16
         }
-      },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 1,
-        "column": 16
       }
     },
     {
-      "kind": 95,
+      "kind": 96,
       "attributes": [],
       "expression": {
-        "kind": 49,
+        "kind": 50,
         "name": "number",
         "start": {
           "line": 3,
@@ -70,20 +70,22 @@
       },
       "clauses": [
         {
-          "kind": 88,
+          "kind": 89,
           "body": {
             "kind": 12,
             "attributes": [],
             "statements": [
               {
                 "kind": 14,
+                "modifiers": [],
                 "scope": {
                   "kind": 3
                 },
                 "callee": {
-                  "kind": 66,
+                  "kind": 67,
+                  "modifiers": [],
                   "object": {
-                    "kind": 49,
+                    "kind": 50,
                     "name": "console",
                     "start": {
                       "line": 5,
@@ -95,7 +97,7 @@
                     }
                   },
                   "property": {
-                    "kind": 49,
+                    "kind": 50,
                     "name": "log",
                     "start": {
                       "line": 5,
@@ -106,8 +108,6 @@
                       "column": 14
                     }
                   },
-                  "computed": false,
-                  "nullable": false,
                   "start": {
                     "line": 5,
                     "column": 3
@@ -119,7 +119,7 @@
                 },
                 "arguments": [
                   {
-                    "kind": 63,
+                    "kind": 64,
                     "value": "Ain't special",
                     "start": {
                       "line": 5,
@@ -131,7 +131,6 @@
                     }
                   }
                 ],
-                "nullable": false,
                 "start": {
                   "line": 5,
                   "column": 3

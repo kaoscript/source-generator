@@ -1,12 +1,12 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
       "kind": 17,
       "attributes": [],
       "name": {
-        "kind": 49,
+        "kind": 50,
         "name": "Foobar",
         "start": {
           "line": 1,
@@ -24,7 +24,7 @@
           "attributes": [],
           "modifiers": [
             {
-              "kind": 6,
+              "kind": 14,
               "start": {
                 "line": 2,
                 "column": 2
@@ -36,7 +36,7 @@
             }
           ],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "_x",
             "start": {
               "line": 3,
@@ -56,9 +56,10 @@
             "column": 13
           },
           "type": {
-            "kind": 104,
+            "kind": 106,
+            "modifiers": [],
             "typeName": {
-              "kind": 49,
+              "kind": 50,
               "name": "Number",
               "start": {
                 "line": 3,
@@ -80,11 +81,11 @@
           }
         },
         {
-          "kind": 67,
+          "kind": 68,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "constructor",
             "start": {
               "line": 5,
@@ -97,10 +98,10 @@
           },
           "parameters": [
             {
-              "kind": 77,
+              "kind": 78,
               "modifiers": [
                 {
-                  "kind": 14,
+                  "kind": 22,
                   "start": {
                     "line": 5,
                     "column": 14
@@ -120,7 +121,7 @@
                 "column": 16
               },
               "name": {
-                "kind": 49,
+                "kind": 50,
                 "name": "x",
                 "start": {
                   "line": 5,
@@ -144,11 +145,11 @@
           "throws": []
         },
         {
-          "kind": 67,
+          "kind": 68,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "export",
             "start": {
               "line": 6,
@@ -170,16 +171,16 @@
           },
           "throws": [],
           "body": {
-            "kind": 74,
+            "kind": 75,
             "attributes": [],
             "properties": [
               {
-                "kind": 86,
+                "kind": 87,
                 "attributes": [],
                 "name": {
-                  "kind": 99,
+                  "kind": 100,
                   "name": {
-                    "kind": 49,
+                    "kind": 50,
                     "name": "x",
                     "start": {
                       "line": 7,

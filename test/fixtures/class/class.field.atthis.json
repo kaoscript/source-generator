@@ -1,12 +1,12 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
       "kind": 17,
       "attributes": [],
       "name": {
-        "kind": 49,
+        "kind": 50,
         "name": "Foobar",
         "start": {
           "line": 1,
@@ -24,7 +24,7 @@
           "attributes": [],
           "modifiers": [
             {
-              "kind": 6,
+              "kind": 14,
               "start": {
                 "line": 2,
                 "column": 2
@@ -35,7 +35,7 @@
               }
             },
             {
-              "kind": 14,
+              "kind": 22,
               "start": {
                 "line": 2,
                 "column": 10
@@ -47,7 +47,7 @@
             }
           ],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "foo",
             "start": {
               "line": 2,
@@ -67,9 +67,10 @@
             "column": 22
           },
           "type": {
-            "kind": 104,
+            "kind": 106,
+            "modifiers": [],
             "typeName": {
-              "kind": 49,
+              "kind": 50,
               "name": "Number",
               "start": {
                 "line": 2,
@@ -95,7 +96,7 @@
           "attributes": [],
           "modifiers": [
             {
-              "kind": 8,
+              "kind": 16,
               "start": {
                 "line": 3,
                 "column": 2
@@ -106,7 +107,7 @@
               }
             },
             {
-              "kind": 14,
+              "kind": 22,
               "start": {
                 "line": 3,
                 "column": 9
@@ -118,7 +119,7 @@
             }
           ],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "bar",
             "start": {
               "line": 3,
@@ -138,9 +139,10 @@
             "column": 21
           },
           "type": {
-            "kind": 104,
+            "kind": 106,
+            "modifiers": [],
             "typeName": {
-              "kind": 49,
+              "kind": 50,
               "name": "String",
               "start": {
                 "line": 3,

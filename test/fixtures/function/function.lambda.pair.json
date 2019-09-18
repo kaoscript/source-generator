@@ -1,16 +1,17 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "foo",
             "start": {
               "line": 1,
@@ -31,13 +32,20 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 1,
+        "column": 34
+      },
       "init": {
-        "kind": 62,
+        "kind": 63,
         "modifiers": [],
         "parameters": [
           {
-            "kind": 77,
+            "kind": 78,
             "modifiers": [],
             "start": {
               "line": 1,
@@ -48,7 +56,7 @@
               "column": 20
             },
             "name": {
-              "kind": 49,
+              "kind": 50,
               "name": "x",
               "start": {
                 "line": 1,
@@ -60,7 +68,7 @@
               }
             },
             "defaultValue": {
-              "kind": 49,
+              "kind": 50,
               "name": "null",
               "start": {
                 "line": 1,
@@ -73,7 +81,7 @@
             }
           },
           {
-            "kind": 77,
+            "kind": 78,
             "modifiers": [],
             "start": {
               "line": 1,
@@ -84,7 +92,7 @@
               "column": 23
             },
             "name": {
-              "kind": 49,
+              "kind": 50,
               "name": "y",
               "start": {
                 "line": 1,
@@ -101,7 +109,7 @@
           "kind": 4,
           "values": [
             {
-              "kind": 49,
+              "kind": 50,
               "name": "x",
               "start": {
                 "line": 1,
@@ -113,7 +121,7 @@
               }
             },
             {
-              "kind": 49,
+              "kind": 50,
               "name": "y",
               "start": {
                 "line": 1,
@@ -142,14 +150,6 @@
           "line": 1,
           "column": 34
         }
-      },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 1,
-        "column": 34
       }
     }
   ],

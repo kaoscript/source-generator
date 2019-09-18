@@ -1,20 +1,23 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
       "kind": 14,
+      "modifiers": [],
       "scope": {
         "kind": 3
       },
       "callee": {
-        "kind": 66,
+        "kind": 67,
+        "modifiers": [],
         "object": {
           "kind": 25,
           "class": {
-            "kind": 66,
+            "kind": 67,
+            "modifiers": [],
             "object": {
-              "kind": 49,
+              "kind": 50,
               "name": "pack",
               "start": {
                 "line": 1,
@@ -26,7 +29,7 @@
               }
             },
             "property": {
-              "kind": 49,
+              "kind": 50,
               "name": "Shape",
               "start": {
                 "line": 1,
@@ -37,8 +40,6 @@
                 "column": 15
               }
             },
-            "computed": false,
-            "nullable": false,
             "start": {
               "line": 1,
               "column": 5
@@ -59,7 +60,7 @@
           }
         },
         "property": {
-          "kind": 49,
+          "kind": 50,
           "name": "draw",
           "start": {
             "line": 1,
@@ -70,8 +71,6 @@
             "column": 22
           }
         },
-        "computed": false,
-        "nullable": false,
         "start": {
           "line": 1,
           "column": 1
@@ -82,7 +81,6 @@
         }
       },
       "arguments": [],
-      "nullable": false,
       "start": {
         "line": 1,
         "column": 1

@@ -1,16 +1,17 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "min",
             "start": {
               "line": 1,
@@ -31,9 +32,16 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 1,
+        "column": 12
+      },
       "init": {
-        "kind": 72,
+        "kind": 73,
         "value": 1,
         "start": {
           "line": 1,
@@ -43,25 +51,18 @@
           "line": 1,
           "column": 12
         }
-      },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 1,
-        "column": 12
       }
     },
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "max",
             "start": {
               "line": 2,
@@ -82,9 +83,16 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 2,
+        "column": 1
+      },
+      "end": {
+        "line": 2,
+        "column": 12
+      },
       "init": {
-        "kind": 72,
+        "kind": 73,
         "value": 5,
         "start": {
           "line": 2,
@@ -94,25 +102,18 @@
           "line": 2,
           "column": 12
         }
-      },
-      "start": {
-        "line": 2,
-        "column": 1
-      },
-      "end": {
-        "line": 2,
-        "column": 12
       }
     },
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "a",
             "start": {
               "line": 4,
@@ -133,11 +134,18 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 4,
+        "column": 1
+      },
+      "end": {
+        "line": 4,
+        "column": 19
+      },
       "init": {
         "kind": 5,
         "from": {
-          "kind": 49,
+          "kind": 50,
           "name": "min",
           "start": {
             "line": 4,
@@ -149,7 +157,7 @@
           }
         },
         "to": {
-          "kind": 49,
+          "kind": 50,
           "name": "max",
           "start": {
             "line": 4,
@@ -168,14 +176,6 @@
           "line": 4,
           "column": 19
         }
-      },
-      "start": {
-        "line": 4,
-        "column": 1
-      },
-      "end": {
-        "line": 4,
-        "column": 19
       }
     }
   ],

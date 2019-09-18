@@ -1,16 +1,29 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [
+        {
+          "kind": 10,
+          "start": {
+            "line": 1,
+            "column": 1
+          },
+          "end": {
+            "line": 1,
+            "column": 6
+          }
+        }
+      ],
       "attributes": [],
-      "rebindable": false,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "$escapes",
             "start": {
               "line": 1,
@@ -31,16 +44,23 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 10,
+        "column": 2
+      },
       "init": {
-        "kind": 74,
+        "kind": 75,
         "attributes": [],
         "properties": [
           {
-            "kind": 75,
+            "kind": 76,
             "attributes": [],
             "name": {
-              "kind": 63,
+              "kind": 64,
               "value": "\\x00",
               "start": {
                 "line": 2,
@@ -52,7 +72,7 @@
               }
             },
             "value": {
-              "kind": 63,
+              "kind": 64,
               "value": "\\\\0",
               "start": {
                 "line": 2,
@@ -73,10 +93,10 @@
             }
           },
           {
-            "kind": 75,
+            "kind": 76,
             "attributes": [],
             "name": {
-              "kind": 63,
+              "kind": 64,
               "value": "\\b",
               "start": {
                 "line": 3,
@@ -88,7 +108,7 @@
               }
             },
             "value": {
-              "kind": 63,
+              "kind": 64,
               "value": "\\\\b",
               "start": {
                 "line": 3,
@@ -109,10 +129,10 @@
             }
           },
           {
-            "kind": 75,
+            "kind": 76,
             "attributes": [],
             "name": {
-              "kind": 63,
+              "kind": 64,
               "value": "\\t",
               "start": {
                 "line": 4,
@@ -124,7 +144,7 @@
               }
             },
             "value": {
-              "kind": 63,
+              "kind": 64,
               "value": "\\\\t",
               "start": {
                 "line": 4,
@@ -145,10 +165,10 @@
             }
           },
           {
-            "kind": 75,
+            "kind": 76,
             "attributes": [],
             "name": {
-              "kind": 63,
+              "kind": 64,
               "value": "\\n",
               "start": {
                 "line": 5,
@@ -160,7 +180,7 @@
               }
             },
             "value": {
-              "kind": 63,
+              "kind": 64,
               "value": "\\\\n",
               "start": {
                 "line": 5,
@@ -181,10 +201,10 @@
             }
           },
           {
-            "kind": 75,
+            "kind": 76,
             "attributes": [],
             "name": {
-              "kind": 63,
+              "kind": 64,
               "value": "\\f",
               "start": {
                 "line": 6,
@@ -196,7 +216,7 @@
               }
             },
             "value": {
-              "kind": 63,
+              "kind": 64,
               "value": "\\\\f",
               "start": {
                 "line": 6,
@@ -217,10 +237,10 @@
             }
           },
           {
-            "kind": 75,
+            "kind": 76,
             "attributes": [],
             "name": {
-              "kind": 63,
+              "kind": 64,
               "value": "\\r",
               "start": {
                 "line": 7,
@@ -232,7 +252,7 @@
               }
             },
             "value": {
-              "kind": 63,
+              "kind": 64,
               "value": "\\\\r",
               "start": {
                 "line": 7,
@@ -253,10 +273,10 @@
             }
           },
           {
-            "kind": 75,
+            "kind": 76,
             "attributes": [],
             "name": {
-              "kind": 63,
+              "kind": 64,
               "value": "\"",
               "start": {
                 "line": 8,
@@ -268,7 +288,7 @@
               }
             },
             "value": {
-              "kind": 63,
+              "kind": 64,
               "value": "\\\\\"",
               "start": {
                 "line": 8,
@@ -289,10 +309,10 @@
             }
           },
           {
-            "kind": 75,
+            "kind": 76,
             "attributes": [],
             "name": {
-              "kind": 63,
+              "kind": 64,
               "value": "\\\\",
               "start": {
                 "line": 9,
@@ -304,7 +324,7 @@
               }
             },
             "value": {
-              "kind": 63,
+              "kind": 64,
               "value": "\\\\\\\\",
               "start": {
                 "line": 9,
@@ -333,14 +353,6 @@
           "line": 10,
           "column": 2
         }
-      },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 10,
-        "column": 2
       }
     }
   ],

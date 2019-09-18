@@ -1,12 +1,12 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
       "kind": 17,
       "attributes": [],
       "name": {
-        "kind": 49,
+        "kind": 50,
         "name": "Rectangle",
         "start": {
           "line": 1,
@@ -24,7 +24,7 @@
           "attributes": [],
           "modifiers": [
             {
-              "kind": 8,
+              "kind": 16,
               "start": {
                 "line": 2,
                 "column": 5
@@ -36,7 +36,7 @@
             }
           ],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "color",
             "start": {
               "line": 2,
@@ -56,9 +56,10 @@
             "column": 25
           },
           "type": {
-            "kind": 104,
+            "kind": 106,
+            "modifiers": [],
             "typeName": {
-              "kind": 49,
+              "kind": 50,
               "name": "String",
               "start": {
                 "line": 2,
@@ -80,11 +81,11 @@
           }
         },
         {
-          "kind": 67,
+          "kind": 68,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "constructor",
             "start": {
               "line": 3,
@@ -97,10 +98,10 @@
           },
           "parameters": [
             {
-              "kind": 77,
+              "kind": 78,
               "modifiers": [
                 {
-                  "kind": 14,
+                  "kind": 22,
                   "start": {
                     "line": 3,
                     "column": 17
@@ -120,7 +121,7 @@
                 "column": 33
               },
               "name": {
-                "kind": 49,
+                "kind": 50,
                 "name": "color",
                 "start": {
                   "line": 3,
@@ -132,7 +133,7 @@
                 }
               },
               "defaultValue": {
-                "kind": 63,
+                "kind": 64,
                 "value": "black",
                 "start": {
                   "line": 3,
@@ -156,11 +157,11 @@
           "throws": []
         },
         {
-          "kind": 67,
+          "kind": 68,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "draw",
             "start": {
               "line": 5,
@@ -173,7 +174,7 @@
           },
           "parameters": [
             {
-              "kind": 77,
+              "kind": 78,
               "modifiers": [],
               "start": {
                 "line": 5,
@@ -184,7 +185,7 @@
                 "column": 16
               },
               "name": {
-                "kind": 49,
+                "kind": 50,
                 "name": "canvas",
                 "start": {
                   "line": 5,
@@ -211,13 +212,13 @@
             "attributes": [],
             "statements": [
               {
-                "kind": 84,
+                "kind": 85,
                 "attributes": [],
                 "value": {
-                  "kind": 98,
+                  "kind": 99,
                   "elements": [
                     {
-                      "kind": 63,
+                      "kind": 64,
                       "value": "I'm drawing a ",
                       "start": {
                         "line": 6,
@@ -229,9 +230,9 @@
                       }
                     },
                     {
-                      "kind": 99,
+                      "kind": 100,
                       "name": {
-                        "kind": 49,
+                        "kind": 50,
                         "name": "color",
                         "start": {
                           "line": 6,
@@ -252,7 +253,7 @@
                       }
                     },
                     {
-                      "kind": 63,
+                      "kind": 64,
                       "value": " rectangle.",
                       "start": {
                         "line": 6,

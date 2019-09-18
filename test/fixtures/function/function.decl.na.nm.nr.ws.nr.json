@@ -1,12 +1,12 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
       "kind": 47,
       "attributes": [],
       "name": {
-        "kind": 49,
+        "kind": 50,
         "name": "foo",
         "start": {
           "line": 1,
@@ -33,14 +33,15 @@
         "attributes": [],
         "statements": [
           {
-            "kind": 110,
+            "kind": 112,
+            "modifiers": [],
             "attributes": [],
-            "rebindable": true,
             "variables": [
               {
-                "kind": 111,
+                "kind": 113,
+                "modifiers": [],
                 "name": {
-                  "kind": 49,
+                  "kind": 50,
                   "name": "bar",
                   "start": {
                     "line": 2,
@@ -61,9 +62,16 @@
                 }
               }
             ],
-            "autotype": false,
+            "start": {
+              "line": 2,
+              "column": 2
+            },
+            "end": {
+              "line": 2,
+              "column": 19
+            },
             "init": {
-              "kind": 63,
+              "kind": 64,
               "value": "hello",
               "start": {
                 "line": 2,
@@ -73,14 +81,6 @@
                 "line": 2,
                 "column": 19
               }
-            },
-            "start": {
-              "line": 2,
-              "column": 2
-            },
-            "end": {
-              "line": 2,
-              "column": 19
             }
           }
         ],

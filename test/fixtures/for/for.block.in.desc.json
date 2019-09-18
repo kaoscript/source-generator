@@ -1,5 +1,5 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
@@ -17,7 +17,7 @@
         }
       },
       "left": {
-        "kind": 49,
+        "kind": 50,
         "name": "heroes",
         "start": {
           "line": 1,
@@ -32,7 +32,7 @@
         "kind": 4,
         "values": [
           {
-            "kind": 63,
+            "kind": 64,
             "value": "leto",
             "start": {
               "line": 1,
@@ -44,7 +44,7 @@
             }
           },
           {
-            "kind": 63,
+            "kind": 64,
             "value": "duncan",
             "start": {
               "line": 1,
@@ -56,7 +56,7 @@
             }
           },
           {
-            "kind": 63,
+            "kind": 64,
             "value": "goku",
             "start": {
               "line": 1,
@@ -90,8 +90,21 @@
     {
       "kind": 44,
       "attributes": [],
+      "modifiers": [
+        {
+          "kind": 7,
+          "start": {
+            "line": 3,
+            "column": 20
+          },
+          "end": {
+            "line": 3,
+            "column": 24
+          }
+        }
+      ],
       "expression": {
-        "kind": 49,
+        "kind": 50,
         "name": "heroes",
         "start": {
           "line": 3,
@@ -102,8 +115,6 @@
           "column": 19
         }
       },
-      "desc": true,
-      "declaration": false,
       "start": {
         "line": 3,
         "column": 1
@@ -113,7 +124,7 @@
         "column": 2
       },
       "value": {
-        "kind": 49,
+        "kind": 50,
         "name": "hero",
         "start": {
           "line": 3,
@@ -130,13 +141,15 @@
         "statements": [
           {
             "kind": 14,
+            "modifiers": [],
             "scope": {
               "kind": 3
             },
             "callee": {
-              "kind": 66,
+              "kind": 67,
+              "modifiers": [],
               "object": {
-                "kind": 49,
+                "kind": 50,
                 "name": "console",
                 "start": {
                   "line": 4,
@@ -148,7 +161,7 @@
                 }
               },
               "property": {
-                "kind": 49,
+                "kind": 50,
                 "name": "log",
                 "start": {
                   "line": 4,
@@ -159,8 +172,6 @@
                   "column": 13
                 }
               },
-              "computed": false,
-              "nullable": false,
               "start": {
                 "line": 4,
                 "column": 2
@@ -172,7 +183,7 @@
             },
             "arguments": [
               {
-                "kind": 49,
+                "kind": 50,
                 "name": "hero",
                 "start": {
                   "line": 4,
@@ -184,7 +195,6 @@
                 }
               }
             ],
-            "nullable": false,
             "start": {
               "line": 4,
               "column": 2

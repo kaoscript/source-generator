@@ -1,12 +1,12 @@
 {
-  "kind": 69,
+  "kind": 70,
   "attributes": [],
   "body": [
     {
-      "kind": 103,
+      "kind": 105,
       "attributes": [],
       "name": {
-        "kind": 49,
+        "kind": 50,
         "name": "T",
         "start": {
           "line": 1,
@@ -18,12 +18,13 @@
         }
       },
       "type": {
-        "kind": 109,
+        "kind": 111,
         "types": [
           {
-            "kind": 104,
+            "kind": 106,
+            "modifiers": [],
             "typeName": {
-              "kind": 49,
+              "kind": 50,
               "name": "number",
               "start": {
                 "line": 1,
@@ -44,9 +45,10 @@
             }
           },
           {
-            "kind": 104,
+            "kind": 106,
+            "modifiers": [],
             "typeName": {
-              "kind": 49,
+              "kind": 50,
               "name": "string",
               "start": {
                 "line": 1,
@@ -86,14 +88,15 @@
       }
     },
     {
-      "kind": 110,
+      "kind": 112,
+      "modifiers": [],
       "attributes": [],
-      "rebindable": true,
       "variables": [
         {
-          "kind": 111,
+          "kind": 113,
+          "modifiers": [],
           "name": {
-            "kind": 49,
+            "kind": 50,
             "name": "x",
             "start": {
               "line": 3,
@@ -113,9 +116,10 @@
             "column": 9
           },
           "type": {
-            "kind": 104,
+            "kind": 106,
+            "modifiers": [],
             "typeName": {
-              "kind": 49,
+              "kind": 50,
               "name": "T",
               "start": {
                 "line": 3,
@@ -137,9 +141,16 @@
           }
         }
       ],
-      "autotype": false,
+      "start": {
+        "line": 3,
+        "column": 1
+      },
+      "end": {
+        "line": 3,
+        "column": 13
+      },
       "init": {
-        "kind": 72,
+        "kind": 73,
         "value": 0,
         "start": {
           "line": 3,
@@ -149,14 +160,6 @@
           "line": 3,
           "column": 13
         }
-      },
-      "start": {
-        "line": 3,
-        "column": 1
-      },
-      "end": {
-        "line": 3,
-        "column": 13
       }
     }
   ],
