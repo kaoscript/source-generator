@@ -100,7 +100,7 @@ export namespace Generator {
 			_stack: Array			= []
 		}
 		constructor(options = null) { // {{{
-			super(Object.merge({
+			super(Dictionary.merge({
 				mode: KSWriterMode::Default
 				classes: {
 					block: KSBlockWriter
