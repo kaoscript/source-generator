@@ -498,7 +498,7 @@ export namespace Generator {
 							.code('*$(')
 							.expression(data.scope.value)
 
-						if data.arguments.length {
+						if data.arguments.length != 0 {
 							writer.code(', ')
 						}
 					}
