@@ -635,6 +635,15 @@ export namespace Generator {
 					.code('::')
 					.expression(data.member)
 			} // }}}
+			NodeKind::ExclusionType => { // {{{
+				for type, index in data.types {
+					if index != 0 {
+						writer.code(type.kind == NodeKind::FunctionExpression ? ' ^^ ' : ' ^ ')
+					}
+
+					writer.expression(type)
+				}
+			} // }}}
 			NodeKind::FunctionDeclaration => { // {{{
 				toFunctionHeader(data, writer => writer.code('func '), writer)
 			} // }}}
@@ -1543,19 +1552,22 @@ export namespace Generator {
 					if element.reification.kind == ReificationKind::Expression && element.expression.kind == NodeKind::Identifier {
 						writer.expression(element.expression)
 					}
+					else if element.reification.kind == ReificationKind::Join {
+						writer.code('j(').expression(element.expression).code(', ').expression(element.separator).code(')')
+					}
 					else {
 						switch element.reification.kind {
-							ReificationKind::Arguments => {
+							ReificationKind::Argument => {
 								writer.code('a')
-							}
-							ReificationKind::Block => {
-								writer.code('b')
 							}
 							ReificationKind::Expression => {
 								writer.code('e')
 							}
-							ReificationKind::Identifier => {
-								writer.code('i')
+							ReificationKind::Statement => {
+								writer.code('s')
+							}
+							ReificationKind::Write => {
+								writer.code('w')
 							}
 						}
 

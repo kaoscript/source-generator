@@ -1,0 +1,153 @@
+{
+  "kind": 71,
+  "attributes": [],
+  "body": [
+    {
+      "kind": 113,
+      "modifiers": [],
+      "attributes": [],
+      "variables": [
+        {
+          "kind": 114,
+          "modifiers": [],
+          "name": {
+            "kind": 51,
+            "name": "foobar",
+            "start": {
+              "line": 1,
+              "column": 5
+            },
+            "end": {
+              "line": 1,
+              "column": 11
+            }
+          },
+          "start": {
+            "line": 1,
+            "column": 5
+          },
+          "end": {
+            "line": 1,
+            "column": 34
+          },
+          "type": {
+            "kind": 107,
+            "modifiers": [],
+            "typeName": {
+              "kind": 51,
+              "name": "Array",
+              "start": {
+                "line": 1,
+                "column": 13
+              },
+              "end": {
+                "line": 1,
+                "column": 18
+              }
+            },
+            "start": {
+              "line": 1,
+              "column": 13
+            },
+            "end": {
+              "line": 1,
+              "column": 34
+            },
+            "typeParameters": [
+              {
+                "kind": 107,
+                "modifiers": [],
+                "typeName": {
+                  "kind": 51,
+                  "name": "Array",
+                  "start": {
+                    "line": 1,
+                    "column": 19
+                  },
+                  "end": {
+                    "line": 1,
+                    "column": 24
+                  }
+                },
+                "start": {
+                  "line": 1,
+                  "column": 19
+                },
+                "end": {
+                  "line": 1,
+                  "column": 33
+                },
+                "typeParameters": [
+                  {
+                    "kind": 107,
+                    "modifiers": [
+                      {
+                        "kind": 11,
+                        "start": {
+                          "line": 1,
+                          "column": 31
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 32
+                        }
+                      }
+                    ],
+                    "typeName": {
+                      "kind": 51,
+                      "name": "String",
+                      "start": {
+                        "line": 1,
+                        "column": 25
+                      },
+                      "end": {
+                        "line": 1,
+                        "column": 31
+                      }
+                    },
+                    "start": {
+                      "line": 1,
+                      "column": 25
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 32
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 1,
+        "column": 39
+      },
+      "init": {
+        "kind": 4,
+        "values": [],
+        "start": {
+          "line": 1,
+          "column": 37
+        },
+        "end": {
+          "line": 1,
+          "column": 39
+        }
+      }
+    }
+  ],
+  "start": {
+    "line": 1,
+    "column": 1
+  },
+  "end": {
+    "line": 1,
+    "column": 39
+  }
+}
