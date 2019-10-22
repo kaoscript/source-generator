@@ -1,8 +1,8 @@
-func foo(, x) {
+func foo(_, x) {
 }
-func bar(x: any?, , z: any?) {
+func bar(x: any?, _, z: any?) {
 }
-func baz(x: any?, : any?, z: any?) {
+func baz(x: any?, _: any?, z: any?) {
 }
 func qux(...{,3}items) {
 }

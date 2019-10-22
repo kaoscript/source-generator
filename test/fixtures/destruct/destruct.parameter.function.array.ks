@@ -8,7 +8,7 @@ func foo([x = 1, y = 2, z = 3]: Array<Number> = []) {
 }
 func foo([x, y, ...z]) {
 }
-func foo([, y, ...]) {
+func foo([_, y, ...]) {
 }
 func foo([name, [x = 0, y = 0, z = 0] = []] = []) {
 }

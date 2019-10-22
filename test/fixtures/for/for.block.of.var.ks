@@ -3,6 +3,6 @@ likes = {
 	paul: "chani"
 	duncan: "murbella"
 }
-for :key of likes {
+for _, key of likes {
 	console.log(key)
 }

@@ -9,7 +9,7 @@ class Foobar {
 	}
 	foo([x, y, ...z]) {
 	}
-	foo([, y, ...]) {
+	foo([_, y, ...]) {
 	}
 	foo([name, [x = 0, y = 0, z = 0] = []] = []) {
 	}

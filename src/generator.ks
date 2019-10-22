@@ -423,6 +423,7 @@ export namespace Generator {
 			NodeKind::BindingElement => { // {{{
 				let computed = false
 				let thisAlias = false
+				let rest = false
 
 				for const modifier in data.modifiers {
 					if modifier.kind == ModifierKind::Computed {
@@ -430,6 +431,8 @@ export namespace Generator {
 					}
 					else if modifier.kind == ModifierKind::Rest {
 						writer.code('...')
+
+						rest = true
 					}
 					else if modifier.kind == ModifierKind::ThisAlias {
 						thisAlias = true
@@ -476,6 +479,9 @@ export namespace Generator {
 					if data.defaultValue? {
 						writer.code(' = ').expression(data.defaultValue)
 					}
+				}
+				else if !rest {
+					writer.code('_')
 				}
 			} // }}}
 			NodeKind::Block => { // {{{
@@ -898,8 +904,13 @@ export namespace Generator {
 				if data.spread {
 					writer.code('...')
 				}
+				else {
+					writer.code('_')
+				}
 			} // }}}
 			NodeKind::Parameter => { // {{{
+				let rest: Boolean = false
+
 				for const modifier in data.modifiers {
 					switch modifier.kind {
 						ModifierKind::AutoEvaluate => {
@@ -928,6 +939,8 @@ export namespace Generator {
 
 								writer.code('}')
 							}
+
+							rest = true
 						}
 						ModifierKind::ThisAlias => {
 							writer.code('@')
@@ -948,6 +961,9 @@ export namespace Generator {
 							}
 						}
 					}
+				}
+				else if !rest {
+					writer.code('_')
 				}
 
 				if data.type? {
@@ -2008,12 +2024,16 @@ export namespace Generator {
 				if data.value? {
 					ctrl.expression(data.value)
 
+					if data.type? {
+						ctrl.code(': ').expression(data.type)
+					}
+
 					if data.index? {
 						ctrl.code(', ').expression(data.index)
 					}
 				}
 				else {
-					ctrl.code(':').expression(data.index)
+					ctrl.code('_, ').expression(data.index)
 				}
 
 				ctrl.code(' in ').expression(data.expression)
@@ -2168,12 +2188,16 @@ export namespace Generator {
 				if data.value? {
 					ctrl.expression(data.value)
 
+					if data.type? {
+						ctrl.code(': ').expression(data.type)
+					}
+
 					if data.key? {
 						ctrl.code(', ').expression(data.key)
 					}
 				}
 				else {
-					ctrl.code(':').expression(data.key)
+					ctrl.code('_, ').expression(data.key)
 				}
 
 				ctrl.code(' of ').expression(data.expression)
