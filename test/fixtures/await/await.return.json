@@ -1,12 +1,12 @@
 {
-  "kind": 71,
+  "kind": 74,
   "attributes": [],
   "body": [
     {
-      "kind": 48,
+      "kind": 50,
       "attributes": [],
       "name": {
-        "kind": 51,
+        "kind": 53,
         "name": "foo",
         "start": {
           "line": 1,
@@ -27,7 +27,7 @@
       },
       "parameters": [
         {
-          "kind": 79,
+          "kind": 83,
           "modifiers": [],
           "start": {
             "line": 1,
@@ -38,7 +38,7 @@
             "column": 17
           },
           "name": {
-            "kind": 51,
+            "kind": 53,
             "name": "x",
             "start": {
               "line": 1,
@@ -51,7 +51,7 @@
           }
         },
         {
-          "kind": 79,
+          "kind": 83,
           "modifiers": [],
           "start": {
             "line": 1,
@@ -62,7 +62,7 @@
             "column": 20
           },
           "name": {
-            "kind": 51,
+            "kind": 53,
             "name": "y",
             "start": {
               "line": 1,
@@ -93,6 +93,7 @@
         "kind": 10,
         "operator": {
           "kind": 22,
+          "modifiers": [],
           "start": {
             "line": 1,
             "column": 27
@@ -111,7 +112,7 @@
           "column": 30
         },
         "left": {
-          "kind": 51,
+          "kind": 53,
           "name": "x",
           "start": {
             "line": 1,
@@ -123,7 +124,7 @@
           }
         },
         "right": {
-          "kind": 51,
+          "kind": 53,
           "name": "y",
           "start": {
             "line": 1,
@@ -137,10 +138,10 @@
       }
     },
     {
-      "kind": 48,
+      "kind": 50,
       "attributes": [],
       "name": {
-        "kind": 51,
+        "kind": 53,
         "name": "bar",
         "start": {
           "line": 3,
@@ -184,7 +185,7 @@
             "kind": 3
           },
           "callee": {
-            "kind": 51,
+            "kind": 53,
             "name": "foo",
             "start": {
               "line": 3,
@@ -197,7 +198,7 @@
           },
           "arguments": [
             {
-              "kind": 74,
+              "kind": 78,
               "value": 42,
               "start": {
                 "line": 3,
@@ -209,7 +210,7 @@
               }
             },
             {
-              "kind": 74,
+              "kind": 78,
               "value": 24,
               "start": {
                 "line": 3,

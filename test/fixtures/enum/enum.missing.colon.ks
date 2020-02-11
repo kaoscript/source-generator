@@ -3,4 +3,4 @@ enum Kind {
 	B
 	C
 }
-let k = Kind:A
+let k = (Kind as A)

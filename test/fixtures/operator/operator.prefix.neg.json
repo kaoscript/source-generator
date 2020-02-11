@@ -1,12 +1,12 @@
 {
-  "kind": 71,
+  "kind": 74,
   "attributes": [],
   "body": [
     {
-      "kind": 53,
+      "kind": 55,
       "attributes": [],
       "condition": {
-        "kind": 108,
+        "kind": 117,
         "operator": {
           "kind": 8,
           "start": {
@@ -19,7 +19,7 @@
           }
         },
         "argument": {
-          "kind": 51,
+          "kind": 53,
           "name": "test",
           "start": {
             "line": 1,

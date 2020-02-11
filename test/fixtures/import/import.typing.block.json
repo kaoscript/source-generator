@@ -1,16 +1,17 @@
 {
-  "kind": 71,
+  "kind": 74,
   "attributes": [],
   "body": [
     {
-      "kind": 56,
+      "kind": 58,
       "attributes": [],
       "declarations": [
         {
-          "kind": 57,
+          "kind": 59,
           "attributes": [],
+          "modifiers": [],
           "source": {
-            "kind": 65,
+            "kind": 68,
             "value": "benchmark",
             "start": {
               "line": 2,
@@ -23,10 +24,10 @@
           },
           "specifiers": [
             {
-              "kind": 59,
+              "kind": 61,
               "attributes": [],
               "local": {
-                "kind": 51,
+                "kind": 53,
                 "name": "Benchmark",
                 "start": {
                   "line": 2,
@@ -57,10 +58,11 @@
           }
         },
         {
-          "kind": 57,
+          "kind": 59,
           "attributes": [],
+          "modifiers": [],
           "source": {
-            "kind": 65,
+            "kind": 68,
             "value": "fs",
             "start": {
               "line": 3,
@@ -82,10 +84,11 @@
           }
         },
         {
-          "kind": 57,
+          "kind": 59,
           "attributes": [],
+          "modifiers": [],
           "source": {
-            "kind": 65,
+            "kind": 68,
             "value": "chevrotain",
             "start": {
               "line": 4,
@@ -98,13 +101,13 @@
           },
           "specifiers": [
             {
-              "kind": 61,
+              "kind": 63,
               "attributes": [],
               "imported": {
-                "kind": 48,
+                "kind": 50,
                 "attributes": [],
                 "name": {
-                  "kind": 51,
+                  "kind": 53,
                   "name": "createToken",
                   "start": {
                     "line": 5,
@@ -127,7 +130,7 @@
                 "throws": []
               },
               "local": {
-                "kind": 51,
+                "kind": 53,
                 "name": "createToken",
                 "start": {
                   "line": 5,
@@ -148,13 +151,13 @@
               }
             },
             {
-              "kind": 61,
+              "kind": 63,
               "attributes": [],
               "imported": {
                 "kind": 17,
                 "attributes": [],
                 "name": {
-                  "kind": 51,
+                  "kind": 53,
                   "name": "Lexer",
                   "start": {
                     "line": 6,
@@ -167,7 +170,7 @@
                 },
                 "modifiers": [
                   {
-                    "kind": 19,
+                    "kind": 25,
                     "start": {
                       "line": 6,
                       "column": 3
@@ -189,7 +192,7 @@
                 }
               },
               "local": {
-                "kind": 51,
+                "kind": 53,
                 "name": "Lexer",
                 "start": {
                   "line": 6,
@@ -210,13 +213,13 @@
               }
             },
             {
-              "kind": 61,
+              "kind": 63,
               "attributes": [],
               "imported": {
                 "kind": 17,
                 "attributes": [],
                 "name": {
-                  "kind": 51,
+                  "kind": 53,
                   "name": "Parser",
                   "start": {
                     "line": 7,
@@ -229,7 +232,7 @@
                 },
                 "modifiers": [
                   {
-                    "kind": 19,
+                    "kind": 25,
                     "start": {
                       "line": 7,
                       "column": 3
@@ -251,7 +254,7 @@
                 }
               },
               "local": {
-                "kind": 51,
+                "kind": 53,
                 "name": "Parser",
                 "start": {
                   "line": 7,
@@ -272,13 +275,13 @@
               }
             },
             {
-              "kind": 61,
+              "kind": 63,
               "attributes": [],
               "imported": {
                 "kind": 17,
                 "attributes": [],
                 "name": {
-                  "kind": 51,
+                  "kind": 53,
                   "name": "Token",
                   "start": {
                     "line": 8,
@@ -291,7 +294,7 @@
                 },
                 "modifiers": [
                   {
-                    "kind": 19,
+                    "kind": 25,
                     "start": {
                       "line": 8,
                       "column": 3
@@ -313,7 +316,7 @@
                 }
               },
               "local": {
-                "kind": 51,
+                "kind": 53,
                 "name": "Token",
                 "start": {
                   "line": 8,

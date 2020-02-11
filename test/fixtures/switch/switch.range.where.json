@@ -1,17 +1,17 @@
 {
-  "kind": 71,
+  "kind": 74,
   "attributes": [],
   "body": [
     {
-      "kind": 113,
+      "kind": 122,
       "modifiers": [],
       "attributes": [],
       "variables": [
         {
-          "kind": 114,
+          "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 51,
+            "kind": 53,
             "name": "temperature",
             "start": {
               "line": 1,
@@ -41,7 +41,7 @@
         "column": 21
       },
       "init": {
-        "kind": 74,
+        "kind": 78,
         "value": 54,
         "start": {
           "line": 1,
@@ -54,10 +54,10 @@
       }
     },
     {
-      "kind": 97,
+      "kind": 104,
       "attributes": [],
       "expression": {
-        "kind": 51,
+        "kind": 53,
         "name": "temperature",
         "start": {
           "line": 3,
@@ -70,7 +70,7 @@
       },
       "clauses": [
         {
-          "kind": 90,
+          "kind": 97,
           "body": {
             "kind": 14,
             "modifiers": [],
@@ -78,10 +78,10 @@
               "kind": 3
             },
             "callee": {
-              "kind": 68,
+              "kind": 71,
               "modifiers": [],
               "object": {
-                "kind": 51,
+                "kind": 53,
                 "name": "console",
                 "start": {
                   "line": 4,
@@ -93,7 +93,7 @@
                 }
               },
               "property": {
-                "kind": 51,
+                "kind": 53,
                 "name": "log",
                 "start": {
                   "line": 4,
@@ -115,7 +115,7 @@
             },
             "arguments": [
               {
-                "kind": 65,
+                "kind": 68,
                 "value": "Cold and even",
                 "start": {
                   "line": 4,
@@ -146,9 +146,9 @@
           },
           "conditions": [
             {
-              "kind": 94,
+              "kind": 101,
               "from": {
-                "kind": 74,
+                "kind": 78,
                 "value": 0,
                 "start": {
                   "line": 4,
@@ -160,7 +160,7 @@
                 }
               },
               "to": {
-                "kind": 74,
+                "kind": 78,
                 "value": 49,
                 "start": {
                   "line": 4,
@@ -189,6 +189,7 @@
                 "kind": 10,
                 "operator": {
                   "kind": 17,
+                  "modifiers": [],
                   "start": {
                     "line": 4,
                     "column": 27
@@ -207,7 +208,7 @@
                   "column": 30
                 },
                 "left": {
-                  "kind": 51,
+                  "kind": 53,
                   "name": "temperature",
                   "start": {
                     "line": 4,
@@ -219,7 +220,7 @@
                   }
                 },
                 "right": {
-                  "kind": 74,
+                  "kind": 78,
                   "value": 2,
                   "start": {
                     "line": 4,
@@ -233,6 +234,7 @@
               },
               {
                 "kind": 10,
+                "modifiers": [],
                 "start": {
                   "line": 4,
                   "column": 31
@@ -243,7 +245,7 @@
                 }
               },
               {
-                "kind": 74,
+                "kind": 78,
                 "value": 0,
                 "start": {
                   "line": 4,
@@ -266,7 +268,7 @@
           }
         },
         {
-          "kind": 90,
+          "kind": 97,
           "body": {
             "kind": 14,
             "modifiers": [],
@@ -274,10 +276,10 @@
               "kind": 3
             },
             "callee": {
-              "kind": 68,
+              "kind": 71,
               "modifiers": [],
               "object": {
-                "kind": 51,
+                "kind": 53,
                 "name": "console",
                 "start": {
                   "line": 5,
@@ -289,7 +291,7 @@
                 }
               },
               "property": {
-                "kind": 51,
+                "kind": 53,
                 "name": "log",
                 "start": {
                   "line": 5,
@@ -311,7 +313,7 @@
             },
             "arguments": [
               {
-                "kind": 65,
+                "kind": 68,
                 "value": "Warm and even",
                 "start": {
                   "line": 5,
@@ -342,9 +344,9 @@
           },
           "conditions": [
             {
-              "kind": 94,
+              "kind": 101,
               "from": {
-                "kind": 74,
+                "kind": 78,
                 "value": 50,
                 "start": {
                   "line": 5,
@@ -356,7 +358,7 @@
                 }
               },
               "to": {
-                "kind": 74,
+                "kind": 78,
                 "value": 79,
                 "start": {
                   "line": 5,
@@ -385,6 +387,7 @@
                 "kind": 10,
                 "operator": {
                   "kind": 17,
+                  "modifiers": [],
                   "start": {
                     "line": 5,
                     "column": 27
@@ -403,7 +406,7 @@
                   "column": 30
                 },
                 "left": {
-                  "kind": 51,
+                  "kind": 53,
                   "name": "temperature",
                   "start": {
                     "line": 5,
@@ -415,7 +418,7 @@
                   }
                 },
                 "right": {
-                  "kind": 74,
+                  "kind": 78,
                   "value": 2,
                   "start": {
                     "line": 5,
@@ -429,6 +432,7 @@
               },
               {
                 "kind": 10,
+                "modifiers": [],
                 "start": {
                   "line": 5,
                   "column": 31
@@ -439,7 +443,7 @@
                 }
               },
               {
-                "kind": 74,
+                "kind": 78,
                 "value": 0,
                 "start": {
                   "line": 5,
@@ -462,7 +466,7 @@
           }
         },
         {
-          "kind": 90,
+          "kind": 97,
           "body": {
             "kind": 14,
             "modifiers": [],
@@ -470,10 +474,10 @@
               "kind": 3
             },
             "callee": {
-              "kind": 68,
+              "kind": 71,
               "modifiers": [],
               "object": {
-                "kind": 51,
+                "kind": 53,
                 "name": "console",
                 "start": {
                   "line": 6,
@@ -485,7 +489,7 @@
                 }
               },
               "property": {
-                "kind": 51,
+                "kind": 53,
                 "name": "log",
                 "start": {
                   "line": 6,
@@ -507,7 +511,7 @@
             },
             "arguments": [
               {
-                "kind": 65,
+                "kind": 68,
                 "value": "Hot and even",
                 "start": {
                   "line": 6,
@@ -538,9 +542,9 @@
           },
           "conditions": [
             {
-              "kind": 94,
+              "kind": 101,
               "from": {
-                "kind": 74,
+                "kind": 78,
                 "value": 80,
                 "start": {
                   "line": 6,
@@ -552,7 +556,7 @@
                 }
               },
               "to": {
-                "kind": 74,
+                "kind": 78,
                 "value": 110,
                 "start": {
                   "line": 6,
@@ -581,6 +585,7 @@
                 "kind": 10,
                 "operator": {
                   "kind": 17,
+                  "modifiers": [],
                   "start": {
                     "line": 6,
                     "column": 28
@@ -599,7 +604,7 @@
                   "column": 31
                 },
                 "left": {
-                  "kind": 51,
+                  "kind": 53,
                   "name": "temperature",
                   "start": {
                     "line": 6,
@@ -611,7 +616,7 @@
                   }
                 },
                 "right": {
-                  "kind": 74,
+                  "kind": 78,
                   "value": 2,
                   "start": {
                     "line": 6,
@@ -625,6 +630,7 @@
               },
               {
                 "kind": 10,
+                "modifiers": [],
                 "start": {
                   "line": 6,
                   "column": 32
@@ -635,7 +641,7 @@
                 }
               },
               {
-                "kind": 74,
+                "kind": 78,
                 "value": 0,
                 "start": {
                   "line": 6,
@@ -658,7 +664,7 @@
           }
         },
         {
-          "kind": 90,
+          "kind": 97,
           "body": {
             "kind": 14,
             "modifiers": [],
@@ -666,10 +672,10 @@
               "kind": 3
             },
             "callee": {
-              "kind": 68,
+              "kind": 71,
               "modifiers": [],
               "object": {
-                "kind": 51,
+                "kind": 53,
                 "name": "console",
                 "start": {
                   "line": 7,
@@ -681,7 +687,7 @@
                 }
               },
               "property": {
-                "kind": 51,
+                "kind": 53,
                 "name": "log",
                 "start": {
                   "line": 7,
@@ -703,7 +709,7 @@
             },
             "arguments": [
               {
-                "kind": 65,
+                "kind": 68,
                 "value": "Temperature out of range or odd",
                 "start": {
                   "line": 7,

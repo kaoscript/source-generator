@@ -1,0 +1,76 @@
+{
+  "kind": 74,
+  "attributes": [],
+  "body": [
+    {
+      "kind": 50,
+      "attributes": [],
+      "name": {
+        "kind": 53,
+        "name": "foobar",
+        "start": {
+          "line": 1,
+          "column": 6
+        },
+        "end": {
+          "line": 1,
+          "column": 12
+        }
+      },
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 1,
+        "column": 26
+      },
+      "parameters": [],
+      "modifiers": [],
+      "type": {
+        "kind": 91,
+        "value": {
+          "kind": 53,
+          "name": "auto",
+          "start": {
+            "line": 1,
+            "column": 16
+          },
+          "end": {
+            "line": 1,
+            "column": 20
+          }
+        },
+        "start": {
+          "line": 1,
+          "column": 16
+        },
+        "end": {
+          "line": 1,
+          "column": 20
+        }
+      },
+      "throws": [],
+      "body": {
+        "kind": 78,
+        "value": 42,
+        "start": {
+          "line": 1,
+          "column": 24
+        },
+        "end": {
+          "line": 1,
+          "column": 26
+        }
+      }
+    }
+  ],
+  "start": {
+    "line": 1,
+    "column": 1
+  },
+  "end": {
+    "line": 1,
+    "column": 26
+  }
+}

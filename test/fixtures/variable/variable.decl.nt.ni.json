@@ -1,17 +1,17 @@
 {
-  "kind": 71,
+  "kind": 74,
   "attributes": [],
   "body": [
     {
-      "kind": 113,
+      "kind": 122,
       "modifiers": [],
       "attributes": [],
       "variables": [
         {
-          "kind": 114,
+          "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 51,
+            "kind": 53,
             "name": "a",
             "start": {
               "line": 1,

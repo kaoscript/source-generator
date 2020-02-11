@@ -1,16 +1,17 @@
 {
-  "kind": 71,
+  "kind": 74,
   "attributes": [],
   "body": [
     {
-      "kind": 56,
+      "kind": 58,
       "attributes": [],
       "declarations": [
         {
-          "kind": 57,
+          "kind": 59,
           "attributes": [],
+          "modifiers": [],
           "source": {
-            "kind": 65,
+            "kind": 68,
             "value": "module",
             "start": {
               "line": 1,
@@ -23,12 +24,12 @@
           },
           "specifiers": [
             {
-              "kind": 61,
+              "kind": 63,
               "attributes": [
                 {
                   "kind": 6,
                   "declaration": {
-                    "kind": 51,
+                    "kind": 53,
                     "name": "foobar",
                     "start": {
                       "line": 2,
@@ -53,7 +54,7 @@
                 "kind": 17,
                 "attributes": [],
                 "name": {
-                  "kind": 51,
+                  "kind": 53,
                   "name": "Foobar",
                   "start": {
                     "line": 3,
@@ -76,7 +77,7 @@
                 }
               },
               "local": {
-                "kind": 51,
+                "kind": 53,
                 "name": "Foobar",
                 "start": {
                   "line": 3,

@@ -1,0 +1,2 @@
+extern systemic class Array {
+}

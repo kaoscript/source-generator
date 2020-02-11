@@ -1,17 +1,17 @@
 {
-  "kind": 71,
+  "kind": 74,
   "attributes": [],
   "body": [
     {
-      "kind": 113,
+      "kind": 122,
       "modifiers": [],
       "attributes": [],
       "variables": [
         {
-          "kind": 114,
+          "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 51,
+            "kind": 53,
             "name": "x",
             "start": {
               "line": 1,
@@ -41,7 +41,7 @@
         "column": 10
       },
       "init": {
-        "kind": 74,
+        "kind": 78,
         "value": 5,
         "start": {
           "line": 1,
@@ -54,12 +54,13 @@
       }
     },
     {
-      "kind": 53,
+      "kind": 55,
       "attributes": [],
       "condition": {
         "kind": 10,
         "operator": {
           "kind": 20,
+          "modifiers": [],
           "start": {
             "line": 4,
             "column": 9
@@ -81,7 +82,7 @@
           "kind": 21,
           "values": [
             {
-              "kind": 51,
+              "kind": 53,
               "name": "x",
               "start": {
                 "line": 4,
@@ -94,6 +95,7 @@
             },
             {
               "kind": 10,
+              "modifiers": [],
               "start": {
                 "line": 4,
                 "column": 4
@@ -104,7 +106,7 @@
               }
             },
             {
-              "kind": 74,
+              "kind": 78,
               "value": 3,
               "start": {
                 "line": 4,
@@ -129,7 +131,7 @@
           "kind": 21,
           "values": [
             {
-              "kind": 51,
+              "kind": 53,
               "name": "x",
               "start": {
                 "line": 5,
@@ -142,6 +144,7 @@
             },
             {
               "kind": 10,
+              "modifiers": [],
               "start": {
                 "line": 5,
                 "column": 4
@@ -152,7 +155,7 @@
               }
             },
             {
-              "kind": 74,
+              "kind": 78,
               "value": 7,
               "start": {
                 "line": 5,

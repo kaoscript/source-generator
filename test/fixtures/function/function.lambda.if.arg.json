@@ -1,9 +1,9 @@
 {
-  "kind": 71,
+  "kind": 74,
   "attributes": [],
   "body": [
     {
-      "kind": 53,
+      "kind": 55,
       "attributes": [],
       "condition": {
         "kind": 14,
@@ -12,7 +12,7 @@
           "kind": 3
         },
         "callee": {
-          "kind": 51,
+          "kind": 53,
           "name": "foo",
           "start": {
             "line": 1,
@@ -25,14 +25,14 @@
         },
         "arguments": [
           {
-            "kind": 64,
+            "kind": 67,
             "modifiers": [],
             "parameters": [
               {
-                "kind": 79,
+                "kind": 83,
                 "modifiers": [],
                 "name": {
-                  "kind": 51,
+                  "kind": 53,
                   "name": "x",
                   "start": {
                     "line": 1,
@@ -57,6 +57,7 @@
               "kind": 10,
               "operator": {
                 "kind": 18,
+                "modifiers": [],
                 "start": {
                   "line": 1,
                   "column": 15
@@ -75,7 +76,7 @@
                 "column": 18
               },
               "left": {
-                "kind": 51,
+                "kind": 53,
                 "name": "x",
                 "start": {
                   "line": 1,
@@ -87,7 +88,7 @@
                 }
               },
               "right": {
-                "kind": 51,
+                "kind": 53,
                 "name": "x",
                 "start": {
                   "line": 1,
@@ -106,7 +107,8 @@
             "end": {
               "line": 1,
               "column": 18
-            }
+            },
+            "throws": []
           }
         ],
         "start": {

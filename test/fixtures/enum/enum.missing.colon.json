@@ -1,12 +1,12 @@
 {
-  "kind": 71,
+  "kind": 74,
   "attributes": [],
   "body": [
     {
       "kind": 31,
       "attributes": [],
       "name": {
-        "kind": 51,
+        "kind": 53,
         "name": "Kind",
         "start": {
           "line": 1,
@@ -21,7 +21,7 @@
         {
           "kind": 33,
           "name": {
-            "kind": 51,
+            "kind": 53,
             "name": "A",
             "start": {
               "line": 2,
@@ -44,7 +44,7 @@
         {
           "kind": 33,
           "name": {
-            "kind": 51,
+            "kind": 53,
             "name": "B",
             "start": {
               "line": 3,
@@ -67,7 +67,7 @@
         {
           "kind": 33,
           "name": {
-            "kind": 51,
+            "kind": 53,
             "name": "C",
             "start": {
               "line": 4,
@@ -98,15 +98,15 @@
       }
     },
     {
-      "kind": 113,
+      "kind": 122,
       "modifiers": [],
       "attributes": [],
       "variables": [
         {
-          "kind": 114,
+          "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 51,
+            "kind": 53,
             "name": "k",
             "start": {
               "line": 7,
@@ -139,6 +139,7 @@
         "kind": 10,
         "operator": {
           "kind": 23,
+          "modifiers": [],
           "start": {
             "line": 7,
             "column": 13
@@ -149,7 +150,7 @@
           }
         },
         "left": {
-          "kind": 51,
+          "kind": 53,
           "name": "Kind",
           "start": {
             "line": 7,
@@ -161,10 +162,10 @@
           }
         },
         "right": {
-          "kind": 107,
+          "kind": 116,
           "modifiers": [],
           "typeName": {
-            "kind": 51,
+            "kind": 53,
             "name": "A",
             "start": {
               "line": 7,

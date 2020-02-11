@@ -1,16 +1,17 @@
 {
-  "kind": 71,
+  "kind": 74,
   "attributes": [],
   "body": [
     {
-      "kind": 56,
+      "kind": 58,
       "attributes": [],
       "declarations": [
         {
-          "kind": 57,
+          "kind": 59,
           "attributes": [],
+          "modifiers": [],
           "source": {
-            "kind": 65,
+            "kind": 68,
             "value": "module1",
             "start": {
               "line": 1,
@@ -23,13 +24,13 @@
           },
           "specifiers": [
             {
-              "kind": 61,
+              "kind": 63,
               "attributes": [],
               "imported": {
-                "kind": 114,
+                "kind": 123,
                 "modifiers": [],
                 "name": {
-                  "kind": 51,
+                  "kind": 53,
                   "name": "foo",
                   "start": {
                     "line": 2,
@@ -50,7 +51,7 @@
                 }
               },
               "local": {
-                "kind": 51,
+                "kind": 53,
                 "name": "foo",
                 "start": {
                   "line": 2,
@@ -91,14 +92,15 @@
       }
     },
     {
-      "kind": 56,
+      "kind": 58,
       "attributes": [],
       "declarations": [
         {
-          "kind": 57,
+          "kind": 59,
           "attributes": [],
+          "modifiers": [],
           "source": {
-            "kind": 65,
+            "kind": 68,
             "value": "module2",
             "start": {
               "line": 5,
@@ -111,13 +113,13 @@
           },
           "specifiers": [
             {
-              "kind": 61,
+              "kind": 63,
               "attributes": [],
               "imported": {
-                "kind": 114,
+                "kind": 123,
                 "modifiers": [],
                 "name": {
-                  "kind": 51,
+                  "kind": 53,
                   "name": "foo",
                   "start": {
                     "line": 6,
@@ -138,7 +140,7 @@
                 }
               },
               "local": {
-                "kind": 51,
+                "kind": 53,
                 "name": "bar",
                 "start": {
                   "line": 6,

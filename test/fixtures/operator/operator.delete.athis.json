@@ -1,12 +1,12 @@
 {
-  "kind": 71,
+  "kind": 74,
   "attributes": [],
   "body": [
     {
       "kind": 17,
       "attributes": [],
       "name": {
-        "kind": 51,
+        "kind": 53,
         "name": "ClassA",
         "start": {
           "line": 1,
@@ -20,11 +20,11 @@
       "modifiers": [],
       "members": [
         {
-          "kind": 43,
+          "kind": 45,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 14,
+              "kind": 20,
               "start": {
                 "line": 2,
                 "column": 2
@@ -36,7 +36,7 @@
             }
           ],
           "name": {
-            "kind": 51,
+            "kind": 53,
             "name": "_x",
             "start": {
               "line": 3,
@@ -57,11 +57,11 @@
           }
         },
         {
-          "kind": 69,
+          "kind": 72,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 51,
+            "kind": 53,
             "name": "foo",
             "start": {
               "line": 5,
@@ -90,9 +90,9 @@
                 "kind": 27,
                 "attributes": [],
                 "variable": {
-                  "kind": 101,
+                  "kind": 108,
                   "name": {
-                    "kind": 51,
+                    "kind": 53,
                     "name": "x",
                     "start": {
                       "line": 6,

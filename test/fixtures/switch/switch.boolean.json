@@ -1,17 +1,17 @@
 {
-  "kind": 71,
+  "kind": 74,
   "attributes": [],
   "body": [
     {
-      "kind": 113,
+      "kind": 122,
       "modifiers": [],
       "attributes": [],
       "variables": [
         {
-          "kind": 114,
+          "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 51,
+            "kind": 53,
             "name": "boolean",
             "start": {
               "line": 1,
@@ -41,7 +41,7 @@
         "column": 19
       },
       "init": {
-        "kind": 51,
+        "kind": 53,
         "name": "true",
         "start": {
           "line": 1,
@@ -54,15 +54,15 @@
       }
     },
     {
-      "kind": 113,
+      "kind": 122,
       "modifiers": [],
       "attributes": [],
       "variables": [
         {
-          "kind": 114,
+          "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 51,
+            "kind": 53,
             "name": "binary",
             "start": {
               "line": 3,
@@ -92,10 +92,10 @@
         "column": 2
       },
       "init": {
-        "kind": 96,
+        "kind": 103,
         "attributes": [],
         "expression": {
-          "kind": 51,
+          "kind": 53,
           "name": "boolean",
           "start": {
             "line": 3,
@@ -108,9 +108,9 @@
         },
         "clauses": [
           {
-            "kind": 90,
+            "kind": 97,
             "body": {
-              "kind": 74,
+              "kind": 78,
               "value": 0,
               "start": {
                 "line": 4,
@@ -131,7 +131,7 @@
             },
             "conditions": [
               {
-                "kind": 51,
+                "kind": 53,
                 "name": "false",
                 "start": {
                   "line": 4,
@@ -146,9 +146,9 @@
             "bindings": []
           },
           {
-            "kind": 90,
+            "kind": 97,
             "body": {
-              "kind": 74,
+              "kind": 78,
               "value": 1,
               "start": {
                 "line": 5,
@@ -169,7 +169,7 @@
             },
             "conditions": [
               {
-                "kind": 51,
+                "kind": 53,
                 "name": "true",
                 "start": {
                   "line": 5,

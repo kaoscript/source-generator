@@ -1,105 +1,206 @@
 {
-  "kind": 71,
+  "kind": 74,
   "attributes": [],
   "body": [
     {
-      "kind": 14,
-      "modifiers": [],
-      "scope": {
-        "kind": 3
-      },
-      "callee": {
-        "kind": 68,
-        "modifiers": [],
-        "object": {
-          "kind": 10,
-          "operator": {
-            "kind": 23,
-            "start": {
-              "line": 1,
-              "column": 6
-            },
-            "end": {
-              "line": 1,
-              "column": 8
-            }
-          },
-          "left": {
-            "kind": 51,
-            "name": "foo",
-            "start": {
-              "line": 1,
-              "column": 2
-            },
-            "end": {
-              "line": 1,
-              "column": 5
-            }
-          },
-          "right": {
-            "kind": 107,
-            "modifiers": [],
-            "typeName": {
-              "kind": 51,
-              "name": "String",
-              "start": {
-                "line": 1,
-                "column": 9
-              },
-              "end": {
-                "line": 1,
-                "column": 15
-              }
-            },
-            "start": {
-              "line": 1,
-              "column": 9
-            },
-            "end": {
-              "line": 1,
-              "column": 15
-            }
-          },
-          "start": {
-            "line": 1,
-            "column": 1
-          },
-          "end": {
-            "line": 1,
-            "column": 16
-          }
-        },
-        "property": {
-          "kind": 51,
-          "name": "trim",
-          "start": {
-            "line": 1,
-            "column": 17
-          },
-          "end": {
-            "line": 1,
-            "column": 21
-          }
-        },
+      "kind": 50,
+      "attributes": [],
+      "name": {
+        "kind": 53,
+        "name": "foobar",
         "start": {
           "line": 1,
-          "column": 1
+          "column": 6
         },
         "end": {
           "line": 1,
-          "column": 21
+          "column": 12
         }
       },
-      "arguments": [],
       "start": {
         "line": 1,
         "column": 1
       },
       "end": {
-        "line": 1,
-        "column": 23
+        "line": 3,
+        "column": 2
       },
-      "attributes": []
+      "parameters": [
+        {
+          "kind": 83,
+          "modifiers": [],
+          "start": {
+            "line": 1,
+            "column": 13
+          },
+          "end": {
+            "line": 1,
+            "column": 21
+          },
+          "name": {
+            "kind": 53,
+            "name": "p",
+            "start": {
+              "line": 1,
+              "column": 13
+            },
+            "end": {
+              "line": 1,
+              "column": 14
+            }
+          },
+          "type": {
+            "kind": 116,
+            "modifiers": [],
+            "typeName": {
+              "kind": 53,
+              "name": "Point",
+              "start": {
+                "line": 1,
+                "column": 16
+              },
+              "end": {
+                "line": 1,
+                "column": 21
+              }
+            },
+            "start": {
+              "line": 1,
+              "column": 16
+            },
+            "end": {
+              "line": 1,
+              "column": 21
+            }
+          }
+        }
+      ],
+      "modifiers": [],
+      "throws": [],
+      "body": {
+        "kind": 12,
+        "attributes": [],
+        "statements": [
+          {
+            "kind": 122,
+            "modifiers": [
+              {
+                "kind": 12,
+                "start": {
+                  "line": 2,
+                  "column": 2
+                },
+                "end": {
+                  "line": 2,
+                  "column": 7
+                }
+              }
+            ],
+            "attributes": [],
+            "variables": [
+              {
+                "kind": 123,
+                "modifiers": [],
+                "name": {
+                  "kind": 53,
+                  "name": "d3",
+                  "start": {
+                    "line": 2,
+                    "column": 8
+                  },
+                  "end": {
+                    "line": 2,
+                    "column": 10
+                  }
+                },
+                "start": {
+                  "line": 2,
+                  "column": 8
+                },
+                "end": {
+                  "line": 2,
+                  "column": 10
+                }
+              }
+            ],
+            "start": {
+              "line": 2,
+              "column": 2
+            },
+            "end": {
+              "line": 2,
+              "column": 25
+            },
+            "init": {
+              "kind": 10,
+              "operator": {
+                "kind": 23,
+                "modifiers": [],
+                "start": {
+                  "line": 2,
+                  "column": 15
+                },
+                "end": {
+                  "line": 2,
+                  "column": 17
+                }
+              },
+              "left": {
+                "kind": 53,
+                "name": "p",
+                "start": {
+                  "line": 2,
+                  "column": 13
+                },
+                "end": {
+                  "line": 2,
+                  "column": 14
+                }
+              },
+              "right": {
+                "kind": 116,
+                "modifiers": [],
+                "typeName": {
+                  "kind": 53,
+                  "name": "Point3D",
+                  "start": {
+                    "line": 2,
+                    "column": 18
+                  },
+                  "end": {
+                    "line": 2,
+                    "column": 25
+                  }
+                },
+                "start": {
+                  "line": 2,
+                  "column": 18
+                },
+                "end": {
+                  "line": 2,
+                  "column": 25
+                }
+              },
+              "start": {
+                "line": 2,
+                "column": 13
+              },
+              "end": {
+                "line": 2,
+                "column": 25
+              }
+            }
+          }
+        ],
+        "start": {
+          "line": 1,
+          "column": 23
+        },
+        "end": {
+          "line": 3,
+          "column": 2
+        }
+      }
     }
   ],
   "start": {
@@ -107,7 +208,7 @@
     "column": 1
   },
   "end": {
-    "line": 1,
-    "column": 23
+    "line": 3,
+    "column": 2
   }
 }

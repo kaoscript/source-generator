@@ -57,7 +57,6 @@ export namespace Generator {
 		`\(BinaryOperatorKind::Or)`					: ' || '
 		`\(BinaryOperatorKind::Quotient)`			: ' /. '
 		`\(BinaryOperatorKind::Subtraction)`		: ' - '
-		`\(BinaryOperatorKind::TypeCasting)`		: ':'
 		`\(BinaryOperatorKind::TypeEquality)`		: ' is '
 		`\(BinaryOperatorKind::TypeInequality)`		: ' is not '
 		`\(BinaryOperatorKind::Xor)`				: ' ^^ '
@@ -409,16 +408,42 @@ export namespace Generator {
 				writer.code('await ').expression(data.operation)
 			} // }}}
 			NodeKind::BinaryExpression => { // {{{
-				writer.wrap(data.left)
+				if data.operator.kind == BinaryOperatorKind::TypeCasting {
+					writer.code('(').expression(data.left)
 
-				if data.operator.kind == BinaryOperatorKind::Assignment {
-					writer.code(AssignmentOperatorSymbol[data.operator.assignment])
+					auto nf = true
+
+					for const modifier in data.operator.modifiers {
+						if modifier.kind == ModifierKind::Forced {
+							writer.code(' as! ')
+
+							nf = false
+						}
+						else if modifier.kind == ModifierKind::Nullable {
+							writer.code(' as? ')
+
+							nf = false
+						}
+					}
+
+					if nf {
+						writer.code(' as ')
+					}
+
+					writer.expression(data.right).code(')')
 				}
 				else {
-					writer.code(BinaryOperatorSymbol[data.operator.kind])
-				}
+					writer.wrap(data.left)
 
-				writer.wrap(data.right)
+					if data.operator.kind == BinaryOperatorKind::Assignment {
+						writer.code(AssignmentOperatorSymbol[data.operator.assignment])
+					}
+					else {
+						writer.code(BinaryOperatorSymbol[data.operator.kind])
+					}
+
+					writer.wrap(data.right)
+			}
 			} // }}}
 			NodeKind::BindingElement => { // {{{
 				let computed = false
@@ -714,6 +739,14 @@ export namespace Generator {
 			NodeKind::ImportDeclarator => { // {{{
 				writer.expression(data.source)
 
+				auto autofill = false
+
+				for const modifier in data.modifiers {
+					if modifier.kind == ModifierKind::Autofill {
+						autofill = true
+					}
+				}
+
 				if data.arguments?.length != 0 {
 					writer.code('(')
 
@@ -726,6 +759,9 @@ export namespace Generator {
 					}
 
 					writer.code(')')
+				}
+				else if autofill {
+					writer.code('(...)')
 				}
 
 				if data.specifiers.length == 1 && data.specifiers[0].attributes.length == 0 {
@@ -791,6 +827,11 @@ export namespace Generator {
 					writer.code(' => ').expression(data.local)
 				}
 			} // }}}
+			NodeKind::IncludeDeclarator => { // {{{
+				toAttributes(data, false, writer)
+
+				writer.newLine().code(toQuote(data.file)).done()
+			} // }}}
 			NodeKind::LambdaExpression => { // {{{
 				toFunctionHeader(data, writer => {}, writer)
 
@@ -850,6 +891,9 @@ export namespace Generator {
 				else {
 					writer.code('.').expression(data.property)
 				}
+			} // }}}
+			NodeKind::NamedArgument => { // {{{
+				writer.expression(data.name).code(': ').expression(data.value)
 			} // }}}
 			NodeKind::NumericExpression => { // {{{
 				writer.code(data.value)
@@ -985,6 +1029,9 @@ export namespace Generator {
 			} // }}}
 			NodeKind::RegularExpression => { // {{{
 				writer.code(data.value)
+			} // }}}
+			NodeKind::ReturnTypeReference => { // {{{
+				writer.expression(data.value)
 			} // }}}
 			NodeKind::SequenceExpression => { // {{{
 				writer.code('(')
@@ -1193,7 +1240,15 @@ export namespace Generator {
 					}
 				}
 
-				writer.code(immutable ? 'const ' : 'let ')
+				if immutable {
+					writer.code('const ')
+				}
+				else if autoTyping {
+					writer.code('auto ')
+				}
+				else {
+					writer.code('let ')
+				}
 
 				for variable, index in data.variables {
 					if index != 0 {
@@ -1203,7 +1258,7 @@ export namespace Generator {
 					writer.expression(variable)
 				}
 
-				writer.code(autoTyping ? ' := ' : ' = ')
+				writer.code(' = ')
 
 				if data.await {
 					writer.code('await ')
@@ -1212,8 +1267,15 @@ export namespace Generator {
 				writer.expression(data.init)
 			} // }}}
 			NodeKind::VariableDeclarator => { // {{{
-				if data.modifiers.some(modifier => modifier.kind == ModifierKind::Immutable) {
-					writer.code('const ')
+				for const modifier in data.modifiers {
+					switch modifier.kind {
+						ModifierKind::Immutable => {
+							writer.code('const ')
+						}
+						ModifierKind::Systemic => {
+							writer.code('systemic ')
+						}
+					}
 				}
 
 				writer.expression(data.name)
@@ -1241,6 +1303,9 @@ export namespace Generator {
 					}
 					ModifierKind::Final => {
 						writer.code('final ')
+					}
+					ModifierKind::Internal => {
+						writer.code('internal ')
 					}
 					ModifierKind::Override => {
 						writer.code('override ')
@@ -1667,6 +1732,9 @@ export namespace Generator {
 						ModifierKind::Sealed => {
 							line.code('sealed ')
 						}
+						ModifierKind::Systemic => {
+							line.code('systemic ')
+						}
 					}
 				}
 
@@ -1883,11 +1951,46 @@ export namespace Generator {
 
 				line.done()
 			} // }}}
+			NodeKind::ExternOrImportDeclaration => { // {{{
+				const line = writer.newLine()
+
+				if data.declarations.length == 1 && data.declarations[0].attributes.length == 0 {
+					line.code('extern|import ').expression(data.declarations[0])
+				}
+				else {
+					const block = line.code('extern|import').newBlock()
+
+					for const declaration in data.declarations {
+						toAttributes(declaration, false, block)
+
+						block.newLine().expression(declaration).done()
+					}
+
+					block.done()
+				}
+
+				line.done()
+			} // }}}
+			NodeKind::FallthroughStatement => { // {{{
+				writer.newLine().code('fallthrough').done()
+			} // }}}
 			NodeKind::FieldDeclaration => { // {{{
 				const line = writer.newLine()
 
 				for modifier in data.modifiers {
 					switch modifier.kind {
+						ModifierKind::AutoTyping => {
+							line.code('auto ')
+						}
+						ModifierKind::Immutable => {
+							line.code('const ')
+						}
+						ModifierKind::Internal => {
+							line.code('internal ')
+						}
+						ModifierKind::LateInit => {
+							line.code('lateinit ')
+						}
 						ModifierKind::Private => {
 							line.code('private ')
 						}
@@ -2345,14 +2448,14 @@ export namespace Generator {
 			NodeKind::IncludeAgainDeclaration => { // {{{
 				const line = writer.newLine()
 
-				if data.files.length == 1 {
-					line.code('include again ').code(toQuote(data.files[0]))
+				if data.declarations.length == 1 {
+					line.code('include again ').statement(data.declarations[0])
 				}
 				else {
 					const block = line.code('include again').newBlock()
 
-					for file in data.files {
-						block.newLine().code(toQuote(file)).done()
+					for const declaration in data.declarations {
+						block.newLine().statement(declaration).done()
 					}
 
 					block.done()
@@ -2363,18 +2466,13 @@ export namespace Generator {
 			NodeKind::IncludeDeclaration => { // {{{
 				const line = writer.newLine()
 
-				if data.files.length == 1 {
-					line.code('include ').code(toQuote(data.files[0]))
-				}
-				else {
-					const block = line.code('include').newBlock()
+				const block = line.code('include').newBlock()
 
-					for file in data.files {
-						block.newLine().code(toQuote(file)).done()
-					}
-
-					block.done()
+				for const declaration in data.declarations {
+					block.expression(declaration)
 				}
+
+				block.done()
 
 				line.done()
 			} // }}}
@@ -2580,6 +2678,42 @@ export namespace Generator {
 						.done()
 				}
 			} // }}}
+			NodeKind::StructDeclaration => { // {{{
+				const line = writer.newLine()
+
+				line.code('struct ').expression(data.name)
+
+				if data.extends? {
+					line.code(' extends ').expression(data.extends)
+				}
+
+				if data.fields.length != 0 {
+					const block = line.newBlock()
+
+					for const field in data.fields {
+						block.statement(field)
+					}
+
+					block.done()
+				}
+
+				line.done()
+			} // }}}
+			NodeKind::StructField => { // {{{
+				const line = writer.newLine()
+
+				line.expression(data.name)
+
+				if data.type? {
+					line.code(': ').expression(data.type)
+				}
+
+				if data.defaultValue? {
+					line.code(' = ').expression(data.defaultValue)
+				}
+
+				line.done()
+			} // }}}
 			NodeKind::SwitchClause => { // {{{
 				const line = writer.newLine()
 
@@ -2680,6 +2814,75 @@ export namespace Generator {
 
 				ctrl.done()
 			} // }}}
+			NodeKind::TupleDeclaration => { // {{{
+				auto named = false
+
+				for const modifier in data.modifiers {
+					if modifier.kind == ModifierKind::Named {
+						named = true
+					}
+				}
+
+				const line = writer.newLine()
+
+				line.code('tuple ').expression(data.name)
+
+				if data.fields.length != 0 {
+					if named {
+						if data.extends? {
+							line.code(' extends ').expression(data.extends)
+						}
+
+						const block = line.newBlock()
+
+						for const field in data.fields {
+							block.newLine().statement(field).done()
+						}
+
+						block.done()
+					}
+					else {
+						line.code('(')
+
+						for const field, index in data.fields {
+							if index != 0 {
+								line.code(', ')
+							}
+
+							line.statement(field)
+						}
+
+						line.code(')')
+
+						if data.extends? {
+							line.code(' extends ').expression(data.extends)
+						}
+					}
+				}
+				else {
+					if data.extends? {
+						line.code(' extends ').expression(data.extends)
+					}
+				}
+
+				line.done()
+			} // }}}
+			NodeKind::TupleField => { // {{{
+				if data.name? {
+					writer.expression(data.name)
+
+					if data.type? {
+						writer.code(': ').expression(data.type)
+					}
+				}
+				else {
+					writer.expression(data.type)
+				}
+
+				if data.defaultValue? {
+					writer.code(' = ').expression(data.defaultValue)
+				}
+			} // }}}
 			NodeKind::TypeAliasDeclaration => { // {{{
 				writer
 					.newLine()
@@ -2748,8 +2951,9 @@ export namespace Generator {
 					.done()
 			} // }}}
 			NodeKind::VariableDeclaration => { // {{{
-				let immutable = false
 				let autoTyping = false
+				let immutable = false
+				let lateInit = false
 
 				for const modifier in data.modifiers {
 					if modifier.kind == ModifierKind::AutoTyping {
@@ -2758,11 +2962,26 @@ export namespace Generator {
 					else if modifier.kind == ModifierKind::Immutable {
 						immutable = true
 					}
+					else if modifier.kind == ModifierKind::LateInit {
+						lateInit = true
+					}
 				}
 
-				const line = writer
-					.newLine()
-					.code(immutable ? 'const ' : 'let ')
+				const line = writer.newLine()
+
+				if lateInit {
+					line.code('lateinit ')
+				}
+
+				if immutable {
+					line.code('const ')
+				}
+				else if autoTyping {
+					line.code('auto ')
+				}
+				else {
+					line.code('let ')
+				}
 
 				for variable, index in data.variables {
 					if index != 0 {
@@ -2773,7 +2992,7 @@ export namespace Generator {
 				}
 
 				if data.init? {
-					line.code(autoTyping ? ' := ' : ' = ')
+					line.code(' = ')
 
 					if data.await {
 						line.code('await ')

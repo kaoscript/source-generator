@@ -1,5 +1,5 @@
 {
-  "kind": 71,
+  "kind": 74,
   "attributes": [],
   "body": [
     {
@@ -7,10 +7,10 @@
       "attributes": [],
       "declarations": [
         {
-          "kind": 114,
+          "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 51,
+            "kind": 53,
             "name": "expect",
             "start": {
               "line": 1,

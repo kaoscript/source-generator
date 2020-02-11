@@ -1,17 +1,17 @@
 {
-  "kind": 71,
+  "kind": 74,
   "attributes": [],
   "body": [
     {
-      "kind": 113,
+      "kind": 122,
       "modifiers": [],
       "attributes": [],
       "variables": [
         {
-          "kind": 114,
+          "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 51,
+            "kind": 53,
             "name": "left",
             "start": {
               "line": 1,
@@ -41,7 +41,7 @@
         "column": 14
       },
       "init": {
-        "kind": 74,
+        "kind": 78,
         "value": 10,
         "start": {
           "line": 1,
@@ -54,15 +54,15 @@
       }
     },
     {
-      "kind": 113,
+      "kind": 122,
       "modifiers": [],
       "attributes": [],
       "variables": [
         {
-          "kind": 114,
+          "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 51,
+            "kind": 53,
             "name": "right",
             "start": {
               "line": 2,
@@ -92,7 +92,7 @@
         "column": 15
       },
       "init": {
-        "kind": 74,
+        "kind": 78,
         "value": 20,
         "start": {
           "line": 2,
@@ -105,13 +105,13 @@
       }
     },
     {
-      "kind": 53,
+      "kind": 55,
       "attributes": [],
       "condition": {
         "kind": 21,
         "values": [
           {
-            "kind": 51,
+            "kind": 53,
             "name": "right",
             "start": {
               "line": 4,
@@ -124,6 +124,7 @@
           },
           {
             "kind": 11,
+            "modifiers": [],
             "start": {
               "line": 4,
               "column": 10
@@ -134,7 +135,7 @@
             }
           },
           {
-            "kind": 51,
+            "kind": 53,
             "name": "left",
             "start": {
               "line": 4,
@@ -188,7 +189,7 @@
                     "column": 7
                   },
                   "name": {
-                    "kind": 51,
+                    "kind": 53,
                     "name": "left",
                     "start": {
                       "line": 5,
@@ -212,7 +213,7 @@
                     "column": 14
                   },
                   "name": {
-                    "kind": 51,
+                    "kind": 53,
                     "name": "right",
                     "start": {
                       "line": 5,
@@ -238,7 +239,7 @@
               "kind": 4,
               "values": [
                 {
-                  "kind": 51,
+                  "kind": 53,
                   "name": "right",
                   "start": {
                     "line": 5,
@@ -250,7 +251,7 @@
                   }
                 },
                 {
-                  "kind": 51,
+                  "kind": 53,
                   "name": "left",
                   "start": {
                     "line": 5,
