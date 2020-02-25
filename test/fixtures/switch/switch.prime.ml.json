@@ -11,7 +11,7 @@
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "number",
             "start": {
               "line": 1,
@@ -57,7 +57,7 @@
       "kind": 104,
       "attributes": [],
       "expression": {
-        "kind": 53,
+        "kind": 52,
         "name": "number",
         "start": {
           "line": 3,
@@ -85,7 +85,7 @@
                   "kind": 71,
                   "modifiers": [],
                   "object": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "console",
                     "start": {
                       "line": 5,
@@ -97,7 +97,7 @@
                     }
                   },
                   "property": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "log",
                     "start": {
                       "line": 5,
@@ -191,7 +191,7 @@
                   "kind": 71,
                   "modifiers": [],
                   "object": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "console",
                     "start": {
                       "line": 8,
@@ -203,7 +203,7 @@
                     }
                   },
                   "property": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "log",
                     "start": {
                       "line": 8,
@@ -345,7 +345,7 @@
                   "kind": 71,
                   "modifiers": [],
                   "object": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "console",
                     "start": {
                       "line": 11,
@@ -357,7 +357,7 @@
                     }
                   },
                   "property": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "log",
                     "start": {
                       "line": 11,
@@ -474,7 +474,7 @@
                   "kind": 71,
                   "modifiers": [],
                   "object": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "console",
                     "start": {
                       "line": 14,
@@ -486,7 +486,7 @@
                     }
                   },
                   "property": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "log",
                     "start": {
                       "line": 14,

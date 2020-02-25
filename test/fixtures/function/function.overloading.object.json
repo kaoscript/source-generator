@@ -11,7 +11,7 @@
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "foobar",
             "start": {
               "line": 1,
@@ -48,7 +48,7 @@
             "kind": 81,
             "attributes": [],
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "foo",
               "start": {
                 "line": 2,
@@ -60,7 +60,7 @@
               }
             },
             "value": {
-              "kind": 51,
+              "kind": 50,
               "parameters": [
                 {
                   "kind": 83,
@@ -74,7 +74,7 @@
                     "column": 18
                   },
                   "name": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "name",
                     "start": {
                       "line": 2,
@@ -89,7 +89,7 @@
                     "kind": 116,
                     "modifiers": [],
                     "typeName": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "string",
                       "start": {
                         "line": 2,
@@ -140,7 +140,7 @@
                       }
                     },
                     "left": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "n",
                       "start": {
                         "line": 3,
@@ -197,7 +197,7 @@
             "kind": 81,
             "attributes": [],
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "bar",
               "start": {
                 "line": 5,
@@ -209,7 +209,7 @@
               }
             },
             "value": {
-              "kind": 51,
+              "kind": 50,
               "parameters": [
                 {
                   "kind": 83,
@@ -223,7 +223,7 @@
                     "column": 24
                   },
                   "name": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "name",
                     "start": {
                       "line": 5,
@@ -238,7 +238,7 @@
                     "kind": 116,
                     "modifiers": [],
                     "typeName": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "string",
                       "start": {
                         "line": 5,
@@ -301,7 +301,7 @@
                       }
                     },
                     "left": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "n",
                       "start": {
                         "line": 6,
@@ -358,7 +358,7 @@
             "kind": 81,
             "attributes": [],
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "reverse",
               "start": {
                 "line": 8,
@@ -370,7 +370,7 @@
               }
             },
             "value": {
-              "kind": 51,
+              "kind": 50,
               "parameters": [
                 {
                   "kind": 83,
@@ -384,7 +384,7 @@
                     "column": 23
                   },
                   "name": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "value",
                     "start": {
                       "line": 8,
@@ -399,7 +399,7 @@
                     "kind": 116,
                     "modifiers": [],
                     "typeName": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "String",
                       "start": {
                         "line": 8,
@@ -434,7 +434,7 @@
                 "kind": 116,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "String",
                   "start": {
                     "line": 8,
@@ -483,7 +483,7 @@
                           "kind": 71,
                           "modifiers": [],
                           "object": {
-                            "kind": 53,
+                            "kind": 52,
                             "name": "value",
                             "start": {
                               "line": 8,
@@ -495,7 +495,7 @@
                             }
                           },
                           "property": {
-                            "kind": 53,
+                            "kind": 52,
                             "name": "split",
                             "start": {
                               "line": 8,
@@ -539,7 +539,7 @@
                         }
                       },
                       "property": {
-                        "kind": 53,
+                        "kind": 52,
                         "name": "reverse",
                         "start": {
                           "line": 8,
@@ -570,7 +570,7 @@
                     }
                   },
                   "property": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "join",
                     "start": {
                       "line": 8,
@@ -627,7 +627,7 @@
             "kind": 81,
             "attributes": [],
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "reverse",
               "start": {
                 "line": 9,
@@ -639,7 +639,7 @@
               }
             },
             "value": {
-              "kind": 51,
+              "kind": 50,
               "parameters": [
                 {
                   "kind": 83,
@@ -653,7 +653,7 @@
                     "column": 22
                   },
                   "name": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "value",
                     "start": {
                       "line": 9,
@@ -668,7 +668,7 @@
                     "kind": 116,
                     "modifiers": [],
                     "typeName": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "Array",
                       "start": {
                         "line": 9,
@@ -703,7 +703,7 @@
                 "kind": 116,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "Array",
                   "start": {
                     "line": 9,
@@ -743,7 +743,7 @@
                       "kind": 71,
                       "modifiers": [],
                       "object": {
-                        "kind": 53,
+                        "kind": 52,
                         "name": "value",
                         "start": {
                           "line": 9,
@@ -755,7 +755,7 @@
                         }
                       },
                       "property": {
-                        "kind": 53,
+                        "kind": 52,
                         "name": "slice",
                         "start": {
                           "line": 9,
@@ -786,7 +786,7 @@
                     }
                   },
                   "property": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "reverse",
                     "start": {
                       "line": 9,
@@ -830,7 +830,7 @@
             "kind": 81,
             "attributes": [],
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "reverseAsync",
               "start": {
                 "line": 10,
@@ -842,7 +842,7 @@
               }
             },
             "value": {
-              "kind": 51,
+              "kind": 50,
               "parameters": [
                 {
                   "kind": 83,
@@ -856,7 +856,7 @@
                     "column": 34
                   },
                   "name": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "value",
                     "start": {
                       "line": 10,
@@ -871,7 +871,7 @@
                     "kind": 116,
                     "modifiers": [],
                     "typeName": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "String",
                       "start": {
                         "line": 10,
@@ -918,7 +918,7 @@
                 "kind": 116,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "String",
                   "start": {
                     "line": 10,
@@ -967,7 +967,7 @@
                           "kind": 71,
                           "modifiers": [],
                           "object": {
-                            "kind": 53,
+                            "kind": 52,
                             "name": "value",
                             "start": {
                               "line": 10,
@@ -979,7 +979,7 @@
                             }
                           },
                           "property": {
-                            "kind": 53,
+                            "kind": 52,
                             "name": "split",
                             "start": {
                               "line": 10,
@@ -1023,7 +1023,7 @@
                         }
                       },
                       "property": {
-                        "kind": 53,
+                        "kind": 52,
                         "name": "reverse",
                         "start": {
                           "line": 10,
@@ -1054,7 +1054,7 @@
                     }
                   },
                   "property": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "join",
                     "start": {
                       "line": 10,
@@ -1111,7 +1111,7 @@
             "kind": 81,
             "attributes": [],
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "reverseAsync",
               "start": {
                 "line": 11,
@@ -1123,7 +1123,7 @@
               }
             },
             "value": {
-              "kind": 51,
+              "kind": 50,
               "parameters": [
                 {
                   "kind": 83,
@@ -1137,7 +1137,7 @@
                     "column": 33
                   },
                   "name": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "value",
                     "start": {
                       "line": 11,
@@ -1152,7 +1152,7 @@
                     "kind": 116,
                     "modifiers": [],
                     "typeName": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "Array",
                       "start": {
                         "line": 11,
@@ -1199,7 +1199,7 @@
                 "kind": 116,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "Array",
                   "start": {
                     "line": 11,
@@ -1239,7 +1239,7 @@
                       "kind": 71,
                       "modifiers": [],
                       "object": {
-                        "kind": 53,
+                        "kind": 52,
                         "name": "value",
                         "start": {
                           "line": 11,
@@ -1251,7 +1251,7 @@
                         }
                       },
                       "property": {
-                        "kind": 53,
+                        "kind": 52,
                         "name": "slice",
                         "start": {
                           "line": 11,
@@ -1282,7 +1282,7 @@
                     }
                   },
                   "property": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "reverse",
                     "start": {
                       "line": 11,

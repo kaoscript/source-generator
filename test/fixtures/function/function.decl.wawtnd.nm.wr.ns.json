@@ -3,10 +3,10 @@
   "attributes": [],
   "body": [
     {
-      "kind": 50,
+      "kind": 49,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "foo",
         "start": {
           "line": 1,
@@ -38,7 +38,7 @@
             "column": 21
           },
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "bar",
             "start": {
               "line": 1,
@@ -53,7 +53,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "string",
               "start": {
                 "line": 1,
@@ -86,7 +86,7 @@
             "column": 31
           },
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "qux",
             "start": {
               "line": 1,
@@ -101,7 +101,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "int",
               "start": {
                 "line": 1,
@@ -128,7 +128,7 @@
         "kind": 116,
         "modifiers": [],
         "typeName": {
-          "kind": 53,
+          "kind": 52,
           "name": "string",
           "start": {
             "line": 1,

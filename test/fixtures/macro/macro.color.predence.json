@@ -3,14 +3,14 @@
   "attributes": [],
   "body": [
     {
-      "kind": 41,
+      "kind": 40,
       "attributes": [],
       "declarations": [
         {
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "t1",
             "start": {
               "line": 1,
@@ -34,7 +34,7 @@
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "t2",
             "start": {
               "line": 1,
@@ -58,7 +58,7 @@
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "t3",
             "start": {
               "line": 1,
@@ -82,7 +82,7 @@
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "h",
             "start": {
               "line": 1,
@@ -106,7 +106,7 @@
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "i",
             "start": {
               "line": 1,
@@ -140,7 +140,7 @@
       "kind": 122,
       "modifiers": [
         {
-          "kind": 12,
+          "kind": 13,
           "start": {
             "line": 3,
             "column": 1
@@ -157,7 +157,7 @@
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "foo",
             "start": {
               "line": 3,
@@ -209,7 +209,7 @@
           "column": 46
         },
         "left": {
-          "kind": 53,
+          "kind": 52,
           "name": "t1",
           "start": {
             "line": 3,
@@ -223,7 +223,7 @@
         "right": {
           "kind": 84,
           "operator": {
-            "kind": 18,
+            "kind": 20,
             "modifiers": [],
             "start": {
               "line": 3,
@@ -246,7 +246,7 @@
             {
               "kind": 10,
               "operator": {
-                "kind": 22,
+                "kind": 24,
                 "modifiers": [],
                 "start": {
                   "line": 3,
@@ -266,7 +266,7 @@
                 "column": 27
               },
               "left": {
-                "kind": 53,
+                "kind": 52,
                 "name": "t2",
                 "start": {
                   "line": 3,
@@ -278,7 +278,7 @@
                 }
               },
               "right": {
-                "kind": 53,
+                "kind": 52,
                 "name": "t1",
                 "start": {
                   "line": 3,
@@ -293,7 +293,7 @@
             {
               "kind": 10,
               "operator": {
-                "kind": 22,
+                "kind": 24,
                 "modifiers": [],
                 "start": {
                   "line": 3,
@@ -360,7 +360,7 @@
                 }
               },
               "right": {
-                "kind": 53,
+                "kind": 52,
                 "name": "t3",
                 "start": {
                   "line": 3,
@@ -392,7 +392,7 @@
       "kind": 122,
       "modifiers": [
         {
-          "kind": 12,
+          "kind": 13,
           "start": {
             "line": 4,
             "column": 1
@@ -409,7 +409,7 @@
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "bar",
             "start": {
               "line": 4,
@@ -461,7 +461,7 @@
           "column": 34
         },
         "left": {
-          "kind": 53,
+          "kind": 52,
           "name": "h",
           "start": {
             "line": 4,
@@ -475,7 +475,7 @@
         "right": {
           "kind": 10,
           "operator": {
-            "kind": 18,
+            "kind": 20,
             "modifiers": [],
             "start": {
               "line": 4,
@@ -557,7 +557,7 @@
             "argument": {
               "kind": 10,
               "operator": {
-                "kind": 22,
+                "kind": 24,
                 "modifiers": [],
                 "start": {
                   "line": 4,
@@ -577,7 +577,7 @@
                 "column": 34
               },
               "left": {
-                "kind": 53,
+                "kind": 52,
                 "name": "i",
                 "start": {
                   "line": 4,
@@ -614,16 +614,16 @@
       }
     },
     {
-      "kind": 35,
+      "kind": 34,
       "attributes": [],
       "declarations": [
         {
-          "kind": 36,
+          "kind": 35,
           "declaration": {
             "kind": 17,
             "attributes": [],
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "Color",
               "start": {
                 "line": 6,
@@ -640,7 +640,7 @@
                 "kind": 69,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "registerSpace",
                   "start": {
                     "line": 7,
@@ -676,7 +676,7 @@
                       "column": 41
                     },
                     "name": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "expression",
                       "start": {
                         "line": 7,
@@ -691,7 +691,7 @@
                       "kind": 116,
                       "modifiers": [],
                       "typeName": {
-                        "kind": 53,
+                        "kind": 52,
                         "name": "Object",
                         "start": {
                           "line": 7,
@@ -736,7 +736,7 @@
                         {
                           "kind": 1,
                           "expression": {
-                            "kind": 53,
+                            "kind": 52,
                             "name": "expression",
                             "start": {
                               "line": 8,
@@ -835,7 +835,7 @@
         "kind": 71,
         "modifiers": [],
         "object": {
-          "kind": 53,
+          "kind": 52,
           "name": "Color",
           "start": {
             "line": 12,
@@ -847,7 +847,7 @@
           }
         },
         "property": {
-          "kind": 53,
+          "kind": 52,
           "name": "registerSpace",
           "start": {
             "line": 12,
@@ -876,7 +876,7 @@
               "kind": 81,
               "attributes": [],
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "name",
                 "start": {
                   "line": 13,
@@ -912,7 +912,7 @@
               "kind": 81,
               "attributes": [],
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "formatters",
                 "start": {
                   "line": 14,
@@ -931,7 +931,7 @@
                     "kind": 81,
                     "attributes": [],
                     "name": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "foo",
                       "start": {
                         "line": 15,
@@ -943,7 +943,7 @@
                       }
                     },
                     "value": {
-                      "kind": 51,
+                      "kind": 50,
                       "parameters": [
                         {
                           "kind": 83,
@@ -957,7 +957,7 @@
                             "column": 9
                           },
                           "name": {
-                            "kind": 53,
+                            "kind": 52,
                             "name": "t1",
                             "start": {
                               "line": 15,
@@ -981,7 +981,7 @@
                             "column": 13
                           },
                           "name": {
-                            "kind": 53,
+                            "kind": 52,
                             "name": "t2",
                             "start": {
                               "line": 15,
@@ -1005,7 +1005,7 @@
                             "column": 17
                           },
                           "name": {
-                            "kind": 53,
+                            "kind": 52,
                             "name": "t3",
                             "start": {
                               "line": 15,
@@ -1051,7 +1051,7 @@
                           "column": 55
                         },
                         "left": {
-                          "kind": 53,
+                          "kind": 52,
                           "name": "t1",
                           "start": {
                             "line": 15,
@@ -1065,7 +1065,7 @@
                         "right": {
                           "kind": 84,
                           "operator": {
-                            "kind": 18,
+                            "kind": 20,
                             "modifiers": [],
                             "start": {
                               "line": 15,
@@ -1088,7 +1088,7 @@
                             {
                               "kind": 10,
                               "operator": {
-                                "kind": 22,
+                                "kind": 24,
                                 "modifiers": [],
                                 "start": {
                                   "line": 15,
@@ -1108,7 +1108,7 @@
                                 "column": 36
                               },
                               "left": {
-                                "kind": 53,
+                                "kind": 52,
                                 "name": "t2",
                                 "start": {
                                   "line": 15,
@@ -1120,7 +1120,7 @@
                                 }
                               },
                               "right": {
-                                "kind": 53,
+                                "kind": 52,
                                 "name": "t1",
                                 "start": {
                                   "line": 15,
@@ -1135,7 +1135,7 @@
                             {
                               "kind": 10,
                               "operator": {
-                                "kind": 22,
+                                "kind": 24,
                                 "modifiers": [],
                                 "start": {
                                   "line": 15,
@@ -1202,7 +1202,7 @@
                                 }
                               },
                               "right": {
-                                "kind": 53,
+                                "kind": 52,
                                 "name": "t3",
                                 "start": {
                                   "line": 15,
@@ -1243,7 +1243,7 @@
                     "kind": 81,
                     "attributes": [],
                     "name": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "bar",
                       "start": {
                         "line": 16,
@@ -1255,7 +1255,7 @@
                       }
                     },
                     "value": {
-                      "kind": 51,
+                      "kind": 50,
                       "parameters": [
                         {
                           "kind": 83,
@@ -1269,7 +1269,7 @@
                             "column": 8
                           },
                           "name": {
-                            "kind": 53,
+                            "kind": 52,
                             "name": "h",
                             "start": {
                               "line": 16,
@@ -1293,7 +1293,7 @@
                             "column": 11
                           },
                           "name": {
-                            "kind": 53,
+                            "kind": 52,
                             "name": "i",
                             "start": {
                               "line": 16,
@@ -1339,7 +1339,7 @@
                           "column": 37
                         },
                         "left": {
-                          "kind": 53,
+                          "kind": 52,
                           "name": "h",
                           "start": {
                             "line": 16,
@@ -1353,7 +1353,7 @@
                         "right": {
                           "kind": 10,
                           "operator": {
-                            "kind": 18,
+                            "kind": 20,
                             "modifiers": [],
                             "start": {
                               "line": 16,
@@ -1435,7 +1435,7 @@
                             "argument": {
                               "kind": 10,
                               "operator": {
-                                "kind": 22,
+                                "kind": 24,
                                 "modifiers": [],
                                 "start": {
                                   "line": 16,
@@ -1455,7 +1455,7 @@
                                 "column": 37
                               },
                               "left": {
-                                "kind": 53,
+                                "kind": 52,
                                 "name": "i",
                                 "start": {
                                   "line": 16,

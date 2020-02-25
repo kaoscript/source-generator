@@ -3,7 +3,7 @@
   "attributes": [],
   "body": [
     {
-      "kind": 47,
+      "kind": 46,
       "attributes": [],
       "modifiers": [],
       "expression": {
@@ -27,7 +27,7 @@
         "column": 2
       },
       "value": {
-        "kind": 53,
+        "kind": 52,
         "name": "x",
         "start": {
           "line": 1,

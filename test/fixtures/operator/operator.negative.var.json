@@ -3,10 +3,10 @@
   "attributes": [],
   "body": [
     {
-      "kind": 50,
+      "kind": 49,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "foo",
         "start": {
           "line": 1,
@@ -38,7 +38,7 @@
             "column": 11
           },
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "x",
             "start": {
               "line": 1,
@@ -62,7 +62,7 @@
             "column": 14
           },
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "y",
             "start": {
               "line": 1,
@@ -82,7 +82,7 @@
         "attributes": [],
         "statements": [
           {
-            "kind": 55,
+            "kind": 54,
             "attributes": [],
             "condition": {
               "kind": 117,
@@ -98,7 +98,7 @@
                 }
               },
               "argument": {
-                "kind": 53,
+                "kind": 52,
                 "name": "x",
                 "start": {
                   "line": 2,
@@ -126,7 +126,7 @@
                   "kind": 90,
                   "attributes": [],
                   "value": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "y",
                     "start": {
                       "line": 3,
@@ -172,7 +172,7 @@
                   "kind": 90,
                   "attributes": [],
                   "value": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "x",
                     "start": {
                       "line": 6,

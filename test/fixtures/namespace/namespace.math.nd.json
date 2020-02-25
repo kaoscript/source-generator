@@ -3,7 +3,7 @@
   "attributes": [],
   "body": [
     {
-      "kind": 41,
+      "kind": 40,
       "attributes": [],
       "declarations": [
         {
@@ -11,7 +11,7 @@
           "attributes": [],
           "modifiers": [
             {
-              "kind": 25,
+              "kind": 26,
               "start": {
                 "line": 1,
                 "column": 8
@@ -23,7 +23,7 @@
             }
           ],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "Math",
             "start": {
               "line": 1,

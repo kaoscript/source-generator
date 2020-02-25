@@ -3,14 +3,14 @@
   "attributes": [],
   "body": [
     {
-      "kind": 41,
+      "kind": 40,
       "attributes": [],
       "declarations": [
         {
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "console",
             "start": {
               "line": 1,
@@ -41,10 +41,10 @@
       }
     },
     {
-      "kind": 50,
+      "kind": 49,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "min",
         "start": {
           "line": 3,
@@ -74,7 +74,7 @@
             "kind": 81,
             "attributes": [],
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "gender",
               "start": {
                 "line": 4,
@@ -110,7 +110,7 @@
             "kind": 81,
             "attributes": [],
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "age",
               "start": {
                 "line": 5,
@@ -158,7 +158,7 @@
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "foo",
         "start": {
           "line": 8,
@@ -184,7 +184,7 @@
                   {
                     "kind": 11,
                     "name": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "gender",
                       "start": {
                         "line": 9,
@@ -208,7 +208,7 @@
                   {
                     "kind": 11,
                     "name": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "age",
                       "start": {
                         "line": 9,
@@ -264,7 +264,7 @@
               "kind": 3
             },
             "callee": {
-              "kind": 53,
+              "kind": 52,
               "name": "min",
               "start": {
                 "line": 9,
@@ -306,7 +306,7 @@
         "kind": 71,
         "modifiers": [],
         "object": {
-          "kind": 53,
+          "kind": 52,
           "name": "console",
           "start": {
             "line": 12,
@@ -318,7 +318,7 @@
           }
         },
         "property": {
-          "kind": 53,
+          "kind": 52,
           "name": "log",
           "start": {
             "line": 12,
@@ -343,7 +343,7 @@
           "kind": 71,
           "modifiers": [],
           "object": {
-            "kind": 53,
+            "kind": 52,
             "name": "foo",
             "start": {
               "line": 12,
@@ -355,7 +355,7 @@
             }
           },
           "property": {
-            "kind": 53,
+            "kind": 52,
             "name": "age",
             "start": {
               "line": 12,
@@ -396,7 +396,7 @@
         "kind": 71,
         "modifiers": [],
         "object": {
-          "kind": 53,
+          "kind": 52,
           "name": "console",
           "start": {
             "line": 13,
@@ -408,7 +408,7 @@
           }
         },
         "property": {
-          "kind": 53,
+          "kind": 52,
           "name": "log",
           "start": {
             "line": 13,
@@ -436,7 +436,7 @@
               "kind": 71,
               "modifiers": [],
               "object": {
-                "kind": 53,
+                "kind": 52,
                 "name": "foo",
                 "start": {
                   "line": 13,
@@ -448,7 +448,7 @@
                 }
               },
               "property": {
-                "kind": 53,
+                "kind": 52,
                 "name": "gender",
                 "start": {
                   "line": 13,

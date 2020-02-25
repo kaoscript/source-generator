@@ -6,7 +6,7 @@
       "kind": 17,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "Foobar",
         "start": {
           "line": 1,
@@ -47,7 +47,7 @@
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "foobar",
             "start": {
               "line": 2,
@@ -71,7 +71,7 @@
                 "column": 18
               },
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "x",
                 "start": {
                   "line": 2,
@@ -86,7 +86,7 @@
                 "kind": 116,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "Number",
                   "start": {
                     "line": 2,
@@ -120,7 +120,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "String",
               "start": {
                 "line": 2,
@@ -152,7 +152,7 @@
                   "kind": 107,
                   "elements": [
                     {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "x",
                       "start": {
                         "line": 3,

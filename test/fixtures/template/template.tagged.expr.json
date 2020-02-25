@@ -12,7 +12,7 @@
         "kind": 71,
         "modifiers": [],
         "object": {
-          "kind": 53,
+          "kind": 52,
           "name": "console",
           "start": {
             "line": 1,
@@ -24,7 +24,7 @@
           }
         },
         "property": {
-          "kind": 53,
+          "kind": 52,
           "name": "log",
           "start": {
             "line": 1,
@@ -57,7 +57,7 @@
               "kind": 71,
               "modifiers": [],
               "object": {
-                "kind": 53,
+                "kind": 52,
                 "name": "foo",
                 "start": {
                   "line": 1,
@@ -69,7 +69,7 @@
                 }
               },
               "property": {
-                "kind": 53,
+                "kind": 52,
                 "name": "bar",
                 "start": {
                   "line": 1,
@@ -115,7 +115,7 @@
                 }
               },
               {
-                "kind": 53,
+                "kind": 52,
                 "name": "person",
                 "start": {
                   "line": 1,
@@ -139,7 +139,7 @@
                 }
               },
               {
-                "kind": 53,
+                "kind": 52,
                 "name": "age",
                 "start": {
                   "line": 1,

@@ -3,11 +3,11 @@
   "attributes": [],
   "body": [
     {
-      "kind": 58,
+      "kind": 57,
       "attributes": [],
       "declarations": [
         {
-          "kind": 59,
+          "kind": 58,
           "attributes": [],
           "modifiers": [],
           "source": {
@@ -24,13 +24,13 @@
           },
           "specifiers": [
             {
-              "kind": 63,
+              "kind": 62,
               "attributes": [],
               "imported": {
                 "kind": 123,
                 "modifiers": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "foo",
                   "start": {
                     "line": 2,
@@ -51,7 +51,7 @@
                 }
               },
               "local": {
-                "kind": 53,
+                "kind": 52,
                 "name": "foo",
                 "start": {
                   "line": 2,
@@ -92,11 +92,11 @@
       }
     },
     {
-      "kind": 58,
+      "kind": 57,
       "attributes": [],
       "declarations": [
         {
-          "kind": 59,
+          "kind": 58,
           "attributes": [],
           "modifiers": [],
           "source": {
@@ -113,13 +113,13 @@
           },
           "specifiers": [
             {
-              "kind": 63,
+              "kind": 62,
               "attributes": [],
               "imported": {
                 "kind": 123,
                 "modifiers": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "foo",
                   "start": {
                     "line": 6,
@@ -140,7 +140,7 @@
                 }
               },
               "local": {
-                "kind": 53,
+                "kind": 52,
                 "name": "bar",
                 "start": {
                   "line": 6,

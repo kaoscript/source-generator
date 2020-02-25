@@ -3,18 +3,18 @@
   "attributes": [],
   "body": [
     {
-      "kind": 35,
+      "kind": 34,
       "attributes": [],
       "declarations": [
         {
-          "kind": 36,
+          "kind": 35,
           "declaration": {
             "kind": 17,
             "attributes": [
               {
                 "kind": 6,
                 "declaration": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "foobar",
                   "start": {
                     "line": 2,
@@ -36,7 +36,7 @@
               }
             ],
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "Foobar",
               "start": {
                 "line": 3,

@@ -17,7 +17,7 @@
         }
       },
       "left": {
-        "kind": 53,
+        "kind": 52,
         "name": "likes",
         "start": {
           "line": 1,
@@ -36,7 +36,7 @@
             "kind": 81,
             "attributes": [],
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "leto",
               "start": {
                 "line": 2,
@@ -72,7 +72,7 @@
             "kind": 81,
             "attributes": [],
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "paul",
               "start": {
                 "line": 3,
@@ -108,7 +108,7 @@
             "kind": 81,
             "attributes": [],
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "duncan",
               "start": {
                 "line": 4,
@@ -175,7 +175,7 @@
         }
       },
       "left": {
-        "kind": 53,
+        "kind": 52,
         "name": "spicyHeroes",
         "start": {
           "line": 7,
@@ -189,7 +189,7 @@
       "right": {
         "kind": 3,
         "body": {
-          "kind": 53,
+          "kind": 52,
           "name": "hero",
           "start": {
             "line": 7,
@@ -201,11 +201,11 @@
           }
         },
         "loop": {
-          "kind": 48,
+          "kind": 47,
           "attributes": [],
           "modifiers": [],
           "expression": {
-            "kind": 53,
+            "kind": 52,
             "name": "likes",
             "start": {
               "line": 7,
@@ -225,7 +225,7 @@
             "column": 87
           },
           "value": {
-            "kind": 53,
+            "kind": 52,
             "name": "like",
             "start": {
               "line": 7,
@@ -237,7 +237,7 @@
             }
           },
           "key": {
-            "kind": 53,
+            "kind": 52,
             "name": "hero",
             "start": {
               "line": 7,
@@ -255,7 +255,7 @@
               "kind": 3
             },
             "callee": {
-              "kind": 53,
+              "kind": 52,
               "name": "foo",
               "start": {
                 "line": 7,
@@ -268,7 +268,7 @@
             },
             "arguments": [
               {
-                "kind": 53,
+                "kind": 52,
                 "name": "hero",
                 "start": {
                   "line": 7,
@@ -280,7 +280,7 @@
                 }
               },
               {
-                "kind": 53,
+                "kind": 52,
                 "name": "like",
                 "start": {
                   "line": 7,
@@ -305,7 +305,7 @@
             "kind": 21,
             "values": [
               {
-                "kind": 53,
+                "kind": 52,
                 "name": "like",
                 "start": {
                   "line": 7,

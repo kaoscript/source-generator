@@ -3,10 +3,10 @@
   "attributes": [],
   "body": [
     {
-      "kind": 50,
+      "kind": 49,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "reverse",
         "start": {
           "line": 1,
@@ -38,7 +38,7 @@
             "column": 27
           },
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "value",
             "start": {
               "line": 1,
@@ -53,7 +53,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "String",
               "start": {
                 "line": 1,
@@ -80,7 +80,7 @@
         "kind": 116,
         "modifiers": [],
         "typeName": {
-          "kind": 53,
+          "kind": 52,
           "name": "String",
           "start": {
             "line": 1,
@@ -129,7 +129,7 @@
                   "kind": 71,
                   "modifiers": [],
                   "object": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "value",
                     "start": {
                       "line": 1,
@@ -141,7 +141,7 @@
                     }
                   },
                   "property": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "split",
                     "start": {
                       "line": 1,
@@ -185,7 +185,7 @@
                 }
               },
               "property": {
-                "kind": 53,
+                "kind": 52,
                 "name": "reverse",
                 "start": {
                   "line": 1,
@@ -216,7 +216,7 @@
             }
           },
           "property": {
-            "kind": 53,
+            "kind": 52,
             "name": "join",
             "start": {
               "line": 1,
@@ -261,10 +261,10 @@
       }
     },
     {
-      "kind": 50,
+      "kind": 49,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "reverse",
         "start": {
           "line": 2,
@@ -296,7 +296,7 @@
             "column": 26
           },
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "value",
             "start": {
               "line": 2,
@@ -311,7 +311,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "Array",
               "start": {
                 "line": 2,
@@ -338,7 +338,7 @@
         "kind": 116,
         "modifiers": [],
         "typeName": {
-          "kind": 53,
+          "kind": 52,
           "name": "Array",
           "start": {
             "line": 2,
@@ -378,7 +378,7 @@
               "kind": 71,
               "modifiers": [],
               "object": {
-                "kind": 53,
+                "kind": 52,
                 "name": "value",
                 "start": {
                   "line": 2,
@@ -390,7 +390,7 @@
                 }
               },
               "property": {
-                "kind": 53,
+                "kind": 52,
                 "name": "slice",
                 "start": {
                   "line": 2,
@@ -421,7 +421,7 @@
             }
           },
           "property": {
-            "kind": 53,
+            "kind": 52,
             "name": "reverse",
             "start": {
               "line": 2,

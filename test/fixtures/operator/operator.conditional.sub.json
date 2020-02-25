@@ -11,7 +11,7 @@
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "text",
             "start": {
               "line": 1,
@@ -73,7 +73,7 @@
             "column": 22
           },
           "left": {
-            "kind": 53,
+            "kind": 52,
             "name": "foo",
             "start": {
               "line": 1,
@@ -85,7 +85,7 @@
             }
           },
           "right": {
-            "kind": 53,
+            "kind": 52,
             "name": "bar",
             "start": {
               "line": 1,
@@ -110,7 +110,7 @@
           "condition": {
             "kind": 10,
             "operator": {
-              "kind": 20,
+              "kind": 22,
               "modifiers": [],
               "start": {
                 "line": 1,
@@ -130,7 +130,7 @@
               "column": 37
             },
             "left": {
-              "kind": 53,
+              "kind": 52,
               "name": "qux",
               "start": {
                 "line": 1,
@@ -142,7 +142,7 @@
               }
             },
             "right": {
-              "kind": 53,
+              "kind": 52,
               "name": "corge",
               "start": {
                 "line": 1,
@@ -212,7 +212,7 @@
               "column": 67
             },
             "left": {
-              "kind": 53,
+              "kind": 52,
               "name": "grault",
               "start": {
                 "line": 1,
@@ -224,7 +224,7 @@
               }
             },
             "right": {
-              "kind": 53,
+              "kind": 52,
               "name": "garply",
               "start": {
                 "line": 1,
@@ -259,7 +259,7 @@
               "column": 93
             },
             "condition": {
-              "kind": 53,
+              "kind": 52,
               "name": "waldo",
               "start": {
                 "line": 1,

@@ -1,4 +1,4 @@
-extern struct Point {
+require struct Point {
 	x: Number
 	y: Number
 }

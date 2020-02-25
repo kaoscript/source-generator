@@ -6,7 +6,7 @@
       "kind": 69,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "sayHello",
         "start": {
           "line": 1,
@@ -70,7 +70,7 @@
     {
       "kind": 15,
       "callee": {
-        "kind": 53,
+        "kind": 52,
         "name": "sayHello",
         "start": {
           "line": 5,

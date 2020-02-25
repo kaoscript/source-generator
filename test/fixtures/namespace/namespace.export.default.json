@@ -3,14 +3,14 @@
   "attributes": [],
   "body": [
     {
-      "kind": 41,
+      "kind": 40,
       "attributes": [],
       "declarations": [
         {
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "parseFloat",
             "start": {
               "line": 1,
@@ -41,17 +41,17 @@
       }
     },
     {
-      "kind": 35,
+      "kind": 34,
       "attributes": [],
       "declarations": [
         {
-          "kind": 36,
+          "kind": 35,
           "declaration": {
             "kind": 77,
             "attributes": [],
             "modifiers": [],
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "Float",
               "start": {
                 "line": 3,
@@ -64,16 +64,16 @@
             },
             "statements": [
               {
-                "kind": 35,
+                "kind": 34,
                 "attributes": [],
                 "declarations": [
                   {
-                    "kind": 36,
+                    "kind": 35,
                     "declaration": {
-                      "kind": 50,
+                      "kind": 49,
                       "attributes": [],
                       "name": {
-                        "kind": 53,
+                        "kind": 52,
                         "name": "toFloat",
                         "start": {
                           "line": 4,
@@ -105,7 +105,7 @@
                             "column": 35
                           },
                           "name": {
-                            "kind": 53,
+                            "kind": 52,
                             "name": "value",
                             "start": {
                               "line": 4,
@@ -120,7 +120,7 @@
                             "kind": 116,
                             "modifiers": [],
                             "typeName": {
-                              "kind": 53,
+                              "kind": 52,
                               "name": "String",
                               "start": {
                                 "line": 4,
@@ -147,7 +147,7 @@
                         "kind": 116,
                         "modifiers": [],
                         "typeName": {
-                          "kind": 53,
+                          "kind": 52,
                           "name": "Number",
                           "start": {
                             "line": 4,
@@ -175,7 +175,7 @@
                           "kind": 3
                         },
                         "callee": {
-                          "kind": 53,
+                          "kind": 52,
                           "name": "parseFloat",
                           "start": {
                             "line": 4,
@@ -188,7 +188,7 @@
                         },
                         "arguments": [
                           {
-                            "kind": 53,
+                            "kind": 52,
                             "name": "value",
                             "start": {
                               "line": 4,

@@ -6,7 +6,7 @@
       "kind": 17,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "Writer",
         "start": {
           "line": 1,
@@ -20,11 +20,11 @@
       "modifiers": [],
       "members": [
         {
-          "kind": 45,
+          "kind": 44,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 20,
+              "kind": 21,
               "start": {
                 "line": 2,
                 "column": 2
@@ -36,7 +36,7 @@
             }
           ],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "_line",
             "start": {
               "line": 3,
@@ -59,7 +59,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "class",
               "start": {
                 "line": 3,
@@ -85,7 +85,7 @@
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "constructor",
             "start": {
               "line": 5,
@@ -111,7 +111,7 @@
               "name": {
                 "kind": 108,
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "line",
                   "start": {
                     "line": 5,
@@ -148,7 +148,7 @@
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "newLine",
             "start": {
               "line": 6,
@@ -164,7 +164,7 @@
               "kind": 83,
               "modifiers": [
                 {
-                  "kind": 24,
+                  "kind": 25,
                   "arity": {
                     "min": 0,
                     "max": "Infinity"
@@ -188,7 +188,7 @@
                 "column": 17
               },
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "args",
                 "start": {
                   "line": 6,
@@ -215,7 +215,7 @@
             "class": {
               "kind": 108,
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "line",
                 "start": {
                   "line": 6,
@@ -250,7 +250,7 @@
                   }
                 },
                 "argument": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "args",
                   "start": {
                     "line": 6,

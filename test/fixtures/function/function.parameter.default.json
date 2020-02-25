@@ -3,10 +3,10 @@
   "attributes": [],
   "body": [
     {
-      "kind": 50,
+      "kind": 49,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "foo",
         "start": {
           "line": 1,
@@ -38,7 +38,7 @@
             "column": 18
           },
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "item",
             "start": {
               "line": 1,
@@ -79,7 +79,7 @@
               "kind": 71,
               "modifiers": [],
               "object": {
-                "kind": 53,
+                "kind": 52,
                 "name": "console",
                 "start": {
                   "line": 2,
@@ -91,7 +91,7 @@
                 }
               },
               "property": {
-                "kind": 53,
+                "kind": 52,
                 "name": "log",
                 "start": {
                   "line": 2,
@@ -113,7 +113,7 @@
             },
             "arguments": [
               {
-                "kind": 53,
+                "kind": 52,
                 "name": "item",
                 "start": {
                   "line": 2,
@@ -147,10 +147,10 @@
       }
     },
     {
-      "kind": 50,
+      "kind": 49,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "bar",
         "start": {
           "line": 5,
@@ -182,7 +182,7 @@
             "column": 23
           },
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "item",
             "start": {
               "line": 5,
@@ -197,7 +197,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "any",
               "start": {
                 "line": 5,
@@ -247,7 +247,7 @@
               "kind": 71,
               "modifiers": [],
               "object": {
-                "kind": 53,
+                "kind": 52,
                 "name": "console",
                 "start": {
                   "line": 6,
@@ -259,7 +259,7 @@
                 }
               },
               "property": {
-                "kind": 53,
+                "kind": 52,
                 "name": "log",
                 "start": {
                   "line": 6,
@@ -281,7 +281,7 @@
             },
             "arguments": [
               {
-                "kind": 53,
+                "kind": 52,
                 "name": "item",
                 "start": {
                   "line": 6,
@@ -315,10 +315,10 @@
       }
     },
     {
-      "kind": 50,
+      "kind": 49,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "baz",
         "start": {
           "line": 9,
@@ -350,7 +350,7 @@
             "column": 24
           },
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "item",
             "start": {
               "line": 9,
@@ -365,7 +365,7 @@
             "kind": 116,
             "modifiers": [
               {
-                "kind": 17,
+                "kind": 18,
                 "start": {
                   "line": 9,
                   "column": 19
@@ -377,7 +377,7 @@
               }
             ],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "any",
               "start": {
                 "line": 9,
@@ -427,7 +427,7 @@
               "kind": 71,
               "modifiers": [],
               "object": {
-                "kind": 53,
+                "kind": 52,
                 "name": "console",
                 "start": {
                   "line": 10,
@@ -439,7 +439,7 @@
                 }
               },
               "property": {
-                "kind": 53,
+                "kind": 52,
                 "name": "log",
                 "start": {
                   "line": 10,
@@ -461,7 +461,7 @@
             },
             "arguments": [
               {
-                "kind": 53,
+                "kind": 52,
                 "name": "item",
                 "start": {
                   "line": 10,
@@ -495,10 +495,10 @@
       }
     },
     {
-      "kind": 50,
+      "kind": 49,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "qux",
         "start": {
           "line": 13,
@@ -530,7 +530,7 @@
             "column": 23
           },
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "item",
             "start": {
               "line": 13,
@@ -545,7 +545,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "int",
               "start": {
                 "line": 13,
@@ -595,7 +595,7 @@
               "kind": 71,
               "modifiers": [],
               "object": {
-                "kind": 53,
+                "kind": 52,
                 "name": "console",
                 "start": {
                   "line": 14,
@@ -607,7 +607,7 @@
                 }
               },
               "property": {
-                "kind": 53,
+                "kind": 52,
                 "name": "log",
                 "start": {
                   "line": 14,
@@ -629,7 +629,7 @@
             },
             "arguments": [
               {
-                "kind": 53,
+                "kind": 52,
                 "name": "item",
                 "start": {
                   "line": 14,
@@ -663,10 +663,10 @@
       }
     },
     {
-      "kind": 50,
+      "kind": 49,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "quux",
         "start": {
           "line": 17,
@@ -698,7 +698,7 @@
             "column": 25
           },
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "item",
             "start": {
               "line": 17,
@@ -713,7 +713,7 @@
             "kind": 116,
             "modifiers": [
               {
-                "kind": 17,
+                "kind": 18,
                 "start": {
                   "line": 17,
                   "column": 20
@@ -725,7 +725,7 @@
               }
             ],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "int",
               "start": {
                 "line": 17,
@@ -775,7 +775,7 @@
               "kind": 71,
               "modifiers": [],
               "object": {
-                "kind": 53,
+                "kind": 52,
                 "name": "console",
                 "start": {
                   "line": 18,
@@ -787,7 +787,7 @@
                 }
               },
               "property": {
-                "kind": 53,
+                "kind": 52,
                 "name": "log",
                 "start": {
                   "line": 18,
@@ -809,7 +809,7 @@
             },
             "arguments": [
               {
-                "kind": 53,
+                "kind": 52,
                 "name": "item",
                 "start": {
                   "line": 18,
@@ -843,10 +843,10 @@
       }
     },
     {
-      "kind": 50,
+      "kind": 49,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "corge",
         "start": {
           "line": 21,
@@ -878,7 +878,7 @@
             "column": 21
           },
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "item",
             "start": {
               "line": 21,
@@ -893,7 +893,7 @@
             "kind": 116,
             "modifiers": [
               {
-                "kind": 17,
+                "kind": 18,
                 "start": {
                   "line": 21,
                   "column": 16
@@ -905,7 +905,7 @@
               }
             ],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "any"
             },
             "start": {
@@ -947,7 +947,7 @@
               "kind": 71,
               "modifiers": [],
               "object": {
-                "kind": 53,
+                "kind": 52,
                 "name": "console",
                 "start": {
                   "line": 22,
@@ -959,7 +959,7 @@
                 }
               },
               "property": {
-                "kind": 53,
+                "kind": 52,
                 "name": "log",
                 "start": {
                   "line": 22,
@@ -981,7 +981,7 @@
             },
             "arguments": [
               {
-                "kind": 53,
+                "kind": 52,
                 "name": "item",
                 "start": {
                   "line": 22,

@@ -3,11 +3,11 @@
   "attributes": [],
   "body": [
     {
-      "kind": 58,
+      "kind": 57,
       "attributes": [],
       "declarations": [
         {
-          "kind": 59,
+          "kind": 58,
           "attributes": [],
           "modifiers": [],
           "source": {
@@ -33,7 +33,7 @@
           },
           "arguments": [
             {
-              "kind": 57,
+              "kind": 56,
               "modifiers": [],
               "value": {
                 "kind": 14,
@@ -45,7 +45,7 @@
                   "kind": 71,
                   "modifiers": [],
                   "object": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "path",
                     "start": {
                       "line": 1,
@@ -57,7 +57,7 @@
                     }
                   },
                   "property": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "join",
                     "start": {
                       "line": 1,
@@ -79,7 +79,7 @@
                 },
                 "arguments": [
                   {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "__dirname",
                     "start": {
                       "line": 1,

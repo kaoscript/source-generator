@@ -14,7 +14,7 @@
         "object": {
           "kind": 25,
           "class": {
-            "kind": 53,
+            "kind": 52,
             "name": "Shape",
             "start": {
               "line": 1,
@@ -36,7 +36,7 @@
           }
         },
         "property": {
-          "kind": 53,
+          "kind": 52,
           "name": "draw",
           "start": {
             "line": 1,

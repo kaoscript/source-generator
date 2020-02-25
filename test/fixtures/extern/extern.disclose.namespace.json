@@ -6,7 +6,7 @@
       "kind": 28,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "Math",
         "start": {
           "line": 1,
@@ -19,11 +19,11 @@
       },
       "members": [
         {
-          "kind": 45,
+          "kind": 44,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "PI",
             "start": {
               "line": 2,
@@ -46,7 +46,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "Number",
               "start": {
                 "line": 2,
@@ -72,7 +72,7 @@
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "abs",
             "start": {
               "line": 3,
@@ -96,7 +96,7 @@
                 "column": 19
               },
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "value",
                 "start": {
                   "line": 3,
@@ -111,7 +111,7 @@
                 "kind": 116,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "Number",
                   "start": {
                     "line": 3,
@@ -145,7 +145,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "Number",
               "start": {
                 "line": 3,

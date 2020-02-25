@@ -3,14 +3,14 @@
   "attributes": [],
   "body": [
     {
-      "kind": 41,
+      "kind": 40,
       "attributes": [],
       "declarations": [
         {
           "kind": 17,
           "attributes": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "Date",
             "start": {
               "line": 1,
@@ -23,7 +23,7 @@
           },
           "modifiers": [
             {
-              "kind": 25,
+              "kind": 26,
               "start": {
                 "line": 1,
                 "column": 8
@@ -40,7 +40,7 @@
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "setDate",
                 "start": {
                   "line": 2,
@@ -64,7 +64,7 @@
                     "column": 26
                   },
                   "name": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "value",
                     "start": {
                       "line": 2,
@@ -79,7 +79,7 @@
                     "kind": 116,
                     "modifiers": [],
                     "typeName": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "Number",
                       "start": {
                         "line": 2,
@@ -113,7 +113,7 @@
                 "kind": 116,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "Number",
                   "start": {
                     "line": 2,
@@ -156,10 +156,10 @@
       }
     },
     {
-      "kind": 56,
+      "kind": 55,
       "attributes": [],
       "variable": {
-        "kind": 53,
+        "kind": 52,
         "name": "Date",
         "start": {
           "line": 5,
@@ -176,7 +176,7 @@
           "attributes": [],
           "modifiers": [
             {
-              "kind": 19,
+              "kind": 20,
               "start": {
                 "line": 6,
                 "column": 5
@@ -188,7 +188,7 @@
             }
           ],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "setDate",
             "start": {
               "line": 6,
@@ -212,7 +212,7 @@
                 "column": 36
               },
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "value",
                 "start": {
                   "line": 6,
@@ -227,7 +227,7 @@
                 "kind": 116,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "Number",
                   "start": {
                     "line": 6,
@@ -261,7 +261,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "Date",
               "start": {
                 "line": 6,
@@ -293,7 +293,7 @@
                   "kind": 3
                 },
                 "callee": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "precursor",
                   "start": {
                     "line": 7,
@@ -306,7 +306,7 @@
                 },
                 "arguments": [
                   {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "value",
                     "start": {
                       "line": 7,
@@ -332,7 +332,7 @@
                 "kind": 90,
                 "attributes": [],
                 "value": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "this",
                   "start": {
                     "line": 9,

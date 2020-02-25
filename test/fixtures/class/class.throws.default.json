@@ -6,7 +6,7 @@
       "kind": 17,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "Foo",
         "start": {
           "line": 1,
@@ -24,7 +24,7 @@
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "bar",
             "start": {
               "line": 2,
@@ -46,7 +46,7 @@
           },
           "throws": [
             {
-              "kind": 53,
+              "kind": 52,
               "name": "Error",
               "start": {
                 "line": 2,

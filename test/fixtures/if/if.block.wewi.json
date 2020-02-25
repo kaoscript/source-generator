@@ -11,7 +11,7 @@
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "x",
             "start": {
               "line": 1,
@@ -54,13 +54,13 @@
       }
     },
     {
-      "kind": 55,
+      "kind": 54,
       "attributes": [],
       "condition": {
         "kind": 21,
         "values": [
           {
-            "kind": 53,
+            "kind": 52,
             "name": "x",
             "start": {
               "line": 3,
@@ -127,13 +127,13 @@
         "column": 2
       },
       "whenFalse": {
-        "kind": 55,
+        "kind": 54,
         "attributes": [],
         "condition": {
           "kind": 21,
           "values": [
             {
-              "kind": 53,
+              "kind": 52,
               "name": "x",
               "start": {
                 "line": 5,

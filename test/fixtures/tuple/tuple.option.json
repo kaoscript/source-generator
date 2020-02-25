@@ -7,7 +7,7 @@
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "Pair",
         "start": {
           "line": 1,
@@ -33,7 +33,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "String",
               "start": {
                 "line": 2,
@@ -80,7 +80,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "Number",
               "start": {
                 "line": 3,
@@ -132,7 +132,7 @@
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "pair",
             "start": {
               "line": 6,
@@ -168,7 +168,7 @@
           "kind": 3
         },
         "callee": {
-          "kind": 53,
+          "kind": 52,
           "name": "Pair",
           "start": {
             "line": 6,
@@ -225,7 +225,7 @@
         "kind": 71,
         "modifiers": [],
         "object": {
-          "kind": 53,
+          "kind": 52,
           "name": "console",
           "start": {
             "line": 8,
@@ -237,7 +237,7 @@
           }
         },
         "property": {
-          "kind": 53,
+          "kind": 52,
           "name": "log",
           "start": {
             "line": 8,
@@ -262,7 +262,7 @@
           "kind": 71,
           "modifiers": [],
           "object": {
-            "kind": 53,
+            "kind": 52,
             "name": "pair",
             "start": {
               "line": 8,
@@ -274,7 +274,7 @@
             }
           },
           "property": {
-            "kind": 53,
+            "kind": 52,
             "name": "0",
             "start": {
               "line": 8,
@@ -298,7 +298,7 @@
           "kind": 71,
           "modifiers": [],
           "object": {
-            "kind": 53,
+            "kind": 52,
             "name": "pair",
             "start": {
               "line": 8,
@@ -310,7 +310,7 @@
             }
           },
           "property": {
-            "kind": 53,
+            "kind": 52,
             "name": "1",
             "start": {
               "line": 8,

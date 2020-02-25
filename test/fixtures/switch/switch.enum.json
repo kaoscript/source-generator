@@ -5,8 +5,9 @@
     {
       "kind": 31,
       "attributes": [],
+      "modifiers": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "ANSIColor",
         "start": {
           "line": 1,
@@ -19,9 +20,11 @@
       },
       "members": [
         {
-          "kind": 33,
+          "kind": 44,
+          "attributes": [],
+          "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "black",
             "start": {
               "line": 2,
@@ -42,9 +45,11 @@
           }
         },
         {
-          "kind": 33,
+          "kind": 44,
+          "attributes": [],
+          "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "red",
             "start": {
               "line": 3,
@@ -65,9 +70,11 @@
           }
         },
         {
-          "kind": 33,
+          "kind": 44,
+          "attributes": [],
+          "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "green",
             "start": {
               "line": 4,
@@ -88,9 +95,11 @@
           }
         },
         {
-          "kind": 33,
+          "kind": 44,
+          "attributes": [],
+          "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "yellow",
             "start": {
               "line": 5,
@@ -111,9 +120,11 @@
           }
         },
         {
-          "kind": 33,
+          "kind": 44,
+          "attributes": [],
+          "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "blue",
             "start": {
               "line": 6,
@@ -134,9 +145,11 @@
           }
         },
         {
-          "kind": 33,
+          "kind": 44,
+          "attributes": [],
+          "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "magenta",
             "start": {
               "line": 7,
@@ -157,9 +170,11 @@
           }
         },
         {
-          "kind": 33,
+          "kind": 44,
+          "attributes": [],
+          "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "cyan",
             "start": {
               "line": 8,
@@ -180,9 +195,11 @@
           }
         },
         {
-          "kind": 33,
+          "kind": 44,
+          "attributes": [],
+          "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "white",
             "start": {
               "line": 9,
@@ -203,9 +220,11 @@
           }
         },
         {
-          "kind": 33,
+          "kind": 44,
+          "attributes": [],
+          "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "default",
             "start": {
               "line": 10,
@@ -236,10 +255,10 @@
       }
     },
     {
-      "kind": 50,
+      "kind": 49,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "color",
         "start": {
           "line": 13,
@@ -271,7 +290,7 @@
             "column": 25
           },
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "fg",
             "start": {
               "line": 13,
@@ -286,7 +305,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "ANSIColor",
               "start": {
                 "line": 13,
@@ -319,7 +338,7 @@
             "column": 40
           },
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "bg",
             "start": {
               "line": 13,
@@ -334,7 +353,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "ANSIColor",
               "start": {
                 "line": 13,
@@ -361,7 +380,7 @@
         "kind": 116,
         "modifiers": [],
         "typeName": {
-          "kind": 53,
+          "kind": 52,
           "name": "String",
           "start": {
             "line": 13,
@@ -395,7 +414,7 @@
                 "kind": 123,
                 "modifiers": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "fg_code",
                   "start": {
                     "line": 14,
@@ -428,7 +447,7 @@
               "kind": 103,
               "attributes": [],
               "expression": {
-                "kind": 53,
+                "kind": 52,
                 "name": "fg",
                 "start": {
                   "line": 14,
@@ -464,7 +483,7 @@
                   },
                   "conditions": [
                     {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "black",
                       "start": {
                         "line": 15,
@@ -502,7 +521,7 @@
                   },
                   "conditions": [
                     {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "red",
                       "start": {
                         "line": 16,
@@ -540,7 +559,7 @@
                   },
                   "conditions": [
                     {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "green",
                       "start": {
                         "line": 17,
@@ -578,7 +597,7 @@
                   },
                   "conditions": [
                     {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "yellow",
                       "start": {
                         "line": 18,
@@ -616,7 +635,7 @@
                   },
                   "conditions": [
                     {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "blue",
                       "start": {
                         "line": 19,
@@ -654,7 +673,7 @@
                   },
                   "conditions": [
                     {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "magenta",
                       "start": {
                         "line": 20,
@@ -692,7 +711,7 @@
                   },
                   "conditions": [
                     {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "cyan",
                       "start": {
                         "line": 21,
@@ -730,7 +749,7 @@
                   },
                   "conditions": [
                     {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "white",
                       "start": {
                         "line": 22,
@@ -768,7 +787,7 @@
                   },
                   "conditions": [
                     {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "default",
                       "start": {
                         "line": 23,
@@ -802,7 +821,7 @@
                 "kind": 123,
                 "modifiers": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "bg_code",
                   "start": {
                     "line": 26,
@@ -835,7 +854,7 @@
               "kind": 103,
               "attributes": [],
               "expression": {
-                "kind": 53,
+                "kind": 52,
                 "name": "bg",
                 "start": {
                   "line": 26,
@@ -871,7 +890,7 @@
                   },
                   "conditions": [
                     {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "black",
                       "start": {
                         "line": 27,
@@ -909,7 +928,7 @@
                   },
                   "conditions": [
                     {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "red",
                       "start": {
                         "line": 28,
@@ -947,7 +966,7 @@
                   },
                   "conditions": [
                     {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "green",
                       "start": {
                         "line": 29,
@@ -985,7 +1004,7 @@
                   },
                   "conditions": [
                     {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "yellow",
                       "start": {
                         "line": 30,
@@ -1023,7 +1042,7 @@
                   },
                   "conditions": [
                     {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "blue",
                       "start": {
                         "line": 31,
@@ -1061,7 +1080,7 @@
                   },
                   "conditions": [
                     {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "magenta",
                       "start": {
                         "line": 32,
@@ -1099,7 +1118,7 @@
                   },
                   "conditions": [
                     {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "cyan",
                       "start": {
                         "line": 33,
@@ -1137,7 +1156,7 @@
                   },
                   "conditions": [
                     {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "white",
                       "start": {
                         "line": 34,
@@ -1175,7 +1194,7 @@
                   },
                   "conditions": [
                     {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "default",
                       "start": {
                         "line": 35,
@@ -1207,7 +1226,7 @@
               "kind": 107,
               "elements": [
                 {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "fg_code",
                   "start": {
                     "line": 38,
@@ -1231,7 +1250,7 @@
                   }
                 },
                 {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "bg_code",
                   "start": {
                     "line": 38,

@@ -3,14 +3,14 @@
   "attributes": [],
   "body": [
     {
-      "kind": 41,
+      "kind": 40,
       "attributes": [],
       "declarations": [
         {
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "console",
             "start": {
               "line": 1,
@@ -41,10 +41,10 @@
       }
     },
     {
-      "kind": 50,
+      "kind": 49,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "foobar",
         "start": {
           "line": 3,
@@ -76,7 +76,7 @@
             "column": 25
           },
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "text",
             "start": {
               "line": 3,
@@ -91,7 +91,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "String",
               "start": {
                 "line": 3,
@@ -131,7 +131,7 @@
                   "kind": 123,
                   "modifiers": [],
                   "name": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "data",
                     "start": {
                       "line": 4,
@@ -167,7 +167,7 @@
                   "kind": 3
                 },
                 "callee": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "quxbaz",
                   "start": {
                     "line": 4,
@@ -180,7 +180,7 @@
                 },
                 "arguments": [
                   {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "text",
                     "start": {
                       "line": 4,
@@ -216,7 +216,7 @@
                     "kind": 71,
                     "modifiers": [],
                     "object": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "console",
                       "start": {
                         "line": 5,
@@ -228,7 +228,7 @@
                       }
                     },
                     "property": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "log",
                       "start": {
                         "line": 5,
@@ -253,7 +253,7 @@
                       "kind": 107,
                       "elements": [
                         {
-                          "kind": 53,
+                          "kind": 52,
                           "name": "data",
                           "start": {
                             "line": 5,
@@ -316,10 +316,10 @@
       }
     },
     {
-      "kind": 50,
+      "kind": 49,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "quxbaz",
         "start": {
           "line": 9,
@@ -351,7 +351,7 @@
             "column": 25
           },
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "text",
             "start": {
               "line": 9,
@@ -366,7 +366,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "String",
               "start": {
                 "line": 9,
@@ -393,7 +393,7 @@
         "kind": 116,
         "modifiers": [],
         "typeName": {
-          "kind": 53,
+          "kind": 52,
           "name": "String",
           "start": {
             "line": 9,
@@ -415,7 +415,7 @@
       },
       "throws": [],
       "body": {
-        "kind": 53,
+        "kind": 52,
         "name": "text",
         "start": {
           "line": 9,

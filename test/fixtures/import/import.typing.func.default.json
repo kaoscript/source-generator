@@ -3,11 +3,11 @@
   "attributes": [],
   "body": [
     {
-      "kind": 58,
+      "kind": 57,
       "attributes": [],
       "declarations": [
         {
-          "kind": 59,
+          "kind": 58,
           "attributes": [],
           "modifiers": [],
           "source": {
@@ -24,13 +24,13 @@
           },
           "specifiers": [
             {
-              "kind": 63,
+              "kind": 62,
               "attributes": [],
               "imported": {
-                "kind": 50,
+                "kind": 49,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "foo",
                   "start": {
                     "line": 2,
@@ -54,7 +54,7 @@
                     "kind": 83,
                     "modifiers": [
                       {
-                        "kind": 24,
+                        "kind": 25,
                         "arity": {
                           "min": 0,
                           "max": "Infinity"
@@ -83,7 +83,7 @@
                 "throws": []
               },
               "local": {
-                "kind": 53,
+                "kind": 52,
                 "name": "f1",
                 "start": {
                   "line": 2,
@@ -104,13 +104,13 @@
               }
             },
             {
-              "kind": 63,
+              "kind": 62,
               "attributes": [],
               "imported": {
-                "kind": 50,
+                "kind": 49,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "bar",
                   "start": {
                     "line": 3,
@@ -146,7 +146,7 @@
                 "throws": []
               },
               "local": {
-                "kind": 53,
+                "kind": 52,
                 "name": "b1",
                 "start": {
                   "line": 3,
@@ -167,13 +167,13 @@
               }
             },
             {
-              "kind": 63,
+              "kind": 62,
               "attributes": [],
               "imported": {
-                "kind": 50,
+                "kind": 49,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "baz",
                   "start": {
                     "line": 4,
@@ -205,7 +205,7 @@
                       "column": 19
                     },
                     "name": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "value",
                       "start": {
                         "line": 4,
@@ -220,7 +220,7 @@
                       "kind": 116,
                       "modifiers": [],
                       "typeName": {
-                        "kind": 53,
+                        "kind": 52,
                         "name": "Number",
                         "start": {
                           "line": 4,
@@ -247,7 +247,7 @@
                   "kind": 116,
                   "modifiers": [],
                   "typeName": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "Number",
                     "start": {
                       "line": 4,
@@ -270,7 +270,7 @@
                 "throws": []
               },
               "local": {
-                "kind": 53,
+                "kind": 52,
                 "name": "b2",
                 "start": {
                   "line": 4,
@@ -291,13 +291,13 @@
               }
             },
             {
-              "kind": 63,
+              "kind": 62,
               "attributes": [],
               "imported": {
-                "kind": 50,
+                "kind": 49,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "baz",
                   "start": {
                     "line": 5,
@@ -329,7 +329,7 @@
                       "column": 19
                     },
                     "name": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "value",
                       "start": {
                         "line": 5,
@@ -344,7 +344,7 @@
                       "kind": 116,
                       "modifiers": [],
                       "typeName": {
-                        "kind": 53,
+                        "kind": 52,
                         "name": "String",
                         "start": {
                           "line": 5,
@@ -371,7 +371,7 @@
                   "kind": 116,
                   "modifiers": [],
                   "typeName": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "String",
                     "start": {
                       "line": 5,
@@ -394,7 +394,7 @@
                 "throws": []
               },
               "local": {
-                "kind": 53,
+                "kind": 52,
                 "name": "baz",
                 "start": {
                   "line": 5,
@@ -415,13 +415,13 @@
               }
             },
             {
-              "kind": 63,
+              "kind": 62,
               "attributes": [],
               "imported": {
-                "kind": 50,
+                "kind": 49,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "qux",
                   "start": {
                     "line": 6,
@@ -453,7 +453,7 @@
                       "column": 25
                     },
                     "name": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "value",
                       "start": {
                         "line": 6,
@@ -468,7 +468,7 @@
                       "kind": 116,
                       "modifiers": [],
                       "typeName": {
-                        "kind": 53,
+                        "kind": 52,
                         "name": "Number",
                         "start": {
                           "line": 6,
@@ -507,7 +507,7 @@
                   "kind": 116,
                   "modifiers": [],
                   "typeName": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "Number",
                     "start": {
                       "line": 6,
@@ -530,7 +530,7 @@
                 "throws": []
               },
               "local": {
-                "kind": 53,
+                "kind": 52,
                 "name": "q1",
                 "start": {
                   "line": 6,
@@ -551,13 +551,13 @@
               }
             },
             {
-              "kind": 63,
+              "kind": 62,
               "attributes": [],
               "imported": {
-                "kind": 50,
+                "kind": 49,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "qux",
                   "start": {
                     "line": 7,
@@ -589,7 +589,7 @@
                       "column": 25
                     },
                     "name": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "value",
                       "start": {
                         "line": 7,
@@ -604,7 +604,7 @@
                       "kind": 116,
                       "modifiers": [],
                       "typeName": {
-                        "kind": 53,
+                        "kind": 52,
                         "name": "String",
                         "start": {
                           "line": 7,
@@ -643,7 +643,7 @@
                   "kind": 116,
                   "modifiers": [],
                   "typeName": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "String",
                     "start": {
                       "line": 7,
@@ -666,7 +666,7 @@
                 "throws": []
               },
               "local": {
-                "kind": 53,
+                "kind": 52,
                 "name": "qux",
                 "start": {
                   "line": 7,
@@ -707,11 +707,11 @@
       }
     },
     {
-      "kind": 58,
+      "kind": 57,
       "attributes": [],
       "declarations": [
         {
-          "kind": 59,
+          "kind": 58,
           "attributes": [],
           "modifiers": [],
           "source": {
@@ -728,13 +728,13 @@
           },
           "specifiers": [
             {
-              "kind": 63,
+              "kind": 62,
               "attributes": [],
               "imported": {
-                "kind": 50,
+                "kind": 49,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "foo",
                   "start": {
                     "line": 11,
@@ -758,7 +758,7 @@
                     "kind": 83,
                     "modifiers": [
                       {
-                        "kind": 24,
+                        "kind": 25,
                         "arity": {
                           "min": 0,
                           "max": "Infinity"
@@ -787,7 +787,7 @@
                 "throws": []
               },
               "local": {
-                "kind": 53,
+                "kind": 52,
                 "name": "f1",
                 "start": {
                   "line": 11,
@@ -808,13 +808,13 @@
               }
             },
             {
-              "kind": 63,
+              "kind": 62,
               "attributes": [],
               "imported": {
-                "kind": 50,
+                "kind": 49,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "bar",
                   "start": {
                     "line": 12,
@@ -850,7 +850,7 @@
                 "throws": []
               },
               "local": {
-                "kind": 53,
+                "kind": 52,
                 "name": "b1",
                 "start": {
                   "line": 12,
@@ -871,13 +871,13 @@
               }
             },
             {
-              "kind": 63,
+              "kind": 62,
               "attributes": [],
               "imported": {
-                "kind": 50,
+                "kind": 49,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "baz",
                   "start": {
                     "line": 13,
@@ -909,7 +909,7 @@
                       "column": 24
                     },
                     "name": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "value",
                       "start": {
                         "line": 13,
@@ -924,7 +924,7 @@
                       "kind": 116,
                       "modifiers": [],
                       "typeName": {
-                        "kind": 53,
+                        "kind": 52,
                         "name": "Number",
                         "start": {
                           "line": 13,
@@ -951,7 +951,7 @@
                   "kind": 116,
                   "modifiers": [],
                   "typeName": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "Number",
                     "start": {
                       "line": 13,
@@ -974,7 +974,7 @@
                 "throws": []
               },
               "local": {
-                "kind": 53,
+                "kind": 52,
                 "name": "b2",
                 "start": {
                   "line": 13,
@@ -995,13 +995,13 @@
               }
             },
             {
-              "kind": 63,
+              "kind": 62,
               "attributes": [],
               "imported": {
-                "kind": 50,
+                "kind": 49,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "baz",
                   "start": {
                     "line": 14,
@@ -1033,7 +1033,7 @@
                       "column": 24
                     },
                     "name": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "value",
                       "start": {
                         "line": 14,
@@ -1048,7 +1048,7 @@
                       "kind": 116,
                       "modifiers": [],
                       "typeName": {
-                        "kind": 53,
+                        "kind": 52,
                         "name": "String",
                         "start": {
                           "line": 14,
@@ -1075,7 +1075,7 @@
                   "kind": 116,
                   "modifiers": [],
                   "typeName": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "String",
                     "start": {
                       "line": 14,
@@ -1098,7 +1098,7 @@
                 "throws": []
               },
               "local": {
-                "kind": 53,
+                "kind": 52,
                 "name": "baz",
                 "start": {
                   "line": 14,
@@ -1119,13 +1119,13 @@
               }
             },
             {
-              "kind": 63,
+              "kind": 62,
               "attributes": [],
               "imported": {
-                "kind": 50,
+                "kind": 49,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "qux",
                   "start": {
                     "line": 15,
@@ -1157,7 +1157,7 @@
                       "column": 30
                     },
                     "name": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "value",
                       "start": {
                         "line": 15,
@@ -1172,7 +1172,7 @@
                       "kind": 116,
                       "modifiers": [],
                       "typeName": {
-                        "kind": 53,
+                        "kind": 52,
                         "name": "Number",
                         "start": {
                           "line": 15,
@@ -1211,7 +1211,7 @@
                   "kind": 116,
                   "modifiers": [],
                   "typeName": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "Number",
                     "start": {
                       "line": 15,
@@ -1234,7 +1234,7 @@
                 "throws": []
               },
               "local": {
-                "kind": 53,
+                "kind": 52,
                 "name": "q1",
                 "start": {
                   "line": 15,
@@ -1255,13 +1255,13 @@
               }
             },
             {
-              "kind": 63,
+              "kind": 62,
               "attributes": [],
               "imported": {
-                "kind": 50,
+                "kind": 49,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "qux",
                   "start": {
                     "line": 16,
@@ -1293,7 +1293,7 @@
                       "column": 30
                     },
                     "name": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "value",
                       "start": {
                         "line": 16,
@@ -1308,7 +1308,7 @@
                       "kind": 116,
                       "modifiers": [],
                       "typeName": {
-                        "kind": 53,
+                        "kind": 52,
                         "name": "String",
                         "start": {
                           "line": 16,
@@ -1347,7 +1347,7 @@
                   "kind": 116,
                   "modifiers": [],
                   "typeName": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "String",
                     "start": {
                       "line": 16,
@@ -1370,7 +1370,7 @@
                 "throws": []
               },
               "local": {
-                "kind": 53,
+                "kind": 52,
                 "name": "qux",
                 "start": {
                   "line": 16,

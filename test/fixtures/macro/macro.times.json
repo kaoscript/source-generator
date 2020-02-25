@@ -6,7 +6,7 @@
       "kind": 69,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "times_five",
         "start": {
           "line": 1,
@@ -30,7 +30,7 @@
             "column": 19
           },
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "e",
             "start": {
               "line": 1,
@@ -62,7 +62,7 @@
           {
             "kind": 1,
             "expression": {
-              "kind": 53,
+              "kind": 52,
               "name": "e",
               "start": {
                 "line": 1,

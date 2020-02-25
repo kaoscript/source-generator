@@ -3,14 +3,14 @@
   "attributes": [],
   "body": [
     {
-      "kind": 41,
+      "kind": 40,
       "attributes": [],
       "declarations": [
         {
           "kind": 123,
           "modifiers": [
             {
-              "kind": 25,
+              "kind": 26,
               "start": {
                 "line": 1,
                 "column": 8
@@ -22,7 +22,7 @@
             }
           ],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "console",
             "start": {
               "line": 1,
@@ -45,14 +45,14 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "object"
             },
             "properties": [
               {
                 "kind": 81,
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "log",
                   "start": {
                     "line": 2,
@@ -64,13 +64,13 @@
                   }
                 },
                 "type": {
-                  "kind": 51,
+                  "kind": 50,
                   "parameters": [
                     {
                       "kind": 83,
                       "modifiers": [
                         {
-                          "kind": 24,
+                          "kind": 25,
                           "arity": {
                             "min": 0,
                             "max": "Infinity"
@@ -94,7 +94,7 @@
                         "column": 13
                       },
                       "name": {
-                        "kind": 53,
+                        "kind": 52,
                         "name": "args",
                         "start": {
                           "line": 2,
@@ -120,7 +120,7 @@
                     "kind": 116,
                     "modifiers": [],
                     "typeName": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "void",
                       "start": {
                         "line": 2,
@@ -154,7 +154,7 @@
               {
                 "kind": 81,
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "time",
                   "start": {
                     "line": 3,
@@ -166,7 +166,7 @@
                   }
                 },
                 "type": {
-                  "kind": 51,
+                  "kind": 50,
                   "parameters": [
                     {
                       "kind": 83,
@@ -180,7 +180,7 @@
                         "column": 20
                       },
                       "name": {
-                        "kind": 53,
+                        "kind": 52,
                         "name": "label",
                         "start": {
                           "line": 3,
@@ -195,7 +195,7 @@
                         "kind": 116,
                         "modifiers": [],
                         "typeName": {
-                          "kind": 53,
+                          "kind": 52,
                           "name": "string",
                           "start": {
                             "line": 3,
@@ -230,7 +230,7 @@
                     "kind": 116,
                     "modifiers": [],
                     "typeName": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "void",
                       "start": {
                         "line": 3,
@@ -264,7 +264,7 @@
               {
                 "kind": 81,
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "timeEnd",
                   "start": {
                     "line": 4,
@@ -276,7 +276,7 @@
                   }
                 },
                 "type": {
-                  "kind": 51,
+                  "kind": 50,
                   "parameters": [
                     {
                       "kind": 83,
@@ -290,7 +290,7 @@
                         "column": 23
                       },
                       "name": {
-                        "kind": 53,
+                        "kind": 52,
                         "name": "label",
                         "start": {
                           "line": 4,
@@ -305,7 +305,7 @@
                         "kind": 116,
                         "modifiers": [],
                         "typeName": {
-                          "kind": 53,
+                          "kind": 52,
                           "name": "string",
                           "start": {
                             "line": 4,
@@ -340,7 +340,7 @@
                     "kind": 116,
                     "modifiers": [],
                     "typeName": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "void",
                       "start": {
                         "line": 4,

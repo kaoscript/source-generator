@@ -3,14 +3,14 @@
   "attributes": [],
   "body": [
     {
-      "kind": 41,
+      "kind": 40,
       "attributes": [],
       "declarations": [
         {
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "console",
             "start": {
               "line": 1,
@@ -45,7 +45,7 @@
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "Float",
         "start": {
           "line": 3,
@@ -66,7 +66,7 @@
               "kind": 123,
               "modifiers": [],
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "PI",
                 "start": {
                   "line": 4,
@@ -89,7 +89,7 @@
                 "kind": 116,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "Number",
                   "start": {
                     "line": 4,
@@ -141,7 +141,7 @@
               "kind": 123,
               "modifiers": [],
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "name",
                 "start": {
                   "line": 5,
@@ -164,7 +164,7 @@
                 "kind": 116,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "String",
                   "start": {
                     "line": 5,
@@ -227,7 +227,7 @@
         "kind": 71,
         "modifiers": [],
         "object": {
-          "kind": 53,
+          "kind": 52,
           "name": "console",
           "start": {
             "line": 8,
@@ -239,7 +239,7 @@
           }
         },
         "property": {
-          "kind": 53,
+          "kind": 52,
           "name": "log",
           "start": {
             "line": 8,
@@ -264,7 +264,7 @@
           "kind": 71,
           "modifiers": [],
           "object": {
-            "kind": 53,
+            "kind": 52,
             "name": "Float",
             "start": {
               "line": 8,
@@ -276,7 +276,7 @@
             }
           },
           "property": {
-            "kind": 53,
+            "kind": 52,
             "name": "PI",
             "start": {
               "line": 8,
@@ -317,7 +317,7 @@
         "kind": 71,
         "modifiers": [],
         "object": {
-          "kind": 53,
+          "kind": 52,
           "name": "console",
           "start": {
             "line": 9,
@@ -329,7 +329,7 @@
           }
         },
         "property": {
-          "kind": 53,
+          "kind": 52,
           "name": "log",
           "start": {
             "line": 9,
@@ -357,7 +357,7 @@
               "kind": 71,
               "modifiers": [],
               "object": {
-                "kind": 53,
+                "kind": 52,
                 "name": "Float",
                 "start": {
                   "line": 9,
@@ -369,7 +369,7 @@
                 }
               },
               "property": {
-                "kind": 53,
+                "kind": 52,
                 "name": "name",
                 "start": {
                   "line": 9,

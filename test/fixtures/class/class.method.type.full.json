@@ -6,7 +6,7 @@
       "kind": 17,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "Foobar",
         "start": {
           "line": 1,
@@ -20,11 +20,11 @@
       "modifiers": [],
       "members": [
         {
-          "kind": 45,
+          "kind": 44,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 20,
+              "kind": 21,
               "start": {
                 "line": 2,
                 "column": 2
@@ -35,7 +35,7 @@
               }
             },
             {
-              "kind": 29,
+              "kind": 30,
               "start": {
                 "line": 3,
                 "column": 3
@@ -47,7 +47,7 @@
             }
           ],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "value",
             "start": {
               "line": 3,
@@ -70,7 +70,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "Number",
               "start": {
                 "line": 3,
@@ -108,7 +108,7 @@
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "value",
             "start": {
               "line": 5,
@@ -133,7 +133,7 @@
             "value": {
               "kind": 108,
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "value",
                 "start": {
                   "line": 5,
@@ -169,7 +169,7 @@
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "value",
             "start": {
               "line": 6,
@@ -195,7 +195,7 @@
               "name": {
                 "kind": 108,
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "value",
                   "start": {
                     "line": 6,
@@ -228,7 +228,7 @@
           "type": {
             "kind": 91,
             "value": {
-              "kind": 53,
+              "kind": 52,
               "name": "this",
               "start": {
                 "line": 6,

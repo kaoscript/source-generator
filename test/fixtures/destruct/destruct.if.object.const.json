@@ -3,13 +3,13 @@
   "attributes": [],
   "body": [
     {
-      "kind": 55,
+      "kind": 54,
       "attributes": [],
       "condition": {
         "kind": 122,
         "modifiers": [
           {
-            "kind": 12,
+            "kind": 13,
             "start": {
               "line": 1,
               "column": 4
@@ -31,7 +31,7 @@
                 {
                   "kind": 11,
                   "name": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "bar",
                     "start": {
                       "line": 1,
@@ -55,7 +55,7 @@
                 {
                   "kind": 11,
                   "name": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "baz",
                     "start": {
                       "line": 1,
@@ -105,7 +105,7 @@
           "column": 26
         },
         "init": {
-          "kind": 53,
+          "kind": 52,
           "name": "foo",
           "start": {
             "line": 1,

@@ -19,7 +19,7 @@
           }
         },
         "argument": {
-          "kind": 53,
+          "kind": 52,
           "name": "x",
           "start": {
             "line": 1,
@@ -45,7 +45,7 @@
         "value": {
           "kind": 25,
           "class": {
-            "kind": 53,
+            "kind": 52,
             "name": "Error",
             "start": {
               "line": 1,

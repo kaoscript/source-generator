@@ -6,7 +6,7 @@
       "kind": 17,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "Vector",
         "start": {
           "line": 1,
@@ -24,7 +24,7 @@
           "attributes": [],
           "modifiers": [
             {
-              "kind": 22,
+              "kind": 23,
               "start": {
                 "line": 2,
                 "column": 2
@@ -36,7 +36,7 @@
             }
           ],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "x",
             "start": {
               "line": 3,
@@ -59,7 +59,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "Number",
               "start": {
                 "line": 3,
@@ -107,7 +107,7 @@
           "attributes": [],
           "modifiers": [
             {
-              "kind": 22,
+              "kind": 23,
               "start": {
                 "line": 2,
                 "column": 2
@@ -119,7 +119,7 @@
             }
           ],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "y",
             "start": {
               "line": 4,
@@ -142,7 +142,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "Number",
               "start": {
                 "line": 4,
@@ -185,7 +185,7 @@
                 "kind": 71,
                 "modifiers": [],
                 "object": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "Math",
                   "start": {
                     "line": 6,
@@ -197,7 +197,7 @@
                   }
                 },
                 "property": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "abs",
                   "start": {
                     "line": 6,
@@ -219,7 +219,7 @@
               },
               "arguments": [
                 {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "y",
                   "start": {
                     "line": 6,
@@ -255,7 +255,7 @@
           "attributes": [],
           "modifiers": [
             {
-              "kind": 22,
+              "kind": 23,
               "start": {
                 "line": 2,
                 "column": 2
@@ -267,7 +267,7 @@
             }
           ],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "z",
             "start": {
               "line": 8,
@@ -290,7 +290,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "Number",
               "start": {
                 "line": 8,

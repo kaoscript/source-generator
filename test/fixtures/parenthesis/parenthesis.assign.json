@@ -11,7 +11,7 @@
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "a",
             "start": {
               "line": 1,
@@ -62,7 +62,7 @@
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "c",
             "start": {
               "line": 2,
@@ -123,7 +123,7 @@
               "column": 16
             },
             "left": {
-              "kind": 53,
+              "kind": 52,
               "name": "b",
               "start": {
                 "line": 2,
@@ -135,7 +135,7 @@
               }
             },
             "right": {
-              "kind": 53,
+              "kind": 52,
               "name": "a",
               "start": {
                 "line": 2,
@@ -148,7 +148,7 @@
             }
           },
           "property": {
-            "kind": 53,
+            "kind": 52,
             "name": "toLowerCase",
             "start": {
               "line": 2,

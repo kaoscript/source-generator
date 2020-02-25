@@ -6,7 +6,7 @@
       "kind": 122,
       "modifiers": [
         {
-          "kind": 12,
+          "kind": 13,
           "start": {
             "line": 1,
             "column": 1
@@ -23,7 +23,7 @@
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "foo",
             "start": {
               "line": 1,
@@ -68,7 +68,7 @@
               "column": 22
             },
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "a",
               "start": {
                 "line": 1,
@@ -83,7 +83,7 @@
               "kind": 116,
               "modifiers": [],
               "typeName": {
-                "kind": 53,
+                "kind": 52,
                 "name": "Number",
                 "start": {
                   "line": 1,
@@ -116,7 +116,7 @@
               "column": 32
             },
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "b",
               "start": {
                 "line": 1,
@@ -131,7 +131,7 @@
               "kind": 116,
               "modifiers": [],
               "typeName": {
-                "kind": 53,
+                "kind": 52,
                 "name": "Number",
                 "start": {
                   "line": 1,
@@ -156,7 +156,7 @@
         "body": {
           "kind": 10,
           "operator": {
-            "kind": 22,
+            "kind": 24,
             "modifiers": [],
             "start": {
               "line": 1,
@@ -176,7 +176,7 @@
             "column": 50
           },
           "left": {
-            "kind": 53,
+            "kind": 52,
             "name": "a",
             "start": {
               "line": 1,
@@ -188,7 +188,7 @@
             }
           },
           "right": {
-            "kind": 53,
+            "kind": 52,
             "name": "b",
             "start": {
               "line": 1,
@@ -212,7 +212,7 @@
           "kind": 116,
           "modifiers": [],
           "typeName": {
-            "kind": 53,
+            "kind": 52,
             "name": "Number",
             "start": {
               "line": 1,

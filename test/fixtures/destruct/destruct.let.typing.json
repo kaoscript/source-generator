@@ -25,7 +25,7 @@
                   "column": 7
                 },
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "x",
                   "start": {
                     "line": 1,
@@ -49,7 +49,7 @@
                   "column": 10
                 },
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "y",
                   "start": {
                     "line": 1,
@@ -83,7 +83,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "array"
             },
             "elements": [
@@ -91,7 +91,7 @@
                 "kind": 116,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "Number",
                   "start": {
                     "line": 1,
@@ -115,7 +115,7 @@
                 "kind": 116,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "Number",
                   "start": {
                     "line": 1,
@@ -162,7 +162,7 @@
           "kind": 3
         },
         "callee": {
-          "kind": 53,
+          "kind": 52,
           "name": "foo",
           "start": {
             "line": 1,
@@ -207,7 +207,7 @@
                   "column": 7
                 },
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "x",
                   "start": {
                     "line": 3,
@@ -231,7 +231,7 @@
                   "column": 10
                 },
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "y",
                   "start": {
                     "line": 3,
@@ -265,7 +265,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "Array",
               "start": {
                 "line": 3,
@@ -289,7 +289,7 @@
                 "kind": 116,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "Number",
                   "start": {
                     "line": 3,
@@ -328,7 +328,7 @@
           "kind": 3
         },
         "callee": {
-          "kind": 53,
+          "kind": 52,
           "name": "foo",
           "start": {
             "line": 3,
@@ -364,7 +364,7 @@
               {
                 "kind": 11,
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "x",
                   "start": {
                     "line": 5,
@@ -388,7 +388,7 @@
               {
                 "kind": 11,
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "y",
                   "start": {
                     "line": 5,
@@ -431,14 +431,14 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "object"
             },
             "properties": [
               {
                 "kind": 81,
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "x",
                   "start": {
                     "line": 5,
@@ -453,7 +453,7 @@
                   "kind": 116,
                   "modifiers": [],
                   "typeName": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "Number",
                     "start": {
                       "line": 5,
@@ -485,7 +485,7 @@
               {
                 "kind": 81,
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "y",
                   "start": {
                     "line": 5,
@@ -500,7 +500,7 @@
                   "kind": 116,
                   "modifiers": [],
                   "typeName": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "Number",
                     "start": {
                       "line": 5,
@@ -556,7 +556,7 @@
           "kind": 3
         },
         "callee": {
-          "kind": 53,
+          "kind": 52,
           "name": "foo",
           "start": {
             "line": 5,
@@ -592,7 +592,7 @@
               {
                 "kind": 11,
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "x",
                   "start": {
                     "line": 7,
@@ -616,7 +616,7 @@
               {
                 "kind": 11,
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "y",
                   "start": {
                     "line": 7,
@@ -659,7 +659,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "Object",
               "start": {
                 "line": 7,
@@ -683,7 +683,7 @@
                 "kind": 116,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "Number",
                   "start": {
                     "line": 7,
@@ -722,7 +722,7 @@
           "kind": 3
         },
         "callee": {
-          "kind": 53,
+          "kind": 52,
           "name": "foo",
           "start": {
             "line": 7,

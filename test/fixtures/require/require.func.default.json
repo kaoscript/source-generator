@@ -7,10 +7,10 @@
       "attributes": [],
       "declarations": [
         {
-          "kind": 50,
+          "kind": 49,
           "attributes": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "reverse",
             "start": {
               "line": 1,
@@ -43,10 +43,10 @@
       }
     },
     {
-      "kind": 50,
+      "kind": 49,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "reverse",
         "start": {
           "line": 3,
@@ -78,7 +78,7 @@
             "column": 27
           },
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "value",
             "start": {
               "line": 3,
@@ -93,7 +93,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "Number",
               "start": {
                 "line": 3,
@@ -120,7 +120,7 @@
         "kind": 116,
         "modifiers": [],
         "typeName": {
-          "kind": 53,
+          "kind": 52,
           "name": "Number",
           "start": {
             "line": 3,
@@ -155,7 +155,7 @@
           }
         },
         "argument": {
-          "kind": 53,
+          "kind": 52,
           "name": "value",
           "start": {
             "line": 3,
@@ -177,13 +177,13 @@
       }
     },
     {
-      "kind": 35,
+      "kind": 34,
       "attributes": [],
       "declarations": [
         {
-          "kind": 38,
+          "kind": 37,
           "local": {
-            "kind": 53,
+            "kind": 52,
             "name": "reverse",
             "start": {
               "line": 5,
@@ -195,7 +195,7 @@
             }
           },
           "exported": {
-            "kind": 53,
+            "kind": 52,
             "name": "reverse",
             "start": {
               "line": 5,

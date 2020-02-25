@@ -3,10 +3,10 @@
   "attributes": [],
   "body": [
     {
-      "kind": 50,
+      "kind": 49,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "foobar",
         "start": {
           "line": 1,
@@ -51,7 +51,7 @@
                     "column": 11
                   },
                   "name": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "x",
                     "start": {
                       "line": 2,
@@ -74,7 +74,7 @@
                     "value": {
                       "kind": 25,
                       "class": {
-                        "kind": 53,
+                        "kind": 52,
                         "name": "Error",
                         "start": {
                           "line": 3,
@@ -124,7 +124,7 @@
               },
               "throws": [
                 {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "Error",
                   "start": {
                     "line": 2,

@@ -6,7 +6,7 @@
       "kind": 17,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "AbstractGreetings",
         "start": {
           "line": 1,
@@ -48,7 +48,7 @@
             }
           ],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "greet",
             "start": {
               "line": 3,
@@ -72,7 +72,7 @@
                 "column": 13
               },
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "name",
                 "start": {
                   "line": 3,
@@ -97,7 +97,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "String",
               "start": {
                 "line": 3,

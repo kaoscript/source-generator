@@ -7,7 +7,7 @@
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "qux",
         "start": {
           "line": 1,
@@ -23,7 +23,7 @@
           "kind": 17,
           "attributes": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "Foobar",
             "start": {
               "line": 2,
@@ -37,11 +37,11 @@
           "modifiers": [],
           "members": [
             {
-              "kind": 45,
+              "kind": 44,
               "attributes": [],
               "modifiers": [
                 {
-                  "kind": 20,
+                  "kind": 21,
                   "start": {
                     "line": 3,
                     "column": 3
@@ -53,7 +53,7 @@
                 }
               ],
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "_name",
                 "start": {
                   "line": 4,
@@ -76,7 +76,7 @@
                 "kind": 116,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "String",
                   "start": {
                     "line": 4,
@@ -102,7 +102,7 @@
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "constructor",
                 "start": {
                   "line": 6,
@@ -128,7 +128,7 @@
                   "name": {
                     "kind": 108,
                     "name": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "name",
                       "start": {
                         "line": 6,
@@ -196,7 +196,7 @@
       "kind": 122,
       "modifiers": [
         {
-          "kind": 12,
+          "kind": 13,
           "start": {
             "line": 10,
             "column": 1
@@ -213,7 +213,7 @@
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "x",
             "start": {
               "line": 10,
@@ -248,7 +248,7 @@
           "kind": 71,
           "modifiers": [],
           "object": {
-            "kind": 53,
+            "kind": 52,
             "name": "qux",
             "start": {
               "line": 10,
@@ -260,7 +260,7 @@
             }
           },
           "property": {
-            "kind": 53,
+            "kind": 52,
             "name": "Foobar",
             "start": {
               "line": 10,

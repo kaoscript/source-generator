@@ -3,11 +3,11 @@
   "attributes": [],
   "body": [
     {
-      "kind": 58,
+      "kind": 57,
       "attributes": [],
       "declarations": [
         {
-          "kind": 59,
+          "kind": 58,
           "attributes": [],
           "modifiers": [],
           "source": {
@@ -24,11 +24,11 @@
           },
           "specifiers": [
             {
-              "kind": 60,
+              "kind": 59,
               "attributes": [],
               "exclusions": [
                 {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "foo",
                   "start": {
                     "line": 1,
@@ -40,7 +40,7 @@
                   }
                 },
                 {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "bar",
                   "start": {
                     "line": 1,

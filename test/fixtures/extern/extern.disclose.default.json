@@ -3,14 +3,14 @@
   "attributes": [],
   "body": [
     {
-      "kind": 41,
+      "kind": 40,
       "attributes": [],
       "declarations": [
         {
           "kind": 17,
           "attributes": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "String",
             "start": {
               "line": 1,
@@ -23,7 +23,7 @@
           },
           "modifiers": [
             {
-              "kind": 25,
+              "kind": 26,
               "start": {
                 "line": 1,
                 "column": 8
@@ -58,7 +58,7 @@
       "kind": 28,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "String",
         "start": {
           "line": 3,
@@ -75,7 +75,7 @@
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "split",
             "start": {
               "line": 4,
@@ -91,7 +91,7 @@
               "kind": 83,
               "modifiers": [
                 {
-                  "kind": 24,
+                  "kind": 25,
                   "arity": {
                     "min": 0,
                     "max": "Infinity"
@@ -128,7 +128,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "Array",
               "start": {
                 "line": 4,
@@ -152,7 +152,7 @@
                 "kind": 116,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "String",
                   "start": {
                     "line": 4,
@@ -181,7 +181,7 @@
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "replace",
             "start": {
               "line": 5,
@@ -197,7 +197,7 @@
               "kind": 83,
               "modifiers": [
                 {
-                  "kind": 24,
+                  "kind": 25,
                   "arity": {
                     "min": 0,
                     "max": "Infinity"
@@ -234,7 +234,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "String",
               "start": {
                 "line": 5,
@@ -261,7 +261,7 @@
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "trim",
             "start": {
               "line": 6,
@@ -285,7 +285,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "String",
               "start": {
                 "line": 6,

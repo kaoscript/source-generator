@@ -11,7 +11,7 @@
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "foo",
             "start": {
               "line": 1,
@@ -48,7 +48,7 @@
             "kind": 81,
             "attributes": [],
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "bar",
               "start": {
                 "line": 1,
@@ -67,7 +67,7 @@
                   "kind": 81,
                   "attributes": [],
                   "name": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "n1",
                     "start": {
                       "line": 1,
@@ -103,7 +103,7 @@
                   "kind": 81,
                   "attributes": [],
                   "name": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "n2",
                     "start": {
                       "line": 1,
@@ -179,7 +179,7 @@
               {
                 "kind": 11,
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "bar",
                   "start": {
                     "line": 3,
@@ -205,7 +205,7 @@
                     {
                       "kind": 11,
                       "name": {
-                        "kind": 53,
+                        "kind": 52,
                         "name": "n1",
                         "start": {
                           "line": 3,
@@ -229,7 +229,7 @@
                     {
                       "kind": 11,
                       "name": {
-                        "kind": 53,
+                        "kind": 52,
                         "name": "n2",
                         "start": {
                           "line": 3,
@@ -250,7 +250,7 @@
                         "column": 24
                       },
                       "alias": {
-                        "kind": 53,
+                        "kind": 52,
                         "name": "qux",
                         "start": {
                           "line": 3,
@@ -302,7 +302,7 @@
         "column": 33
       },
       "init": {
-        "kind": 53,
+        "kind": 52,
         "name": "foo",
         "start": {
           "line": 3,
@@ -324,7 +324,7 @@
         "kind": 71,
         "modifiers": [],
         "object": {
-          "kind": 53,
+          "kind": 52,
           "name": "console",
           "start": {
             "line": 5,
@@ -336,7 +336,7 @@
           }
         },
         "property": {
-          "kind": 53,
+          "kind": 52,
           "name": "log",
           "start": {
             "line": 5,
@@ -358,7 +358,7 @@
       },
       "arguments": [
         {
-          "kind": 53,
+          "kind": 52,
           "name": "n1",
           "start": {
             "line": 5,
@@ -370,7 +370,7 @@
           }
         },
         {
-          "kind": 53,
+          "kind": 52,
           "name": "qux",
           "start": {
             "line": 5,

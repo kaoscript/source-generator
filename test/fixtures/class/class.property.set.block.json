@@ -6,7 +6,7 @@
       "kind": 17,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "Foobar",
         "start": {
           "line": 1,
@@ -24,7 +24,7 @@
           "attributes": [],
           "modifiers": [
             {
-              "kind": 22,
+              "kind": 23,
               "start": {
                 "line": 2,
                 "column": 2
@@ -36,7 +36,7 @@
             }
           ],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "foo",
             "start": {
               "line": 3,
@@ -78,7 +78,7 @@
                   "left": {
                     "kind": 108,
                     "name": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "foo",
                       "start": {
                         "line": 5,
@@ -101,7 +101,7 @@
                   "right": {
                     "kind": 10,
                     "operator": {
-                      "kind": 18,
+                      "kind": 20,
                       "modifiers": [],
                       "start": {
                         "line": 5,
@@ -121,7 +121,7 @@
                       "column": 20
                     },
                     "left": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "foo",
                       "start": {
                         "line": 5,

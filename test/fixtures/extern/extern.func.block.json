@@ -3,14 +3,14 @@
   "attributes": [],
   "body": [
     {
-      "kind": 41,
+      "kind": 40,
       "attributes": [],
       "declarations": [
         {
-          "kind": 50,
+          "kind": 49,
           "attributes": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "foo",
             "start": {
               "line": 2,
@@ -34,7 +34,7 @@
               "kind": 83,
               "modifiers": [
                 {
-                  "kind": 24,
+                  "kind": 25,
                   "arity": {
                     "min": 0,
                     "max": "Infinity"
@@ -63,10 +63,10 @@
           "throws": []
         },
         {
-          "kind": 50,
+          "kind": 49,
           "attributes": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "bar",
             "start": {
               "line": 3,
@@ -102,10 +102,10 @@
           "throws": []
         },
         {
-          "kind": 50,
+          "kind": 49,
           "attributes": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "baz",
             "start": {
               "line": 4,
@@ -137,7 +137,7 @@
                 "column": 19
               },
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "value",
                 "start": {
                   "line": 4,
@@ -152,7 +152,7 @@
                 "kind": 116,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "Number",
                   "start": {
                     "line": 4,
@@ -179,7 +179,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "Number",
               "start": {
                 "line": 4,
@@ -202,10 +202,10 @@
           "throws": []
         },
         {
-          "kind": 50,
+          "kind": 49,
           "attributes": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "baz",
             "start": {
               "line": 5,
@@ -237,7 +237,7 @@
                 "column": 19
               },
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "value",
                 "start": {
                   "line": 5,
@@ -252,7 +252,7 @@
                 "kind": 116,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "String",
                   "start": {
                     "line": 5,
@@ -279,7 +279,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "String",
               "start": {
                 "line": 5,
@@ -302,10 +302,10 @@
           "throws": []
         },
         {
-          "kind": 50,
+          "kind": 49,
           "attributes": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "qux",
             "start": {
               "line": 6,
@@ -337,7 +337,7 @@
                 "column": 25
               },
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "value",
                 "start": {
                   "line": 6,
@@ -352,7 +352,7 @@
                 "kind": 116,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "Number",
                   "start": {
                     "line": 6,
@@ -391,7 +391,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "Number",
               "start": {
                 "line": 6,
@@ -414,10 +414,10 @@
           "throws": []
         },
         {
-          "kind": 50,
+          "kind": 49,
           "attributes": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "qux",
             "start": {
               "line": 7,
@@ -449,7 +449,7 @@
                 "column": 25
               },
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "value",
                 "start": {
                   "line": 7,
@@ -464,7 +464,7 @@
                 "kind": 116,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "String",
                   "start": {
                     "line": 7,
@@ -503,7 +503,7 @@
             "kind": 116,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "String",
               "start": {
                 "line": 7,

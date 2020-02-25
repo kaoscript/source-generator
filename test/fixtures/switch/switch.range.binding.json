@@ -3,10 +3,10 @@
   "attributes": [],
   "body": [
     {
-      "kind": 50,
+      "kind": 49,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "age",
         "start": {
           "line": 1,
@@ -31,7 +31,7 @@
         "kind": 116,
         "modifiers": [],
         "typeName": {
-          "kind": 53,
+          "kind": 52,
           "name": "int",
           "start": {
             "line": 1,
@@ -66,10 +66,10 @@
       }
     },
     {
-      "kind": 50,
+      "kind": 49,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "main",
         "start": {
           "line": 3,
@@ -105,7 +105,7 @@
                 "kind": 3
               },
               "callee": {
-                "kind": 53,
+                "kind": 52,
                 "name": "age",
                 "start": {
                   "line": 4,
@@ -139,7 +139,7 @@
                     "kind": 71,
                     "modifiers": [],
                     "object": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "console",
                       "start": {
                         "line": 5,
@@ -151,7 +151,7 @@
                       }
                     },
                     "property": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "log",
                       "start": {
                         "line": 5,
@@ -243,7 +243,7 @@
                     "kind": 71,
                     "modifiers": [],
                     "object": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "console",
                       "start": {
                         "line": 6,
@@ -255,7 +255,7 @@
                       }
                     },
                     "property": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "log",
                       "start": {
                         "line": 6,
@@ -292,7 +292,7 @@
                           }
                         },
                         {
-                          "kind": 53,
+                          "kind": 52,
                           "name": "n",
                           "start": {
                             "line": 6,
@@ -370,7 +370,7 @@
                 ],
                 "bindings": [
                   {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "n",
                     "start": {
                       "line": 6,
@@ -395,7 +395,7 @@
                     "kind": 71,
                     "modifiers": [],
                     "object": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "console",
                       "start": {
                         "line": 7,
@@ -407,7 +407,7 @@
                       }
                     },
                     "property": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "log",
                       "start": {
                         "line": 7,
@@ -444,7 +444,7 @@
                           }
                         },
                         {
-                          "kind": 53,
+                          "kind": 52,
                           "name": "n",
                           "start": {
                             "line": 7,
@@ -522,7 +522,7 @@
                 ],
                 "bindings": [
                   {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "n",
                     "start": {
                       "line": 7,
@@ -547,7 +547,7 @@
                     "kind": 71,
                     "modifiers": [],
                     "object": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "console",
                       "start": {
                         "line": 8,
@@ -559,7 +559,7 @@
                       }
                     },
                     "property": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "log",
                       "start": {
                         "line": 8,
@@ -596,7 +596,7 @@
                           }
                         },
                         {
-                          "kind": 53,
+                          "kind": 52,
                           "name": "n",
                           "start": {
                             "line": 8,
@@ -638,7 +638,7 @@
                 "conditions": [],
                 "bindings": [
                   {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "n",
                     "start": {
                       "line": 8,

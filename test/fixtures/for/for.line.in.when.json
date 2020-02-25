@@ -17,7 +17,7 @@
         }
       },
       "left": {
-        "kind": 53,
+        "kind": 52,
         "name": "heroes",
         "start": {
           "line": 1,
@@ -88,11 +88,11 @@
       "attributes": []
     },
     {
-      "kind": 47,
+      "kind": 46,
       "attributes": [],
       "modifiers": [],
       "expression": {
-        "kind": 53,
+        "kind": 52,
         "name": "heroes",
         "start": {
           "line": 3,
@@ -112,7 +112,7 @@
         "column": 64
       },
       "value": {
-        "kind": 53,
+        "kind": 52,
         "name": "hero",
         "start": {
           "line": 3,
@@ -124,7 +124,7 @@
         }
       },
       "index": {
-        "kind": 53,
+        "kind": 52,
         "name": "index",
         "start": {
           "line": 3,
@@ -141,7 +141,7 @@
           {
             "kind": 10,
             "operator": {
-              "kind": 17,
+              "kind": 19,
               "modifiers": [],
               "start": {
                 "line": 3,
@@ -161,7 +161,7 @@
               "column": 59
             },
             "left": {
-              "kind": 53,
+              "kind": 52,
               "name": "index",
               "start": {
                 "line": 3,
@@ -229,7 +229,7 @@
           "kind": 71,
           "modifiers": [],
           "object": {
-            "kind": 53,
+            "kind": 52,
             "name": "console",
             "start": {
               "line": 3,
@@ -241,7 +241,7 @@
             }
           },
           "property": {
-            "kind": 53,
+            "kind": 52,
             "name": "log",
             "start": {
               "line": 3,
@@ -263,7 +263,7 @@
         },
         "arguments": [
           {
-            "kind": 53,
+            "kind": 52,
             "name": "hero",
             "start": {
               "line": 3,

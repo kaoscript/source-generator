@@ -10,7 +10,7 @@
           "declaration": {
             "kind": 7,
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "error",
               "start": {
                 "line": 2,
@@ -23,7 +23,7 @@
             },
             "arguments": [
               {
-                "kind": 53,
+                "kind": 52,
                 "name": "off",
                 "start": {
                   "line": 2,
@@ -55,7 +55,7 @@
         }
       ],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "Foobar",
         "start": {
           "line": 1,
@@ -73,7 +73,7 @@
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "foo",
             "start": {
               "line": 4,
@@ -113,7 +113,7 @@
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "bar",
             "start": {
               "line": 7,

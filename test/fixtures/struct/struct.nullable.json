@@ -6,7 +6,7 @@
       "kind": 94,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "Point",
         "start": {
           "line": 1,
@@ -21,7 +21,7 @@
         {
           "kind": 95,
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "x",
             "start": {
               "line": 2,
@@ -44,7 +44,7 @@
             "kind": 116,
             "modifiers": [
               {
-                "kind": 17,
+                "kind": 18,
                 "start": {
                   "line": 2,
                   "column": 6
@@ -56,7 +56,7 @@
               }
             ],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "any"
             },
             "start": {
@@ -72,7 +72,7 @@
         {
           "kind": 95,
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "y",
             "start": {
               "line": 3,
@@ -95,7 +95,7 @@
             "kind": 116,
             "modifiers": [
               {
-                "kind": 17,
+                "kind": 18,
                 "start": {
                   "line": 3,
                   "column": 6
@@ -107,7 +107,7 @@
               }
             ],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "any"
             },
             "start": {
@@ -134,7 +134,7 @@
       "kind": 94,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "Pair2",
         "start": {
           "line": 6,
@@ -149,7 +149,7 @@
         {
           "kind": 95,
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "x",
             "start": {
               "line": 7,
@@ -172,7 +172,7 @@
             "kind": 116,
             "modifiers": [
               {
-                "kind": 17,
+                "kind": 18,
                 "start": {
                   "line": 7,
                   "column": 3
@@ -184,7 +184,7 @@
               }
             ],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "any"
             },
             "start": {
@@ -212,7 +212,7 @@
         {
           "kind": 95,
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "y",
             "start": {
               "line": 8,
@@ -235,7 +235,7 @@
             "kind": 116,
             "modifiers": [
               {
-                "kind": 17,
+                "kind": 18,
                 "start": {
                   "line": 8,
                   "column": 3
@@ -247,7 +247,7 @@
               }
             ],
             "typeName": {
-              "kind": 53,
+              "kind": 52,
               "name": "any"
             },
             "start": {

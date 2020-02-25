@@ -7,7 +7,7 @@
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "coord",
         "start": {
           "line": 1,
@@ -28,7 +28,7 @@
               "kind": 123,
               "modifiers": [],
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "x",
                 "start": {
                   "line": 2,
@@ -52,7 +52,7 @@
               "kind": 123,
               "modifiers": [],
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "y",
                 "start": {
                   "line": 2,
@@ -76,7 +76,7 @@
               "kind": 123,
               "modifiers": [],
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "z",
                 "start": {
                   "line": 2,

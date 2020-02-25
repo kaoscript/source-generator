@@ -3,10 +3,10 @@
   "attributes": [],
   "body": [
     {
-      "kind": 50,
+      "kind": 49,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "f1",
         "start": {
           "line": 1,
@@ -38,7 +38,7 @@
             "column": 12
           },
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "foo",
             "start": {
               "line": 1,
@@ -101,7 +101,7 @@
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "f2",
             "start": {
               "line": 5,
@@ -131,7 +131,7 @@
         "column": 2
       },
       "init": {
-        "kind": 51,
+        "kind": 50,
         "parameters": [
           {
             "kind": 83,
@@ -145,7 +145,7 @@
               "column": 18
             },
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "foo",
               "start": {
                 "line": 5,
@@ -217,7 +217,7 @@
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "f3",
             "start": {
               "line": 9,
@@ -262,7 +262,7 @@
               "column": 14
             },
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "foo",
               "start": {
                 "line": 9,
@@ -333,7 +333,7 @@
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "f4",
             "start": {
               "line": 13,
@@ -378,7 +378,7 @@
               "column": 14
             },
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "foo",
               "start": {
                 "line": 13,
@@ -423,7 +423,7 @@
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "f5",
             "start": {
               "line": 15,
@@ -453,7 +453,7 @@
         "column": 25
       },
       "init": {
-        "kind": 51,
+        "kind": 50,
         "parameters": [
           {
             "kind": 83,
@@ -467,7 +467,7 @@
               "column": 18
             },
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "foo",
               "start": {
                 "line": 15,
@@ -513,7 +513,7 @@
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "f6",
             "start": {
               "line": 17,
@@ -550,7 +550,7 @@
             "kind": 83,
             "modifiers": [],
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "foo",
               "start": {
                 "line": 17,

@@ -3,12 +3,12 @@
   "attributes": [],
   "body": [
     {
-      "kind": 55,
+      "kind": 54,
       "attributes": [],
       "condition": {
         "kind": 10,
         "operator": {
-          "kind": 24,
+          "kind": 26,
           "modifiers": [],
           "start": {
             "line": 1,
@@ -20,7 +20,7 @@
           }
         },
         "left": {
-          "kind": 53,
+          "kind": 52,
           "name": "value",
           "start": {
             "line": 1,
@@ -35,7 +35,7 @@
           "kind": 116,
           "modifiers": [],
           "typeName": {
-            "kind": 53,
+            "kind": 52,
             "name": "array",
             "start": {
               "line": 1,
@@ -59,7 +59,7 @@
               "kind": 116,
               "modifiers": [],
               "typeName": {
-                "kind": 53,
+                "kind": 52,
                 "name": "string",
                 "start": {
                   "line": 1,

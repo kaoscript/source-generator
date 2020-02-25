@@ -51,6 +51,8 @@ export namespace Generator {
 		`\(BinaryOperatorKind::Inequality)`			: ' != '
 		`\(BinaryOperatorKind::LessThan)`			: ' < '
 		`\(BinaryOperatorKind::LessThanOrEqual)`	: ' <= '
+		`\(BinaryOperatorKind::Match)`				: ' ~~ '
+		`\(BinaryOperatorKind::Mismatch)`			: ' !~ '
 		`\(BinaryOperatorKind::Modulo)`				: ' % '
 		`\(BinaryOperatorKind::Multiplication)`		: ' * '
 		`\(BinaryOperatorKind::NullCoalescing)`		: ' ?? '
@@ -60,6 +62,12 @@ export namespace Generator {
 		`\(BinaryOperatorKind::TypeEquality)`		: ' is '
 		`\(BinaryOperatorKind::TypeInequality)`		: ' is not '
 		`\(BinaryOperatorKind::Xor)`				: ' ^^ '
+	}
+
+	const JunctionOperatorSymbol = {
+		`\(BinaryOperatorKind::And)`				: ' & '
+		`\(BinaryOperatorKind::Or)`					: ' | '
+		`\(BinaryOperatorKind::Xor)`				: ' ^ '
 	}
 
 	const UnaryPrefixOperatorSymbol = {
@@ -831,6 +839,15 @@ export namespace Generator {
 				toAttributes(data, false, writer)
 
 				writer.newLine().code(toQuote(data.file)).done()
+			} // }}}
+			NodeKind::JunctionExpression => { // {{{
+				const operator = JunctionOperatorSymbol[data.operator.kind]
+
+				for const operand, i in data.operands {
+					writer.code(operator) if i != 0
+
+					writer.expression(operand)
+				}
 			} // }}}
 			NodeKind::LambdaExpression => { // {{{
 				toFunctionHeader(data, writer => {}, writer)
@@ -1721,7 +1738,7 @@ export namespace Generator {
 			NodeKind::ClassDeclaration => { // {{{
 				const line = writer.newLine()
 
-				for modifier in data.modifiers {
+				for const modifier in data.modifiers {
 					switch modifier.kind {
 						ModifierKind::Abstract => {
 							line.code('abstract ')
@@ -1806,16 +1823,20 @@ export namespace Generator {
 					.done()
 			} // }}}
 			NodeKind::EnumDeclaration => { // {{{
-				const line = writer
-					.newLine()
-					.code('enum ')
-					.expression(data.name)
+				const line = writer.newLine()
+
+				for const modifier in data.modifiers {
+					switch modifier.kind {
+						ModifierKind::Flagged => {
+							line.code('flagged ')
+						}
+					}
+				}
+
+				line.code('enum ').expression(data.name)
 
 				if data.type? {
-					line
-						.code('<')
-						.expression(data.type)
-						.code('>')
+					line.code('<').expression(data.type).code('>')
 				}
 
 				const block = line.newBlock()
@@ -1825,17 +1846,6 @@ export namespace Generator {
 				}
 
 				block.done()
-				line.done()
-			} // }}}
-			NodeKind::EnumMember => { // {{{
-				const line = writer
-					.newLine()
-					.expression(data.name)
-
-				if data.value? {
-					line.code(' = ').expression(data.value)
-				}
-
 				line.done()
 			} // }}}
 			NodeKind::ExportDeclaration => { // {{{
@@ -2745,7 +2755,7 @@ export namespace Generator {
 
 				if data.filter? {
 					line
-						.code('where ')
+						.code('when ')
 						.expression(data.filter)
 						.code(' ')
 				}

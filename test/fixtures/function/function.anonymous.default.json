@@ -6,7 +6,7 @@
       "kind": 122,
       "modifiers": [
         {
-          "kind": 12,
+          "kind": 13,
           "start": {
             "line": 1,
             "column": 1
@@ -23,7 +23,7 @@
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "foo",
             "start": {
               "line": 1,
@@ -53,7 +53,7 @@
         "column": 2
       },
       "init": {
-        "kind": 51,
+        "kind": 50,
         "parameters": [
           {
             "kind": 83,
@@ -67,7 +67,7 @@
               "column": 23
             },
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "a",
               "start": {
                 "line": 1,
@@ -82,7 +82,7 @@
               "kind": 116,
               "modifiers": [],
               "typeName": {
-                "kind": 53,
+                "kind": 52,
                 "name": "int",
                 "start": {
                   "line": 1,
@@ -115,7 +115,7 @@
               "column": 30
             },
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "b",
               "start": {
                 "line": 1,
@@ -130,7 +130,7 @@
               "kind": 116,
               "modifiers": [],
               "typeName": {
-                "kind": 53,
+                "kind": 52,
                 "name": "int",
                 "start": {
                   "line": 1,
@@ -165,7 +165,7 @@
           "kind": 116,
           "modifiers": [],
           "typeName": {
-            "kind": 53,
+            "kind": 52,
             "name": "int",
             "start": {
               "line": 1,
@@ -196,7 +196,7 @@
               "value": {
                 "kind": 10,
                 "operator": {
-                  "kind": 22,
+                  "kind": 24,
                   "modifiers": [],
                   "start": {
                     "line": 2,
@@ -216,7 +216,7 @@
                   "column": 14
                 },
                 "left": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "a",
                   "start": {
                     "line": 2,
@@ -228,7 +228,7 @@
                   }
                 },
                 "right": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "b",
                   "start": {
                     "line": 2,

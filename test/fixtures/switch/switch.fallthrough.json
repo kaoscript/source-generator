@@ -3,10 +3,10 @@
   "attributes": [],
   "body": [
     {
-      "kind": 50,
+      "kind": 49,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "foobar",
         "start": {
           "line": 1,
@@ -38,7 +38,7 @@
             "column": 14
           },
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "d",
             "start": {
               "line": 1,
@@ -61,7 +61,7 @@
             "kind": 104,
             "attributes": [],
             "expression": {
-              "kind": 53,
+              "kind": 52,
               "name": "d",
               "start": {
                 "line": 2,
@@ -80,7 +80,7 @@
                   "attributes": [],
                   "statements": [
                     {
-                      "kind": 44,
+                      "kind": 43,
                       "attributes": [],
                       "start": {
                         "line": 4,
@@ -132,7 +132,7 @@
                   "attributes": [],
                   "statements": [
                     {
-                      "kind": 44,
+                      "kind": 43,
                       "attributes": [],
                       "start": {
                         "line": 7,

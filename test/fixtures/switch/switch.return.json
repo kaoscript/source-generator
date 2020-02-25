@@ -3,10 +3,10 @@
   "attributes": [],
   "body": [
     {
-      "kind": 50,
+      "kind": 49,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "foo",
         "start": {
           "line": 1,
@@ -38,7 +38,7 @@
             "column": 11
           },
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "x",
             "start": {
               "line": 1,
@@ -62,7 +62,7 @@
             "column": 14
           },
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "y",
             "start": {
               "line": 1,
@@ -85,7 +85,7 @@
             "kind": 104,
             "attributes": [],
             "expression": {
-              "kind": 53,
+              "kind": 52,
               "name": "x",
               "start": {
                 "line": 2,
@@ -141,7 +141,7 @@
                   "kind": 90,
                   "attributes": [],
                   "value": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "y",
                     "start": {
                       "line": 4,
@@ -193,7 +193,7 @@
                   "value": {
                     "kind": 10,
                     "operator": {
-                      "kind": 18,
+                      "kind": 20,
                       "modifiers": [],
                       "start": {
                         "line": 5,
@@ -213,7 +213,7 @@
                       "column": 18
                     },
                     "left": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "x",
                       "start": {
                         "line": 5,
@@ -225,7 +225,7 @@
                       }
                     },
                     "right": {
-                      "kind": 53,
+                      "kind": 52,
                       "name": "y",
                       "start": {
                         "line": 5,

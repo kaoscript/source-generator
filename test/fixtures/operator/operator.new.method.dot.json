@@ -17,7 +17,7 @@
             "kind": 71,
             "modifiers": [],
             "object": {
-              "kind": 53,
+              "kind": 52,
               "name": "pack",
               "start": {
                 "line": 1,
@@ -29,7 +29,7 @@
               }
             },
             "property": {
-              "kind": 53,
+              "kind": 52,
               "name": "Shape",
               "start": {
                 "line": 1,
@@ -60,7 +60,7 @@
           }
         },
         "property": {
-          "kind": 53,
+          "kind": 52,
           "name": "draw",
           "start": {
             "line": 1,

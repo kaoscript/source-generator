@@ -3,14 +3,14 @@
   "attributes": [],
   "body": [
     {
-      "kind": 41,
+      "kind": 40,
       "attributes": [],
       "declarations": [
         {
           "kind": 17,
           "attributes": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "Foo",
             "start": {
               "line": 1,
@@ -28,7 +28,7 @@
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "foo",
                 "start": {
                   "line": 2,
@@ -52,7 +52,7 @@
                 "kind": 116,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "string",
                   "start": {
                     "line": 2,
@@ -95,14 +95,14 @@
       }
     },
     {
-      "kind": 41,
+      "kind": 40,
       "attributes": [],
       "declarations": [
         {
           "kind": 17,
           "attributes": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "Bar",
             "start": {
               "line": 5,
@@ -120,7 +120,7 @@
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "bar",
                 "start": {
                   "line": 6,
@@ -144,7 +144,7 @@
                 "kind": 116,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "string",
                   "start": {
                     "line": 6,
@@ -176,7 +176,7 @@
             "column": 2
           },
           "extends": {
-            "kind": 53,
+            "kind": 52,
             "name": "Foo",
             "start": {
               "line": 5,

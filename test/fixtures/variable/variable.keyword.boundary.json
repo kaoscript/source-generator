@@ -11,7 +11,7 @@
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "domain",
             "start": {
               "line": 1,
@@ -64,7 +64,7 @@
         "kind": 71,
         "modifiers": [],
         "object": {
-          "kind": 53,
+          "kind": 52,
           "name": "domain",
           "start": {
             "line": 3,
@@ -76,7 +76,7 @@
           }
         },
         "property": {
-          "kind": 53,
+          "kind": 52,
           "name": "foo",
           "start": {
             "line": 3,

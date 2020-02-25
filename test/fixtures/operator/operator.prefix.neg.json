@@ -3,7 +3,7 @@
   "attributes": [],
   "body": [
     {
-      "kind": 55,
+      "kind": 54,
       "attributes": [],
       "condition": {
         "kind": 117,
@@ -19,7 +19,7 @@
           }
         },
         "argument": {
-          "kind": 53,
+          "kind": 52,
           "name": "test",
           "start": {
             "line": 1,

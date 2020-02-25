@@ -3,14 +3,14 @@
   "attributes": [],
   "body": [
     {
-      "kind": 41,
+      "kind": 40,
       "attributes": [],
       "declarations": [
         {
           "kind": 17,
           "attributes": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "Foobar",
             "start": {
               "line": 2,
@@ -29,7 +29,7 @@
                 {
                   "kind": 6,
                   "declaration": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "foobar",
                     "start": {
                       "line": 3,
@@ -52,7 +52,7 @@
               ],
               "modifiers": [],
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "foobar",
                 "start": {
                   "line": 4,
@@ -89,7 +89,7 @@
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "Quxbaz",
             "start": {
               "line": 7,
@@ -102,12 +102,12 @@
           },
           "statements": [
             {
-              "kind": 50,
+              "kind": 49,
               "attributes": [
                 {
                   "kind": 6,
                   "declaration": {
-                    "kind": 53,
+                    "kind": 52,
                     "name": "foobar",
                     "start": {
                       "line": 8,
@@ -129,7 +129,7 @@
                 }
               ],
               "name": {
-                "kind": 53,
+                "kind": 52,
                 "name": "foobar",
                 "start": {
                   "line": 9,

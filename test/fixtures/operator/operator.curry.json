@@ -3,10 +3,10 @@
   "attributes": [],
   "body": [
     {
-      "kind": 50,
+      "kind": 49,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 52,
         "name": "foo",
         "start": {
           "line": 1,
@@ -38,7 +38,7 @@
             "column": 15
           },
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "intro",
             "start": {
               "line": 1,
@@ -62,7 +62,7 @@
             "column": 21
           },
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "name",
             "start": {
               "line": 1,
@@ -88,7 +88,7 @@
               "kind": 107,
               "elements": [
                 {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "intro",
                   "start": {
                     "line": 2,
@@ -112,7 +112,7 @@
                   }
                 },
                 {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "name",
                   "start": {
                     "line": 2,
@@ -174,7 +174,7 @@
           "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 53,
+            "kind": 52,
             "name": "bar",
             "start": {
               "line": 5,
@@ -210,7 +210,7 @@
           "kind": 2
         },
         "callee": {
-          "kind": 53,
+          "kind": 52,
           "name": "foo",
           "start": {
             "line": 5,
@@ -255,7 +255,7 @@
         "kind": 71,
         "modifiers": [],
         "object": {
-          "kind": 53,
+          "kind": 52,
           "name": "console",
           "start": {
             "line": 7,
@@ -267,7 +267,7 @@
           }
         },
         "property": {
-          "kind": 53,
+          "kind": 52,
           "name": "log",
           "start": {
             "line": 7,
@@ -295,7 +295,7 @@
             "kind": 3
           },
           "callee": {
-            "kind": 53,
+            "kind": 52,
             "name": "bar",
             "start": {
               "line": 7,

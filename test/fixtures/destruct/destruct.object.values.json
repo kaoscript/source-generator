@@ -16,7 +16,7 @@
               {
                 "kind": 11,
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "foo",
                   "start": {
                     "line": 1,
@@ -85,7 +85,7 @@
             "kind": 81,
             "attributes": [],
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "foo",
               "start": {
                 "line": 1,
@@ -138,7 +138,7 @@
         "kind": 71,
         "modifiers": [],
         "object": {
-          "kind": 53,
+          "kind": 52,
           "name": "console",
           "start": {
             "line": 3,
@@ -150,7 +150,7 @@
           }
         },
         "property": {
-          "kind": 53,
+          "kind": 52,
           "name": "log",
           "start": {
             "line": 3,
@@ -172,7 +172,7 @@
       },
       "arguments": [
         {
-          "kind": 53,
+          "kind": 52,
           "name": "foo",
           "start": {
             "line": 3,
@@ -208,7 +208,7 @@
               {
                 "kind": 11,
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "foo",
                   "start": {
                     "line": 6,
@@ -277,7 +277,7 @@
             "kind": 81,
             "attributes": [],
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "foo",
               "start": {
                 "line": 6,
@@ -289,7 +289,7 @@
               }
             },
             "value": {
-              "kind": 53,
+              "kind": 52,
               "name": "undefined",
               "start": {
                 "line": 6,
@@ -330,7 +330,7 @@
         "kind": 71,
         "modifiers": [],
         "object": {
-          "kind": 53,
+          "kind": 52,
           "name": "console",
           "start": {
             "line": 8,
@@ -342,7 +342,7 @@
           }
         },
         "property": {
-          "kind": 53,
+          "kind": 52,
           "name": "log",
           "start": {
             "line": 8,
@@ -364,7 +364,7 @@
       },
       "arguments": [
         {
-          "kind": 53,
+          "kind": 52,
           "name": "foo",
           "start": {
             "line": 8,
@@ -400,7 +400,7 @@
               {
                 "kind": 11,
                 "name": {
-                  "kind": 53,
+                  "kind": 52,
                   "name": "foo",
                   "start": {
                     "line": 11,
@@ -469,7 +469,7 @@
             "kind": 81,
             "attributes": [],
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "bar",
               "start": {
                 "line": 11,
@@ -522,7 +522,7 @@
         "kind": 71,
         "modifiers": [],
         "object": {
-          "kind": 53,
+          "kind": 52,
           "name": "console",
           "start": {
             "line": 13,
@@ -534,7 +534,7 @@
           }
         },
         "property": {
-          "kind": 53,
+          "kind": 52,
           "name": "log",
           "start": {
             "line": 13,
@@ -556,7 +556,7 @@
       },
       "arguments": [
         {
-          "kind": 53,
+          "kind": 52,
           "name": "foo",
           "start": {
             "line": 13,

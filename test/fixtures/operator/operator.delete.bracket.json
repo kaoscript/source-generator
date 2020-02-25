@@ -21,7 +21,7 @@
           }
         ],
         "object": {
-          "kind": 53,
+          "kind": 52,
           "name": "foo",
           "start": {
             "line": 1,
@@ -33,7 +33,7 @@
           }
         },
         "property": {
-          "kind": 53,
+          "kind": 52,
           "name": "bar",
           "start": {
             "line": 1,

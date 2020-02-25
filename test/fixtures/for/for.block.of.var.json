@@ -17,7 +17,7 @@
         }
       },
       "left": {
-        "kind": 53,
+        "kind": 52,
         "name": "likes",
         "start": {
           "line": 1,
@@ -36,7 +36,7 @@
             "kind": 81,
             "attributes": [],
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "leto",
               "start": {
                 "line": 2,
@@ -72,7 +72,7 @@
             "kind": 81,
             "attributes": [],
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "paul",
               "start": {
                 "line": 3,
@@ -108,7 +108,7 @@
             "kind": 81,
             "attributes": [],
             "name": {
-              "kind": 53,
+              "kind": 52,
               "name": "duncan",
               "start": {
                 "line": 4,
@@ -161,11 +161,11 @@
       "attributes": []
     },
     {
-      "kind": 48,
+      "kind": 47,
       "attributes": [],
       "modifiers": [],
       "expression": {
-        "kind": 53,
+        "kind": 52,
         "name": "likes",
         "start": {
           "line": 7,
@@ -185,7 +185,7 @@
         "column": 2
       },
       "key": {
-        "kind": 53,
+        "kind": 52,
         "name": "key",
         "start": {
           "line": 7,
@@ -210,7 +210,7 @@
               "kind": 71,
               "modifiers": [],
               "object": {
-                "kind": 53,
+                "kind": 52,
                 "name": "console",
                 "start": {
                   "line": 8,
@@ -222,7 +222,7 @@
                 }
               },
               "property": {
-                "kind": 53,
+                "kind": 52,
                 "name": "log",
                 "start": {
                   "line": 8,
@@ -244,7 +244,7 @@
             },
             "arguments": [
               {
-                "kind": 53,
+                "kind": 52,
                 "name": "key",
                 "start": {
                   "line": 8,

@@ -6,7 +6,7 @@
       "kind": 27,
       "attributes": [],
       "variable": {
-        "kind": 53,
+        "kind": 52,
         "name": "foo",
         "start": {
           "line": 1,
