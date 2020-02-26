@@ -2030,8 +2030,8 @@ export namespace Generator {
 					line.code(': ').expression(data.type)
 				}
 
-				if data.defaultValue? {
-					line.code(' = ').expression(data.defaultValue)
+				if data.value? {
+					line.code(' = ').expression(data.value)
 				}
 
 				line.done()
@@ -3033,7 +3033,7 @@ export namespace Generator {
 
 	func toWrap(data, writer) {
 		switch data.kind {
-			NodeKind::BinaryExpression where data.operator.kind != BinaryOperatorKind::TypeCasting => { // {{{
+			NodeKind::BinaryExpression when data.operator.kind != BinaryOperatorKind::TypeCasting => { // {{{
 				writer
 					.code('(')
 					.expression(data)
