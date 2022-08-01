@@ -1,2 +1,2 @@
-if const {bar, baz} = foo {
+if var {bar, baz} = foo {
 }

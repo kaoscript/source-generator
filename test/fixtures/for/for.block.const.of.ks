@@ -1,10 +1,10 @@
-let key = "you"
-let value = 42
+var dyn key = "you"
+var dyn value = 42
 likes = {
 	leto: "spice"
 	paul: "chani"
 	duncan: "murbella"
 }
-for const value, key of likes {
+for var value, key of likes {
 	console.log(`\(key) likes \(value)`)
 }

@@ -1,3 +1,3 @@
-let a = 4
-let b = 5
-let c = (b ? b : a) * a
+var dyn a = 4
+var dyn b = 5
+var dyn c = (b ? b : a) * a

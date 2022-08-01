@@ -1,9 +1,9 @@
 export class Color {
 	macro registerSpace(@expression: Object) {
 		if ?expression.components {
-			const fields: Array = []
-			const methods: Array = []
-			let field
+			var fields: Array = []
+			var methods: Array = []
+			var dyn field
 			for component, name of expression.components {
 				field = `_\(name)`
 				fields.push(macro private #w(field): #w(component.type))

@@ -1,3 +1,3 @@
-let pair = [2, -2]
+var dyn pair = [2, -2]
 switch pair {
 }

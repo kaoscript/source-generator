@@ -1,2 +1,2 @@
 type T = number | string
-let x: T = 0
+var dyn x: T = 0

@@ -527,7 +527,7 @@ export namespace Generator {
 			NodeKind::CallExpression => { // {{{
 				writer.expression(data.callee)
 
-				if data.modifiers.some(modifier => modifier.kind == ModifierKind::Nullable) {
+				if data.modifiers.some((modifier, ...) => modifier.kind == ModifierKind::Nullable) {
 					writer.code('?')
 				}
 
@@ -1158,7 +1158,7 @@ export namespace Generator {
 			NodeKind::TryExpression => { // {{{
 				writer.code('try')
 
-				if data.modifiers.some(modifier => modifier.kind == ModifierKind::Disabled) {
+				if data.modifiers.some((modifier, ...) => modifier.kind == ModifierKind::Disabled) {
 					writer.code('!')
 				}
 
@@ -1212,7 +1212,7 @@ export namespace Generator {
 						writer.code('>')
 					}
 
-					if data.modifiers.some(modifier => modifier.kind == ModifierKind::Nullable) {
+					if data.modifiers.some((modifier, ...) => modifier.kind == ModifierKind::Nullable) {
 						writer.code('?')
 					}
 				}
@@ -1245,26 +1245,12 @@ export namespace Generator {
 					.expression(data.condition)
 			} // }}}
 			NodeKind::VariableDeclaration => { // {{{
-				let immutable = false
-				let autoTyping = false
+				writer.code('var ')
 
 				for const modifier in data.modifiers {
-					if modifier.kind == ModifierKind::AutoTyping {
-						autoTyping = true
+					if modifier.kind == ModifierKind::Mutable {
+						writer.code('mut ')
 					}
-					else if modifier.kind == ModifierKind::Immutable {
-						immutable = true
-					}
-				}
-
-				if immutable {
-					writer.code('const ')
-				}
-				else if autoTyping {
-					writer.code('auto ')
-				}
-				else {
-					writer.code('let ')
 				}
 
 				for variable, index in data.variables {
@@ -1287,7 +1273,7 @@ export namespace Generator {
 				for const modifier in data.modifiers {
 					switch modifier.kind {
 						ModifierKind::Immutable => {
-							writer.code('const ')
+							writer.code('final ')
 						}
 						ModifierKind::Systemic => {
 							writer.code('systemic ')
@@ -1318,7 +1304,7 @@ export namespace Generator {
 					ModifierKind::Async => {
 						writer.code('async ')
 					}
-					ModifierKind::Final => {
+					ModifierKind::Immutable => {
 						writer.code('final ')
 					}
 					ModifierKind::Internal => {
@@ -1414,26 +1400,14 @@ export namespace Generator {
 	func toLoopHeader(data, writer) { // {{{
 		switch data.kind {
 			NodeKind::ForFromStatement => {
-				let declaration = false
-				let immutable = false
-
-				for const modifier in data.modifiers {
-					if modifier.kind == ModifierKind::Declarative {
-						declaration = true
-					}
-					else if modifier.kind == ModifierKind::Immutable {
-						immutable = true
-					}
-				}
-
 				writer.code(' for ')
 
-				if declaration {
-					if immutable {
-						writer.code('const ')
+				for const modifier in data.modifiers {
+					if modifier.kind == ModifierKind::Immutable {
+						writer.code('var ')
 					}
-					else {
-						writer.code('let ')
+					else if modifier.kind == ModifierKind::Mutable {
+						writer.code('var mut ')
 					}
 				}
 
@@ -1465,30 +1439,19 @@ export namespace Generator {
 				}
 			}
 			NodeKind::ForInStatement => {
-				let declaration = false
 				let descending = false
-				let immutable = false
-
-				for const modifier in data.modifiers {
-					if modifier.kind == ModifierKind::Declarative {
-						declaration = true
-					}
-					else if modifier.kind == ModifierKind::Descending {
-						descending = true
-					}
-					else if modifier.kind == ModifierKind::Immutable {
-						immutable = true
-					}
-				}
 
 				writer.code(' for ')
 
-				if declaration {
-					if immutable {
-						writer.code('const ')
+				for const modifier in data.modifiers {
+					if modifier.kind == ModifierKind::Descending {
+						descending = true
 					}
-					else {
-						writer.code('let ')
+					else if modifier.kind == ModifierKind::Immutable {
+						writer.code('var ')
+					}
+					else if modifier.kind == ModifierKind::Mutable {
+						writer.code('var mut ')
 					}
 				}
 
@@ -1500,7 +1463,7 @@ export namespace Generator {
 					}
 				}
 				else {
-					writer.code(':').expression(data.index)
+					writer.code('_, ').expression(data.index)
 				}
 
 				writer.code(' in ').expression(data.expression)
@@ -1532,26 +1495,14 @@ export namespace Generator {
 				}
 			}
 			NodeKind::ForOfStatement => {
-				let declaration = false
-				let immutable = false
-
-				for const modifier in data.modifiers {
-					if modifier.kind == ModifierKind::Declarative {
-						declaration = true
-					}
-					else if modifier.kind == ModifierKind::Immutable {
-						immutable = true
-					}
-				}
-
 				writer.code(' for ')
 
-				if declaration {
-					if immutable {
-						writer.code('const ')
+				for const modifier in data.modifiers {
+					if modifier.kind == ModifierKind::Immutable {
+						writer.code('var ')
 					}
-					else {
-						writer.code('let ')
+					else if modifier.kind == ModifierKind::Mutable {
+						writer.code('var mut ')
 					}
 				}
 
@@ -1563,7 +1514,7 @@ export namespace Generator {
 					}
 				}
 				else {
-					writer.code(':').expression(data.key)
+					writer.code('_, ').expression(data.key)
 				}
 
 				writer.code(' of ').expression(data.expression)
@@ -1580,26 +1531,14 @@ export namespace Generator {
 				}
 			}
 			NodeKind::ForRangeStatement => {
-				let declaration = false
-				let immutable = false
-
-				for const modifier in data.modifiers {
-					if modifier.kind == ModifierKind::Declarative {
-						declaration = true
-					}
-					else if modifier.kind == ModifierKind::Immutable {
-						immutable = true
-					}
-				}
-
 				writer.code(' for ')
 
-				if declaration {
-					if immutable {
-						writer.code('const ')
+				for const modifier in data.modifiers {
+					if modifier.kind == ModifierKind::Immutable {
+						writer.code('var ')
 					}
-					else {
-						writer.code('let ')
+					else if modifier.kind == ModifierKind::Mutable {
+						writer.code('var mut ')
 					}
 				}
 
@@ -1743,7 +1682,7 @@ export namespace Generator {
 						ModifierKind::Abstract => {
 							line.code('abstract ')
 						}
-						ModifierKind::Final => {
+						ModifierKind::Immutable => {
 							line.code('final ')
 						}
 						ModifierKind::Sealed => {
@@ -1989,17 +1928,17 @@ export namespace Generator {
 
 				for modifier in data.modifiers {
 					switch modifier.kind {
-						ModifierKind::AutoTyping => {
-							line.code('auto ')
+						ModifierKind::Dynamic => {
+							line.code('dyn ')
 						}
 						ModifierKind::Immutable => {
-							line.code('const ')
+							line.code('final ')
 						}
 						ModifierKind::Internal => {
 							line.code('internal ')
 						}
 						ModifierKind::LateInit => {
-							line.code('lateinit ')
+							line.code('late ')
 						}
 						ModifierKind::Private => {
 							line.code('private ')
@@ -2037,28 +1976,16 @@ export namespace Generator {
 				line.done()
 			} // }}}
 			NodeKind::ForFromStatement => { // {{{
-				let declaration = false
-				let immutable = false
-
-				for const modifier in data.modifiers {
-					if modifier.kind == ModifierKind::Declarative {
-						declaration = true
-					}
-					else if modifier.kind == ModifierKind::Immutable {
-						immutable = true
-					}
-				}
-
 				const ctrl = writer
 					.newControl()
 					.code('for ')
 
-				if declaration {
-					if immutable {
-						ctrl.code('const ')
+				for const modifier in data.modifiers {
+					if modifier.kind == ModifierKind::Mutable {
+						ctrl.code('var mut ')
 					}
-					else {
-						ctrl.code('let ')
+					else if modifier.kind == ModifierKind::Immutable {
+						ctrl.code('var ')
 					}
 				}
 
@@ -2095,21 +2022,7 @@ export namespace Generator {
 					.done()
 			} // }}}
 			NodeKind::ForInStatement => { // {{{
-				let declaration = false
 				let descending = false
-				let immutable = false
-
-				for const modifier in data.modifiers {
-					if modifier.kind == ModifierKind::Declarative {
-						declaration = true
-					}
-					else if modifier.kind == ModifierKind::Descending {
-						descending = true
-					}
-					else if modifier.kind == ModifierKind::Immutable {
-						immutable = true
-					}
-				}
 
 				let ctrl
 
@@ -2125,12 +2038,15 @@ export namespace Generator {
 						.code(' for ')
 				}
 
-				if declaration {
-					if immutable {
-						ctrl.code('const ')
+				for const modifier in data.modifiers {
+					if modifier.kind == ModifierKind::Mutable {
+						ctrl.code('var mut ')
 					}
-					else {
-						ctrl.code('let ')
+					else if modifier.kind == ModifierKind::Immutable {
+						ctrl.code('var ')
+					}
+					else if modifier.kind == ModifierKind::Descending {
+						descending = true
 					}
 				}
 
@@ -2190,28 +2106,16 @@ export namespace Generator {
 				ctrl.done()
 			} // }}}
 			NodeKind::ForRangeStatement => { // {{{
-				let declaration = false
-				let immutable = false
-
-				for const modifier in data.modifiers {
-					if modifier.kind == ModifierKind::Declarative {
-						declaration = true
-					}
-					else if modifier.kind == ModifierKind::Immutable {
-						immutable = true
-					}
-				}
-
 				const ctrl = writer
 					.newControl()
 					.code('for ')
 
-				if declaration {
-					if immutable {
-						ctrl.code('const ')
+				for const modifier in data.modifiers {
+					if modifier.kind == ModifierKind::Mutable {
+						ctrl.code('var mut ')
 					}
-					else {
-						ctrl.code('let ')
+					else if modifier.kind == ModifierKind::Immutable {
+						ctrl.code('var ')
 					}
 				}
 
@@ -2263,18 +2167,6 @@ export namespace Generator {
 				ctrl.done()
 			} // }}}
 			NodeKind::ForOfStatement => { // {{{
-				let declaration = false
-				let immutable = false
-
-				for const modifier in data.modifiers {
-					if modifier.kind == ModifierKind::Declarative {
-						declaration = true
-					}
-					else if modifier.kind == ModifierKind::Immutable {
-						immutable = true
-					}
-				}
-
 				let ctrl
 
 				if data.body.kind == NodeKind::Block {
@@ -2289,12 +2181,12 @@ export namespace Generator {
 						.code(' for ')
 				}
 
-				if declaration {
-					if immutable {
-						ctrl.code('const ')
+				for const modifier in data.modifiers {
+					if modifier.kind == ModifierKind::Mutable {
+						ctrl.code('var mut ')
 					}
-					else {
-						ctrl.code('let ')
+					else if modifier.kind == ModifierKind::Immutable {
+						ctrl.code('var ')
 					}
 				}
 
@@ -2961,36 +2853,20 @@ export namespace Generator {
 					.done()
 			} // }}}
 			NodeKind::VariableDeclaration => { // {{{
-				let autoTyping = false
-				let immutable = false
-				let lateInit = false
-
-				for const modifier in data.modifiers {
-					if modifier.kind == ModifierKind::AutoTyping {
-						autoTyping = true
-					}
-					else if modifier.kind == ModifierKind::Immutable {
-						immutable = true
-					}
-					else if modifier.kind == ModifierKind::LateInit {
-						lateInit = true
-					}
-				}
-
 				const line = writer.newLine()
 
-				if lateInit {
-					line.code('lateinit ')
-				}
+				line.code('var ')
 
-				if immutable {
-					line.code('const ')
-				}
-				else if autoTyping {
-					line.code('auto ')
-				}
-				else {
-					line.code('let ')
+				for const modifier in data.modifiers {
+					if modifier.kind == ModifierKind::Dynamic {
+						line.code('dyn ')
+					}
+					else if modifier.kind == ModifierKind::LateInit {
+						line.code('late ')
+					}
+					else if modifier.kind == ModifierKind::Mutable {
+						line.code('mut ')
+					}
 				}
 
 				for variable, index in data.variables {

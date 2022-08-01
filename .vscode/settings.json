@@ -2,12 +2,14 @@
 	"search.exclude": {
 		"node_modules": true,
 		"**/*.ksb": true,
+		"**/*.kse": true,
 		"**/*.ksh": true,
-		"**/*.ksm": true
+		"**/*.ksr": true
 	},
 	"files.exclude": {
 		"**/*.ksb": true,
+		"**/*.kse": true,
 		"**/*.ksh": true,
-		"**/*.ksm": true
+		"**/*.ksr": true
 	}
 }

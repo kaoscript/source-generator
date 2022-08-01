@@ -4,7 +4,7 @@ func min() => {
 	age: 24
 }
 namespace foo {
-	let {gender, age} = min()
+	var dyn {gender, age} = min()
 }
 console.log(foo.age)
 console.log(`\(foo.gender)`)

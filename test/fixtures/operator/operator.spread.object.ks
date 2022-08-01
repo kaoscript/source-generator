@@ -1,8 +1,8 @@
-const original = {
+var original = {
 	a: 1
 	b: 2
 }
-const copy = {
+var copy = {
 	...original
 	c: 3
 }

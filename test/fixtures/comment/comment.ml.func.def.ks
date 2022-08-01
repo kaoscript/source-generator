@@ -1,4 +1,4 @@
 func foo() {
-	let foo = 42
-	let bar = 24
+	var foo = 42
+	var bar = 24
 }

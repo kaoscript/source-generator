@@ -1,6 +1,6 @@
 #![bin]
 
-import 'fs'
+import 'fs-extra' => fse
 import 'klaw-sync' => klaw
 import 'path'
 
@@ -11,13 +11,13 @@ const destRoot = path.join(__dirname, '..', 'test', 'fixtures')
 
 // 1. update existing files
 func update(srcPath) { // {{{
-	return unless fs.existsSync(srcPath.slice(0, -5) + '.ks')
+	return unless fse.pathExistsSync(srcPath.slice(0, -5) + '.ks')
 
 	const dirname = path.basename(path.dirname(srcPath).substr(srcRoot.length))
 	const filename = path.basename(srcPath)
 
 	try {
-		fs.readFileSync(path.join(destRoot, dirname, filename), {
+		fse.readFileSync(path.join(destRoot, dirname, filename), {
 			encoding: 'utf8'
 		})
 
@@ -25,7 +25,7 @@ func update(srcPath) { // {{{
 	}
 	catch {
 		try {
-			fs.readFileSync(path.join(destRoot, dirname, filename + '.no'), {
+			fse.readFileSync(path.join(destRoot, dirname, filename + '.no'), {
 				encoding: 'utf8'
 			})
 
@@ -45,11 +45,11 @@ func update(srcPath) { // {{{
 } // }}}
 
 func write(dirname, srcFilename, destFilename) { // {{{
-	const data = fs.readFileSync(path.join(srcRoot, dirname, srcFilename), {
+	const data = fse.readFileSync(path.join(srcRoot, dirname, srcFilename), {
 		encoding: 'utf8'
 	})
 
-	fs.writeFileSync(path.join(destRoot, dirname, destFilename), data, {
+	fse.outputFileSync(path.join(destRoot, dirname, destFilename), data, {
 		encoding: 'utf8'
 	})
 } // }}}
@@ -68,17 +68,18 @@ func check(destPath) { // {{{
 	const filename = path.basename(destPath)
 
 	try {
-		fs.readFileSync(path.join(srcRoot, dirname, filename), {
+		fse.readFileSync(path.join(srcRoot, dirname, filename), {
 			encoding: 'utf8'
 		})
 	}
 	catch {
 		// delete
 
-		console.log(`- deleting: \(path.join(dirname, filename.slice(0, -3))).json`)
+		console.log(`- deleting: \(path.join(dirname, filename.slice(0, -3))).ks`)
 
-		fs.unlinkSync(path.join(destRoot, dirname, `\(filename.slice(0, -3)).json`))
-		fs.unlinkSync(path.join(destRoot, dirname, filename))
+		fse.removeSync(path.join(destRoot, dirname, filename))
+		fse.removeSync(path.join(destRoot, dirname, `\(filename.slice(0, -3)).json`))
+		fse.removeSync(path.join(destRoot, dirname, `\(filename.slice(0, -3)).error`))
 	}
 } // }}}
 

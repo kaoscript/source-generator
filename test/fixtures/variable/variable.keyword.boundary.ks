@@ -1,2 +1,2 @@
-let domain = {}
+var domain = {}
 domain.foo()

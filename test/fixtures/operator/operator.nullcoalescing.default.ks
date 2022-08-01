@@ -2,4 +2,4 @@ extern {
 	foo
 	bar
 }
-let tt = foo ?? bar
+var dyn tt = foo ?? bar

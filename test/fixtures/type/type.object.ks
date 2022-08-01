@@ -1,4 +1,4 @@
-let a: {
+var dyn a: {
 	foo: int
 	bar: string
 } = {

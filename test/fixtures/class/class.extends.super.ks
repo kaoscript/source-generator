@@ -13,5 +13,5 @@ class Rectangle extends Shape {
 		return "I'm drawing a " + this._color + " rectangle."
 	}
 }
-let r = new Rectangle("black")
+var r = new Rectangle("black")
 expect(r.draw()).to.equal("I'm drawing a black rectangle.")

@@ -1,2 +1,2 @@
-for const {bar, baz} in foo {
+for var {bar, baz} in foo {
 }

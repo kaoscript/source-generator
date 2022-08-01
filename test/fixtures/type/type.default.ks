@@ -1,2 +1,2 @@
-let a: Array<number> = [1, 2, 3, 4]
+var dyn a: Array<number> = [1, 2, 3, 4]
 console.log(a)

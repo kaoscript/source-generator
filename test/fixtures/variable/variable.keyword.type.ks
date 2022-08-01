@@ -1,2 +1,2 @@
-let type = {}
+var type = {}
 type.foo = 42

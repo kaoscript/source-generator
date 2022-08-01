@@ -19,5 +19,5 @@ impl Shape {
 		return `I'm drawing a \(@color) \(@name).`
 	}
 }
-let shape = Shape.makeRed()
+var dyn shape = Shape.makeRed()
 console.log(shape.draw())

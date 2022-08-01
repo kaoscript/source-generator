@@ -1,2 +1,2 @@
 extern foo
-let tt = foo?()
+var dyn tt = foo?()

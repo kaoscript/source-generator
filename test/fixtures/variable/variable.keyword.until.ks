@@ -1,2 +1,2 @@
-let until = {}
+var until = {}
 until.foo = 42

@@ -1,2 +1,2 @@
-let i = 3.14
+var dyn i = 3.14
 i++

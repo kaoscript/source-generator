@@ -1,7 +1,7 @@
 extern console
 namespace Float {
-	const PI = 3.14
-	const name = "john"
+	var PI = 3.14
+	var name = "john"
 }
 console.log(Float.PI)
 console.log(`\(Float.name)`)

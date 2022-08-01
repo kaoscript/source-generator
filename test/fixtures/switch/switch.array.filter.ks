@@ -1,4 +1,4 @@
-let somePoint = [1, 1]
+var dyn somePoint = [1, 1]
 switch somePoint {
 	with [x, y] when (x == 0) && (y == 0) => console.log("(0, 0) is at the origin")
 	with [x, y] when y == 0 => console.log("(\(x), 0) is on the x-axis")

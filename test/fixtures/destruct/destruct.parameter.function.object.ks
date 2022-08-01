@@ -12,7 +12,7 @@ func foo({x, y, ...z}) {
 }
 func foo({name, scores: {x = 0, y = 0, z = 0} = {}} = {}) {
 }
-const foo = ({x, y, z} = {
+var foo = ({x, y, z} = {
 	x: 1
 	y: 2
 	z: 3

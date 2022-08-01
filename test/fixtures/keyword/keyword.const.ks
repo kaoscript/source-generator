@@ -1,2 +1,2 @@
-let const = 42
-console.log(const + 24)
+var var = 42
+console.log(var + 24)

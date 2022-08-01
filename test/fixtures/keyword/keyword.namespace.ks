@@ -1,2 +1,2 @@
-const namespace = 0
+var namespace = 0
 namespace.toString()

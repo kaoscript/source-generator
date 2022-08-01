@@ -1,2 +1,2 @@
-let foo: string = "bar"
+var mut foo: string = "bar"
 foo = "qux"

@@ -1,5 +1,5 @@
-let boolean = true
-let binary = switch boolean {
+var dyn boolean = true
+var dyn binary = switch boolean {
 	false => 0
 	true => 1
 }

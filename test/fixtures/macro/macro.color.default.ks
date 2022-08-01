@@ -1,9 +1,9 @@
 class Color {
 	macro registerSpace(@data: Object) {
 		if ?data.components {
-			const fields: Array<Expr> = []
-			const methods: Array<Expr> = []
-			let field
+			var fields: Array<Expr> = []
+			var methods: Array<Expr> = []
+			var dyn field
 			for name, component in data.components {
 				field = `_\(name)`
 				fields.push(macro private #w(field): #w(component.type))

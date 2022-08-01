@@ -1,2 +1,2 @@
-const enum = 0
+var enum = 0
 enum.toString()

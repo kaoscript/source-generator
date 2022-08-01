@@ -3,4 +3,4 @@ enum Kind {
 	B
 	C
 }
-let k = (Kind as A)
+var dyn k = (Kind as A)
