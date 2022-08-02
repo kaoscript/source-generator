@@ -17,7 +17,7 @@ include {
 extern console
 
 export namespace Generator {
-	const AssignmentOperatorSymbol = {
+	var AssignmentOperatorSymbol = {
 		`\(AssignmentOperatorKind::Addition)`			: ' += '
 		`\(AssignmentOperatorKind::BitwiseAnd)`			: ' &= '
 		`\(AssignmentOperatorKind::BitwiseLeftShift)`	: ' <<= '
@@ -35,7 +35,7 @@ export namespace Generator {
 		`\(AssignmentOperatorKind::Subtraction)`		: ' -= '
 	}
 
-	const BinaryOperatorSymbol = {
+	var BinaryOperatorSymbol = {
 		`\(BinaryOperatorKind::Addition)`			: ' + '
 		`\(BinaryOperatorKind::And)`				: ' && '
 		`\(BinaryOperatorKind::BitwiseAnd)`			: ' & '
@@ -64,13 +64,13 @@ export namespace Generator {
 		`\(BinaryOperatorKind::Xor)`				: ' ^^ '
 	}
 
-	const JunctionOperatorSymbol = {
+	var JunctionOperatorSymbol = {
 		`\(BinaryOperatorKind::And)`				: ' & '
 		`\(BinaryOperatorKind::Or)`					: ' | '
 		`\(BinaryOperatorKind::Xor)`				: ' ^ '
 	}
 
-	const UnaryPrefixOperatorSymbol = {
+	var UnaryPrefixOperatorSymbol = {
 		`\(UnaryOperatorKind::BitwiseNot)`			: '~'
 		`\(UnaryOperatorKind::DecrementPrefix)`		: '--'
 		`\(UnaryOperatorKind::Existential)`			: '?'
@@ -80,7 +80,7 @@ export namespace Generator {
 		`\(UnaryOperatorKind::Spread)`				: '...'
 	}
 
-	const UnaryPostfixOperatorSymbol = {
+	var UnaryPostfixOperatorSymbol = {
 		`\(UnaryOperatorKind::DecrementPostfix)`	: '--'
 		`\(UnaryOperatorKind::ForcedTypeCasting)`	: '!!'
 		`\(UnaryOperatorKind::IncrementPostfix)`	: '++'
@@ -153,7 +153,7 @@ export namespace Generator {
 			return this
 		} // }}}
 		toSource() { // {{{
-			let source = ''
+			var dyn source = ''
 
 			for fragment in this.toArray() {
 				source += fragment.code
@@ -309,7 +309,7 @@ export namespace Generator {
 	}
 
 	func generate(data, options = null) { // {{{
-		const writer = new KSWriter(options)
+		var writer = new KSWriter(options)
 
 		toStatement(data, writer)
 
@@ -419,9 +419,9 @@ export namespace Generator {
 				if data.operator.kind == BinaryOperatorKind::TypeCasting {
 					writer.code('(').expression(data.left)
 
-					auto nf = true
+					var mut nf = true
 
-					for const modifier in data.operator.modifiers {
+					for var modifier in data.operator.modifiers {
 						if modifier.kind == ModifierKind::Forced {
 							writer.code(' as! ')
 
@@ -454,11 +454,11 @@ export namespace Generator {
 			}
 			} // }}}
 			NodeKind::BindingElement => { // {{{
-				let computed = false
-				let thisAlias = false
-				let rest = false
+				var dyn computed = false
+				var dyn thisAlias = false
+				var dyn rest = false
 
-				for const modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					if modifier.kind == ModifierKind::Computed {
 						computed = true
 					}
@@ -589,7 +589,7 @@ export namespace Generator {
 				writer.code('class ').expression(data.name)
 			} // }}}
 			NodeKind::ComparisonExpression => { // {{{
-				for const value, i in data.values {
+				for var value, i in data.values {
 					if i % 2 == 0 {
 						writer.wrap(value)
 					}
@@ -732,7 +732,7 @@ export namespace Generator {
 				}
 			} // }}}
 			NodeKind::ImportArgument => { // {{{
-				for const modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					if modifier.kind == ModifierKind::Required {
 						writer.code('require ')
 					}
@@ -747,9 +747,9 @@ export namespace Generator {
 			NodeKind::ImportDeclarator => { // {{{
 				writer.expression(data.source)
 
-				auto autofill = false
+				var mut autofill = false
 
-				for const modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					if modifier.kind == ModifierKind::Autofill {
 						autofill = true
 					}
@@ -773,7 +773,7 @@ export namespace Generator {
 				}
 
 				if data.specifiers.length == 1 && data.specifiers[0].attributes.length == 0 {
-					const specifier = data.specifiers[0]
+					var specifier = data.specifiers[0]
 
 					switch specifier.kind {
 						NodeKind::ImportSpecifier => {
@@ -788,9 +788,9 @@ export namespace Generator {
 					}
 				}
 				else if data.specifiers.length != 0 {
-					const block = writer.newBlock()
+					var block = writer.newBlock()
 
-					for const specifier in data.specifiers {
+					for var specifier in data.specifiers {
 						toAttributes(specifier, false, block)
 
 						block.newLine().expression(specifier).done()
@@ -800,7 +800,7 @@ export namespace Generator {
 				}
 			} // }}}
 			NodeKind::ImportExclusionSpecifier => { // {{{
-				for const exclusion, i in data.exclusions {
+				for var exclusion, i in data.exclusions {
 					if i != 0 {
 						writer.code(', ')
 					}
@@ -812,7 +812,7 @@ export namespace Generator {
 				writer.expression(data.local)
 
 				if data.specifiers?.length != 0 {
-					const block = writer.newBlock()
+					var block = writer.newBlock()
 
 					for specifier in data.specifiers {
 						block.newLine().expression(specifier).done()
@@ -841,9 +841,9 @@ export namespace Generator {
 				writer.newLine().code(toQuote(data.file)).done()
 			} // }}}
 			NodeKind::JunctionExpression => { // {{{
-				const operator = JunctionOperatorSymbol[data.operator.kind]
+				var operator = JunctionOperatorSymbol[data.operator.kind]
 
-				for const operand, i in data.operands {
+				for var operand, i in data.operands {
 					writer.code(operator) if i != 0
 
 					writer.expression(operand)
@@ -873,9 +873,9 @@ export namespace Generator {
 					toMacroElements(data.elements, writer)
 				}
 				else {
-					const o = writer.newObject()
+					var o = writer.newObject()
 
-					let line = o.newLine()
+					var dyn line = o.newLine()
 
 					toMacroElements(data.elements, line, o)
 
@@ -883,10 +883,10 @@ export namespace Generator {
 				}
 			} // }}}
 			NodeKind::MemberExpression => { // {{{
-				let nullable = false
-				let computed = false
+				var dyn nullable = false
+				var dyn computed = false
 
-				for const modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					if modifier.kind == ModifierKind::Computed {
 						computed = true
 					}
@@ -929,7 +929,7 @@ export namespace Generator {
 				writer.code('}')
 			} // }}}
 			NodeKind::ObjectExpression => { // {{{
-				const o = writer.newObject()
+				var o = writer.newObject()
 
 				toAttributes(data, true, o)
 
@@ -946,9 +946,9 @@ export namespace Generator {
 				o.done()
 			} // }}}
 			NodeKind::ObjectMember => { // {{{
-				const value = data.value ?? data.type
+				var value = data.value ?? data.type
 				if value? {
-					const element = writer.transformExpression(value)
+					var element = writer.transformExpression(value)
 
 					if element.kind == NodeKind::FunctionExpression {
 						toExpression(element, writer, writer => writer.expression(data.name))
@@ -970,9 +970,9 @@ export namespace Generator {
 				}
 			} // }}}
 			NodeKind::Parameter => { // {{{
-				let rest: Boolean = false
+				var dyn rest: Boolean = false
 
-				for const modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					switch modifier.kind {
 						ModifierKind::AutoEvaluate => {
 							writer.code('@')
@@ -1012,7 +1012,7 @@ export namespace Generator {
 				if data.name? {
 					writer.expression(data.name)
 
-					for const modifier in data.modifiers {
+					for var modifier in data.modifiers {
 						switch modifier.kind {
 							ModifierKind::Required => {
 								writer.code('!')
@@ -1121,7 +1121,7 @@ export namespace Generator {
 					.code('switch ')
 					.expression(data.expression)
 
-				const block = writer.newBlock()
+				var block = writer.newBlock()
 
 				for clause in data.clauses {
 					block.statement(clause)
@@ -1170,7 +1170,7 @@ export namespace Generator {
 			} // }}}
 			NodeKind::TypeReference => { // {{{
 				if data.properties? {
-					const o = writer.newObject()
+					var o = writer.newObject()
 
 					o.pushMode(KSWriterMode::Property)
 
@@ -1185,7 +1185,7 @@ export namespace Generator {
 				else if data.elements? {
 					writer.code('[')
 
-					for const element, index in data.elements {
+					for var element, index in data.elements {
 						if index != 0 {
 							writer.code(', ')
 						}
@@ -1201,7 +1201,7 @@ export namespace Generator {
 					if data.typeParameters? {
 						writer.code('<')
 
-						for const parameter, index in data.typeParameters {
+						for var parameter, index in data.typeParameters {
 							if index != 0 {
 								writer.code(', ')
 							}
@@ -1247,7 +1247,7 @@ export namespace Generator {
 			NodeKind::VariableDeclaration => { // {{{
 				writer.code('var ')
 
-				for const modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					if modifier.kind == ModifierKind::Mutable {
 						writer.code('mut ')
 					}
@@ -1270,7 +1270,7 @@ export namespace Generator {
 				writer.expression(data.init)
 			} // }}}
 			NodeKind::VariableDeclarator => { // {{{
-				for const modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					switch modifier.kind {
 						ModifierKind::Immutable => {
 							writer.code('final ')
@@ -1402,7 +1402,7 @@ export namespace Generator {
 			NodeKind::ForFromStatement => {
 				writer.code(' for ')
 
-				for const modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					if modifier.kind == ModifierKind::Immutable {
 						writer.code('var ')
 					}
@@ -1439,11 +1439,11 @@ export namespace Generator {
 				}
 			}
 			NodeKind::ForInStatement => {
-				let descending = false
+				var dyn descending = false
 
 				writer.code(' for ')
 
-				for const modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					if modifier.kind == ModifierKind::Descending {
 						descending = true
 					}
@@ -1497,7 +1497,7 @@ export namespace Generator {
 			NodeKind::ForOfStatement => {
 				writer.code(' for ')
 
-				for const modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					if modifier.kind == ModifierKind::Immutable {
 						writer.code('var ')
 					}
@@ -1533,7 +1533,7 @@ export namespace Generator {
 			NodeKind::ForRangeStatement => {
 				writer.code(' for ')
 
-				for const modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					if modifier.kind == ModifierKind::Immutable {
 						writer.code('var ')
 					}
@@ -1579,7 +1579,7 @@ export namespace Generator {
 	} // }}}
 
 	func toMacroElements(elements, writer, parent = null) { // {{{
-		const last = elements.length - 1
+		var last = elements.length - 1
 
 		for element, index in elements {
 			switch element.kind {
@@ -1630,7 +1630,7 @@ export namespace Generator {
 	func toStatement(data, writer) {
 		switch data.kind {
 			NodeKind::AccessorDeclaration => { // {{{
-				const line = writer
+				var line = writer
 					.newLine()
 					.code('get')
 
@@ -1675,9 +1675,9 @@ export namespace Generator {
 					.expression(data.body)
 			} // }}}
 			NodeKind::ClassDeclaration => { // {{{
-				const line = writer.newLine()
+				var line = writer.newLine()
 
-				for const modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					switch modifier.kind {
 						ModifierKind::Abstract => {
 							line.code('abstract ')
@@ -1704,7 +1704,7 @@ export namespace Generator {
 					line.code(' extends ').expression(data.extends)
 				}
 
-				const block = line.newBlock()
+				var block = line.newBlock()
 
 				for member in data.members {
 					block.statement(member)
@@ -1725,12 +1725,12 @@ export namespace Generator {
 					.done()
 			} // }}}
 			NodeKind::DiscloseDeclaration => { // {{{
-				const line = writer
+				var line = writer
 					.newLine()
 					.code('disclose ')
 					.expression(data.name)
 
-				const block = line.newBlock()
+				var block = line.newBlock()
 
 				for member in data.members {
 					block.statement(member)
@@ -1762,9 +1762,9 @@ export namespace Generator {
 					.done()
 			} // }}}
 			NodeKind::EnumDeclaration => { // {{{
-				const line = writer.newLine()
+				var line = writer.newLine()
 
-				for const modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					switch modifier.kind {
 						ModifierKind::Flagged => {
 							line.code('flagged ')
@@ -1778,7 +1778,7 @@ export namespace Generator {
 					line.code('<').expression(data.type).code('>')
 				}
 
-				const block = line.newBlock()
+				var block = line.newBlock()
 
 				for member in data.members {
 					block.statement(member)
@@ -1788,13 +1788,13 @@ export namespace Generator {
 				line.done()
 			} // }}}
 			NodeKind::ExportDeclaration => { // {{{
-				const line = writer.newLine()
+				var line = writer.newLine()
 
 				if data.declarations.length == 1 && (!?data.declarations[0].declaration || data.declarations[0].declaration.attributes.length == 0) {
 					line.code('export ').statement(data.declarations[0])
 				}
 				else {
-					const block = line.code('export').newBlock()
+					var block = line.code('export').newBlock()
 
 					for declaration in data.declarations {
 						block.statement(declaration)
@@ -1809,12 +1809,12 @@ export namespace Generator {
 				writer.statement(data.declaration)
 			} // }}}
 			NodeKind::ExportExclusionSpecifier => { // {{{
-				const line = writer.newLine().code('*')
+				var line = writer.newLine().code('*')
 
 				if data.exclusions.length != 0 {
 					line.code(' but ')
 
-					for const exclusion, i in data.exclusions {
+					for var exclusion, i in data.exclusions {
 						if i != 0 {
 							line.code(', ')
 						}
@@ -1834,7 +1834,7 @@ export namespace Generator {
 				}
 			} // }}}
 			NodeKind::ExportPropertiesSpecifier => { // {{{
-				const line = writer.newLine()
+				var line = writer.newLine()
 
 				line.expression(data.object)
 
@@ -1842,7 +1842,7 @@ export namespace Generator {
 					line.code(' for ').statement(data.dpropertieseclarations[0])
 				}
 				else {
-					const block = line.code(' for').newBlock()
+					var block = line.code(' for').newBlock()
 
 					for property in data.properties {
 						block.statement(property)
@@ -1857,7 +1857,7 @@ export namespace Generator {
 				writer.newLine().expression(data.local).code(' for *').done()
 			} // }}}
 			NodeKind::ExternDeclaration => { // {{{
-				const line = writer.newLine()
+				var line = writer.newLine()
 
 				if data.declarations.length == 1 {
 					line.code('extern ').statement(data.declarations[0])
@@ -1865,7 +1865,7 @@ export namespace Generator {
 				else {
 					writer.pushMode(KSWriterMode::Extern)
 
-					const block = line.code('extern').newBlock()
+					var block = line.code('extern').newBlock()
 
 					for declaration in data.declarations {
 						block.statement(declaration)
@@ -1879,7 +1879,7 @@ export namespace Generator {
 				line.done()
 			} // }}}
 			NodeKind::ExternOrRequireDeclaration => { // {{{
-				const line = writer.newLine()
+				var line = writer.newLine()
 
 				if data.declarations.length == 1 && data.declarations[0].attributes.length == 0 {
 					line.code('extern|require ').statement(data.declarations[0])
@@ -1887,9 +1887,9 @@ export namespace Generator {
 				else {
 					writer.pushMode(KSWriterMode::Extern)
 
-					const block = line.code('extern|require').newBlock()
+					var block = line.code('extern|require').newBlock()
 
-					for const declaration in data.declarations {
+					for var declaration in data.declarations {
 						block.statement(declaration)
 					}
 
@@ -1901,15 +1901,15 @@ export namespace Generator {
 				line.done()
 			} // }}}
 			NodeKind::ExternOrImportDeclaration => { // {{{
-				const line = writer.newLine()
+				var line = writer.newLine()
 
 				if data.declarations.length == 1 && data.declarations[0].attributes.length == 0 {
 					line.code('extern|import ').expression(data.declarations[0])
 				}
 				else {
-					const block = line.code('extern|import').newBlock()
+					var block = line.code('extern|import').newBlock()
 
-					for const declaration in data.declarations {
+					for var declaration in data.declarations {
 						toAttributes(declaration, false, block)
 
 						block.newLine().expression(declaration).done()
@@ -1924,7 +1924,7 @@ export namespace Generator {
 				writer.newLine().code('fallthrough').done()
 			} // }}}
 			NodeKind::FieldDeclaration => { // {{{
-				const line = writer.newLine()
+				var line = writer.newLine()
 
 				for modifier in data.modifiers {
 					switch modifier.kind {
@@ -1955,7 +1955,7 @@ export namespace Generator {
 					}
 				}
 
-				for const modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					if modifier.kind == ModifierKind::ThisAlias {
 						line.code('@')
 
@@ -1976,11 +1976,11 @@ export namespace Generator {
 				line.done()
 			} // }}}
 			NodeKind::ForFromStatement => { // {{{
-				const ctrl = writer
+				var ctrl = writer
 					.newControl()
 					.code('for ')
 
-				for const modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					if modifier.kind == ModifierKind::Mutable {
 						ctrl.code('var mut ')
 					}
@@ -2022,9 +2022,9 @@ export namespace Generator {
 					.done()
 			} // }}}
 			NodeKind::ForInStatement => { // {{{
-				let descending = false
+				var dyn descending = false
 
-				let ctrl
+				var dyn ctrl
 
 				if data.body.kind == NodeKind::Block {
 					ctrl = writer
@@ -2038,7 +2038,7 @@ export namespace Generator {
 						.code(' for ')
 				}
 
-				for const modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					if modifier.kind == ModifierKind::Mutable {
 						ctrl.code('var mut ')
 					}
@@ -2106,11 +2106,11 @@ export namespace Generator {
 				ctrl.done()
 			} // }}}
 			NodeKind::ForRangeStatement => { // {{{
-				const ctrl = writer
+				var ctrl = writer
 					.newControl()
 					.code('for ')
 
-				for const modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					if modifier.kind == ModifierKind::Mutable {
 						ctrl.code('var mut ')
 					}
@@ -2167,7 +2167,7 @@ export namespace Generator {
 				ctrl.done()
 			} // }}}
 			NodeKind::ForOfStatement => { // {{{
-				let ctrl
+				var dyn ctrl
 
 				if data.body.kind == NodeKind::Block {
 					ctrl = writer
@@ -2181,7 +2181,7 @@ export namespace Generator {
 						.code(' for ')
 				}
 
-				for const modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					if modifier.kind == ModifierKind::Mutable {
 						ctrl.code('var mut ')
 					}
@@ -2227,7 +2227,7 @@ export namespace Generator {
 				ctrl.done()
 			} // }}}
 			NodeKind::FunctionDeclaration => { // {{{
-				const line = writer.newLine()
+				var line = writer.newLine()
 
 				toFunctionHeader(data, writer => {
 					if writer.mode() != KSWriterMode::Extern {
@@ -2244,7 +2244,7 @@ export namespace Generator {
 			NodeKind::IfStatement => { // {{{
 				switch data.whenTrue.kind {
 					NodeKind::Block => {
-						const ctrl = writer
+						var ctrl = writer
 							.newControl()
 							.code('if ')
 							.expression(data.condition)
@@ -2313,12 +2313,12 @@ export namespace Generator {
 				}
 			} // }}}
 			NodeKind::ImplementDeclaration => { // {{{
-				const line = writer
+				var line = writer
 					.newLine()
 					.code('impl ')
 					.expression(data.variable)
 
-				const block = line.newBlock()
+				var block = line.newBlock()
 
 				for property in data.properties {
 					block.statement(property)
@@ -2328,15 +2328,15 @@ export namespace Generator {
 				line.done()
 			} // }}}
 			NodeKind::ImportDeclaration => { // {{{
-				const line = writer.newLine()
+				var line = writer.newLine()
 
 				if data.declarations.length == 1 && data.declarations[0].attributes.length == 0 {
 					line.code('import ').expression(data.declarations[0])
 				}
 				else {
-					const block = line.code('import').newBlock()
+					var block = line.code('import').newBlock()
 
-					for const declaration in data.declarations {
+					for var declaration in data.declarations {
 						toAttributes(declaration, false, block)
 
 						block.newLine().expression(declaration).done()
@@ -2348,15 +2348,15 @@ export namespace Generator {
 				line.done()
 			} // }}}
 			NodeKind::IncludeAgainDeclaration => { // {{{
-				const line = writer.newLine()
+				var line = writer.newLine()
 
 				if data.declarations.length == 1 {
 					line.code('include again ').statement(data.declarations[0])
 				}
 				else {
-					const block = line.code('include again').newBlock()
+					var block = line.code('include again').newBlock()
 
-					for const declaration in data.declarations {
+					for var declaration in data.declarations {
 						block.newLine().statement(declaration).done()
 					}
 
@@ -2366,11 +2366,11 @@ export namespace Generator {
 				line.done()
 			} // }}}
 			NodeKind::IncludeDeclaration => { // {{{
-				const line = writer.newLine()
+				var line = writer.newLine()
 
-				const block = line.code('include').newBlock()
+				var block = line.code('include').newBlock()
 
-				for const declaration in data.declarations {
+				for var declaration in data.declarations {
 					block.expression(declaration)
 				}
 
@@ -2379,7 +2379,7 @@ export namespace Generator {
 				line.done()
 			} // }}}
 			NodeKind::MacroDeclaration => { // {{{
-				const line = writer.newLine()
+				var line = writer.newLine()
 
 				toFunctionHeader(data, writer => {
 					writer.code('macro ')
@@ -2400,7 +2400,7 @@ export namespace Generator {
 				line.done()
 			} // }}}
 			NodeKind::MethodDeclaration => { // {{{
-				const line = writer.newLine()
+				var line = writer.newLine()
 
 				toFunctionHeader(data, writer => {}, line)
 
@@ -2418,7 +2418,7 @@ export namespace Generator {
 				}
 			} // }}}
 			NodeKind::MutatorDeclaration => { // {{{
-				const line = writer
+				var line = writer
 					.newLine()
 					.code('set')
 
@@ -2434,7 +2434,7 @@ export namespace Generator {
 				line.done()
 			} // }}}
 			NodeKind::NamespaceDeclaration => { // {{{
-				const line = writer.newLine()
+				var line = writer.newLine()
 
 				for modifier in data.modifiers {
 					switch modifier.kind {
@@ -2447,7 +2447,7 @@ export namespace Generator {
 				line.code('namespace ').expression(data.name)
 
 				if data.statements.length != 0 {
-					const block = line.newBlock()
+					var block = line.newBlock()
 
 					for statement in data.statements {
 						block.statement(statement)
@@ -2459,7 +2459,7 @@ export namespace Generator {
 				line.done()
 			} // }}}
 			NodeKind::PropertyDeclaration => { // {{{
-				const line = writer.newLine()
+				var line = writer.newLine()
 
 				for modifier in data.modifiers {
 					switch modifier.kind {
@@ -2481,7 +2481,7 @@ export namespace Generator {
 					line.code(': ').expression(data.type)
 				}
 
-				const block = line.newBlock()
+				var block = line.newBlock()
 
 				if data.accessor? {
 					block.statement(data.accessor)
@@ -2502,7 +2502,7 @@ export namespace Generator {
 				line.done()
 			} // }}}
 			NodeKind::RequireDeclaration => { // {{{
-				const line = writer.newLine()
+				var line = writer.newLine()
 
 				if data.declarations.length == 1 && data.declarations[0].attributes.length == 0 {
 					line.code('require ').statement(data.declarations[0])
@@ -2510,7 +2510,7 @@ export namespace Generator {
 				else {
 					writer.pushMode(KSWriterMode::Extern)
 
-					const block = line.code('require').newBlock()
+					var block = line.code('require').newBlock()
 
 					for declaration in data.declarations {
 						block.statement(declaration)
@@ -2524,7 +2524,7 @@ export namespace Generator {
 				line.done()
 			} // }}}
 			NodeKind::RequireOrExternDeclaration => { // {{{
-				const line = writer.newLine()
+				var line = writer.newLine()
 
 				if data.declarations.length == 1 && data.declarations[0].attributes.length == 0 {
 					line.code('require|extern ').statement(data.declarations[0])
@@ -2532,9 +2532,9 @@ export namespace Generator {
 				else {
 					writer.pushMode(KSWriterMode::Extern)
 
-					const block = line.code('require|extern').newBlock()
+					var block = line.code('require|extern').newBlock()
 
-					for const declaration in data.declarations {
+					for var declaration in data.declarations {
 						block.statement(declaration)
 					}
 
@@ -2546,15 +2546,15 @@ export namespace Generator {
 				line.done()
 			} // }}}
 			NodeKind::RequireOrImportDeclaration => { // {{{
-				const line = writer.newLine()
+				var line = writer.newLine()
 
 				if data.declarations.length == 1 && data.declarations[0].attributes.length == 0 {
 					line.code('require|import ').expression(data.declarations[0])
 				}
 				else {
-					const block = line.code('require|import').newBlock()
+					var block = line.code('require|import').newBlock()
 
-					for const declaration in data.declarations {
+					for var declaration in data.declarations {
 						toAttributes(declaration, false, block)
 
 						block.newLine().expression(declaration).done()
@@ -2581,7 +2581,7 @@ export namespace Generator {
 				}
 			} // }}}
 			NodeKind::StructDeclaration => { // {{{
-				const line = writer.newLine()
+				var line = writer.newLine()
 
 				line.code('struct ').expression(data.name)
 
@@ -2590,9 +2590,9 @@ export namespace Generator {
 				}
 
 				if data.fields.length != 0 {
-					const block = line.newBlock()
+					var block = line.newBlock()
 
-					for const field in data.fields {
+					for var field in data.fields {
 						block.statement(field)
 					}
 
@@ -2602,7 +2602,7 @@ export namespace Generator {
 				line.done()
 			} // }}}
 			NodeKind::StructField => { // {{{
-				const line = writer.newLine()
+				var line = writer.newLine()
 
 				line.expression(data.name)
 
@@ -2617,7 +2617,7 @@ export namespace Generator {
 				line.done()
 			} // }}}
 			NodeKind::SwitchClause => { // {{{
-				const line = writer.newLine()
+				var line = writer.newLine()
 
 				if data.conditions.length != 0 {
 					for condition, index in data.conditions {
@@ -2668,7 +2668,7 @@ export namespace Generator {
 				line.done()
 			} // }}}
 			NodeKind::SwitchStatement => { // {{{
-				const ctrl = writer
+				var ctrl = writer
 					.newControl()
 					.code('switch ')
 					.expression(data.expression)
@@ -2688,7 +2688,7 @@ export namespace Generator {
 					.done()
 			} // }}}
 			NodeKind::TryStatement => { // {{{
-				const ctrl = writer
+				var ctrl = writer
 					.newControl()
 					.code('try')
 					.step()
@@ -2717,15 +2717,15 @@ export namespace Generator {
 				ctrl.done()
 			} // }}}
 			NodeKind::TupleDeclaration => { // {{{
-				auto named = false
+				var mut named = false
 
-				for const modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					if modifier.kind == ModifierKind::Named {
 						named = true
 					}
 				}
 
-				const line = writer.newLine()
+				var line = writer.newLine()
 
 				line.code('tuple ').expression(data.name)
 
@@ -2735,9 +2735,9 @@ export namespace Generator {
 							line.code(' extends ').expression(data.extends)
 						}
 
-						const block = line.newBlock()
+						var block = line.newBlock()
 
-						for const field in data.fields {
+						for var field in data.fields {
 							block.newLine().statement(field).done()
 						}
 
@@ -2746,7 +2746,7 @@ export namespace Generator {
 					else {
 						line.code('(')
 
-						for const field, index in data.fields {
+						for var field, index in data.fields {
 							if index != 0 {
 								line.code(', ')
 							}
@@ -2797,7 +2797,7 @@ export namespace Generator {
 			NodeKind::UnlessStatement => { // {{{
 				switch data.whenFalse.kind {
 					NodeKind::Block => {
-						const ctrl = writer
+						var ctrl = writer
 							.newControl()
 							.code('unless ')
 							.expression(data.condition)
@@ -2853,11 +2853,11 @@ export namespace Generator {
 					.done()
 			} // }}}
 			NodeKind::VariableDeclaration => { // {{{
-				const line = writer.newLine()
+				var line = writer.newLine()
 
 				line.code('var ')
 
-				for const modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					if modifier.kind == ModifierKind::Dynamic {
 						line.code('dyn ')
 					}
