@@ -977,6 +977,9 @@ export namespace Generator {
 						ModifierKind::AutoEvaluate => {
 							writer.code('@')
 						}
+						ModifierKind::Mutable => {
+							writer.code('mut ')
+						}
 						ModifierKind::Rest => {
 							writer.code('...')
 
@@ -1627,7 +1630,7 @@ export namespace Generator {
 		return '"' + value.replace(/"/g, '\\"').replace(/\n/g, '\\n') + '"'
 	} // }}}
 
-	func toStatement(data, writer) {
+	func toStatement(mut data, writer) {
 		switch data.kind {
 			NodeKind::AccessorDeclaration => { // {{{
 				var line = writer
