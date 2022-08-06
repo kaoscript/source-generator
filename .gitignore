@@ -1,6 +1,7 @@
 node_modules
 *.ksb
+*.kse
 *.ksh
-*.ksm
+*.ksr
 coverage
 .coveralls.yml

@@ -6,15 +6,15 @@ import 'path'
 
 extern __dirname, console
 
-const srcRoot = path.join(__dirname, '..', '..', 'parser', 'test', 'fixtures')
-const destRoot = path.join(__dirname, '..', 'test', 'fixtures')
+var srcRoot = path.join(__dirname, '..', '..', 'parser', 'test', 'fixtures')
+var destRoot = path.join(__dirname, '..', 'test', 'fixtures')
 
 // 1. update existing files
 func update(srcPath) { // {{{
 	return unless fse.pathExistsSync(srcPath.slice(0, -5) + '.ks')
 
-	const dirname = path.basename(path.dirname(srcPath).substr(srcRoot.length))
-	const filename = path.basename(srcPath)
+	var dirname = path.basename(path.dirname(srcPath).substr(srcRoot.length))
+	var filename = path.basename(srcPath)
 
 	try {
 		fse.readFileSync(path.join(destRoot, dirname, filename), {
@@ -38,14 +38,15 @@ func update(srcPath) { // {{{
 
 			write(dirname, filename, filename)
 
-			const ksfile = `\(filename.slice(0, -5)).ks`
+			var ksfile = `\(filename.slice(0, -5)).ks`
+
 			write(dirname, ksfile, ksfile)
 		}
 	}
 } // }}}
 
 func write(dirname, srcFilename, destFilename) { // {{{
-	const data = fse.readFileSync(path.join(srcRoot, dirname, srcFilename), {
+	var data = fse.readFileSync(path.join(srcRoot, dirname, srcFilename), {
 		encoding: 'utf8'
 	})
 
@@ -54,7 +55,7 @@ func write(dirname, srcFilename, destFilename) { // {{{
 	})
 } // }}}
 
-for file in klaw(srcRoot, {
+for var file in klaw(srcRoot, {
 	nodir: true,
 	traverseAll: true,
 	filter: item => item.path.slice(-5) == '.json'
@@ -64,8 +65,8 @@ for file in klaw(srcRoot, {
 
 // 2. remove old files
 func check(destPath) { // {{{
-	const dirname = path.basename(path.dirname(destPath).substr(destRoot.length))
-	const filename = path.basename(destPath)
+	var dirname = path.basename(path.dirname(destPath).substr(destRoot.length))
+	var filename = path.basename(destPath)
 
 	try {
 		fse.readFileSync(path.join(srcRoot, dirname, filename), {
@@ -74,7 +75,6 @@ func check(destPath) { // {{{
 	}
 	catch {
 		// delete
-
 		console.log(`- deleting: \(path.join(dirname, filename.slice(0, -3))).ks`)
 
 		fse.removeSync(path.join(destRoot, dirname, filename))
@@ -83,7 +83,7 @@ func check(destPath) { // {{{
 	}
 } // }}}
 
-for file in klaw(destRoot, {
+for var file in klaw(destRoot, {
 	nodir: true,
 	traverseAll: true,
 	filter: item => item.path.slice(-3) == '.ks'

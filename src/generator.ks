@@ -93,6 +93,12 @@ export namespace Generator {
 		Property
 	}
 
+	enum AttributeMode {
+		Inline
+		Inner
+		Outer
+	}
+
 	func $nilFilter(...) { // {{{
 		return false
 	} // }}}
@@ -145,7 +151,7 @@ export namespace Generator {
 		} // }}}
 		statement(data) { // {{{
 			if !this.filterStatement(data) {
-				toAttributes(data, false, this)
+				toAttributes(data, AttributeMode::Outer, this)
 
 				toStatement(this.transformStatement(data), this)
 			}
@@ -185,7 +191,7 @@ export namespace Generator {
 		pushMode(mode: KSWriterMode) => @writer.pushMode(mode)
 		statement(data) { // {{{
 			if !this.filterStatement(data) {
-				toAttributes(data, false, this)
+				toAttributes(data, AttributeMode::Outer, this)
 
 				toStatement(this.transformStatement(data), this)
 			}
@@ -211,7 +217,7 @@ export namespace Generator {
 		pushMode(mode: KSWriterMode) => @writer.pushMode(mode)
 		statement(data) { // {{{
 			if !this.filterStatement(data) {
-				toAttributes(data, false, this)
+				toAttributes(data, AttributeMode::Outer, this)
 
 				toStatement(this.transformStatement(data), this)
 			}
@@ -271,7 +277,7 @@ export namespace Generator {
 		} // }}}
 		statement(data) { // {{{
 			if !this.filterStatement(data) {
-				toAttributes(data, false, this)
+				toAttributes(data, AttributeMode::Outer, this)
 
 				toStatement(this.transformStatement(data), this)
 			}
@@ -297,7 +303,7 @@ export namespace Generator {
 		pushMode(mode: KSWriterMode) => @writer.pushMode(mode)
 		statement(data) { // {{{
 			if !this.filterStatement(data) {
-				toAttributes(data, false, this)
+				toAttributes(data, AttributeMode::Outer, this)
 
 				toStatement(this.transformStatement(data), this)
 			}
@@ -316,21 +322,28 @@ export namespace Generator {
 		return writer.toSource()
 	} // }}}
 
-	func toAttribute(data, inner, writer) { // {{{
+	func toAttribute(data, mode: AttributeMode, writer) { // {{{
 		return writer
-			.code(inner ? '#![' : '#[')
+			.code(mode == AttributeMode::Inner ? '#![' : '#[')
 			.expression(data.declaration)
 			.code(']')
 	} // }}}
 
-	func toAttributes(data, inner, writer) { // {{{
+	func toAttributes(data, mode: AttributeMode, writer) { // {{{
 		if data.attributes?.length > 0 {
-			for attribute in data.attributes {
-				toAttribute(attribute, inner, writer.newLine()).done()
+			if mode == AttributeMode::Inline {
+				for attribute in data.attributes {
+					toAttribute(attribute, mode, writer).code(' ')
+				}
 			}
+			else {
+				for attribute in data.attributes {
+					toAttribute(attribute, mode, writer.newLine()).done()
+				}
 
-			if inner {
-				writer.newLine().done()
+				if mode == AttributeMode::Inner {
+					writer.newLine().done()
+				}
 			}
 		}
 	} // }}}
@@ -518,7 +531,7 @@ export namespace Generator {
 				}
 			} // }}}
 			NodeKind::Block => { // {{{
-				toAttributes(data, true, writer)
+				toAttributes(data, AttributeMode::Inner, writer)
 
 				for statement in data.statements {
 					writer.statement(statement)
@@ -791,7 +804,7 @@ export namespace Generator {
 					var block = writer.newBlock()
 
 					for var specifier in data.specifiers {
-						toAttributes(specifier, false, block)
+						toAttributes(specifier, AttributeMode::Outer, block)
 
 						block.newLine().expression(specifier).done()
 					}
@@ -836,7 +849,7 @@ export namespace Generator {
 				}
 			} // }}}
 			NodeKind::IncludeDeclarator => { // {{{
-				toAttributes(data, false, writer)
+				toAttributes(data, AttributeMode::Outer, writer)
 
 				writer.newLine().code(toQuote(data.file)).done()
 			} // }}}
@@ -931,12 +944,12 @@ export namespace Generator {
 			NodeKind::ObjectExpression => { // {{{
 				var o = writer.newObject()
 
-				toAttributes(data, true, o)
+				toAttributes(data, AttributeMode::Inner, o)
 
 				o.pushMode(KSWriterMode::Property)
 
 				for property in data.properties {
-					toAttributes(property, false, o)
+					toAttributes(property, AttributeMode::Outer, o)
 
 					o.newLine().expression(property).done()
 				}
@@ -970,6 +983,8 @@ export namespace Generator {
 				}
 			} // }}}
 			NodeKind::Parameter => { // {{{
+				toAttributes(data, AttributeMode::Inline, writer)
+
 				var dyn rest: Boolean = false
 
 				for var modifier in data.modifiers {
@@ -1913,7 +1928,7 @@ export namespace Generator {
 					var block = line.code('extern|import').newBlock()
 
 					for var declaration in data.declarations {
-						toAttributes(declaration, false, block)
+						toAttributes(declaration, AttributeMode::Outer, block)
 
 						block.newLine().expression(declaration).done()
 					}
@@ -2340,7 +2355,7 @@ export namespace Generator {
 					var block = line.code('import').newBlock()
 
 					for var declaration in data.declarations {
-						toAttributes(declaration, false, block)
+						toAttributes(declaration, AttributeMode::Outer, block)
 
 						block.newLine().expression(declaration).done()
 					}
@@ -2414,7 +2429,7 @@ export namespace Generator {
 				line.done()
 			} // }}}
 			NodeKind::Module => { // {{{
-				toAttributes(data, true, writer)
+				toAttributes(data, AttributeMode::Inner, writer)
 
 				for node in data.body {
 					writer.statement(node)
@@ -2558,7 +2573,7 @@ export namespace Generator {
 					var block = line.code('require|import').newBlock()
 
 					for var declaration in data.declarations {
-						toAttributes(declaration, false, block)
+						toAttributes(declaration, AttributeMode::Outer, block)
 
 						block.newLine().expression(declaration).done()
 					}
