@@ -1,9 +1,9 @@
 {
-  "kind": 74,
+  "kind": 76,
   "attributes": [],
   "body": [
     {
-      "kind": 122,
+      "kind": 124,
       "modifiers": [
         {
           "kind": 9,
@@ -20,10 +20,10 @@
       "attributes": [],
       "variables": [
         {
-          "kind": 123,
+          "kind": 125,
           "modifiers": [],
           "name": {
-            "kind": 52,
+            "kind": 54,
             "name": "pair",
             "start": {
               "line": 1,
@@ -53,10 +53,10 @@
         "column": 23
       },
       "init": {
-        "kind": 4,
+        "kind": 5,
         "values": [
           {
-            "kind": 78,
+            "kind": 80,
             "value": 2,
             "start": {
               "line": 1,
@@ -68,7 +68,7 @@
             }
           },
           {
-            "kind": 78,
+            "kind": 80,
             "value": -2,
             "start": {
               "line": 1,
@@ -91,10 +91,10 @@
       }
     },
     {
-      "kind": 104,
+      "kind": 106,
       "attributes": [],
       "expression": {
-        "kind": 52,
+        "kind": 54,
         "name": "pair",
         "start": {
           "line": 3,

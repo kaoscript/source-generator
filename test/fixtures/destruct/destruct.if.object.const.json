@@ -1,25 +1,25 @@
 {
-  "kind": 74,
+  "kind": 76,
   "attributes": [],
   "body": [
     {
-      "kind": 54,
+      "kind": 56,
       "attributes": [],
       "condition": {
-        "kind": 122,
+        "kind": 124,
         "modifiers": [],
         "attributes": [],
         "variables": [
           {
-            "kind": 123,
+            "kind": 125,
             "modifiers": [],
             "name": {
-              "kind": 79,
+              "kind": 81,
               "elements": [
                 {
-                  "kind": 11,
+                  "kind": 13,
                   "name": {
-                    "kind": 52,
+                    "kind": 54,
                     "name": "bar",
                     "start": {
                       "line": 1,
@@ -41,9 +41,9 @@
                   }
                 },
                 {
-                  "kind": 11,
+                  "kind": 13,
                   "name": {
-                    "kind": 52,
+                    "kind": 54,
                     "name": "baz",
                     "start": {
                       "line": 1,
@@ -93,7 +93,7 @@
           "column": 24
         },
         "init": {
-          "kind": 52,
+          "kind": 54,
           "name": "foo",
           "start": {
             "line": 1,
@@ -106,7 +106,7 @@
         }
       },
       "whenTrue": {
-        "kind": 12,
+        "kind": 14,
         "attributes": [],
         "statements": [],
         "start": {

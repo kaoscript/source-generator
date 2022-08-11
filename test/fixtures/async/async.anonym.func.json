@@ -1,15 +1,15 @@
 {
-  "kind": 74,
+  "kind": 76,
   "attributes": [],
   "body": [
     {
-      "kind": 14,
+      "kind": 16,
       "modifiers": [],
       "scope": {
         "kind": 3
       },
       "callee": {
-        "kind": 52,
+        "kind": 54,
         "name": "foo",
         "start": {
           "line": 1,
@@ -22,10 +22,10 @@
       },
       "arguments": [
         {
-          "kind": 50,
+          "kind": 52,
           "parameters": [
             {
-              "kind": 83,
+              "kind": 86,
               "attributes": [],
               "modifiers": [],
               "start": {
@@ -37,7 +37,7 @@
                 "column": 17
               },
               "name": {
-                "kind": 52,
+                "kind": 54,
                 "name": "x",
                 "start": {
                   "line": 1,
@@ -50,7 +50,7 @@
               }
             },
             {
-              "kind": 83,
+              "kind": 86,
               "attributes": [],
               "modifiers": [],
               "start": {
@@ -62,7 +62,7 @@
                 "column": 20
               },
               "name": {
-                "kind": 52,
+                "kind": 54,
                 "name": "y",
                 "start": {
                   "line": 1,
@@ -98,14 +98,14 @@
           ],
           "throws": [],
           "body": {
-            "kind": 12,
+            "kind": 14,
             "attributes": [],
             "statements": [
               {
-                "kind": 90,
+                "kind": 93,
                 "attributes": [],
                 "value": {
-                  "kind": 10,
+                  "kind": 12,
                   "operator": {
                     "kind": 20,
                     "modifiers": [],
@@ -127,7 +127,7 @@
                     "column": 14
                   },
                   "left": {
-                    "kind": 52,
+                    "kind": 54,
                     "name": "x",
                     "start": {
                       "line": 2,
@@ -139,7 +139,7 @@
                     }
                   },
                   "right": {
-                    "kind": 52,
+                    "kind": 54,
                     "name": "y",
                     "start": {
                       "line": 2,

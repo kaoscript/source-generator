@@ -1,11 +1,11 @@
 {
-  "kind": 74,
+  "kind": 76,
   "attributes": [],
   "body": [
     {
-      "kind": 25,
+      "kind": 27,
       "class": {
-        "kind": 52,
+        "kind": 54,
         "name": "Shape",
         "start": {
           "line": 1,

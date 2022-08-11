@@ -1,17 +1,17 @@
 {
-  "kind": 74,
+  "kind": 76,
   "attributes": [],
   "body": [
     {
-      "kind": 122,
+      "kind": 124,
       "modifiers": [],
       "attributes": [],
       "variables": [
         {
-          "kind": 123,
+          "kind": 125,
           "modifiers": [],
           "name": {
-            "kind": 52,
+            "kind": 54,
             "name": "until",
             "start": {
               "line": 1,
@@ -41,7 +41,7 @@
         "column": 15
       },
       "init": {
-        "kind": 80,
+        "kind": 82,
         "attributes": [],
         "properties": [],
         "start": {
@@ -55,7 +55,7 @@
       }
     },
     {
-      "kind": 10,
+      "kind": 12,
       "operator": {
         "kind": 3,
         "assignment": 8,
@@ -69,10 +69,10 @@
         }
       },
       "left": {
-        "kind": 71,
+        "kind": 73,
         "modifiers": [],
         "object": {
-          "kind": 52,
+          "kind": 54,
           "name": "until",
           "start": {
             "line": 3,
@@ -84,7 +84,7 @@
           }
         },
         "property": {
-          "kind": 52,
+          "kind": 54,
           "name": "foo",
           "start": {
             "line": 3,
@@ -105,7 +105,7 @@
         }
       },
       "right": {
-        "kind": 78,
+        "kind": 80,
         "value": 42,
         "start": {
           "line": 3,

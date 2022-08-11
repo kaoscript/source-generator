@@ -1,12 +1,12 @@
 {
-  "kind": 74,
+  "kind": 76,
   "attributes": [],
   "body": [
     {
-      "kind": 27,
+      "kind": 29,
       "attributes": [],
       "variable": {
-        "kind": 52,
+        "kind": 54,
         "name": "foo",
         "start": {
           "line": 1,

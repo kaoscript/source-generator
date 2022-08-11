@@ -1,18 +1,18 @@
 {
-  "kind": 74,
+  "kind": 76,
   "attributes": [],
   "body": [
     {
-      "kind": 42,
+      "kind": 44,
       "attributes": [],
       "declarations": [
         {
-          "kind": 17,
+          "kind": 19,
           "attributes": [
             {
-              "kind": 6,
+              "kind": 8,
               "declaration": {
-                "kind": 52,
+                "kind": 54,
                 "name": "foobar",
                 "start": {
                   "line": 2,
@@ -34,7 +34,7 @@
             }
           ],
           "name": {
-            "kind": 52,
+            "kind": 54,
             "name": "Foobar",
             "start": {
               "line": 3,

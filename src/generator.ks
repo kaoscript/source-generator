@@ -406,6 +406,19 @@ export namespace Generator {
 
 				writer.code(']')
 			} // }}}
+			NodeKind::ArrayType => { // {{{
+				writer.expression(data.element)
+
+				writer.code('[]')
+
+				for var modifier in data.modifiers {
+					switch modifier.kind {
+						ModifierKind::Nullable => {
+							writer.code('?')
+						}
+					}
+				}
+			} // }}}
 			NodeKind::AttributeExpression => { // {{{
 				writer.expression(data.name).code('(')
 
@@ -966,12 +979,28 @@ export namespace Generator {
 					if element.kind == NodeKind::FunctionExpression {
 						toExpression(element, writer, writer => writer.expression(data.name))
 					}
-					else {
+					else if data.name? {
 						writer.expression(data.name).code(': ').expression(element)
+					}
+					else {
+						writer.code('...').expression(element)
 					}
 				}
 				else {
 					writer.expression(data.name)
+				}
+			} // }}}
+			NodeKind::ObjectType => { // {{{
+				writer.expression(data.element)
+
+				writer.code('{}')
+
+				for var modifier in data.modifiers {
+					switch modifier.kind {
+						ModifierKind::Nullable => {
+							writer.code('?')
+						}
+					}
 				}
 			} // }}}
 			NodeKind::OmittedExpression => { // {{{
@@ -1064,9 +1093,6 @@ export namespace Generator {
 			} // }}}
 			NodeKind::RegularExpression => { // {{{
 				writer.code(data.value)
-			} // }}}
-			NodeKind::ReturnTypeReference => { // {{{
-				writer.expression(data.value)
 			} // }}}
 			NodeKind::SequenceExpression => { // {{{
 				writer.code('(')
@@ -1214,6 +1240,14 @@ export namespace Generator {
 					writer.code(']')
 				}
 				else {
+					for var modifier in data.modifiers {
+						switch modifier.kind {
+							ModifierKind::Rest => {
+								writer.code('...')
+							}
+						}
+					}
+
 					writer.expression(data.typeName)
 
 					if data.typeParameters? {
@@ -1288,10 +1322,15 @@ export namespace Generator {
 				writer.expression(data.init)
 			} // }}}
 			NodeKind::VariableDeclarator => { // {{{
+				var mut nullable = false
+
 				for var modifier in data.modifiers {
 					switch modifier.kind {
 						ModifierKind::Immutable => {
 							writer.code('final ')
+						}
+						ModifierKind::Nullable => {
+							nullable = true
 						}
 						ModifierKind::Systemic => {
 							writer.code('systemic ')
@@ -1300,6 +1339,8 @@ export namespace Generator {
 				}
 
 				writer.expression(data.name)
+
+				writer.code('?') if nullable
 
 				if data.type? {
 					writer.code(': ').expression(data.type)
@@ -1660,6 +1701,36 @@ export namespace Generator {
 						line.code(' => ').expression(data.body)
 					}
 				}
+
+				line.done()
+			} // }}}
+			NodeKind::AliasDeclaration => { // {{{
+				var line = writer.newLine()
+
+				for modifier in data.modifiers {
+					switch modifier.kind {
+						ModifierKind::Private => {
+							line.code('private ')
+						}
+						ModifierKind::Protected => {
+							line.code('protected ')
+						}
+						ModifierKind::Public => {
+							line.code('public ')
+						}
+						ModifierKind::Static => {
+							line.code('static ')
+						}
+					}
+				}
+
+				line.code('alias ')
+
+				line.expression(data.name)
+
+				line.code(' = ')
+
+				line.expression(data.target)
 
 				line.done()
 			} // }}}

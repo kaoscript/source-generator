@@ -1,16 +1,16 @@
 {
-  "kind": 74,
+  "kind": 76,
   "attributes": [],
   "body": [
     {
-      "kind": 87,
+      "kind": 90,
       "attributes": [],
       "declarations": [
         {
-          "kind": 17,
+          "kind": 19,
           "attributes": [],
           "name": {
-            "kind": 52,
+            "kind": 54,
             "name": "Foobar",
             "start": {
               "line": 3,

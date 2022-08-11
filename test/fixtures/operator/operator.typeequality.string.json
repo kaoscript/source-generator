@@ -1,12 +1,12 @@
 {
-  "kind": 74,
+  "kind": 76,
   "attributes": [],
   "body": [
     {
-      "kind": 54,
+      "kind": 56,
       "attributes": [],
       "condition": {
-        "kind": 10,
+        "kind": 12,
         "operator": {
           "kind": 26,
           "modifiers": [],
@@ -28,7 +28,7 @@
           "column": 19
         },
         "left": {
-          "kind": 52,
+          "kind": 54,
           "name": "value",
           "start": {
             "line": 1,
@@ -40,10 +40,10 @@
           }
         },
         "right": {
-          "kind": 116,
+          "kind": 118,
           "modifiers": [],
           "typeName": {
-            "kind": 52,
+            "kind": 54,
             "name": "string",
             "start": {
               "line": 1,
@@ -65,7 +65,7 @@
         }
       },
       "whenTrue": {
-        "kind": 12,
+        "kind": 14,
         "attributes": [],
         "statements": [],
         "start": {

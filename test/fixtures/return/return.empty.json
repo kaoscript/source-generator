@@ -1,12 +1,12 @@
 {
-  "kind": 74,
+  "kind": 76,
   "attributes": [],
   "body": [
     {
-      "kind": 49,
+      "kind": 51,
       "attributes": [],
       "name": {
-        "kind": 52,
+        "kind": 54,
         "name": "foobar",
         "start": {
           "line": 1,
@@ -29,11 +29,11 @@
       "modifiers": [],
       "throws": [],
       "body": {
-        "kind": 12,
+        "kind": 14,
         "attributes": [],
         "statements": [
           {
-            "kind": 90,
+            "kind": 93,
             "attributes": [],
             "start": {
               "line": 2,

@@ -1,12 +1,12 @@
 {
-  "kind": 74,
+  "kind": 76,
   "attributes": [],
   "body": [
     {
-      "kind": 17,
+      "kind": 19,
       "attributes": [],
       "name": {
-        "kind": 52,
+        "kind": 54,
         "name": "Foobar",
         "start": {
           "line": 1,
@@ -20,7 +20,7 @@
       "modifiers": [],
       "members": [
         {
-          "kind": 85,
+          "kind": 88,
           "attributes": [],
           "modifiers": [
             {
@@ -36,7 +36,7 @@
             }
           ],
           "name": {
-            "kind": 52,
+            "kind": 54,
             "name": "foo",
             "start": {
               "line": 3,
@@ -56,13 +56,13 @@
             "column": 4
           },
           "mutator": {
-            "kind": 75,
+            "kind": 77,
             "body": {
-              "kind": 12,
+              "kind": 14,
               "attributes": [],
               "statements": [
                 {
-                  "kind": 10,
+                  "kind": 12,
                   "operator": {
                     "kind": 3,
                     "assignment": 8,
@@ -76,9 +76,9 @@
                     }
                   },
                   "left": {
-                    "kind": 108,
+                    "kind": 110,
                     "name": {
-                      "kind": 52,
+                      "kind": 54,
                       "name": "foo",
                       "start": {
                         "line": 5,
@@ -99,7 +99,7 @@
                     }
                   },
                   "right": {
-                    "kind": 10,
+                    "kind": 12,
                     "operator": {
                       "kind": 20,
                       "modifiers": [],
@@ -121,7 +121,7 @@
                       "column": 20
                     },
                     "left": {
-                      "kind": 52,
+                      "kind": 54,
                       "name": "foo",
                       "start": {
                         "line": 5,
@@ -133,7 +133,7 @@
                       }
                     },
                     "right": {
-                      "kind": 78,
+                      "kind": 80,
                       "value": 10,
                       "start": {
                         "line": 5,

@@ -1,17 +1,17 @@
 {
-  "kind": 74,
+  "kind": 76,
   "attributes": [],
   "body": [
     {
-      "kind": 122,
+      "kind": 124,
       "modifiers": [],
       "attributes": [],
       "variables": [
         {
-          "kind": 123,
+          "kind": 125,
           "modifiers": [],
           "name": {
-            "kind": 52,
+            "kind": 54,
             "name": "domain",
             "start": {
               "line": 1,
@@ -41,7 +41,7 @@
         "column": 16
       },
       "init": {
-        "kind": 80,
+        "kind": 82,
         "attributes": [],
         "properties": [],
         "start": {
@@ -55,16 +55,16 @@
       }
     },
     {
-      "kind": 14,
+      "kind": 16,
       "modifiers": [],
       "scope": {
         "kind": 3
       },
       "callee": {
-        "kind": 71,
+        "kind": 73,
         "modifiers": [],
         "object": {
-          "kind": 52,
+          "kind": 54,
           "name": "domain",
           "start": {
             "line": 3,
@@ -76,7 +76,7 @@
           }
         },
         "property": {
-          "kind": 52,
+          "kind": 54,
           "name": "foo",
           "start": {
             "line": 3,

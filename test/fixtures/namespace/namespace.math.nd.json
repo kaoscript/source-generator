@@ -1,13 +1,13 @@
 {
-  "kind": 74,
+  "kind": 76,
   "attributes": [],
   "body": [
     {
-      "kind": 40,
+      "kind": 42,
       "attributes": [],
       "declarations": [
         {
-          "kind": 77,
+          "kind": 79,
           "attributes": [],
           "modifiers": [
             {
@@ -23,7 +23,7 @@
             }
           ],
           "name": {
-            "kind": 52,
+            "kind": 54,
             "name": "Math",
             "start": {
               "line": 1,

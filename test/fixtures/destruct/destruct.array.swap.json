@@ -1,9 +1,9 @@
 {
-  "kind": 74,
+  "kind": 76,
   "attributes": [],
   "body": [
     {
-      "kind": 122,
+      "kind": 124,
       "modifiers": [
         {
           "kind": 9,
@@ -20,10 +20,10 @@
       "attributes": [],
       "variables": [
         {
-          "kind": 123,
+          "kind": 125,
           "modifiers": [],
           "name": {
-            "kind": 52,
+            "kind": 54,
             "name": "left",
             "start": {
               "line": 1,
@@ -53,7 +53,7 @@
         "column": 18
       },
       "init": {
-        "kind": 78,
+        "kind": 80,
         "value": 10,
         "start": {
           "line": 1,
@@ -66,7 +66,7 @@
       }
     },
     {
-      "kind": 122,
+      "kind": 124,
       "modifiers": [
         {
           "kind": 9,
@@ -83,10 +83,10 @@
       "attributes": [],
       "variables": [
         {
-          "kind": 123,
+          "kind": 125,
           "modifiers": [],
           "name": {
-            "kind": 52,
+            "kind": 54,
             "name": "right",
             "start": {
               "line": 2,
@@ -116,7 +116,7 @@
         "column": 19
       },
       "init": {
-        "kind": 78,
+        "kind": 80,
         "value": 20,
         "start": {
           "line": 2,
@@ -129,13 +129,13 @@
       }
     },
     {
-      "kind": 54,
+      "kind": 56,
       "attributes": [],
       "condition": {
-        "kind": 21,
+        "kind": 23,
         "values": [
           {
-            "kind": 52,
+            "kind": 54,
             "name": "right",
             "start": {
               "line": 4,
@@ -159,7 +159,7 @@
             }
           },
           {
-            "kind": 52,
+            "kind": 54,
             "name": "left",
             "start": {
               "line": 4,
@@ -181,11 +181,11 @@
         }
       },
       "whenTrue": {
-        "kind": 12,
+        "kind": 14,
         "attributes": [],
         "statements": [
           {
-            "kind": 10,
+            "kind": 12,
             "operator": {
               "kind": 3,
               "assignment": 8,
@@ -199,10 +199,10 @@
               }
             },
             "left": {
-              "kind": 2,
+              "kind": 3,
               "elements": [
                 {
-                  "kind": 11,
+                  "kind": 13,
                   "modifiers": [],
                   "start": {
                     "line": 5,
@@ -213,7 +213,7 @@
                     "column": 7
                   },
                   "name": {
-                    "kind": 52,
+                    "kind": 54,
                     "name": "left",
                     "start": {
                       "line": 5,
@@ -226,7 +226,7 @@
                   }
                 },
                 {
-                  "kind": 11,
+                  "kind": 13,
                   "modifiers": [],
                   "start": {
                     "line": 5,
@@ -237,7 +237,7 @@
                     "column": 14
                   },
                   "name": {
-                    "kind": 52,
+                    "kind": 54,
                     "name": "right",
                     "start": {
                       "line": 5,
@@ -260,10 +260,10 @@
               }
             },
             "right": {
-              "kind": 4,
+              "kind": 5,
               "values": [
                 {
-                  "kind": 52,
+                  "kind": 54,
                   "name": "right",
                   "start": {
                     "line": 5,
@@ -275,7 +275,7 @@
                   }
                 },
                 {
-                  "kind": 52,
+                  "kind": 54,
                   "name": "left",
                   "start": {
                     "line": 5,
