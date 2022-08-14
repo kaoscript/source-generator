@@ -1,4 +1,4 @@
-#![bin]
+#!/usr/bin/env kaoscript
 
 import 'fs-extra' => fse
 import 'klaw-sync' => klaw

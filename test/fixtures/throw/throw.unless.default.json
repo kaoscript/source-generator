@@ -3,12 +3,12 @@
   "attributes": [],
   "body": [
     {
-      "kind": 121,
+      "kind": 122,
       "attributes": [],
       "condition": {
-        "kind": 119,
+        "kind": 120,
         "operator": {
-          "kind": 4,
+          "kind": 3,
           "start": {
             "line": 1,
             "column": 39
@@ -40,7 +40,7 @@
         }
       },
       "whenFalse": {
-        "kind": 111,
+        "kind": 112,
         "attributes": [],
         "value": {
           "kind": 27,

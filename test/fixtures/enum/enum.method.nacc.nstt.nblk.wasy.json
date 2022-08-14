@@ -232,7 +232,7 @@
             "column": 57
           },
           "type": {
-            "kind": 118,
+            "kind": 119,
             "modifiers": [],
             "typeName": {
               "kind": 54,
@@ -272,7 +272,7 @@
                 }
               },
               {
-                "kind": 10,
+                "kind": 5,
                 "modifiers": [],
                 "start": {
                   "line": 10,

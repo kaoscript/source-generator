@@ -7,7 +7,7 @@
       "attributes": [],
       "declarations": [
         {
-          "kind": 125,
+          "kind": 126,
           "modifiers": [],
           "name": {
             "kind": 54,
@@ -30,7 +30,7 @@
             "column": 2
           },
           "type": {
-            "kind": 118,
+            "kind": 119,
             "modifiers": [],
             "typeName": {
               "kind": 54,
@@ -143,7 +143,7 @@
       "kind": 12,
       "operator": {
         "kind": 3,
-        "assignment": 8,
+        "assignment": 4,
         "start": {
           "line": 5,
           "column": 8

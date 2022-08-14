@@ -56,7 +56,7 @@
             "column": 24
           },
           "type": {
-            "kind": 118,
+            "kind": 119,
             "modifiers": [],
             "typeName": {
               "kind": 54,
@@ -134,7 +134,7 @@
                 }
               },
               "type": {
-                "kind": 118,
+                "kind": 119,
                 "modifiers": [
                   {
                     "kind": 18,
@@ -188,7 +188,7 @@
                 "kind": 12,
                 "operator": {
                   "kind": 3,
-                  "assignment": 8,
+                  "assignment": 4,
                   "start": {
                     "line": 7,
                     "column": 12
@@ -199,7 +199,7 @@
                   }
                 },
                 "left": {
-                  "kind": 110,
+                  "kind": 111,
                   "name": {
                     "kind": 54,
                     "name": "message",
@@ -247,7 +247,7 @@
                         }
                       },
                       {
-                        "kind": 10,
+                        "kind": 5,
                         "modifiers": [],
                         "start": {
                           "line": 7,

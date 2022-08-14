@@ -43,7 +43,7 @@
       }
     },
     {
-      "kind": 124,
+      "kind": 125,
       "modifiers": [
         {
           "kind": 9,
@@ -60,7 +60,7 @@
       "attributes": [],
       "variables": [
         {
-          "kind": 125,
+          "kind": 126,
           "modifiers": [],
           "name": {
             "kind": 54,
@@ -83,7 +83,7 @@
             "column": 26
           },
           "type": {
-            "kind": 118,
+            "kind": 119,
             "modifiers": [],
             "typeName": {
               "kind": 54,
@@ -107,7 +107,7 @@
             },
             "typeParameters": [
               {
-                "kind": 118,
+                "kind": 119,
                 "modifiers": [],
                 "typeName": {
                   "kind": 54,
@@ -312,7 +312,7 @@
             "column": 64
           },
           "type": {
-            "kind": 118,
+            "kind": 119,
             "modifiers": [],
             "typeName": {
               "kind": 54,
@@ -336,7 +336,7 @@
             },
             "typeParameters": [
               {
-                "kind": 118,
+                "kind": 119,
                 "modifiers": [],
                 "typeName": {
                   "kind": 54,
@@ -374,7 +374,7 @@
               "object": {
                 "kind": 12,
                 "operator": {
-                  "kind": 25,
+                  "kind": 22,
                   "modifiers": [],
                   "start": {
                     "line": 8,
@@ -406,7 +406,7 @@
                   }
                 },
                 "right": {
-                  "kind": 118,
+                  "kind": 119,
                   "modifiers": [],
                   "typeName": {
                     "kind": 54,
@@ -510,7 +510,7 @@
                 "body": {
                   "kind": 12,
                   "operator": {
-                    "kind": 24,
+                    "kind": 21,
                     "modifiers": [],
                     "start": {
                       "line": 8,

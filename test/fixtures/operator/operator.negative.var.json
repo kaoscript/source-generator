@@ -87,9 +87,9 @@
             "kind": 56,
             "attributes": [],
             "condition": {
-              "kind": 119,
+              "kind": 120,
               "operator": {
-                "kind": 8,
+                "kind": 7,
                 "start": {
                   "line": 2,
                   "column": 5

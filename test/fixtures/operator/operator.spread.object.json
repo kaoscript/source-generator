@@ -3,12 +3,12 @@
   "attributes": [],
   "body": [
     {
-      "kind": 124,
+      "kind": 125,
       "modifiers": [],
       "attributes": [],
       "variables": [
         {
-          "kind": 125,
+          "kind": 126,
           "modifiers": [],
           "name": {
             "kind": 54,
@@ -130,12 +130,12 @@
       }
     },
     {
-      "kind": 124,
+      "kind": 125,
       "modifiers": [],
       "attributes": [],
       "variables": [
         {
-          "kind": 125,
+          "kind": 126,
           "modifiers": [],
           "name": {
             "kind": 54,
@@ -172,9 +172,9 @@
         "attributes": [],
         "properties": [
           {
-            "kind": 119,
+            "kind": 120,
             "operator": {
-              "kind": 11,
+              "kind": 10,
               "start": {
                 "line": 2,
                 "column": 14

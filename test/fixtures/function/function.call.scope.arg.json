@@ -118,9 +118,9 @@
             },
             "arguments": [
               {
-                "kind": 119,
+                "kind": 120,
                 "operator": {
-                  "kind": 11,
+                  "kind": 10,
                   "start": {
                     "line": 2,
                     "column": 11

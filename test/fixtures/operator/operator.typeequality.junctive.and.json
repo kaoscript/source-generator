@@ -64,7 +64,7 @@
             "condition": {
               "kind": 12,
               "operator": {
-                "kind": 26,
+                "kind": 23,
                 "modifiers": [],
                 "start": {
                   "line": 2,
@@ -111,7 +111,7 @@
                 },
                 "operands": [
                   {
-                    "kind": 118,
+                    "kind": 119,
                     "modifiers": [],
                     "typeName": {
                       "kind": 54,
@@ -135,7 +135,7 @@
                     }
                   },
                   {
-                    "kind": 118,
+                    "kind": 119,
                     "modifiers": [],
                     "typeName": {
                       "kind": 54,
