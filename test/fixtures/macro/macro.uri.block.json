@@ -59,7 +59,19 @@
                 "line": 3,
                 "column": 27
               },
-              "name": {
+              "external": {
+                "kind": 54,
+                "name": "scheme",
+                "start": {
+                  "line": 3,
+                  "column": 13
+                },
+                "end": {
+                  "line": 3,
+                  "column": 19
+                }
+              },
+              "internal": {
                 "kind": 54,
                 "name": "scheme",
                 "start": {
@@ -120,7 +132,19 @@
                 "line": 3,
                 "column": 87
               },
-              "name": {
+              "external": {
+                "kind": 54,
+                "name": "meta",
+                "start": {
+                  "line": 3,
+                  "column": 30
+                },
+                "end": {
+                  "line": 3,
+                  "column": 34
+                }
+              },
+              "internal": {
                 "kind": 54,
                 "name": "meta",
                 "start": {

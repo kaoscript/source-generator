@@ -310,6 +310,21 @@ export namespace Generator {
 		transformStatement(data, writer = this) => @writer.transformStatement(data, this)
 	}
 
+	func isDifferentName(a, b): Boolean { # {{{
+		return true unless a.kind == b.kind
+
+		switch a.kind {
+			NodeKind::Identifier => {
+				return a.name != b.name
+			}
+			NodeKind::ThisExpression => {
+				return a.name.name != b.name.name
+			}
+		}
+
+		return false
+	} # }}}
+
 	func generate(data, options = null) { # {{{
 		var writer = new KSWriter(options)
 
@@ -1010,15 +1025,48 @@ export namespace Generator {
 			NodeKind::Parameter => { # {{{
 				toAttributes(data, AttributeMode::Inline, writer)
 
-				var dyn rest: Boolean = false
+				var mut rest: Boolean = false
+				var mut only: Boolean = false
+
+				for var modifier in data.modifiers {
+					switch modifier.kind {
+						ModifierKind::Mutable => {
+							writer.code('mut ')
+						}
+						ModifierKind::NameOnly => {
+							writer.code('*')
+
+							only = true
+						}
+						ModifierKind::PositionOnly => {
+							writer.code('#')
+
+							only = true
+						}
+						ModifierKind::Rest => {
+							rest = true
+						}
+					}
+				}
+
+				if !?data.external {
+					if only || !?data.internal || data.internal.kind != NodeKind::Identifier & NodeKind::ThisExpression {
+						// do nothing
+					}
+					else {
+						writer.code('_ % ')
+					}
+				}
+				else if !?data.internal || isDifferentName(data.external, data.internal) {
+					writer.expression(data.external)
+
+					writer.code(' % ')
+				}
 
 				for var modifier in data.modifiers {
 					switch modifier.kind {
 						ModifierKind::AutoEvaluate => {
 							writer.code('@')
-						}
-						ModifierKind::Mutable => {
-							writer.code('mut ')
 						}
 						ModifierKind::Rest => {
 							writer.code('...')
@@ -1052,8 +1100,8 @@ export namespace Generator {
 					}
 				}
 
-				if data.name? {
-					writer.expression(data.name)
+				if data.internal? {
+					writer.expression(data.internal)
 
 					for var modifier in data.modifiers {
 						switch modifier.kind {
@@ -1066,7 +1114,7 @@ export namespace Generator {
 						}
 					}
 				}
-				else if !rest {
+				else if !rest || data.external? {
 					writer.code('_')
 				}
 
@@ -2010,7 +2058,7 @@ export namespace Generator {
 			} # }}}
 			NodeKind::FieldDeclaration => { # {{{
 				var line = writer.newLine()
-				
+
 				var mut nullable = false
 
 				for modifier in data.modifiers {
@@ -2054,7 +2102,7 @@ export namespace Generator {
 				}
 
 				line.expression(data.name)
-				
+
 				line.code('?') if nullable
 
 				if data.type? {

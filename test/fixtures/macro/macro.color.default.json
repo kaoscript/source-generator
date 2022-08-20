@@ -59,7 +59,19 @@
                 "line": 2,
                 "column": 35
               },
-              "name": {
+              "external": {
+                "kind": 54,
+                "name": "data",
+                "start": {
+                  "line": 2,
+                  "column": 23
+                },
+                "end": {
+                  "line": 2,
+                  "column": 27
+                }
+              },
+              "internal": {
                 "kind": 54,
                 "name": "data",
                 "start": {
