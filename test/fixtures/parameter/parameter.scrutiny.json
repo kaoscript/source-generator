@@ -8,6 +8,7 @@
       "declarations": [
         {
           "kind": 126,
+          "attributes": [],
           "modifiers": [],
           "name": {
             "kind": 54,
@@ -67,7 +68,19 @@
         {
           "kind": 86,
           "attributes": [],
-          "modifiers": [],
+          "modifiers": [
+            {
+              "kind": 19,
+              "start": {
+                "line": 3,
+                "column": 14
+              },
+              "end": {
+                "line": 3,
+                "column": 15
+              }
+            }
+          ],
           "start": {
             "line": 3,
             "column": 10
@@ -98,34 +111,6 @@
             "end": {
               "line": 3,
               "column": 14
-            }
-          },
-          "type": {
-            "kind": 119,
-            "modifiers": [
-              {
-                "kind": 19,
-                "start": {
-                  "line": 3,
-                  "column": 14
-                },
-                "end": {
-                  "line": 3,
-                  "column": 15
-                }
-              }
-            ],
-            "typeName": {
-              "kind": 54,
-              "name": "any"
-            },
-            "start": {
-              "line": 3,
-              "column": 14
-            },
-            "end": {
-              "line": 3,
-              "column": 15
             }
           }
         }
@@ -271,6 +256,18 @@
             "end": {
               "line": 7,
               "column": 14
+            }
+          },
+          "operator": {
+            "kind": 3,
+            "assignment": 6,
+            "start": {
+              "line": 7,
+              "column": 15
+            },
+            "end": {
+              "line": 7,
+              "column": 16
             }
           },
           "defaultValue": {
@@ -645,6 +642,18 @@
             "end": {
               "line": 15,
               "column": 23
+            }
+          },
+          "operator": {
+            "kind": 3,
+            "assignment": 6,
+            "start": {
+              "line": 15,
+              "column": 24
+            },
+            "end": {
+              "line": 15,
+              "column": 25
             }
           },
           "defaultValue": {

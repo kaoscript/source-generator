@@ -4,6 +4,7 @@
   "body": [
     {
       "kind": 125,
+      "attributes": [],
       "modifiers": [
         {
           "kind": 9,
@@ -17,10 +18,10 @@
           }
         }
       ],
-      "attributes": [],
       "variables": [
         {
           "kind": 126,
+          "attributes": [],
           "modifiers": [],
           "name": {
             "kind": 54,
@@ -45,6 +46,7 @@
         },
         {
           "kind": 126,
+          "attributes": [],
           "modifiers": [],
           "name": {
             "kind": 54,
@@ -69,6 +71,7 @@
         },
         {
           "kind": 126,
+          "attributes": [],
           "modifiers": [],
           "name": {
             "kind": 54,
@@ -105,7 +108,7 @@
       "kind": 12,
       "operator": {
         "kind": 3,
-        "assignment": 4,
+        "assignment": 6,
         "start": {
           "line": 3,
           "column": 3
@@ -131,7 +134,7 @@
         "kind": 12,
         "operator": {
           "kind": 3,
-          "assignment": 4,
+          "assignment": 6,
           "start": {
             "line": 3,
             "column": 7
@@ -165,7 +168,7 @@
           "kind": 12,
           "operator": {
             "kind": 3,
-            "assignment": 4,
+            "assignment": 6,
             "start": {
               "line": 3,
               "column": 11

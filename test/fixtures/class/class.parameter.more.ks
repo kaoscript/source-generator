@@ -1,9 +1,9 @@
 class Foo {
 	foo(_, x) {
 	}
-	bar(x: any?, _, z: any?) {
+	bar(x?, _, z?) {
 	}
-	baz(x: any?, _: any?, z: any?) {
+	baz(x?, _?, z?) {
 	}
 	qux(...{,3}items) {
 	}

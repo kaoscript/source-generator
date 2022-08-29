@@ -1,8 +1,8 @@
 struct Point {
-	x: any?
-	y: any?
+	x?
+	y?
 }
 struct Pair2 {
-	x: any? = 1
-	y: any? = 2
+	x? = 1
+	y? = 2
 }

@@ -5,6 +5,7 @@
     {
       "kind": 19,
       "attributes": [],
+      "modifiers": [],
       "name": {
         "kind": 54,
         "name": "Foobar",
@@ -17,7 +18,6 @@
           "column": 13
         }
       },
-      "modifiers": [],
       "members": [
         {
           "kind": 74,
@@ -380,6 +380,18 @@
                   "column": 51
                 }
               },
+              "operator": {
+                "kind": 3,
+                "assignment": 6,
+                "start": {
+                  "line": 6,
+                  "column": 52
+                },
+                "end": {
+                  "line": 6,
+                  "column": 53
+                }
+              },
               "defaultValue": {
                 "kind": 5,
                 "values": [],
@@ -657,6 +669,18 @@
                   "column": 53
                 }
               },
+              "operator": {
+                "kind": 3,
+                "assignment": 6,
+                "start": {
+                  "line": 10,
+                  "column": 54
+                },
+                "end": {
+                  "line": 10,
+                  "column": 55
+                }
+              },
               "defaultValue": {
                 "kind": 5,
                 "values": [],
@@ -893,6 +917,18 @@
                     }
                   }
                 ]
+              },
+              "operator": {
+                "kind": 3,
+                "assignment": 6,
+                "start": {
+                  "line": 14,
+                  "column": 43
+                },
+                "end": {
+                  "line": 14,
+                  "column": 44
+                }
               },
               "defaultValue": {
                 "kind": 5,
@@ -1418,6 +1454,18 @@
                 "end": {
                   "line": 26,
                   "column": 40
+                }
+              },
+              "operator": {
+                "kind": 3,
+                "assignment": 6,
+                "start": {
+                  "line": 26,
+                  "column": 41
+                },
+                "end": {
+                  "line": 26,
+                  "column": 42
                 }
               },
               "defaultValue": {

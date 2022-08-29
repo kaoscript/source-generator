@@ -62,6 +62,18 @@
               "column": 14
             }
           },
+          "operator": {
+            "kind": 3,
+            "assignment": 6,
+            "start": {
+              "line": 1,
+              "column": 15
+            },
+            "end": {
+              "line": 1,
+              "column": 16
+            }
+          },
           "defaultValue": {
             "kind": 80,
             "value": 1,
@@ -241,6 +253,18 @@
             "end": {
               "line": 5,
               "column": 19
+            }
+          },
+          "operator": {
+            "kind": 3,
+            "assignment": 6,
+            "start": {
+              "line": 5,
+              "column": 20
+            },
+            "end": {
+              "line": 5,
+              "column": 21
             }
           },
           "defaultValue": {
@@ -436,6 +460,18 @@
               "column": 20
             }
           },
+          "operator": {
+            "kind": 3,
+            "assignment": 6,
+            "start": {
+              "line": 9,
+              "column": 21
+            },
+            "end": {
+              "line": 9,
+              "column": 22
+            }
+          },
           "defaultValue": {
             "kind": 80,
             "value": 1,
@@ -615,6 +651,18 @@
             "end": {
               "line": 13,
               "column": 19
+            }
+          },
+          "operator": {
+            "kind": 3,
+            "assignment": 6,
+            "start": {
+              "line": 13,
+              "column": 20
+            },
+            "end": {
+              "line": 13,
+              "column": 21
             }
           },
           "defaultValue": {
@@ -810,6 +858,18 @@
               "column": 21
             }
           },
+          "operator": {
+            "kind": 3,
+            "assignment": 6,
+            "start": {
+              "line": 17,
+              "column": 22
+            },
+            "end": {
+              "line": 17,
+              "column": 23
+            }
+          },
           "defaultValue": {
             "kind": 80,
             "value": 1,
@@ -934,7 +994,19 @@
         {
           "kind": 86,
           "attributes": [],
-          "modifiers": [],
+          "modifiers": [
+            {
+              "kind": 19,
+              "start": {
+                "line": 21,
+                "column": 16
+              },
+              "end": {
+                "line": 21,
+                "column": 17
+              }
+            }
+          ],
           "start": {
             "line": 21,
             "column": 12
@@ -967,32 +1039,16 @@
               "column": 16
             }
           },
-          "type": {
-            "kind": 119,
-            "modifiers": [
-              {
-                "kind": 19,
-                "start": {
-                  "line": 21,
-                  "column": 16
-                },
-                "end": {
-                  "line": 21,
-                  "column": 17
-                }
-              }
-            ],
-            "typeName": {
-              "kind": 54,
-              "name": "any"
-            },
+          "operator": {
+            "kind": 3,
+            "assignment": 6,
             "start": {
               "line": 21,
-              "column": 16
+              "column": 18
             },
             "end": {
               "line": 21,
-              "column": 17
+              "column": 19
             }
           },
           "defaultValue": {

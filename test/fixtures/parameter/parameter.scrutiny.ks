@@ -1,5 +1,5 @@
 extern console
-func foo(item: any?) {
+func foo(item?) {
 	console.log(item)
 }
 func bar(item = null) {

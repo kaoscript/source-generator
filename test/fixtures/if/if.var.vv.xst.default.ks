@@ -1,0 +1,2 @@
+if var x ?= foobar() {
+}

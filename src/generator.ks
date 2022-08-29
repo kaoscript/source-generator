@@ -21,15 +21,19 @@ export namespace Generator {
 		`\(AssignmentOperatorKind::Addition)`			: ' += '
 		`\(AssignmentOperatorKind::And)`				: ' &&= '
 		`\(AssignmentOperatorKind::Division)`			: ' /= '
-		`\(AssignmentOperatorKind::Equality)`			: ' = '
+		`\(AssignmentOperatorKind::Empty)`				: ' !#= '
+		`\(AssignmentOperatorKind::EmptyCoalescing)`	: ' ##= '
+		`\(AssignmentOperatorKind::Equals)`				: ' = '
 		`\(AssignmentOperatorKind::Existential)`		: ' ?= '
 		`\(AssignmentOperatorKind::LeftShift)`			: ' <<= '
 		`\(AssignmentOperatorKind::Modulo)`				: ' %= '
 		`\(AssignmentOperatorKind::Multiplication)`		: ' *= '
+		`\(AssignmentOperatorKind::NonEmpty)`			: ' #= '
 		`\(AssignmentOperatorKind::NonExistential)`		: ' !?= '
 		`\(AssignmentOperatorKind::NullCoalescing)`		: ' ??= '
 		`\(AssignmentOperatorKind::Or)`					: ' ||= '
 		`\(AssignmentOperatorKind::Quotient)`			: ' /.= '
+		`\(AssignmentOperatorKind::Return)`				: ' <- '
 		`\(AssignmentOperatorKind::RightShift)`			: ' >>= '
 		`\(AssignmentOperatorKind::Subtraction)`		: ' -= '
 		`\(AssignmentOperatorKind::Xor)`				: ' ^^= '
@@ -40,6 +44,7 @@ export namespace Generator {
 		`\(BinaryOperatorKind::And)`				: ' && '
 		`\(BinaryOperatorKind::Division)`			: ' / '
 		`\(BinaryOperatorKind::Equality)`			: ' == '
+		`\(BinaryOperatorKind::EmptyCoalescing)`	: ' ## '
 		`\(BinaryOperatorKind::GreaterThan)`		: ' > '
 		`\(BinaryOperatorKind::GreaterThanOrEqual)`	: ' >= '
 		`\(BinaryOperatorKind::Imply)`				: ' -> '
@@ -68,18 +73,15 @@ export namespace Generator {
 	}
 
 	var UnaryPrefixOperatorSymbol = {
-		`\(UnaryOperatorKind::DecrementPrefix)`		: '--'
 		`\(UnaryOperatorKind::Existential)`			: '?'
-		`\(UnaryOperatorKind::IncrementPrefix)`		: '++'
 		`\(UnaryOperatorKind::Negation)`			: '!'
 		`\(UnaryOperatorKind::Negative)`			: '-'
+		`\(UnaryOperatorKind::NonEmpty)`			: '#'
 		`\(UnaryOperatorKind::Spread)`				: '...'
 	}
 
 	var UnaryPostfixOperatorSymbol = {
-		`\(UnaryOperatorKind::DecrementPostfix)`	: '--'
 		`\(UnaryOperatorKind::ForcedTypeCasting)`	: '!!'
-		`\(UnaryOperatorKind::IncrementPostfix)`	: '++'
 		`\(UnaryOperatorKind::NullableTypeCasting)`	: '!?'
 	}
 
@@ -1118,12 +1120,10 @@ export namespace Generator {
 					writer.code('_')
 				}
 
-				if data.type? {
-					writer.code(': ').expression(data.type)
-				}
+				toType(data, writer)
 
 				if data.defaultValue? {
-					writer.code(' = ').expression(data.defaultValue)
+					writer.code(AssignmentOperatorSymbol[data.operator.assignment]).expression(data.defaultValue)
 				}
 			} # }}}
 			NodeKind::PolyadicExpression => { # {{{
@@ -1357,13 +1357,15 @@ export namespace Generator {
 					writer.expression(variable)
 				}
 
-				writer.code(' = ')
+				if data.operator.kind == BinaryOperatorKind::Assignment {
+					writer.code(AssignmentOperatorSymbol[data.operator.assignment])
+				}
 
 				if data.await {
 					writer.code('await ')
 				}
 
-				writer.expression(data.init)
+				writer.expression(data.value)
 			} # }}}
 			NodeKind::VariableDeclarator => { # {{{
 				var mut nullable = false
@@ -1728,6 +1730,21 @@ export namespace Generator {
 
 	func toQuote(value) { # {{{
 		return '"' + value.replace(/"/g, '\\"').replace(/\n/g, '\\n') + '"'
+	} # }}}
+
+	func toType(data, writer) { # {{{
+		if data.type? {
+			writer.code(': ').expression(data.type)
+		}
+		else {
+			for var modifier in data.modifiers {
+				switch modifier.kind {
+					ModifierKind::Nullable => {
+						writer.code('?')
+					}
+				}
+			}
+		}
 	} # }}}
 
 	func toStatement(mut data, writer) {
@@ -2749,9 +2766,7 @@ export namespace Generator {
 
 				line.expression(data.name)
 
-				if data.type? {
-					line.code(': ').expression(data.type)
-				}
+				toType(data, line)
 
 				if data.defaultValue? {
 					line.code(' = ').expression(data.defaultValue)
@@ -2916,9 +2931,7 @@ export namespace Generator {
 				if data.name? {
 					writer.expression(data.name)
 
-					if data.type? {
-						writer.code(': ').expression(data.type)
-					}
+					toType(data, writer)
 				}
 				else {
 					writer.expression(data.type)
@@ -3020,14 +3033,14 @@ export namespace Generator {
 					line.expression(variable)
 				}
 
-				if data.init? {
+				if data.value? {
 					line.code(' = ')
 
 					if data.await {
 						line.code('await ')
 					}
 
-					line.expression(data.init)
+					line.expression(data.value)
 				}
 
 				line.done()

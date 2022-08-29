@@ -22,6 +22,7 @@ cls:
 	printf '\033[2J\033[3J\033[1;1H'
 
 update:
+	@make clean
 	rm -rf node_modules package-lock.json
 	nrm use local
 	npm i
@@ -37,6 +38,6 @@ dev:
 	@make cls
 
 	@# tests
-	@# npx kaoscript test/generate.dev.ks "generate "
+	npx kaoscript test/generate.dev.ks "generate "
 
 .PHONY: test coverage sync

@@ -1,6 +1,6 @@
 func foo(x! = "foobar") {
 }
-func bar(x!: any? = "foobar") {
+func bar(x!? = "foobar") {
 }
 func baz(x!: String = "foobar") {
 }

@@ -4,11 +4,12 @@
   "body": [
     {
       "kind": 125,
-      "modifiers": [],
       "attributes": [],
+      "modifiers": [],
       "variables": [
         {
           "kind": 126,
+          "attributes": [],
           "modifiers": [],
           "name": {
             "kind": 54,
@@ -40,7 +41,7 @@
         "line": 1,
         "column": 48
       },
-      "init": {
+      "value": {
         "kind": 69,
         "modifiers": [],
         "parameters": [
@@ -170,7 +171,7 @@
         "body": {
           "kind": 12,
           "operator": {
-            "kind": 21,
+            "kind": 22,
             "modifiers": [],
             "start": {
               "line": 1,

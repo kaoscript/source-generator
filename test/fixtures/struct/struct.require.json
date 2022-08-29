@@ -9,6 +9,7 @@
         {
           "kind": 97,
           "attributes": [],
+          "modifiers": [],
           "name": {
             "kind": 54,
             "name": "Point",
@@ -24,6 +25,8 @@
           "fields": [
             {
               "kind": 98,
+              "attributes": [],
+              "modifiers": [],
               "name": {
                 "kind": 54,
                 "name": "x",
@@ -71,6 +74,8 @@
             },
             {
               "kind": 98,
+              "attributes": [],
+              "modifiers": [],
               "name": {
                 "kind": 54,
                 "name": "y",
@@ -138,6 +143,7 @@
     },
     {
       "kind": 125,
+      "attributes": [],
       "modifiers": [
         {
           "kind": 9,
@@ -151,10 +157,10 @@
           }
         }
       ],
-      "attributes": [],
       "variables": [
         {
           "kind": 126,
+          "attributes": [],
           "modifiers": [],
           "name": {
             "kind": 54,
@@ -186,7 +192,7 @@
         "line": 6,
         "column": 32
       },
-      "init": {
+      "value": {
         "kind": 16,
         "modifiers": [],
         "scope": {

@@ -21,6 +21,8 @@
       "fields": [
         {
           "kind": 117,
+          "attributes": [],
+          "modifiers": [],
           "start": {
             "line": 1,
             "column": 12
@@ -56,6 +58,8 @@
         },
         {
           "kind": 117,
+          "attributes": [],
+          "modifiers": [],
           "start": {
             "line": 1,
             "column": 20
@@ -118,6 +122,8 @@
       "fields": [
         {
           "kind": 117,
+          "attributes": [],
+          "modifiers": [],
           "start": {
             "line": 3,
             "column": 14
@@ -175,11 +181,12 @@
     },
     {
       "kind": 125,
-      "modifiers": [],
       "attributes": [],
+      "modifiers": [],
       "variables": [
         {
           "kind": 126,
+          "attributes": [],
           "modifiers": [],
           "name": {
             "kind": 54,
@@ -211,7 +218,7 @@
         "line": 5,
         "column": 36
       },
-      "init": {
+      "value": {
         "kind": 16,
         "modifiers": [],
         "scope": {

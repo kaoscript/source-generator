@@ -5,6 +5,7 @@
     {
       "kind": 19,
       "attributes": [],
+      "modifiers": [],
       "name": {
         "kind": 54,
         "name": "Greetings",
@@ -17,7 +18,6 @@
           "column": 16
         }
       },
-      "modifiers": [],
       "members": [
         {
           "kind": 46,
@@ -200,7 +200,7 @@
                 "kind": 12,
                 "operator": {
                   "kind": 3,
-                  "assignment": 4,
+                  "assignment": 6,
                   "start": {
                     "line": 7,
                     "column": 12
@@ -259,7 +259,7 @@
                         }
                       },
                       {
-                        "kind": 5,
+                        "kind": 6,
                         "modifiers": [],
                         "start": {
                           "line": 7,

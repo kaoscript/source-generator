@@ -9,18 +9,6 @@
         {
           "kind": 19,
           "attributes": [],
-          "name": {
-            "kind": 54,
-            "name": "Array",
-            "start": {
-              "line": 1,
-              "column": 22
-            },
-            "end": {
-              "line": 1,
-              "column": 27
-            }
-          },
           "modifiers": [
             {
               "kind": 28,
@@ -34,6 +22,18 @@
               }
             }
           ],
+          "name": {
+            "kind": 54,
+            "name": "Array",
+            "start": {
+              "line": 1,
+              "column": 22
+            },
+            "end": {
+              "line": 1,
+              "column": 27
+            }
+          },
           "members": [],
           "start": {
             "line": 1,
@@ -160,6 +160,18 @@
                   "column": 21
                 }
               },
+              "operator": {
+                "kind": 3,
+                "assignment": 6,
+                "start": {
+                  "line": 4,
+                  "column": 22
+                },
+                "end": {
+                  "line": 4,
+                  "column": 23
+                }
+              },
               "defaultValue": {
                 "kind": 80,
                 "value": 0,
@@ -271,7 +283,7 @@
                       }
                     },
                     {
-                      "kind": 9,
+                      "kind": 10,
                       "modifiers": [],
                       "start": {
                         "line": 5,
@@ -451,7 +463,7 @@
                       }
                     },
                     {
-                      "kind": 5,
+                      "kind": 6,
                       "modifiers": [],
                       "start": {
                         "line": 8,
@@ -494,7 +506,7 @@
                       "condition": {
                         "kind": 120,
                         "operator": {
-                          "kind": 7,
+                          "kind": 3,
                           "start": {
                             "line": 9,
                             "column": 7
@@ -807,7 +819,7 @@
                             "condition": {
                               "kind": 120,
                               "operator": {
-                                "kind": 7,
+                                "kind": 3,
                                 "start": {
                                   "line": 15,
                                   "column": 8

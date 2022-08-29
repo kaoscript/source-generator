@@ -5,6 +5,7 @@
     {
       "kind": 19,
       "attributes": [],
+      "modifiers": [],
       "name": {
         "kind": 54,
         "name": "Vector",
@@ -17,7 +18,6 @@
           "column": 13
         }
       },
-      "modifiers": [],
       "members": [
         {
           "kind": 46,
@@ -223,7 +223,7 @@
                   "kind": 12,
                   "operator": {
                     "kind": 3,
-                    "assignment": 4,
+                    "assignment": 6,
                     "start": {
                       "line": 8,
                       "column": 12
