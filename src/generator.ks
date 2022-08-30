@@ -110,7 +110,7 @@ export namespace Generator {
 			_mode: KSWriterMode
 			_stack: Array			= []
 		}
-		constructor(options = null) { # {{{
+		constructor(options? = null) { # {{{
 			super(Dictionary.merge({
 				mode: KSWriterMode::Default
 				classes: {
@@ -327,7 +327,7 @@ export namespace Generator {
 		return false
 	} # }}}
 
-	func generate(data, options = null) { # {{{
+	func generate(data, options? = null) { # {{{
 		var writer = new KSWriter(options)
 
 		toStatement(data, writer)
@@ -361,7 +361,7 @@ export namespace Generator {
 		}
 	} # }}}
 
-	func toExpression(data, writer, header = null) {
+	func toExpression(data, writer, header? = null) {
 		switch data.kind {
 			NodeKind::ArrayBinding => { # {{{
 				writer.code('[')
@@ -399,21 +399,21 @@ export namespace Generator {
 			NodeKind::ArrayRange => { # {{{
 				writer.code('[')
 
-				if data.from? {
+				if ?data.from {
 					writer.expression(data.from)
 				}
 				else {
 					writer.expression(data.then).code('<')
 				}
 
-				if data.to? {
+				if ?data.to {
 					writer.code('..').expression(data.to)
 				}
 				else {
 					writer.code('..<').expression(data.til)
 				}
 
-				if data.by? {
+				if ?data.by {
 					writer.code('..').expression(data.by)
 				}
 
@@ -511,8 +511,8 @@ export namespace Generator {
 					}
 				}
 
-				if data.name? {
-					if data.alias? {
+				if ?data.name {
+					if ?data.alias {
 						if computed {
 							writer.code('[').expression(data.name).code(']')
 						}
@@ -543,12 +543,12 @@ export namespace Generator {
 							writer.code(']')
 						}
 
-						if data.type? {
+						if ?data.type {
 							writer.code(': ').expression(data.type)
 						}
 					}
 
-					if data.defaultValue? {
+					if ?data.defaultValue {
 						writer.code(' = ').expression(data.defaultValue)
 					}
 				}
@@ -728,7 +728,7 @@ export namespace Generator {
 			NodeKind::FunctionExpression => { # {{{
 				toFunctionHeader(data, writer => {
 					if writer.mode() == KSWriterMode::Property {
-						if header? {
+						if ?header {
 							header(writer)
 						}
 					}
@@ -737,7 +737,7 @@ export namespace Generator {
 					}
 				}, writer)
 
-				if data.body? {
+				if ?data.body {
 					if data.body.kind == NodeKind::Block {
 						writer.newBlock().expression(data.body).done()
 					}
@@ -764,7 +764,7 @@ export namespace Generator {
 					.code(' if ')
 					.expression(data.condition)
 
-				if data.whenFalse? {
+				if ?data.whenFalse {
 					writer
 						.code(' else ')
 						.expression(data.whenFalse)
@@ -777,7 +777,7 @@ export namespace Generator {
 					}
 				}
 
-				if data.name? {
+				if ?data.name {
 					writer.expression(data.name).code(': ')
 				}
 
@@ -986,13 +986,13 @@ export namespace Generator {
 			} # }}}
 			NodeKind::ObjectMember => { # {{{
 				var value = data.value ?? data.type
-				if value? {
+				if ?value {
 					var element = writer.transformExpression(value)
 
 					if element.kind == NodeKind::FunctionExpression {
 						toExpression(element, writer, writer => writer.expression(data.name))
 					}
-					else if data.name? {
+					else if ?data.name {
 						writer.expression(data.name).code(': ').expression(element)
 					}
 					else {
@@ -1102,7 +1102,7 @@ export namespace Generator {
 					}
 				}
 
-				if data.internal? {
+				if ?data.internal {
 					writer.expression(data.internal)
 
 					for var modifier in data.modifiers {
@@ -1116,13 +1116,13 @@ export namespace Generator {
 						}
 					}
 				}
-				else if !rest || data.external? {
+				else if !rest || ?data.external {
 					writer.code('_')
 				}
 
 				toType(data, writer)
 
-				if data.defaultValue? {
+				if ?data.defaultValue {
 					writer.code(AssignmentOperatorSymbol[data.operator.assignment]).expression(data.defaultValue)
 				}
 			} # }}}
@@ -1181,21 +1181,21 @@ export namespace Generator {
 				writer.code('}')
 			} # }}}
 			NodeKind::SwitchConditionRange => { # {{{
-				if data.from? {
+				if ?data.from {
 					writer.expression(data.from)
 				}
 				else {
 					writer.expression(data.then).code('<')
 				}
 
-				if data.to? {
+				if ?data.to {
 					writer.code('..').expression(data.to)
 				}
 				else {
 					writer.code('..<').expression(data.til)
 				}
 
-				if data.by? {
+				if ?data.by {
 					writer.code('..').expression(data.by)
 				}
 			} # }}}
@@ -1252,12 +1252,12 @@ export namespace Generator {
 
 				writer.code(' ').expression(data.argument)
 
-				if data.defaultValue? {
+				if ?data.defaultValue {
 					writer.code(' ~~ ').expression(data.defaultValue)
 				}
 			} # }}}
 			NodeKind::TypeReference => { # {{{
-				if data.properties? {
+				if ?data.properties {
 					var o = writer.newObject()
 
 					o.pushMode(KSWriterMode::Property)
@@ -1270,7 +1270,7 @@ export namespace Generator {
 
 					o.done()
 				}
-				else if data.elements? {
+				else if ?data.elements {
 					writer.code('[')
 
 					for var element, index in data.elements {
@@ -1294,7 +1294,7 @@ export namespace Generator {
 
 					writer.expression(data.typeName)
 
-					if data.typeParameters? {
+					if ?data.typeParameters {
 						writer.code('<')
 
 						for var parameter, index in data.typeParameters {
@@ -1314,7 +1314,7 @@ export namespace Generator {
 				}
 			} # }}}
 			NodeKind::UnaryExpression => { # {{{
-				if UnaryPrefixOperatorSymbol[data.operator.kind]? {
+				if ?UnaryPrefixOperatorSymbol[data.operator.kind] {
 					writer
 						.code(UnaryPrefixOperatorSymbol[data.operator.kind])
 						.wrap(data.argument)
@@ -1388,7 +1388,7 @@ export namespace Generator {
 
 				writer.code('?') if nullable
 
-				if data.type? {
+				if ?data.type {
 					writer.code(': ').expression(data.type)
 				}
 			} # }}}
@@ -1400,7 +1400,7 @@ export namespace Generator {
 	}
 
 	func toFunctionHeader(data, header, writer) { # {{{
-		if data.modifiers? {
+		if ?data.modifiers {
 			for modifier in data.modifiers {
 				switch modifier.kind {
 					ModifierKind::Abstract => {
@@ -1439,11 +1439,11 @@ export namespace Generator {
 
 		header(writer)
 
-		if data.name? {
+		if ?data.name {
 			writer.expression(data.name)
 		}
 
-		if data.parameters? {
+		if ?data.parameters {
 			writer.code('(')
 
 			for parameter, i in data.parameters {
@@ -1457,7 +1457,7 @@ export namespace Generator {
 			writer.code(')')
 		}
 
-		if data.type? {
+		if ?data.type {
 			writer.code(': ').expression(data.type)
 		}
 
@@ -1488,7 +1488,7 @@ export namespace Generator {
 				.code(' if ')
 				.expression(data.condition)
 
-			if data.whenFalse? {
+			if ?data.whenFalse {
 				writer
 					.code(' else ')
 					.expression(data.whenFalse.value)
@@ -1521,25 +1521,25 @@ export namespace Generator {
 					.code(' from ')
 					.expression(data.from)
 
-				if data.til? {
+				if ?data.til {
 					writer.code(' til ').expression(data.til)
 				}
-				else if data.to? {
+				else if ?data.to {
 					writer.code(' to ').expression(data.to)
 				}
 
-				if data.by? {
+				if ?data.by {
 					writer.code(' by ').expression(data.by)
 				}
 
-				if data.until? {
+				if ?data.until {
 					writer.code(' until ').expression(data.until)
 				}
-				else if data.while? {
+				else if ?data.while {
 					writer.code(' while ').expression(data.while)
 				}
 
-				if data.when? {
+				if ?data.when {
 					writer.code(' when ').expression(data.when)
 				}
 			}
@@ -1560,10 +1560,10 @@ export namespace Generator {
 					}
 				}
 
-				if data.value? {
+				if ?data.value {
 					writer.expression(data.value)
 
-					if data.index? {
+					if ?data.index {
 						writer.code(', ').expression(data.index)
 					}
 				}
@@ -1577,25 +1577,25 @@ export namespace Generator {
 					writer.code(' desc')
 				}
 
-				if data.from? {
+				if ?data.from {
 					writer.code(' from ').expression(data.from)
 				}
 
-				if data.til? {
+				if ?data.til {
 					writer.code(' til ').expression(data.til)
 				}
-				else if data.to? {
+				else if ?data.to {
 					writer.code(' to ').expression(data.to)
 				}
 
-				if data.until? {
+				if ?data.until {
 					writer.code(' until ').expression(data.until)
 				}
-				else if data.while? {
+				else if ?data.while {
 					writer.code(' while ').expression(data.while)
 				}
 
-				if data.when? {
+				if ?data.when {
 					writer.code(' when ').expression(data.when)
 				}
 			}
@@ -1611,10 +1611,10 @@ export namespace Generator {
 					}
 				}
 
-				if data.value? {
+				if ?data.value {
 					writer.expression(data.value)
 
-					if data.key? {
+					if ?data.key {
 						writer.code(', ').expression(data.key)
 					}
 				}
@@ -1624,14 +1624,14 @@ export namespace Generator {
 
 				writer.code(' of ').expression(data.expression)
 
-				if data.until? {
+				if ?data.until {
 					writer.code(' until ').expression(data.until)
 				}
-				else if data.while? {
+				else if ?data.while {
 					writer.code(' while ').expression(data.while)
 				}
 
-				if data.when? {
+				if ?data.when {
 					writer.code(' when ').expression(data.when)
 				}
 			}
@@ -1651,39 +1651,39 @@ export namespace Generator {
 					.expression(data.value)
 					.code(' in ')
 
-				if data.from? {
+				if ?data.from {
 					writer.expression(data.from).code('..')
 				}
-				else if data.then? {
+				else if ?data.then {
 					writer.expression(data.then).code('<..')
 				}
 
-				if data.til? {
+				if ?data.til {
 					writer.code('<').expression(data.til)
 				}
-				else if data.to? {
+				else if ?data.to {
 					writer.code('').expression(data.to)
 				}
 
-				if data.by? {
+				if ?data.by {
 					writer.code('..').expression(data.by)
 				}
 
-				if data.until? {
+				if ?data.until {
 					writer.code(' until ').expression(data.until)
 				}
-				else if data.while? {
+				else if ?data.while {
 					writer.code(' while ').expression(data.while)
 				}
 
-				if data.when? {
+				if ?data.when {
 					writer.code(' when ').expression(data.when)
 				}
 			}
 		}
 	} # }}}
 
-	func toMacroElements(elements, writer, parent = null) { # {{{
+	func toMacroElements(elements, writer, parent? = null) { # {{{
 		var last = elements.length - 1
 
 		for element, index in elements {
@@ -1733,7 +1733,7 @@ export namespace Generator {
 	} # }}}
 
 	func toType(data, writer) { # {{{
-		if data.type? {
+		if ?data.type {
 			writer.code(': ').expression(data.type)
 		}
 		else {
@@ -1754,7 +1754,7 @@ export namespace Generator {
 					.newLine()
 					.code('get')
 
-				if data.body? {
+				if ?data.body {
 					if data.body.kind == NodeKind::Block {
 						line.newBlock().expression(data.body).done()
 					}
@@ -1799,12 +1799,12 @@ export namespace Generator {
 				writer.newLine().code('break').done()
 			} # }}}
 			NodeKind::CatchClause => { # {{{
-				if data.type? {
+				if ?data.type {
 					writer
 						.code('on ')
 						.expression(data.type)
 
-					if data.binding? {
+					if ?data.binding {
 						writer
 							.code(' catch ')
 							.expression(data.binding)
@@ -1813,7 +1813,7 @@ export namespace Generator {
 				else {
 					writer.code('catch')
 
-					if data.binding? {
+					if ?data.binding {
 						writer
 							.code(' ')
 							.expression(data.binding)
@@ -1846,11 +1846,11 @@ export namespace Generator {
 
 				line.code('class ').expression(data.name)
 
-				if data.version? {
+				if ?data.version {
 					line.code(`@\(data.version.major).\(data.version.minor).\(data.version.patch)`)
 				}
 
-				if data.extends? {
+				if ?data.extends {
 					line.code(' extends ').expression(data.extends)
 				}
 
@@ -1924,7 +1924,7 @@ export namespace Generator {
 
 				line.code('enum ').expression(data.name)
 
-				if data.type? {
+				if ?data.type {
 					line.code('<').expression(data.type).code('>')
 				}
 
@@ -2122,11 +2122,11 @@ export namespace Generator {
 
 				line.code('?') if nullable
 
-				if data.type? {
+				if ?data.type {
 					line.code(': ').expression(data.type)
 				}
 
-				if data.value? {
+				if ?data.value {
 					line.code(' = ').expression(data.value)
 				}
 
@@ -2151,25 +2151,25 @@ export namespace Generator {
 					.code(' from ')
 					.expression(data.from)
 
-				if data.til? {
+				if ?data.til {
 					ctrl.code(' til ').expression(data.til)
 				}
 				else {
 					ctrl.code(' to ').expression(data.to)
 				}
 
-				if data.by? {
+				if ?data.by {
 					ctrl.code(' by ').expression(data.by)
 				}
 
-				if data.until? {
+				if ?data.until {
 					ctrl.code(' until ').expression(data.until)
 				}
-				else if data.while? {
+				else if ?data.while {
 					ctrl.code(' while ').expression(data.while)
 				}
 
-				if data.when? {
+				if ?data.when {
 					ctrl.code(' when ').expression(data.when)
 				}
 
@@ -2207,14 +2207,14 @@ export namespace Generator {
 					}
 				}
 
-				if data.value? {
+				if ?data.value {
 					ctrl.expression(data.value)
 
-					if data.type? {
+					if ?data.type {
 						ctrl.code(': ').expression(data.type)
 					}
 
-					if data.index? {
+					if ?data.index {
 						ctrl.code(', ').expression(data.index)
 					}
 				}
@@ -2228,29 +2228,29 @@ export namespace Generator {
 					ctrl.code(' desc')
 				}
 
-				if data.from? {
+				if ?data.from {
 					ctrl.code(' from ').expression(data.from)
 				}
 
-				if data.til? {
+				if ?data.til {
 					ctrl.code(' til ').expression(data.til)
 				}
-				else if data.to? {
+				else if ?data.to {
 					ctrl.code(' to ').expression(data.to)
 				}
 
-				if data.by? {
+				if ?data.by {
 					ctrl.code(' by ').expression(data.by)
 				}
 
-				if data.until? {
+				if ?data.until {
 					ctrl.code(' until ').expression(data.until)
 				}
-				else if data.while? {
+				else if ?data.while {
 					ctrl.code(' while ').expression(data.while)
 				}
 
-				if data.when? {
+				if ?data.when {
 					ctrl.code(' when ').expression(data.when)
 				}
 
@@ -2280,7 +2280,7 @@ export namespace Generator {
 					.expression(data.value)
 					.code(' in ')
 
-				if data.from? {
+				if ?data.from {
 					ctrl.expression(data.from)
 				}
 				else {
@@ -2289,7 +2289,7 @@ export namespace Generator {
 						.code('<')
 				}
 
-				if data.to? {
+				if ?data.to {
 					ctrl
 						.code('..')
 						.expression(data.to)
@@ -2300,20 +2300,20 @@ export namespace Generator {
 						.expression(data.til)
 				}
 
-				if data.by? {
+				if ?data.by {
 					ctrl
 						.code('..')
 						.expression(data.by)
 				}
 
-				if data.until? {
+				if ?data.until {
 					ctrl.code(' until ').expression(data.until)
 				}
-				else if data.while? {
+				else if ?data.while {
 					ctrl.code(' while ').expression(data.while)
 				}
 
-				if data.when? {
+				if ?data.when {
 					ctrl.code(' when ').expression(data.when)
 				}
 
@@ -2347,14 +2347,14 @@ export namespace Generator {
 					}
 				}
 
-				if data.value? {
+				if ?data.value {
 					ctrl.expression(data.value)
 
-					if data.type? {
+					if ?data.type {
 						ctrl.code(': ').expression(data.type)
 					}
 
-					if data.key? {
+					if ?data.key {
 						ctrl.code(', ').expression(data.key)
 					}
 				}
@@ -2364,14 +2364,14 @@ export namespace Generator {
 
 				ctrl.code(' of ').expression(data.expression)
 
-				if data.until? {
+				if ?data.until {
 					ctrl.code(' until ').expression(data.until)
 				}
-				else if data.while? {
+				else if ?data.while {
 					ctrl.code(' while ').expression(data.while)
 				}
 
-				if data.when? {
+				if ?data.when {
 					ctrl.code(' when ').expression(data.when)
 				}
 
@@ -2392,7 +2392,7 @@ export namespace Generator {
 					}
 				}, line)
 
-				if data.body? {
+				if ?data.body {
 					toFunctionBody(data.body, line)
 				}
 
@@ -2408,7 +2408,7 @@ export namespace Generator {
 							.step()
 							.expression(data.whenTrue)
 
-						while data.whenFalse? {
+						while ?data.whenFalse {
 							if data.whenFalse.kind == NodeKind::IfStatement {
 								data = data.whenFalse
 
@@ -2433,7 +2433,7 @@ export namespace Generator {
 						ctrl.done()
 					}
 					NodeKind::ReturnStatement => {
-						if data.whenTrue.value? {
+						if ?data.whenTrue.value {
 							writer
 								.newLine()
 								.code('return ')
@@ -2561,7 +2561,7 @@ export namespace Generator {
 
 				toFunctionHeader(data, writer => {}, line)
 
-				if data.body? {
+				if ?data.body {
 					toFunctionBody(data.body, line)
 				}
 
@@ -2579,7 +2579,7 @@ export namespace Generator {
 					.newLine()
 					.code('set')
 
-				if data.body? {
+				if ?data.body {
 					if data.body.kind == NodeKind::Block {
 						line.newBlock().expression(data.body).done()
 					}
@@ -2634,23 +2634,23 @@ export namespace Generator {
 
 				line.expression(data.name)
 
-				if data.type? {
+				if ?data.type {
 					line.code(': ').expression(data.type)
 				}
 
 				var block = line.newBlock()
 
-				if data.accessor? {
+				if ?data.accessor {
 					block.statement(data.accessor)
 				}
 
-				if data.mutator? {
+				if ?data.mutator {
 					block.statement(data.mutator)
 				}
 
 				block.done()
 
-				if data.defaultValue? {
+				if ?data.defaultValue {
 					line.code(' = ')
 
 					line.expression(data.defaultValue)
@@ -2723,7 +2723,7 @@ export namespace Generator {
 				line.done()
 			} # }}}
 			NodeKind::ReturnStatement => { # {{{
-				if data.value? {
+				if ?data.value {
 					writer
 						.newLine()
 						.code('return ')
@@ -2745,7 +2745,7 @@ export namespace Generator {
 
 				line.code('struct ').expression(data.name)
 
-				if data.extends? {
+				if ?data.extends {
 					line.code(' extends ').expression(data.extends)
 				}
 
@@ -2768,7 +2768,7 @@ export namespace Generator {
 
 				toType(data, line)
 
-				if data.defaultValue? {
+				if ?data.defaultValue {
 					line.code(' = ').expression(data.defaultValue)
 				}
 
@@ -2803,7 +2803,7 @@ export namespace Generator {
 					line.code(' ')
 				}
 
-				if data.filter? {
+				if ?data.filter {
 					line
 						.code('when ')
 						.expression(data.filter)
@@ -2858,13 +2858,13 @@ export namespace Generator {
 						.statement(clause)
 				}
 
-				if data.catchClause? {
+				if ?data.catchClause {
 					ctrl
 						.step()
 						.statement(data.catchClause)
 				}
 
-				if data.finalizer? {
+				if ?data.finalizer {
 					ctrl
 						.step()
 						.code('finally')
@@ -2889,7 +2889,7 @@ export namespace Generator {
 
 				if data.fields.length != 0 {
 					if named {
-						if data.extends? {
+						if ?data.extends {
 							line.code(' extends ').expression(data.extends)
 						}
 
@@ -2914,13 +2914,13 @@ export namespace Generator {
 
 						line.code(')')
 
-						if data.extends? {
+						if ?data.extends {
 							line.code(' extends ').expression(data.extends)
 						}
 					}
 				}
 				else {
-					if data.extends? {
+					if ?data.extends {
 						line.code(' extends ').expression(data.extends)
 					}
 				}
@@ -2928,7 +2928,7 @@ export namespace Generator {
 				line.done()
 			} # }}}
 			NodeKind::TupleField => { # {{{
-				if data.name? {
+				if ?data.name {
 					writer.expression(data.name)
 
 					toType(data, writer)
@@ -2937,7 +2937,7 @@ export namespace Generator {
 					writer.expression(data.type)
 				}
 
-				if data.defaultValue? {
+				if ?data.defaultValue {
 					writer.code(' = ').expression(data.defaultValue)
 				}
 			} # }}}
@@ -2963,7 +2963,7 @@ export namespace Generator {
 						ctrl.done()
 					}
 					NodeKind::ReturnStatement => {
-						if data.whenFalse.value? {
+						if ?data.whenFalse.value {
 							writer
 								.newLine()
 								.code('return ')
@@ -3033,7 +3033,7 @@ export namespace Generator {
 					line.expression(variable)
 				}
 
-				if data.value? {
+				if ?data.value {
 					line.code(' = ')
 
 					if data.await {
