@@ -1765,36 +1765,6 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::AliasDeclaration => { # {{{
-				var line = writer.newLine()
-
-				for modifier in data.modifiers {
-					switch modifier.kind {
-						ModifierKind::Private => {
-							line.code('private ')
-						}
-						ModifierKind::Protected => {
-							line.code('protected ')
-						}
-						ModifierKind::Public => {
-							line.code('public ')
-						}
-						ModifierKind::Static => {
-							line.code('static ')
-						}
-					}
-				}
-
-				line.code('alias ')
-
-				line.expression(data.name)
-
-				line.code(' = ')
-
-				line.expression(data.target)
-
-				line.done()
-			} # }}}
 			NodeKind::BreakStatement => { # {{{
 				writer.newLine().code('break').done()
 			} # }}}
@@ -2655,6 +2625,78 @@ export namespace Generator {
 
 					line.expression(data.defaultValue)
 				}
+
+				line.done()
+			} # }}}
+			NodeKind::ProxyDeclaration => { # {{{
+				var line = writer.newLine()
+
+				for modifier in data.modifiers {
+					switch modifier.kind {
+						ModifierKind::Private => {
+							line.code('private ')
+						}
+						ModifierKind::Protected => {
+							line.code('protected ')
+						}
+						ModifierKind::Public => {
+							line.code('public ')
+						}
+						ModifierKind::Static => {
+							line.code('static ')
+						}
+					}
+				}
+
+				line.code('proxy ')
+
+				line.expression(data.internal)
+
+				line.code(' = ')
+
+				line.expression(data.external)
+
+				line.done()
+			} # }}}
+			NodeKind::ProxyGroupDeclaration => { # {{{
+				var line = writer.newLine()
+
+				for modifier in data.modifiers {
+					switch modifier.kind {
+						ModifierKind::Private => {
+							line.code('private ')
+						}
+						ModifierKind::Protected => {
+							line.code('protected ')
+						}
+						ModifierKind::Public => {
+							line.code('public ')
+						}
+						ModifierKind::Static => {
+							line.code('static ')
+						}
+					}
+				}
+
+				line.code('proxy ').expression(data.recipient)
+
+				var block = line.newBlock()
+
+				for var element of data.elements {
+					var line = block.newLine()
+
+					line.expression(element.external)
+
+					if element.internal != element.external && element.internal.name != element.external.name {
+						line.code(' => ')
+
+						line.expression(element.internal)
+					}
+
+					line.done()
+				}
+
+				block.done()
 
 				line.done()
 			} # }}}
