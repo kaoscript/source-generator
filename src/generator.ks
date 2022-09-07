@@ -848,7 +848,7 @@ export namespace Generator {
 				}
 			} # }}}
 			NodeKind::ImportNamespaceSpecifier => { # {{{
-				writer.expression(data.local)
+				writer.expression(data.internal)
 
 				if data.specifiers?.length != 0 {
 					var block = writer.newBlock()
@@ -861,17 +861,17 @@ export namespace Generator {
 				}
 			} # }}}
 			NodeKind::ImportSpecifier => { # {{{
-				writer.expression(data.imported)
+				writer.expression(data.external)
 
 				if
 					!(
-						data.imported.kind == NodeKind::ClassDeclaration ||
-						data.imported.kind == NodeKind::FunctionDeclaration ||
-						data.imported.kind == NodeKind::VariableDeclarator
+						data.external.kind == NodeKind::ClassDeclaration ||
+						data.external.kind == NodeKind::FunctionDeclaration ||
+						data.external.kind == NodeKind::VariableDeclarator
 					)
-					|| data.local.name != data.imported.name.name
+					|| data.internal.name != data.external.name.name
 				{
-					writer.code(' => ').expression(data.local)
+					writer.code(' => ').expression(data.internal)
 				}
 			} # }}}
 			NodeKind::IncludeDeclarator => { # {{{
@@ -1378,8 +1378,8 @@ export namespace Generator {
 						ModifierKind::Nullable => {
 							nullable = true
 						}
-						ModifierKind::Systemic => {
-							writer.code('systemic ')
+						ModifierKind::System => {
+							writer.code('system ')
 						}
 					}
 				}
@@ -1808,8 +1808,8 @@ export namespace Generator {
 						ModifierKind::Sealed => {
 							line.code('sealed ')
 						}
-						ModifierKind::Systemic => {
-							line.code('systemic ')
+						ModifierKind::System => {
+							line.code('system ')
 						}
 					}
 				}
@@ -1946,11 +1946,11 @@ export namespace Generator {
 				line.done()
 			} # }}}
 			NodeKind::ExportNamedSpecifier => { # {{{
-				if data.local.kind == data.exported.kind && data.local.name == data.exported.name {
-					writer.newLine().code(data.local.name).done()
+				if data.internal.kind == data.external.kind && data.internal.name == data.external.name {
+					writer.newLine().code(data.internal.name).done()
 				}
 				else {
-					writer.newLine().expression(data.local).code(` => \(data.exported.name)`).done()
+					writer.newLine().expression(data.internal).code(` => \(data.external.name)`).done()
 				}
 			} # }}}
 			NodeKind::ExportPropertiesSpecifier => { # {{{
@@ -1974,7 +1974,7 @@ export namespace Generator {
 				line.done()
 			} # }}}
 			NodeKind::ExportWildcardSpecifier => { # {{{
-				writer.newLine().expression(data.local).code(' for *').done()
+				writer.newLine().expression(data.internal).code(' for *').done()
 			} # }}}
 			NodeKind::ExternDeclaration => { # {{{
 				var line = writer.newLine()

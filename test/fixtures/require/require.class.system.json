@@ -18,7 +18,7 @@
               },
               "end": {
                 "line": 1,
-                "column": 17
+                "column": 15
               }
             }
           ],
@@ -27,11 +27,11 @@
             "name": "Array",
             "start": {
               "line": 1,
-              "column": 24
+              "column": 22
             },
             "end": {
               "line": 1,
-              "column": 29
+              "column": 27
             }
           },
           "members": [],
@@ -41,7 +41,7 @@
           },
           "end": {
             "line": 1,
-            "column": 29
+            "column": 27
           }
         }
       ],
@@ -51,7 +51,7 @@
       },
       "end": {
         "line": 1,
-        "column": 29
+        "column": 27
       }
     },
     {
@@ -1065,7 +1065,7 @@
       "declarations": [
         {
           "kind": 38,
-          "local": {
+          "internal": {
             "kind": 53,
             "name": "Array",
             "start": {
@@ -1077,7 +1077,7 @@
               "column": 13
             }
           },
-          "exported": {
+          "external": {
             "kind": 53,
             "name": "Array",
             "start": {
