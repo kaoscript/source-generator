@@ -1770,17 +1770,8 @@ export namespace Generator {
 
 				line.code('bitmask ').expression(data.name)
 
-				if ?data.type || ?data.initialValue {
-					line.code('<')
-
-					if ?data.type {
-						line.expression(data.type)
-					}
-					if ?data.initialValue {
-						line.code(',').expression(data.initialValue)
-					}
-
-					line.code('>')
+				if ?data.type {
+					line.code('<').expression(data.type).code('>')
 				}
 
 				var block = line.newBlock()
