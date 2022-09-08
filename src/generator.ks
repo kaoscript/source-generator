@@ -1765,6 +1765,33 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
+			NodeKind::BitmaskDeclaration => { # {{{
+				var line = writer.newLine()
+
+				line.code('bitmask ').expression(data.name)
+
+				if ?data.type || ?data.initialValue {
+					line.code('<')
+
+					if ?data.type {
+						line.expression(data.type)
+					}
+					if ?data.initialValue {
+						line.code(',').expression(data.initialValue)
+					}
+
+					line.code('>')
+				}
+
+				var block = line.newBlock()
+
+				for member in data.members {
+					block.statement(member)
+				}
+
+				block.done()
+				line.done()
+			} # }}}
 			NodeKind::BreakStatement => { # {{{
 				writer.newLine().code('break').done()
 			} # }}}
@@ -1883,14 +1910,6 @@ export namespace Generator {
 			} # }}}
 			NodeKind::EnumDeclaration => { # {{{
 				var line = writer.newLine()
-
-				for var modifier in data.modifiers {
-					switch modifier.kind {
-						ModifierKind::Flagged => {
-							line.code('flagged ')
-						}
-					}
-				}
 
 				line.code('enum ').expression(data.name)
 
