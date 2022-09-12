@@ -3,7 +3,7 @@
   "attributes": [],
   "body": [
     {
-      "kind": 127,
+      "kind": 130,
       "attributes": [],
       "modifiers": [
         {
@@ -18,30 +18,118 @@
           }
         }
       ],
-      "variables": [
+      "declarations": [
         {
           "kind": 128,
           "attributes": [],
           "modifiers": [],
-          "name": {
-            "kind": 54,
-            "name": "isHealthy",
-            "start": {
-              "line": 1,
-              "column": 9
-            },
-            "end": {
-              "line": 1,
-              "column": 18
+          "variables": [
+            {
+              "kind": 129,
+              "attributes": [],
+              "modifiers": [],
+              "name": {
+                "kind": 54,
+                "name": "isHealthy",
+                "start": {
+                  "line": 1,
+                  "column": 9
+                },
+                "end": {
+                  "line": 1,
+                  "column": 18
+                }
+              },
+              "start": {
+                "line": 1,
+                "column": 9
+              },
+              "end": {
+                "line": 1,
+                "column": 18
+              }
             }
-          },
+          ],
           "start": {
             "line": 1,
-            "column": 9
+            "column": 1
           },
           "end": {
             "line": 1,
-            "column": 18
+            "column": 43
+          },
+          "value": {
+            "kind": 23,
+            "values": [
+              {
+                "kind": 80,
+                "value": 200,
+                "start": {
+                  "line": 1,
+                  "column": 21
+                },
+                "end": {
+                  "line": 1,
+                  "column": 24
+                }
+              },
+              {
+                "kind": 7,
+                "modifiers": [],
+                "start": {
+                  "line": 1,
+                  "column": 25
+                },
+                "end": {
+                  "line": 1,
+                  "column": 26
+                }
+              },
+              {
+                "kind": 54,
+                "name": "cholesterol",
+                "start": {
+                  "line": 1,
+                  "column": 27
+                },
+                "end": {
+                  "line": 1,
+                  "column": 38
+                }
+              },
+              {
+                "kind": 7,
+                "modifiers": [],
+                "start": {
+                  "line": 1,
+                  "column": 39
+                },
+                "end": {
+                  "line": 1,
+                  "column": 40
+                }
+              },
+              {
+                "kind": 80,
+                "value": 60,
+                "start": {
+                  "line": 1,
+                  "column": 41
+                },
+                "end": {
+                  "line": 1,
+                  "column": 43
+                }
+              }
+            ],
+            "start": {
+              "line": 1,
+              "column": 21
+            },
+            "end": {
+              "line": 1,
+              "column": 43
+            }
           }
         }
       ],
@@ -52,79 +140,6 @@
       "end": {
         "line": 1,
         "column": 43
-      },
-      "value": {
-        "kind": 23,
-        "values": [
-          {
-            "kind": 80,
-            "value": 200,
-            "start": {
-              "line": 1,
-              "column": 21
-            },
-            "end": {
-              "line": 1,
-              "column": 24
-            }
-          },
-          {
-            "kind": 7,
-            "modifiers": [],
-            "start": {
-              "line": 1,
-              "column": 25
-            },
-            "end": {
-              "line": 1,
-              "column": 26
-            }
-          },
-          {
-            "kind": 54,
-            "name": "cholesterol",
-            "start": {
-              "line": 1,
-              "column": 27
-            },
-            "end": {
-              "line": 1,
-              "column": 38
-            }
-          },
-          {
-            "kind": 7,
-            "modifiers": [],
-            "start": {
-              "line": 1,
-              "column": 39
-            },
-            "end": {
-              "line": 1,
-              "column": 40
-            }
-          },
-          {
-            "kind": 80,
-            "value": 60,
-            "start": {
-              "line": 1,
-              "column": 41
-            },
-            "end": {
-              "line": 1,
-              "column": 43
-            }
-          }
-        ],
-        "start": {
-          "line": 1,
-          "column": 21
-        },
-        "end": {
-          "line": 1,
-          "column": 43
-        }
       }
     }
   ],

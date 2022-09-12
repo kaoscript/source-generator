@@ -3,7 +3,7 @@
   "attributes": [],
   "body": [
     {
-      "kind": 127,
+      "kind": 130,
       "attributes": [],
       "modifiers": [
         {
@@ -18,30 +18,79 @@
           }
         }
       ],
-      "variables": [
+      "declarations": [
         {
           "kind": 128,
           "attributes": [],
           "modifiers": [],
-          "name": {
-            "kind": 54,
-            "name": "a",
-            "start": {
-              "line": 1,
-              "column": 9
-            },
-            "end": {
-              "line": 1,
-              "column": 10
+          "variables": [
+            {
+              "kind": 129,
+              "attributes": [],
+              "modifiers": [],
+              "name": {
+                "kind": 54,
+                "name": "a",
+                "start": {
+                  "line": 1,
+                  "column": 9
+                },
+                "end": {
+                  "line": 1,
+                  "column": 10
+                }
+              },
+              "start": {
+                "line": 1,
+                "column": 9
+              },
+              "end": {
+                "line": 1,
+                "column": 10
+              }
             }
-          },
+          ],
           "start": {
             "line": 1,
-            "column": 9
+            "column": 1
           },
           "end": {
             "line": 1,
-            "column": 10
+            "column": 15
+          },
+          "value": {
+            "kind": 123,
+            "operator": {
+              "kind": 3,
+              "start": {
+                "line": 1,
+                "column": 13
+              },
+              "end": {
+                "line": 1,
+                "column": 14
+              }
+            },
+            "argument": {
+              "kind": 80,
+              "value": 4,
+              "start": {
+                "line": 1,
+                "column": 14
+              },
+              "end": {
+                "line": 1,
+                "column": 15
+              }
+            },
+            "start": {
+              "line": 1,
+              "column": 13
+            },
+            "end": {
+              "line": 1,
+              "column": 15
+            }
           }
         }
       ],
@@ -52,40 +101,6 @@
       "end": {
         "line": 1,
         "column": 15
-      },
-      "value": {
-        "kind": 122,
-        "operator": {
-          "kind": 3,
-          "start": {
-            "line": 1,
-            "column": 13
-          },
-          "end": {
-            "line": 1,
-            "column": 14
-          }
-        },
-        "argument": {
-          "kind": 80,
-          "value": 4,
-          "start": {
-            "line": 1,
-            "column": 14
-          },
-          "end": {
-            "line": 1,
-            "column": 15
-          }
-        },
-        "start": {
-          "line": 1,
-          "column": 13
-        },
-        "end": {
-          "line": 1,
-          "column": 15
-        }
       }
     }
   ],

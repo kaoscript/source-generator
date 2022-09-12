@@ -1,2 +1,2 @@
 type T = number | string
-var dyn x: T = 0
+var mut x: T = 0

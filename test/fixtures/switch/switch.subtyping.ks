@@ -1,4 +1,4 @@
-var dyn view: UIView
+var mut view: UIView
 switch view {
 	is UIImageView => console.log("It's an image view")
 	is UILabel with label as UILabel => console.log("It's a label")

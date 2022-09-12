@@ -1,3 +1,7 @@
 namespace coord {
-	var dyn x, y, z
+	var dyn {
+		x
+		y
+		z
+	}
 }

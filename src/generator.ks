@@ -1341,11 +1341,12 @@ export namespace Generator {
 					.expression(data.condition)
 			} # }}}
 			NodeKind::VariableDeclaration => { # {{{
-				writer.code('var ')
-
 				for var modifier in data.modifiers {
-					if modifier.kind == ModifierKind::Mutable {
-						writer.code('mut ')
+					if modifier.kind == ModifierKind::Immutable {
+						writer.code('var ')
+					}
+					else if modifier.kind == ModifierKind::Mutable {
+						writer.code('var mut ')
 					}
 				}
 
@@ -1357,15 +1358,20 @@ export namespace Generator {
 					writer.expression(variable)
 				}
 
-				if data.operator.kind == BinaryOperatorKind::Assignment {
-					writer.code(AssignmentOperatorSymbol[data.operator.assignment])
-				}
+				if ?data.value {
+					if ?data.operator {
+						writer.code(AssignmentOperatorSymbol[data.operator.assignment])
+					}
+					else {
+						writer.code(' = ')
+					}
 
-				if data.await {
-					writer.code('await ')
-				}
+					if data.await {
+						writer.code('await ')
+					}
 
-				writer.expression(data.value)
+					writer.expression(data.value)
+				}
 			} # }}}
 			NodeKind::VariableDeclarator => { # {{{
 				var mut nullable = false
@@ -2595,6 +2601,9 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
+			NodeKind::PassStatement => { # {{{
+				writer.newLine().code('pass').done()
+			} # }}}
 			NodeKind::PropertyDeclaration => { # {{{
 				var line = writer.newLine()
 
@@ -3060,39 +3069,34 @@ export namespace Generator {
 					.expression(data.body)
 					.done()
 			} # }}}
-			NodeKind::VariableDeclaration => { # {{{
+			NodeKind::VariableStatement => { # {{{
 				var line = writer.newLine()
 
-				line.code('var ')
+				line.code('var')
 
 				for var modifier in data.modifiers {
 					if modifier.kind == ModifierKind::Dynamic {
-						line.code('dyn ')
+						line.code(' dyn')
 					}
 					else if modifier.kind == ModifierKind::LateInit {
-						line.code('late ')
+						line.code(' late')
 					}
 					else if modifier.kind == ModifierKind::Mutable {
-						line.code('mut ')
+						line.code(' mut')
 					}
 				}
 
-				for variable, index in data.variables {
-					if index != 0 {
-						line.code(', ')
-					}
-
-					line.expression(variable)
+				if data.declarations.length == 1 {
+					line.code(' ').expression(data.declarations[0])
 				}
+				else {
+					var block = line.newBlock()
 
-				if ?data.value {
-					line.code(' = ')
-
-					if data.await {
-						line.code('await ')
+					for var declaration in data.declarations {
+						block.newLine().expression(declaration).done()
 					}
 
-					line.expression(data.value)
+					block.done()
 				}
 
 				line.done()
@@ -3105,6 +3109,31 @@ export namespace Generator {
 					.step()
 					.expression(data.body)
 					.done()
+			} # }}}
+			NodeKind::WithStatement => { # {{{
+				var ctrl = writer.newControl().code('with')
+
+				if data.variables.length == 1 {
+					ctrl.code(' ').expression(data.variables[0]).step()
+
+				}
+				else {
+					ctrl.step()
+
+					for var variable in data.variables {
+						ctrl.newLine().expression(variable).done()
+					}
+
+					ctrl.step().code('then').step()
+				}
+
+				ctrl.expression(data.body)
+
+				if ?data.finalizer {
+					ctrl.step().code('finally').step().expression(data.finalizer)
+				}
+
+				ctrl.done()
 			} # }}}
 			=> { # {{{
 				writer

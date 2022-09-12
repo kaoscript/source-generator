@@ -1,5 +1,5 @@
 import "@oz/lang"
-var dyn a: Array<number> = [1, 3, 2, 4]
+var a: Array<number> = [1, 3, 2, 4]
 console.log(a)
 impl Array {
 	sort(): Array<number> => (this as Array).sort((a, b) => a - b)

@@ -3,7 +3,7 @@
   "attributes": [],
   "body": [
     {
-      "kind": 127,
+      "kind": 130,
       "attributes": [],
       "modifiers": [
         {
@@ -18,30 +18,57 @@
           }
         }
       ],
-      "variables": [
+      "declarations": [
         {
           "kind": 128,
           "attributes": [],
           "modifiers": [],
-          "name": {
-            "kind": 54,
-            "name": "left",
-            "start": {
-              "line": 1,
-              "column": 9
-            },
-            "end": {
-              "line": 1,
-              "column": 13
+          "variables": [
+            {
+              "kind": 129,
+              "attributes": [],
+              "modifiers": [],
+              "name": {
+                "kind": 54,
+                "name": "left",
+                "start": {
+                  "line": 1,
+                  "column": 9
+                },
+                "end": {
+                  "line": 1,
+                  "column": 13
+                }
+              },
+              "start": {
+                "line": 1,
+                "column": 9
+              },
+              "end": {
+                "line": 1,
+                "column": 13
+              }
             }
-          },
+          ],
           "start": {
             "line": 1,
-            "column": 9
+            "column": 1
           },
           "end": {
             "line": 1,
-            "column": 13
+            "column": 18
+          },
+          "value": {
+            "kind": 80,
+            "value": 10,
+            "start": {
+              "line": 1,
+              "column": 16
+            },
+            "end": {
+              "line": 1,
+              "column": 18
+            }
           }
         }
       ],
@@ -52,22 +79,10 @@
       "end": {
         "line": 1,
         "column": 18
-      },
-      "value": {
-        "kind": 80,
-        "value": 10,
-        "start": {
-          "line": 1,
-          "column": 16
-        },
-        "end": {
-          "line": 1,
-          "column": 18
-        }
       }
     },
     {
-      "kind": 127,
+      "kind": 130,
       "attributes": [],
       "modifiers": [
         {
@@ -82,30 +97,57 @@
           }
         }
       ],
-      "variables": [
+      "declarations": [
         {
           "kind": 128,
           "attributes": [],
           "modifiers": [],
-          "name": {
-            "kind": 54,
-            "name": "right",
-            "start": {
-              "line": 2,
-              "column": 9
-            },
-            "end": {
-              "line": 2,
-              "column": 14
+          "variables": [
+            {
+              "kind": 129,
+              "attributes": [],
+              "modifiers": [],
+              "name": {
+                "kind": 54,
+                "name": "right",
+                "start": {
+                  "line": 2,
+                  "column": 9
+                },
+                "end": {
+                  "line": 2,
+                  "column": 14
+                }
+              },
+              "start": {
+                "line": 2,
+                "column": 9
+              },
+              "end": {
+                "line": 2,
+                "column": 14
+              }
             }
-          },
+          ],
           "start": {
             "line": 2,
-            "column": 9
+            "column": 1
           },
           "end": {
             "line": 2,
-            "column": 14
+            "column": 19
+          },
+          "value": {
+            "kind": 80,
+            "value": 20,
+            "start": {
+              "line": 2,
+              "column": 17
+            },
+            "end": {
+              "line": 2,
+              "column": 19
+            }
           }
         }
       ],
@@ -116,18 +158,6 @@
       "end": {
         "line": 2,
         "column": 19
-      },
-      "value": {
-        "kind": 80,
-        "value": 20,
-        "start": {
-          "line": 2,
-          "column": 17
-        },
-        "end": {
-          "line": 2,
-          "column": 19
-        }
       }
     },
     {

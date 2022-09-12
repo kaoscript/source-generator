@@ -65,7 +65,6 @@ func prepare(file) { # {{{
 
 			throw ex
 		}
-
 	})
 } # }}}
 

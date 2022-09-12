@@ -20,7 +20,7 @@
       },
       "statements": [
         {
-          "kind": 127,
+          "kind": 130,
           "attributes": [],
           "modifiers": [
             {
@@ -35,23 +35,38 @@
               }
             }
           ],
-          "variables": [
+          "declarations": [
             {
               "kind": 128,
               "attributes": [],
               "modifiers": [],
-              "name": {
-                "kind": 54,
-                "name": "x",
-                "start": {
-                  "line": 2,
-                  "column": 10
-                },
-                "end": {
-                  "line": 2,
-                  "column": 11
+              "variables": [
+                {
+                  "kind": 129,
+                  "attributes": [],
+                  "modifiers": [],
+                  "name": {
+                    "kind": 54,
+                    "name": "x",
+                    "start": {
+                      "line": 2,
+                      "column": 10
+                    },
+                    "end": {
+                      "line": 2,
+                      "column": 11
+                    }
+                  },
+                  "start": {
+                    "line": 2,
+                    "column": 10
+                  },
+                  "end": {
+                    "line": 2,
+                    "column": 11
+                  }
                 }
-              },
+              ],
               "start": {
                 "line": 2,
                 "column": 10
@@ -65,18 +80,33 @@
               "kind": 128,
               "attributes": [],
               "modifiers": [],
-              "name": {
-                "kind": 54,
-                "name": "y",
-                "start": {
-                  "line": 2,
-                  "column": 13
-                },
-                "end": {
-                  "line": 2,
-                  "column": 14
+              "variables": [
+                {
+                  "kind": 129,
+                  "attributes": [],
+                  "modifiers": [],
+                  "name": {
+                    "kind": 54,
+                    "name": "y",
+                    "start": {
+                      "line": 2,
+                      "column": 13
+                    },
+                    "end": {
+                      "line": 2,
+                      "column": 14
+                    }
+                  },
+                  "start": {
+                    "line": 2,
+                    "column": 13
+                  },
+                  "end": {
+                    "line": 2,
+                    "column": 14
+                  }
                 }
-              },
+              ],
               "start": {
                 "line": 2,
                 "column": 13
@@ -90,18 +120,33 @@
               "kind": 128,
               "attributes": [],
               "modifiers": [],
-              "name": {
-                "kind": 54,
-                "name": "z",
-                "start": {
-                  "line": 2,
-                  "column": 16
-                },
-                "end": {
-                  "line": 2,
-                  "column": 17
+              "variables": [
+                {
+                  "kind": 129,
+                  "attributes": [],
+                  "modifiers": [],
+                  "name": {
+                    "kind": 54,
+                    "name": "z",
+                    "start": {
+                      "line": 2,
+                      "column": 16
+                    },
+                    "end": {
+                      "line": 2,
+                      "column": 17
+                    }
+                  },
+                  "start": {
+                    "line": 2,
+                    "column": 16
+                  },
+                  "end": {
+                    "line": 2,
+                    "column": 17
+                  }
                 }
-              },
+              ],
               "start": {
                 "line": 2,
                 "column": 16

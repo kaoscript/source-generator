@@ -6,7 +6,7 @@
       "kind": 56,
       "attributes": [],
       "condition": {
-        "kind": 127,
+        "kind": 128,
         "attributes": [],
         "modifiers": [
           {
@@ -23,7 +23,7 @@
         ],
         "variables": [
           {
-            "kind": 128,
+            "kind": 129,
             "attributes": [],
             "modifiers": [],
             "name": {

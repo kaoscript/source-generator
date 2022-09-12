@@ -6,12 +6,24 @@
       "kind": 56,
       "attributes": [],
       "condition": {
-        "kind": 127,
+        "kind": 128,
         "attributes": [],
-        "modifiers": [],
+        "modifiers": [
+          {
+            "kind": 11,
+            "start": {
+              "line": 1,
+              "column": 8
+            },
+            "end": {
+              "line": 1,
+              "column": 8
+            }
+          }
+        ],
         "variables": [
           {
-            "kind": 128,
+            "kind": 129,
             "attributes": [],
             "modifiers": [],
             "name": {

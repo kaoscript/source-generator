@@ -7,7 +7,7 @@
       "attributes": [],
       "declarations": [
         {
-          "kind": 128,
+          "kind": 129,
           "attributes": [],
           "modifiers": [],
           "name": {
@@ -102,7 +102,7 @@
             }
           },
           "type": {
-            "kind": 121,
+            "kind": 122,
             "modifiers": [],
             "typeName": {
               "kind": 54,
@@ -134,10 +134,10 @@
         "attributes": [],
         "statements": [
           {
-            "kind": 129,
+            "kind": 131,
             "attributes": [],
             "condition": {
-              "kind": 127,
+              "kind": 128,
               "attributes": [],
               "modifiers": [
                 {
@@ -154,7 +154,7 @@
               ],
               "variables": [
                 {
-                  "kind": 128,
+                  "kind": 129,
                   "attributes": [],
                   "modifiers": [],
                   "name": {
@@ -289,7 +289,7 @@
                   },
                   "arguments": [
                     {
-                      "kind": 112,
+                      "kind": 113,
                       "elements": [
                         {
                           "kind": 54,
@@ -415,7 +415,7 @@
             }
           },
           "type": {
-            "kind": 121,
+            "kind": 122,
             "modifiers": [],
             "typeName": {
               "kind": 54,
@@ -442,7 +442,7 @@
       ],
       "modifiers": [],
       "type": {
-        "kind": 121,
+        "kind": 122,
         "modifiers": [],
         "typeName": {
           "kind": 54,

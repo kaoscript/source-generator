@@ -3,7 +3,7 @@
   "attributes": [],
   "body": [
     {
-      "kind": 92,
+      "kind": 93,
       "attributes": [],
       "declarations": [
         {
@@ -24,7 +24,7 @@
           },
           "statements": [
             {
-              "kind": 128,
+              "kind": 129,
               "attributes": [],
               "modifiers": [],
               "name": {
@@ -48,7 +48,7 @@
                 "column": 12
               },
               "type": {
-                "kind": 121,
+                "kind": 122,
                 "modifiers": [],
                 "typeName": {
                   "kind": 54,
