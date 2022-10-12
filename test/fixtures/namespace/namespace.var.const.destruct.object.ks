@@ -1,8 +1,8 @@
 extern console
-func min() => {
+func min() => ({
 	gender: "female"
 	age: 24
-}
+})
 namespace foo {
 	var {gender, age} = min()
 }

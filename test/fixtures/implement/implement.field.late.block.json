@@ -56,7 +56,7 @@
             "column": 22
           },
           "type": {
-            "kind": 122,
+            "kind": 124,
             "modifiers": [],
             "typeName": {
               "kind": 54,
@@ -122,22 +122,11 @@
                 "column": 14
               },
               "external": {
-                "kind": 114,
-                "name": {
-                  "kind": 54,
-                  "name": "color",
-                  "start": {
-                    "line": 5,
-                    "column": 9
-                  },
-                  "end": {
-                    "line": 5,
-                    "column": 14
-                  }
-                },
+                "kind": 54,
+                "name": "color",
                 "start": {
                   "line": 5,
-                  "column": 8
+                  "column": 9
                 },
                 "end": {
                   "line": 5,
@@ -145,7 +134,7 @@
                 }
               },
               "internal": {
-                "kind": 114,
+                "kind": 116,
                 "name": {
                   "kind": 54,
                   "name": "color",
@@ -253,7 +242,7 @@
             "column": 22
           },
           "type": {
-            "kind": 122,
+            "kind": 124,
             "modifiers": [],
             "typeName": {
               "kind": 54,

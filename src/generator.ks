@@ -313,18 +313,16 @@ export namespace Generator {
 	}
 
 	func isDifferentName(a, b): Boolean { # {{{
-		return true unless a.kind == b.kind
-
-		switch a.kind {
+		switch b.kind {
 			NodeKind::Identifier => {
 				return a.name != b.name
 			}
 			NodeKind::ThisExpression => {
-				return a.name.name != b.name.name
+				return a.name != b.name.name
 			}
 		}
 
-		return false
+		return true
 	} # }}}
 
 	func generate(data, options? = null) { # {{{
@@ -420,9 +418,26 @@ export namespace Generator {
 				writer.code(']')
 			} # }}}
 			NodeKind::ArrayType => { # {{{
-				writer.expression(data.element)
+				if #data.properties {
+					writer.code('[')
 
-				writer.code('[]')
+					for var property, index in data.properties {
+						writer.code(', ') if index > 0
+
+						writer.expression(property)
+					}
+
+					if ?data.rest {
+						writer.code(', ...').expression(data.rest)
+					}
+
+					writer.code(']')
+				}
+				else {
+					writer.expression(data.rest)
+
+					writer.code('[]')
+				}
 
 				for var modifier in data.modifiers {
 					switch modifier.kind {
@@ -1004,9 +1019,28 @@ export namespace Generator {
 				}
 			} # }}}
 			NodeKind::ObjectType => { # {{{
-				writer.expression(data.element)
+				if #data.properties {
+					var o = writer.newObject()
 
-				writer.code('{}')
+					o.pushMode(KSWriterMode::Property)
+
+					for var property, index in data.properties {
+						o.newLine().expression(property).done()
+					}
+
+					if ?data.rest {
+						o.newLine().code('...').expression(data.rest).done()
+					}
+
+					o.popMode()
+
+					o.done()
+				}
+				else {
+					writer.expression(data.rest)
+
+					writer.code('{}')
+				}
 
 				for var modifier in data.modifiers {
 					switch modifier.kind {
@@ -1133,6 +1167,30 @@ export namespace Generator {
 					writer
 						.code(BinaryOperatorSymbol[data.operator.kind])
 						.wrap(operand)
+				}
+			} # }}}
+			NodeKind::PositionalArgument => { # {{{
+				writer.code('\\').expression(data.value)
+			} # }}}
+			NodeKind::PropertyType => { # {{{
+				if ?data.name {
+					if data.type.kind == NodeKind::FunctionExpression {
+						toExpression(data.type, writer, writer => writer.expression(data.name))
+					}
+					else {
+						writer.expression(data.name).code(': ').expression(data.type)
+					}
+				}
+				else if ?data.type {
+					writer.expression(data.type)
+				}
+
+				for var modifier in data.modifiers {
+					switch modifier.kind {
+						ModifierKind::Nullable => {
+							writer.code('?')
+						}
+					}
 				}
 			} # }}}
 			NodeKind::RegularExpression => { # {{{
@@ -1502,6 +1560,9 @@ export namespace Generator {
 		}
 		else if data.kind == NodeKind::ReturnStatement {
 			writer.code(' => ').expression(data.value)
+		}
+		else if data.kind == NodeKind::ObjectExpression {
+			writer.code(' => (').expression(data).code(')')
 		}
 		else {
 			writer.code(' => ').expression(data)

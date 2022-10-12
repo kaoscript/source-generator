@@ -67,7 +67,7 @@
             "column": 22
           },
           "type": {
-            "kind": 122,
+            "kind": 124,
             "modifiers": [],
             "typeName": {
               "kind": 54,
@@ -129,7 +129,7 @@
             "column": 17
           },
           "type": {
-            "kind": 114,
+            "kind": 116,
             "name": {
               "kind": 54,
               "name": "value",
@@ -183,22 +183,11 @@
                 "column": 14
               },
               "external": {
-                "kind": 114,
-                "name": {
-                  "kind": 54,
-                  "name": "value",
-                  "start": {
-                    "line": 6,
-                    "column": 9
-                  },
-                  "end": {
-                    "line": 6,
-                    "column": 14
-                  }
-                },
+                "kind": 54,
+                "name": "value",
                 "start": {
                   "line": 6,
-                  "column": 8
+                  "column": 9
                 },
                 "end": {
                   "line": 6,
@@ -206,7 +195,7 @@
                 }
               },
               "internal": {
-                "kind": 114,
+                "kind": 116,
                 "name": {
                   "kind": 54,
                   "name": "value",
@@ -239,7 +228,7 @@
             "column": 21
           },
           "type": {
-            "kind": 122,
+            "kind": 124,
             "modifiers": [],
             "typeName": {
               "kind": 54,

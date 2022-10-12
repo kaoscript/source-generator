@@ -3,7 +3,7 @@
   "attributes": [],
   "body": [
     {
-      "kind": 100,
+      "kind": 102,
       "attributes": [],
       "modifiers": [],
       "name": {
@@ -20,18 +20,18 @@
       },
       "fields": [
         {
-          "kind": 101,
+          "kind": 103,
           "attributes": [],
           "modifiers": [
             {
               "kind": 18,
               "start": {
                 "line": 2,
-                "column": 6
+                "column": 3
               },
               "end": {
                 "line": 2,
-                "column": 7
+                "column": 4
               }
             }
           ],
@@ -40,35 +40,35 @@
             "name": "x",
             "start": {
               "line": 2,
-              "column": 5
+              "column": 2
             },
             "end": {
               "line": 2,
-              "column": 6
+              "column": 3
             }
           },
           "start": {
             "line": 2,
-            "column": 5
+            "column": 2
           },
           "end": {
             "line": 2,
-            "column": 7
+            "column": 4
           }
         },
         {
-          "kind": 101,
+          "kind": 103,
           "attributes": [],
           "modifiers": [
             {
               "kind": 18,
               "start": {
                 "line": 3,
-                "column": 6
+                "column": 3
               },
               "end": {
                 "line": 3,
-                "column": 7
+                "column": 4
               }
             }
           ],
@@ -77,20 +77,20 @@
             "name": "y",
             "start": {
               "line": 3,
-              "column": 5
+              "column": 2
             },
             "end": {
               "line": 3,
-              "column": 6
+              "column": 3
             }
           },
           "start": {
             "line": 3,
-            "column": 5
+            "column": 2
           },
           "end": {
             "line": 3,
-            "column": 7
+            "column": 4
           }
         }
       ],
@@ -104,7 +104,7 @@
       }
     },
     {
-      "kind": 100,
+      "kind": 102,
       "attributes": [],
       "modifiers": [],
       "name": {
@@ -121,7 +121,7 @@
       },
       "fields": [
         {
-          "kind": 101,
+          "kind": 103,
           "attributes": [],
           "modifiers": [
             {
@@ -170,7 +170,7 @@
           }
         },
         {
-          "kind": 101,
+          "kind": 103,
           "attributes": [],
           "modifiers": [
             {

@@ -56,7 +56,7 @@
             "column": 22
           },
           "type": {
-            "kind": 122,
+            "kind": 124,
             "modifiers": [],
             "typeName": {
               "kind": 54,
@@ -122,22 +122,11 @@
                 "column": 20
               },
               "external": {
-                "kind": 114,
-                "name": {
-                  "kind": 54,
-                  "name": "color",
-                  "start": {
-                    "line": 6,
-                    "column": 15
-                  },
-                  "end": {
-                    "line": 6,
-                    "column": 20
-                  }
-                },
+                "kind": 54,
+                "name": "color",
                 "start": {
                   "line": 6,
-                  "column": 14
+                  "column": 15
                 },
                 "end": {
                   "line": 6,
@@ -145,7 +134,7 @@
                 }
               },
               "internal": {
-                "kind": 114,
+                "kind": 116,
                 "name": {
                   "kind": 54,
                   "name": "color",
@@ -205,7 +194,7 @@
             "column": 32
           },
           "type": {
-            "kind": 122,
+            "kind": 124,
             "modifiers": [],
             "typeName": {
               "kind": 54,
@@ -296,22 +285,11 @@
                 "column": 14
               },
               "external": {
-                "kind": 114,
-                "name": {
-                  "kind": 54,
-                  "name": "color",
-                  "start": {
-                    "line": 10,
-                    "column": 9
-                  },
-                  "end": {
-                    "line": 10,
-                    "column": 14
-                  }
-                },
+                "kind": 54,
+                "name": "color",
                 "start": {
                   "line": 10,
-                  "column": 8
+                  "column": 9
                 },
                 "end": {
                   "line": 10,
@@ -319,7 +297,7 @@
                 }
               },
               "internal": {
-                "kind": 114,
+                "kind": 116,
                 "name": {
                   "kind": 54,
                   "name": "color",
@@ -352,7 +330,7 @@
             "column": 30
           },
           "type": {
-            "kind": 122,
+            "kind": 124,
             "modifiers": [],
             "typeName": {
               "kind": 54,
@@ -443,7 +421,7 @@
                 }
               },
               "type": {
-                "kind": 122,
+                "kind": 124,
                 "modifiers": [],
                 "typeName": {
                   "kind": 54,
@@ -477,7 +455,7 @@
             "column": 3
           },
           "type": {
-            "kind": 122,
+            "kind": 124,
             "modifiers": [],
             "typeName": {
               "kind": 54,
@@ -618,7 +596,7 @@
                 "attributes": []
               },
               {
-                "kind": 96,
+                "kind": 98,
                 "attributes": [],
                 "value": {
                   "kind": 54,

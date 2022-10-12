@@ -1,4 +1,2 @@
-func foobar(x: {
-	...String
-}) {
+func foobar(x: String{}) {
 }

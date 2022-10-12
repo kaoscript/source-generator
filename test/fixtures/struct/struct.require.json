@@ -3,11 +3,11 @@
   "attributes": [],
   "body": [
     {
-      "kind": 93,
+      "kind": 95,
       "attributes": [],
       "declarations": [
         {
-          "kind": 100,
+          "kind": 102,
           "attributes": [],
           "modifiers": [],
           "name": {
@@ -24,7 +24,7 @@
           },
           "fields": [
             {
-              "kind": 101,
+              "kind": 103,
               "attributes": [],
               "modifiers": [],
               "name": {
@@ -32,48 +32,48 @@
                 "name": "x",
                 "start": {
                   "line": 2,
-                  "column": 5
+                  "column": 2
                 },
                 "end": {
                   "line": 2,
-                  "column": 6
+                  "column": 3
                 }
               },
               "start": {
                 "line": 2,
-                "column": 5
+                "column": 2
               },
               "end": {
                 "line": 2,
-                "column": 14
+                "column": 11
               },
               "type": {
-                "kind": 122,
+                "kind": 124,
                 "modifiers": [],
                 "typeName": {
                   "kind": 54,
                   "name": "Number",
                   "start": {
                     "line": 2,
-                    "column": 8
+                    "column": 5
                   },
                   "end": {
                     "line": 2,
-                    "column": 14
+                    "column": 11
                   }
                 },
                 "start": {
                   "line": 2,
-                  "column": 8
+                  "column": 5
                 },
                 "end": {
                   "line": 2,
-                  "column": 14
+                  "column": 11
                 }
               }
             },
             {
-              "kind": 101,
+              "kind": 103,
               "attributes": [],
               "modifiers": [],
               "name": {
@@ -81,43 +81,43 @@
                 "name": "y",
                 "start": {
                   "line": 3,
-                  "column": 5
+                  "column": 2
                 },
                 "end": {
                   "line": 3,
-                  "column": 6
+                  "column": 3
                 }
               },
               "start": {
                 "line": 3,
-                "column": 5
+                "column": 2
               },
               "end": {
                 "line": 3,
-                "column": 14
+                "column": 11
               },
               "type": {
-                "kind": 122,
+                "kind": 124,
                 "modifiers": [],
                 "typeName": {
                   "kind": 54,
                   "name": "Number",
                   "start": {
                     "line": 3,
-                    "column": 8
+                    "column": 5
                   },
                   "end": {
                     "line": 3,
-                    "column": 14
+                    "column": 11
                   }
                 },
                 "start": {
                   "line": 3,
-                  "column": 8
+                  "column": 5
                 },
                 "end": {
                   "line": 3,
-                  "column": 14
+                  "column": 11
                 }
               }
             }
@@ -142,7 +142,7 @@
       }
     },
     {
-      "kind": 130,
+      "kind": 132,
       "attributes": [],
       "modifiers": [
         {
@@ -159,12 +159,12 @@
       ],
       "declarations": [
         {
-          "kind": 128,
+          "kind": 130,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 129,
+              "kind": 131,
               "attributes": [],
               "modifiers": [],
               "name": {
