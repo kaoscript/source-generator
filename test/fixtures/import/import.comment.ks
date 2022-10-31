@@ -1,1 +1,3 @@
-import "module" for class Foobar
+import "module" {
+	class Foobar
+}

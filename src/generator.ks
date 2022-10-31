@@ -87,7 +87,9 @@ export namespace Generator {
 
 	enum KSWriterMode {
 		Default
+		Export
 		Extern
+		Import
 		Property
 	}
 
@@ -177,7 +179,17 @@ export namespace Generator {
 	class KSBlockWriter extends BlockWriter {
 		expression(data) { # {{{
 			if !this.filterExpression(data) {
-				toExpression(this.transformExpression(data), this)
+				switch @mode() {
+					KSWriterMode::Export => {
+						toExport(this.transformExpression(data), this)
+					}
+					KSWriterMode::Import => {
+						toImport(this.transformExpression(data), this)
+					}
+					=> {
+						toExpression(this.transformExpression(data), this)
+					}
+				}
 			}
 
 			return this
@@ -258,7 +270,17 @@ export namespace Generator {
 	class KSLineWriter extends LineWriter {
 		expression(data) { # {{{
 			if !this.filterExpression(data) {
-				toExpression(this.transformExpression(data), this)
+				switch @mode() {
+					KSWriterMode::Export => {
+						toExport(this.transformExpression(data), this)
+					}
+					KSWriterMode::Import => {
+						toImport(this.transformExpression(data), this)
+					}
+					=> {
+						toExpression(this.transformExpression(data), this)
+					}
+				}
 			}
 
 			return this
@@ -358,6 +380,100 @@ export namespace Generator {
 			}
 		}
 	} # }}}
+
+	func toExport(data, writer) {
+		switch data.kind {
+			NodeKind::DeclarationSpecifier => { # {{{
+				writer.pushMode(KSWriterMode::Default)
+				writer.statement(data.declaration)
+				writer.popMode()
+			} # }}}
+			NodeKind::GroupSpecifier => { # {{{
+				var mut exclusion = false
+				var mut wildcard = false
+
+				for var modifier in data.modifiers {
+					if modifier.kind == ModifierKind::Exclusion {
+						exclusion = true
+					}
+					else if modifier.kind == ModifierKind::Wildcard {
+						wildcard = true
+					}
+				}
+
+				if exclusion {
+					writer.code('* but ')
+
+					for var element, index in data.elements {
+						if index > 0 {
+							writer.code(', ')
+						}
+
+						writer.expression(element)
+					}
+				}
+				else if wildcard {
+					writer.code('*')
+				}
+				else {
+					if data.elements.length == 1 {
+						writer.code(' for ').expression(data.elements[0])
+					}
+					else {
+						writer.code(' for')
+
+						var block = writer.newBlock()
+
+						for var element in data.elements {
+							block.newLine().expression(element).done()
+						}
+
+						block.done()
+					}
+				}
+			} # }}}
+			NodeKind::NamedSpecifier => { # {{{
+				writer.expression(data.internal)
+
+				if ?data.external {
+					writer.code(` => \(data.external.name)`)
+				}
+				else {
+					for var modifier in data.modifiers {
+						if modifier.kind == ModifierKind::Wildcard {
+							writer.code(' for *')
+
+							break
+						}
+					}
+
+				}
+			} # }}}
+			NodeKind::PropertiesSpecifier => { # {{{
+				var line = writer.newLine()
+
+				line.expression(data.object)
+
+				if data.properties.length == 1 {
+					line.code(' for ').statement(data.dpropertieseclarations[0])
+				}
+				else {
+					var block = line.code(' for').newBlock()
+
+					for property in data.properties {
+						block.statement(property)
+					}
+
+					block.done()
+				}
+
+				line.done()
+			} # }}}
+			=> { # {{{
+				toExpression(data, writer)
+			} # }}}
+		}
+	}
 
 	func toExpression(data, writer, header? = null) {
 		switch data.kind {
@@ -785,110 +901,6 @@ export namespace Generator {
 						.expression(data.whenFalse)
 				}
 			} # }}}
-			NodeKind::ImportArgument => { # {{{
-				for var modifier in data.modifiers {
-					if modifier.kind == ModifierKind::Required {
-						writer.code('require ')
-					}
-				}
-
-				if ?data.name {
-					writer.expression(data.name).code(': ')
-				}
-
-				writer.expression(data.value)
-			} # }}}
-			NodeKind::ImportDeclarator => { # {{{
-				writer.expression(data.source)
-
-				var mut autofill = false
-
-				for var modifier in data.modifiers {
-					if modifier.kind == ModifierKind::Autofill {
-						autofill = true
-					}
-				}
-
-				if data.arguments?.length != 0 {
-					writer.code('(')
-
-					for argument, index in data.arguments {
-						if index != 0 {
-							writer.code(', ')
-						}
-
-						writer.expression(argument)
-					}
-
-					writer.code(')')
-				}
-				else if autofill {
-					writer.code('(...)')
-				}
-
-				if data.specifiers.length == 1 && data.specifiers[0].attributes.length == 0 {
-					var specifier = data.specifiers[0]
-
-					switch specifier.kind {
-						NodeKind::ImportSpecifier => {
-							writer.code(' for ').expression(specifier)
-						}
-						NodeKind::ImportExclusionSpecifier => {
-							writer.code(' but ').expression(specifier)
-						}
-						NodeKind::ImportNamespaceSpecifier => {
-							writer.code(' => ').expression(specifier)
-						}
-					}
-				}
-				else if data.specifiers.length != 0 {
-					var block = writer.newBlock()
-
-					for var specifier in data.specifiers {
-						toAttributes(specifier, AttributeMode::Outer, block)
-
-						block.newLine().expression(specifier).done()
-					}
-
-					block.done()
-				}
-			} # }}}
-			NodeKind::ImportExclusionSpecifier => { # {{{
-				for var exclusion, i in data.exclusions {
-					if i != 0 {
-						writer.code(', ')
-					}
-
-					writer.expression(exclusion)
-				}
-			} # }}}
-			NodeKind::ImportNamespaceSpecifier => { # {{{
-				writer.expression(data.internal)
-
-				if data.specifiers?.length != 0 {
-					var block = writer.newBlock()
-
-					for specifier in data.specifiers {
-						block.newLine().expression(specifier).done()
-					}
-
-					block.done()
-				}
-			} # }}}
-			NodeKind::ImportSpecifier => { # {{{
-				writer.expression(data.external)
-
-				if
-					!(
-						data.external.kind == NodeKind::ClassDeclaration ||
-						data.external.kind == NodeKind::FunctionDeclaration ||
-						data.external.kind == NodeKind::VariableDeclarator
-					)
-					|| data.internal.name != data.external.name.name
-				{
-					writer.code(' => ').expression(data.internal)
-				}
-			} # }}}
 			NodeKind::IncludeDeclarator => { # {{{
 				toAttributes(data, AttributeMode::Outer, writer)
 
@@ -989,7 +1001,7 @@ export namespace Generator {
 
 				o.pushMode(KSWriterMode::Property)
 
-				for property in data.properties {
+				for var property in data.properties {
 					toAttributes(property, AttributeMode::Outer, o)
 
 					o.newLine().expression(property).done()
@@ -1087,7 +1099,7 @@ export namespace Generator {
 
 				if !?data.external {
 					if only || !?data.internal || data.internal.kind != NodeKind::Identifier & NodeKind::ThisExpression {
-						// do nothing
+						pass
 					}
 					else {
 						writer.code('_ % ')
@@ -1143,9 +1155,6 @@ export namespace Generator {
 						switch modifier.kind {
 							ModifierKind::Required => {
 								writer.code('!')
-							}
-							ModifierKind::SetterAlias => {
-								writer.code('()')
 							}
 						}
 					}
@@ -1569,6 +1578,157 @@ export namespace Generator {
 		}
 	} # }}}
 
+	func toImport(data, writer) {
+		switch data.kind {
+			NodeKind::Argument => { # {{{
+				for var modifier in data.modifiers {
+					if modifier.kind == ModifierKind::Required {
+						writer.code('require ')
+					}
+				}
+
+				if ?data.name {
+					writer.expression(data.name).code(': ')
+				}
+
+				writer.expression(data.value)
+			} # }}}
+			NodeKind::GroupSpecifier => { # {{{
+				var mut alias = false
+				var mut exclusion = false
+				var mut wildcard = false
+
+				for var modifier in data.modifiers {
+					if modifier.kind == ModifierKind::Alias {
+						alias = true
+					}
+					else if modifier.kind == ModifierKind::Exclusion {
+						exclusion = true
+					}
+					else if modifier.kind == ModifierKind::Wildcard {
+						wildcard = true
+					}
+				}
+
+				if alias {
+					writer.code(' => ')
+
+					for var element, index in data.elements {
+						if index > 0 {
+							writer.code(', ')
+						}
+
+						writer.expression(element)
+					}
+				}
+				else if exclusion {
+					writer.code(' but ')
+
+					for var element, index in data.elements {
+						if index > 0 {
+							writer.code(', ')
+						}
+
+						writer.expression(element)
+					}
+				}
+				else if wildcard {
+					writer.code(' for *')
+				}
+				else {
+					writer.code(' for')
+
+					var block = writer.newBlock()
+
+					for var element in data.elements {
+						block.newLine().expression(element).done()
+					}
+
+					block.done()
+				}
+			} # }}}
+			NodeKind::ImportDeclarator => { # {{{
+				writer.expression(data.source)
+
+				var mut autofill = false
+
+				for var modifier in data.modifiers {
+					if modifier.kind == ModifierKind::Autofill {
+						autofill = true
+					}
+				}
+
+				if #data.arguments {
+					writer.code('(')
+
+					for argument, index in data.arguments {
+						if index != 0 {
+							writer.code(', ')
+						}
+
+						writer.expression(argument)
+					}
+
+					writer.code(')')
+				}
+				else if autofill {
+					writer.code('(...)')
+				}
+
+				if ?data.type {
+					writer.expression(data.type)
+				}
+
+				if data.specifiers.length == 1 {
+					var specifier = data.specifiers[0]
+
+					if specifier.kind == NodeKind::GroupSpecifier {
+						writer.expression(specifier)
+					}
+					else {
+						writer.code(' for ').expression(specifier)
+					}
+				}
+				else if #data.specifiers {
+					writer.code(' for')
+
+					var block = writer.newBlock()
+
+					for var specifier in data.specifiers {
+						block.newLine().expression(specifier).done()
+					}
+
+					block.done()
+				}
+			} # }}}
+			NodeKind::NamedSpecifier => { # {{{
+				if ?data.external {
+					writer.expression(data.external).code(` => \(data.internal.name)`)
+				}
+				else {
+					writer.expression(data.internal)
+				}
+			} # }}}
+			NodeKind::TypeList => { # {{{
+				var block = writer.newBlock()
+
+				for var type in data.types {
+					toAttributes(type, AttributeMode::Outer, block)
+
+					block.newLine().expression(type).done()
+				}
+
+				block.done()
+			} # }}}
+			NodeKind::TypedSpecifier => { # {{{
+				writer.statement(data.type)
+			} # }}}
+			=> { # {{{
+				toExpression(data, writer)
+			} # }}}
+		}
+	}
+
 	func toLoopHeader(data, writer) { # {{{
 		switch data.kind {
 			NodeKind::ForFromStatement => {
@@ -1987,71 +2147,29 @@ export namespace Generator {
 			NodeKind::ExportDeclaration => { # {{{
 				var line = writer.newLine()
 
-				if data.declarations.length == 1 && (!?data.declarations[0].declaration || data.declarations[0].declaration.attributes.length == 0) {
+				line.pushMode(KSWriterMode::Export)
+
+				if data.declarations.length == 1 && ((data.declarations[0].kind == NodeKind::DeclarationSpecifier) -> (!#data.declarations[0].declaration.attributes)) {
 					line.code('export ').statement(data.declarations[0])
 				}
 				else {
 					var block = line.code('export').newBlock()
 
 					for declaration in data.declarations {
-						block.statement(declaration)
-					}
-
-					block.done()
-				}
-
-				line.done()
-			} # }}}
-			NodeKind::ExportDeclarationSpecifier => { # {{{
-				writer.statement(data.declaration)
-			} # }}}
-			NodeKind::ExportExclusionSpecifier => { # {{{
-				var line = writer.newLine().code('*')
-
-				if data.exclusions.length != 0 {
-					line.code(' but ')
-
-					for var exclusion, i in data.exclusions {
-						if i != 0 {
-							line.code(', ')
+						if declaration.kind == NodeKind::DeclarationSpecifier {
+							block.statement(declaration.declaration)
 						}
-
-						line.expression(exclusion)
-					}
-				}
-
-				line.done()
-			} # }}}
-			NodeKind::ExportNamedSpecifier => { # {{{
-				if data.internal.kind == data.external.kind && data.internal.name == data.external.name {
-					writer.newLine().code(data.internal.name).done()
-				}
-				else {
-					writer.newLine().expression(data.internal).code(` => \(data.external.name)`).done()
-				}
-			} # }}}
-			NodeKind::ExportPropertiesSpecifier => { # {{{
-				var line = writer.newLine()
-
-				line.expression(data.object)
-
-				if data.properties.length == 1 {
-					line.code(' for ').statement(data.dpropertieseclarations[0])
-				}
-				else {
-					var block = line.code(' for').newBlock()
-
-					for property in data.properties {
-						block.statement(property)
+						else {
+							block.newLine().expression(declaration).done()
+						}
 					}
 
 					block.done()
 				}
 
+				line.popMode()
+
 				line.done()
-			} # }}}
-			NodeKind::ExportWildcardSpecifier => { # {{{
-				writer.newLine().expression(data.internal).code(' for *').done()
 			} # }}}
 			NodeKind::ExternDeclaration => { # {{{
 				var line = writer.newLine()
@@ -2100,6 +2218,8 @@ export namespace Generator {
 			NodeKind::ExternOrImportDeclaration => { # {{{
 				var line = writer.newLine()
 
+				line.pushMode(KSWriterMode::Import)
+
 				if data.declarations.length == 1 && data.declarations[0].attributes.length == 0 {
 					line.code('extern|import ').expression(data.declarations[0])
 				}
@@ -2114,6 +2234,8 @@ export namespace Generator {
 
 					block.done()
 				}
+
+				line.popMode()
 
 				line.done()
 			} # }}}
@@ -2534,7 +2656,9 @@ export namespace Generator {
 			NodeKind::ImportDeclaration => { # {{{
 				var line = writer.newLine()
 
-				if data.declarations.length == 1 && data.declarations[0].attributes.length == 0 {
+				line.pushMode(KSWriterMode::Import)
+
+				if data.declarations.length == 1 && !#data.declarations[0].attributes {
 					line.code('import ').expression(data.declarations[0])
 				}
 				else {
@@ -2548,6 +2672,8 @@ export namespace Generator {
 
 					block.done()
 				}
+
+				line.popMode()
 
 				line.done()
 			} # }}}
@@ -2827,6 +2953,8 @@ export namespace Generator {
 			NodeKind::RequireOrImportDeclaration => { # {{{
 				var line = writer.newLine()
 
+				line.pushMode(KSWriterMode::Import)
+
 				if data.declarations.length == 1 && data.declarations[0].attributes.length == 0 {
 					line.code('require|import ').expression(data.declarations[0])
 				}
@@ -2841,6 +2969,8 @@ export namespace Generator {
 
 					block.done()
 				}
+
+				line.popMode()
 
 				line.done()
 			} # }}}

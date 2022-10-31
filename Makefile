@@ -13,7 +13,7 @@ else
 endif
 
 sync:
-	./scripts/sync.ks
+	npx kaoscript ./scripts/sync.ks
 
 clean:
 	npx kaoscript --clean

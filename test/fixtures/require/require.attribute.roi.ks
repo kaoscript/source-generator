@@ -1,4 +1,6 @@
 require|import {
 	#[foobar]
-	"./array.ks" for class Array
+	"./array.ks" {
+		class Array
+	}
 }

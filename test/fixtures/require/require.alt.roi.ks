@@ -1,4 +1,6 @@
-require|import "./array.ks" for Array
+require|import "./array.ks" for {
+	Array
+}
 impl Array {
 	contains(item, from = 0) {
 		return this.indexOf(item, from) != -1

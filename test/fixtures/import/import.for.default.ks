@@ -1,1 +1,3 @@
-import "module1" for foobar
+import "module1" for {
+	foobar
+}

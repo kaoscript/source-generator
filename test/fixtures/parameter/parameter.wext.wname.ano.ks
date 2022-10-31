@@ -1,2 +1,0 @@
-func foobar(_ % x) {
-}

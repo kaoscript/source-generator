@@ -1,17 +1,17 @@
 {
-  "kind": 76,
+  "kind": 69,
   "attributes": [],
   "body": [
     {
-      "kind": 59,
+      "kind": 56,
       "attributes": [],
       "declarations": [
         {
-          "kind": 60,
+          "kind": 57,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 4,
+              "kind": 5,
               "start": {
                 "line": 1,
                 "column": 18
@@ -23,7 +23,7 @@
             }
           ],
           "source": {
-            "kind": 70,
+            "kind": 63,
             "value": "module1",
             "start": {
               "line": 1,

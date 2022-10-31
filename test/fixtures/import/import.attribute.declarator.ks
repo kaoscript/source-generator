@@ -1,4 +1,6 @@
 import {
 	#[foobar]
-	"module" for class Foobar
+	"module" {
+		class Foobar
+	}
 }

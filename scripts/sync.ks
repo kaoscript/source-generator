@@ -10,7 +10,7 @@ var srcRoot = path.join(__dirname, '..', '..', 'parser', 'test', 'fixtures')
 var destRoot = path.join(__dirname, '..', 'test', 'fixtures')
 
 // 1. update existing files
-func update(srcPath) { // {{{
+func update(srcPath) { # {{{
 	return unless fse.pathExistsSync(srcPath.slice(0, -5) + '.ks')
 
 	var dirname = path.basename(path.dirname(srcPath).substr(srcRoot.length))
@@ -43,9 +43,9 @@ func update(srcPath) { // {{{
 			write(dirname, ksfile, ksfile)
 		}
 	}
-} // }}}
+} # }}}
 
-func write(dirname, srcFilename, destFilename) { // {{{
+func write(dirname, srcFilename, destFilename) { # {{{
 	var data = fse.readFileSync(path.join(srcRoot, dirname, srcFilename), {
 		encoding: 'utf8'
 	})
@@ -53,7 +53,7 @@ func write(dirname, srcFilename, destFilename) { // {{{
 	fse.outputFileSync(path.join(destRoot, dirname, destFilename), data, {
 		encoding: 'utf8'
 	})
-} // }}}
+} # }}}
 
 for var file in klaw(srcRoot, {
 	nodir: true,
@@ -64,12 +64,12 @@ for var file in klaw(srcRoot, {
 }
 
 // 2. remove old files
-func check(destPath) { // {{{
+func check(destPath) { # {{{
 	var dirname = path.basename(path.dirname(destPath).substr(destRoot.length))
 	var filename = path.basename(destPath)
 
 	try {
-		fse.readFileSync(path.join(srcRoot, dirname, filename), {
+		fse.readFileSync(path.join(srcRoot, dirname, filename.slice(0, -3) + '.json'), {
 			encoding: 'utf8'
 		})
 	}
@@ -81,7 +81,7 @@ func check(destPath) { // {{{
 		fse.removeSync(path.join(destRoot, dirname, `\(filename.slice(0, -3)).json`))
 		fse.removeSync(path.join(destRoot, dirname, `\(filename.slice(0, -3)).error`))
 	}
-} // }}}
+} # }}}
 
 for var file in klaw(destRoot, {
 	nodir: true,
