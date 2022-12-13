@@ -7,6 +7,7 @@
       "attributes": [],
       "name": {
         "kind": 52,
+        "modifiers": [],
         "name": "foobar",
         "start": {
           "line": 1,
@@ -36,10 +37,11 @@
           },
           "end": {
             "line": 1,
-            "column": 43
+            "column": 39
           },
           "external": {
             "kind": 52,
+            "modifiers": [],
             "name": "x",
             "start": {
               "line": 1,
@@ -52,6 +54,7 @@
           },
           "internal": {
             "kind": 52,
+            "modifiers": [],
             "name": "x",
             "start": {
               "line": 1,
@@ -63,30 +66,31 @@
             }
           },
           "type": {
-            "kind": 120,
+            "kind": 121,
             "modifiers": [
               {
-                "kind": 21,
+                "kind": 22,
                 "start": {
                   "line": 1,
-                  "column": 42
+                  "column": 38
                 },
                 "end": {
                   "line": 1,
-                  "column": 43
+                  "column": 39
                 }
               }
             ],
             "typeName": {
               "kind": 52,
-              "name": "Dictionary",
+              "modifiers": [],
+              "name": "Object",
               "start": {
                 "line": 1,
                 "column": 16
               },
               "end": {
                 "line": 1,
-                "column": 26
+                "column": 22
               }
             },
             "start": {
@@ -95,67 +99,69 @@
             },
             "end": {
               "line": 1,
-              "column": 43
+              "column": 39
             },
             "typeParameters": [
               {
-                "kind": 120,
+                "kind": 121,
                 "modifiers": [
                   {
-                    "kind": 21,
+                    "kind": 22,
                     "start": {
                       "line": 1,
-                      "column": 40
+                      "column": 36
                     },
                     "end": {
                       "line": 1,
-                      "column": 41
+                      "column": 37
                     }
                   }
                 ],
                 "typeName": {
                   "kind": 52,
+                  "modifiers": [],
                   "name": "Array",
                   "start": {
                     "line": 1,
-                    "column": 27
+                    "column": 23
                   },
                   "end": {
                     "line": 1,
-                    "column": 32
+                    "column": 28
                   }
                 },
                 "start": {
                   "line": 1,
-                  "column": 27
+                  "column": 23
                 },
                 "end": {
                   "line": 1,
-                  "column": 41
+                  "column": 37
                 },
                 "typeParameters": [
                   {
-                    "kind": 120,
+                    "kind": 121,
                     "modifiers": [],
                     "typeName": {
                       "kind": 52,
+                      "modifiers": [],
                       "name": "Number",
                       "start": {
                         "line": 1,
-                        "column": 33
+                        "column": 29
                       },
                       "end": {
                         "line": 1,
-                        "column": 39
+                        "column": 35
                       }
                     },
                     "start": {
                       "line": 1,
-                      "column": 33
+                      "column": 29
                     },
                     "end": {
                       "line": 1,
-                      "column": 39
+                      "column": 35
                     }
                   }
                 ]
@@ -172,7 +178,7 @@
         "statements": [],
         "start": {
           "line": 1,
-          "column": 45
+          "column": 41
         },
         "end": {
           "line": 2,

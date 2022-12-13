@@ -355,6 +355,16 @@ export namespace Generator {
 		return writer.toSource()
 	} # }}}
 
+	func hasModifier(data, target: ModifierKind): Boolean { # {{{
+		for var modifier in data.modifiers {
+			if modifier.kind == target {
+				return true
+			}
+		}
+
+		return false
+	} # }}}
+
 	func toAttribute(data, mode: AttributeMode, writer) { # {{{
 		return writer
 			.code(mode == AttributeMode::Inner ? '#![' : '#[')
@@ -1559,7 +1569,7 @@ export namespace Generator {
 				.code(' => ')
 				.expression(data.whenTrue.value)
 				.code(' if ')
-				.expression(data.condition)
+				.expression(data.conditions[0])
 
 			if ?data.whenFalse {
 				writer
@@ -1748,15 +1758,17 @@ export namespace Generator {
 					.code(' from ')
 					.expression(data.from)
 
-				if ?data.til {
-					writer.code(' til ').expression(data.til)
-				}
-				else if ?data.to {
-					writer.code(' to ').expression(data.to)
+				if ?data.to {
+					if hasModifier(data.to, ModifierKind::Ballpark) {
+						writer.code(' to~ ').expression(data.to)
+					}
+					else {
+						writer.code(' to ').expression(data.to)
+					}
 				}
 
-				if ?data.by {
-					writer.code(' by ').expression(data.by)
+				if ?data.step {
+					writer.code(' step ').expression(data.step)
 				}
 
 				if ?data.until {
@@ -1800,19 +1812,29 @@ export namespace Generator {
 
 				writer.code(' in ').expression(data.expression)
 
-				if descending {
-					writer.code(' desc')
-				}
-
 				if ?data.from {
 					writer.code(' from ').expression(data.from)
 				}
 
-				if ?data.til {
-					writer.code(' til ').expression(data.til)
+				if descending {
+					writer.code(' down')
 				}
-				else if ?data.to {
-					writer.code(' to ').expression(data.to)
+
+				if ?data.to {
+					if hasModifier(data.to, ModifierKind::Ballpark) {
+						writer.code(' to~ ').expression(data.to)
+					}
+					else {
+						writer.code(' to ').expression(data.to)
+					}
+				}
+
+				if ?data.step {
+					writer.code(' step ').expression(data.step)
+				}
+
+				if ?data.split {
+					writer.code(' split ').expression(data.split)
 				}
 
 				if ?data.until {
@@ -1877,23 +1899,14 @@ export namespace Generator {
 				writer
 					.expression(data.value)
 					.code(' in ')
+					.expression(data.from)
+					.code(hasModifier(data.from, ModifierKind::Ballpark) ? '<' : '')
+					.code('..')
+					.code(hasModifier(data.to, ModifierKind::Ballpark) ? '<' : '')
+					.expression(data.to)
 
-				if ?data.from {
-					writer.expression(data.from).code('..')
-				}
-				else if ?data.then {
-					writer.expression(data.then).code('<..')
-				}
-
-				if ?data.til {
-					writer.code('<').expression(data.til)
-				}
-				else if ?data.to {
-					writer.code('').expression(data.to)
-				}
-
-				if ?data.by {
-					writer.code('..').expression(data.by)
+				if ?data.step {
+					writer.code('..').expression(data.step)
 				}
 
 				if ?data.until {
@@ -1906,6 +1919,9 @@ export namespace Generator {
 				if ?data.when {
 					writer.code(' when ').expression(data.when)
 				}
+			}
+			NodeKind::RepeatStatement => {
+				writer.code(' repeat ').expression(data.expression).code(' times')
 			}
 		}
 	} # }}}
@@ -2302,6 +2318,8 @@ export namespace Generator {
 				line.done()
 			} # }}}
 			NodeKind::ForFromStatement => { # {{{
+				var mut descending = false
+
 				var ctrl = writer
 					.newControl()
 					.code('for ')
@@ -2313,6 +2331,9 @@ export namespace Generator {
 					else if modifier.kind == ModifierKind::Immutable {
 						ctrl.code('var ')
 					}
+					else if modifier.kind == ModifierKind::Descending {
+						descending = true
+					}
 				}
 
 				ctrl
@@ -2320,15 +2341,19 @@ export namespace Generator {
 					.code(' from ')
 					.expression(data.from)
 
-				if ?data.til {
-					ctrl.code(' til ').expression(data.til)
+				if descending {
+					ctrl.code(' down')
+				}
+
+				if hasModifier(data.to, ModifierKind::Ballpark) {
+					ctrl.code(' to~ ').expression(data.to)
 				}
 				else {
 					ctrl.code(' to ').expression(data.to)
 				}
 
-				if ?data.by {
-					ctrl.code(' by ').expression(data.by)
+				if ?data.step {
+					ctrl.code(' step ').expression(data.step)
 				}
 
 				if ?data.until {
@@ -2348,7 +2373,7 @@ export namespace Generator {
 					.done()
 			} # }}}
 			NodeKind::ForInStatement => { # {{{
-				var dyn descending = false
+				var mut descending = false
 
 				var dyn ctrl
 
@@ -2393,23 +2418,29 @@ export namespace Generator {
 
 				ctrl.code(' in ').expression(data.expression)
 
-				if descending {
-					ctrl.code(' desc')
-				}
-
 				if ?data.from {
 					ctrl.code(' from ').expression(data.from)
 				}
 
-				if ?data.til {
-					ctrl.code(' til ').expression(data.til)
-				}
-				else if ?data.to {
-					ctrl.code(' to ').expression(data.to)
+				if descending {
+					ctrl.code(' down')
 				}
 
-				if ?data.by {
-					ctrl.code(' by ').expression(data.by)
+				if ?data.to {
+					if hasModifier(data.to, ModifierKind::Ballpark) {
+						ctrl.code(' to~ ').expression(data.to)
+					}
+					else {
+						ctrl.code(' to ').expression(data.to)
+					}
+				}
+
+				if ?data.step {
+					ctrl.code(' step ').expression(data.step)
+				}
+
+				if ?data.split {
+					ctrl.code(' split ').expression(data.split)
 				}
 
 				if ?data.until {
@@ -2427,6 +2458,10 @@ export namespace Generator {
 					ctrl
 						.step()
 						.expression(data.body)
+				}
+
+				if ?data.else {
+					ctrl.step().code('else').step().expression(data.else)
 				}
 
 				ctrl.done()
@@ -2448,31 +2483,16 @@ export namespace Generator {
 				ctrl
 					.expression(data.value)
 					.code(' in ')
+					.expression(data.from)
+					.code(hasModifier(data.from, ModifierKind::Ballpark) ? '<' : '')
+					.code('..')
+					.code(hasModifier(data.to, ModifierKind::Ballpark) ? '<' : '')
+					.expression(data.to)
 
-				if ?data.from {
-					ctrl.expression(data.from)
-				}
-				else {
-					ctrl
-						.expression(data.then)
-						.code('<')
-				}
-
-				if ?data.to {
+				if ?data.step {
 					ctrl
 						.code('..')
-						.expression(data.to)
-				}
-				else {
-					ctrl
-						.code('..<')
-						.expression(data.til)
-				}
-
-				if ?data.by {
-					ctrl
-						.code('..')
-						.expression(data.by)
+						.expression(data.step)
 				}
 
 				if ?data.until {
@@ -2550,6 +2570,10 @@ export namespace Generator {
 						.expression(data.body)
 				}
 
+				if ?data.else {
+					ctrl.step().code('else').step().expression(data.else)
+				}
+
 				ctrl.done()
 			} # }}}
 			NodeKind::FunctionDeclaration => { # {{{
@@ -2570,23 +2594,33 @@ export namespace Generator {
 			NodeKind::IfStatement => { # {{{
 				switch data.whenTrue.kind {
 					NodeKind::Block => {
-						var ctrl = writer
-							.newControl()
-							.code('if ')
-							.expression(data.condition)
-							.step()
-							.expression(data.whenTrue)
+						var ctrl = writer.newControl().code('if ')
+
+						for var condition, index in data.conditions {
+							if index > 0 {
+								ctrl.code('; ')
+							}
+
+							ctrl.expression(condition)
+						}
+
+						ctrl.step().expression(data.whenTrue)
 
 						while ?data.whenFalse {
 							if data.whenFalse.kind == NodeKind::IfStatement {
 								data = data.whenFalse
 
-								ctrl
-									.step()
-									.code('else if ')
-									.expression(data.condition)
-									.step()
-									.expression(data.whenTrue)
+								ctrl.step().code('else if ')
+
+								for var condition, index in data.conditions {
+									if index > 0 {
+										ctrl.code('; ')
+									}
+
+									ctrl.expression(condition)
+								}
+
+								ctrl.step().expression(data.whenTrue)
 							}
 							else {
 								ctrl
@@ -2601,6 +2635,20 @@ export namespace Generator {
 
 						ctrl.done()
 					}
+					NodeKind::BreakStatement => {
+						writer
+							.newLine()
+							.code('break if ')
+							.expression(data.conditions[0])
+							.done()
+					}
+					NodeKind::ContinueStatement => {
+						writer
+							.newLine()
+							.code('continue if ')
+							.expression(data.conditions[0])
+							.done()
+					}
 					NodeKind::ReturnStatement => {
 						if ?data.whenTrue.value {
 							writer
@@ -2608,14 +2656,14 @@ export namespace Generator {
 								.code('return ')
 								.expression(data.whenTrue.value)
 								.code(' if ')
-								.expression(data.condition)
+								.expression(data.conditions[0])
 								.done()
 						}
 						else {
 							writer
 								.newLine()
 								.code('return if ')
-								.expression(data.condition)
+								.expression(data.conditions[0])
 								.done()
 						}
 					}
@@ -2625,7 +2673,7 @@ export namespace Generator {
 							.code('throw ')
 							.expression(data.whenTrue.value)
 							.code(' if ')
-							.expression(data.condition)
+							.expression(data.conditions[0])
 							.done()
 					}
 					=> {
@@ -2633,7 +2681,7 @@ export namespace Generator {
 							.newLine()
 							.expression(data.whenTrue)
 							.code(' if ')
-							.expression(data.condition)
+							.expression(data.conditions[0])
 							.done()
 					}
 				}
@@ -2905,6 +2953,28 @@ export namespace Generator {
 				block.done()
 
 				line.done()
+			} # }}}
+			NodeKind::RepeatStatement => { # {{{
+				if data.body.kind == NodeKind::Block {
+					var ctrl = writer
+						.newControl()
+						.code('repeat')
+
+					if ?data.expression {
+						ctrl.code(' ').expression(data.expression).code(' times')
+					}
+
+					ctrl.step().expression(data.body).done()
+				}
+				else {
+					writer
+						.newLine()
+						.expression(data.body)
+						.code(' repeat ')
+						.expression(data.expression)
+						.code(' times')
+						.done()
+				}
 			} # }}}
 			NodeKind::RequireDeclaration => { # {{{
 				var line = writer.newLine()
@@ -3213,6 +3283,20 @@ export namespace Generator {
 							.expression(data.whenFalse)
 
 						ctrl.done()
+					}
+					NodeKind::BreakStatement => {
+						writer
+							.newLine()
+							.code('break unless ')
+							.expression(data.condition)
+							.done()
+					}
+					NodeKind::ContinueStatement => {
+						writer
+							.newLine()
+							.code('continue unless ')
+							.expression(data.condition)
+							.done()
 					}
 					NodeKind::ReturnStatement => {
 						if ?data.whenFalse.value {
