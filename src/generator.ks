@@ -1569,7 +1569,7 @@ export namespace Generator {
 				.code(' => ')
 				.expression(data.whenTrue.value)
 				.code(' if ')
-				.expression(data.conditions[0])
+				.expression(data.condition)
 
 			if ?data.whenFalse {
 				writer
@@ -2596,12 +2596,15 @@ export namespace Generator {
 					NodeKind::Block => {
 						var ctrl = writer.newControl().code('if ')
 
-						for var condition, index in data.conditions {
-							if index > 0 {
-								ctrl.code('; ')
-							}
+						if ?data.declaration {
+							ctrl.expression(data.declaration)
 
-							ctrl.expression(condition)
+							if ?data.condition {
+								ctrl.code('; ').expression(data.condition)
+							}
+						}
+						else if ?data.condition {
+							ctrl.expression(data.condition)
 						}
 
 						ctrl.step().expression(data.whenTrue)
@@ -2612,12 +2615,15 @@ export namespace Generator {
 
 								ctrl.step().code('else if ')
 
-								for var condition, index in data.conditions {
-									if index > 0 {
-										ctrl.code('; ')
-									}
+								if ?data.declaration {
+									ctrl.expression(data.declaration)
 
-									ctrl.expression(condition)
+									if ?data.condition {
+										ctrl.code('; ').expression(data.condition)
+									}
+								}
+								else if ?data.condition {
+									ctrl.expression(data.condition)
 								}
 
 								ctrl.step().expression(data.whenTrue)
@@ -2639,14 +2645,14 @@ export namespace Generator {
 						writer
 							.newLine()
 							.code('break if ')
-							.expression(data.conditions[0])
+							.expression(data.condition)
 							.done()
 					}
 					NodeKind::ContinueStatement => {
 						writer
 							.newLine()
 							.code('continue if ')
-							.expression(data.conditions[0])
+							.expression(data.condition)
 							.done()
 					}
 					NodeKind::ReturnStatement => {
@@ -2656,14 +2662,14 @@ export namespace Generator {
 								.code('return ')
 								.expression(data.whenTrue.value)
 								.code(' if ')
-								.expression(data.conditions[0])
+								.expression(data.condition)
 								.done()
 						}
 						else {
 							writer
 								.newLine()
 								.code('return if ')
-								.expression(data.conditions[0])
+								.expression(data.condition)
 								.done()
 						}
 					}
@@ -2673,7 +2679,7 @@ export namespace Generator {
 							.code('throw ')
 							.expression(data.whenTrue.value)
 							.code(' if ')
-							.expression(data.conditions[0])
+							.expression(data.condition)
 							.done()
 					}
 					=> {
@@ -2681,7 +2687,7 @@ export namespace Generator {
 							.newLine()
 							.expression(data.whenTrue)
 							.code(' if ')
-							.expression(data.conditions[0])
+							.expression(data.condition)
 							.done()
 					}
 				}
