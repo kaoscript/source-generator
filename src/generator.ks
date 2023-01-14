@@ -179,14 +179,14 @@ export namespace Generator {
 	class KSBlockWriter extends BlockWriter {
 		expression(data) { # {{{
 			if !this.filterExpression(data) {
-				switch @mode() {
-					KSWriterMode::Export => {
+				match @mode() {
+					KSWriterMode::Export {
 						toExport(this.transformExpression(data), this)
 					}
-					KSWriterMode::Import => {
+					KSWriterMode::Import {
 						toImport(this.transformExpression(data), this)
 					}
-					=> {
+					else {
 						toExpression(this.transformExpression(data), this)
 					}
 				}
@@ -270,14 +270,14 @@ export namespace Generator {
 	class KSLineWriter extends LineWriter {
 		expression(data) { # {{{
 			if !this.filterExpression(data) {
-				switch @mode() {
-					KSWriterMode::Export => {
+				match @mode() {
+					KSWriterMode::Export {
 						toExport(this.transformExpression(data), this)
 					}
-					KSWriterMode::Import => {
+					KSWriterMode::Import {
 						toImport(this.transformExpression(data), this)
 					}
-					=> {
+					else {
 						toExpression(this.transformExpression(data), this)
 					}
 				}
@@ -335,11 +335,11 @@ export namespace Generator {
 	}
 
 	func isDifferentName(a, b): Boolean { # {{{
-		switch b.kind {
-			NodeKind::Identifier => {
+		match b.kind {
+			NodeKind::Identifier {
 				return a.name != b.name
 			}
-			NodeKind::ThisExpression => {
+			NodeKind::ThisExpression {
 				return a.name != b.name.name
 			}
 		}
@@ -392,13 +392,13 @@ export namespace Generator {
 	} # }}}
 
 	func toExport(data, writer) {
-		switch data.kind {
-			NodeKind::DeclarationSpecifier => { # {{{
+		match data.kind {
+			NodeKind::DeclarationSpecifier { # {{{
 				writer.pushMode(KSWriterMode::Default)
 				writer.statement(data.declaration)
 				writer.popMode()
 			} # }}}
-			NodeKind::GroupSpecifier => { # {{{
+			NodeKind::GroupSpecifier { # {{{
 				var mut exclusion = false
 				var mut wildcard = false
 
@@ -442,7 +442,7 @@ export namespace Generator {
 					}
 				}
 			} # }}}
-			NodeKind::NamedSpecifier => { # {{{
+			NodeKind::NamedSpecifier { # {{{
 				writer.expression(data.internal)
 
 				if ?data.external {
@@ -459,7 +459,7 @@ export namespace Generator {
 
 				}
 			} # }}}
-			NodeKind::PropertiesSpecifier => { # {{{
+			NodeKind::PropertiesSpecifier { # {{{
 				var line = writer.newLine()
 
 				line.expression(data.object)
@@ -479,15 +479,15 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			=> { # {{{
+			else { # {{{
 				toExpression(data, writer)
 			} # }}}
 		}
 	}
 
 	func toExpression(data, writer, header? = null) {
-		switch data.kind {
-			NodeKind::ArrayBinding => { # {{{
+		match data.kind {
+			NodeKind::ArrayBinding { # {{{
 				writer.code('[')
 
 				for element, index in data.elements {
@@ -500,14 +500,14 @@ export namespace Generator {
 
 				writer.code(']')
 			} # }}}
-			NodeKind::ArrayComprehension => { # {{{
+			NodeKind::ArrayComprehension { # {{{
 				writer
 					.code('[')
 					.expression(data.body)
 					.run(data.loop, toLoopHeader)
 					.code(']')
 			} # }}}
-			NodeKind::ArrayExpression => { # {{{
+			NodeKind::ArrayExpression { # {{{
 				writer.code('[')
 
 				for value, index in data.values {
@@ -520,7 +520,7 @@ export namespace Generator {
 
 				writer.code(']')
 			} # }}}
-			NodeKind::ArrayRange => { # {{{
+			NodeKind::ArrayRange { # {{{
 				writer.code('[')
 
 				if ?data.from {
@@ -543,7 +543,7 @@ export namespace Generator {
 
 				writer.code(']')
 			} # }}}
-			NodeKind::ArrayType => { # {{{
+			NodeKind::ArrayType { # {{{
 				if #data.properties {
 					writer.code('[')
 
@@ -566,14 +566,14 @@ export namespace Generator {
 				}
 
 				for var modifier in data.modifiers {
-					switch modifier.kind {
-						ModifierKind::Nullable => {
+					match modifier.kind {
+						ModifierKind::Nullable {
 							writer.code('?')
 						}
 					}
 				}
 			} # }}}
-			NodeKind::AttributeExpression => { # {{{
+			NodeKind::AttributeExpression { # {{{
 				writer.expression(data.name).code('(')
 
 				for argument, index in data.arguments {
@@ -586,16 +586,16 @@ export namespace Generator {
 
 				writer.code(')')
 			} # }}}
-			NodeKind::AttributeOperation => { # {{{
+			NodeKind::AttributeOperation { # {{{
 				writer
 					.expression(data.name)
 					.code(' = ')
 					.expression(data.value)
 			} # }}}
-			NodeKind::AwaitExpression => { # {{{
+			NodeKind::AwaitExpression { # {{{
 				writer.code('await ').expression(data.operation)
 			} # }}}
-			NodeKind::BinaryExpression => { # {{{
+			NodeKind::BinaryExpression { # {{{
 				if data.operator.kind == BinaryOperatorKind::TypeCasting {
 					writer.code('(').expression(data.left)
 
@@ -633,7 +633,7 @@ export namespace Generator {
 					writer.wrap(data.right)
 			}
 			} # }}}
-			NodeKind::BindingElement => { # {{{
+			NodeKind::BindingElement { # {{{
 				var dyn computed = false
 				var dyn thisAlias = false
 				var dyn rest = false
@@ -697,22 +697,22 @@ export namespace Generator {
 					writer.code('_')
 				}
 			} # }}}
-			NodeKind::Block => { # {{{
+			NodeKind::Block { # {{{
 				toAttributes(data, AttributeMode::Inner, writer)
 
 				for statement in data.statements {
 					writer.statement(statement)
 				}
 			} # }}}
-			NodeKind::CallExpression => { # {{{
+			NodeKind::CallExpression { # {{{
 				writer.expression(data.callee)
 
 				if data.modifiers.some((modifier, ...) => modifier.kind == ModifierKind::Nullable) {
 					writer.code('?')
 				}
 
-				switch data.scope.kind {
-					ScopeKind::Argument => {
+				match data.scope.kind {
+					ScopeKind::Argument {
 						writer
 							.code('*$(')
 							.expression(data.scope.value)
@@ -721,10 +721,10 @@ export namespace Generator {
 							writer.code(', ')
 						}
 					}
-					ScopeKind::Null => {
+					ScopeKind::Null {
 						writer.code('**(')
 					}
-					ScopeKind::This => {
+					ScopeKind::This {
 						writer.code('(')
 					}
 				}
@@ -739,7 +739,7 @@ export namespace Generator {
 
 				writer.code(')')
 			} # }}}
-			NodeKind::CallMacroExpression => { # {{{
+			NodeKind::CallMacroExpression { # {{{
 				writer
 					.expression(data.callee)
 					.code('!(')
@@ -754,13 +754,13 @@ export namespace Generator {
 
 				writer.code(')')
 			} # }}}
-			NodeKind::ClassDeclaration => { # {{{
+			NodeKind::ClassDeclaration { # {{{
 				for modifier in data.modifiers {
-					switch modifier.kind {
-						ModifierKind::Abstract => {
+					match modifier.kind {
+						ModifierKind::Abstract {
 							writer.code('abstract ')
 						}
-						ModifierKind::Sealed => {
+						ModifierKind::Sealed {
 							writer.code('sealed ')
 						}
 					}
@@ -768,7 +768,7 @@ export namespace Generator {
 
 				writer.code('class ').expression(data.name)
 			} # }}}
-			NodeKind::ComparisonExpression => { # {{{
+			NodeKind::ComparisonExpression { # {{{
 				for var value, i in data.values {
 					if i % 2 == 0 {
 						writer.wrap(value)
@@ -778,13 +778,13 @@ export namespace Generator {
 					}
 				}
 			} # }}}
-			NodeKind::ComputedPropertyName => { # {{{
+			NodeKind::ComputedPropertyName { # {{{
 				writer
 					.code('[')
 					.expression(data.expression)
 					.code(']')
 			} # }}}
-			NodeKind::ConditionalExpression => { # {{{
+			NodeKind::ConditionalExpression { # {{{
 				writer
 					.wrap(data.condition)
 					.code(' ? ')
@@ -792,7 +792,7 @@ export namespace Generator {
 					.code(' : ')
 					.wrap(data.whenFalse)
 			} # }}}
-			NodeKind::CreateExpression => { # {{{
+			NodeKind::CreateExpression { # {{{
 				writer.code('new ')
 
 				if	data.class.kind == NodeKind::Identifier ||
@@ -817,11 +817,11 @@ export namespace Generator {
 
 				writer.code(')')
 			} # }}}
-			NodeKind::CurryExpression => { # {{{
+			NodeKind::CurryExpression { # {{{
 				writer.expression(data.callee)
 
-				switch data.scope.kind {
-					ScopeKind::Argument => {
+				match data.scope.kind {
+					ScopeKind::Argument {
 						writer
 							.code('^$(')
 							.expression(data.scope.value)
@@ -830,10 +830,10 @@ export namespace Generator {
 							writer.code(', ')
 						}
 					}
-					ScopeKind::Null => {
+					ScopeKind::Null {
 						writer.code('^^(')
 					}
-					ScopeKind::This => {
+					ScopeKind::This {
 						writer.code('^@(')
 					}
 				}
@@ -848,13 +848,13 @@ export namespace Generator {
 
 				writer.code(')')
 			} # }}}
-			NodeKind::EnumExpression => { # {{{
+			NodeKind::EnumExpression { # {{{
 				writer
 					.expression(data.enum)
 					.code('::')
 					.expression(data.member)
 			} # }}}
-			NodeKind::ExclusionType => { # {{{
+			NodeKind::ExclusionType { # {{{
 				for type, index in data.types {
 					if index != 0 {
 						writer.code(type.kind == NodeKind::FunctionExpression ? ' ^^ ' : ' ^ ')
@@ -863,10 +863,10 @@ export namespace Generator {
 					writer.expression(type)
 				}
 			} # }}}
-			NodeKind::FunctionDeclaration => { # {{{
+			NodeKind::FunctionDeclaration { # {{{
 				toFunctionHeader(data, writer => writer.code('func '), writer)
 			} # }}}
-			NodeKind::FunctionExpression => { # {{{
+			NodeKind::FunctionExpression { # {{{
 				toFunctionHeader(data, writer => {
 					if writer.mode() == KSWriterMode::Property {
 						if ?header {
@@ -887,7 +887,7 @@ export namespace Generator {
 					}
 				}
 			} # }}}
-			NodeKind::FusionType => { # {{{
+			NodeKind::FusionType { # {{{
 				for type, index in data.types {
 					if index != 0 {
 						writer.code(type.kind == NodeKind::FunctionExpression ? ' && ' : ' & ')
@@ -896,10 +896,10 @@ export namespace Generator {
 					writer.expression(type)
 				}
 			} # }}}
-			NodeKind::Identifier => { # {{{
+			NodeKind::Identifier { # {{{
 				writer.code(data.name)
 			} # }}}
-			NodeKind::IfExpression => { # {{{
+			NodeKind::IfExpression { # {{{
 				writer
 					.expression(data.whenTrue)
 					.code(' if ')
@@ -911,12 +911,12 @@ export namespace Generator {
 						.expression(data.whenFalse)
 				}
 			} # }}}
-			NodeKind::IncludeDeclarator => { # {{{
+			NodeKind::IncludeDeclarator { # {{{
 				toAttributes(data, AttributeMode::Outer, writer)
 
 				writer.newLine().code(toQuote(data.file)).done()
 			} # }}}
-			NodeKind::JunctionExpression => { # {{{
+			NodeKind::JunctionExpression { # {{{
 				var operator = JunctionOperatorSymbol[data.operator.kind]
 
 				for var operand, i in data.operands {
@@ -925,7 +925,7 @@ export namespace Generator {
 					writer.expression(operand)
 				}
 			} # }}}
-			NodeKind::LambdaExpression => { # {{{
+			NodeKind::LambdaExpression { # {{{
 				toFunctionHeader(data, writer => {}, writer)
 
 				if data.body.kind == NodeKind::Block {
@@ -939,10 +939,10 @@ export namespace Generator {
 					writer.code(' => ').expression(data.body)
 				}
 			} # }}}
-			NodeKind::Literal => { # {{{
+			NodeKind::Literal { # {{{
 				writer.code(toQuote(data.value))
 			} # }}}
-			NodeKind::MacroExpression => { # {{{
+			NodeKind::MacroExpression { # {{{
 				writer.code('macro ')
 
 				if data.elements[0].start.line == data.elements[data.elements.length - 1].end.line {
@@ -958,7 +958,7 @@ export namespace Generator {
 					o.done()
 				}
 			} # }}}
-			NodeKind::MatchConditionArray => { # {{{
+			NodeKind::MatchConditionArray { # {{{
 				writer.code('[')
 
 				for value, index in data.values {
@@ -971,7 +971,7 @@ export namespace Generator {
 
 				writer.code(']')
 			} # }}}
-			NodeKind::MatchConditionObject => { # {{{
+			NodeKind::MatchConditionObject { # {{{
 				writer.code('{')
 
 				for member, index in data.members {
@@ -984,7 +984,7 @@ export namespace Generator {
 
 				writer.code('}')
 			} # }}}
-			NodeKind::MatchConditionRange => { # {{{
+			NodeKind::MatchConditionRange { # {{{
 				if ?data.from {
 					writer.expression(data.from)
 				}
@@ -1003,12 +1003,12 @@ export namespace Generator {
 					writer.code('..').expression(data.by)
 				}
 			} # }}}
-			NodeKind::MatchConditionType => { # {{{
+			NodeKind::MatchConditionType { # {{{
 				writer
 					.code('is ')
 					.expression(data.type)
 			} # }}}
-			NodeKind::MatchExpression => { # {{{
+			NodeKind::MatchExpression { # {{{
 				writer
 					.code('match ')
 					.expression(data.expression)
@@ -1021,13 +1021,13 @@ export namespace Generator {
 
 				block.done()
 			} # }}}
-			NodeKind::MatchTypeCasting => { # {{{
+			NodeKind::MatchTypeCasting { # {{{
 				writer
 					.expression(data.name)
 					.code(' as ')
 					.expression(data.type)
 			} # }}}
-			NodeKind::MemberExpression => { # {{{
+			NodeKind::MemberExpression { # {{{
 				var dyn nullable = false
 				var dyn computed = false
 
@@ -1054,13 +1054,13 @@ export namespace Generator {
 					writer.code('.').expression(data.property)
 				}
 			} # }}}
-			NodeKind::NamedArgument => { # {{{
+			NodeKind::NamedArgument { # {{{
 				writer.expression(data.name).code(': ').expression(data.value)
 			} # }}}
-			NodeKind::NumericExpression => { # {{{
+			NodeKind::NumericExpression { # {{{
 				writer.code(data.value)
 			} # }}}
-			NodeKind::ObjectBinding => { # {{{
+			NodeKind::ObjectBinding { # {{{
 				writer.code('{')
 
 				for element, index in data.elements {
@@ -1073,7 +1073,7 @@ export namespace Generator {
 
 				writer.code('}')
 			} # }}}
-			NodeKind::ObjectExpression => { # {{{
+			NodeKind::ObjectExpression { # {{{
 				var o = writer.newObject()
 
 				toAttributes(data, AttributeMode::Inner, o)
@@ -1090,7 +1090,7 @@ export namespace Generator {
 
 				o.done()
 			} # }}}
-			NodeKind::ObjectMember => { # {{{
+			NodeKind::ObjectMember { # {{{
 				var value = data.value ?? data.type
 				if ?value {
 					var element = writer.transformExpression(value)
@@ -1109,7 +1109,7 @@ export namespace Generator {
 					writer.expression(data.name)
 				}
 			} # }}}
-			NodeKind::ObjectType => { # {{{
+			NodeKind::ObjectType { # {{{
 				if #data.properties {
 					var o = writer.newObject()
 
@@ -1134,14 +1134,14 @@ export namespace Generator {
 				}
 
 				for var modifier in data.modifiers {
-					switch modifier.kind {
-						ModifierKind::Nullable => {
+					match modifier.kind {
+						ModifierKind::Nullable {
 							writer.code('?')
 						}
 					}
 				}
 			} # }}}
-			NodeKind::OmittedExpression => { # {{{
+			NodeKind::OmittedExpression { # {{{
 				if data.spread {
 					writer.code('...')
 				}
@@ -1149,28 +1149,28 @@ export namespace Generator {
 					writer.code('_')
 				}
 			} # }}}
-			NodeKind::Parameter => { # {{{
+			NodeKind::Parameter { # {{{
 				toAttributes(data, AttributeMode::Inline, writer)
 
 				var mut rest: Boolean = false
 				var mut only: Boolean = false
 
 				for var modifier in data.modifiers {
-					switch modifier.kind {
-						ModifierKind::Mutable => {
+					match modifier.kind {
+						ModifierKind::Mutable {
 							writer.code('mut ')
 						}
-						ModifierKind::NameOnly => {
+						ModifierKind::NameOnly {
 							writer.code('*')
 
 							only = true
 						}
-						ModifierKind::PositionOnly => {
+						ModifierKind::PositionOnly {
 							writer.code('#')
 
 							only = true
 						}
-						ModifierKind::Rest => {
+						ModifierKind::Rest {
 							rest = true
 						}
 					}
@@ -1191,11 +1191,11 @@ export namespace Generator {
 				}
 
 				for var modifier in data.modifiers {
-					switch modifier.kind {
-						ModifierKind::AutoEvaluate => {
+					match modifier.kind {
+						ModifierKind::AutoEvaluate {
 							writer.code('@')
 						}
-						ModifierKind::Rest => {
+						ModifierKind::Rest {
 							writer.code('...')
 
 							if modifier.arity.min != 0 || modifier.arity.max != Infinity {
@@ -1221,7 +1221,7 @@ export namespace Generator {
 
 							rest = true
 						}
-						ModifierKind::ThisAlias => {
+						ModifierKind::ThisAlias {
 							writer.code('@')
 						}
 					}
@@ -1231,8 +1231,8 @@ export namespace Generator {
 					writer.expression(data.internal)
 
 					for var modifier in data.modifiers {
-						switch modifier.kind {
-							ModifierKind::Required => {
+						match modifier.kind {
+							ModifierKind::Required {
 								writer.code('!')
 							}
 						}
@@ -1248,7 +1248,7 @@ export namespace Generator {
 					writer.code(AssignmentOperatorSymbol[data.operator.assignment]).expression(data.defaultValue)
 				}
 			} # }}}
-			NodeKind::PolyadicExpression => { # {{{
+			NodeKind::PolyadicExpression { # {{{
 				writer.wrap(data.operands[0])
 
 				for operand in data.operands from 1 {
@@ -1257,10 +1257,10 @@ export namespace Generator {
 						.wrap(operand)
 				}
 			} # }}}
-			NodeKind::PositionalArgument => { # {{{
+			NodeKind::PositionalArgument { # {{{
 				writer.code('\\').expression(data.value)
 			} # }}}
-			NodeKind::PropertyType => { # {{{
+			NodeKind::PropertyType { # {{{
 				if ?data.name {
 					if data.type.kind == NodeKind::FunctionExpression {
 						toExpression(data.type, writer, writer => writer.expression(data.name))
@@ -1274,17 +1274,17 @@ export namespace Generator {
 				}
 
 				for var modifier in data.modifiers {
-					switch modifier.kind {
-						ModifierKind::Nullable => {
+					match modifier.kind {
+						ModifierKind::Nullable {
 							writer.code('?')
 						}
 					}
 				}
 			} # }}}
-			NodeKind::RegularExpression => { # {{{
+			NodeKind::RegularExpression { # {{{
 				writer.code(data.value)
 			} # }}}
-			NodeKind::SequenceExpression => { # {{{
+			NodeKind::SequenceExpression { # {{{
 				writer.code('(')
 
 				for expression, index in data.expressions {
@@ -1297,13 +1297,13 @@ export namespace Generator {
 
 				writer.code(')')
 			} # }}}
-			NodeKind::ShorthandProperty => { # {{{
+			NodeKind::ShorthandProperty { # {{{
 				writer.expression(data.name)
 			} # }}}
-			NodeKind::TaggedTemplateExpression => { # {{{
+			NodeKind::TaggedTemplateExpression { # {{{
 				writer.expression(data.tag).expression(data.template)
 			} # }}}
-			NodeKind::TemplateExpression => { # {{{
+			NodeKind::TemplateExpression { # {{{
 				writer.code('`')
 
 				for element in data.elements {
@@ -1317,10 +1317,10 @@ export namespace Generator {
 
 				writer.code('`')
 			} # }}}
-			NodeKind::ThisExpression => { # {{{
+			NodeKind::ThisExpression { # {{{
 				writer.code('@').expression(data.name)
 			} # }}}
-			NodeKind::TryExpression => { # {{{
+			NodeKind::TryExpression { # {{{
 				writer.code('try')
 
 				if data.modifiers.some((modifier, ...) => modifier.kind == ModifierKind::Disabled) {
@@ -1333,7 +1333,7 @@ export namespace Generator {
 					writer.code(' ~~ ').expression(data.defaultValue)
 				}
 			} # }}}
-			NodeKind::TypeReference => { # {{{
+			NodeKind::TypeReference { # {{{
 				if ?data.properties {
 					var o = writer.newObject()
 
@@ -1362,8 +1362,8 @@ export namespace Generator {
 				}
 				else {
 					for var modifier in data.modifiers {
-						switch modifier.kind {
-							ModifierKind::Rest => {
+						match modifier.kind {
+							ModifierKind::Rest {
 								writer.code('...')
 							}
 						}
@@ -1390,7 +1390,7 @@ export namespace Generator {
 					}
 				}
 			} # }}}
-			NodeKind::UnaryExpression => { # {{{
+			NodeKind::UnaryExpression { # {{{
 				if ?UnaryPrefixOperatorSymbol[data.operator.kind] {
 					writer
 						.code(UnaryPrefixOperatorSymbol[data.operator.kind])
@@ -1402,7 +1402,7 @@ export namespace Generator {
 						.code(UnaryPostfixOperatorSymbol[data.operator.kind])
 				}
 			} # }}}
-			NodeKind::UnionType => { # {{{
+			NodeKind::UnionType { # {{{
 				for type, index in data.types {
 					if index != 0 {
 						writer.code(type.kind == NodeKind::FunctionExpression ? ' || ' : ' | ')
@@ -1411,13 +1411,13 @@ export namespace Generator {
 					writer.expression(type)
 				}
 			} # }}}
-			NodeKind::UnlessExpression => { # {{{
+			NodeKind::UnlessExpression { # {{{
 				writer
 					.expression(data.whenFalse)
 					.code(' unless ')
 					.expression(data.condition)
 			} # }}}
-			NodeKind::VariableDeclaration => { # {{{
+			NodeKind::VariableDeclaration { # {{{
 				for var modifier in data.modifiers {
 					if modifier.kind == ModifierKind::Immutable {
 						writer.code('var ')
@@ -1450,18 +1450,18 @@ export namespace Generator {
 					writer.expression(data.value)
 				}
 			} # }}}
-			NodeKind::VariableDeclarator => { # {{{
+			NodeKind::VariableDeclarator { # {{{
 				var mut nullable = false
 
 				for var modifier in data.modifiers {
-					switch modifier.kind {
-						ModifierKind::Immutable => {
+					match modifier.kind {
+						ModifierKind::Immutable {
 							writer.code('final ')
 						}
-						ModifierKind::Nullable => {
+						ModifierKind::Nullable {
 							nullable = true
 						}
-						ModifierKind::System => {
+						ModifierKind::System {
 							writer.code('system ')
 						}
 					}
@@ -1475,7 +1475,7 @@ export namespace Generator {
 					writer.code(': ').expression(data.type)
 				}
 			} # }}}
-			=> { # {{{
+			else { # {{{
 				console.error(data)
 				throw new Error('Not Implemented')
 			} # }}}
@@ -1485,35 +1485,35 @@ export namespace Generator {
 	func toFunctionHeader(data, header, writer) { # {{{
 		if ?data.modifiers {
 			for modifier in data.modifiers {
-				switch modifier.kind {
-					ModifierKind::Abstract => {
+				match modifier.kind {
+					ModifierKind::Abstract {
 						writer.code('abstract ')
 					}
-					ModifierKind::Async => {
+					ModifierKind::Async {
 						writer.code('async ')
 					}
-					ModifierKind::Immutable => {
+					ModifierKind::Immutable {
 						writer.code('final ')
 					}
-					ModifierKind::Internal => {
+					ModifierKind::Internal {
 						writer.code('internal ')
 					}
-					ModifierKind::Override => {
+					ModifierKind::Override {
 						writer.code('override ')
 					}
-					ModifierKind::Overwrite => {
+					ModifierKind::Overwrite {
 						writer.code('overwrite ')
 					}
-					ModifierKind::Private => {
+					ModifierKind::Private {
 						writer.code('private ')
 					}
-					ModifierKind::Protected => {
+					ModifierKind::Protected {
 						writer.code('protected ')
 					}
-					ModifierKind::Public => {
+					ModifierKind::Public {
 						writer.code('public ')
 					}
-					ModifierKind::Static => {
+					ModifierKind::Static {
 						writer.code('static ')
 					}
 				}
@@ -1589,8 +1589,8 @@ export namespace Generator {
 	} # }}}
 
 	func toImport(data, writer) {
-		switch data.kind {
-			NodeKind::Argument => { # {{{
+		match data.kind {
+			NodeKind::Argument { # {{{
 				for var modifier in data.modifiers {
 					if modifier.kind == ModifierKind::Required {
 						writer.code('require ')
@@ -1603,7 +1603,7 @@ export namespace Generator {
 
 				writer.expression(data.value)
 			} # }}}
-			NodeKind::GroupSpecifier => { # {{{
+			NodeKind::GroupSpecifier { # {{{
 				var mut alias = false
 				var mut exclusion = false
 				var mut wildcard = false
@@ -1657,7 +1657,7 @@ export namespace Generator {
 					block.done()
 				}
 			} # }}}
-			NodeKind::ImportDeclarator => { # {{{
+			NodeKind::ImportDeclarator { # {{{
 				writer.expression(data.source)
 
 				var mut autofill = false
@@ -1711,7 +1711,7 @@ export namespace Generator {
 					block.done()
 				}
 			} # }}}
-			NodeKind::NamedSpecifier => { # {{{
+			NodeKind::NamedSpecifier { # {{{
 				if ?data.external {
 					writer.expression(data.external).code(` => \(data.internal.name)`)
 				}
@@ -1719,7 +1719,7 @@ export namespace Generator {
 					writer.expression(data.internal)
 				}
 			} # }}}
-			NodeKind::TypeList => { # {{{
+			NodeKind::TypeList { # {{{
 				var block = writer.newBlock()
 
 				for var type in data.types {
@@ -1730,18 +1730,18 @@ export namespace Generator {
 
 				block.done()
 			} # }}}
-			NodeKind::TypedSpecifier => { # {{{
+			NodeKind::TypedSpecifier { # {{{
 				writer.statement(data.type)
 			} # }}}
-			=> { # {{{
+			else { # {{{
 				toExpression(data, writer)
 			} # }}}
 		}
 	}
 
 	func toLoopHeader(data, writer) { # {{{
-		switch data.kind {
-			NodeKind::ForFromStatement => {
+		match data.kind {
+			NodeKind::ForFromStatement {
 				writer.code(' for ')
 
 				for var modifier in data.modifiers {
@@ -1782,7 +1782,7 @@ export namespace Generator {
 					writer.code(' when ').expression(data.when)
 				}
 			}
-			NodeKind::ForInStatement => {
+			NodeKind::ForInStatement {
 				var dyn descending = false
 
 				writer.code(' for ')
@@ -1848,7 +1848,7 @@ export namespace Generator {
 					writer.code(' when ').expression(data.when)
 				}
 			}
-			NodeKind::ForOfStatement => {
+			NodeKind::ForOfStatement {
 				writer.code(' for ')
 
 				for var modifier in data.modifiers {
@@ -1884,7 +1884,7 @@ export namespace Generator {
 					writer.code(' when ').expression(data.when)
 				}
 			}
-			NodeKind::ForRangeStatement => {
+			NodeKind::ForRangeStatement {
 				writer.code(' for ')
 
 				for var modifier in data.modifiers {
@@ -1920,7 +1920,7 @@ export namespace Generator {
 					writer.code(' when ').expression(data.when)
 				}
 			}
-			NodeKind::RepeatStatement => {
+			NodeKind::RepeatStatement {
 				writer.code(' repeat ').expression(data.expression).code(' times')
 			}
 		}
@@ -1930,8 +1930,8 @@ export namespace Generator {
 		var last = elements.length - 1
 
 		for element, index in elements {
-			switch element.kind {
-				MacroElementKind::Expression => {
+			match element.kind {
+				MacroElementKind::Expression {
 					writer.code('#')
 
 					if element.reification.kind == ReificationKind::Expression && element.expression.kind == NodeKind::Identifier {
@@ -1941,17 +1941,17 @@ export namespace Generator {
 						writer.code('j(').expression(element.expression).code(', ').expression(element.separator).code(')')
 					}
 					else {
-						switch element.reification.kind {
-							ReificationKind::Argument => {
+						match element.reification.kind {
+							ReificationKind::Argument {
 								writer.code('a')
 							}
-							ReificationKind::Expression => {
+							ReificationKind::Expression {
 								writer.code('e')
 							}
-							ReificationKind::Statement => {
+							ReificationKind::Statement {
 								writer.code('s')
 							}
-							ReificationKind::Write => {
+							ReificationKind::Write {
 								writer.code('w')
 							}
 						}
@@ -1959,10 +1959,10 @@ export namespace Generator {
 						writer.code('(').expression(element.expression).code(')')
 					}
 				}
-				MacroElementKind::Literal => {
+				MacroElementKind::Literal {
 					writer.code(element.value)
 				}
-				MacroElementKind::NewLine => {
+				MacroElementKind::NewLine {
 					if index != 0 && index != last && elements[index - 1].kind != MacroElementKind::NewLine {
 						parent.newLine()
 					}
@@ -1981,8 +1981,8 @@ export namespace Generator {
 		}
 		else {
 			for var modifier in data.modifiers {
-				switch modifier.kind {
-					ModifierKind::Nullable => {
+				match modifier.kind {
+					ModifierKind::Nullable {
 						writer.code('?')
 					}
 				}
@@ -1991,8 +1991,8 @@ export namespace Generator {
 	} # }}}
 
 	func toStatement(mut data, writer) {
-		switch data.kind {
-			NodeKind::AccessorDeclaration => { # {{{
+		match data.kind {
+			NodeKind::AccessorDeclaration { # {{{
 				var line = writer
 					.newLine()
 					.code('get')
@@ -2008,7 +2008,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::BitmaskDeclaration => { # {{{
+			NodeKind::BitmaskDeclaration { # {{{
 				var line = writer.newLine()
 
 				line.code('bitmask ').expression(data.name)
@@ -2026,10 +2026,10 @@ export namespace Generator {
 				block.done()
 				line.done()
 			} # }}}
-			NodeKind::BreakStatement => { # {{{
+			NodeKind::BreakStatement { # {{{
 				writer.newLine().code('break').done()
 			} # }}}
-			NodeKind::CatchClause => { # {{{
+			NodeKind::CatchClause { # {{{
 				if ?data.type {
 					writer
 						.code('on ')
@@ -2055,21 +2055,21 @@ export namespace Generator {
 					.step()
 					.expression(data.body)
 			} # }}}
-			NodeKind::ClassDeclaration => { # {{{
+			NodeKind::ClassDeclaration { # {{{
 				var line = writer.newLine()
 
 				for var modifier in data.modifiers {
-					switch modifier.kind {
-						ModifierKind::Abstract => {
+					match modifier.kind {
+						ModifierKind::Abstract {
 							line.code('abstract ')
 						}
-						ModifierKind::Immutable => {
+						ModifierKind::Immutable {
 							line.code('final ')
 						}
-						ModifierKind::Sealed => {
+						ModifierKind::Sealed {
 							line.code('sealed ')
 						}
-						ModifierKind::System => {
+						ModifierKind::System {
 							line.code('system ')
 						}
 					}
@@ -2095,17 +2095,17 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::ContinueStatement => { # {{{
+			NodeKind::ContinueStatement { # {{{
 				writer.newLine().code('continue').done()
 			} # }}}
-			NodeKind::DestroyStatement => { # {{{
+			NodeKind::DestroyStatement { # {{{
 				writer
 					.newLine()
 					.code('delete ')
 					.expression(data.variable)
 					.done()
 			} # }}}
-			NodeKind::DiscloseDeclaration => { # {{{
+			NodeKind::DiscloseDeclaration { # {{{
 				var line = writer
 					.newLine()
 					.code('disclose ')
@@ -2120,7 +2120,7 @@ export namespace Generator {
 				block.done()
 				line.done()
 			} # }}}
-			NodeKind::DoUntilStatement => { # {{{
+			NodeKind::DoUntilStatement { # {{{
 				writer
 					.newControl()
 					.code('do')
@@ -2131,7 +2131,7 @@ export namespace Generator {
 					.expression(data.condition)
 					.done()
 			} # }}}
-			NodeKind::DoWhileStatement => { # {{{
+			NodeKind::DoWhileStatement { # {{{
 				writer
 					.newControl()
 					.code('do')
@@ -2142,7 +2142,7 @@ export namespace Generator {
 					.expression(data.condition)
 					.done()
 			} # }}}
-			NodeKind::EnumDeclaration => { # {{{
+			NodeKind::EnumDeclaration { # {{{
 				var line = writer.newLine()
 
 				line.code('enum ').expression(data.name)
@@ -2160,7 +2160,7 @@ export namespace Generator {
 				block.done()
 				line.done()
 			} # }}}
-			NodeKind::ExportDeclaration => { # {{{
+			NodeKind::ExportDeclaration { # {{{
 				var line = writer.newLine()
 
 				line.pushMode(KSWriterMode::Export)
@@ -2187,7 +2187,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::ExternDeclaration => { # {{{
+			NodeKind::ExternDeclaration { # {{{
 				var line = writer.newLine()
 
 				if data.declarations.length == 1 {
@@ -2209,7 +2209,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::ExternOrRequireDeclaration => { # {{{
+			NodeKind::ExternOrRequireDeclaration { # {{{
 				var line = writer.newLine()
 
 				if data.declarations.length == 1 && data.declarations[0].attributes.length == 0 {
@@ -2231,7 +2231,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::ExternOrImportDeclaration => { # {{{
+			NodeKind::ExternOrImportDeclaration { # {{{
 				var line = writer.newLine()
 
 				line.pushMode(KSWriterMode::Import)
@@ -2255,41 +2255,41 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::FallthroughStatement => { # {{{
+			NodeKind::FallthroughStatement { # {{{
 				writer.newLine().code('fallthrough').done()
 			} # }}}
-			NodeKind::FieldDeclaration => { # {{{
+			NodeKind::FieldDeclaration { # {{{
 				var line = writer.newLine()
 
 				var mut nullable = false
 
 				for modifier in data.modifiers {
-					switch modifier.kind {
-						ModifierKind::Dynamic => {
+					match modifier.kind {
+						ModifierKind::Dynamic {
 							line.code('dyn ')
 						}
-						ModifierKind::Immutable => {
+						ModifierKind::Immutable {
 							line.code('final ')
 						}
-						ModifierKind::Internal => {
+						ModifierKind::Internal {
 							line.code('internal ')
 						}
-						ModifierKind::LateInit => {
+						ModifierKind::LateInit {
 							line.code('late ')
 						}
-						ModifierKind::Nullable => {
+						ModifierKind::Nullable {
 							nullable = true
 						}
-						ModifierKind::Private => {
+						ModifierKind::Private {
 							line.code('private ')
 						}
-						ModifierKind::Protected => {
+						ModifierKind::Protected {
 							line.code('protected ')
 						}
-						ModifierKind::Public => {
+						ModifierKind::Public {
 							line.code('public ')
 						}
-						ModifierKind::Static => {
+						ModifierKind::Static {
 							line.code('static ')
 						}
 					}
@@ -2317,7 +2317,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::ForFromStatement => { # {{{
+			NodeKind::ForFromStatement { # {{{
 				var mut ascending = false
 				var mut descending = false
 
@@ -2383,7 +2383,7 @@ export namespace Generator {
 					.expression(data.body)
 					.done()
 			} # }}}
-			NodeKind::ForInStatement => { # {{{
+			NodeKind::ForInStatement { # {{{
 				var mut descending = false
 
 				var dyn ctrl
@@ -2477,7 +2477,7 @@ export namespace Generator {
 
 				ctrl.done()
 			} # }}}
-			NodeKind::ForRangeStatement => { # {{{
+			NodeKind::ForRangeStatement { # {{{
 				var ctrl = writer
 					.newControl()
 					.code('for ')
@@ -2523,7 +2523,7 @@ export namespace Generator {
 
 				ctrl.done()
 			} # }}}
-			NodeKind::ForOfStatement => { # {{{
+			NodeKind::ForOfStatement { # {{{
 				var dyn ctrl
 
 				if data.body.kind == NodeKind::Block {
@@ -2587,7 +2587,7 @@ export namespace Generator {
 
 				ctrl.done()
 			} # }}}
-			NodeKind::FunctionDeclaration => { # {{{
+			NodeKind::FunctionDeclaration { # {{{
 				var line = writer.newLine()
 
 				toFunctionHeader(data, writer => {
@@ -2602,9 +2602,9 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::IfStatement => { # {{{
-				switch data.whenTrue.kind {
-					NodeKind::Block => {
+			NodeKind::IfStatement { # {{{
+				match data.whenTrue.kind {
+					NodeKind::Block {
 						var ctrl = writer.newControl().code('if ')
 
 						if ?data.declaration {
@@ -2652,21 +2652,21 @@ export namespace Generator {
 
 						ctrl.done()
 					}
-					NodeKind::BreakStatement => {
+					NodeKind::BreakStatement {
 						writer
 							.newLine()
 							.code('break if ')
 							.expression(data.condition)
 							.done()
 					}
-					NodeKind::ContinueStatement => {
+					NodeKind::ContinueStatement {
 						writer
 							.newLine()
 							.code('continue if ')
 							.expression(data.condition)
 							.done()
 					}
-					NodeKind::ReturnStatement => {
+					NodeKind::ReturnStatement {
 						if ?data.whenTrue.value {
 							writer
 								.newLine()
@@ -2684,7 +2684,7 @@ export namespace Generator {
 								.done()
 						}
 					}
-					NodeKind::ThrowStatement => {
+					NodeKind::ThrowStatement {
 						writer
 							.newLine()
 							.code('throw ')
@@ -2693,7 +2693,7 @@ export namespace Generator {
 							.expression(data.condition)
 							.done()
 					}
-					=> {
+					else {
 						writer
 							.newLine()
 							.expression(data.whenTrue)
@@ -2703,7 +2703,7 @@ export namespace Generator {
 					}
 				}
 			} # }}}
-			NodeKind::ImplementDeclaration => { # {{{
+			NodeKind::ImplementDeclaration { # {{{
 				var line = writer
 					.newLine()
 					.code('impl ')
@@ -2718,7 +2718,7 @@ export namespace Generator {
 				block.done()
 				line.done()
 			} # }}}
-			NodeKind::ImportDeclaration => { # {{{
+			NodeKind::ImportDeclaration { # {{{
 				var line = writer.newLine()
 
 				line.pushMode(KSWriterMode::Import)
@@ -2742,7 +2742,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::IncludeAgainDeclaration => { # {{{
+			NodeKind::IncludeAgainDeclaration { # {{{
 				var line = writer.newLine()
 
 				if data.declarations.length == 1 {
@@ -2760,7 +2760,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::IncludeDeclaration => { # {{{
+			NodeKind::IncludeDeclaration { # {{{
 				var line = writer.newLine()
 
 				var block = line.code('include').newBlock()
@@ -2773,7 +2773,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::MacroDeclaration => { # {{{
+			NodeKind::MacroDeclaration { # {{{
 				var line = writer.newLine()
 
 				toFunctionHeader(data, writer => {
@@ -2794,7 +2794,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::MatchClause => { # {{{
+			NodeKind::MatchClause { # {{{
 				var line = writer.newLine()
 
 				var mut space = false
@@ -2855,7 +2855,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::MatchStatement => { # {{{
+			NodeKind::MatchStatement { # {{{
 				var ctrl = writer
 					.newControl()
 					.code('match ')
@@ -2868,7 +2868,7 @@ export namespace Generator {
 
 				ctrl.done()
 			} # }}}
-			NodeKind::MethodDeclaration => { # {{{
+			NodeKind::MethodDeclaration { # {{{
 				var line = writer.newLine()
 
 				toFunctionHeader(data, writer => {}, line)
@@ -2879,14 +2879,14 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::Module => { # {{{
+			NodeKind::Module { # {{{
 				toAttributes(data, AttributeMode::Inner, writer)
 
 				for node in data.body {
 					writer.statement(node)
 				}
 			} # }}}
-			NodeKind::MutatorDeclaration => { # {{{
+			NodeKind::MutatorDeclaration { # {{{
 				var line = writer
 					.newLine()
 					.code('set')
@@ -2902,12 +2902,12 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::NamespaceDeclaration => { # {{{
+			NodeKind::NamespaceDeclaration { # {{{
 				var line = writer.newLine()
 
 				for modifier in data.modifiers {
-					switch modifier.kind {
-						ModifierKind::Sealed => {
+					match modifier.kind {
+						ModifierKind::Sealed {
 							line.code('sealed ')
 						}
 					}
@@ -2927,21 +2927,21 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::PassStatement => { # {{{
+			NodeKind::PassStatement { # {{{
 				writer.newLine().code('pass').done()
 			} # }}}
-			NodeKind::PropertyDeclaration => { # {{{
+			NodeKind::PropertyDeclaration { # {{{
 				var line = writer.newLine()
 
 				for modifier in data.modifiers {
-					switch modifier.kind {
-						ModifierKind::Private => {
+					match modifier.kind {
+						ModifierKind::Private {
 							line.code('private ')
 						}
-						ModifierKind::Protected => {
+						ModifierKind::Protected {
 							line.code('protected ')
 						}
-						ModifierKind::Public => {
+						ModifierKind::Public {
 							line.code('public ')
 						}
 					}
@@ -2973,21 +2973,21 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::ProxyDeclaration => { # {{{
+			NodeKind::ProxyDeclaration { # {{{
 				var line = writer.newLine()
 
 				for modifier in data.modifiers {
-					switch modifier.kind {
-						ModifierKind::Private => {
+					match modifier.kind {
+						ModifierKind::Private {
 							line.code('private ')
 						}
-						ModifierKind::Protected => {
+						ModifierKind::Protected {
 							line.code('protected ')
 						}
-						ModifierKind::Public => {
+						ModifierKind::Public {
 							line.code('public ')
 						}
-						ModifierKind::Static => {
+						ModifierKind::Static {
 							line.code('static ')
 						}
 					}
@@ -3003,21 +3003,21 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::ProxyGroupDeclaration => { # {{{
+			NodeKind::ProxyGroupDeclaration { # {{{
 				var line = writer.newLine()
 
 				for modifier in data.modifiers {
-					switch modifier.kind {
-						ModifierKind::Private => {
+					match modifier.kind {
+						ModifierKind::Private {
 							line.code('private ')
 						}
-						ModifierKind::Protected => {
+						ModifierKind::Protected {
 							line.code('protected ')
 						}
-						ModifierKind::Public => {
+						ModifierKind::Public {
 							line.code('public ')
 						}
-						ModifierKind::Static => {
+						ModifierKind::Static {
 							line.code('static ')
 						}
 					}
@@ -3045,7 +3045,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::RepeatStatement => { # {{{
+			NodeKind::RepeatStatement { # {{{
 				if data.body.kind == NodeKind::Block {
 					var ctrl = writer
 						.newControl()
@@ -3067,7 +3067,7 @@ export namespace Generator {
 						.done()
 				}
 			} # }}}
-			NodeKind::RequireDeclaration => { # {{{
+			NodeKind::RequireDeclaration { # {{{
 				var line = writer.newLine()
 
 				if data.declarations.length == 1 && data.declarations[0].attributes.length == 0 {
@@ -3089,7 +3089,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::RequireOrExternDeclaration => { # {{{
+			NodeKind::RequireOrExternDeclaration { # {{{
 				var line = writer.newLine()
 
 				if data.declarations.length == 1 && data.declarations[0].attributes.length == 0 {
@@ -3111,7 +3111,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::RequireOrImportDeclaration => { # {{{
+			NodeKind::RequireOrImportDeclaration { # {{{
 				var line = writer.newLine()
 
 				line.pushMode(KSWriterMode::Import)
@@ -3135,7 +3135,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::ReturnStatement => { # {{{
+			NodeKind::ReturnStatement { # {{{
 				if ?data.value {
 					writer
 						.newLine()
@@ -3150,10 +3150,10 @@ export namespace Generator {
 						.done()
 				}
 			} # }}}
-			NodeKind::ShebangDeclaration => { # {{{
+			NodeKind::ShebangDeclaration { # {{{
 				writer.line(`#!\(data.command)`)
 			} # }}}
-			NodeKind::StructDeclaration => { # {{{
+			NodeKind::StructDeclaration { # {{{
 				var line = writer.newLine()
 
 				line.code('struct ').expression(data.name)
@@ -3174,7 +3174,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::StructField => { # {{{
+			NodeKind::StructField { # {{{
 				var line = writer.newLine()
 
 				line.expression(data.name)
@@ -3187,14 +3187,14 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::ThrowStatement => { # {{{
+			NodeKind::ThrowStatement { # {{{
 				writer
 					.newLine()
 					.code('throw ')
 					.expression(data.value)
 					.done()
 			} # }}}
-			NodeKind::TryStatement => { # {{{
+			NodeKind::TryStatement { # {{{
 				var ctrl = writer
 					.newControl()
 					.code('try')
@@ -3223,7 +3223,7 @@ export namespace Generator {
 
 				ctrl.done()
 			} # }}}
-			NodeKind::TupleDeclaration => { # {{{
+			NodeKind::TupleDeclaration { # {{{
 				var mut named = false
 
 				for var modifier in data.modifiers {
@@ -3276,7 +3276,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::TupleField => { # {{{
+			NodeKind::TupleField { # {{{
 				if ?data.name {
 					writer.expression(data.name)
 
@@ -3290,7 +3290,7 @@ export namespace Generator {
 					writer.code(' = ').expression(data.defaultValue)
 				}
 			} # }}}
-			NodeKind::TypeAliasDeclaration => { # {{{
+			NodeKind::TypeAliasDeclaration { # {{{
 				writer
 					.newLine()
 					.code('type ')
@@ -3299,9 +3299,9 @@ export namespace Generator {
 					.expression(data.type)
 					.done()
 			} # }}}
-			NodeKind::UnlessStatement => { # {{{
-				switch data.whenFalse.kind {
-					NodeKind::Block => {
+			NodeKind::UnlessStatement { # {{{
+				match data.whenFalse.kind {
+					NodeKind::Block {
 						var ctrl = writer
 							.newControl()
 							.code('unless ')
@@ -3311,21 +3311,21 @@ export namespace Generator {
 
 						ctrl.done()
 					}
-					NodeKind::BreakStatement => {
+					NodeKind::BreakStatement {
 						writer
 							.newLine()
 							.code('break unless ')
 							.expression(data.condition)
 							.done()
 					}
-					NodeKind::ContinueStatement => {
+					NodeKind::ContinueStatement {
 						writer
 							.newLine()
 							.code('continue unless ')
 							.expression(data.condition)
 							.done()
 					}
-					NodeKind::ReturnStatement => {
+					NodeKind::ReturnStatement {
 						if ?data.whenFalse.value {
 							writer
 								.newLine()
@@ -3343,7 +3343,7 @@ export namespace Generator {
 								.done()
 						}
 					}
-					NodeKind::ThrowStatement => {
+					NodeKind::ThrowStatement {
 						writer
 							.newLine()
 							.code('throw ')
@@ -3352,7 +3352,7 @@ export namespace Generator {
 							.expression(data.condition)
 							.done()
 					}
-					=> {
+					else {
 						writer
 							.newLine()
 							.expression(data.whenFalse)
@@ -3362,7 +3362,7 @@ export namespace Generator {
 					}
 				}
 			} # }}}
-			NodeKind::UntilStatement => { # {{{
+			NodeKind::UntilStatement { # {{{
 				writer
 					.newControl()
 					.code('until ')
@@ -3371,7 +3371,7 @@ export namespace Generator {
 					.expression(data.body)
 					.done()
 			} # }}}
-			NodeKind::VariableStatement => { # {{{
+			NodeKind::VariableStatement { # {{{
 				var line = writer.newLine()
 
 				line.code('var')
@@ -3403,7 +3403,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind::WhileStatement => { # {{{
+			NodeKind::WhileStatement { # {{{
 				writer
 					.newControl()
 					.code('while ')
@@ -3412,7 +3412,7 @@ export namespace Generator {
 					.expression(data.body)
 					.done()
 			} # }}}
-			NodeKind::WithStatement => { # {{{
+			NodeKind::WithStatement { # {{{
 				var ctrl = writer.newControl().code('with')
 
 				if data.variables.length == 1 {
@@ -3437,7 +3437,7 @@ export namespace Generator {
 
 				ctrl.done()
 			} # }}}
-			=> { # {{{
+			else { # {{{
 				writer
 					.newLine()
 					.expression(data)
@@ -3447,20 +3447,20 @@ export namespace Generator {
 	}
 
 	func toWrap(data, writer) {
-		switch data.kind {
-			NodeKind::BinaryExpression when data.operator.kind != BinaryOperatorKind::TypeCasting => { # {{{
+		match data.kind {
+			NodeKind::BinaryExpression when data.operator.kind != BinaryOperatorKind::TypeCasting { # {{{
 				writer
 					.code('(')
 					.expression(data)
 					.code(')')
 			} # }}}
-			NodeKind::ComparisonExpression, NodeKind::ConditionalExpression, NodeKind::PolyadicExpression => { # {{{
+			NodeKind::ComparisonExpression, NodeKind::ConditionalExpression, NodeKind::PolyadicExpression { # {{{
 				writer
 					.code('(')
 					.expression(data)
 					.code(')')
 			} # }}}
-			=> { # {{{
+			else { # {{{
 				writer.expression(data)
 			} # }}}
 		}
