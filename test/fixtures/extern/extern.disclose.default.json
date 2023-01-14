@@ -1,5 +1,5 @@
 {
-  "kind": 69,
+  "kind": 78,
   "attributes": [],
   "body": [
     {
@@ -11,7 +11,7 @@
           "attributes": [],
           "modifiers": [
             {
-              "kind": 31,
+              "kind": 32,
               "start": {
                 "line": 1,
                 "column": 8
@@ -73,7 +73,7 @@
       },
       "members": [
         {
-          "kind": 67,
+          "kind": 76,
           "attributes": [],
           "modifiers": [],
           "name": {
@@ -91,11 +91,11 @@
           },
           "parameters": [
             {
-              "kind": 80,
+              "kind": 89,
               "attributes": [],
               "modifiers": [
                 {
-                  "kind": 30,
+                  "kind": 31,
                   "arity": {
                     "min": 0,
                     "max": "Infinity"
@@ -183,7 +183,7 @@
           "throws": []
         },
         {
-          "kind": 67,
+          "kind": 76,
           "attributes": [],
           "modifiers": [],
           "name": {
@@ -201,11 +201,11 @@
           },
           "parameters": [
             {
-              "kind": 80,
+              "kind": 89,
               "attributes": [],
               "modifiers": [
                 {
-                  "kind": 30,
+                  "kind": 31,
                   "arity": {
                     "min": 0,
                     "max": "Infinity"
@@ -266,7 +266,7 @@
           "throws": []
         },
         {
-          "kind": 67,
+          "kind": 76,
           "attributes": [],
           "modifiers": [],
           "name": {

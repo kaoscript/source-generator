@@ -1,5 +1,5 @@
 {
-  "kind": 69,
+  "kind": 78,
   "attributes": [],
   "body": [
     {
@@ -69,7 +69,7 @@
       "parameters": [],
       "modifiers": [
         {
-          "kind": 3,
+          "kind": 4,
           "start": {
             "line": 3,
             "column": 1
@@ -96,7 +96,7 @@
       }
     },
     {
-      "kind": 73,
+      "kind": 82,
       "attributes": [],
       "modifiers": [],
       "name": {
@@ -118,7 +118,7 @@
           "attributes": [],
           "modifiers": [
             {
-              "kind": 19,
+              "kind": 20,
               "start": {
                 "line": 6,
                 "column": 6
@@ -264,7 +264,7 @@
         "kind": 3
       },
       "callee": {
-        "kind": 66,
+        "kind": 75,
         "modifiers": [],
         "object": {
           "kind": 52,
@@ -306,7 +306,7 @@
           "kind": 111,
           "elements": [
             {
-              "kind": 66,
+              "kind": 75,
               "modifiers": [],
               "object": {
                 "kind": 52,

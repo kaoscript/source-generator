@@ -1,9 +1,9 @@
 {
-  "kind": 69,
+  "kind": 78,
   "attributes": [],
   "body": [
     {
-      "kind": 66,
+      "kind": 75,
       "modifiers": [],
       "object": {
         "kind": 52,
@@ -86,10 +86,10 @@
       "attributes": []
     },
     {
-      "kind": 66,
+      "kind": 75,
       "modifiers": [
         {
-          "kind": 7,
+          "kind": 8,
           "start": {
             "line": 5,
             "column": 4
@@ -137,10 +137,10 @@
       "attributes": []
     },
     {
-      "kind": 66,
+      "kind": 75,
       "modifiers": [
         {
-          "kind": 22,
+          "kind": 23,
           "start": {
             "line": 7,
             "column": 4
@@ -191,7 +191,7 @@
       "kind": 17,
       "modifiers": [
         {
-          "kind": 22,
+          "kind": 23,
           "start": {
             "line": 9,
             "column": 4
@@ -244,10 +244,10 @@
       "attributes": []
     },
     {
-      "kind": 66,
+      "kind": 75,
       "modifiers": [
         {
-          "kind": 22,
+          "kind": 23,
           "start": {
             "line": 11,
             "column": 4
@@ -258,7 +258,7 @@
           }
         },
         {
-          "kind": 7,
+          "kind": 8,
           "start": {
             "line": 11,
             "column": 4

@@ -958,6 +958,75 @@ export namespace Generator {
 					o.done()
 				}
 			} # }}}
+			NodeKind::MatchConditionArray => { # {{{
+				writer.code('[')
+
+				for value, index in data.values {
+					if index != 0 {
+						writer.code(', ')
+					}
+
+					writer.expression(value)
+				}
+
+				writer.code(']')
+			} # }}}
+			NodeKind::MatchConditionObject => { # {{{
+				writer.code('{')
+
+				for member, index in data.members {
+					if index != 0 {
+						writer.code(', ')
+					}
+
+					writer.expression(member)
+				}
+
+				writer.code('}')
+			} # }}}
+			NodeKind::MatchConditionRange => { # {{{
+				if ?data.from {
+					writer.expression(data.from)
+				}
+				else {
+					writer.expression(data.then).code('<')
+				}
+
+				if ?data.to {
+					writer.code('..').expression(data.to)
+				}
+				else {
+					writer.code('..<').expression(data.til)
+				}
+
+				if ?data.by {
+					writer.code('..').expression(data.by)
+				}
+			} # }}}
+			NodeKind::MatchConditionType => { # {{{
+				writer
+					.code('is ')
+					.expression(data.type)
+			} # }}}
+			NodeKind::MatchExpression => { # {{{
+				writer
+					.code('match ')
+					.expression(data.expression)
+
+				var block = writer.newBlock()
+
+				for clause in data.clauses {
+					block.statement(clause)
+				}
+
+				block.done()
+			} # }}}
+			NodeKind::MatchTypeCasting => { # {{{
+				writer
+					.expression(data.name)
+					.code(' as ')
+					.expression(data.type)
+			} # }}}
 			NodeKind::MemberExpression => { # {{{
 				var dyn nullable = false
 				var dyn computed = false
@@ -1230,75 +1299,6 @@ export namespace Generator {
 			} # }}}
 			NodeKind::ShorthandProperty => { # {{{
 				writer.expression(data.name)
-			} # }}}
-			NodeKind::SwitchConditionArray => { # {{{
-				writer.code('[')
-
-				for value, index in data.values {
-					if index != 0 {
-						writer.code(', ')
-					}
-
-					writer.expression(value)
-				}
-
-				writer.code(']')
-			} # }}}
-			NodeKind::SwitchConditionObject => { # {{{
-				writer.code('{')
-
-				for member, index in data.members {
-					if index != 0 {
-						writer.code(', ')
-					}
-
-					writer.expression(member)
-				}
-
-				writer.code('}')
-			} # }}}
-			NodeKind::SwitchConditionRange => { # {{{
-				if ?data.from {
-					writer.expression(data.from)
-				}
-				else {
-					writer.expression(data.then).code('<')
-				}
-
-				if ?data.to {
-					writer.code('..').expression(data.to)
-				}
-				else {
-					writer.code('..<').expression(data.til)
-				}
-
-				if ?data.by {
-					writer.code('..').expression(data.by)
-				}
-			} # }}}
-			NodeKind::SwitchConditionType => { # {{{
-				writer
-					.code('is ')
-					.expression(data.type)
-			} # }}}
-			NodeKind::SwitchExpression => { # {{{
-				writer
-					.code('switch ')
-					.expression(data.expression)
-
-				var block = writer.newBlock()
-
-				for clause in data.clauses {
-					block.statement(clause)
-				}
-
-				block.done()
-			} # }}}
-			NodeKind::SwitchTypeCasting => { # {{{
-				writer
-					.expression(data.name)
-					.code(' as ')
-					.expression(data.type)
 			} # }}}
 			NodeKind::TaggedTemplateExpression => { # {{{
 				writer.expression(data.tag).expression(data.template)
@@ -2318,6 +2318,7 @@ export namespace Generator {
 				line.done()
 			} # }}}
 			NodeKind::ForFromStatement => { # {{{
+				var mut ascending = false
 				var mut descending = false
 
 				var ctrl = writer
@@ -2325,23 +2326,33 @@ export namespace Generator {
 					.code('for ')
 
 				for var modifier in data.modifiers {
-					if modifier.kind == ModifierKind::Mutable {
+					if modifier.kind == ModifierKind::Ascending {
+						ascending = true
+					}
+					else if modifier.kind == ModifierKind::Descending {
+						descending = true
+					}
+					else if modifier.kind == ModifierKind::Mutable {
 						ctrl.code('var mut ')
 					}
 					else if modifier.kind == ModifierKind::Immutable {
 						ctrl.code('var ')
 					}
-					else if modifier.kind == ModifierKind::Descending {
-						descending = true
-					}
 				}
 
-				ctrl
-					.expression(data.variable)
-					.code(' from ')
-					.expression(data.from)
+				ctrl.expression(data.variable)
 
-				if descending {
+				if hasModifier(data.from, ModifierKind::Ballpark) {
+					ctrl.code(' from~ ').expression(data.from)
+				}
+				else {
+					ctrl.code(' from ').expression(data.from)
+				}
+
+				if ascending {
+					ctrl.code(' up')
+				}
+				else if descending {
 					ctrl.code(' down')
 				}
 
@@ -2783,6 +2794,80 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
+			NodeKind::MatchClause => { # {{{
+				var line = writer.newLine()
+
+				var mut space = false
+
+				if data.conditions.length != 0 {
+					for condition, index in data.conditions {
+						if index != 0 {
+							line.code(', ')
+						}
+
+						line.expression(condition)
+					}
+
+					space = true
+				}
+
+				if data.bindings.length != 0 {
+					line.code(' ') if space
+
+					line.code('with ')
+
+					for binding, index in data.bindings {
+						if index != 0 {
+							line.code(', ')
+						}
+
+						line.expression(binding)
+					}
+
+					space = true
+				}
+
+				if ?data.filter {
+					line.code(' ') if space
+
+					line
+						.code('when ')
+						.expression(data.filter)
+
+					space = true
+				}
+
+				if !space {
+					line.code('else')
+				}
+
+				if data.body.kind == NodeKind::Block {
+					line
+						.newBlock()
+						.expression(data.body)
+						.done()
+				}
+				else {
+					line
+						.code(' => ')
+						.statement(data.body)
+				}
+
+				line.done()
+			} # }}}
+			NodeKind::MatchStatement => { # {{{
+				var ctrl = writer
+					.newControl()
+					.code('match ')
+					.expression(data.expression)
+					.step()
+
+				for clause in data.clauses {
+					ctrl.statement(clause)
+				}
+
+				ctrl.done()
+			} # }}}
 			NodeKind::MethodDeclaration => { # {{{
 				var line = writer.newLine()
 
@@ -3101,70 +3186,6 @@ export namespace Generator {
 				}
 
 				line.done()
-			} # }}}
-			NodeKind::SwitchClause => { # {{{
-				var line = writer.newLine()
-
-				if data.conditions.length != 0 {
-					for condition, index in data.conditions {
-						if index != 0 {
-							line.code(', ')
-						}
-
-						line.expression(condition)
-					}
-
-					line.code(' ')
-				}
-
-				if data.bindings.length != 0 {
-					line.code('with ')
-
-					for binding, index in data.bindings {
-						if index != 0 {
-							line.code(', ')
-						}
-
-						line.expression(binding)
-					}
-
-					line.code(' ')
-				}
-
-				if ?data.filter {
-					line
-						.code('when ')
-						.expression(data.filter)
-						.code(' ')
-				}
-
-				if data.body.kind == NodeKind::Block {
-					line
-						.code('=>')
-						.newBlock()
-						.expression(data.body)
-						.done()
-				}
-				else {
-					line
-						.code('=> ')
-						.statement(data.body)
-				}
-
-				line.done()
-			} # }}}
-			NodeKind::SwitchStatement => { # {{{
-				var ctrl = writer
-					.newControl()
-					.code('switch ')
-					.expression(data.expression)
-					.step()
-
-				for clause in data.clauses {
-					ctrl.statement(clause)
-				}
-
-				ctrl.done()
 			} # }}}
 			NodeKind::ThrowStatement => { # {{{
 				writer

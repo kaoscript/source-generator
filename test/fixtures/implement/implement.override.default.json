@@ -1,5 +1,5 @@
 {
-  "kind": 69,
+  "kind": 78,
   "attributes": [],
   "body": [
     {
@@ -32,11 +32,11 @@
             "column": 2
           },
           "type": {
-            "kind": 78,
+            "kind": 87,
             "modifiers": [],
             "properties": [
               {
-                "kind": 86,
+                "kind": 95,
                 "modifiers": [],
                 "start": {
                   "line": 2,
@@ -63,11 +63,11 @@
                   "kind": 49,
                   "parameters": [
                     {
-                      "kind": 80,
+                      "kind": 89,
                       "attributes": [],
                       "modifiers": [
                         {
-                          "kind": 30,
+                          "kind": 31,
                           "arity": {
                             "min": 0,
                             "max": "Infinity"
@@ -174,7 +174,7 @@
           "attributes": [],
           "modifiers": [
             {
-              "kind": 26,
+              "kind": 27,
               "start": {
                 "line": 6,
                 "column": 2
@@ -246,11 +246,11 @@
           }
         },
         {
-          "kind": 67,
+          "kind": 76,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 32,
+              "kind": 33,
               "start": {
                 "line": 10,
                 "column": 2
@@ -314,7 +314,7 @@
             "attributes": [],
             "statements": [
               {
-                "kind": 94,
+                "kind": 103,
                 "attributes": [],
                 "value": {
                   "kind": 28,
@@ -377,7 +377,7 @@
           }
         },
         {
-          "kind": 67,
+          "kind": 76,
           "attributes": [],
           "modifiers": [],
           "name": {
@@ -395,7 +395,7 @@
           },
           "parameters": [
             {
-              "kind": 80,
+              "kind": 89,
               "attributes": [],
               "modifiers": [],
               "start": {
@@ -457,7 +457,7 @@
           "throws": []
         },
         {
-          "kind": 67,
+          "kind": 76,
           "attributes": [],
           "modifiers": [],
           "name": {
@@ -513,7 +513,7 @@
             "attributes": [],
             "statements": [
               {
-                "kind": 94,
+                "kind": 103,
                 "attributes": [],
                 "value": {
                   "kind": 111,
@@ -631,7 +631,7 @@
           "attributes": [],
           "modifiers": [
             {
-              "kind": 26,
+              "kind": 27,
               "start": {
                 "line": 22,
                 "column": 2
@@ -703,7 +703,7 @@
           }
         },
         {
-          "kind": 67,
+          "kind": 76,
           "attributes": [],
           "modifiers": [],
           "name": {
@@ -756,7 +756,7 @@
           }
         },
         {
-          "kind": 67,
+          "kind": 76,
           "attributes": [],
           "modifiers": [],
           "name": {
@@ -774,7 +774,7 @@
           },
           "parameters": [
             {
-              "kind": 80,
+              "kind": 89,
               "attributes": [],
               "modifiers": [],
               "start": {
@@ -849,11 +849,11 @@
           }
         },
         {
-          "kind": 67,
+          "kind": 76,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 23,
+              "kind": 24,
               "start": {
                 "line": 27,
                 "column": 2
@@ -917,7 +917,7 @@
             "attributes": [],
             "statements": [
               {
-                "kind": 94,
+                "kind": 103,
                 "attributes": [],
                 "value": {
                   "kind": 111,
@@ -1056,7 +1056,7 @@
       "attributes": [],
       "modifiers": [
         {
-          "kind": 12,
+          "kind": 13,
           "start": {
             "line": 32,
             "column": 5
@@ -1115,7 +1115,7 @@
               "kind": 3
             },
             "callee": {
-              "kind": 66,
+              "kind": 75,
               "modifiers": [],
               "object": {
                 "kind": 52,
@@ -1180,7 +1180,7 @@
         "kind": 3
       },
       "callee": {
-        "kind": 66,
+        "kind": 75,
         "modifiers": [],
         "object": {
           "kind": 52,
@@ -1225,7 +1225,7 @@
             "kind": 3
           },
           "callee": {
-            "kind": 66,
+            "kind": 75,
             "modifiers": [],
             "object": {
               "kind": 52,

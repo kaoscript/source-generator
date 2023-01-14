@@ -1,5 +1,5 @@
 {
-  "kind": 69,
+  "kind": 78,
   "attributes": [],
   "body": [
     {
@@ -7,7 +7,7 @@
       "attributes": [],
       "modifiers": [
         {
-          "kind": 12,
+          "kind": 13,
           "start": {
             "line": 1,
             "column": 5
@@ -60,7 +60,7 @@
             "column": 24
           },
           "value": {
-            "kind": 89,
+            "kind": 98,
             "modifiers": [],
             "value": "/foobar/gim",
             "start": {

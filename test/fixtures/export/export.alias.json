@@ -1,5 +1,5 @@
 {
-  "kind": 69,
+  "kind": 78,
   "attributes": [],
   "body": [
     {
@@ -73,7 +73,7 @@
       "attributes": [],
       "modifiers": [
         {
-          "kind": 12,
+          "kind": 13,
           "start": {
             "line": 3,
             "column": 5
@@ -154,7 +154,7 @@
       "attributes": [],
       "declarations": [
         {
-          "kind": 72,
+          "kind": 81,
           "modifiers": [],
           "internal": {
             "kind": 52,
@@ -193,7 +193,7 @@
       "attributes": [],
       "declarations": [
         {
-          "kind": 72,
+          "kind": 81,
           "modifiers": [],
           "internal": {
             "kind": 52,

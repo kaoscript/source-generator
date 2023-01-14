@@ -1,5 +1,5 @@
 {
-  "kind": 69,
+  "kind": 78,
   "attributes": [],
   "body": [
     {
@@ -142,7 +142,7 @@
           "attributes": [],
           "modifiers": [
             {
-              "kind": 10,
+              "kind": 11,
               "start": {
                 "line": 3,
                 "column": 46
@@ -201,7 +201,7 @@
             }
           },
           "to": {
-            "kind": 74,
+            "kind": 83,
             "modifiers": [],
             "value": 2,
             "start": {

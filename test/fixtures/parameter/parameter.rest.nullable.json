@@ -1,5 +1,5 @@
 {
-  "kind": 69,
+  "kind": 78,
   "attributes": [],
   "body": [
     {
@@ -28,11 +28,11 @@
       },
       "parameters": [
         {
-          "kind": 80,
+          "kind": 89,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 30,
+              "kind": 31,
               "arity": {
                 "min": 0,
                 "max": "Infinity"
@@ -47,7 +47,7 @@
               }
             },
             {
-              "kind": 22,
+              "kind": 23,
               "start": {
                 "line": 1,
                 "column": 20

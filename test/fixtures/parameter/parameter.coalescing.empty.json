@@ -1,5 +1,5 @@
 {
-  "kind": 69,
+  "kind": 78,
   "attributes": [],
   "body": [
     {
@@ -28,7 +28,7 @@
       },
       "parameters": [
         {
-          "kind": 80,
+          "kind": 89,
           "attributes": [],
           "modifiers": [],
           "start": {
@@ -134,11 +134,11 @@
       },
       "parameters": [
         {
-          "kind": 80,
+          "kind": 89,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 22,
+              "kind": 23,
               "start": {
                 "line": 4,
                 "column": 11
@@ -252,7 +252,7 @@
       },
       "parameters": [
         {
-          "kind": 80,
+          "kind": 89,
           "attributes": [],
           "modifiers": [],
           "start": {

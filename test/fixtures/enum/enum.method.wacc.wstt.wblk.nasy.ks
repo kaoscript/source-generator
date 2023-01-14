@@ -7,7 +7,7 @@ enum Weekday {
 	SATURDAY
 	SUNDAY
 	public static fromString(value: String): Weekday? {
-		switch value {
+		match value {
 			"monday" => return MONDAY
 		}
 		return null

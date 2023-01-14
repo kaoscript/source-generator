@@ -1,15 +1,15 @@
 {
-  "kind": 69,
+  "kind": 78,
   "attributes": [],
   "body": [
     {
       "kind": 28,
       "modifiers": [],
       "class": {
-        "kind": 66,
+        "kind": 75,
         "modifiers": [
           {
-            "kind": 7,
+            "kind": 8,
             "start": {
               "line": 1,
               "column": 8

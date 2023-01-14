@@ -1,9 +1,9 @@
 {
-  "kind": 69,
+  "kind": 78,
   "attributes": [],
   "body": [
     {
-      "kind": 91,
+      "kind": 100,
       "attributes": [],
       "declarations": [
         {
@@ -129,11 +129,11 @@
               }
             },
             {
-              "kind": 67,
+              "kind": 76,
               "attributes": [],
               "modifiers": [
                 {
-                  "kind": 32,
+                  "kind": 33,
                   "start": {
                     "line": 7,
                     "column": 2
@@ -159,7 +159,7 @@
               },
               "parameters": [
                 {
-                  "kind": 80,
+                  "kind": 89,
                   "attributes": [],
                   "modifiers": [],
                   "start": {
@@ -235,7 +235,7 @@
                 "kind": 121,
                 "modifiers": [
                   {
-                    "kind": 22,
+                    "kind": 23,
                     "start": {
                       "line": 7,
                       "column": 44

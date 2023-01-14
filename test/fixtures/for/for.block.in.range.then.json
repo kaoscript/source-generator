@@ -1,5 +1,5 @@
 {
-  "kind": 69,
+  "kind": 78,
   "attributes": [],
   "body": [
     {
@@ -20,10 +20,10 @@
         }
       },
       "from": {
-        "kind": 74,
+        "kind": 83,
         "modifiers": [
           {
-            "kind": 6,
+            "kind": 7,
             "start": {
               "line": 1,
               "column": 11
@@ -45,10 +45,10 @@
         }
       },
       "to": {
-        "kind": 74,
+        "kind": 83,
         "modifiers": [
           {
-            "kind": 6,
+            "kind": 7,
             "start": {
               "line": 1,
               "column": 14
@@ -78,7 +78,7 @@
         "column": 2
       },
       "step": {
-        "kind": 74,
+        "kind": 83,
         "modifiers": [],
         "value": 2,
         "start": {
@@ -122,10 +122,10 @@
         }
       },
       "from": {
-        "kind": 74,
+        "kind": 83,
         "modifiers": [
           {
-            "kind": 6,
+            "kind": 7,
             "start": {
               "line": 4,
               "column": 11
@@ -147,7 +147,7 @@
         }
       },
       "to": {
-        "kind": 74,
+        "kind": 83,
         "modifiers": [],
         "value": 10,
         "start": {

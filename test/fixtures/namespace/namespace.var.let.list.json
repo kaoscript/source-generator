@@ -1,9 +1,9 @@
 {
-  "kind": 69,
+  "kind": 78,
   "attributes": [],
   "body": [
     {
-      "kind": 73,
+      "kind": 82,
       "attributes": [],
       "modifiers": [],
       "name": {
@@ -25,7 +25,7 @@
           "attributes": [],
           "modifiers": [
             {
-              "kind": 12,
+              "kind": 13,
               "start": {
                 "line": 2,
                 "column": 6

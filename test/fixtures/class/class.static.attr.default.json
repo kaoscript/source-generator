@@ -1,5 +1,5 @@
 {
-  "kind": 69,
+  "kind": 78,
   "attributes": [],
   "body": [
     {
@@ -21,7 +21,7 @@
       },
       "members": [
         {
-          "kind": 67,
+          "kind": 76,
           "attributes": [
             {
               "kind": 8,
@@ -50,7 +50,7 @@
           ],
           "modifiers": [
             {
-              "kind": 32,
+              "kind": 33,
               "start": {
                 "line": 2,
                 "column": 2
@@ -85,7 +85,7 @@
           },
           "throws": [],
           "body": {
-            "kind": 74,
+            "kind": 83,
             "modifiers": [],
             "value": 42,
             "start": {

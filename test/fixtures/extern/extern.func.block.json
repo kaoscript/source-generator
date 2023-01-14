@@ -1,5 +1,5 @@
 {
-  "kind": 69,
+  "kind": 78,
   "attributes": [],
   "body": [
     {
@@ -32,11 +32,11 @@
           },
           "parameters": [
             {
-              "kind": 80,
+              "kind": 89,
               "attributes": [],
               "modifiers": [
                 {
-                  "kind": 30,
+                  "kind": 31,
                   "arity": {
                     "min": 0,
                     "max": "Infinity"
@@ -91,7 +91,7 @@
           "parameters": [],
           "modifiers": [
             {
-              "kind": 3,
+              "kind": 4,
               "start": {
                 "line": 3,
                 "column": 2
@@ -130,7 +130,7 @@
           },
           "parameters": [
             {
-              "kind": 80,
+              "kind": 89,
               "attributes": [],
               "modifiers": [],
               "start": {
@@ -248,7 +248,7 @@
           },
           "parameters": [
             {
-              "kind": 80,
+              "kind": 89,
               "attributes": [],
               "modifiers": [],
               "start": {
@@ -366,7 +366,7 @@
           },
           "parameters": [
             {
-              "kind": 80,
+              "kind": 89,
               "attributes": [],
               "modifiers": [],
               "start": {
@@ -432,7 +432,7 @@
           ],
           "modifiers": [
             {
-              "kind": 3,
+              "kind": 4,
               "start": {
                 "line": 6,
                 "column": 2
@@ -496,7 +496,7 @@
           },
           "parameters": [
             {
-              "kind": 80,
+              "kind": 89,
               "attributes": [],
               "modifiers": [],
               "start": {
@@ -562,7 +562,7 @@
           ],
           "modifiers": [
             {
-              "kind": 3,
+              "kind": 4,
               "start": {
                 "line": 7,
                 "column": 2

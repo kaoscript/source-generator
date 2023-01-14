@@ -1,9 +1,9 @@
 {
-  "kind": 69,
+  "kind": 78,
   "attributes": [],
   "body": [
     {
-      "kind": 98,
+      "kind": 107,
       "attributes": [],
       "modifiers": [],
       "name": {
@@ -21,11 +21,11 @@
       },
       "fields": [
         {
-          "kind": 99,
+          "kind": 108,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 22,
+              "kind": 23,
               "start": {
                 "line": 2,
                 "column": 3
@@ -59,11 +59,11 @@
           }
         },
         {
-          "kind": 99,
+          "kind": 108,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 22,
+              "kind": 23,
               "start": {
                 "line": 3,
                 "column": 3
@@ -107,7 +107,7 @@
       }
     },
     {
-      "kind": 98,
+      "kind": 107,
       "attributes": [],
       "modifiers": [],
       "name": {
@@ -125,11 +125,11 @@
       },
       "fields": [
         {
-          "kind": 99,
+          "kind": 108,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 22,
+              "kind": 23,
               "start": {
                 "line": 7,
                 "column": 3
@@ -162,7 +162,7 @@
             "column": 8
           },
           "defaultValue": {
-            "kind": 74,
+            "kind": 83,
             "modifiers": [],
             "value": 1,
             "start": {
@@ -176,11 +176,11 @@
           }
         },
         {
-          "kind": 99,
+          "kind": 108,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 22,
+              "kind": 23,
               "start": {
                 "line": 8,
                 "column": 3
@@ -213,7 +213,7 @@
             "column": 8
           },
           "defaultValue": {
-            "kind": 74,
+            "kind": 83,
             "modifiers": [],
             "value": 2,
             "start": {

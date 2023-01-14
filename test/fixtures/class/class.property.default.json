@@ -1,5 +1,5 @@
 {
-  "kind": 69,
+  "kind": 78,
   "attributes": [],
   "body": [
     {
@@ -21,11 +21,11 @@
       },
       "members": [
         {
-          "kind": 85,
+          "kind": 94,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 28,
+              "kind": 29,
               "start": {
                 "line": 2,
                 "column": 2
@@ -94,7 +94,7 @@
             }
           },
           "mutator": {
-            "kind": 70,
+            "kind": 79,
             "start": {
               "line": 3,
               "column": 20
@@ -106,11 +106,11 @@
           }
         },
         {
-          "kind": 85,
+          "kind": 94,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 28,
+              "kind": 29,
               "start": {
                 "line": 2,
                 "column": 2
@@ -179,7 +179,7 @@
             }
           },
           "mutator": {
-            "kind": 70,
+            "kind": 79,
             "body": {
               "kind": 17,
               "modifiers": [],
@@ -187,7 +187,7 @@
                 "kind": 3
               },
               "callee": {
-                "kind": 66,
+                "kind": 75,
                 "modifiers": [],
                 "object": {
                   "kind": 52,
@@ -259,11 +259,11 @@
           }
         },
         {
-          "kind": 85,
+          "kind": 94,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 28,
+              "kind": 29,
               "start": {
                 "line": 2,
                 "column": 2
@@ -323,7 +323,7 @@
           "accessor": {
             "kind": 1,
             "body": {
-              "kind": 74,
+              "kind": 83,
               "modifiers": [],
               "value": 0,
               "start": {
