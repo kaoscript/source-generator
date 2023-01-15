@@ -34,7 +34,7 @@ export class Color {
 		throw new Error("Not Implemented")
 	}
 }
-Color.registerSpace!({
+Color.registerSpace({
 	name: "srgb"
 	alias: ["rgb"]
 	components: {

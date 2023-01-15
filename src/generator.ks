@@ -739,21 +739,6 @@ export namespace Generator {
 
 				writer.code(')')
 			} # }}}
-			NodeKind::CallMacroExpression { # {{{
-				writer
-					.expression(data.callee)
-					.code('!(')
-
-				for argument, index in data.arguments {
-					if index != 0 {
-						writer.code(', ')
-					}
-
-					writer.expression(argument)
-				}
-
-				writer.code(')')
-			} # }}}
 			NodeKind::ClassDeclaration { # {{{
 				for modifier in data.modifiers {
 					match modifier.kind {
