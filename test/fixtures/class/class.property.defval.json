@@ -1,13 +1,13 @@
 {
-  "kind": 77,
+  "kind": 76,
   "attributes": [],
   "body": [
     {
-      "kind": 19,
+      "kind": 20,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 51,
+        "kind": 52,
         "modifiers": [],
         "name": "Foobar",
         "start": {
@@ -21,11 +21,11 @@
       },
       "members": [
         {
-          "kind": 93,
+          "kind": 92,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 29,
+              "kind": 30,
               "start": {
                 "line": 2,
                 "column": 2
@@ -37,7 +37,7 @@
             }
           ],
           "name": {
-            "kind": 51,
+            "kind": 52,
             "modifiers": [],
             "name": "foo",
             "start": {
@@ -58,7 +58,7 @@
             "column": 24
           },
           "defaultValue": {
-            "kind": 82,
+            "kind": 81,
             "modifiers": [],
             "value": 42,
             "start": {
@@ -82,7 +82,7 @@
             }
           },
           "mutator": {
-            "kind": 78,
+            "kind": 77,
             "start": {
               "line": 3,
               "column": 14

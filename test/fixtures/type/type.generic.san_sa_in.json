@@ -1,12 +1,12 @@
 {
-  "kind": 77,
+  "kind": 76,
   "attributes": [],
   "body": [
     {
-      "kind": 47,
+      "kind": 48,
       "attributes": [],
       "name": {
-        "kind": 51,
+        "kind": 52,
         "modifiers": [],
         "name": "foobar",
         "start": {
@@ -28,7 +28,7 @@
       },
       "parameters": [
         {
-          "kind": 88,
+          "kind": 87,
           "attributes": [],
           "modifiers": [],
           "start": {
@@ -40,7 +40,7 @@
             "column": 28
           },
           "external": {
-            "kind": 51,
+            "kind": 52,
             "modifiers": [],
             "name": "x",
             "start": {
@@ -53,7 +53,7 @@
             }
           },
           "internal": {
-            "kind": 51,
+            "kind": 52,
             "modifiers": [],
             "name": "x",
             "start": {
@@ -69,7 +69,7 @@
             "kind": 7,
             "modifiers": [
               {
-                "kind": 23,
+                "kind": 24,
                 "start": {
                   "line": 1,
                   "column": 27
@@ -90,7 +90,7 @@
               "column": 28
             },
             "rest": {
-              "kind": 94,
+              "kind": 93,
               "modifiers": [],
               "start": {
                 "line": 1,
@@ -113,7 +113,7 @@
                   "column": 25
                 },
                 "rest": {
-                  "kind": 94,
+                  "kind": 93,
                   "modifiers": [],
                   "start": {
                     "line": 1,
@@ -124,10 +124,10 @@
                     "column": 22
                   },
                   "type": {
-                    "kind": 120,
+                    "kind": 119,
                     "modifiers": [
                       {
-                        "kind": 23,
+                        "kind": 24,
                         "start": {
                           "line": 1,
                           "column": 22
@@ -139,7 +139,7 @@
                       }
                     ],
                     "typeName": {
-                      "kind": 51,
+                      "kind": 52,
                       "modifiers": [],
                       "name": "Number",
                       "start": {

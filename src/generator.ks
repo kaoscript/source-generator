@@ -109,8 +109,8 @@ export namespace Generator {
 
 	class KSWriter extends Writer {
 		private {
-			_mode: KSWriterMode
-			_stack: Array			= []
+			@mode: KSWriterMode
+			@stack: Array			= []
 		}
 		constructor(options? = null) { # {{{
 			super(Object.merge({
@@ -925,7 +925,32 @@ export namespace Generator {
 				}
 			} # }}}
 			NodeKind::Literal { # {{{
-				writer.code(toQuote(data.value))
+				var dyn multiline = false
+
+				for var modifier in data.modifiers {
+					if modifier.kind == ModifierKind::MultiLine {
+						multiline = true
+					}
+				}
+
+				if multiline {
+					writer.code('"""\n').newIndent()
+
+					var lines = data.value.split(/\n/g)
+
+					for var line, index in lines {
+						if index > 0 {
+							writer.code('\n').newIndent()
+						}
+
+						writer.code(line)
+					}
+
+					writer.code('\n').newIndent().code('"""')
+				}
+				else {
+					writer.code(toQuote(data.value))
+				}
 			} # }}}
 			NodeKind::MacroExpression { # {{{
 				writer.code('macro ')
@@ -1005,12 +1030,6 @@ export namespace Generator {
 				}
 
 				block.done()
-			} # }}}
-			NodeKind::MatchTypeCasting { # {{{
-				writer
-					.expression(data.name)
-					.code(' as ')
-					.expression(data.type)
 			} # }}}
 			NodeKind::MemberExpression { # {{{
 				var dyn nullable = false
@@ -1289,18 +1308,50 @@ export namespace Generator {
 				writer.expression(data.tag).expression(data.template)
 			} # }}}
 			NodeKind::TemplateExpression { # {{{
-				writer.code('`')
+				var dyn multiline = false
 
-				for element in data.elements {
-					if element.kind == NodeKind::Literal {
-						writer.code(element.value)
-					}
-					else {
-						writer.code('\\(').expression(element).code(')')
+				for var modifier in data.modifiers {
+					if modifier.kind == ModifierKind::MultiLine {
+						multiline = true
 					}
 				}
 
-				writer.code('`')
+				if multiline {
+					writer.code('```\n').newIndent()
+
+					for element in data.elements {
+						if element.kind == NodeKind::Literal {
+							var lines = element.value.split(/\n/g)
+
+							for var line, index in lines {
+								if index > 0 {
+									writer.code('\n').newIndent()
+								}
+
+								writer.code(line)
+							}
+						}
+						else {
+							writer.code('\\(').expression(element).code(')')
+						}
+					}
+
+					writer.code('\n').newIndent().code('```')
+				}
+				else {
+					writer.code('`')
+
+					for element in data.elements {
+						if element.kind == NodeKind::Literal {
+							writer.code(element.value)
+						}
+						else {
+							writer.code('\\(').expression(element).code(')')
+						}
+					}
+
+					writer.code('`')
+				}
 			} # }}}
 			NodeKind::ThisExpression { # {{{
 				writer.code('@').expression(data.name)
@@ -1376,10 +1427,13 @@ export namespace Generator {
 				}
 			} # }}}
 			NodeKind::UnaryExpression { # {{{
-				if ?UnaryPrefixOperatorSymbol[data.operator.kind] {
+				if var operator ?= UnaryPrefixOperatorSymbol[data.operator.kind] {
 					writer
-						.code(UnaryPrefixOperatorSymbol[data.operator.kind])
+						.code(operator)
 						.wrap(data.argument)
+				}
+				else if data.operator.kind == UnaryOperatorKind::Implicit {
+					writer.code('.').expression(data.argument)
 				}
 				else {
 					writer
@@ -1914,13 +1968,13 @@ export namespace Generator {
 	func toMacroElements(elements, writer, parent? = null) { # {{{
 		var last = elements.length - 1
 
-		for element, index in elements {
+		for var element, index in elements {
 			match element.kind {
 				MacroElementKind::Expression {
 					writer.code('#')
 
-					if element.reification.kind == ReificationKind::Expression && element.expression.kind == NodeKind::Identifier {
-						writer.expression(element.expression)
+					if !?element.reification {
+						writer.code('(').expression(element.expression).code(')')
 					}
 					else if element.reification.kind == ReificationKind::Join {
 						writer.code('j(').expression(element.expression).code(', ').expression(element.separator).code(')')
@@ -2011,8 +2065,25 @@ export namespace Generator {
 				block.done()
 				line.done()
 			} # }}}
+			NodeKind::BlockStatement { # {{{
+				writer
+					.newControl()
+					.code('block ')
+					.expression(data.label)
+					.step()
+					.expression(data.body)
+					.done()
+			} # }}}
 			NodeKind::BreakStatement { # {{{
-				writer.newLine().code('break').done()
+				var line = writer
+					.newLine()
+					.code('break')
+
+				if ?data.label {
+					line.code(' ').expression(data.label)
+				}
+
+				line.done()
 			} # }}}
 			NodeKind::CatchClause { # {{{
 				if ?data.type {
@@ -2081,7 +2152,15 @@ export namespace Generator {
 				line.done()
 			} # }}}
 			NodeKind::ContinueStatement { # {{{
-				writer.newLine().code('continue').done()
+				var line = writer
+					.newLine()
+					.code('continue')
+
+				if ?data.label {
+					line.code(' ').expression(data.label)
+				}
+
+				line.done()
 			} # }}}
 			NodeKind::DestroyStatement { # {{{
 				writer
@@ -2638,16 +2717,30 @@ export namespace Generator {
 						ctrl.done()
 					}
 					NodeKind::BreakStatement {
-						writer
+						var line = writer
 							.newLine()
-							.code('break if ')
+							.code('break ')
+
+						if ?data.whenTrue.label {
+							line.expression(data.whenTrue.label).code(' ')
+						}
+
+						line
+							.code('if ')
 							.expression(data.condition)
 							.done()
 					}
 					NodeKind::ContinueStatement {
-						writer
+						var line = writer
 							.newLine()
-							.code('continue if ')
+							.code('continue ')
+
+						if ?data.whenTrue.label {
+							line.expression(data.whenTrue.label).code(' ')
+						}
+
+						line
+							.code('if ')
 							.expression(data.condition)
 							.done()
 					}
@@ -3297,16 +3390,30 @@ export namespace Generator {
 						ctrl.done()
 					}
 					NodeKind::BreakStatement {
-						writer
+						var line = writer
 							.newLine()
-							.code('break unless ')
+							.code('break ')
+
+						if ?data.whenFalse.label {
+							line.expression(data.whenFalse.label).code(' ')
+						}
+
+						line
+							.code('unless ')
 							.expression(data.condition)
 							.done()
 					}
 					NodeKind::ContinueStatement {
-						writer
+						var line = writer
 							.newLine()
-							.code('continue unless ')
+							.code('continue ')
+
+						if ?data.whenFalse.label {
+							line.expression(data.whenFalse.label).code(' ')
+						}
+
+						line
+							.code('unless ')
 							.expression(data.condition)
 							.done()
 					}

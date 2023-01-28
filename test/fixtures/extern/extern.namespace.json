@@ -1,17 +1,17 @@
 {
-  "kind": 77,
+  "kind": 76,
   "attributes": [],
   "body": [
     {
-      "kind": 38,
+      "kind": 39,
       "attributes": [],
       "declarations": [
         {
-          "kind": 81,
+          "kind": 80,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 32,
+              "kind": 33,
               "start": {
                 "line": 1,
                 "column": 8
@@ -23,7 +23,7 @@
             }
           ],
           "name": {
-            "kind": 51,
+            "kind": 52,
             "modifiers": [],
             "name": "Math1",
             "start": {
@@ -37,11 +37,11 @@
           },
           "statements": [
             {
-              "kind": 128,
+              "kind": 127,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 51,
+                "kind": 52,
                 "modifiers": [],
                 "name": "PI",
                 "start": {
@@ -62,10 +62,10 @@
                 "column": 16
               },
               "type": {
-                "kind": 120,
+                "kind": 119,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 51,
+                  "kind": 52,
                   "modifiers": [],
                   "name": "Number",
                   "start": {
@@ -88,10 +88,10 @@
               }
             },
             {
-              "kind": 47,
+              "kind": 48,
               "attributes": [],
               "name": {
-                "kind": 51,
+                "kind": 52,
                 "modifiers": [],
                 "name": "pow",
                 "start": {
@@ -113,11 +113,11 @@
               },
               "parameters": [
                 {
-                  "kind": 88,
+                  "kind": 87,
                   "attributes": [],
                   "modifiers": [
                     {
-                      "kind": 31,
+                      "kind": 32,
                       "arity": {
                         "min": 0,
                         "max": "Infinity"
@@ -144,10 +144,10 @@
               ],
               "modifiers": [],
               "type": {
-                "kind": 120,
+                "kind": 119,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 51,
+                  "kind": 52,
                   "modifiers": [],
                   "name": "Number",
                   "start": {
@@ -191,15 +191,15 @@
       }
     },
     {
-      "kind": 38,
+      "kind": 39,
       "attributes": [],
       "declarations": [
         {
-          "kind": 81,
+          "kind": 80,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 32,
+              "kind": 33,
               "start": {
                 "line": 7,
                 "column": 8
@@ -211,7 +211,7 @@
             }
           ],
           "name": {
-            "kind": 51,
+            "kind": 52,
             "modifiers": [],
             "name": "Math2",
             "start": {
@@ -225,11 +225,11 @@
           },
           "statements": [
             {
-              "kind": 128,
+              "kind": 127,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 51,
+                "kind": 52,
                 "modifiers": [],
                 "name": "PI",
                 "start": {
@@ -250,10 +250,10 @@
                 "column": 12
               },
               "type": {
-                "kind": 120,
+                "kind": 119,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 51,
+                  "kind": 52,
                   "modifiers": [],
                   "name": "Number",
                   "start": {
@@ -276,10 +276,10 @@
               }
             },
             {
-              "kind": 47,
+              "kind": 48,
               "attributes": [],
               "name": {
-                "kind": 51,
+                "kind": 52,
                 "modifiers": [],
                 "name": "pow",
                 "start": {
@@ -301,11 +301,11 @@
               },
               "parameters": [
                 {
-                  "kind": 88,
+                  "kind": 87,
                   "attributes": [],
                   "modifiers": [
                     {
-                      "kind": 31,
+                      "kind": 32,
                       "arity": {
                         "min": 0,
                         "max": "Infinity"
@@ -332,10 +332,10 @@
               ],
               "modifiers": [],
               "type": {
-                "kind": 120,
+                "kind": 119,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 51,
+                  "kind": 52,
                   "modifiers": [],
                   "name": "Number",
                   "start": {

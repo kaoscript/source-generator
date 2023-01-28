@@ -1,17 +1,17 @@
 {
-  "kind": 77,
+  "kind": 76,
   "attributes": [],
   "body": [
     {
-      "kind": 99,
+      "kind": 98,
       "attributes": [],
       "declarations": [
         {
-          "kind": 81,
+          "kind": 80,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 51,
+            "kind": 52,
             "modifiers": [],
             "name": "Math",
             "start": {
@@ -25,11 +25,11 @@
           },
           "statements": [
             {
-              "kind": 128,
+              "kind": 127,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 51,
+                "kind": 52,
                 "modifiers": [],
                 "name": "PI",
                 "start": {
@@ -50,10 +50,10 @@
                 "column": 12
               },
               "type": {
-                "kind": 120,
+                "kind": 119,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 51,
+                  "kind": 52,
                   "modifiers": [],
                   "name": "Number",
                   "start": {

@@ -8,13 +8,13 @@ class Color {
 				field = `_\(name)`
 				fields.push(macro private #w(field): #w(component.type))
 				methods.push(macro {
-					#w(name)() => this.getField(#name)
-					#w(name)(value) => this.setField(#name, value)
+					#w(name)() => this.getField(#(name))
+					#w(name)(value) => this.setField(#(name), value)
 				})
 				data.components[name].field = field
 			}
 			macro {
-				Color.registerSpace(#data)
+				Color.registerSpace(#(data))
 				impl Color {
 				#s(fields)
 				#s(methods)
@@ -22,7 +22,7 @@ class Color {
 			}
 		}
 		else {
-			macro Color.registerSpace(#data)
+			macro Color.registerSpace(#(data))
 		}
 	}
 }

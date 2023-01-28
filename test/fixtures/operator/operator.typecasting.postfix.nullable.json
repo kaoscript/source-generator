@@ -1,12 +1,12 @@
 {
-  "kind": 77,
+  "kind": 76,
   "attributes": [],
   "body": [
     {
-      "kind": 47,
+      "kind": 48,
       "attributes": [],
       "name": {
-        "kind": 51,
+        "kind": 52,
         "modifiers": [],
         "name": "foobar",
         "start": {
@@ -29,10 +29,10 @@
       "parameters": [],
       "modifiers": [],
       "type": {
-        "kind": 120,
+        "kind": 119,
         "modifiers": [
           {
-            "kind": 23,
+            "kind": 24,
             "start": {
               "line": 1,
               "column": 22
@@ -44,7 +44,7 @@
           }
         ],
         "typeName": {
-          "kind": 51,
+          "kind": 52,
           "modifiers": [],
           "name": "Number",
           "start": {
@@ -81,13 +81,13 @@
       }
     },
     {
-      "kind": 17,
+      "kind": 18,
       "modifiers": [],
       "scope": {
         "kind": 3
       },
       "callee": {
-        "kind": 51,
+        "kind": 52,
         "modifiers": [],
         "name": "call",
         "start": {
@@ -101,10 +101,10 @@
       },
       "arguments": [
         {
-          "kind": 122,
+          "kind": 121,
           "modifiers": [],
           "operator": {
-            "kind": 6,
+            "kind": 7,
             "start": {
               "line": 4,
               "column": 14
@@ -115,13 +115,13 @@
             }
           },
           "argument": {
-            "kind": 17,
+            "kind": 18,
             "modifiers": [],
             "scope": {
               "kind": 3
             },
             "callee": {
-              "kind": 51,
+              "kind": 52,
               "modifiers": [],
               "name": "foobar",
               "start": {

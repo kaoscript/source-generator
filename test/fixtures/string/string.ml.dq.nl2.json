@@ -1,0 +1,95 @@
+{
+  "kind": 76,
+  "attributes": [],
+  "body": [
+    {
+      "kind": 128,
+      "attributes": [],
+      "modifiers": [],
+      "declarations": [
+        {
+          "kind": 126,
+          "attributes": [],
+          "modifiers": [],
+          "variables": [
+            {
+              "kind": 127,
+              "attributes": [],
+              "modifiers": [],
+              "name": {
+                "kind": 52,
+                "modifiers": [],
+                "name": "lineBreaks",
+                "start": {
+                  "line": 1,
+                  "column": 5
+                },
+                "end": {
+                  "line": 1,
+                  "column": 15
+                }
+              },
+              "start": {
+                "line": 1,
+                "column": 5
+              },
+              "end": {
+                "line": 1,
+                "column": 15
+              }
+            }
+          ],
+          "start": {
+            "line": 1,
+            "column": 5
+          },
+          "end": {
+            "line": 5,
+            "column": 4
+          },
+          "value": {
+            "kind": 63,
+            "modifiers": [
+              {
+                "kind": 20,
+                "start": {
+                  "line": 1,
+                  "column": 18
+                },
+                "end": {
+                  "line": 5,
+                  "column": 4
+                }
+              }
+            ],
+            "value": "\n\n",
+            "start": {
+              "line": 1,
+              "column": 18
+            },
+            "end": {
+              "line": 5,
+              "column": 4
+            }
+          }
+        }
+      ],
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 5,
+        "column": 4
+      }
+    }
+  ],
+  "start": {
+    "line": 1,
+    "column": 1
+  },
+  "end": {
+    "line": 5,
+    "column": 4
+  }
+}

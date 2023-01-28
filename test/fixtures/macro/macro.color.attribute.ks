@@ -9,14 +9,14 @@ export class Color {
 				fields.push(macro private #w(field): #w(component.type))
 				methods.push(macro {
 					#[error(off)]
-					#w(name)() => this.getField(#name)
+					#w(name)() => this.getField(#(name))
 					#[error(off)]
-					#w(name)(value) => this.setField(#name, value)
+					#w(name)(value) => this.setField(#(name), value)
 				})
 				expression.components[name].field = field
 			}
 			macro {
-				Color.registerSpace(#expression)
+				Color.registerSpace(#(expression))
 				impl Color {
 				#s(fields)
 				#s(methods)
@@ -24,7 +24,7 @@ export class Color {
 			}
 		}
 		else {
-			macro Color.registerSpace(#expression)
+			macro Color.registerSpace(#(expression))
 		}
 	}
 	getField(name) ~ Error {

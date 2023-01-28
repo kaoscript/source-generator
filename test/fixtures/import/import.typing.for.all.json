@@ -1,17 +1,17 @@
 {
-  "kind": 77,
+  "kind": 76,
   "attributes": [],
   "body": [
     {
-      "kind": 55,
+      "kind": 56,
       "attributes": [],
       "declarations": [
         {
-          "kind": 56,
+          "kind": 57,
           "attributes": [],
           "modifiers": [],
           "source": {
-            "kind": 62,
+            "kind": 63,
             "modifiers": [],
             "value": "chevrotain",
             "start": {
@@ -25,10 +25,10 @@
           },
           "specifiers": [
             {
-              "kind": 50,
+              "kind": 51,
               "modifiers": [
                 {
-                  "kind": 36,
+                  "kind": 37,
                   "start": {
                     "line": 6,
                     "column": 7
@@ -59,14 +59,14 @@
             "column": 8
           },
           "type": {
-            "kind": 119,
+            "kind": 118,
             "attributes": [],
             "types": [
               {
-                "kind": 47,
+                "kind": 48,
                 "attributes": [],
                 "name": {
-                  "kind": 51,
+                  "kind": 52,
                   "modifiers": [],
                   "name": "createToken",
                   "start": {
@@ -90,11 +90,11 @@
                 "throws": []
               },
               {
-                "kind": 19,
+                "kind": 20,
                 "attributes": [],
                 "modifiers": [
                   {
-                    "kind": 32,
+                    "kind": 33,
                     "start": {
                       "line": 3,
                       "column": 2
@@ -106,7 +106,7 @@
                   }
                 ],
                 "name": {
-                  "kind": 51,
+                  "kind": 52,
                   "modifiers": [],
                   "name": "Lexer",
                   "start": {
@@ -129,11 +129,11 @@
                 }
               },
               {
-                "kind": 19,
+                "kind": 20,
                 "attributes": [],
                 "modifiers": [
                   {
-                    "kind": 32,
+                    "kind": 33,
                     "start": {
                       "line": 4,
                       "column": 2
@@ -145,7 +145,7 @@
                   }
                 ],
                 "name": {
-                  "kind": 51,
+                  "kind": 52,
                   "modifiers": [],
                   "name": "Parser",
                   "start": {
@@ -168,11 +168,11 @@
                 }
               },
               {
-                "kind": 19,
+                "kind": 20,
                 "attributes": [],
                 "modifiers": [
                   {
-                    "kind": 32,
+                    "kind": 33,
                     "start": {
                       "line": 5,
                       "column": 2
@@ -184,7 +184,7 @@
                   }
                 ],
                 "name": {
-                  "kind": 51,
+                  "kind": 52,
                   "modifiers": [],
                   "name": "Token",
                   "start": {

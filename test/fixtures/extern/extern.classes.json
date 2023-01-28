@@ -1,17 +1,17 @@
 {
-  "kind": 77,
+  "kind": 76,
   "attributes": [],
   "body": [
     {
-      "kind": 38,
+      "kind": 39,
       "attributes": [],
       "declarations": [
         {
-          "kind": 19,
+          "kind": 20,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 32,
+              "kind": 33,
               "start": {
                 "line": 2,
                 "column": 2
@@ -23,7 +23,7 @@
             }
           ],
           "name": {
-            "kind": 51,
+            "kind": 52,
             "modifiers": [],
             "name": "Array",
             "start": {
@@ -46,11 +46,11 @@
           }
         },
         {
-          "kind": 19,
+          "kind": 20,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 32,
+              "kind": 33,
               "start": {
                 "line": 3,
                 "column": 2
@@ -62,7 +62,7 @@
             }
           ],
           "name": {
-            "kind": 51,
+            "kind": 52,
             "modifiers": [],
             "name": "Function",
             "start": {
@@ -85,11 +85,11 @@
           }
         },
         {
-          "kind": 19,
+          "kind": 20,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 32,
+              "kind": 33,
               "start": {
                 "line": 4,
                 "column": 2
@@ -101,7 +101,7 @@
             }
           ],
           "name": {
-            "kind": 51,
+            "kind": 52,
             "modifiers": [],
             "name": "Object",
             "start": {

@@ -1,18 +1,18 @@
 {
-  "kind": 77,
+  "kind": 76,
   "attributes": [],
   "body": [
     {
-      "kind": 53,
+      "kind": 54,
       "attributes": [],
       "whenTrue": {
-        "kind": 112,
+        "kind": 111,
         "attributes": [],
         "value": {
-          "kind": 27,
+          "kind": 28,
           "modifiers": [],
           "class": {
-            "kind": 51,
+            "kind": 52,
             "modifiers": [],
             "name": "Error",
             "start": {
@@ -26,7 +26,7 @@
           },
           "arguments": [
             {
-              "kind": 62,
+              "kind": 63,
               "modifiers": [],
               "value": "Not Defined",
               "start": {
@@ -66,10 +66,10 @@
         "column": 38
       },
       "condition": {
-        "kind": 122,
+        "kind": 121,
         "modifiers": [],
         "operator": {
-          "kind": 3,
+          "kind": 4,
           "start": {
             "line": 1,
             "column": 35
@@ -80,7 +80,7 @@
           }
         },
         "argument": {
-          "kind": 122,
+          "kind": 121,
           "modifiers": [],
           "operator": {
             "kind": 1,
@@ -94,7 +94,7 @@
             }
           },
           "argument": {
-            "kind": 51,
+            "kind": 52,
             "modifiers": [],
             "name": "x",
             "start": {

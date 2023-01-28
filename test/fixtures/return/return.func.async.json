@@ -1,19 +1,19 @@
 {
-  "kind": 77,
+  "kind": 76,
   "attributes": [],
   "body": [
     {
-      "kind": 102,
+      "kind": 101,
       "attributes": [],
       "value": {
-        "kind": 48,
+        "kind": 49,
         "parameters": [
           {
-            "kind": 88,
+            "kind": 87,
             "attributes": [],
             "modifiers": [
               {
-                "kind": 31,
+                "kind": 32,
                 "arity": {
                   "min": 0,
                   "max": "Infinity"
@@ -37,7 +37,7 @@
               "column": 27
             },
             "external": {
-              "kind": 51,
+              "kind": 52,
               "modifiers": [],
               "name": "items",
               "start": {
@@ -50,7 +50,7 @@
               }
             },
             "internal": {
-              "kind": 51,
+              "kind": 52,
               "modifiers": [],
               "name": "items",
               "start": {
