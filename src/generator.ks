@@ -110,7 +110,8 @@ export namespace Generator {
 	class KSWriter extends Writer {
 		private {
 			@mode: KSWriterMode
-			@stack: Array			= []
+			@references: Function[]{}	= {}
+			@stack: Array				= []
 		}
 		constructor(options? = null) { # {{{
 			super(Object.merge({
@@ -140,14 +141,34 @@ export namespace Generator {
 		} # }}}
 		filterExpression(data, writer = this) => @options.filters.expression(data, writer)
 		filterStatement(data, writer = this) => @options.filters.statement(data, writer)
+		getReference(name: String): Function? { # {{{
+			if var functions #= @references[name] {
+				return functions[0]
+			}
+
+			return null
+		} # }}}
 		mode() => @mode
 		popMode() { # {{{
 			@mode = @stack.pop()
+		} # }}}
+		popReference(name: String): Void { # {{{
+			if var functions #= @references[name] {
+				functions.shift()
+			}
 		} # }}}
 		pushMode(mode: KSWriterMode) { # {{{
 			@stack.push(@mode)
 
 			@mode = mode
+		} # }}}
+		pushReference(name: String, fn: Function): Void { # {{{
+			if var functions ?= @references[name] {
+				functions.unshift(fn)
+			}
+			else {
+				@references[name] = [fn]
+			}
 		} # }}}
 		statement(data) { # {{{
 			if !this.filterStatement(data) {
@@ -177,7 +198,7 @@ export namespace Generator {
 	}
 
 	class KSBlockWriter extends BlockWriter {
-		expression(data) { # {{{
+		expression(data, top: Boolean = false) { # {{{
 			if !this.filterExpression(data) {
 				match @mode() {
 					KSWriterMode::Export {
@@ -187,7 +208,7 @@ export namespace Generator {
 						toImport(this.transformExpression(data), this)
 					}
 					else {
-						toExpression(this.transformExpression(data), this)
+						toExpression(this.transformExpression(data), top, this)
 					}
 				}
 			}
@@ -196,9 +217,12 @@ export namespace Generator {
 		} # }}}
 		filterExpression(data) => @writer.filterExpression(data, this)
 		filterStatement(data) => @writer.filterStatement(data, this)
+		getReference(name) => @writer.getReference(name)
 		mode() => @writer.mode()
 		popMode() => @writer.popMode()
+		popReference(name) => @writer.popReference(name)
 		pushMode(mode: KSWriterMode) => @writer.pushMode(mode)
+		pushReference(name, fn) => @writer.pushReference(name, fn)
 		statement(data) { # {{{
 			if !this.filterStatement(data) {
 				toAttributes(data, AttributeMode::Outer, this)
@@ -213,18 +237,21 @@ export namespace Generator {
 	}
 
 	class KSControlWriter extends ControlWriter {
-		expression(data) { # {{{
+		expression(data, top: Boolean = false) { # {{{
 			if !this.filterExpression(data) {
-				toExpression(this.transformExpression(data), this)
+				toExpression(this.transformExpression(data), top, this)
 			}
 
 			return this
 		} # }}}
 		filterExpression(data) => @writer.filterExpression(data, this)
 		filterStatement(data) => @writer.filterStatement(data, this)
+		getReference(name) => @writer.getReference(name)
 		mode() => @writer.mode()
 		popMode() => @writer.popMode()
+		popReference(name) => @writer.popReference(name)
 		pushMode(mode: KSWriterMode) => @writer.pushMode(mode)
+		pushReference(name, fn) => @writer.pushReference(name, fn)
 		statement(data) { # {{{
 			if !this.filterStatement(data) {
 				toAttributes(data, AttributeMode::Outer, this)
@@ -246,17 +273,20 @@ export namespace Generator {
 	}
 
 	class KSExpressionWriter extends ExpressionWriter {
-		expression(data) { # {{{
+		expression(data, top: Boolean = false) { # {{{
 			if !this.filterExpression(data) {
-				toExpression(this.transformExpression(data), this)
+				toExpression(this.transformExpression(data), top, this)
 			}
 
 			return this
 		} # }}}
 		filterExpression(data) => @writer.filterExpression(data, this)
+		getReference(name) => @writer.getReference(name)
 		mode() => @writer.mode()
 		popMode() => @writer.popMode()
+		popReference(name) => @writer.popReference(name)
 		pushMode(mode: KSWriterMode) => @writer.pushMode(mode)
+		pushReference(name, fn) => @writer.pushReference(name, fn)
 		transformExpression(data, writer = this) => @writer.transformExpression(data, this)
 		wrap(data) { # {{{
 			if !this.filterExpression(data) {
@@ -268,7 +298,7 @@ export namespace Generator {
 	}
 
 	class KSLineWriter extends LineWriter {
-		expression(data) { # {{{
+		expression(data, top: Boolean = false) { # {{{
 			if !this.filterExpression(data) {
 				match @mode() {
 					KSWriterMode::Export {
@@ -278,7 +308,7 @@ export namespace Generator {
 						toImport(this.transformExpression(data), this)
 					}
 					else {
-						toExpression(this.transformExpression(data), this)
+						toExpression(this.transformExpression(data), top, this)
 					}
 				}
 			}
@@ -287,9 +317,12 @@ export namespace Generator {
 		} # }}}
 		filterExpression(data) => @writer.filterExpression(data, this)
 		filterStatement(data) => @writer.filterStatement(data, this)
+		getReference(name) => @writer.getReference(name)
 		mode() => @writer.mode()
 		popMode() => @writer.popMode()
+		popReference(name) => @writer.popReference(name)
 		pushMode(mode: KSWriterMode) => @writer.pushMode(mode)
+		pushReference(name, fn) => @writer.pushReference(name, fn)
 		run(data, fn) { # {{{
 			fn(data, this)
 
@@ -318,9 +351,12 @@ export namespace Generator {
 	class KSObjectWriter extends ObjectWriter {
 		filterExpression(data) => @writer.filterExpression(data, this)
 		filterStatement(data) => @writer.filterStatement(data, this)
+		getReference(name) => @writer.getReference(name)
 		mode() => @writer.mode()
 		popMode() => @writer.popMode()
+		popReference(name) => @writer.popReference(name)
 		pushMode(mode: KSWriterMode) => @writer.pushMode(mode)
+		pushReference(name, fn) => @writer.pushReference(name, fn)
 		statement(data) { # {{{
 			if !this.filterStatement(data) {
 				toAttributes(data, AttributeMode::Outer, this)
@@ -480,12 +516,12 @@ export namespace Generator {
 				line.done()
 			} # }}}
 			else { # {{{
-				toExpression(data, writer)
+				toExpression(data, true, writer)
 			} # }}}
 		}
 	}
 
-	func toExpression(data, writer, header? = null) {
+	func toExpression(mut data, top, writer, header? = null) {
 		match data.kind {
 			NodeKind::ArrayBinding { # {{{
 				writer.code('[')
@@ -833,6 +869,33 @@ export namespace Generator {
 
 				writer.code(')')
 			} # }}}
+			NodeKind::DisruptiveExpression { # {{{
+				writer.pushReference('main', (writer) => {
+					writer
+						.expression(data.mainExpression)
+						.code('\n')
+						.newIndent()
+				})
+
+				writer.expression(data.disruptedExpression)
+
+				writer.popReference('main')
+
+				match data.operator.kind {
+					RestrictiveOperatorKind::If {
+						writer.code(' if ')
+					}
+					RestrictiveOperatorKind::Unless {
+						writer.code(' unless ')
+					}
+				}
+
+				writer.expression(data.condition)
+
+				if !top {
+					writer.code('\n').newIndent()
+				}
+			} # }}}
 			NodeKind::EnumExpression { # {{{
 				writer
 					.expression(data.enum)
@@ -854,9 +917,7 @@ export namespace Generator {
 			NodeKind::FunctionExpression { # {{{
 				toFunctionHeader(data, writer => {
 					if writer.mode() == KSWriterMode::Property {
-						if ?header {
-							header(writer)
-						}
+						header?(writer)
 					}
 					else {
 						writer.code('func')
@@ -885,16 +946,52 @@ export namespace Generator {
 				writer.code(data.name)
 			} # }}}
 			NodeKind::IfExpression { # {{{
-				writer
-					.expression(data.whenTrue)
-					.code(' if ')
-					.expression(data.condition)
+				var ctrl = writer.newControl(null, null, null, false).code('if ')
 
-				if ?data.whenFalse {
-					writer
-						.code(' else ')
-						.expression(data.whenFalse)
+				if ?data.declaration {
+					ctrl.expression(data.declaration)
+
+					if ?data.condition {
+						ctrl.code('; ').expression(data.condition)
+					}
 				}
+				else if ?data.condition {
+					ctrl.expression(data.condition)
+				}
+
+				ctrl.step().expression(data.whenTrue)
+
+				while ?data.whenFalse {
+					if data.whenFalse.kind == NodeKind::IfStatement {
+						data = data.whenFalse
+
+						ctrl.step().code('else if ')
+
+						if ?data.declaration {
+							ctrl.expression(data.declaration)
+
+							if ?data.condition {
+								ctrl.code('; ').expression(data.condition)
+							}
+						}
+						else if ?data.condition {
+							ctrl.expression(data.condition)
+						}
+
+						ctrl.step().expression(data.whenTrue)
+					}
+					else {
+						ctrl
+							.step()
+							.code('else')
+							.step()
+							.expression(data.whenFalse)
+
+						break
+					}
+				}
+
+				ctrl.done()
 			} # }}}
 			NodeKind::IncludeDeclarator { # {{{
 				toAttributes(data, AttributeMode::Outer, writer)
@@ -1100,7 +1197,7 @@ export namespace Generator {
 					var element = writer.transformExpression(value)
 
 					if element.kind == NodeKind::FunctionExpression {
-						toExpression(element, writer, writer => writer.expression(data.name))
+						toExpression(element, true, writer, writer => writer.expression(data.name))
 					}
 					else if ?data.name {
 						writer.expression(data.name).code(': ').expression(element)
@@ -1267,7 +1364,7 @@ export namespace Generator {
 			NodeKind::PropertyType { # {{{
 				if ?data.name {
 					if data.type.kind == NodeKind::FunctionExpression {
-						toExpression(data.type, writer, writer => writer.expression(data.name))
+						toExpression(data.type, true, writer, writer => writer.expression(data.name))
 					}
 					else {
 						writer.expression(data.name).code(': ').expression(data.type)
@@ -1285,8 +1382,27 @@ export namespace Generator {
 					}
 				}
 			} # }}}
+			NodeKind::Reference { # {{{
+				if var reference ?= writer.getReference(data.name) {
+					reference(writer)
+				}
+			} # }}}
 			NodeKind::RegularExpression { # {{{
 				writer.code(data.value)
+			} # }}}
+			NodeKind::RestrictiveExpression { # {{{
+				writer.expression(data.expression)
+
+				match data.operator.kind {
+					RestrictiveOperatorKind::If {
+						writer.code(' if ')
+					}
+					RestrictiveOperatorKind::Unless {
+						writer.code(' unless ')
+					}
+				}
+
+				writer.expression(data.condition)
 			} # }}}
 			NodeKind::SequenceExpression { # {{{
 				writer.code('(')
@@ -1450,12 +1566,6 @@ export namespace Generator {
 					writer.expression(type)
 				}
 			} # }}}
-			NodeKind::UnlessExpression { # {{{
-				writer
-					.expression(data.whenFalse)
-					.code(' unless ')
-					.expression(data.condition)
-			} # }}}
 			NodeKind::VariableDeclaration { # {{{
 				for var modifier in data.modifiers {
 					if modifier.kind == ModifierKind::Immutable {
@@ -1486,7 +1596,7 @@ export namespace Generator {
 						writer.code('await ')
 					}
 
-					writer.expression(data.value)
+					writer.expression(data.value, true)
 				}
 			} # }}}
 			NodeKind::VariableDeclarator { # {{{
@@ -1773,7 +1883,7 @@ export namespace Generator {
 				writer.statement(data.type)
 			} # }}}
 			else { # {{{
-				toExpression(data, writer)
+				toExpression(data, true, writer)
 			} # }}}
 		}
 	}
@@ -3007,6 +3117,13 @@ export namespace Generator {
 			} # }}}
 			NodeKind::PassStatement { # {{{
 				writer.newLine().code('pass').done()
+			} # }}}
+			NodeKind::PickStatement { # {{{
+				writer
+					.newLine()
+					.code('pick ')
+					.expression(data.value)
+					.done()
 			} # }}}
 			NodeKind::PropertyDeclaration { # {{{
 				var line = writer.newLine()
