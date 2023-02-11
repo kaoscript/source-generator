@@ -60,7 +60,7 @@
             "column": 97
           },
           "value": {
-            "kind": 26,
+            "kind": 27,
             "start": {
               "line": 1,
               "column": 16
@@ -120,7 +120,7 @@
               }
             },
             "whenTrue": {
-              "kind": 26,
+              "kind": 27,
               "start": {
                 "line": 1,
                 "column": 29
@@ -207,7 +207,7 @@
               }
             },
             "whenFalse": {
-              "kind": 26,
+              "kind": 27,
               "start": {
                 "line": 1,
                 "column": 56
@@ -280,7 +280,7 @@
                 }
               },
               "whenFalse": {
-                "kind": 26,
+                "kind": 27,
                 "start": {
                   "line": 1,
                   "column": 80

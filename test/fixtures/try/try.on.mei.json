@@ -90,7 +90,7 @@
       },
       "catchClauses": [
         {
-          "kind": 19,
+          "kind": 20,
           "body": {
             "kind": 15,
             "attributes": [],
@@ -223,7 +223,7 @@
           }
         },
         {
-          "kind": 19,
+          "kind": 20,
           "body": {
             "kind": 15,
             "attributes": [],
@@ -365,7 +365,7 @@
         "column": 2
       },
       "catchClause": {
-        "kind": 19,
+        "kind": 20,
         "body": {
           "kind": 15,
           "attributes": [],

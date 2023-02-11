@@ -306,7 +306,7 @@
       "attributes": []
     },
     {
-      "kind": 29,
+      "kind": 30,
       "modifiers": [],
       "scope": {
         "kind": 2
@@ -350,7 +350,7 @@
       "attributes": []
     },
     {
-      "kind": 29,
+      "kind": 30,
       "modifiers": [],
       "scope": {
         "kind": 1,
@@ -393,7 +393,7 @@
       "attributes": []
     },
     {
-      "kind": 29,
+      "kind": 30,
       "modifiers": [],
       "scope": {
         "kind": 3
@@ -524,56 +524,17 @@
       "attributes": []
     },
     {
-      "kind": 37,
-      "modifiers": [],
-      "enum": {
-        "kind": 53,
-        "modifiers": [],
-        "name": "foo",
-        "start": {
-          "line": 23,
-          "column": 1
-        },
-        "end": {
-          "line": 23,
-          "column": 4
-        }
-      },
-      "member": {
-        "kind": 53,
-        "modifiers": [],
-        "name": "bar",
-        "start": {
-          "line": 23,
-          "column": 6
-        },
-        "end": {
-          "line": 23,
-          "column": 9
-        }
-      },
-      "start": {
-        "line": 23,
-        "column": 1
-      },
-      "end": {
-        "line": 23,
-        "column": 9
-      },
-      "attributes": []
-    },
-    {
       "kind": 12,
       "modifiers": [],
       "operator": {
         "kind": 23,
         "modifiers": [],
         "start": {
-          "line": 25,
+          "line": 23,
           "column": 4
         },
         "end": {
-          "line": 25,
+          "line": 23,
           "column": 5
         }
       },
@@ -582,11 +543,11 @@
         "modifiers": [],
         "name": "foo",
         "start": {
-          "line": 25,
+          "line": 23,
           "column": 1
         },
         "end": {
-          "line": 25,
+          "line": 23,
           "column": 4
         }
       },
@@ -598,29 +559,29 @@
           "modifiers": [],
           "name": "bar",
           "start": {
-            "line": 25,
+            "line": 23,
             "column": 5
           },
           "end": {
-            "line": 25,
+            "line": 23,
             "column": 8
           }
         },
         "start": {
-          "line": 25,
+          "line": 23,
           "column": 5
         },
         "end": {
-          "line": 25,
+          "line": 23,
           "column": 8
         }
       },
       "start": {
-        "line": 25,
+        "line": 23,
         "column": 1
       },
       "end": {
-        "line": 25,
+        "line": 23,
         "column": 8
       },
       "attributes": []
@@ -631,7 +592,7 @@
     "column": 1
   },
   "end": {
-    "line": 25,
+    "line": 23,
     "column": 8
   }
 }

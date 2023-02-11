@@ -21,7 +21,7 @@
       },
       "statements": [
         {
-          "kind": 20,
+          "kind": 21,
           "attributes": [],
           "modifiers": [],
           "name": {
@@ -272,7 +272,7 @@
             "column": 25
           },
           "value": {
-            "kind": 28,
+            "kind": 29,
             "modifiers": [],
             "class": {
               "kind": 74,

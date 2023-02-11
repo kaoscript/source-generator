@@ -302,7 +302,7 @@
           "conditions": [
             {
               "kind": 69,
-              "members": [
+              "properties": [
                 {
                   "kind": 85,
                   "attributes": [],
@@ -488,7 +488,7 @@
           "conditions": [
             {
               "kind": 69,
-              "members": [
+              "properties": [
                 {
                   "kind": 85,
                   "attributes": [],
@@ -622,7 +622,7 @@
           "conditions": [
             {
               "kind": 69,
-              "members": [
+              "properties": [
                 {
                   "kind": 85,
                   "attributes": [],
@@ -743,7 +743,7 @@
           "conditions": [
             {
               "kind": 69,
-              "members": [
+              "properties": [
                 {
                   "kind": 85,
                   "attributes": [],
@@ -864,7 +864,7 @@
           "conditions": [],
           "bindings": [],
           "filter": {
-            "kind": 24,
+            "kind": 25,
             "modifiers": [],
             "values": [
               {

@@ -7,7 +7,7 @@
       "attributes": [],
       "declarations": [
         {
-          "kind": 20,
+          "kind": 21,
           "attributes": [],
           "modifiers": [
             {
@@ -46,7 +46,7 @@
           }
         },
         {
-          "kind": 20,
+          "kind": 21,
           "attributes": [],
           "modifiers": [
             {
@@ -85,7 +85,7 @@
           }
         },
         {
-          "kind": 20,
+          "kind": 21,
           "attributes": [],
           "modifiers": [
             {

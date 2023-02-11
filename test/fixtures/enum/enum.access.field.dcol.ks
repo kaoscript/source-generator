@@ -3,4 +3,4 @@ enum Kind {
 	B
 	C
 }
-var dyn k = Kind::A
+var dyn k = Kind.A

@@ -152,7 +152,7 @@
       }
     },
     {
-      "kind": 20,
+      "kind": 21,
       "attributes": [],
       "modifiers": [],
       "name": {
@@ -317,7 +317,7 @@
                 "kind": 105,
                 "attributes": [],
                 "value": {
-                  "kind": 28,
+                  "kind": 29,
                   "modifiers": [],
                   "class": {
                     "kind": 53,

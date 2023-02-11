@@ -7,9 +7,9 @@
       "attributes": [],
       "declarations": [
         {
-          "kind": 30,
+          "kind": 31,
           "declaration": {
-            "kind": 20,
+            "kind": 21,
             "attributes": [],
             "modifiers": [],
             "name": {
@@ -1673,7 +1673,7 @@
                       "kind": 115,
                       "attributes": [],
                       "value": {
-                        "kind": 28,
+                        "kind": 29,
                         "modifiers": [],
                         "class": {
                           "kind": 53,
@@ -1860,7 +1860,7 @@
                       "kind": 115,
                       "attributes": [],
                       "value": {
-                        "kind": 28,
+                        "kind": 29,
                         "modifiers": [],
                         "class": {
                           "kind": 53,

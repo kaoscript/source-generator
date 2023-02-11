@@ -3,7 +3,7 @@
   "attributes": [],
   "body": [
     {
-      "kind": 20,
+      "kind": 21,
       "attributes": [],
       "modifiers": [],
       "name": {
@@ -30,7 +30,7 @@
       }
     },
     {
-      "kind": 20,
+      "kind": 21,
       "attributes": [],
       "modifiers": [],
       "name": {
@@ -216,7 +216,7 @@
                       "column": 33
                     },
                     "value": {
-                      "kind": 28,
+                      "kind": 29,
                       "modifiers": [],
                       "class": {
                         "kind": 74,

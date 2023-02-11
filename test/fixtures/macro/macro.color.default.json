@@ -3,7 +3,7 @@
   "attributes": [],
   "body": [
     {
-      "kind": 20,
+      "kind": 21,
       "attributes": [],
       "modifiers": [],
       "name": {
@@ -1656,7 +1656,7 @@
               },
               "end": {
                 "line": 37,
-                "column": 19
+                "column": 18
               },
               "name": {
                 "kind": 53,
@@ -1672,9 +1672,9 @@
                 }
               },
               "value": {
-                "kind": 37,
+                "kind": 74,
                 "modifiers": [],
-                "enum": {
+                "object": {
                   "kind": 53,
                   "modifiers": [],
                   "name": "Space",
@@ -1687,17 +1687,17 @@
                     "column": 13
                   }
                 },
-                "member": {
+                "property": {
                   "kind": 53,
                   "modifiers": [],
                   "name": "SRGB",
                   "start": {
                     "line": 37,
-                    "column": 15
+                    "column": 14
                   },
                   "end": {
                     "line": 37,
-                    "column": 19
+                    "column": 18
                   }
                 },
                 "start": {
@@ -1706,7 +1706,7 @@
                 },
                 "end": {
                   "line": 37,
-                  "column": 19
+                  "column": 18
                 }
               }
             },
@@ -1720,7 +1720,7 @@
               },
               "end": {
                 "line": 38,
-                "column": 21
+                "column": 20
               },
               "name": {
                 "kind": 53,
@@ -1740,9 +1740,9 @@
                 "modifiers": [],
                 "values": [
                   {
-                    "kind": 37,
+                    "kind": 74,
                     "modifiers": [],
-                    "enum": {
+                    "object": {
                       "kind": 53,
                       "modifiers": [],
                       "name": "Space",
@@ -1755,17 +1755,17 @@
                         "column": 15
                       }
                     },
-                    "member": {
+                    "property": {
                       "kind": 53,
                       "modifiers": [],
                       "name": "RGB",
                       "start": {
                         "line": 38,
-                        "column": 17
+                        "column": 16
                       },
                       "end": {
                         "line": 38,
-                        "column": 20
+                        "column": 19
                       }
                     },
                     "start": {
@@ -1774,7 +1774,7 @@
                     },
                     "end": {
                       "line": 38,
-                      "column": 20
+                      "column": 19
                     }
                   }
                 ],
@@ -1784,7 +1784,7 @@
                 },
                 "end": {
                   "line": 38,
-                  "column": 21
+                  "column": 20
                 }
               }
             },
