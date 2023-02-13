@@ -2291,13 +2291,6 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.DestroyStatement { # {{{
-				writer
-					.newLine()
-					.code('delete ')
-					.expression(data.variable)
-					.done()
-			} # }}}
 			NodeKind.DiscloseDeclaration { # {{{
 				var line = writer
 					.newLine()
@@ -2333,6 +2326,13 @@ export namespace Generator {
 					.step()
 					.code('while ')
 					.expression(data.condition)
+					.done()
+			} # }}}
+			NodeKind.DropStatement { # {{{
+				writer
+					.newLine()
+					.code('drop ')
+					.expression(data.variable)
 					.done()
 			} # }}}
 			NodeKind.EnumDeclaration { # {{{
