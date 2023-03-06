@@ -773,9 +773,6 @@ export namespace Generator {
 							writer.code(', ')
 						}
 					}
-					ScopeKind.Null {
-						writer.code('**(')
-					}
 					ScopeKind.This {
 						writer.code('(')
 					}
@@ -876,11 +873,8 @@ export namespace Generator {
 							writer.code(', ')
 						}
 					}
-					ScopeKind.Null {
-						writer.code('^^(')
-					}
 					ScopeKind.This {
-						writer.code('^@(')
+						writer.code('^^(')
 					}
 				}
 
@@ -1366,6 +1360,23 @@ export namespace Generator {
 
 				if ?data.defaultValue {
 					writer.code(AssignmentOperatorSymbol[data.operator.assignment]).expression(data.defaultValue)
+				}
+			} # }}}
+			NodeKind.PlaceholderArgument { # {{{
+				var mut rest = false
+
+				for var modifier in data.modifiers {
+					if modifier.kind == ModifierKind.Rest {
+						rest = true
+
+						break
+					}
+				}
+
+				writer.code(rest ? '...' : '^')
+
+				if ?data.index {
+					writer.code(data.index.value)
 				}
 			} # }}}
 			NodeKind.PolyadicExpression { # {{{
