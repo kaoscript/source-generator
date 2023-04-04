@@ -1,12 +1,12 @@
 {
-  "kind": 77,
+  "kind": 78,
   "attributes": [],
   "body": [
     {
-      "kind": 49,
+      "kind": 50,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 54,
         "modifiers": [],
         "name": "foo",
         "start": {
@@ -28,19 +28,11 @@
       },
       "parameters": [
         {
-          "kind": 88,
+          "kind": 89,
           "attributes": [],
           "modifiers": [],
-          "start": {
-            "line": 1,
-            "column": 10
-          },
-          "end": {
-            "line": 1,
-            "column": 13
-          },
           "external": {
-            "kind": 53,
+            "kind": 54,
             "modifiers": [],
             "name": "bar",
             "start": {
@@ -53,7 +45,7 @@
             }
           },
           "internal": {
-            "kind": 53,
+            "kind": 54,
             "modifiers": [],
             "name": "bar",
             "start": {
@@ -64,14 +56,22 @@
               "line": 1,
               "column": 13
             }
+          },
+          "start": {
+            "line": 1,
+            "column": 10
+          },
+          "end": {
+            "line": 1,
+            "column": 13
           }
         },
         {
-          "kind": 88,
+          "kind": 89,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 33,
+              "kind": 34,
               "arity": {
                 "min": 0,
                 "max": "Infinity"
@@ -86,16 +86,8 @@
               }
             }
           ],
-          "start": {
-            "line": 1,
-            "column": 15
-          },
-          "end": {
-            "line": 1,
-            "column": 21
-          },
           "external": {
-            "kind": 53,
+            "kind": 54,
             "modifiers": [],
             "name": "qux",
             "start": {
@@ -108,7 +100,7 @@
             }
           },
           "internal": {
-            "kind": 53,
+            "kind": 54,
             "modifiers": [],
             "name": "qux",
             "start": {
@@ -119,6 +111,14 @@
               "line": 1,
               "column": 21
             }
+          },
+          "start": {
+            "line": 1,
+            "column": 15
+          },
+          "end": {
+            "line": 1,
+            "column": 21
           }
         }
       ],

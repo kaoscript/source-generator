@@ -1,17 +1,17 @@
 {
-  "kind": 77,
+  "kind": 78,
   "attributes": [],
   "body": [
     {
-      "kind": 57,
+      "kind": 58,
       "attributes": [],
       "declarations": [
         {
-          "kind": 58,
+          "kind": 59,
           "attributes": [],
           "modifiers": [],
           "source": {
-            "kind": 64,
+            "kind": 65,
             "modifiers": [],
             "value": "foobar",
             "start": {
@@ -25,7 +25,7 @@
           },
           "specifiers": [
             {
-              "kind": 52,
+              "kind": 53,
               "modifiers": [
                 {
                   "kind": 2,
@@ -41,15 +41,16 @@
               ],
               "elements": [
                 {
-                  "kind": 80,
+                  "kind": 81,
                   "modifiers": [],
                   "internal": {
-                    "kind": 83,
+                    "kind": 84,
                     "elements": [
                       {
                         "kind": 13,
-                        "name": {
-                          "kind": 53,
+                        "modifiers": [],
+                        "external": {
+                          "kind": 54,
                           "modifiers": [],
                           "name": "foo",
                           "start": {
@@ -61,33 +62,33 @@
                             "column": 5
                           }
                         },
-                        "modifiers": [],
+                        "internal": {
+                          "kind": 54,
+                          "modifiers": [],
+                          "name": "f1",
+                          "start": {
+                            "line": 9,
+                            "column": 8
+                          },
+                          "end": {
+                            "line": 9,
+                            "column": 10
+                          }
+                        },
                         "start": {
                           "line": 9,
                           "column": 2
                         },
                         "end": {
                           "line": 9,
-                          "column": 9
-                        },
-                        "alias": {
-                          "kind": 53,
-                          "modifiers": [],
-                          "name": "f1",
-                          "start": {
-                            "line": 9,
-                            "column": 7
-                          },
-                          "end": {
-                            "line": 9,
-                            "column": 9
-                          }
+                          "column": 10
                         }
                       },
                       {
                         "kind": 13,
-                        "name": {
-                          "kind": 53,
+                        "modifiers": [],
+                        "external": {
+                          "kind": 54,
                           "modifiers": [],
                           "name": "bar",
                           "start": {
@@ -99,33 +100,33 @@
                             "column": 5
                           }
                         },
-                        "modifiers": [],
+                        "internal": {
+                          "kind": 54,
+                          "modifiers": [],
+                          "name": "b1",
+                          "start": {
+                            "line": 10,
+                            "column": 8
+                          },
+                          "end": {
+                            "line": 10,
+                            "column": 10
+                          }
+                        },
                         "start": {
                           "line": 10,
                           "column": 2
                         },
                         "end": {
                           "line": 10,
-                          "column": 9
-                        },
-                        "alias": {
-                          "kind": 53,
-                          "modifiers": [],
-                          "name": "b1",
-                          "start": {
-                            "line": 10,
-                            "column": 7
-                          },
-                          "end": {
-                            "line": 10,
-                            "column": 9
-                          }
+                          "column": 10
                         }
                       },
                       {
                         "kind": 13,
-                        "name": {
-                          "kind": 53,
+                        "modifiers": [],
+                        "external": {
+                          "kind": 54,
                           "modifiers": [],
                           "name": "baz",
                           "start": {
@@ -137,33 +138,33 @@
                             "column": 5
                           }
                         },
-                        "modifiers": [],
+                        "internal": {
+                          "kind": 54,
+                          "modifiers": [],
+                          "name": "b2",
+                          "start": {
+                            "line": 11,
+                            "column": 8
+                          },
+                          "end": {
+                            "line": 11,
+                            "column": 10
+                          }
+                        },
                         "start": {
                           "line": 11,
                           "column": 2
                         },
                         "end": {
                           "line": 11,
-                          "column": 9
-                        },
-                        "alias": {
-                          "kind": 53,
-                          "modifiers": [],
-                          "name": "b2",
-                          "start": {
-                            "line": 11,
-                            "column": 7
-                          },
-                          "end": {
-                            "line": 11,
-                            "column": 9
-                          }
+                          "column": 10
                         }
                       },
                       {
                         "kind": 13,
-                        "name": {
-                          "kind": 53,
+                        "modifiers": [],
+                        "external": {
+                          "kind": 54,
                           "modifiers": [],
                           "name": "qux",
                           "start": {
@@ -175,27 +176,26 @@
                             "column": 5
                           }
                         },
-                        "modifiers": [],
+                        "internal": {
+                          "kind": 54,
+                          "modifiers": [],
+                          "name": "q1",
+                          "start": {
+                            "line": 12,
+                            "column": 8
+                          },
+                          "end": {
+                            "line": 12,
+                            "column": 10
+                          }
+                        },
                         "start": {
                           "line": 12,
                           "column": 2
                         },
                         "end": {
                           "line": 12,
-                          "column": 9
-                        },
-                        "alias": {
-                          "kind": 53,
-                          "modifiers": [],
-                          "name": "q1",
-                          "start": {
-                            "line": 12,
-                            "column": 7
-                          },
-                          "end": {
-                            "line": 12,
-                            "column": 9
-                          }
+                          "column": 10
                         }
                       }
                     ],
@@ -237,14 +237,14 @@
             "column": 2
           },
           "type": {
-            "kind": 123,
+            "kind": 124,
             "attributes": [],
             "types": [
               {
-                "kind": 49,
+                "kind": 50,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 54,
                   "modifiers": [],
                   "name": "foo",
                   "start": {
@@ -266,11 +266,11 @@
                 },
                 "parameters": [
                   {
-                    "kind": 88,
+                    "kind": 89,
                     "attributes": [],
                     "modifiers": [
                       {
-                        "kind": 33,
+                        "kind": 34,
                         "arity": {
                           "min": 0,
                           "max": "Infinity"
@@ -299,10 +299,10 @@
                 "throws": []
               },
               {
-                "kind": 49,
+                "kind": 50,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 54,
                   "modifiers": [],
                   "name": "bar",
                   "start": {
@@ -339,10 +339,10 @@
                 "throws": []
               },
               {
-                "kind": 49,
+                "kind": 50,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 54,
                   "modifiers": [],
                   "name": "baz",
                   "start": {
@@ -364,19 +364,11 @@
                 },
                 "parameters": [
                   {
-                    "kind": 88,
+                    "kind": 89,
                     "attributes": [],
                     "modifiers": [],
-                    "start": {
-                      "line": 4,
-                      "column": 6
-                    },
-                    "end": {
-                      "line": 4,
-                      "column": 19
-                    },
                     "external": {
-                      "kind": 53,
+                      "kind": 54,
                       "modifiers": [],
                       "name": "value",
                       "start": {
@@ -389,7 +381,7 @@
                       }
                     },
                     "internal": {
-                      "kind": 53,
+                      "kind": 54,
                       "modifiers": [],
                       "name": "value",
                       "start": {
@@ -402,10 +394,10 @@
                       }
                     },
                     "type": {
-                      "kind": 124,
+                      "kind": 125,
                       "modifiers": [],
                       "typeName": {
-                        "kind": 53,
+                        "kind": 54,
                         "modifiers": [],
                         "name": "Number",
                         "start": {
@@ -425,15 +417,23 @@
                         "line": 4,
                         "column": 19
                       }
+                    },
+                    "start": {
+                      "line": 4,
+                      "column": 6
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 19
                     }
                   }
                 ],
                 "modifiers": [],
                 "type": {
-                  "kind": 124,
+                  "kind": 125,
                   "modifiers": [],
                   "typeName": {
-                    "kind": 53,
+                    "kind": 54,
                     "modifiers": [],
                     "name": "Number",
                     "start": {
@@ -457,10 +457,10 @@
                 "throws": []
               },
               {
-                "kind": 49,
+                "kind": 50,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 54,
                   "modifiers": [],
                   "name": "baz",
                   "start": {
@@ -482,19 +482,11 @@
                 },
                 "parameters": [
                   {
-                    "kind": 88,
+                    "kind": 89,
                     "attributes": [],
                     "modifiers": [],
-                    "start": {
-                      "line": 5,
-                      "column": 6
-                    },
-                    "end": {
-                      "line": 5,
-                      "column": 19
-                    },
                     "external": {
-                      "kind": 53,
+                      "kind": 54,
                       "modifiers": [],
                       "name": "value",
                       "start": {
@@ -507,7 +499,7 @@
                       }
                     },
                     "internal": {
-                      "kind": 53,
+                      "kind": 54,
                       "modifiers": [],
                       "name": "value",
                       "start": {
@@ -520,10 +512,10 @@
                       }
                     },
                     "type": {
-                      "kind": 124,
+                      "kind": 125,
                       "modifiers": [],
                       "typeName": {
-                        "kind": 53,
+                        "kind": 54,
                         "modifiers": [],
                         "name": "String",
                         "start": {
@@ -543,15 +535,23 @@
                         "line": 5,
                         "column": 19
                       }
+                    },
+                    "start": {
+                      "line": 5,
+                      "column": 6
+                    },
+                    "end": {
+                      "line": 5,
+                      "column": 19
                     }
                   }
                 ],
                 "modifiers": [],
                 "type": {
-                  "kind": 124,
+                  "kind": 125,
                   "modifiers": [],
                   "typeName": {
-                    "kind": 53,
+                    "kind": 54,
                     "modifiers": [],
                     "name": "String",
                     "start": {
@@ -575,10 +575,10 @@
                 "throws": []
               },
               {
-                "kind": 49,
+                "kind": 50,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 54,
                   "modifiers": [],
                   "name": "qux",
                   "start": {
@@ -600,19 +600,11 @@
                 },
                 "parameters": [
                   {
-                    "kind": 88,
+                    "kind": 89,
                     "attributes": [],
                     "modifiers": [],
-                    "start": {
-                      "line": 6,
-                      "column": 12
-                    },
-                    "end": {
-                      "line": 6,
-                      "column": 25
-                    },
                     "external": {
-                      "kind": 53,
+                      "kind": 54,
                       "modifiers": [],
                       "name": "value",
                       "start": {
@@ -625,7 +617,7 @@
                       }
                     },
                     "internal": {
-                      "kind": 53,
+                      "kind": 54,
                       "modifiers": [],
                       "name": "value",
                       "start": {
@@ -638,10 +630,10 @@
                       }
                     },
                     "type": {
-                      "kind": 124,
+                      "kind": 125,
                       "modifiers": [],
                       "typeName": {
-                        "kind": 53,
+                        "kind": 54,
                         "modifiers": [],
                         "name": "Number",
                         "start": {
@@ -661,6 +653,14 @@
                         "line": 6,
                         "column": 25
                       }
+                    },
+                    "start": {
+                      "line": 6,
+                      "column": 12
+                    },
+                    "end": {
+                      "line": 6,
+                      "column": 25
                     }
                   }
                 ],
@@ -678,10 +678,10 @@
                   }
                 ],
                 "type": {
-                  "kind": 124,
+                  "kind": 125,
                   "modifiers": [],
                   "typeName": {
-                    "kind": 53,
+                    "kind": 54,
                     "modifiers": [],
                     "name": "Number",
                     "start": {
@@ -705,10 +705,10 @@
                 "throws": []
               },
               {
-                "kind": 49,
+                "kind": 50,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 54,
                   "modifiers": [],
                   "name": "qux",
                   "start": {
@@ -730,19 +730,11 @@
                 },
                 "parameters": [
                   {
-                    "kind": 88,
+                    "kind": 89,
                     "attributes": [],
                     "modifiers": [],
-                    "start": {
-                      "line": 7,
-                      "column": 12
-                    },
-                    "end": {
-                      "line": 7,
-                      "column": 25
-                    },
                     "external": {
-                      "kind": 53,
+                      "kind": 54,
                       "modifiers": [],
                       "name": "value",
                       "start": {
@@ -755,7 +747,7 @@
                       }
                     },
                     "internal": {
-                      "kind": 53,
+                      "kind": 54,
                       "modifiers": [],
                       "name": "value",
                       "start": {
@@ -768,10 +760,10 @@
                       }
                     },
                     "type": {
-                      "kind": 124,
+                      "kind": 125,
                       "modifiers": [],
                       "typeName": {
-                        "kind": 53,
+                        "kind": 54,
                         "modifiers": [],
                         "name": "String",
                         "start": {
@@ -791,6 +783,14 @@
                         "line": 7,
                         "column": 25
                       }
+                    },
+                    "start": {
+                      "line": 7,
+                      "column": 12
+                    },
+                    "end": {
+                      "line": 7,
+                      "column": 25
                     }
                   }
                 ],
@@ -808,10 +808,10 @@
                   }
                 ],
                 "type": {
-                  "kind": 124,
+                  "kind": 125,
                   "modifiers": [],
                   "typeName": {
-                    "kind": 53,
+                    "kind": 54,
                     "modifiers": [],
                     "name": "String",
                     "start": {
@@ -856,15 +856,15 @@
       }
     },
     {
-      "kind": 57,
+      "kind": 58,
       "attributes": [],
       "declarations": [
         {
-          "kind": 58,
+          "kind": 59,
           "attributes": [],
           "modifiers": [],
           "source": {
-            "kind": 64,
+            "kind": 65,
             "modifiers": [],
             "value": "barfoo",
             "start": {
@@ -878,7 +878,7 @@
           },
           "specifiers": [
             {
-              "kind": 52,
+              "kind": 53,
               "modifiers": [
                 {
                   "kind": 2,
@@ -894,15 +894,16 @@
               ],
               "elements": [
                 {
-                  "kind": 80,
+                  "kind": 81,
                   "modifiers": [],
                   "internal": {
-                    "kind": 83,
+                    "kind": 84,
                     "elements": [
                       {
                         "kind": 13,
-                        "name": {
-                          "kind": 53,
+                        "modifiers": [],
+                        "external": {
+                          "kind": 54,
                           "modifiers": [],
                           "name": "foo",
                           "start": {
@@ -914,33 +915,33 @@
                             "column": 5
                           }
                         },
-                        "modifiers": [],
+                        "internal": {
+                          "kind": 54,
+                          "modifiers": [],
+                          "name": "f1",
+                          "start": {
+                            "line": 23,
+                            "column": 8
+                          },
+                          "end": {
+                            "line": 23,
+                            "column": 10
+                          }
+                        },
                         "start": {
                           "line": 23,
                           "column": 2
                         },
                         "end": {
                           "line": 23,
-                          "column": 9
-                        },
-                        "alias": {
-                          "kind": 53,
-                          "modifiers": [],
-                          "name": "f1",
-                          "start": {
-                            "line": 23,
-                            "column": 7
-                          },
-                          "end": {
-                            "line": 23,
-                            "column": 9
-                          }
+                          "column": 10
                         }
                       },
                       {
                         "kind": 13,
-                        "name": {
-                          "kind": 53,
+                        "modifiers": [],
+                        "external": {
+                          "kind": 54,
                           "modifiers": [],
                           "name": "bar",
                           "start": {
@@ -952,33 +953,33 @@
                             "column": 5
                           }
                         },
-                        "modifiers": [],
+                        "internal": {
+                          "kind": 54,
+                          "modifiers": [],
+                          "name": "b1",
+                          "start": {
+                            "line": 24,
+                            "column": 8
+                          },
+                          "end": {
+                            "line": 24,
+                            "column": 10
+                          }
+                        },
                         "start": {
                           "line": 24,
                           "column": 2
                         },
                         "end": {
                           "line": 24,
-                          "column": 9
-                        },
-                        "alias": {
-                          "kind": 53,
-                          "modifiers": [],
-                          "name": "b1",
-                          "start": {
-                            "line": 24,
-                            "column": 7
-                          },
-                          "end": {
-                            "line": 24,
-                            "column": 9
-                          }
+                          "column": 10
                         }
                       },
                       {
                         "kind": 13,
-                        "name": {
-                          "kind": 53,
+                        "modifiers": [],
+                        "external": {
+                          "kind": 54,
                           "modifiers": [],
                           "name": "baz",
                           "start": {
@@ -990,33 +991,33 @@
                             "column": 5
                           }
                         },
-                        "modifiers": [],
+                        "internal": {
+                          "kind": 54,
+                          "modifiers": [],
+                          "name": "b2",
+                          "start": {
+                            "line": 25,
+                            "column": 8
+                          },
+                          "end": {
+                            "line": 25,
+                            "column": 10
+                          }
+                        },
                         "start": {
                           "line": 25,
                           "column": 2
                         },
                         "end": {
                           "line": 25,
-                          "column": 9
-                        },
-                        "alias": {
-                          "kind": 53,
-                          "modifiers": [],
-                          "name": "b2",
-                          "start": {
-                            "line": 25,
-                            "column": 7
-                          },
-                          "end": {
-                            "line": 25,
-                            "column": 9
-                          }
+                          "column": 10
                         }
                       },
                       {
                         "kind": 13,
-                        "name": {
-                          "kind": 53,
+                        "modifiers": [],
+                        "external": {
+                          "kind": 54,
                           "modifiers": [],
                           "name": "qux",
                           "start": {
@@ -1028,27 +1029,26 @@
                             "column": 5
                           }
                         },
-                        "modifiers": [],
+                        "internal": {
+                          "kind": 54,
+                          "modifiers": [],
+                          "name": "q1",
+                          "start": {
+                            "line": 26,
+                            "column": 8
+                          },
+                          "end": {
+                            "line": 26,
+                            "column": 10
+                          }
+                        },
                         "start": {
                           "line": 26,
                           "column": 2
                         },
                         "end": {
                           "line": 26,
-                          "column": 9
-                        },
-                        "alias": {
-                          "kind": 53,
-                          "modifiers": [],
-                          "name": "q1",
-                          "start": {
-                            "line": 26,
-                            "column": 7
-                          },
-                          "end": {
-                            "line": 26,
-                            "column": 9
-                          }
+                          "column": 10
                         }
                       }
                     ],
@@ -1090,14 +1090,14 @@
             "column": 2
           },
           "type": {
-            "kind": 123,
+            "kind": 124,
             "attributes": [],
             "types": [
               {
-                "kind": 49,
+                "kind": 50,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 54,
                   "modifiers": [],
                   "name": "foo",
                   "start": {
@@ -1119,11 +1119,11 @@
                 },
                 "parameters": [
                   {
-                    "kind": 88,
+                    "kind": 89,
                     "attributes": [],
                     "modifiers": [
                       {
-                        "kind": 33,
+                        "kind": 34,
                         "arity": {
                           "min": 0,
                           "max": "Infinity"
@@ -1152,10 +1152,10 @@
                 "throws": []
               },
               {
-                "kind": 49,
+                "kind": 50,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 54,
                   "modifiers": [],
                   "name": "bar",
                   "start": {
@@ -1192,10 +1192,10 @@
                 "throws": []
               },
               {
-                "kind": 49,
+                "kind": 50,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 54,
                   "modifiers": [],
                   "name": "baz",
                   "start": {
@@ -1217,19 +1217,11 @@
                 },
                 "parameters": [
                   {
-                    "kind": 88,
+                    "kind": 89,
                     "attributes": [],
                     "modifiers": [],
-                    "start": {
-                      "line": 18,
-                      "column": 11
-                    },
-                    "end": {
-                      "line": 18,
-                      "column": 24
-                    },
                     "external": {
-                      "kind": 53,
+                      "kind": 54,
                       "modifiers": [],
                       "name": "value",
                       "start": {
@@ -1242,7 +1234,7 @@
                       }
                     },
                     "internal": {
-                      "kind": 53,
+                      "kind": 54,
                       "modifiers": [],
                       "name": "value",
                       "start": {
@@ -1255,10 +1247,10 @@
                       }
                     },
                     "type": {
-                      "kind": 124,
+                      "kind": 125,
                       "modifiers": [],
                       "typeName": {
-                        "kind": 53,
+                        "kind": 54,
                         "modifiers": [],
                         "name": "Number",
                         "start": {
@@ -1278,15 +1270,23 @@
                         "line": 18,
                         "column": 24
                       }
+                    },
+                    "start": {
+                      "line": 18,
+                      "column": 11
+                    },
+                    "end": {
+                      "line": 18,
+                      "column": 24
                     }
                   }
                 ],
                 "modifiers": [],
                 "type": {
-                  "kind": 124,
+                  "kind": 125,
                   "modifiers": [],
                   "typeName": {
-                    "kind": 53,
+                    "kind": 54,
                     "modifiers": [],
                     "name": "Number",
                     "start": {
@@ -1310,10 +1310,10 @@
                 "throws": []
               },
               {
-                "kind": 49,
+                "kind": 50,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 54,
                   "modifiers": [],
                   "name": "baz",
                   "start": {
@@ -1335,19 +1335,11 @@
                 },
                 "parameters": [
                   {
-                    "kind": 88,
+                    "kind": 89,
                     "attributes": [],
                     "modifiers": [],
-                    "start": {
-                      "line": 19,
-                      "column": 11
-                    },
-                    "end": {
-                      "line": 19,
-                      "column": 24
-                    },
                     "external": {
-                      "kind": 53,
+                      "kind": 54,
                       "modifiers": [],
                       "name": "value",
                       "start": {
@@ -1360,7 +1352,7 @@
                       }
                     },
                     "internal": {
-                      "kind": 53,
+                      "kind": 54,
                       "modifiers": [],
                       "name": "value",
                       "start": {
@@ -1373,10 +1365,10 @@
                       }
                     },
                     "type": {
-                      "kind": 124,
+                      "kind": 125,
                       "modifiers": [],
                       "typeName": {
-                        "kind": 53,
+                        "kind": 54,
                         "modifiers": [],
                         "name": "String",
                         "start": {
@@ -1396,15 +1388,23 @@
                         "line": 19,
                         "column": 24
                       }
+                    },
+                    "start": {
+                      "line": 19,
+                      "column": 11
+                    },
+                    "end": {
+                      "line": 19,
+                      "column": 24
                     }
                   }
                 ],
                 "modifiers": [],
                 "type": {
-                  "kind": 124,
+                  "kind": 125,
                   "modifiers": [],
                   "typeName": {
-                    "kind": 53,
+                    "kind": 54,
                     "modifiers": [],
                     "name": "String",
                     "start": {
@@ -1428,10 +1428,10 @@
                 "throws": []
               },
               {
-                "kind": 49,
+                "kind": 50,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 54,
                   "modifiers": [],
                   "name": "qux",
                   "start": {
@@ -1453,19 +1453,11 @@
                 },
                 "parameters": [
                   {
-                    "kind": 88,
+                    "kind": 89,
                     "attributes": [],
                     "modifiers": [],
-                    "start": {
-                      "line": 20,
-                      "column": 17
-                    },
-                    "end": {
-                      "line": 20,
-                      "column": 30
-                    },
                     "external": {
-                      "kind": 53,
+                      "kind": 54,
                       "modifiers": [],
                       "name": "value",
                       "start": {
@@ -1478,7 +1470,7 @@
                       }
                     },
                     "internal": {
-                      "kind": 53,
+                      "kind": 54,
                       "modifiers": [],
                       "name": "value",
                       "start": {
@@ -1491,10 +1483,10 @@
                       }
                     },
                     "type": {
-                      "kind": 124,
+                      "kind": 125,
                       "modifiers": [],
                       "typeName": {
-                        "kind": 53,
+                        "kind": 54,
                         "modifiers": [],
                         "name": "Number",
                         "start": {
@@ -1514,6 +1506,14 @@
                         "line": 20,
                         "column": 30
                       }
+                    },
+                    "start": {
+                      "line": 20,
+                      "column": 17
+                    },
+                    "end": {
+                      "line": 20,
+                      "column": 30
                     }
                   }
                 ],
@@ -1531,10 +1531,10 @@
                   }
                 ],
                 "type": {
-                  "kind": 124,
+                  "kind": 125,
                   "modifiers": [],
                   "typeName": {
-                    "kind": 53,
+                    "kind": 54,
                     "modifiers": [],
                     "name": "Number",
                     "start": {
@@ -1558,10 +1558,10 @@
                 "throws": []
               },
               {
-                "kind": 49,
+                "kind": 50,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 54,
                   "modifiers": [],
                   "name": "qux",
                   "start": {
@@ -1583,19 +1583,11 @@
                 },
                 "parameters": [
                   {
-                    "kind": 88,
+                    "kind": 89,
                     "attributes": [],
                     "modifiers": [],
-                    "start": {
-                      "line": 21,
-                      "column": 17
-                    },
-                    "end": {
-                      "line": 21,
-                      "column": 30
-                    },
                     "external": {
-                      "kind": 53,
+                      "kind": 54,
                       "modifiers": [],
                       "name": "value",
                       "start": {
@@ -1608,7 +1600,7 @@
                       }
                     },
                     "internal": {
-                      "kind": 53,
+                      "kind": 54,
                       "modifiers": [],
                       "name": "value",
                       "start": {
@@ -1621,10 +1613,10 @@
                       }
                     },
                     "type": {
-                      "kind": 124,
+                      "kind": 125,
                       "modifiers": [],
                       "typeName": {
-                        "kind": 53,
+                        "kind": 54,
                         "modifiers": [],
                         "name": "String",
                         "start": {
@@ -1644,6 +1636,14 @@
                         "line": 21,
                         "column": 30
                       }
+                    },
+                    "start": {
+                      "line": 21,
+                      "column": 17
+                    },
+                    "end": {
+                      "line": 21,
+                      "column": 30
                     }
                   }
                 ],
@@ -1661,10 +1661,10 @@
                   }
                 ],
                 "type": {
-                  "kind": 124,
+                  "kind": 125,
                   "modifiers": [],
                   "typeName": {
-                    "kind": 53,
+                    "kind": 54,
                     "modifiers": [],
                     "name": "String",
                     "start": {

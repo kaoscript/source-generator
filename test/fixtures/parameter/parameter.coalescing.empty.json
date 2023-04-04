@@ -1,12 +1,12 @@
 {
-  "kind": 77,
+  "kind": 78,
   "attributes": [],
   "body": [
     {
-      "kind": 49,
+      "kind": 50,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 54,
         "modifiers": [],
         "name": "foo",
         "start": {
@@ -28,19 +28,11 @@
       },
       "parameters": [
         {
-          "kind": 88,
+          "kind": 89,
           "attributes": [],
           "modifiers": [],
-          "start": {
-            "line": 1,
-            "column": 10
-          },
-          "end": {
-            "line": 1,
-            "column": 21
-          },
           "external": {
-            "kind": 53,
+            "kind": 54,
             "modifiers": [],
             "name": "x",
             "start": {
@@ -53,7 +45,7 @@
             }
           },
           "internal": {
-            "kind": 53,
+            "kind": 54,
             "modifiers": [],
             "name": "x",
             "start": {
@@ -78,7 +70,7 @@
             }
           },
           "defaultValue": {
-            "kind": 64,
+            "kind": 65,
             "modifiers": [],
             "value": "abc",
             "start": {
@@ -89,6 +81,14 @@
               "line": 1,
               "column": 21
             }
+          },
+          "start": {
+            "line": 1,
+            "column": 10
+          },
+          "end": {
+            "line": 1,
+            "column": 21
           }
         }
       ],
@@ -109,10 +109,10 @@
       }
     },
     {
-      "kind": 49,
+      "kind": 50,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 54,
         "modifiers": [],
         "name": "foo",
         "start": {
@@ -134,11 +134,11 @@
       },
       "parameters": [
         {
-          "kind": 88,
+          "kind": 89,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 24,
+              "kind": 25,
               "start": {
                 "line": 4,
                 "column": 11
@@ -149,16 +149,8 @@
               }
             }
           ],
-          "start": {
-            "line": 4,
-            "column": 10
-          },
-          "end": {
-            "line": 4,
-            "column": 22
-          },
           "external": {
-            "kind": 53,
+            "kind": 54,
             "modifiers": [],
             "name": "x",
             "start": {
@@ -171,7 +163,7 @@
             }
           },
           "internal": {
-            "kind": 53,
+            "kind": 54,
             "modifiers": [],
             "name": "x",
             "start": {
@@ -196,7 +188,7 @@
             }
           },
           "defaultValue": {
-            "kind": 64,
+            "kind": 65,
             "modifiers": [],
             "value": "abc",
             "start": {
@@ -207,6 +199,14 @@
               "line": 4,
               "column": 22
             }
+          },
+          "start": {
+            "line": 4,
+            "column": 10
+          },
+          "end": {
+            "line": 4,
+            "column": 22
           }
         }
       ],
@@ -227,10 +227,10 @@
       }
     },
     {
-      "kind": 49,
+      "kind": 50,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 54,
         "modifiers": [],
         "name": "foo",
         "start": {
@@ -252,19 +252,11 @@
       },
       "parameters": [
         {
-          "kind": 88,
+          "kind": 89,
           "attributes": [],
           "modifiers": [],
-          "start": {
-            "line": 7,
-            "column": 10
-          },
-          "end": {
-            "line": 7,
-            "column": 29
-          },
           "external": {
-            "kind": 53,
+            "kind": 54,
             "modifiers": [],
             "name": "x",
             "start": {
@@ -277,7 +269,7 @@
             }
           },
           "internal": {
-            "kind": 53,
+            "kind": 54,
             "modifiers": [],
             "name": "x",
             "start": {
@@ -290,10 +282,10 @@
             }
           },
           "type": {
-            "kind": 124,
+            "kind": 125,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 54,
               "modifiers": [],
               "name": "String",
               "start": {
@@ -327,7 +319,7 @@
             }
           },
           "defaultValue": {
-            "kind": 64,
+            "kind": 65,
             "modifiers": [],
             "value": "abc",
             "start": {
@@ -338,6 +330,14 @@
               "line": 7,
               "column": 29
             }
+          },
+          "start": {
+            "line": 7,
+            "column": 10
+          },
+          "end": {
+            "line": 7,
+            "column": 29
           }
         }
       ],

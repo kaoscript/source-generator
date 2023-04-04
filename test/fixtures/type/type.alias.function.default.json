@@ -1,12 +1,12 @@
 {
-  "kind": 77,
+  "kind": 78,
   "attributes": [],
   "body": [
     {
-      "kind": 122,
+      "kind": 123,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 54,
         "modifiers": [],
         "name": "S",
         "start": {
@@ -19,22 +19,14 @@
         }
       },
       "type": {
-        "kind": 50,
+        "kind": 51,
         "parameters": [
           {
-            "kind": 88,
+            "kind": 89,
             "attributes": [],
             "modifiers": [],
-            "start": {
-              "line": 1,
-              "column": 15
-            },
-            "end": {
-              "line": 1,
-              "column": 28
-            },
             "external": {
-              "kind": 53,
+              "kind": 54,
               "modifiers": [],
               "name": "value",
               "start": {
@@ -47,7 +39,7 @@
               }
             },
             "internal": {
-              "kind": 53,
+              "kind": 54,
               "modifiers": [],
               "name": "value",
               "start": {
@@ -60,10 +52,10 @@
               }
             },
             "type": {
-              "kind": 124,
+              "kind": 125,
               "modifiers": [],
               "typeName": {
-                "kind": 53,
+                "kind": 54,
                 "modifiers": [],
                 "name": "Number",
                 "start": {
@@ -83,6 +75,14 @@
                 "line": 1,
                 "column": 28
               }
+            },
+            "start": {
+              "line": 1,
+              "column": 15
+            },
+            "end": {
+              "line": 1,
+              "column": 28
             }
           }
         ],
@@ -96,10 +96,10 @@
         },
         "modifiers": [],
         "type": {
-          "kind": 124,
+          "kind": 125,
           "modifiers": [],
           "typeName": {
-            "kind": 53,
+            "kind": 54,
             "modifiers": [],
             "name": "Number",
             "start": {
@@ -132,10 +132,10 @@
       }
     },
     {
-      "kind": 122,
+      "kind": 123,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 54,
         "modifiers": [],
         "name": "A",
         "start": {
@@ -148,22 +148,14 @@
         }
       },
       "type": {
-        "kind": 50,
+        "kind": 51,
         "parameters": [
           {
-            "kind": 88,
+            "kind": 89,
             "attributes": [],
             "modifiers": [],
-            "start": {
-              "line": 2,
-              "column": 21
-            },
-            "end": {
-              "line": 2,
-              "column": 34
-            },
             "external": {
-              "kind": 53,
+              "kind": 54,
               "modifiers": [],
               "name": "value",
               "start": {
@@ -176,7 +168,7 @@
               }
             },
             "internal": {
-              "kind": 53,
+              "kind": 54,
               "modifiers": [],
               "name": "value",
               "start": {
@@ -189,10 +181,10 @@
               }
             },
             "type": {
-              "kind": 124,
+              "kind": 125,
               "modifiers": [],
               "typeName": {
-                "kind": 53,
+                "kind": 54,
                 "modifiers": [],
                 "name": "Number",
                 "start": {
@@ -212,6 +204,14 @@
                 "line": 2,
                 "column": 34
               }
+            },
+            "start": {
+              "line": 2,
+              "column": 21
+            },
+            "end": {
+              "line": 2,
+              "column": 34
             }
           }
         ],
@@ -237,10 +237,10 @@
           }
         ],
         "type": {
-          "kind": 124,
+          "kind": 125,
           "modifiers": [],
           "typeName": {
-            "kind": 53,
+            "kind": 54,
             "modifiers": [],
             "name": "Number",
             "start": {
@@ -273,10 +273,10 @@
       }
     },
     {
-      "kind": 122,
+      "kind": 123,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 54,
         "modifiers": [],
         "name": "S2",
         "start": {
@@ -289,22 +289,14 @@
         }
       },
       "type": {
-        "kind": 50,
+        "kind": 51,
         "parameters": [
           {
-            "kind": 88,
+            "kind": 89,
             "attributes": [],
             "modifiers": [],
-            "start": {
-              "line": 4,
-              "column": 12
-            },
-            "end": {
-              "line": 4,
-              "column": 25
-            },
             "external": {
-              "kind": 53,
+              "kind": 54,
               "modifiers": [],
               "name": "value",
               "start": {
@@ -317,7 +309,7 @@
               }
             },
             "internal": {
-              "kind": 53,
+              "kind": 54,
               "modifiers": [],
               "name": "value",
               "start": {
@@ -330,10 +322,10 @@
               }
             },
             "type": {
-              "kind": 124,
+              "kind": 125,
               "modifiers": [],
               "typeName": {
-                "kind": 53,
+                "kind": 54,
                 "modifiers": [],
                 "name": "Number",
                 "start": {
@@ -353,6 +345,14 @@
                 "line": 4,
                 "column": 25
               }
+            },
+            "start": {
+              "line": 4,
+              "column": 12
+            },
+            "end": {
+              "line": 4,
+              "column": 25
             }
           }
         ],
@@ -366,10 +366,10 @@
         },
         "modifiers": [],
         "type": {
-          "kind": 124,
+          "kind": 125,
           "modifiers": [],
           "typeName": {
-            "kind": 53,
+            "kind": 54,
             "modifiers": [],
             "name": "Number",
             "start": {
@@ -402,10 +402,10 @@
       }
     },
     {
-      "kind": 122,
+      "kind": 123,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 54,
         "modifiers": [],
         "name": "A2",
         "start": {
@@ -418,22 +418,14 @@
         }
       },
       "type": {
-        "kind": 50,
+        "kind": 51,
         "parameters": [
           {
-            "kind": 88,
+            "kind": 89,
             "attributes": [],
             "modifiers": [],
-            "start": {
-              "line": 5,
-              "column": 18
-            },
-            "end": {
-              "line": 5,
-              "column": 31
-            },
             "external": {
-              "kind": 53,
+              "kind": 54,
               "modifiers": [],
               "name": "value",
               "start": {
@@ -446,7 +438,7 @@
               }
             },
             "internal": {
-              "kind": 53,
+              "kind": 54,
               "modifiers": [],
               "name": "value",
               "start": {
@@ -459,10 +451,10 @@
               }
             },
             "type": {
-              "kind": 124,
+              "kind": 125,
               "modifiers": [],
               "typeName": {
-                "kind": 53,
+                "kind": 54,
                 "modifiers": [],
                 "name": "Number",
                 "start": {
@@ -482,6 +474,14 @@
                 "line": 5,
                 "column": 31
               }
+            },
+            "start": {
+              "line": 5,
+              "column": 18
+            },
+            "end": {
+              "line": 5,
+              "column": 31
             }
           }
         ],
@@ -507,10 +507,10 @@
           }
         ],
         "type": {
-          "kind": 124,
+          "kind": 125,
           "modifiers": [],
           "typeName": {
-            "kind": 53,
+            "kind": 54,
             "modifiers": [],
             "name": "Number",
             "start": {

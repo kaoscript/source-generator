@@ -1,12 +1,12 @@
 {
-  "kind": 77,
+  "kind": 78,
   "attributes": [],
   "body": [
     {
-      "kind": 49,
+      "kind": 50,
       "attributes": [],
       "name": {
-        "kind": 53,
+        "kind": 54,
         "modifiers": [],
         "name": "foobar",
         "start": {
@@ -28,19 +28,11 @@
       },
       "parameters": [
         {
-          "kind": 88,
+          "kind": 89,
           "attributes": [],
           "modifiers": [],
-          "start": {
-            "line": 1,
-            "column": 13
-          },
-          "end": {
-            "line": 1,
-            "column": 29
-          },
           "external": {
-            "kind": 53,
+            "kind": 54,
             "modifiers": [],
             "name": "value",
             "start": {
@@ -53,12 +45,13 @@
             }
           },
           "internal": {
-            "kind": 83,
+            "kind": 84,
             "elements": [
               {
                 "kind": 13,
-                "name": {
-                  "kind": 53,
+                "modifiers": [],
+                "internal": {
+                  "kind": 54,
                   "modifiers": [],
                   "name": "x",
                   "start": {
@@ -70,7 +63,6 @@
                     "column": 24
                   }
                 },
-                "modifiers": [],
                 "start": {
                   "line": 1,
                   "column": 23
@@ -82,8 +74,9 @@
               },
               {
                 "kind": 13,
-                "name": {
-                  "kind": 53,
+                "modifiers": [],
+                "internal": {
+                  "kind": 54,
                   "modifiers": [],
                   "name": "y",
                   "start": {
@@ -95,7 +88,6 @@
                     "column": 27
                   }
                 },
-                "modifiers": [],
                 "start": {
                   "line": 1,
                   "column": 26
@@ -114,6 +106,14 @@
               "line": 1,
               "column": 29
             }
+          },
+          "start": {
+            "line": 1,
+            "column": 13
+          },
+          "end": {
+            "line": 1,
+            "column": 29
           }
         }
       ],

@@ -1,17 +1,17 @@
 {
-  "kind": 77,
+  "kind": 78,
   "attributes": [],
   "body": [
     {
-      "kind": 57,
+      "kind": 58,
       "attributes": [],
       "declarations": [
         {
-          "kind": 58,
+          "kind": 59,
           "attributes": [],
           "modifiers": [],
           "source": {
-            "kind": 64,
+            "kind": 65,
             "modifiers": [],
             "value": "chevrotain",
             "start": {
@@ -25,7 +25,7 @@
           },
           "specifiers": [
             {
-              "kind": 52,
+              "kind": 53,
               "modifiers": [
                 {
                   "kind": 2,
@@ -41,15 +41,16 @@
               ],
               "elements": [
                 {
-                  "kind": 80,
+                  "kind": 81,
                   "modifiers": [],
                   "internal": {
-                    "kind": 83,
+                    "kind": 84,
                     "elements": [
                       {
                         "kind": 13,
-                        "name": {
-                          "kind": 53,
+                        "modifiers": [],
+                        "external": {
+                          "kind": 54,
                           "modifiers": [],
                           "name": "createToken",
                           "start": {
@@ -61,33 +62,33 @@
                             "column": 13
                           }
                         },
-                        "modifiers": [],
+                        "internal": {
+                          "kind": 54,
+                          "modifiers": [],
+                          "name": "createChevrotainToken",
+                          "start": {
+                            "line": 7,
+                            "column": 16
+                          },
+                          "end": {
+                            "line": 7,
+                            "column": 37
+                          }
+                        },
                         "start": {
                           "line": 7,
                           "column": 2
                         },
                         "end": {
                           "line": 7,
-                          "column": 36
-                        },
-                        "alias": {
-                          "kind": 53,
-                          "modifiers": [],
-                          "name": "createChevrotainToken",
-                          "start": {
-                            "line": 7,
-                            "column": 15
-                          },
-                          "end": {
-                            "line": 7,
-                            "column": 36
-                          }
+                          "column": 37
                         }
                       },
                       {
                         "kind": 13,
-                        "name": {
-                          "kind": 53,
+                        "modifiers": [],
+                        "external": {
+                          "kind": 54,
                           "modifiers": [],
                           "name": "Lexer",
                           "start": {
@@ -99,33 +100,33 @@
                             "column": 7
                           }
                         },
-                        "modifiers": [],
+                        "internal": {
+                          "kind": 54,
+                          "modifiers": [],
+                          "name": "ChevrotainLexer",
+                          "start": {
+                            "line": 8,
+                            "column": 10
+                          },
+                          "end": {
+                            "line": 8,
+                            "column": 25
+                          }
+                        },
                         "start": {
                           "line": 8,
                           "column": 2
                         },
                         "end": {
                           "line": 8,
-                          "column": 24
-                        },
-                        "alias": {
-                          "kind": 53,
-                          "modifiers": [],
-                          "name": "ChevrotainLexer",
-                          "start": {
-                            "line": 8,
-                            "column": 9
-                          },
-                          "end": {
-                            "line": 8,
-                            "column": 24
-                          }
+                          "column": 25
                         }
                       },
                       {
                         "kind": 13,
-                        "name": {
-                          "kind": 53,
+                        "modifiers": [],
+                        "external": {
+                          "kind": 54,
                           "modifiers": [],
                           "name": "Parser",
                           "start": {
@@ -137,33 +138,33 @@
                             "column": 8
                           }
                         },
-                        "modifiers": [],
+                        "internal": {
+                          "kind": 54,
+                          "modifiers": [],
+                          "name": "ChevrotainParser",
+                          "start": {
+                            "line": 9,
+                            "column": 11
+                          },
+                          "end": {
+                            "line": 9,
+                            "column": 27
+                          }
+                        },
                         "start": {
                           "line": 9,
                           "column": 2
                         },
                         "end": {
                           "line": 9,
-                          "column": 26
-                        },
-                        "alias": {
-                          "kind": 53,
-                          "modifiers": [],
-                          "name": "ChevrotainParser",
-                          "start": {
-                            "line": 9,
-                            "column": 10
-                          },
-                          "end": {
-                            "line": 9,
-                            "column": 26
-                          }
+                          "column": 27
                         }
                       },
                       {
                         "kind": 13,
-                        "name": {
-                          "kind": 53,
+                        "modifiers": [],
+                        "external": {
+                          "kind": 54,
                           "modifiers": [],
                           "name": "Token",
                           "start": {
@@ -175,27 +176,26 @@
                             "column": 7
                           }
                         },
-                        "modifiers": [],
+                        "internal": {
+                          "kind": 54,
+                          "modifiers": [],
+                          "name": "ChevrotainToken",
+                          "start": {
+                            "line": 10,
+                            "column": 10
+                          },
+                          "end": {
+                            "line": 10,
+                            "column": 25
+                          }
+                        },
                         "start": {
                           "line": 10,
                           "column": 2
                         },
                         "end": {
                           "line": 10,
-                          "column": 24
-                        },
-                        "alias": {
-                          "kind": 53,
-                          "modifiers": [],
-                          "name": "ChevrotainToken",
-                          "start": {
-                            "line": 10,
-                            "column": 9
-                          },
-                          "end": {
-                            "line": 10,
-                            "column": 24
-                          }
+                          "column": 25
                         }
                       }
                     ],
@@ -237,14 +237,14 @@
             "column": 2
           },
           "type": {
-            "kind": 123,
+            "kind": 124,
             "attributes": [],
             "types": [
               {
-                "kind": 49,
+                "kind": 50,
                 "attributes": [],
                 "name": {
-                  "kind": 53,
+                  "kind": 54,
                   "modifiers": [],
                   "name": "createToken",
                   "start": {
@@ -272,7 +272,7 @@
                 "attributes": [],
                 "modifiers": [
                   {
-                    "kind": 34,
+                    "kind": 35,
                     "start": {
                       "line": 3,
                       "column": 2
@@ -284,7 +284,7 @@
                   }
                 ],
                 "name": {
-                  "kind": 53,
+                  "kind": 54,
                   "modifiers": [],
                   "name": "Lexer",
                   "start": {
@@ -311,7 +311,7 @@
                 "attributes": [],
                 "modifiers": [
                   {
-                    "kind": 34,
+                    "kind": 35,
                     "start": {
                       "line": 4,
                       "column": 2
@@ -323,7 +323,7 @@
                   }
                 ],
                 "name": {
-                  "kind": 53,
+                  "kind": 54,
                   "modifiers": [],
                   "name": "Parser",
                   "start": {
@@ -350,7 +350,7 @@
                 "attributes": [],
                 "modifiers": [
                   {
-                    "kind": 34,
+                    "kind": 35,
                     "start": {
                       "line": 5,
                       "column": 2
@@ -362,7 +362,7 @@
                   }
                 ],
                 "name": {
-                  "kind": 53,
+                  "kind": 54,
                   "modifiers": [],
                   "name": "Token",
                   "start": {

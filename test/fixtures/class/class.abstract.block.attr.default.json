@@ -1,5 +1,5 @@
 {
-  "kind": 77,
+  "kind": 78,
   "attributes": [],
   "body": [
     {
@@ -19,7 +19,7 @@
         }
       ],
       "name": {
-        "kind": 53,
+        "kind": 54,
         "modifiers": [],
         "name": "AbstractGreetings",
         "start": {
@@ -33,12 +33,12 @@
       },
       "members": [
         {
-          "kind": 75,
+          "kind": 76,
           "attributes": [
             {
               "kind": 8,
               "declaration": {
-                "kind": 53,
+                "kind": 54,
                 "modifiers": [],
                 "name": "foo",
                 "start": {
@@ -74,7 +74,7 @@
             }
           ],
           "name": {
-            "kind": 53,
+            "kind": 54,
             "modifiers": [],
             "name": "greet",
             "start": {
@@ -88,19 +88,11 @@
           },
           "parameters": [
             {
-              "kind": 88,
+              "kind": 89,
               "attributes": [],
               "modifiers": [],
-              "start": {
-                "line": 4,
-                "column": 9
-              },
-              "end": {
-                "line": 4,
-                "column": 13
-              },
               "external": {
-                "kind": 53,
+                "kind": 54,
                 "modifiers": [],
                 "name": "name",
                 "start": {
@@ -113,7 +105,7 @@
                 }
               },
               "internal": {
-                "kind": 53,
+                "kind": 54,
                 "modifiers": [],
                 "name": "name",
                 "start": {
@@ -124,6 +116,14 @@
                   "line": 4,
                   "column": 13
                 }
+              },
+              "start": {
+                "line": 4,
+                "column": 9
+              },
+              "end": {
+                "line": 4,
+                "column": 13
               }
             }
           ],
@@ -136,10 +136,10 @@
             "column": 22
           },
           "type": {
-            "kind": 124,
+            "kind": 125,
             "modifiers": [],
             "typeName": {
-              "kind": 53,
+              "kind": 54,
               "modifiers": [],
               "name": "String",
               "start": {

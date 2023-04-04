@@ -5,7 +5,7 @@ import "foobar" {
 	func baz(value: String): String
 	async func qux(value: Number): Number
 	async func qux(value: String): String
-} => {foo: f1, bar: b1, baz: b2, qux: q1}
+} => {foo % f1, bar % b1, baz % b2, qux % q1}
 import "barfoo" {
 	func foo(...)
 	async func bar()
@@ -13,4 +13,4 @@ import "barfoo" {
 	func baz(value: String): String
 	async func qux(value: Number): Number
 	async func qux(value: String): String
-} => {foo: f1, bar: b1, baz: b2, qux: q1}
+} => {foo % f1, bar % b1, baz % b2, qux % q1}

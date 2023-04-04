@@ -704,49 +704,36 @@ export namespace Generator {
 					}
 				}
 
-				if ?data.name {
-					if ?data.alias {
-						if computed {
-							writer.code('[').expression(data.name).code(']')
-						}
-						else {
-							writer.expression(data.name)
-						}
-
-						writer.code(': ')
-
-						if thisAlias {
-							writer.code('@')
-						}
-
-						writer.expression(data.alias)
+				if ?data.external && isDifferentName(data.external, data.internal) {
+					if computed {
+						writer.code('[').expression(data.external).code(']')
 					}
 					else {
-						if computed {
-							writer.code('[')
-						}
-
-						if thisAlias {
-							writer.code('@')
-						}
-
-						writer.expression(data.name)
-
-						if computed {
-							writer.code(']')
-						}
-
-						if ?data.type {
-							writer.code(': ').expression(data.type)
-						}
+						writer.expression(data.external)
 					}
 
-					if ?data.defaultValue {
-						writer.code(' = ').expression(data.defaultValue)
+					writer.code(' % ')
+				}
+
+				if ?data.internal {
+					writer.expression(data.internal)
+
+					for var modifier in data.modifiers {
+						match modifier.kind {
+							ModifierKind.Required {
+								writer.code('!')
+							}
+						}
 					}
 				}
-				else if !rest {
+				else if !rest || ?data.external {
 					writer.code('_')
+				}
+
+				toType(data, writer)
+
+				if ?data.defaultValue {
+					writer.code(AssignmentOperatorSymbol[data.operator.assignment]).expression(data.defaultValue)
 				}
 			} # }}}
 			NodeKind.Block { # {{{
@@ -1346,6 +1333,9 @@ export namespace Generator {
 
 					for var modifier in data.modifiers {
 						match modifier.kind {
+							ModifierKind.NonNullable {
+								writer.code('!?')
+							}
 							ModifierKind.Required {
 								writer.code('!')
 							}
@@ -2391,6 +2381,12 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
+			NodeKind.ExpressionStatement { # {{{
+				writer
+					.newLine()
+					.expression(data.expression, ExpressionMode.Top)
+					.done()
+			} # }}}
 			NodeKind.ExternDeclaration { # {{{
 				var line = writer.newLine()
 
@@ -2597,10 +2593,10 @@ export namespace Generator {
 						.newControl()
 						.code('for ')
 				}
-				else {
+				else if data.body.kind == NodeKind.ExpressionStatement {
 					ctrl = writer
 						.newLine()
-						.expression(data.body)
+						.expression(data.body.expression)
 						.code(' for ')
 				}
 
@@ -2735,10 +2731,10 @@ export namespace Generator {
 						.newControl()
 						.code('for ')
 				}
-				else {
+				else if data.body.kind == NodeKind.ExpressionStatement {
 					ctrl = writer
 						.newLine()
-						.expression(data.body)
+						.expression(data.body.expression)
 						.code(' for ')
 				}
 
@@ -2884,6 +2880,14 @@ export namespace Generator {
 							.expression(data.condition)
 							.done()
 					}
+					NodeKind.ExpressionStatement {
+						writer
+							.newLine()
+							.expression(data.whenTrue.expression)
+							.code(' if ')
+							.expression(data.condition)
+							.done()
+					}
 					NodeKind.ReturnStatement {
 						if ?data.whenTrue.value {
 							writer
@@ -2907,14 +2911,6 @@ export namespace Generator {
 							.newLine()
 							.code('throw ')
 							.expression(data.whenTrue.value)
-							.code(' if ')
-							.expression(data.condition)
-							.done()
-					}
-					else {
-						writer
-							.newLine()
-							.expression(data.whenTrue)
 							.code(' if ')
 							.expression(data.condition)
 							.done()
@@ -2998,10 +2994,10 @@ export namespace Generator {
 					writer.code('macro ')
 				}, line)
 
-				if data.body.kind == NodeKind.MacroExpression {
+				if data.body.kind == NodeKind.ExpressionStatement && data.body.expression.kind == NodeKind.MacroExpression {
 					line.code(' => ')
 
-					toMacroElements(data.body.elements, line)
+					toMacroElements(data.body.expression.elements, line)
 				}
 				else {
 					line
@@ -3059,16 +3055,28 @@ export namespace Generator {
 					line.code('else')
 				}
 
-				if data.body.kind == NodeKind.Block {
-					line
-						.newBlock()
-						.expression(data.body)
-						.done()
-				}
-				else {
-					line
-						.code(' => ')
-						.statement(data.body)
+				match data.body.kind {
+					NodeKind.Block {
+						line
+							.newBlock()
+							.expression(data.body)
+							.done()
+					}
+					NodeKind.ExpressionStatement {
+						line
+							.code(' => ')
+							.expression(data.body.expression)
+					}
+					NodeKind.PickStatement {
+						line
+							.code(' => ')
+							.expression(data.body.value)
+					}
+					else {
+						line
+							.code(' => ')
+							.statement(data.body)
+					}
 				}
 
 				line.done()
@@ -3282,10 +3290,10 @@ export namespace Generator {
 
 					ctrl.step().expression(data.body).done()
 				}
-				else {
+				else if data.body.kind == NodeKind.ExpressionStatement {
 					writer
 						.newLine()
-						.expression(data.body)
+						.expression(data.body.expression)
 						.code(' repeat ')
 						.expression(data.expression)
 						.code(' times')
@@ -3564,6 +3572,14 @@ export namespace Generator {
 							.expression(data.condition)
 							.done()
 					}
+					NodeKind.ExpressionStatement {
+						writer
+							.newLine()
+							.expression(data.whenFalse.expression)
+							.code(' unless ')
+							.expression(data.condition)
+							.done()
+					}
 					NodeKind.ReturnStatement {
 						if ?data.whenFalse.value {
 							writer
@@ -3587,14 +3603,6 @@ export namespace Generator {
 							.newLine()
 							.code('throw ')
 							.expression(data.whenFalse.value)
-							.code(' unless ')
-							.expression(data.condition)
-							.done()
-					}
-					else {
-						writer
-							.newLine()
-							.expression(data.whenFalse)
 							.code(' unless ')
 							.expression(data.condition)
 							.done()
