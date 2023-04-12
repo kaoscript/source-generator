@@ -390,7 +390,7 @@ export namespace Generator {
 	} # }}}
 
 	func generate(data, options? = null) { # {{{
-		var writer = new KSWriter(options)
+		var writer = KSWriter.new(options)
 
 		toStatement(data, writer)
 
@@ -1621,7 +1621,7 @@ export namespace Generator {
 			} # }}}
 			else { # {{{
 				console.error(data)
-				throw new Error('Not Implemented')
+				throw Error.new('Not Implemented')
 			} # }}}
 		}
 	}
