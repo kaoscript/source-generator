@@ -4,7 +4,7 @@ extern console: {
 class Shape {
 	private _color: string = ""
 	static makeBlue(): Shape {
-		return new Shape("blue")
+		return Shape.new("blue")
 	}
 	constructor(@color)
 	draw(): string {

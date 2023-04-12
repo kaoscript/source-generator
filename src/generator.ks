@@ -822,31 +822,6 @@ export namespace Generator {
 					.code(' : ')
 					.wrap(data.whenFalse)
 			} # }}}
-			NodeKind.CreateExpression { # {{{
-				writer.code('new ')
-
-				if	data.class.kind == NodeKind.Identifier ||
-					data.class.kind == NodeKind.MemberExpression ||
-					data.class.kind == NodeKind.ThisExpression
-				{
-					writer.expression(data.class)
-				}
-				else {
-					writer.code('(').expression(data.class).code(')')
-				}
-
-				writer.code('(')
-
-				for argument, index in data.arguments {
-					if index != 0 {
-						writer.code(', ')
-					}
-
-					writer.expression(argument)
-				}
-
-				writer.code(')')
-			} # }}}
 			NodeKind.CurryExpression { # {{{
 				writer.expression(data.callee)
 
@@ -2327,13 +2302,6 @@ export namespace Generator {
 					.step()
 					.code('while ')
 					.expression(data.condition)
-					.done()
-			} # }}}
-			NodeKind.DropStatement { # {{{
-				writer
-					.newLine()
-					.code('drop ')
-					.expression(data.variable)
 					.done()
 			} # }}}
 			NodeKind.EnumDeclaration { # {{{

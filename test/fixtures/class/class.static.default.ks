@@ -1,7 +1,7 @@
 class Shape {
 	private _color: string = ""
 	private _type: string = ""
-	static makeRectangle(color: string): Shape => new Shape("rectangle", color)
+	static makeRectangle(color: string): Shape => Shape.new("rectangle", color)
 	constructor(@type, @color)
 }
 var r = Shape.makeRectangle("black")

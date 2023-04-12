@@ -4,4 +4,4 @@ namespace qux {
 		constructor(@name = "john")
 	}
 }
-var x = new qux.Foobar()
+var x = qux.Foobar.new()
