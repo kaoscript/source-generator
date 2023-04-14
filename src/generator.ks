@@ -3425,54 +3425,22 @@ export namespace Generator {
 				ctrl.done()
 			} # }}}
 			NodeKind.TupleDeclaration { # {{{
-				var mut named = false
-
-				for var modifier in data.modifiers {
-					if modifier.kind == ModifierKind.Named {
-						named = true
-					}
-				}
-
 				var line = writer.newLine()
 
 				line.code('tuple ').expression(data.name)
 
-				if data.fields.length != 0 {
-					if named {
-						if ?data.extends {
-							line.code(' extends ').expression(data.extends)
-						}
-
-						var block = line.newBlock()
-
-						for var field in data.fields {
-							block.newLine().statement(field).done()
-						}
-
-						block.done()
-					}
-					else {
-						line.code('(')
-
-						for var field, index in data.fields {
-							if index != 0 {
-								line.code(', ')
-							}
-
-							line.statement(field)
-						}
-
-						line.code(')')
-
-						if ?data.extends {
-							line.code(' extends ').expression(data.extends)
-						}
-					}
+				if ?data.extends {
+					line.code(' extends ').expression(data.extends)
 				}
-				else {
-					if ?data.extends {
-						line.code(' extends ').expression(data.extends)
+
+				if data.fields.length != 0 {
+					var block = line.newBlock(null, BlockDelimiter.SQUARE_BRACKET)
+
+					for var field in data.fields {
+						block.newLine().statement(field).done()
 					}
+
+					block.done()
 				}
 
 				line.done()
@@ -3484,7 +3452,7 @@ export namespace Generator {
 					toType(data, writer)
 				}
 				else {
-					writer.expression(data.type)
+					writer.code(':').expression(data.type)
 				}
 
 				if ?data.defaultValue {
