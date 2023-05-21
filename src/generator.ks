@@ -19,12 +19,12 @@ extern console
 export namespace Generator {
 	var AssignmentOperatorSymbol = {
 		`\(AssignmentOperatorKind.Addition)`			: ' += '
-		`\(AssignmentOperatorKind.And)`				: ' &&= '
+		`\(AssignmentOperatorKind.And)`					: ' &&= '
 		`\(AssignmentOperatorKind.Division)`			: ' /= '
 		`\(AssignmentOperatorKind.Empty)`				: ' !#= '
-		`\(AssignmentOperatorKind.EmptyCoalescing)`	: ' ##= '
+		`\(AssignmentOperatorKind.EmptyCoalescing)`		: ' ##= '
 		`\(AssignmentOperatorKind.Equals)`				: ' = '
-		`\(AssignmentOperatorKind.Existential)`		: ' ?= '
+		`\(AssignmentOperatorKind.Existential)`			: ' ?= '
 		`\(AssignmentOperatorKind.LeftShift)`			: ' <<= '
 		`\(AssignmentOperatorKind.Modulo)`				: ' %= '
 		`\(AssignmentOperatorKind.Multiplication)`		: ' *= '
@@ -35,23 +35,23 @@ export namespace Generator {
 		`\(AssignmentOperatorKind.Quotient)`			: ' /.= '
 		`\(AssignmentOperatorKind.Return)`				: ' <- '
 		`\(AssignmentOperatorKind.RightShift)`			: ' >>= '
-		`\(AssignmentOperatorKind.Subtraction)`		: ' -= '
-		`\(AssignmentOperatorKind.Xor)`				: ' ^^= '
+		`\(AssignmentOperatorKind.Subtraction)`			: ' -= '
+		`\(AssignmentOperatorKind.Xor)`					: ' ^^= '
 	}
 
 	var BinaryOperatorSymbol = {
 		`\(BinaryOperatorKind.Addition)`			: ' + '
-		`\(BinaryOperatorKind.And)`				: ' && '
+		`\(BinaryOperatorKind.And)`					: ' && '
 		`\(BinaryOperatorKind.Division)`			: ' / '
 		`\(BinaryOperatorKind.Equality)`			: ' == '
-		`\(BinaryOperatorKind.EmptyCoalescing)`	: ' ## '
-		`\(BinaryOperatorKind.GreaterThan)`		: ' > '
+		`\(BinaryOperatorKind.EmptyCoalescing)`		: ' ## '
+		`\(BinaryOperatorKind.GreaterThan)`			: ' > '
 		`\(BinaryOperatorKind.GreaterThanOrEqual)`	: ' >= '
 		`\(BinaryOperatorKind.Imply)`				: ' -> '
 		`\(BinaryOperatorKind.Inequality)`			: ' != '
 		`\(BinaryOperatorKind.LeftShift)`			: ' << '
 		`\(BinaryOperatorKind.LessThan)`			: ' < '
-		`\(BinaryOperatorKind.LessThanOrEqual)`	: ' <= '
+		`\(BinaryOperatorKind.LessThanOrEqual)`		: ' <= '
 		`\(BinaryOperatorKind.Match)`				: ' ~~ '
 		`\(BinaryOperatorKind.Mismatch)`			: ' !~ '
 		`\(BinaryOperatorKind.Modulo)`				: ' % '
@@ -60,23 +60,23 @@ export namespace Generator {
 		`\(BinaryOperatorKind.Or)`					: ' || '
 		`\(BinaryOperatorKind.Quotient)`			: ' /. '
 		`\(BinaryOperatorKind.RightShift)`			: ' >> '
-		`\(BinaryOperatorKind.Subtraction)`		: ' - '
+		`\(BinaryOperatorKind.Subtraction)`			: ' - '
 		`\(BinaryOperatorKind.TypeEquality)`		: ' is '
 		`\(BinaryOperatorKind.TypeInequality)`		: ' is not '
-		`\(BinaryOperatorKind.Xor)`				: ' ^^ '
+		`\(BinaryOperatorKind.Xor)`					: ' ^^ '
 	}
 
 	var JunctionOperatorSymbol = {
-		`\(BinaryOperatorKind.And)`				: ' & '
+		`\(BinaryOperatorKind.And)`					: ' & '
 		`\(BinaryOperatorKind.Or)`					: ' | '
-		`\(BinaryOperatorKind.Xor)`				: ' ^ '
+		`\(BinaryOperatorKind.Xor)`					: ' ^ '
 	}
 
 	var UnaryPrefixOperatorSymbol = {
 		`\(UnaryOperatorKind.Existential)`			: '?'
-		`\(UnaryOperatorKind.Negation)`			: '!'
-		`\(UnaryOperatorKind.Negative)`			: '-'
-		`\(UnaryOperatorKind.NonEmpty)`			: '#'
+		`\(UnaryOperatorKind.Negation)`				: '!'
+		`\(UnaryOperatorKind.Negative)`				: '-'
+		`\(UnaryOperatorKind.NonEmpty)`				: '#'
 		`\(UnaryOperatorKind.Spread)`				: '...'
 	}
 
@@ -635,7 +635,9 @@ export namespace Generator {
 					.expression(data.value)
 			} # }}}
 			NodeKind.AwaitExpression { # {{{
-				writer.code('await ').expression(data.operation)
+				writer.code('await')
+
+				writer.code(' ').expression(data.operation) if ?data.operation
 			} # }}}
 			NodeKind.BinaryExpression { # {{{
 				if data.operator.kind == BinaryOperatorKind.TypeCasting {
@@ -677,6 +679,56 @@ export namespace Generator {
 						else {
 							writer.wrap(data.right)
 						}
+					}
+					else if data.operator.kind == BinaryOperatorKind.BackwardPipeline | BinaryOperatorKind.ForwardPipeline {
+						var mut existential = false
+						var mut nonEmpty = false
+						var mut destructuring = false
+
+						for var { kind } in data.operator.modifiers {
+							// TODO!
+							// match kind as ModifierKind {
+							match kind {
+								ModifierKind.Existential {
+									existential = true
+								}
+								ModifierKind.NonEmpty {
+									nonEmpty = true
+								}
+								ModifierKind.Wildcard {
+									destructuring = true
+								}
+							}
+						}
+
+						if data.operator.kind == BinaryOperatorKind.BackwardPipeline {
+							writer
+								..code(' ')
+								..code('?') if existential
+								..code('#') if nonEmpty
+								..code('<|')
+								..code('*') if destructuring
+								..code(' ')
+						}
+						else {
+							// TODO!
+							// writer
+							// 	.code(' ')
+							// 	.code('*') if destructuring
+							// 	.code('|>')
+							// 	.code('?') if existential
+							// 	.code('#') if nonEmpty
+							// 	.code(' ')
+							writer
+								..code(' ')
+								..code('*') if destructuring
+								..code('|>')
+								..code('?') if existential
+								..code('#') if nonEmpty
+								..code(' ')
+						}
+
+						writer.expression(data.right)
 					}
 					else {
 						writer.code(BinaryOperatorSymbol[data.operator.kind])
@@ -1116,7 +1168,7 @@ export namespace Generator {
 					}
 				}
 
-				writer.wrap(data.object)
+				writer.wrap(data.object) if ?data.object
 
 				if nullable {
 					writer.code('?')
@@ -1463,6 +1515,17 @@ export namespace Generator {
 
 					writer.code('`')
 				}
+			} # }}}
+			NodeKind.TopicReference { # {{{
+				for var { kind } in data.modifiers {
+					if kind == ModifierKind.Spread {
+						writer.code('...')
+
+						return
+					}
+				}
+
+				writer.code('_')
 			} # }}}
 			NodeKind.ThisExpression { # {{{
 				writer.code('@').expression(data.name)
@@ -2366,7 +2429,7 @@ export namespace Generator {
 
 					var block = line.code('extern').newBlock()
 
-					for declaration in data.declarations {
+					for var declaration in data.declarations {
 						block.statement(declaration)
 					}
 
@@ -2759,9 +2822,7 @@ export namespace Generator {
 				var line = writer.newLine()
 
 				toFunctionHeader(data, writer => {
-					if writer.mode() != KSWriterMode.Extern {
-						writer.code('func ')
-					}
+					writer.code('func ')
 				}, line)
 
 				if ?data.body {

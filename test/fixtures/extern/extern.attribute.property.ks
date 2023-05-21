@@ -5,6 +5,6 @@ extern {
 	}
 	namespace Quxbaz {
 		#[foobar]
-		foobar()
+		func foobar()
 	}
 }
