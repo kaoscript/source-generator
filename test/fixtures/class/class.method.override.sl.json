@@ -142,7 +142,7 @@
             "attributes": [],
             "statements": [
               {
-                "kind": 105,
+                "kind": 104,
                 "attributes": [],
                 "value": {
                   "kind": 113,
@@ -216,6 +216,19 @@
         "end": {
           "line": 7,
           "column": 13
+        }
+      },
+      "extends": {
+        "kind": 52,
+        "modifiers": [],
+        "name": "Foobar",
+        "start": {
+          "line": 7,
+          "column": 22
+        },
+        "end": {
+          "line": 7,
+          "column": 28
         }
       },
       "members": [
@@ -303,7 +316,7 @@
             "attributes": [],
             "statements": [
               {
-                "kind": 105,
+                "kind": 104,
                 "attributes": [],
                 "value": {
                   "kind": 63,
@@ -346,19 +359,6 @@
       "end": {
         "line": 11,
         "column": 2
-      },
-      "extends": {
-        "kind": 52,
-        "modifiers": [],
-        "name": "Foobar",
-        "start": {
-          "line": 7,
-          "column": 22
-        },
-        "end": {
-          "line": 7,
-          "column": 28
-        }
       }
     }
   ],

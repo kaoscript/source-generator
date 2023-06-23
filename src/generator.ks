@@ -1035,17 +1035,38 @@ export namespace Generator {
 				}
 			} # }}}
 			NodeKind.LambdaExpression { # {{{
-				toFunctionHeader(data, writer => {}, writer)
+				var abbr = writer.mode() == KSWriterMode.Property && ?header
 
-				if data.body.kind == NodeKind.Block {
-					writer
-						.code(' =>')
-						.newBlock()
-						.expression(data.body)
-						.done()
+				if abbr {
+					toFunctionHeader(data, header, writer)
+
+					if data.body.kind == NodeKind.Block {
+						writer
+							.newBlock()
+							.expression(data.body)
+							.done()
+					}
+					else {
+						writer.code(' => ').expression(data.body)
+					}
 				}
 				else {
-					writer.code(' => ').expression(data.body)
+					toFunctionHeader(data, writer => {
+						if writer.mode() == KSWriterMode.Property {
+							header?(writer)
+						}
+					}, writer)
+
+					if data.body.kind == NodeKind.Block {
+						writer
+							.code(' =>')
+							.newBlock()
+							.expression(data.body)
+							.done()
+					}
+					else {
+						writer.code(' => ').expression(data.body)
+					}
 				}
 			} # }}}
 			NodeKind.Literal { # {{{
@@ -1223,7 +1244,7 @@ export namespace Generator {
 				if ?value {
 					var element = writer.transformExpression(value)
 
-					if element.kind == NodeKind.FunctionExpression {
+					if element.kind == NodeKind.LambdaExpression {
 						toExpression(element, ExpressionMode.Top, writer, writer => writer.expression(data.name))
 					}
 					else if ?data.name {
@@ -2309,6 +2330,16 @@ export namespace Generator {
 					line.code(' extends ').expression(data.extends)
 				}
 
+				if #data.implements {
+					line.code(' implements ')
+
+					for var implement, index in data.implements {
+						line.code(', ') if index > 0
+
+						line.expression(implement)
+					}
+				}
+
 				var block = line.newBlock()
 
 				for member in data.members {
@@ -2950,7 +2981,12 @@ export namespace Generator {
 				var line = writer
 					.newLine()
 					.code('impl ')
-					.expression(data.variable)
+
+				if ?data.interface {
+					line.expression(data.interface).code(' for ')
+				}
+
+				line.expression(data.variable)
 
 				var block = line.newBlock()
 
@@ -3096,7 +3132,7 @@ export namespace Generator {
 							.code(' => ')
 							.expression(data.body.expression)
 					}
-					NodeKind.PickStatement {
+					NodeKind.SetStatement {
 						line
 							.code(' => ')
 							.expression(data.body.value)
@@ -3184,13 +3220,6 @@ export namespace Generator {
 			} # }}}
 			NodeKind.PassStatement { # {{{
 				writer.newLine().code('pass').done()
-			} # }}}
-			NodeKind.PickStatement { # {{{
-				writer
-					.newLine()
-					.code('pick ')
-					.expression(data.value)
-					.done()
 			} # }}}
 			NodeKind.PropertyDeclaration { # {{{
 				var line = writer.newLine()
@@ -3412,6 +3441,13 @@ export namespace Generator {
 						.done()
 				}
 			} # }}}
+			NodeKind.SetStatement { # {{{
+				writer
+					.newLine()
+					.code('set ')
+					.expression(data.value)
+					.done()
+			} # }}}
 			NodeKind.ShebangDeclaration { # {{{
 				writer.line(`#!\(data.command)`)
 			} # }}}
@@ -3422,6 +3458,16 @@ export namespace Generator {
 
 				if ?data.extends {
 					line.code(' extends ').expression(data.extends)
+				}
+
+				if #data.implements {
+					line.code(' implements ')
+
+					for var implement, index in data.implements {
+						line.code(', ') if index > 0
+
+						line.expression(implement)
+					}
 				}
 
 				if data.fields.length != 0 {
@@ -3492,6 +3538,16 @@ export namespace Generator {
 
 				if ?data.extends {
 					line.code(' extends ').expression(data.extends)
+				}
+
+				if #data.implements {
+					line.code(' implements ')
+
+					for var implement, index in data.implements {
+						line.code(', ') if index > 0
+
+						line.expression(implement)
+					}
 				}
 
 				if data.fields.length != 0 {

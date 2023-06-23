@@ -390,6 +390,19 @@
           "column": 16
         }
       },
+      "extends": {
+        "kind": 52,
+        "modifiers": [],
+        "name": "Shape",
+        "start": {
+          "line": 13,
+          "column": 25
+        },
+        "end": {
+          "line": 13,
+          "column": 30
+        }
+      },
       "members": [
         {
           "kind": 74,
@@ -568,10 +581,10 @@
             "attributes": [],
             "statements": [
               {
-                "kind": 105,
+                "kind": 104,
                 "attributes": [],
                 "value": {
-                  "kind": 91,
+                  "kind": 90,
                   "modifiers": [],
                   "operator": {
                     "kind": 1,
@@ -688,19 +701,6 @@
       "end": {
         "line": 19,
         "column": 2
-      },
-      "extends": {
-        "kind": 52,
-        "modifiers": [],
-        "name": "Shape",
-        "start": {
-          "line": 13,
-          "column": 25
-        },
-        "end": {
-          "line": 13,
-          "column": 30
-        }
       }
     },
     {

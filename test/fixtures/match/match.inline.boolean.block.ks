@@ -1,9 +1,9 @@
 var boolean = true
 var binary = match boolean {
 	false {
-		pick 0
+		set 0
 	}
 	true {
-		pick 1
+		set 1
 	}
 }

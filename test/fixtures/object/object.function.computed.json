@@ -101,7 +101,8 @@
                   }
                 },
                 "value": {
-                  "kind": 49,
+                  "kind": 62,
+                  "modifiers": [],
                   "parameters": [
                     {
                       "kind": 87,
@@ -168,22 +169,12 @@
                       }
                     }
                   ],
-                  "start": {
-                    "line": 2,
-                    "column": 7
-                  },
-                  "end": {
-                    "line": 4,
-                    "column": 3
-                  },
-                  "modifiers": [],
-                  "throws": [],
                   "body": {
                     "kind": 15,
                     "attributes": [],
                     "statements": [
                       {
-                        "kind": 105,
+                        "kind": 104,
                         "attributes": [],
                         "value": {
                           "kind": 52,
@@ -216,7 +207,16 @@
                       "line": 4,
                       "column": 3
                     }
-                  }
+                  },
+                  "start": {
+                    "line": 2,
+                    "column": 7
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 3
+                  },
+                  "throws": []
                 }
               }
             ],
