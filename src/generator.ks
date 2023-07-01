@@ -10,8 +10,8 @@
 #![error(ignore(Error))]
 
 include {
-	'@kaoscript/ast'
-	'@kaoscript/source-writer'
+	'npm:@kaoscript/ast'
+	'npm:@kaoscript/source-writer'
 }
 
 extern console
