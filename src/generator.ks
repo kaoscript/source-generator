@@ -188,7 +188,7 @@ export namespace Generator {
 		toSource() { # {{{
 			var dyn source = ''
 
-			for fragment in this.toArray() {
+			for var fragment in this.toArray() {
 				source += fragment.code
 			}
 
@@ -417,12 +417,12 @@ export namespace Generator {
 	func toAttributes(data, mode: AttributeMode, writer) { # {{{
 		if data.attributes?.length > 0 {
 			if mode == AttributeMode.Inline {
-				for attribute in data.attributes {
+				for var attribute in data.attributes {
 					toAttribute(attribute, mode, writer).code(' ')
 				}
 			}
 			else {
-				for attribute in data.attributes {
+				for var attribute in data.attributes {
 					toAttribute(attribute, mode, writer.newLine()).done()
 				}
 
@@ -512,7 +512,7 @@ export namespace Generator {
 				else {
 					var block = line.code(' for').newBlock()
 
-					for property in data.properties {
+					for var property in data.properties {
 						block.statement(property)
 					}
 
@@ -532,7 +532,7 @@ export namespace Generator {
 			NodeKind.ArrayBinding { # {{{
 				writer.code('[')
 
-				for element, index in data.elements {
+				for var element, index in data.elements {
 					if index != 0 {
 						writer.code(', ')
 					}
@@ -552,7 +552,7 @@ export namespace Generator {
 			NodeKind.ArrayExpression { # {{{
 				writer.code('[')
 
-				for value, index in data.values {
+				for var value, index in data.values {
 					if index != 0 {
 						writer.code(', ')
 					}
@@ -618,7 +618,7 @@ export namespace Generator {
 			NodeKind.AttributeExpression { # {{{
 				writer.expression(data.name).code('(')
 
-				for argument, index in data.arguments {
+				for var argument, index in data.arguments {
 					if index != 0 {
 						writer.code(', ')
 					}
@@ -791,7 +791,7 @@ export namespace Generator {
 			NodeKind.Block { # {{{
 				toAttributes(data, AttributeMode.Inner, writer)
 
-				for statement in data.statements {
+				for var statement in data.statements {
 					writer.statement(statement)
 				}
 			} # }}}
@@ -817,7 +817,7 @@ export namespace Generator {
 					}
 				}
 
-				for argument, index in data.arguments {
+				for var argument, index in data.arguments {
 					if index != 0 {
 						writer.code(', ')
 					}
@@ -837,7 +837,7 @@ export namespace Generator {
 				}
 			} # }}}
 			NodeKind.ClassDeclaration { # {{{
-				for modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					match modifier.kind {
 						ModifierKind.Abstract {
 							writer.code('abstract ')
@@ -892,7 +892,7 @@ export namespace Generator {
 					}
 				}
 
-				for argument, index in data.arguments {
+				for var argument, index in data.arguments {
 					if index != 0 {
 						writer.code(', ')
 					}
@@ -930,7 +930,7 @@ export namespace Generator {
 				}
 			} # }}}
 			NodeKind.ExclusionType { # {{{
-				for type, index in data.types {
+				for var type, index in data.types {
 					if index != 0 {
 						writer.code(type.kind == NodeKind.FunctionExpression ? ' ^^ ' : ' ^ ')
 					}
@@ -961,7 +961,7 @@ export namespace Generator {
 				}
 			} # }}}
 			NodeKind.FusionType { # {{{
-				for type, index in data.types {
+				for var type, index in data.types {
 					if index != 0 {
 						writer.code(type.kind == NodeKind.FunctionExpression ? ' && ' : ' & ')
 					}
@@ -1116,7 +1116,7 @@ export namespace Generator {
 			NodeKind.MatchConditionArray { # {{{
 				writer.code('[')
 
-				for value, index in data.values {
+				for var value, index in data.values {
 					if index != 0 {
 						writer.code(', ')
 					}
@@ -1170,7 +1170,7 @@ export namespace Generator {
 
 				var block = writer.newBlock()
 
-				for clause in data.clauses {
+				for var clause in data.clauses {
 					block.statement(clause)
 				}
 
@@ -1212,7 +1212,7 @@ export namespace Generator {
 			NodeKind.ObjectBinding { # {{{
 				writer.code('{')
 
-				for element, index in data.elements {
+				for var element, index in data.elements {
 					if index != 0 {
 						writer.code(', ')
 					}
@@ -1420,7 +1420,7 @@ export namespace Generator {
 			NodeKind.PolyadicExpression { # {{{
 				writer.wrap(data.operands[0])
 
-				for operand in data.operands from 1 {
+				for var operand in data.operands from 1 {
 					writer
 						.code(BinaryOperatorSymbol[data.operator.kind])
 						.wrap(operand)
@@ -1475,7 +1475,7 @@ export namespace Generator {
 			NodeKind.SequenceExpression { # {{{
 				writer.code('(')
 
-				for expression, index in data.expressions {
+				for var expression, index in data.expressions {
 					if index != 0 {
 						writer.code(', ')
 					}
@@ -1503,7 +1503,7 @@ export namespace Generator {
 				if multiline {
 					writer.code('```\n').newIndent()
 
-					for element in data.elements {
+					for var element in data.elements {
 						if element.kind == NodeKind.Literal {
 							var lines = element.value.split(/\n/g)
 
@@ -1525,7 +1525,7 @@ export namespace Generator {
 				else {
 					writer.code('`')
 
-					for element in data.elements {
+					for var element in data.elements {
 						if element.kind == NodeKind.Literal {
 							writer.code(element.value)
 						}
@@ -1570,7 +1570,7 @@ export namespace Generator {
 
 					o.pushMode(KSWriterMode.Property)
 
-					for property in data.properties {
+					for var property in data.properties {
 						o.statement(property)
 					}
 
@@ -1637,7 +1637,7 @@ export namespace Generator {
 				}
 			} # }}}
 			NodeKind.UnionType { # {{{
-				for type, index in data.types {
+				for var type, index in data.types {
 					if index != 0 {
 						writer.code(type.kind == NodeKind.FunctionExpression ? ' || ' : ' | ')
 					}
@@ -1655,7 +1655,7 @@ export namespace Generator {
 					}
 				}
 
-				for variable, index in data.variables {
+				for var variable, index in data.variables {
 					if index != 0 {
 						writer.code(', ')
 					}
@@ -1712,7 +1712,7 @@ export namespace Generator {
 
 	func toFunctionHeader(data, header, writer) { # {{{
 		if ?data.modifiers {
-			for modifier in data.modifiers {
+			for var modifier in data.modifiers {
 				match modifier.kind {
 					ModifierKind.Abstract {
 						writer.code('abstract ')
@@ -1757,7 +1757,7 @@ export namespace Generator {
 		if ?data.parameters {
 			writer.code('(')
 
-			for parameter, i in data.parameters {
+			for var parameter, i in data.parameters {
 				if i != 0 {
 					writer.code(', ')
 				}
@@ -1775,7 +1775,7 @@ export namespace Generator {
 		if data.throws?.length > 0 {
 			writer.code(' ~ ')
 
-			for throw, index in data.throws {
+			for var throw, index in data.throws {
 				if index != 0 {
 					writer.code(', ')
 				}
@@ -1899,7 +1899,7 @@ export namespace Generator {
 				if #data.arguments {
 					writer.code('(')
 
-					for argument, index in data.arguments {
+					for var argument, index in data.arguments {
 						if index != 0 {
 							writer.code(', ')
 						}
@@ -2247,7 +2247,7 @@ export namespace Generator {
 
 				var block = line.newBlock()
 
-				for member in data.members {
+				for var member in data.members {
 					block.statement(member)
 				}
 
@@ -2342,7 +2342,7 @@ export namespace Generator {
 
 				var block = line.newBlock()
 
-				for member in data.members {
+				for var member in data.members {
 					block.statement(member)
 				}
 
@@ -2369,7 +2369,7 @@ export namespace Generator {
 
 				var block = line.newBlock()
 
-				for member in data.members {
+				for var member in data.members {
 					block.statement(member)
 				}
 
@@ -2409,7 +2409,7 @@ export namespace Generator {
 
 				var block = line.newBlock()
 
-				for member in data.members {
+				for var member in data.members {
 					block.statement(member)
 				}
 
@@ -2427,7 +2427,7 @@ export namespace Generator {
 				else {
 					var block = line.code('export').newBlock()
 
-					for declaration in data.declarations {
+					for var declaration in data.declarations {
 						if declaration.kind == NodeKind.DeclarationSpecifier {
 							block.statement(declaration.declaration)
 						}
@@ -2525,7 +2525,7 @@ export namespace Generator {
 
 				var mut nullable = false
 
-				for modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					match modifier.kind {
 						ModifierKind.Dynamic {
 							line.code('dyn ')
@@ -2990,7 +2990,7 @@ export namespace Generator {
 
 				var block = line.newBlock()
 
-				for property in data.properties {
+				for var property in data.properties {
 					block.statement(property)
 				}
 
@@ -3079,7 +3079,7 @@ export namespace Generator {
 				var mut space = false
 
 				if data.conditions.length != 0 {
-					for condition, index in data.conditions {
+					for var condition, index in data.conditions {
 						if index != 0 {
 							line.code(', ')
 						}
@@ -3095,7 +3095,7 @@ export namespace Generator {
 
 					line.code('with ')
 
-					for binding, index in data.bindings {
+					for var binding, index in data.bindings {
 						if index != 0 {
 							line.code(', ')
 						}
@@ -3153,7 +3153,7 @@ export namespace Generator {
 					.expression(?data.declaration ? data.declaration : data.expression)
 					.step()
 
-				for clause in data.clauses {
+				for var clause in data.clauses {
 					ctrl.statement(clause)
 				}
 
@@ -3173,7 +3173,7 @@ export namespace Generator {
 			NodeKind.Module { # {{{
 				toAttributes(data, AttributeMode.Inner, writer)
 
-				for node in data.body {
+				for var node in data.body {
 					writer.statement(node)
 				}
 			} # }}}
@@ -3196,7 +3196,7 @@ export namespace Generator {
 			NodeKind.NamespaceDeclaration { # {{{
 				var line = writer.newLine()
 
-				for modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					match modifier.kind {
 						ModifierKind.Sealed {
 							line.code('sealed ')
@@ -3209,7 +3209,7 @@ export namespace Generator {
 				if data.statements.length != 0 {
 					var block = line.newBlock()
 
-					for statement in data.statements {
+					for var statement in data.statements {
 						block.statement(statement)
 					}
 
@@ -3224,7 +3224,7 @@ export namespace Generator {
 			NodeKind.PropertyDeclaration { # {{{
 				var line = writer.newLine()
 
-				for modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					match modifier.kind {
 						ModifierKind.Private {
 							line.code('private ')
@@ -3267,7 +3267,7 @@ export namespace Generator {
 			NodeKind.ProxyDeclaration { # {{{
 				var line = writer.newLine()
 
-				for modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					match modifier.kind {
 						ModifierKind.Private {
 							line.code('private ')
@@ -3297,7 +3297,7 @@ export namespace Generator {
 			NodeKind.ProxyGroupDeclaration { # {{{
 				var line = writer.newLine()
 
-				for modifier in data.modifiers {
+				for var modifier in data.modifiers {
 					match modifier.kind {
 						ModifierKind.Private {
 							line.code('private ')
@@ -3369,7 +3369,7 @@ export namespace Generator {
 
 					var block = line.code('require').newBlock()
 
-					for declaration in data.declarations {
+					for var declaration in data.declarations {
 						block.statement(declaration)
 					}
 
@@ -3509,7 +3509,7 @@ export namespace Generator {
 					.step()
 					.expression(data.body)
 
-				for clause in data.catchClauses {
+				for var clause in data.catchClauses {
 					ctrl
 						.step()
 						.statement(clause)
