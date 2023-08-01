@@ -3,7 +3,6 @@
 
 extern {
 	__dirname: String
-	console
 	JSON
 	process
 
@@ -12,12 +11,12 @@ extern {
 }
 
 import {
-	'..'				for generate
-	'@kaoscript/parser'	for parse
-	'chai'				for expect
-	'fs'
-	'klaw-sync'			=> klaw
-	'path'
+	'node:fs'
+	'node:path'
+	'npm:@kaoscript/parser'	for parse
+	'npm:chai'				for expect
+	'npm:klaw-sync'			=> klaw
+	'..'					for generate
 }
 
 var debug = process.env.DEBUG == '1' || process.env.DEBUG == 'true' || process.env.DEBUG == 'on'
@@ -60,7 +59,7 @@ func prepare(file) { # {{{
 		}
 		catch ex {
 			if debug {
-				console.log(data)
+				echo(data)
 			}
 
 			throw ex
@@ -75,7 +74,7 @@ describe('generate', () => {
 		filter: item => item.path.slice(-5) == '.json'
 	}
 
-	for file in klaw(path.join(__dirname, 'fixtures'), options) {
+	for var file in klaw(path.join(__dirname, 'fixtures'), options) {
 		prepare(file.path)
 	}
 })

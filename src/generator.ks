@@ -101,7 +101,8 @@ export namespace Generator {
 
 	enum ExpressionMode {
 		Default
-		Cascade
+		Disruptive
+		Rolling
 		Top
 	}
 
@@ -325,8 +326,14 @@ export namespace Generator {
 		filterStatement(data) => @writer.filterStatement(data, this)
 		getReference(name) => @writer.getReference(name)
 		mode() => @writer.mode()
+		popIndent(): this { # {{{
+			@indent -= 1
+		} # }}}
 		popMode() => @writer.popMode()
 		popReference(name) => @writer.popReference(name)
+		pushIndent(): this { # {{{
+			@indent += 1
+		} # }}}
 		pushMode(mode: KSWriterMode) => @writer.pushMode(mode)
 		pushReference(name, fn) => @writer.pushReference(name, fn)
 		run(data, fn) { # {{{
@@ -670,10 +677,16 @@ export namespace Generator {
 					if data.operator.kind == BinaryOperatorKind.Assignment {
 						writer.code(AssignmentOperatorSymbol[data.operator.assignment])
 
-						if mode == .Cascade {
+						if mode == .Rolling && data.right.kind == NodeKind.RollingExpression {
 							writer
 								.code('(')
+								.pushIndent()
+								.code('\n')
+								.newIndent()
 								.expression(data.right)
+								.popIndent()
+								.code('\n')
+								.newIndent()
 								.code(')')
 						}
 						else {
@@ -686,16 +699,14 @@ export namespace Generator {
 						var mut destructuring = false
 
 						for var { kind } in data.operator.modifiers {
-							// TODO!
-							// match kind as ModifierKind {
-							match kind {
-								ModifierKind.Existential {
+							match ModifierKind(kind) {
+								.Existential {
 									existential = true
 								}
-								ModifierKind.NonEmpty {
+								.NonEmpty {
 									nonEmpty = true
 								}
-								ModifierKind.Wildcard {
+								.Wildcard {
 									destructuring = true
 								}
 							}
@@ -796,7 +807,7 @@ export namespace Generator {
 				}
 			} # }}}
 			NodeKind.CallExpression { # {{{
-				writer.expression(data.callee)
+				writer.expression(data.callee, mode)
 
 				if data.modifiers.some((modifier, ...) => modifier.kind == ModifierKind.Nullable) {
 					writer.code('?')
@@ -826,15 +837,6 @@ export namespace Generator {
 				}
 
 				writer.code(')')
-			} # }}}
-			NodeKind.CascadeExpression { # {{{
-				toAttributes(data, AttributeMode.Inner, writer)
-
-				writer.expression(data.object)
-
-				for var expression in data.expressions {
-					writer.code('\n').newIndent().code('.').expression(expression, ExpressionMode.Cascade)
-				}
 			} # }}}
 			NodeKind.ClassDeclaration { # {{{
 				for var modifier in data.modifiers {
@@ -903,11 +905,12 @@ export namespace Generator {
 				writer.code(')')
 			} # }}}
 			NodeKind.DisruptiveExpression { # {{{
+				var simpleTop = mode == .Top && data.mainExpression.kind == NodeKind.Identifier
+
 				writer.pushReference('main', (writer) => {
 					writer
-						.expression(data.mainExpression)
-						.code('\n')
-						.newIndent()
+						.expression(data.mainExpression, ExpressionMode.Disruptive)
+						.code('\n').newIndent() if !simpleTop
 				})
 
 				writer.expression(data.disruptedExpression)
@@ -925,7 +928,7 @@ export namespace Generator {
 
 				writer.expression(data.condition)
 
-				if mode != .Top {
+				if mode != .Top & .Disruptive {
 					writer.code('\n').newIndent()
 				}
 			} # }}}
@@ -1189,12 +1192,16 @@ export namespace Generator {
 					}
 				}
 
-				writer.wrap(data.object) if ?data.object
+				if mode == .Disruptive {
+					writer.expression(data.object, mode).code('\n').newIndent()
+				}
+				else if ?data.object {
+					writer.wrap(data.object)
+				}
 
 				if nullable {
 					writer.code('?')
 				}
-
 
 				if computed {
 					writer.code('[').expression(data.property).code(']')
@@ -1471,6 +1478,19 @@ export namespace Generator {
 				}
 
 				writer.expression(data.condition)
+			} # }}}
+			NodeKind.RollingExpression { # {{{
+				toAttributes(data, AttributeMode.Inner, writer)
+
+				writer.expression(data.object)
+
+				if data.modifiers.some((modifier, ...) => modifier.kind == ModifierKind.Nullable) {
+					writer.code('?')
+				}
+
+				for var expression in data.expressions {
+					writer.code('\n').newIndent().code('.').expression(expression, ExpressionMode.Rolling)
+				}
 			} # }}}
 			NodeKind.SequenceExpression { # {{{
 				writer.code('(')
@@ -1914,7 +1934,16 @@ export namespace Generator {
 				}
 
 				if ?data.type {
-					writer.expression(data.type)
+					if data.type.kind == NodeKind.ClassDeclaration {
+						var block = writer.newBlock()
+
+						block.newLine().expression(data.type).done()
+
+						block.done()
+					}
+					else {
+						writer.expression(data.type)
+					}
 				}
 
 				if data.specifiers.length == 1 {
@@ -3078,7 +3107,7 @@ export namespace Generator {
 
 				var mut space = false
 
-				if data.conditions.length != 0 {
+				if #data.conditions {
 					for var condition, index in data.conditions {
 						if index != 0 {
 							line.code(', ')
@@ -3090,18 +3119,11 @@ export namespace Generator {
 					space = true
 				}
 
-				if data.bindings.length != 0 {
-					line.code(' ') if space
-
-					line.code('with ')
-
-					for var binding, index in data.bindings {
-						if index != 0 {
-							line.code(', ')
-						}
-
-						line.expression(binding)
-					}
+				if ?data.binding {
+					line
+						.code(' ') if space
+						.code('with ')
+						.expression(data.binding)
 
 					space = true
 				}

@@ -1,8 +1,10 @@
 #!/usr/bin/env kaoscript
 
-import 'fs-extra' => fse
-import 'klaw-sync' => klaw
-import 'path'
+import {
+	'node:path'
+	'npm:fs-extra' => fse
+	'npm:klaw-sync' => klaw
+}
 
 extern __dirname, console
 

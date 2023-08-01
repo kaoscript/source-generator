@@ -1,0 +1,120 @@
+{
+  "kind": 75,
+  "attributes": [],
+  "body": [
+    {
+      "kind": 55,
+      "attributes": [],
+      "declarations": [
+        {
+          "kind": 56,
+          "attributes": [],
+          "modifiers": [],
+          "source": {
+            "kind": 62,
+            "modifiers": [],
+            "value": "npm:module",
+            "start": {
+              "line": 1,
+              "column": 8
+            },
+            "end": {
+              "line": 1,
+              "column": 20
+            }
+          },
+          "type": {
+            "kind": 20,
+            "attributes": [],
+            "modifiers": [],
+            "name": {
+              "kind": 51,
+              "modifiers": [],
+              "name": "Module",
+              "start": {
+                "line": 1,
+                "column": 30
+              },
+              "end": {
+                "line": 1,
+                "column": 36
+              }
+            },
+            "members": [],
+            "start": {
+              "line": 1,
+              "column": 24
+            },
+            "end": {
+              "line": 1,
+              "column": 36
+            }
+          },
+          "specifiers": [
+            {
+              "kind": 78,
+              "modifiers": [
+                {
+                  "kind": 2,
+                  "start": {
+                    "line": 1,
+                    "column": 21
+                  },
+                  "end": {
+                    "line": 1,
+                    "column": 23
+                  }
+                }
+              ],
+              "internal": {
+                "kind": 51,
+                "modifiers": [],
+                "name": "Module",
+                "start": {
+                  "line": 1,
+                  "column": 30
+                },
+                "end": {
+                  "line": 1,
+                  "column": 36
+                }
+              },
+              "start": {
+                "line": 1,
+                "column": 21
+              },
+              "end": {
+                "line": 1,
+                "column": 36
+              }
+            }
+          ],
+          "start": {
+            "line": 1,
+            "column": 8
+          },
+          "end": {
+            "line": 1,
+            "column": 36
+          }
+        }
+      ],
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 1,
+        "column": 36
+      }
+    }
+  ],
+  "start": {
+    "line": 1,
+    "column": 1
+  },
+  "end": {
+    "line": 1,
+    "column": 36
+  }
+}

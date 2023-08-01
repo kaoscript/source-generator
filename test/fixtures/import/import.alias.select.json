@@ -1,0 +1,157 @@
+{
+  "kind": 75,
+  "attributes": [],
+  "body": [
+    {
+      "kind": 55,
+      "attributes": [],
+      "declarations": [
+        {
+          "kind": 56,
+          "attributes": [],
+          "modifiers": [],
+          "source": {
+            "kind": 62,
+            "modifiers": [],
+            "value": "npm:chai",
+            "start": {
+              "line": 1,
+              "column": 8
+            },
+            "end": {
+              "line": 1,
+              "column": 18
+            }
+          },
+          "specifiers": [
+            {
+              "kind": 50,
+              "modifiers": [
+                {
+                  "kind": 2,
+                  "start": {
+                    "line": 1,
+                    "column": 19
+                  },
+                  "end": {
+                    "line": 1,
+                    "column": 21
+                  }
+                }
+              ],
+              "elements": [
+                {
+                  "kind": 78,
+                  "modifiers": [],
+                  "internal": {
+                    "kind": 51,
+                    "modifiers": [],
+                    "name": "chai",
+                    "start": {
+                      "line": 1,
+                      "column": 22
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 26
+                    }
+                  },
+                  "start": {
+                    "line": 1,
+                    "column": 22
+                  },
+                  "end": {
+                    "line": 1,
+                    "column": 26
+                  }
+                },
+                {
+                  "kind": 78,
+                  "modifiers": [],
+                  "internal": {
+                    "kind": 81,
+                    "elements": [
+                      {
+                        "kind": 13,
+                        "modifiers": [],
+                        "internal": {
+                          "kind": 51,
+                          "modifiers": [],
+                          "name": "expect",
+                          "start": {
+                            "line": 1,
+                            "column": 30
+                          },
+                          "end": {
+                            "line": 1,
+                            "column": 36
+                          }
+                        },
+                        "start": {
+                          "line": 1,
+                          "column": 30
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 36
+                        }
+                      }
+                    ],
+                    "start": {
+                      "line": 1,
+                      "column": 28
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 38
+                    }
+                  },
+                  "start": {
+                    "line": 1,
+                    "column": 28
+                  },
+                  "end": {
+                    "line": 1,
+                    "column": 38
+                  }
+                }
+              ],
+              "start": {
+                "line": 1,
+                "column": 19
+              },
+              "end": {
+                "line": 1,
+                "column": 38
+              }
+            }
+          ],
+          "start": {
+            "line": 1,
+            "column": 8
+          },
+          "end": {
+            "line": 1,
+            "column": 38
+          }
+        }
+      ],
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 1,
+        "column": 38
+      }
+    }
+  ],
+  "start": {
+    "line": 1,
+    "column": 1
+  },
+  "end": {
+    "line": 1,
+    "column": 38
+  }
+}
