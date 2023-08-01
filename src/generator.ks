@@ -722,14 +722,6 @@ export namespace Generator {
 								..code(' ')
 						}
 						else {
-							// TODO!
-							// writer
-							// 	.code(' ')
-							// 	.code('*') if destructuring
-							// 	.code('|>')
-							// 	.code('?') if existential
-							// 	.code('#') if nonEmpty
-							// 	.code(' ')
 							writer
 								..code(' ')
 								..code('*') if destructuring
