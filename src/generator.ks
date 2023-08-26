@@ -326,12 +326,12 @@ export namespace Generator {
 		filterStatement(data) => @writer.filterStatement(data, this)
 		getReference(name) => @writer.getReference(name)
 		mode() => @writer.mode()
-		popIndent(): this { # {{{
+		popIndent(): valueof this { # {{{
 			@indent -= 1
 		} # }}}
 		popMode() => @writer.popMode()
 		popReference(name) => @writer.popReference(name)
-		pushIndent(): this { # {{{
+		pushIndent(): valueof this { # {{{
 			@indent += 1
 		} # }}}
 		pushMode(mode: KSWriterMode) => @writer.pushMode(mode)
@@ -1648,6 +1648,21 @@ export namespace Generator {
 						.code(UnaryPostfixOperatorSymbol[data.operator.kind])
 				}
 			} # }}}
+			NodeKind.UnaryTypeExpression { # {{{
+				match data.operator.kind {
+					UnaryTypeOperatorKind.NewInstance {
+						writer.code(`new `)
+					}
+					UnaryTypeOperatorKind.TypeOf {
+						writer.code(`typeof `)
+					}
+					UnaryTypeOperatorKind.ValueOf {
+						writer.code(`valueof `)
+					}
+				}
+
+				writer.expression(data.argument)
+			} # }}}
 			NodeKind.UnionType { # {{{
 				for var type, index in data.types {
 					if index != 0 {
@@ -1797,7 +1812,7 @@ export namespace Generator {
 		}
 	} # }}}
 
-	func toFunctionBody(data, writer) { # {{{
+	func toFunctionBody(modifiers, data, writer) { # {{{
 		if data.kind == NodeKind.Block {
 			writer
 				.newBlock()
@@ -1820,11 +1835,28 @@ export namespace Generator {
 		else if data.kind == NodeKind.ReturnStatement {
 			writer.code(' => ').expression(data.value)
 		}
-		else if data.kind == NodeKind.ObjectExpression {
-			writer.code(' => (').expression(data).code(')')
-		}
 		else {
-			writer.code(' => ').expression(data)
+			var mut auto = false
+
+			for var modifier in modifiers {
+				if modifier.kind == ModifierKind.AutoType {
+					auto = true
+				}
+			}
+
+			if auto {
+				writer.code(' :> ')
+			}
+			else {
+				writer.code(' => ')
+			}
+
+			if data.kind == NodeKind.ObjectExpression {
+				writer.code('(').expression(data).code(')')
+			}
+			else {
+				writer.expression(data)
+			}
 		}
 	} # }}}
 
@@ -2878,7 +2910,7 @@ export namespace Generator {
 				}, line)
 
 				if ?data.body {
-					toFunctionBody(data.body, line)
+					toFunctionBody(data.modifiers, data.body, line)
 				}
 
 				line.done()
@@ -3179,7 +3211,7 @@ export namespace Generator {
 				toFunctionHeader(data, writer => {}, line)
 
 				if ?data.body {
-					toFunctionBody(data.body, line)
+					toFunctionBody(data.modifiers, data.body, line)
 				}
 
 				line.done()
