@@ -552,7 +552,7 @@ export namespace Generator {
 			NodeKind.ArrayComprehension { # {{{
 				writer
 					.code('[')
-					.expression(data.body)
+					.expression(data.expression)
 					.run(data.loop, toLoopHeader)
 					.code(']')
 			} # }}}
@@ -1860,6 +1860,12 @@ export namespace Generator {
 		}
 	} # }}}
 
+	func toIfDeclaration(data, writer) { # {{{
+		writer
+			.expression(data.declaration)
+			.code(' ;; ').expression(data.condition) if ?data.condition
+	} # }}}
+
 	func toImport(data, writer) {
 		match data.kind {
 			NodeKind.Argument { # {{{
@@ -2020,68 +2026,29 @@ export namespace Generator {
 		}
 	}
 
-	func toLoopHeader(data, writer) { # {{{
+	func toIteration(data, writer) { # {{{
 		match data.kind {
-			NodeKind.ForFromStatement {
-				writer.code(' for ')
+			IterationKind.Array {
+				var mut descending = false
 
 				for var modifier in data.modifiers {
-					if modifier.kind == ModifierKind.Immutable {
-						writer.code('var ')
-					}
-					else if modifier.kind == ModifierKind.Mutable {
+					if modifier.kind == ModifierKind.Mutable {
 						writer.code('var mut ')
-					}
-				}
-
-				writer
-					.expression(data.variable)
-					.code(' from ')
-					.expression(data.from)
-
-				if ?data.to {
-					if hasModifier(data.to, ModifierKind.Ballpark) {
-						writer.code(' to~ ').expression(data.to)
-					}
-					else {
-						writer.code(' to ').expression(data.to)
-					}
-				}
-
-				if ?data.step {
-					writer.code(' step ').expression(data.step)
-				}
-
-				if ?data.until {
-					writer.code(' until ').expression(data.until)
-				}
-				else if ?data.while {
-					writer.code(' while ').expression(data.while)
-				}
-
-				if ?data.when {
-					writer.code(' when ').expression(data.when)
-				}
-			}
-			NodeKind.ForInStatement {
-				var dyn descending = false
-
-				writer.code(' for ')
-
-				for var modifier in data.modifiers {
-					if modifier.kind == ModifierKind.Descending {
-						descending = true
 					}
 					else if modifier.kind == ModifierKind.Immutable {
 						writer.code('var ')
 					}
-					else if modifier.kind == ModifierKind.Mutable {
-						writer.code('var mut ')
+					else if modifier.kind == ModifierKind.Descending {
+						descending = true
 					}
 				}
 
 				if ?data.value {
 					writer.expression(data.value)
+
+					if ?data.type {
+						writer.code(': ').expression(data.type)
+					}
 
 					if ?data.index {
 						writer.code(', ').expression(data.index)
@@ -2129,20 +2096,79 @@ export namespace Generator {
 					writer.code(' when ').expression(data.when)
 				}
 			}
-			NodeKind.ForOfStatement {
-				writer.code(' for ')
+			IterationKind.From {
+				var mut ascending = false
+				var mut descending = false
 
 				for var modifier in data.modifiers {
-					if modifier.kind == ModifierKind.Immutable {
-						writer.code('var ')
+					if modifier.kind == ModifierKind.Ascending {
+						ascending = true
+					}
+					else if modifier.kind == ModifierKind.Descending {
+						descending = true
 					}
 					else if modifier.kind == ModifierKind.Mutable {
 						writer.code('var mut ')
+					}
+					else if modifier.kind == ModifierKind.Immutable {
+						writer.code('var ')
+					}
+				}
+
+				writer.expression(data.variable)
+
+				if hasModifier(data.from, ModifierKind.Ballpark) {
+					writer.code(' from~ ').expression(data.from)
+				}
+				else {
+					writer.code(' from ').expression(data.from)
+				}
+
+				if ascending {
+					writer.code(' up')
+				}
+				else if descending {
+					writer.code(' down')
+				}
+
+				if hasModifier(data.to, ModifierKind.Ballpark) {
+					writer.code(' to~ ').expression(data.to)
+				}
+				else {
+					writer.code(' to ').expression(data.to)
+				}
+
+				if ?data.step {
+					writer.code(' step ').expression(data.step)
+				}
+
+				if ?data.until {
+					writer.code(' until ').expression(data.until)
+				}
+				else if ?data.while {
+					writer.code(' while ').expression(data.while)
+				}
+
+				if ?data.when {
+					writer.code(' when ').expression(data.when)
+				}
+			}
+			IterationKind.Object {
+				for var modifier in data.modifiers {
+					if modifier.kind == ModifierKind.Mutable {
+						writer.code('var mut ')
+					}
+					else if modifier.kind == ModifierKind.Immutable {
+						writer.code('var ')
 					}
 				}
 
 				if ?data.value {
 					writer.expression(data.value)
+
+					if ?data.type {
+						writer.code(': ').expression(data.type)
+					}
 
 					if ?data.key {
 						writer.code(', ').expression(data.key)
@@ -2165,15 +2191,13 @@ export namespace Generator {
 					writer.code(' when ').expression(data.when)
 				}
 			}
-			NodeKind.ForRangeStatement {
-				writer.code(' for ')
-
+			IterationKind.Range {
 				for var modifier in data.modifiers {
-					if modifier.kind == ModifierKind.Immutable {
-						writer.code('var ')
-					}
-					else if modifier.kind == ModifierKind.Mutable {
+					if modifier.kind == ModifierKind.Mutable {
 						writer.code('var mut ')
+					}
+					else if modifier.kind == ModifierKind.Immutable {
+						writer.code('var ')
 					}
 				}
 
@@ -2187,7 +2211,9 @@ export namespace Generator {
 					.expression(data.to)
 
 				if ?data.step {
-					writer.code('..').expression(data.step)
+					writer
+						.code('..')
+						.expression(data.step)
 				}
 
 				if ?data.until {
@@ -2200,6 +2226,14 @@ export namespace Generator {
 				if ?data.when {
 					writer.code(' when ').expression(data.when)
 				}
+			}
+		}
+	} # }}}
+
+	func toLoopHeader(data, writer) { # {{{
+		match data.kind {
+			NodeKind.ForStatement {
+				writer.code(' for ').run(data.iteration, toIteration)
 			}
 			NodeKind.RepeatStatement {
 				writer.code(' repeat ').expression(data.expression).code(' times')
@@ -2632,275 +2666,40 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.ForFromStatement { # {{{
-				var mut ascending = false
-				var mut descending = false
-
-				var ctrl = writer
-					.newControl()
-					.code('for ')
-
-				for var modifier in data.modifiers {
-					if modifier.kind == ModifierKind.Ascending {
-						ascending = true
-					}
-					else if modifier.kind == ModifierKind.Descending {
-						descending = true
-					}
-					else if modifier.kind == ModifierKind.Mutable {
-						ctrl.code('var mut ')
-					}
-					else if modifier.kind == ModifierKind.Immutable {
-						ctrl.code('var ')
-					}
-				}
-
-				ctrl.expression(data.variable)
-
-				if hasModifier(data.from, ModifierKind.Ballpark) {
-					ctrl.code(' from~ ').expression(data.from)
-				}
-				else {
-					ctrl.code(' from ').expression(data.from)
-				}
-
-				if ascending {
-					ctrl.code(' up')
-				}
-				else if descending {
-					ctrl.code(' down')
-				}
-
-				if hasModifier(data.to, ModifierKind.Ballpark) {
-					ctrl.code(' to~ ').expression(data.to)
-				}
-				else {
-					ctrl.code(' to ').expression(data.to)
-				}
-
-				if ?data.step {
-					ctrl.code(' step ').expression(data.step)
-				}
-
-				if ?data.until {
-					ctrl.code(' until ').expression(data.until)
-				}
-				else if ?data.while {
-					ctrl.code(' while ').expression(data.while)
-				}
-
-				if ?data.when {
-					ctrl.code(' when ').expression(data.when)
-				}
-
-				ctrl
-					.step()
-					.expression(data.body)
-					.done()
-			} # }}}
-			NodeKind.ForInStatement { # {{{
-				var mut descending = false
-
-				var dyn ctrl
-
-				if data.body.kind == NodeKind.Block {
-					ctrl = writer
-						.newControl()
-						.code('for ')
-				}
-				else if data.body.kind == NodeKind.ExpressionStatement {
-					ctrl = writer
+			NodeKind.ForStatement { # {{{
+				if data.body.kind == NodeKind.ExpressionStatement {
+					var line = writer
 						.newLine()
 						.expression(data.body.expression)
 						.code(' for ')
-				}
 
-				for var modifier in data.modifiers {
-					if modifier.kind == ModifierKind.Mutable {
-						ctrl.code('var mut ')
-					}
-					else if modifier.kind == ModifierKind.Immutable {
-						ctrl.code('var ')
-					}
-					else if modifier.kind == ModifierKind.Descending {
-						descending = true
-					}
-				}
+					toIteration(data.iterations[0], line)
 
-				if ?data.value {
-					ctrl.expression(data.value)
-
-					if ?data.type {
-						ctrl.code(': ').expression(data.type)
-					}
-
-					if ?data.index {
-						ctrl.code(', ').expression(data.index)
-					}
+					line.done()
 				}
 				else {
-					ctrl.code('_, ').expression(data.index)
-				}
+					var ctrl = writer
+						.newControl()
+						.code('for')
 
-				ctrl.code(' in ').expression(data.expression)
-
-				if ?data.from {
-					ctrl.code(' from ').expression(data.from)
-				}
-
-				if descending {
-					ctrl.code(' down')
-				}
-
-				if ?data.to {
-					if hasModifier(data.to, ModifierKind.Ballpark) {
-						ctrl.code(' to~ ').expression(data.to)
+					if data.iterations.length == 1 {
+						toIteration(data.iterations[0], ctrl.code(' '))
 					}
 					else {
-						ctrl.code(' to ').expression(data.to)
+						ctrl.step()
+
+						for var iteration in data.iterations {
+							ctrl.newLine().run(iteration, toIteration).done()
+						}
+
+						ctrl.step().code('then')
 					}
-				}
 
-				if ?data.step {
-					ctrl.code(' step ').expression(data.step)
-				}
-
-				if ?data.split {
-					ctrl.code(' split ').expression(data.split)
-				}
-
-				if ?data.until {
-					ctrl.code(' until ').expression(data.until)
-				}
-				else if ?data.while {
-					ctrl.code(' while ').expression(data.while)
-				}
-
-				if ?data.when {
-					ctrl.code(' when ').expression(data.when)
-				}
-
-				if data.body.kind == NodeKind.Block {
 					ctrl
-						.step()
-						.expression(data.body)
+						.step().expression(data.body)
+						.step().code('else').step().expression(data.else) if ?data.else
+						.done()
 				}
-
-				if ?data.else {
-					ctrl.step().code('else').step().expression(data.else)
-				}
-
-				ctrl.done()
-			} # }}}
-			NodeKind.ForRangeStatement { # {{{
-				var ctrl = writer
-					.newControl()
-					.code('for ')
-
-				for var modifier in data.modifiers {
-					if modifier.kind == ModifierKind.Mutable {
-						ctrl.code('var mut ')
-					}
-					else if modifier.kind == ModifierKind.Immutable {
-						ctrl.code('var ')
-					}
-				}
-
-				ctrl
-					.expression(data.value)
-					.code(' in ')
-					.expression(data.from)
-					.code(hasModifier(data.from, ModifierKind.Ballpark) ? '<' : '')
-					.code('..')
-					.code(hasModifier(data.to, ModifierKind.Ballpark) ? '<' : '')
-					.expression(data.to)
-
-				if ?data.step {
-					ctrl
-						.code('..')
-						.expression(data.step)
-				}
-
-				if ?data.until {
-					ctrl.code(' until ').expression(data.until)
-				}
-				else if ?data.while {
-					ctrl.code(' while ').expression(data.while)
-				}
-
-				if ?data.when {
-					ctrl.code(' when ').expression(data.when)
-				}
-
-				ctrl
-					.step()
-					.expression(data.body)
-
-				ctrl.done()
-			} # }}}
-			NodeKind.ForOfStatement { # {{{
-				var dyn ctrl
-
-				if data.body.kind == NodeKind.Block {
-					ctrl = writer
-						.newControl()
-						.code('for ')
-				}
-				else if data.body.kind == NodeKind.ExpressionStatement {
-					ctrl = writer
-						.newLine()
-						.expression(data.body.expression)
-						.code(' for ')
-				}
-
-				for var modifier in data.modifiers {
-					if modifier.kind == ModifierKind.Mutable {
-						ctrl.code('var mut ')
-					}
-					else if modifier.kind == ModifierKind.Immutable {
-						ctrl.code('var ')
-					}
-				}
-
-				if ?data.value {
-					ctrl.expression(data.value)
-
-					if ?data.type {
-						ctrl.code(': ').expression(data.type)
-					}
-
-					if ?data.key {
-						ctrl.code(', ').expression(data.key)
-					}
-				}
-				else {
-					ctrl.code('_, ').expression(data.key)
-				}
-
-				ctrl.code(' of ').expression(data.expression)
-
-				if ?data.until {
-					ctrl.code(' until ').expression(data.until)
-				}
-				else if ?data.while {
-					ctrl.code(' while ').expression(data.while)
-				}
-
-				if ?data.when {
-					ctrl.code(' when ').expression(data.when)
-				}
-
-				if data.body.kind == NodeKind.Block {
-					ctrl
-						.step()
-						.expression(data.body)
-				}
-
-				if ?data.else {
-					ctrl.step().code('else').step().expression(data.else)
-				}
-
-				ctrl.done()
 			} # }}}
 			NodeKind.FunctionDeclaration { # {{{
 				var line = writer.newLine()
@@ -2918,17 +2717,24 @@ export namespace Generator {
 			NodeKind.IfStatement { # {{{
 				match data.whenTrue.kind {
 					NodeKind.Block {
-						var ctrl = writer.newControl().code('if ')
+						var ctrl = writer.newControl().code('if')
 
-						if ?data.declaration {
-							ctrl.expression(data.declaration)
+						if ?data.declarations {
+							if data.declarations.length == 1 {
+								toIfDeclaration(data.declarations[0], ctrl.code(' '))
+							}
+							else {
+								ctrl.step()
 
-							if ?data.condition {
-								ctrl.code('; ').expression(data.condition)
+								for var declaration in data.declarations {
+									ctrl.newLine().run(declaration, toIfDeclaration).done()
+								}
+
+								ctrl.step().code('then')
 							}
 						}
 						else if ?data.condition {
-							ctrl.expression(data.condition)
+							ctrl.code(' ').expression(data.condition)
 						}
 
 						ctrl.step().expression(data.whenTrue)
