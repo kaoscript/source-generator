@@ -91,6 +91,7 @@ export namespace Generator {
 		Extern
 		Import
 		Property
+		Type
 	}
 
 	enum AttributeMode {
@@ -938,7 +939,7 @@ export namespace Generator {
 			} # }}}
 			NodeKind.FunctionExpression { # {{{
 				toFunctionHeader(data, writer => {
-					if writer.mode() == KSWriterMode.Property {
+					if writer.mode() == KSWriterMode.Type {
 						header?(writer)
 					}
 					else {
@@ -968,7 +969,7 @@ export namespace Generator {
 				writer.code(data.name)
 			} # }}}
 			NodeKind.IfExpression { # {{{
-				var ctrl = writer.newControl(null, null, null, false).code('if ')
+				var ctrl = writer.newControl(null, false, null, false).code('if ')
 
 				if ?data.declaration {
 					ctrl.expression(data.declaration)
@@ -1030,38 +1031,17 @@ export namespace Generator {
 				}
 			} # }}}
 			NodeKind.LambdaExpression { # {{{
-				var abbr = writer.mode() == KSWriterMode.Property && ?header
+				toFunctionHeader(data, writer => {}, writer)
 
-				if abbr {
-					toFunctionHeader(data, header, writer)
-
-					if data.body.kind == NodeKind.Block {
-						writer
-							.newBlock()
-							.expression(data.body)
-							.done()
-					}
-					else {
-						writer.code(' => ').expression(data.body)
-					}
+				if data.body.kind == NodeKind.Block {
+					writer
+						.code(' =>')
+						.newBlock()
+						.expression(data.body)
+						.done()
 				}
 				else {
-					toFunctionHeader(data, writer => {
-						if writer.mode() == KSWriterMode.Property {
-							header?(writer)
-						}
-					}, writer)
-
-					if data.body.kind == NodeKind.Block {
-						writer
-							.code(' =>')
-							.newBlock()
-							.expression(data.body)
-							.done()
-					}
-					else {
-						writer.code(' => ').expression(data.body)
-					}
+					writer.code(' => ').expression(data.body)
 				}
 			} # }}}
 			NodeKind.Literal { # {{{
@@ -1243,10 +1223,7 @@ export namespace Generator {
 				if ?value {
 					var element = writer.transformExpression(value)
 
-					if element.kind == NodeKind.LambdaExpression {
-						toExpression(element, ExpressionMode.Top, writer, writer => writer.expression(data.name))
-					}
-					else if ?data.name {
+					if ?data.name {
 						writer.expression(data.name).code(': ').expression(element)
 					}
 					else {
@@ -1261,7 +1238,7 @@ export namespace Generator {
 				if #data.properties {
 					var o = writer.newObject()
 
-					o.pushMode(KSWriterMode.Property)
+					o.pushMode(KSWriterMode.Type)
 
 					for var property, index in data.properties {
 						o.newLine().expression(property).done()

@@ -1,8 +1,8 @@
 var foobar = {
 	#![error(off)]
 	
-	foo() {
+	foo: func() {
 	}
-	bar() {
+	bar: func() {
 	}
 }
