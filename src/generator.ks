@@ -73,7 +73,9 @@ export namespace Generator {
 	}
 
 	var UnaryPrefixOperatorSymbol = {
+		`\(UnaryOperatorKind.Constant)`				: 'const '
 		`\(UnaryOperatorKind.Existential)`			: '?'
+		`\(UnaryOperatorKind.Implicit)`				: '.'
 		`\(UnaryOperatorKind.Negation)`				: '!'
 		`\(UnaryOperatorKind.Negative)`				: '-'
 		`\(UnaryOperatorKind.NonEmpty)`				: '#'
@@ -1616,9 +1618,6 @@ export namespace Generator {
 						.code(operator)
 						.wrap(data.argument)
 				}
-				else if data.operator.kind == UnaryOperatorKind.Implicit {
-					writer.code('.').expression(data.argument)
-				}
 				else {
 					writer
 						.wrap(data.argument)
@@ -1627,6 +1626,12 @@ export namespace Generator {
 			} # }}}
 			NodeKind.UnaryTypeExpression { # {{{
 				match data.operator.kind {
+					UnaryTypeOperatorKind.Constant {
+						writer.code(`const `)
+					}
+					UnaryTypeOperatorKind.Mutable {
+						writer.code(`mut `)
+					}
 					UnaryTypeOperatorKind.NewInstance {
 						writer.code(`new `)
 					}
@@ -1650,13 +1655,24 @@ export namespace Generator {
 				}
 			} # }}}
 			NodeKind.VariableDeclaration { # {{{
+				var mut declarative = false
+				var mut mutable = false
+
 				for var modifier in data.modifiers {
-					if modifier.kind == ModifierKind.Immutable {
-						writer.code('var ')
+					match modifier.kind {
+						ModifierKind.Declarative {
+							declarative = true
+						}
+						ModifierKind.Mutable {
+							mutable = true
+						}
 					}
-					else if modifier.kind == ModifierKind.Mutable {
-						writer.code('var mut ')
-					}
+				}
+
+				if declarative {
+					writer
+						..code('var ')
+						..code('mut ') if mutable
 				}
 
 				for var variable, index in data.variables {
@@ -1687,7 +1703,7 @@ export namespace Generator {
 
 				for var modifier in data.modifiers {
 					match modifier.kind {
-						ModifierKind.Immutable {
+						ModifierKind.Final {
 							writer.code('final ')
 						}
 						ModifierKind.Nullable {
@@ -1724,7 +1740,7 @@ export namespace Generator {
 					ModifierKind.Async {
 						writer.code('async ')
 					}
-					ModifierKind.Immutable {
+					ModifierKind.Final {
 						writer.code('final ')
 					}
 					ModifierKind.Internal {
@@ -2004,20 +2020,31 @@ export namespace Generator {
 	}
 
 	func toIteration(data, writer) { # {{{
+		var mut declarative = false
+		var mut mutable = false
+
 		match data.kind {
 			IterationKind.Array {
 				var mut descending = false
 
 				for var modifier in data.modifiers {
-					if modifier.kind == ModifierKind.Mutable {
-						writer.code('var mut ')
+					match modifier.kind {
+						ModifierKind.Declarative {
+							declarative = true
+						}
+						ModifierKind.Descending {
+							descending = true
+						}
+						ModifierKind.Mutable {
+							mutable = true
+						}
 					}
-					else if modifier.kind == ModifierKind.Immutable {
-						writer.code('var ')
-					}
-					else if modifier.kind == ModifierKind.Descending {
-						descending = true
-					}
+				}
+
+				if declarative {
+					writer
+						..code('var ')
+						..code('mut ') if mutable
 				}
 
 				if ?data.value {
@@ -2078,18 +2105,26 @@ export namespace Generator {
 				var mut descending = false
 
 				for var modifier in data.modifiers {
-					if modifier.kind == ModifierKind.Ascending {
-						ascending = true
+					match modifier.kind {
+						ModifierKind.Ascending {
+							ascending = true
+						}
+						ModifierKind.Declarative {
+							declarative = true
+						}
+						ModifierKind.Descending {
+							descending = true
+						}
+						ModifierKind.Mutable {
+							mutable = true
+						}
 					}
-					else if modifier.kind == ModifierKind.Descending {
-						descending = true
-					}
-					else if modifier.kind == ModifierKind.Mutable {
-						writer.code('var mut ')
-					}
-					else if modifier.kind == ModifierKind.Immutable {
-						writer.code('var ')
-					}
+				}
+
+				if declarative {
+					writer
+						..code('var ')
+						..code('mut ') if mutable
 				}
 
 				writer.expression(data.variable)
@@ -2132,12 +2167,20 @@ export namespace Generator {
 			}
 			IterationKind.Object {
 				for var modifier in data.modifiers {
-					if modifier.kind == ModifierKind.Mutable {
-						writer.code('var mut ')
+					match modifier.kind {
+						ModifierKind.Declarative {
+							declarative = true
+						}
+						ModifierKind.Mutable {
+							mutable = true
+						}
 					}
-					else if modifier.kind == ModifierKind.Immutable {
-						writer.code('var ')
-					}
+				}
+
+				if declarative {
+					writer
+						..code('var ')
+						..code('mut ') if mutable
 				}
 
 				if ?data.value {
@@ -2170,12 +2213,20 @@ export namespace Generator {
 			}
 			IterationKind.Range {
 				for var modifier in data.modifiers {
-					if modifier.kind == ModifierKind.Mutable {
-						writer.code('var mut ')
+					match modifier.kind {
+						ModifierKind.Declarative {
+							declarative = true
+						}
+						ModifierKind.Mutable {
+							mutable = true
+						}
 					}
-					else if modifier.kind == ModifierKind.Immutable {
-						writer.code('var ')
-					}
+				}
+
+				if declarative {
+					writer
+						..code('var ')
+						..code('mut ') if mutable
 				}
 
 				writer
@@ -2372,7 +2423,7 @@ export namespace Generator {
 						ModifierKind.Abstract {
 							line.code('abstract ')
 						}
-						ModifierKind.Immutable {
+						ModifierKind.Final {
 							line.code('final ')
 						}
 						ModifierKind.Sealed {
@@ -2594,7 +2645,7 @@ export namespace Generator {
 						ModifierKind.Dynamic {
 							line.code('dyn ')
 						}
-						ModifierKind.Immutable {
+						ModifierKind.Final {
 							line.code('final ')
 						}
 						ModifierKind.Internal {
@@ -3502,19 +3553,35 @@ export namespace Generator {
 			} # }}}
 			NodeKind.VariableStatement { # {{{
 				var line = writer.newLine()
-
-				line.code('var')
+				var mut declaration = false
 
 				for var modifier in data.modifiers {
-					if modifier.kind == ModifierKind.Dynamic {
-						line.code(' dyn')
+					match modifier.kind {
+						ModifierKind.Constant {
+							line.code('const')
+
+							declaration = true
+						}
+						ModifierKind.Dynamic {
+							line.code('var dyn')
+
+							declaration = true
+						}
+						ModifierKind.LateInit {
+							line.code('var late')
+
+							declaration = true
+						}
+						ModifierKind.Mutable {
+							line.code('var mut')
+
+							declaration = true
+						}
 					}
-					else if modifier.kind == ModifierKind.LateInit {
-						line.code(' late')
-					}
-					else if modifier.kind == ModifierKind.Mutable {
-						line.code(' mut')
-					}
+				}
+
+				if !declaration {
+					line.code('var')
 				}
 
 				if data.declarations.length == 1 {
