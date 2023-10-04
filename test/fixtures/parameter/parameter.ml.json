@@ -83,8 +83,8 @@
             }
           },
           "operator": {
-            "kind": 3,
-            "assignment": 6,
+            "kind": 2,
+            "assignment": 10,
             "start": {
               "line": 2,
               "column": 12
@@ -98,6 +98,7 @@
             "kind": 77,
             "modifiers": [],
             "value": 0,
+            "radix": 10,
             "start": {
               "line": 2,
               "column": 14
@@ -172,8 +173,8 @@
             }
           },
           "operator": {
-            "kind": 3,
-            "assignment": 6,
+            "kind": 2,
+            "assignment": 10,
             "start": {
               "line": 3,
               "column": 12
@@ -187,6 +188,7 @@
             "kind": 77,
             "modifiers": [],
             "value": 0,
+            "radix": 10,
             "start": {
               "line": 3,
               "column": 14
@@ -261,8 +263,8 @@
             }
           },
           "operator": {
-            "kind": 3,
-            "assignment": 6,
+            "kind": 2,
+            "assignment": 10,
             "start": {
               "line": 4,
               "column": 12
@@ -276,6 +278,7 @@
             "kind": 77,
             "modifiers": [],
             "value": 0,
+            "radix": 10,
             "start": {
               "line": 4,
               "column": 14

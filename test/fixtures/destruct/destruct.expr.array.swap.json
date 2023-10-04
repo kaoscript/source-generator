@@ -63,6 +63,7 @@
             "kind": 77,
             "modifiers": [],
             "value": 10,
+            "radix": 10,
             "start": {
               "line": 1,
               "column": 16
@@ -144,6 +145,7 @@
             "kind": 77,
             "modifiers": [],
             "value": 20,
+            "radix": 10,
             "start": {
               "line": 2,
               "column": 17
@@ -185,7 +187,7 @@
             }
           },
           {
-            "kind": 9,
+            "kind": 13,
             "modifiers": [],
             "start": {
               "line": 4,
@@ -230,8 +232,8 @@
               "kind": 12,
               "modifiers": [],
               "operator": {
-                "kind": 3,
-                "assignment": 6,
+                "kind": 2,
+                "assignment": 10,
                 "start": {
                   "line": 5,
                   "column": 16

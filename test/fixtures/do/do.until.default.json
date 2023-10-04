@@ -23,7 +23,7 @@
             }
           },
           {
-            "kind": 9,
+            "kind": 13,
             "modifiers": [],
             "start": {
               "line": 4,
@@ -170,6 +170,7 @@
             "kind": 77,
             "modifiers": [],
             "value": 42,
+            "radix": 10,
             "start": {
               "line": 6,
               "column": 13

@@ -9,8 +9,8 @@
         "kind": 12,
         "modifiers": [],
         "operator": {
-          "kind": 3,
-          "assignment": 6,
+          "kind": 2,
+          "assignment": 10,
           "start": {
             "line": 1,
             "column": 3
@@ -84,6 +84,7 @@
                 "kind": 77,
                 "modifiers": [],
                 "value": 0,
+                "radix": 10,
                 "start": {
                   "line": 1,
                   "column": 23
@@ -109,6 +110,7 @@
                   }
                 ],
                 "value": 10,
+                "radix": 10,
                 "start": {
                   "line": 1,
                   "column": 29

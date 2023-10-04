@@ -144,6 +144,7 @@
             "kind": 77,
             "modifiers": [],
             "value": 28,
+            "radix": 10,
             "start": {
               "line": 2,
               "column": 15
@@ -390,6 +391,7 @@
                     "kind": 77,
                     "modifiers": [],
                     "value": 0,
+                    "radix": 10,
                     "start": {
                       "line": 5,
                       "column": 21
@@ -496,6 +498,7 @@
                     "kind": 77,
                     "modifiers": [],
                     "value": 1,
+                    "radix": 10,
                     "start": {
                       "line": 6,
                       "column": 21
@@ -614,7 +617,7 @@
                   }
                 },
                 {
-                  "kind": 9,
+                  "kind": 13,
                   "modifiers": [],
                   "start": {
                     "line": 9,
@@ -629,6 +632,7 @@
                   "kind": 77,
                   "modifiers": [],
                   "value": 99,
+                  "radix": 10,
                   "start": {
                     "line": 9,
                     "column": 14
@@ -659,8 +663,8 @@
                     "kind": 12,
                     "modifiers": [],
                     "operator": {
-                      "kind": 3,
-                      "assignment": 6,
+                      "kind": 2,
+                      "assignment": 10,
                       "start": {
                         "line": 10,
                         "column": 10
@@ -735,8 +739,8 @@
                     "kind": 12,
                     "modifiers": [],
                     "operator": {
-                      "kind": 3,
-                      "assignment": 6,
+                      "kind": 2,
+                      "assignment": 10,
                       "start": {
                         "line": 13,
                         "column": 10
@@ -1132,6 +1136,7 @@
               "kind": 77,
               "modifiers": [],
               "value": 12,
+              "radix": 10,
               "start": {
                 "line": 21,
                 "column": 22

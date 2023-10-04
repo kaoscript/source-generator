@@ -19,64 +19,72 @@ extern console
 export namespace Generator {
 	var AssignmentOperatorSymbol = {
 		`\(AssignmentOperatorKind.Addition)`			: ' += '
-		`\(AssignmentOperatorKind.And)`					: ' &&= '
+		`\(AssignmentOperatorKind.BitwiseAnd)`			: ' +&= '
+		`\(AssignmentOperatorKind.BitwiseLeftShift)`	: ' +<= '
+		`\(AssignmentOperatorKind.BitwiseOr)`			: ' +|= '
+		`\(AssignmentOperatorKind.BitwiseRightShift)`	: ' +>= '
+		`\(AssignmentOperatorKind.BitwiseXor)`			: ' +^= '
 		`\(AssignmentOperatorKind.Division)`			: ' /= '
 		`\(AssignmentOperatorKind.Empty)`				: ' !#= '
 		`\(AssignmentOperatorKind.EmptyCoalescing)`		: ' ##= '
 		`\(AssignmentOperatorKind.Equals)`				: ' = '
 		`\(AssignmentOperatorKind.Existential)`			: ' ?= '
-		`\(AssignmentOperatorKind.LeftShift)`			: ' <<= '
+		`\(AssignmentOperatorKind.LogicalAnd)`			: ' &&= '
+		`\(AssignmentOperatorKind.LogicalOr)`			: ' ||= '
+		`\(AssignmentOperatorKind.LogicalXor)`			: ' ^^= '
 		`\(AssignmentOperatorKind.Modulo)`				: ' %= '
 		`\(AssignmentOperatorKind.Multiplication)`		: ' *= '
 		`\(AssignmentOperatorKind.NonEmpty)`			: ' #= '
 		`\(AssignmentOperatorKind.NonExistential)`		: ' !?= '
 		`\(AssignmentOperatorKind.NullCoalescing)`		: ' ??= '
-		`\(AssignmentOperatorKind.Or)`					: ' ||= '
 		`\(AssignmentOperatorKind.Quotient)`			: ' /.= '
 		`\(AssignmentOperatorKind.Return)`				: ' <- '
-		`\(AssignmentOperatorKind.RightShift)`			: ' >>= '
 		`\(AssignmentOperatorKind.Subtraction)`			: ' -= '
-		`\(AssignmentOperatorKind.Xor)`					: ' ^^= '
 	}
 
 	var BinaryOperatorSymbol = {
 		`\(BinaryOperatorKind.Addition)`			: ' + '
-		`\(BinaryOperatorKind.And)`					: ' && '
+		`\(BinaryOperatorKind.BitwiseAnd)`			: ' +& '
+		`\(BinaryOperatorKind.BitwiseLeftShift)`	: ' +< '
+		`\(BinaryOperatorKind.BitwiseOr)`			: ' +| '
+		`\(BinaryOperatorKind.BitwiseRightShift)`	: ' +> '
+		`\(BinaryOperatorKind.BitwiseXor)`			: ' +^ '
 		`\(BinaryOperatorKind.Division)`			: ' / '
 		`\(BinaryOperatorKind.Equality)`			: ' == '
 		`\(BinaryOperatorKind.EmptyCoalescing)`		: ' ## '
 		`\(BinaryOperatorKind.GreaterThan)`			: ' > '
 		`\(BinaryOperatorKind.GreaterThanOrEqual)`	: ' >= '
-		`\(BinaryOperatorKind.Imply)`				: ' -> '
 		`\(BinaryOperatorKind.Inequality)`			: ' != '
-		`\(BinaryOperatorKind.LeftShift)`			: ' << '
 		`\(BinaryOperatorKind.LessThan)`			: ' < '
 		`\(BinaryOperatorKind.LessThanOrEqual)`		: ' <= '
+		`\(BinaryOperatorKind.LogicalAnd)`			: ' && '
+		`\(BinaryOperatorKind.LogicalImply)`		: ' -> '
+		`\(BinaryOperatorKind.LogicalOr)`			: ' || '
+		`\(BinaryOperatorKind.LogicalXor)`			: ' ^^ '
 		`\(BinaryOperatorKind.Match)`				: ' ~~ '
 		`\(BinaryOperatorKind.Mismatch)`			: ' !~ '
 		`\(BinaryOperatorKind.Modulo)`				: ' % '
 		`\(BinaryOperatorKind.Multiplication)`		: ' * '
 		`\(BinaryOperatorKind.NullCoalescing)`		: ' ?? '
-		`\(BinaryOperatorKind.Or)`					: ' || '
 		`\(BinaryOperatorKind.Quotient)`			: ' /. '
-		`\(BinaryOperatorKind.RightShift)`			: ' >> '
 		`\(BinaryOperatorKind.Subtraction)`			: ' - '
 		`\(BinaryOperatorKind.TypeEquality)`		: ' is '
 		`\(BinaryOperatorKind.TypeInequality)`		: ' is not '
-		`\(BinaryOperatorKind.Xor)`					: ' ^^ '
 	}
 
 	var JunctionOperatorSymbol = {
-		`\(BinaryOperatorKind.And)`					: ' & '
-		`\(BinaryOperatorKind.Or)`					: ' | '
-		`\(BinaryOperatorKind.Xor)`					: ' ^ '
+		`\(BinaryOperatorKind.JunctionAnd)`			: ' & '
+		`\(BinaryOperatorKind.JunctionOr)`			: ' | '
+		`\(BinaryOperatorKind.JunctionXor)`			: ' ^ '
 	}
 
 	var UnaryPrefixOperatorSymbol = {
+		`\(UnaryOperatorKind.BitwiseNegation)`		: '+^'
 		`\(UnaryOperatorKind.Constant)`				: 'const '
+		`\(UnaryOperatorKind.Default)`				: '**'
 		`\(UnaryOperatorKind.Existential)`			: '?'
 		`\(UnaryOperatorKind.Implicit)`				: '.'
-		`\(UnaryOperatorKind.Negation)`				: '!'
+		`\(UnaryOperatorKind.LogicalNegation)`		: '!'
 		`\(UnaryOperatorKind.Negative)`				: '-'
 		`\(UnaryOperatorKind.NonEmpty)`				: '#'
 		`\(UnaryOperatorKind.Spread)`				: '...'
@@ -1409,11 +1417,16 @@ export namespace Generator {
 			} # }}}
 			NodeKind.PropertyType { # {{{
 				if ?data.name {
-					if data.type.kind == NodeKind.FunctionExpression {
-						toExpression(data.type, ExpressionMode.Top, writer, writer => writer.expression(data.name))
+					if ?data.type {
+						if data.type.kind == NodeKind.FunctionExpression {
+							toExpression(data.type, ExpressionMode.Top, writer, writer => writer.expression(data.name))
+						}
+						else {
+							writer.expression(data.name).code(': ').expression(data.type)
+						}
 					}
 					else {
-						writer.expression(data.name).code(': ').expression(data.type)
+						writer.expression(data.name)
 					}
 				}
 				else if ?data.type {
@@ -2681,6 +2694,14 @@ export namespace Generator {
 				}
 
 				line.expression(data.name)
+
+				for var modifier in data.modifiers {
+					if modifier.kind == ModifierKind.Default {
+						line.code('**')
+
+						break
+					}
+				}
 
 				line.code('?') if nullable
 

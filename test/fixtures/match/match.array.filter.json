@@ -67,6 +67,7 @@
                 "kind": 77,
                 "modifiers": [],
                 "value": 1,
+                "radix": 10,
                 "start": {
                   "line": 1,
                   "column": 22
@@ -80,6 +81,7 @@
                 "kind": 77,
                 "modifiers": [],
                 "value": 1,
+                "radix": 10,
                 "start": {
                   "line": 1,
                   "column": 25
@@ -197,7 +199,7 @@
             "kind": 12,
             "modifiers": [],
             "operator": {
-              "kind": 2,
+              "kind": 21,
               "modifiers": [],
               "start": {
                 "line": 4,
@@ -234,7 +236,7 @@
                   }
                 },
                 {
-                  "kind": 7,
+                  "kind": 11,
                   "modifiers": [],
                   "start": {
                     "line": 4,
@@ -249,6 +251,7 @@
                   "kind": 77,
                   "modifiers": [],
                   "value": 0,
+                  "radix": 10,
                   "start": {
                     "line": 4,
                     "column": 24
@@ -286,7 +289,7 @@
                   }
                 },
                 {
-                  "kind": 7,
+                  "kind": 11,
                   "modifiers": [],
                   "start": {
                     "line": 4,
@@ -301,6 +304,7 @@
                   "kind": 77,
                   "modifiers": [],
                   "value": 0,
+                  "radix": 10,
                   "start": {
                     "line": 4,
                     "column": 34
@@ -494,7 +498,7 @@
                 }
               },
               {
-                "kind": 7,
+                "kind": 11,
                 "modifiers": [],
                 "start": {
                   "line": 5,
@@ -509,6 +513,7 @@
                 "kind": 77,
                 "modifiers": [],
                 "value": 0,
+                "radix": 10,
                 "start": {
                   "line": 5,
                   "column": 24
@@ -701,7 +706,7 @@
                 }
               },
               {
-                "kind": 7,
+                "kind": 11,
                 "modifiers": [],
                 "start": {
                   "line": 6,
@@ -716,6 +721,7 @@
                 "kind": 77,
                 "modifiers": [],
                 "value": 0,
+                "radix": 10,
                 "start": {
                   "line": 6,
                   "column": 24
@@ -894,7 +900,7 @@
             "kind": 12,
             "modifiers": [],
             "operator": {
-              "kind": 2,
+              "kind": 21,
               "modifiers": [],
               "start": {
                 "line": 7,
@@ -921,6 +927,7 @@
                   "kind": 77,
                   "modifiers": [],
                   "value": -2,
+                  "radix": 10,
                   "start": {
                     "line": 7,
                     "column": 19
@@ -931,7 +938,7 @@
                   }
                 },
                 {
-                  "kind": 15,
+                  "kind": 20,
                   "modifiers": [],
                   "start": {
                     "line": 7,
@@ -956,7 +963,7 @@
                   }
                 },
                 {
-                  "kind": 15,
+                  "kind": 20,
                   "modifiers": [],
                   "start": {
                     "line": 7,
@@ -971,6 +978,7 @@
                   "kind": 77,
                   "modifiers": [],
                   "value": 2,
+                  "radix": 10,
                   "start": {
                     "line": 7,
                     "column": 30
@@ -998,6 +1006,7 @@
                   "kind": 77,
                   "modifiers": [],
                   "value": -2,
+                  "radix": 10,
                   "start": {
                     "line": 7,
                     "column": 35
@@ -1008,7 +1017,7 @@
                   }
                 },
                 {
-                  "kind": 15,
+                  "kind": 20,
                   "modifiers": [],
                   "start": {
                     "line": 7,
@@ -1033,7 +1042,7 @@
                   }
                 },
                 {
-                  "kind": 15,
+                  "kind": 20,
                   "modifiers": [],
                   "start": {
                     "line": 7,
@@ -1048,6 +1057,7 @@
                   "kind": 77,
                   "modifiers": [],
                   "value": 2,
+                  "radix": 10,
                   "start": {
                     "line": 7,
                     "column": 46

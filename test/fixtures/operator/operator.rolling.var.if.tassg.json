@@ -99,6 +99,7 @@
                   "kind": 77,
                   "modifiers": [],
                   "value": 10,
+                  "radix": 10,
                   "start": {
                     "line": 1,
                     "column": 25
@@ -112,6 +113,7 @@
                   "kind": 77,
                   "modifiers": [],
                   "value": 20,
+                  "radix": 10,
                   "start": {
                     "line": 1,
                     "column": 29
@@ -179,8 +181,8 @@
                   "kind": 12,
                   "modifiers": [],
                   "operator": {
-                    "kind": 3,
-                    "assignment": 6,
+                    "kind": 2,
+                    "assignment": 10,
                     "start": {
                       "line": 2,
                       "column": 13
@@ -239,7 +241,7 @@
                     "kind": 12,
                     "modifiers": [],
                     "operator": {
-                      "kind": 5,
+                      "kind": 9,
                       "modifiers": [],
                       "start": {
                         "line": 2,
@@ -262,7 +264,7 @@
                       "kind": 12,
                       "modifiers": [],
                       "operator": {
-                        "kind": 19,
+                        "kind": 28,
                         "modifiers": [],
                         "start": {
                           "line": 2,
@@ -285,6 +287,7 @@
                         "kind": 77,
                         "modifiers": [],
                         "value": 45,
+                        "radix": 10,
                         "start": {
                           "line": 2,
                           "column": 15
@@ -337,6 +340,7 @@
                       "kind": 77,
                       "modifiers": [],
                       "value": 180,
+                      "radix": 10,
                       "start": {
                         "line": 2,
                         "column": 30
@@ -361,8 +365,8 @@
                 "kind": 12,
                 "modifiers": [],
                 "operator": {
-                  "kind": 3,
-                  "assignment": 6,
+                  "kind": 2,
+                  "assignment": 10,
                   "start": {
                     "line": 3,
                     "column": 10
@@ -435,8 +439,8 @@
                 "kind": 12,
                 "modifiers": [],
                 "operator": {
-                  "kind": 3,
-                  "assignment": 6,
+                  "kind": 2,
+                  "assignment": 10,
                   "start": {
                     "line": 4,
                     "column": 17
@@ -495,6 +499,7 @@
                   "kind": 77,
                   "modifiers": [],
                   "value": 0,
+                  "radix": 10,
                   "start": {
                     "line": 4,
                     "column": 19

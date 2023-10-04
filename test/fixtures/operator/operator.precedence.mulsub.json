@@ -51,7 +51,7 @@
             "kind": 12,
             "modifiers": [],
             "operator": {
-              "kind": 24,
+              "kind": 31,
               "modifiers": [],
               "start": {
                 "line": 1,
@@ -74,7 +74,7 @@
               "kind": 12,
               "modifiers": [],
               "operator": {
-                "kind": 19,
+                "kind": 28,
                 "modifiers": [],
                 "start": {
                   "line": 1,
@@ -97,6 +97,7 @@
                 "kind": 77,
                 "modifiers": [],
                 "value": 15,
+                "radix": 10,
                 "start": {
                   "line": 1,
                   "column": 9
@@ -110,6 +111,7 @@
                 "kind": 77,
                 "modifiers": [],
                 "value": 2,
+                "radix": 10,
                 "start": {
                   "line": 1,
                   "column": 14
@@ -124,6 +126,7 @@
               "kind": 77,
               "modifiers": [],
               "value": 6,
+              "radix": 10,
               "start": {
                 "line": 1,
                 "column": 18
