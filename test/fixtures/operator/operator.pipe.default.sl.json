@@ -1,23 +1,23 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 130,
+      "kind": 132,
       "attributes": [],
       "modifiers": [],
       "declarations": [
         {
-          "kind": 128,
+          "kind": 130,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 129,
+              "kind": 131,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 48,
+                "kind": 47,
                 "modifiers": [],
                 "name": "newScore",
                 "start": {
@@ -48,7 +48,7 @@
             "column": 76
           },
           "value": {
-            "kind": 12,
+            "kind": 11,
             "modifiers": [],
             "operator": {
               "kind": 12,
@@ -71,7 +71,7 @@
               "column": 76
             },
             "left": {
-              "kind": 12,
+              "kind": 11,
               "modifiers": [],
               "operator": {
                 "kind": 12,
@@ -94,7 +94,7 @@
                 "column": 51
               },
               "left": {
-                "kind": 12,
+                "kind": 11,
                 "modifiers": [],
                 "operator": {
                   "kind": 12,
@@ -117,10 +117,10 @@
                   "column": 38
                 },
                 "left": {
-                  "kind": 69,
+                  "kind": 68,
                   "modifiers": [],
                   "object": {
-                    "kind": 48,
+                    "kind": 47,
                     "modifiers": [],
                     "name": "person",
                     "start": {
@@ -133,7 +133,7 @@
                     }
                   },
                   "property": {
-                    "kind": 48,
+                    "kind": 47,
                     "modifiers": [],
                     "name": "score",
                     "start": {
@@ -155,7 +155,7 @@
                   }
                 },
                 "right": {
-                  "kind": 48,
+                  "kind": 47,
                   "modifiers": [],
                   "name": "double",
                   "start": {
@@ -169,13 +169,13 @@
                 }
               },
               "right": {
-                "kind": 18,
+                "kind": 17,
                 "modifiers": [],
                 "scope": {
                   "kind": 2
                 },
                 "callee": {
-                  "kind": 48,
+                  "kind": 47,
                   "modifiers": [],
                   "name": "add",
                   "start": {
@@ -189,7 +189,7 @@
                 },
                 "arguments": [
                   {
-                    "kind": 77,
+                    "kind": 76,
                     "modifiers": [],
                     "value": 7,
                     "radix": 10,
@@ -203,7 +203,7 @@
                     }
                   },
                   {
-                    "kind": 113,
+                    "kind": 114,
                     "modifiers": [],
                     "start": {
                       "line": 1,
@@ -226,13 +226,13 @@
               }
             },
             "right": {
-              "kind": 18,
+              "kind": 17,
               "modifiers": [],
               "scope": {
                 "kind": 2
               },
               "callee": {
-                "kind": 48,
+                "kind": 47,
                 "modifiers": [],
                 "name": "boundScore",
                 "start": {
@@ -246,7 +246,7 @@
               },
               "arguments": [
                 {
-                  "kind": 77,
+                  "kind": 76,
                   "modifiers": [],
                   "value": 0,
                   "radix": 10,
@@ -260,7 +260,7 @@
                   }
                 },
                 {
-                  "kind": 77,
+                  "kind": 76,
                   "modifiers": [],
                   "value": 100,
                   "radix": 10,
@@ -274,7 +274,7 @@
                   }
                 },
                 {
-                  "kind": 113,
+                  "kind": 114,
                   "modifiers": [],
                   "start": {
                     "line": 1,

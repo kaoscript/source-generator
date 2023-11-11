@@ -1,17 +1,17 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 37,
+      "kind": 36,
       "attributes": [],
       "declarations": [
         {
-          "kind": 20,
+          "kind": 19,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 42,
+              "kind": 43,
               "start": {
                 "line": 1,
                 "column": 8
@@ -23,7 +23,7 @@
             }
           ],
           "name": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "Array",
             "start": {

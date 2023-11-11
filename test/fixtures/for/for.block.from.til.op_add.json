@@ -1,16 +1,16 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 43,
+      "kind": 42,
       "attributes": [],
       "iterations": [
         {
           "kind": 1,
           "modifiers": [
             {
-              "kind": 11,
+              "kind": 12,
               "start": {
                 "line": 1,
                 "column": 5
@@ -22,7 +22,7 @@
             }
           ],
           "variable": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "index",
             "start": {
@@ -35,7 +35,7 @@
             }
           },
           "from": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "values",
             "start": {
@@ -48,10 +48,10 @@
             }
           },
           "to": {
-            "kind": 12,
+            "kind": 11,
             "modifiers": [
               {
-                "kind": 8,
+                "kind": 9,
                 "start": {
                   "line": 1,
                   "column": 27
@@ -83,7 +83,7 @@
               "column": 30
             },
             "left": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "n",
               "start": {
@@ -96,7 +96,7 @@
               }
             },
             "right": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "l",
               "start": {
@@ -120,7 +120,7 @@
         }
       ],
       "body": {
-        "kind": 15,
+        "kind": 14,
         "attributes": [],
         "statements": [],
         "start": {

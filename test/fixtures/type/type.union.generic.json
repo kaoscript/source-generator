@@ -1,12 +1,12 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 119,
+      "kind": 120,
       "attributes": [],
       "name": {
-        "kind": 48,
+        "kind": 47,
         "modifiers": [],
         "name": "Foobar",
         "start": {
@@ -19,13 +19,13 @@
         }
       },
       "type": {
-        "kind": 127,
+        "kind": 129,
         "types": [
           {
-            "kind": 121,
+            "kind": 123,
             "modifiers": [],
             "typeName": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "Number",
               "start": {
@@ -47,10 +47,10 @@
             }
           },
           {
-            "kind": 121,
+            "kind": 123,
             "modifiers": [],
             "typeName": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "String",
               "start": {
@@ -72,10 +72,10 @@
             }
           },
           {
-            "kind": 121,
+            "kind": 123,
             "modifiers": [],
             "typeName": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "Array",
               "start": {
@@ -87,23 +87,15 @@
                 "column": 38
               }
             },
-            "start": {
-              "line": 1,
-              "column": 33
-            },
-            "end": {
-              "line": 1,
-              "column": 55
-            },
             "typeParameters": [
               {
-                "kind": 127,
+                "kind": 129,
                 "types": [
                   {
-                    "kind": 121,
+                    "kind": 123,
                     "modifiers": [],
                     "typeName": {
-                      "kind": 48,
+                      "kind": 47,
                       "modifiers": [],
                       "name": "Number",
                       "start": {
@@ -125,10 +117,10 @@
                     }
                   },
                   {
-                    "kind": 121,
+                    "kind": 123,
                     "modifiers": [],
                     "typeName": {
-                      "kind": 48,
+                      "kind": 47,
                       "modifiers": [],
                       "name": "String",
                       "start": {
@@ -159,13 +151,21 @@
                   "column": 54
                 }
               }
-            ]
+            ],
+            "start": {
+              "line": 1,
+              "column": 33
+            },
+            "end": {
+              "line": 1,
+              "column": 55
+            }
           },
           {
-            "kind": 121,
+            "kind": 123,
             "modifiers": [],
             "typeName": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "Null",
               "start": {

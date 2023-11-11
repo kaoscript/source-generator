@@ -1,13 +1,13 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 106,
+      "kind": 107,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 48,
+        "kind": 47,
         "modifiers": [],
         "name": "Point",
         "start": {
@@ -21,11 +21,11 @@
       },
       "fields": [
         {
-          "kind": 107,
+          "kind": 108,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "x",
             "start": {
@@ -46,10 +46,10 @@
             "column": 11
           },
           "type": {
-            "kind": 121,
+            "kind": 123,
             "modifiers": [],
             "typeName": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "Number",
               "start": {
@@ -72,11 +72,11 @@
           }
         },
         {
-          "kind": 107,
+          "kind": 108,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "y",
             "start": {
@@ -97,10 +97,10 @@
             "column": 11
           },
           "type": {
-            "kind": 121,
+            "kind": 123,
             "modifiers": [],
             "typeName": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "Number",
               "start": {
@@ -133,11 +133,11 @@
       }
     },
     {
-      "kind": 106,
+      "kind": 107,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 48,
+        "kind": 47,
         "modifiers": [],
         "name": "Point3D",
         "start": {
@@ -150,9 +150,21 @@
         }
       },
       "extends": {
-        "kind": 48,
+        "kind": 123,
         "modifiers": [],
-        "name": "Point",
+        "typeName": {
+          "kind": 47,
+          "modifiers": [],
+          "name": "Point",
+          "start": {
+            "line": 6,
+            "column": 24
+          },
+          "end": {
+            "line": 6,
+            "column": 29
+          }
+        },
         "start": {
           "line": 6,
           "column": 24
@@ -164,11 +176,11 @@
       },
       "fields": [
         {
-          "kind": 107,
+          "kind": 108,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "z",
             "start": {
@@ -189,10 +201,10 @@
             "column": 11
           },
           "type": {
-            "kind": 121,
+            "kind": 123,
             "modifiers": [],
             "typeName": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "Number",
               "start": {
@@ -225,11 +237,11 @@
       }
     },
     {
-      "kind": 130,
+      "kind": 132,
       "attributes": [],
       "modifiers": [
         {
-          "kind": 15,
+          "kind": 16,
           "start": {
             "line": 10,
             "column": 5
@@ -242,16 +254,16 @@
       ],
       "declarations": [
         {
-          "kind": 128,
+          "kind": 130,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 129,
+              "kind": 131,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 48,
+                "kind": 47,
                 "modifiers": [],
                 "name": "point",
                 "start": {
@@ -282,13 +294,13 @@
             "column": 39
           },
           "value": {
-            "kind": 18,
+            "kind": 17,
             "modifiers": [],
             "scope": {
               "kind": 2
             },
             "callee": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "Point3D",
               "start": {
@@ -302,7 +314,7 @@
             },
             "arguments": [
               {
-                "kind": 77,
+                "kind": 76,
                 "modifiers": [],
                 "value": 0.3,
                 "radix": 10,
@@ -316,7 +328,7 @@
                 }
               },
               {
-                "kind": 77,
+                "kind": 76,
                 "modifiers": [],
                 "value": 0.4,
                 "radix": 10,
@@ -330,7 +342,7 @@
                 }
               },
               {
-                "kind": 77,
+                "kind": 76,
                 "modifiers": [],
                 "value": 0.5,
                 "radix": 10,
@@ -365,19 +377,19 @@
       }
     },
     {
-      "kind": 40,
+      "kind": 39,
       "attributes": [],
       "expression": {
-        "kind": 18,
+        "kind": 17,
         "modifiers": [],
         "scope": {
           "kind": 2
         },
         "callee": {
-          "kind": 69,
+          "kind": 68,
           "modifiers": [],
           "object": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "console",
             "start": {
@@ -390,7 +402,7 @@
             }
           },
           "property": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "log",
             "start": {
@@ -413,10 +425,10 @@
         },
         "arguments": [
           {
-            "kind": 69,
+            "kind": 68,
             "modifiers": [],
             "object": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "point",
               "start": {
@@ -429,7 +441,7 @@
               }
             },
             "property": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "x",
               "start": {
@@ -451,10 +463,10 @@
             }
           },
           {
-            "kind": 69,
+            "kind": 68,
             "modifiers": [],
             "object": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "point",
               "start": {
@@ -467,7 +479,7 @@
               }
             },
             "property": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "y",
               "start": {
@@ -489,10 +501,10 @@
             }
           },
           {
-            "kind": 69,
+            "kind": 68,
             "modifiers": [],
             "object": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "point",
               "start": {
@@ -505,7 +517,7 @@
               }
             },
             "property": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "z",
               "start": {

@@ -1,13 +1,13 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 20,
+      "kind": 19,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 48,
+        "kind": 47,
         "modifiers": [],
         "name": "Foobar",
         "start": {
@@ -30,11 +30,11 @@
       }
     },
     {
-      "kind": 20,
+      "kind": 19,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 48,
+        "kind": 47,
         "modifiers": [],
         "name": "Quxbaz",
         "start": {
@@ -48,11 +48,11 @@
       },
       "members": [
         {
-          "kind": 42,
+          "kind": 41,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 34,
+              "kind": 35,
               "start": {
                 "line": 6,
                 "column": 2
@@ -64,7 +64,7 @@
             }
           ],
           "name": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "_options",
             "start": {
@@ -85,12 +85,12 @@
             "column": 4
           },
           "value": {
-            "kind": 79,
+            "kind": 78,
             "modifiers": [],
             "attributes": [],
             "properties": [
               {
-                "kind": 80,
+                "kind": 79,
                 "attributes": [],
                 "modifiers": [],
                 "start": {
@@ -102,7 +102,7 @@
                   "column": 17
                 },
                 "name": {
-                  "kind": 48,
+                  "kind": 47,
                   "modifiers": [],
                   "name": "class",
                   "start": {
@@ -115,7 +115,7 @@
                   }
                 },
                 "value": {
-                  "kind": 48,
+                  "kind": 47,
                   "modifiers": [],
                   "name": "Foobar",
                   "start": {
@@ -140,11 +140,11 @@
           }
         },
         {
-          "kind": 70,
+          "kind": 69,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "new",
             "start": {
@@ -167,25 +167,25 @@
           },
           "throws": [],
           "body": {
-            "kind": 15,
+            "kind": 14,
             "attributes": [],
             "statements": [
               {
-                "kind": 130,
+                "kind": 132,
                 "attributes": [],
                 "modifiers": [],
                 "declarations": [
                   {
-                    "kind": 128,
+                    "kind": 130,
                     "attributes": [],
                     "modifiers": [],
                     "variables": [
                       {
-                        "kind": 129,
+                        "kind": 131,
                         "attributes": [],
                         "modifiers": [],
                         "name": {
-                          "kind": 48,
+                          "kind": 47,
                           "modifiers": [],
                           "name": "foo",
                           "start": {
@@ -216,22 +216,22 @@
                       "column": 33
                     },
                     "value": {
-                      "kind": 18,
+                      "kind": 17,
                       "modifiers": [],
                       "scope": {
                         "kind": 2
                       },
                       "callee": {
-                        "kind": 69,
+                        "kind": 68,
                         "modifiers": [],
                         "object": {
-                          "kind": 69,
+                          "kind": 68,
                           "modifiers": [],
                           "object": {
-                            "kind": 111,
+                            "kind": 112,
                             "modifiers": [],
                             "name": {
-                              "kind": 48,
+                              "kind": 47,
                               "modifiers": [],
                               "name": "options",
                               "start": {
@@ -253,7 +253,7 @@
                             }
                           },
                           "property": {
-                            "kind": 48,
+                            "kind": 47,
                             "modifiers": [],
                             "name": "class",
                             "start": {
@@ -275,7 +275,7 @@
                           }
                         },
                         "property": {
-                          "kind": 48,
+                          "kind": 47,
                           "modifiers": [],
                           "name": "new",
                           "start": {

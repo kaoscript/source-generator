@@ -1,15 +1,15 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 40,
+      "kind": 39,
       "attributes": [],
       "expression": {
-        "kind": 69,
+        "kind": 68,
         "modifiers": [],
         "object": {
-          "kind": 48,
+          "kind": 47,
           "modifiers": [],
           "name": "foo",
           "start": {
@@ -22,7 +22,7 @@
           }
         },
         "property": {
-          "kind": 48,
+          "kind": 47,
           "modifiers": [],
           "name": "bar",
           "start": {
@@ -53,16 +53,16 @@
       }
     },
     {
-      "kind": 40,
+      "kind": 39,
       "attributes": [],
       "expression": {
-        "kind": 18,
+        "kind": 17,
         "modifiers": [],
         "scope": {
           "kind": 2
         },
         "callee": {
-          "kind": 48,
+          "kind": 47,
           "modifiers": [],
           "name": "foo",
           "start": {
@@ -76,7 +76,7 @@
         },
         "arguments": [
           {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "bar",
             "start": {
@@ -108,13 +108,13 @@
       }
     },
     {
-      "kind": 40,
+      "kind": 39,
       "attributes": [],
       "expression": {
-        "kind": 69,
+        "kind": 68,
         "modifiers": [
           {
-            "kind": 9,
+            "kind": 10,
             "start": {
               "line": 5,
               "column": 4
@@ -126,7 +126,7 @@
           }
         ],
         "object": {
-          "kind": 48,
+          "kind": 47,
           "modifiers": [],
           "name": "foo",
           "start": {
@@ -139,7 +139,7 @@
           }
         },
         "property": {
-          "kind": 48,
+          "kind": 47,
           "modifiers": [],
           "name": "bar",
           "start": {
@@ -170,13 +170,13 @@
       }
     },
     {
-      "kind": 40,
+      "kind": 39,
       "attributes": [],
       "expression": {
-        "kind": 69,
+        "kind": 68,
         "modifiers": [
           {
-            "kind": 29,
+            "kind": 30,
             "start": {
               "line": 7,
               "column": 4
@@ -188,7 +188,7 @@
           }
         ],
         "object": {
-          "kind": 48,
+          "kind": 47,
           "modifiers": [],
           "name": "foo",
           "start": {
@@ -201,7 +201,7 @@
           }
         },
         "property": {
-          "kind": 48,
+          "kind": 47,
           "modifiers": [],
           "name": "bar",
           "start": {
@@ -232,13 +232,13 @@
       }
     },
     {
-      "kind": 40,
+      "kind": 39,
       "attributes": [],
       "expression": {
-        "kind": 18,
+        "kind": 17,
         "modifiers": [
           {
-            "kind": 29,
+            "kind": 30,
             "start": {
               "line": 9,
               "column": 4
@@ -253,7 +253,7 @@
           "kind": 2
         },
         "callee": {
-          "kind": 48,
+          "kind": 47,
           "modifiers": [],
           "name": "foo",
           "start": {
@@ -267,7 +267,7 @@
         },
         "arguments": [
           {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "bar",
             "start": {
@@ -299,13 +299,13 @@
       }
     },
     {
-      "kind": 40,
+      "kind": 39,
       "attributes": [],
       "expression": {
-        "kind": 69,
+        "kind": 68,
         "modifiers": [
           {
-            "kind": 29,
+            "kind": 30,
             "start": {
               "line": 11,
               "column": 4
@@ -316,7 +316,7 @@
             }
           },
           {
-            "kind": 9,
+            "kind": 10,
             "start": {
               "line": 11,
               "column": 4
@@ -328,7 +328,7 @@
           }
         ],
         "object": {
-          "kind": 48,
+          "kind": 47,
           "modifiers": [],
           "name": "foo",
           "start": {
@@ -341,7 +341,7 @@
           }
         },
         "property": {
-          "kind": 48,
+          "kind": 47,
           "modifiers": [],
           "name": "bar",
           "start": {
@@ -372,16 +372,16 @@
       }
     },
     {
-      "kind": 40,
+      "kind": 39,
       "attributes": [],
       "expression": {
-        "kind": 28,
+        "kind": 27,
         "modifiers": [],
         "scope": {
           "kind": 2
         },
         "callee": {
-          "kind": 48,
+          "kind": 47,
           "modifiers": [],
           "name": "foo",
           "start": {
@@ -395,7 +395,7 @@
         },
         "arguments": [
           {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "bar",
             "start": {
@@ -427,15 +427,15 @@
       }
     },
     {
-      "kind": 40,
+      "kind": 39,
       "attributes": [],
       "expression": {
-        "kind": 28,
+        "kind": 27,
         "modifiers": [],
         "scope": {
           "kind": 1,
           "value": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "bar",
             "start": {
@@ -449,7 +449,7 @@
           }
         },
         "callee": {
-          "kind": 48,
+          "kind": 47,
           "modifiers": [],
           "name": "foo",
           "start": {
@@ -481,15 +481,15 @@
       }
     },
     {
-      "kind": 40,
+      "kind": 39,
       "attributes": [],
       "expression": {
-        "kind": 18,
+        "kind": 17,
         "modifiers": [],
         "scope": {
           "kind": 1,
           "value": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "bar",
             "start": {
@@ -503,7 +503,7 @@
           }
         },
         "callee": {
-          "kind": 48,
+          "kind": 47,
           "modifiers": [],
           "name": "foo",
           "start": {
@@ -535,10 +535,10 @@
       }
     },
     {
-      "kind": 40,
+      "kind": 39,
       "attributes": [],
       "expression": {
-        "kind": 12,
+        "kind": 11,
         "modifiers": [],
         "operator": {
           "kind": 32,
@@ -553,7 +553,7 @@
           }
         },
         "left": {
-          "kind": 48,
+          "kind": 47,
           "modifiers": [],
           "name": "foo",
           "start": {
@@ -566,10 +566,10 @@
           }
         },
         "right": {
-          "kind": 121,
+          "kind": 123,
           "modifiers": [],
           "typeName": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "bar",
             "start": {

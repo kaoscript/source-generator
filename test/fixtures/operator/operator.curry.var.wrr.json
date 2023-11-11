@@ -1,23 +1,23 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 130,
+      "kind": 132,
       "attributes": [],
       "modifiers": [],
       "declarations": [
         {
-          "kind": 128,
+          "kind": 130,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 129,
+              "kind": 131,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 48,
+                "kind": 47,
                 "modifiers": [],
                 "name": "writeAppLog",
                 "start": {
@@ -48,13 +48,13 @@
             "column": 43
           },
           "value": {
-            "kind": 28,
+            "kind": 27,
             "modifiers": [],
             "scope": {
               "kind": 2
             },
             "callee": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "writeLog",
               "start": {
@@ -68,7 +68,7 @@
             },
             "arguments": [
               {
-                "kind": 59,
+                "kind": 58,
                 "modifiers": [],
                 "value": "[app]",
                 "start": {
@@ -81,10 +81,10 @@
                 }
               },
               {
-                "kind": 85,
+                "kind": 84,
                 "modifiers": [
                   {
-                    "kind": 38,
+                    "kind": 39,
                     "start": {
                       "line": 1,
                       "column": 39

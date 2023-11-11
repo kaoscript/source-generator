@@ -14,8 +14,6 @@ include {
 	'npm:@kaoscript/source-writer'
 }
 
-extern console
-
 export namespace Generator {
 	var AssignmentOperatorSymbol = {
 		`\(AssignmentOperatorKind.Addition)`			: ' += '
@@ -81,18 +79,12 @@ export namespace Generator {
 	var UnaryPrefixOperatorSymbol = {
 		`\(UnaryOperatorKind.BitwiseNegation)`		: '+^'
 		`\(UnaryOperatorKind.Constant)`				: 'const '
-		`\(UnaryOperatorKind.Default)`				: '**'
 		`\(UnaryOperatorKind.Existential)`			: '?'
 		`\(UnaryOperatorKind.Implicit)`				: '.'
 		`\(UnaryOperatorKind.LogicalNegation)`		: '!'
 		`\(UnaryOperatorKind.Negative)`				: '-'
 		`\(UnaryOperatorKind.NonEmpty)`				: '#'
 		`\(UnaryOperatorKind.Spread)`				: '...'
-	}
-
-	var UnaryPostfixOperatorSymbol = {
-		`\(UnaryOperatorKind.ForcedTypeCasting)`	: '!!'
-		`\(UnaryOperatorKind.NullableTypeCasting)`	: '!?'
 	}
 
 	enum KSWriterMode {
@@ -1421,6 +1413,19 @@ export namespace Generator {
 						if data.type.kind == NodeKind.FunctionExpression {
 							toExpression(data.type, ExpressionMode.Top, writer, writer => writer.expression(data.name))
 						}
+						else if data.type.kind == NodeKind.VariantType {
+							writer.code('variant ').expression(data.name).code(': ').expression(data.type.master)
+
+							if #data.type.properties {
+								var block = writer.newBlock()
+
+								for var property in data.type.properties {
+									block.newLine().expression(property).done()
+								}
+
+								block.done()
+							}
+						}
 						else {
 							writer.expression(data.name).code(': ').expression(data.type)
 						}
@@ -1491,6 +1496,29 @@ export namespace Generator {
 			} # }}}
 			NodeKind.ShorthandProperty { # {{{
 				writer.expression(data.name)
+			} # }}}
+			NodeKind.SpreadExpression { # {{{
+				writer
+					.code('...')
+					.expression(data.operand)
+					.code(' ')
+
+				var o = writer.newObject()
+
+				for var member in data.members {
+					var line = o.newLine()
+
+					if ?member.external {
+						line.code(`\(member.external.name) % \(member.internal.name)`)
+					}
+					else {
+						line.code(member.internal.name)
+					}
+
+					line.done()
+				}
+
+				o.done()
 			} # }}}
 			NodeKind.TaggedTemplateExpression { # {{{
 				writer.expression(data.tag).expression(data.template)
@@ -1568,6 +1596,9 @@ export namespace Generator {
 					writer.code(' ~~ ').expression(data.defaultValue)
 				}
 			} # }}}
+			NodeKind.TypeParameter { # {{{
+				writer.expression(data.name)
+			} # }}}
 			NodeKind.TypeReference { # {{{
 				if ?data.properties {
 					var o = writer.newObject()
@@ -1607,17 +1638,21 @@ export namespace Generator {
 					writer.expression(data.typeName)
 
 					if ?data.typeParameters {
-						writer.code('<')
+						toTypeParameters(data.typeParameters, writer)
+					}
 
-						for var parameter, index in data.typeParameters {
+					if ?data.typeSubtypes {
+						writer.code('(')
+
+						for var subtype, index in data.typeSubtypes {
 							if index != 0 {
 								writer.code(', ')
 							}
 
-							writer.expression(parameter)
+							writer.expression(subtype)
 						}
 
-						writer.code('>')
+						writer.code(')')
 					}
 
 					if data.modifiers.some((modifier, ...) => modifier.kind == ModifierKind.Nullable) {
@@ -1626,15 +1661,30 @@ export namespace Generator {
 				}
 			} # }}}
 			NodeKind.UnaryExpression { # {{{
+				var mut nullable = false
+
+				for var modifier in data.modifiers {
+					match modifier.kind {
+						ModifierKind.Nullable {
+							nullable = true
+						}
+					}
+				}
+
 				if var operator ?= UnaryPrefixOperatorSymbol[data.operator.kind] {
 					writer
 						.code(operator)
+						.code('?') if nullable
 						.wrap(data.argument)
 				}
 				else {
-					writer
-						.wrap(data.argument)
-						.code(UnaryPostfixOperatorSymbol[data.operator.kind])
+					writer.wrap(data.argument)
+
+					match data.operator.kind {
+						UnaryOperatorKind.TypeFitting {
+							writer.code(nullable ? '!?' : '!!')
+						}
+					}
 				}
 			} # }}}
 			NodeKind.UnaryTypeExpression { # {{{
@@ -1736,8 +1786,19 @@ export namespace Generator {
 					writer.code(': ').expression(data.type)
 				}
 			} # }}}
+			NodeKind.VariantField { # {{{
+				for var name, index in data.names {
+					writer
+						..code(', ') if index > 0
+						..expression(name)
+				}
+
+				if ?data.type {
+					writer.code(' ').expression(data.type)
+				}
+			} # }}}
 			else { # {{{
-				console.error(data)
+				echo(data)
 				throw Error.new('Not Implemented')
 			} # }}}
 		}
@@ -1749,6 +1810,9 @@ export namespace Generator {
 				match modifier.kind {
 					ModifierKind.Abstract {
 						writer.code('abstract ')
+					}
+					ModifierKind.Assist {
+						writer.code('assist ')
 					}
 					ModifierKind.Async {
 						writer.code('async ')
@@ -1785,6 +1849,10 @@ export namespace Generator {
 
 		if ?data.name {
 			writer.expression(data.name)
+		}
+
+		if ?data.typeParameters {
+			toTypeParameters(data.typeParameters, writer)
 		}
 
 		if ?data.parameters {
@@ -1874,7 +1942,7 @@ export namespace Generator {
 
 	func toImport(data, writer) {
 		match data.kind {
-			NodeKind.Argument { # {{{
+			NodeKind.NamedArgument, NodeKind.PositionalArgument { # {{{
 				for var modifier in data.modifiers {
 					if modifier.kind == ModifierKind.Required {
 						writer.code('require ')
@@ -2346,6 +2414,20 @@ export namespace Generator {
 		}
 	} # }}}
 
+	func toTypeParameters(data, writer) { # {{{
+		writer.code('<')
+
+		for var parameter, index in data {
+			if index != 0 {
+				writer.code(', ')
+			}
+
+			writer.expression(parameter)
+		}
+
+		writer.code('>')
+	} # }}}
+
 	func toStatement(mut data, writer) {
 		match data.kind {
 			NodeKind.AccessorDeclaration { # {{{
@@ -2694,14 +2776,6 @@ export namespace Generator {
 				}
 
 				line.expression(data.name)
-
-				for var modifier in data.modifiers {
-					if modifier.kind == ModifierKind.Default {
-						line.code('**')
-
-						break
-					}
-				}
 
 				line.code('?') if nullable
 
@@ -3386,12 +3460,27 @@ export namespace Generator {
 			NodeKind.StructField { # {{{
 				var line = writer.newLine()
 
-				line.expression(data.name)
+				if data.type?.kind == NodeKind.VariantType {
+					line.code('variant ').expression(data.name).code(': ').expression(data.type.master)
 
-				toType(data, line)
+					if #data.type.properties {
+						var block = line.newBlock()
 
-				if ?data.defaultValue {
-					line.code(' = ').expression(data.defaultValue)
+						for var property in data.type.properties {
+							block.newLine().expression(property).done()
+						}
+
+						block.done()
+					}
+				}
+				else {
+					line.expression(data.name)
+
+					toType(data, line)
+
+					if ?data.defaultValue {
+						line.code(' = ').expression(data.defaultValue)
+					}
 				}
 
 				line.done()
@@ -3478,10 +3567,16 @@ export namespace Generator {
 				}
 			} # }}}
 			NodeKind.TypeAliasDeclaration { # {{{
-				writer
+				var line = writer
 					.newLine()
 					.code('type ')
 					.expression(data.name)
+
+				if ?data.typeParameters {
+					toTypeParameters(data.typeParameters, line)
+				}
+
+				line
 					.code(' = ')
 					.expression(data.type)
 					.done()
@@ -3613,6 +3708,23 @@ export namespace Generator {
 
 					for var declaration in data.declarations {
 						block.newLine().expression(declaration).done()
+					}
+
+					block.done()
+				}
+
+				line.done()
+			} # }}}
+			NodeKind.VariantDeclaration { # {{{
+				var line = writer.newLine()
+
+				line.code('variant ').expression(data.name)
+
+				if data.fields.length != 0 {
+					var block = line.newBlock()
+
+					for var field in data.fields {
+						block.newLine().expression(field).done()
 					}
 
 					block.done()

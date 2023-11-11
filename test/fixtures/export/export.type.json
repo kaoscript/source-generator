@@ -1,18 +1,18 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 36,
+      "kind": 35,
       "attributes": [],
       "declarations": [
         {
-          "kind": 29,
+          "kind": 28,
           "declaration": {
-            "kind": 119,
+            "kind": 120,
             "attributes": [],
             "name": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "T",
               "start": {
@@ -25,13 +25,13 @@
               }
             },
             "type": {
-              "kind": 127,
+              "kind": 129,
               "types": [
                 {
-                  "kind": 121,
+                  "kind": 123,
                   "modifiers": [],
                   "typeName": {
-                    "kind": 48,
+                    "kind": 47,
                     "modifiers": [],
                     "name": "number",
                     "start": {
@@ -53,10 +53,10 @@
                   }
                 },
                 {
-                  "kind": 121,
+                  "kind": 123,
                   "modifiers": [],
                   "typeName": {
-                    "kind": 48,
+                    "kind": 47,
                     "modifiers": [],
                     "name": "string",
                     "start": {

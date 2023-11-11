@@ -1,13 +1,13 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 20,
+      "kind": 19,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 48,
+        "kind": 47,
         "modifiers": [],
         "name": "Style",
         "start": {
@@ -21,11 +21,11 @@
       },
       "members": [
         {
-          "kind": 42,
+          "kind": 41,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 34,
+              "kind": 35,
               "start": {
                 "line": 2,
                 "column": 2
@@ -36,7 +36,7 @@
               }
             },
             {
-              "kind": 43,
+              "kind": 44,
               "start": {
                 "line": 3,
                 "column": 3
@@ -48,7 +48,7 @@
             }
           ],
           "name": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "fontWeight",
             "start": {
@@ -69,10 +69,10 @@
             "column": 36
           },
           "type": {
-            "kind": 121,
+            "kind": 123,
             "modifiers": [],
             "typeName": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "FontWeight",
               "start": {
@@ -94,10 +94,10 @@
             }
           },
           "value": {
-            "kind": 123,
+            "kind": 125,
             "modifiers": [],
             "operator": {
-              "kind": 6,
+              "kind": 4,
               "start": {
                 "line": 3,
                 "column": 29
@@ -108,7 +108,7 @@
               }
             },
             "argument": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "Normal",
               "start": {

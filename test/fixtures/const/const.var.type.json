@@ -1,23 +1,23 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 130,
+      "kind": 132,
       "attributes": [],
       "modifiers": [],
       "declarations": [
         {
-          "kind": 128,
+          "kind": 130,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 129,
+              "kind": 131,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 48,
+                "kind": 47,
                 "modifiers": [],
                 "name": "x",
                 "start": {
@@ -38,7 +38,7 @@
                 "column": 22
               },
               "type": {
-                "kind": 124,
+                "kind": 126,
                 "modifiers": [],
                 "operator": {
                   "kind": 1,
@@ -52,7 +52,7 @@
                   }
                 },
                 "argument": {
-                  "kind": 7,
+                  "kind": 6,
                   "modifiers": [],
                   "properties": [],
                   "start": {
@@ -64,7 +64,7 @@
                     "column": 22
                   },
                   "rest": {
-                    "kind": 90,
+                    "kind": 89,
                     "modifiers": [],
                     "start": {
                       "line": 1,
@@ -75,10 +75,10 @@
                       "column": 20
                     },
                     "type": {
-                      "kind": 121,
+                      "kind": 123,
                       "modifiers": [],
                       "typeName": {
-                        "kind": 48,
+                        "kind": 47,
                         "modifiers": [],
                         "name": "number",
                         "start": {
@@ -121,11 +121,11 @@
             "column": 34
           },
           "value": {
-            "kind": 5,
+            "kind": 4,
             "modifiers": [],
             "values": [
               {
-                "kind": 77,
+                "kind": 76,
                 "modifiers": [],
                 "value": 1,
                 "radix": 10,
@@ -139,7 +139,7 @@
                 }
               },
               {
-                "kind": 77,
+                "kind": 76,
                 "modifiers": [],
                 "value": 2,
                 "radix": 10,
@@ -153,7 +153,7 @@
                 }
               },
               {
-                "kind": 77,
+                "kind": 76,
                 "modifiers": [],
                 "value": 3,
                 "radix": 10,

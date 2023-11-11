@@ -1,16 +1,16 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 43,
+      "kind": 42,
       "attributes": [],
       "iterations": [
         {
           "kind": 0,
           "modifiers": [
             {
-              "kind": 11,
+              "kind": 12,
               "start": {
                 "line": 1,
                 "column": 5
@@ -22,7 +22,7 @@
             }
           ],
           "expression": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "values",
             "start": {
@@ -35,7 +35,7 @@
             }
           },
           "value": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "value",
             "start": {
@@ -48,10 +48,10 @@
             }
           },
           "type": {
-            "kind": 121,
+            "kind": 123,
             "modifiers": [],
             "typeName": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "String",
               "start": {
@@ -83,7 +83,7 @@
         }
       ],
       "body": {
-        "kind": 15,
+        "kind": 14,
         "attributes": [],
         "statements": [],
         "start": {

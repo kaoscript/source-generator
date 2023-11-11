@@ -1,12 +1,12 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 44,
+      "kind": 43,
       "attributes": [],
       "name": {
-        "kind": 48,
+        "kind": 47,
         "modifiers": [],
         "name": "pair",
         "start": {
@@ -28,11 +28,11 @@
       },
       "parameters": [
         {
-          "kind": 83,
+          "kind": 82,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 29,
+              "kind": 30,
               "start": {
                 "line": 1,
                 "column": 12
@@ -44,7 +44,7 @@
             }
           ],
           "external": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "x",
             "start": {
@@ -57,7 +57,7 @@
             }
           },
           "internal": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "x",
             "start": {
@@ -79,11 +79,11 @@
           }
         },
         {
-          "kind": 83,
+          "kind": 82,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 29,
+              "kind": 30,
               "start": {
                 "line": 1,
                 "column": 16
@@ -95,7 +95,7 @@
             }
           ],
           "external": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "y",
             "start": {
@@ -108,7 +108,7 @@
             }
           },
           "internal": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "y",
             "start": {
@@ -133,19 +133,19 @@
       "modifiers": [],
       "throws": [],
       "body": {
-        "kind": 15,
+        "kind": 14,
         "attributes": [],
         "statements": [
           {
-            "kind": 100,
+            "kind": 99,
             "attributes": [],
             "value": {
-              "kind": 79,
+              "kind": 78,
               "modifiers": [],
               "attributes": [],
               "properties": [
                 {
-                  "kind": 99,
+                  "kind": 98,
                   "operator": {
                     "kind": 0,
                     "modifiers": [],
@@ -159,10 +159,10 @@
                     }
                   },
                   "condition": {
-                    "kind": 123,
+                    "kind": 125,
                     "modifiers": [],
                     "operator": {
-                      "kind": 4,
+                      "kind": 3,
                       "start": {
                         "line": 3,
                         "column": 17
@@ -173,7 +173,7 @@
                       }
                     },
                     "argument": {
-                      "kind": 48,
+                      "kind": 47,
                       "modifiers": [],
                       "name": "x",
                       "start": {
@@ -195,7 +195,7 @@
                     }
                   },
                   "expression": {
-                    "kind": 80,
+                    "kind": 79,
                     "attributes": [],
                     "modifiers": [],
                     "start": {
@@ -207,7 +207,7 @@
                       "column": 13
                     },
                     "name": {
-                      "kind": 48,
+                      "kind": 47,
                       "modifiers": [],
                       "name": "x",
                       "start": {
@@ -220,10 +220,10 @@
                       }
                     },
                     "value": {
-                      "kind": 69,
+                      "kind": 68,
                       "modifiers": [],
                       "object": {
-                        "kind": 48,
+                        "kind": 47,
                         "modifiers": [],
                         "name": "x",
                         "start": {
@@ -236,7 +236,7 @@
                         }
                       },
                       "property": {
-                        "kind": 48,
+                        "kind": 47,
                         "modifiers": [],
                         "name": "value",
                         "start": {
@@ -268,7 +268,7 @@
                   }
                 },
                 {
-                  "kind": 99,
+                  "kind": 98,
                   "operator": {
                     "kind": 0,
                     "modifiers": [],
@@ -282,10 +282,10 @@
                     }
                   },
                   "condition": {
-                    "kind": 123,
+                    "kind": 125,
                     "modifiers": [],
                     "operator": {
-                      "kind": 4,
+                      "kind": 3,
                       "start": {
                         "line": 4,
                         "column": 17
@@ -296,7 +296,7 @@
                       }
                     },
                     "argument": {
-                      "kind": 48,
+                      "kind": 47,
                       "modifiers": [],
                       "name": "y",
                       "start": {
@@ -318,7 +318,7 @@
                     }
                   },
                   "expression": {
-                    "kind": 80,
+                    "kind": 79,
                     "attributes": [],
                     "modifiers": [],
                     "start": {
@@ -330,7 +330,7 @@
                       "column": 13
                     },
                     "name": {
-                      "kind": 48,
+                      "kind": 47,
                       "modifiers": [],
                       "name": "y",
                       "start": {
@@ -343,10 +343,10 @@
                       }
                     },
                     "value": {
-                      "kind": 69,
+                      "kind": 68,
                       "modifiers": [],
                       "object": {
-                        "kind": 48,
+                        "kind": 47,
                         "modifiers": [],
                         "name": "y",
                         "start": {
@@ -359,7 +359,7 @@
                         }
                       },
                       "property": {
-                        "kind": 48,
+                        "kind": 47,
                         "modifiers": [],
                         "name": "value",
                         "start": {

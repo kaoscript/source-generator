@@ -1,13 +1,13 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 34,
+      "kind": 33,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 48,
+        "kind": 47,
         "modifiers": [],
         "name": "FontWeight",
         "start": {
@@ -21,11 +21,11 @@
       },
       "members": [
         {
-          "kind": 42,
+          "kind": 41,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "Bold",
             "start": {
@@ -47,11 +47,11 @@
           }
         },
         {
-          "kind": 42,
+          "kind": 41,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "Normal",
             "start": {
@@ -83,21 +83,21 @@
       }
     },
     {
-      "kind": 130,
+      "kind": 132,
       "attributes": [],
       "modifiers": [],
       "declarations": [
         {
-          "kind": 128,
+          "kind": 130,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 129,
+              "kind": 131,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 48,
+                "kind": 47,
                 "modifiers": [],
                 "name": "fontWeight",
                 "start": {
@@ -118,10 +118,10 @@
                 "column": 27
               },
               "type": {
-                "kind": 121,
+                "kind": 123,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 48,
+                  "kind": 47,
                   "modifiers": [],
                   "name": "FontWeight",
                   "start": {
@@ -153,10 +153,10 @@
             "column": 37
           },
           "value": {
-            "kind": 123,
+            "kind": 125,
             "modifiers": [],
             "operator": {
-              "kind": 6,
+              "kind": 4,
               "start": {
                 "line": 6,
                 "column": 30
@@ -167,7 +167,7 @@
               }
             },
             "argument": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "Normal",
               "start": {
@@ -200,10 +200,10 @@
       }
     },
     {
-      "kind": 40,
+      "kind": 39,
       "attributes": [],
       "expression": {
-        "kind": 12,
+        "kind": 11,
         "modifiers": [],
         "operator": {
           "kind": 2,
@@ -218,7 +218,7 @@
           }
         },
         "left": {
-          "kind": 48,
+          "kind": 47,
           "modifiers": [],
           "name": "fontWeight",
           "start": {
@@ -231,10 +231,10 @@
           }
         },
         "right": {
-          "kind": 123,
+          "kind": 125,
           "modifiers": [],
           "operator": {
-            "kind": 6,
+            "kind": 4,
             "start": {
               "line": 8,
               "column": 14
@@ -245,7 +245,7 @@
             }
           },
           "argument": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "Bold",
             "start": {

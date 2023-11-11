@@ -1,12 +1,12 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 44,
+      "kind": 43,
       "attributes": [],
       "name": {
-        "kind": 48,
+        "kind": 47,
         "modifiers": [],
         "name": "f1",
         "start": {
@@ -30,14 +30,14 @@
       "modifiers": [],
       "throws": [],
       "body": {
-        "kind": 15,
+        "kind": 14,
         "attributes": [],
         "statements": [
           {
-            "kind": 100,
+            "kind": 99,
             "attributes": [],
             "value": {
-              "kind": 77,
+              "kind": 76,
               "modifiers": [],
               "value": 42,
               "radix": 10,
@@ -71,11 +71,11 @@
       }
     },
     {
-      "kind": 130,
+      "kind": 132,
       "attributes": [],
       "modifiers": [
         {
-          "kind": 15,
+          "kind": 16,
           "start": {
             "line": 5,
             "column": 5
@@ -88,16 +88,16 @@
       ],
       "declarations": [
         {
-          "kind": 128,
+          "kind": 130,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 129,
+              "kind": 131,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 48,
+                "kind": 47,
                 "modifiers": [],
                 "name": "f2",
                 "start": {
@@ -128,7 +128,7 @@
             "column": 2
           },
           "value": {
-            "kind": 45,
+            "kind": 44,
             "parameters": [],
             "start": {
               "line": 5,
@@ -141,14 +141,14 @@
             "modifiers": [],
             "throws": [],
             "body": {
-              "kind": 15,
+              "kind": 14,
               "attributes": [],
               "statements": [
                 {
-                  "kind": 100,
+                  "kind": 99,
                   "attributes": [],
                   "value": {
-                    "kind": 77,
+                    "kind": 76,
                     "modifiers": [],
                     "value": 42,
                     "radix": 10,
@@ -193,11 +193,11 @@
       }
     },
     {
-      "kind": 130,
+      "kind": 132,
       "attributes": [],
       "modifiers": [
         {
-          "kind": 15,
+          "kind": 16,
           "start": {
             "line": 9,
             "column": 5
@@ -210,16 +210,16 @@
       ],
       "declarations": [
         {
-          "kind": 128,
+          "kind": 130,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 129,
+              "kind": 131,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 48,
+                "kind": 47,
                 "modifiers": [],
                 "name": "f3",
                 "start": {
@@ -250,18 +250,18 @@
             "column": 2
           },
           "value": {
-            "kind": 58,
+            "kind": 57,
             "modifiers": [],
             "parameters": [],
             "body": {
-              "kind": 15,
+              "kind": 14,
               "attributes": [],
               "statements": [
                 {
-                  "kind": 100,
+                  "kind": 99,
                   "attributes": [],
                   "value": {
-                    "kind": 77,
+                    "kind": 76,
                     "modifiers": [],
                     "value": 42,
                     "radix": 10,
@@ -315,11 +315,11 @@
       }
     },
     {
-      "kind": 130,
+      "kind": 132,
       "attributes": [],
       "modifiers": [
         {
-          "kind": 15,
+          "kind": 16,
           "start": {
             "line": 13,
             "column": 5
@@ -332,16 +332,16 @@
       ],
       "declarations": [
         {
-          "kind": 128,
+          "kind": 130,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 129,
+              "kind": 131,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 48,
+                "kind": 47,
                 "modifiers": [],
                 "name": "f4",
                 "start": {
@@ -372,11 +372,11 @@
             "column": 22
           },
           "value": {
-            "kind": 58,
+            "kind": 57,
             "modifiers": [],
             "parameters": [],
             "body": {
-              "kind": 77,
+              "kind": 76,
               "modifiers": [],
               "value": 42,
               "radix": 10,
@@ -411,11 +411,11 @@
       }
     },
     {
-      "kind": 130,
+      "kind": 132,
       "attributes": [],
       "modifiers": [
         {
-          "kind": 15,
+          "kind": 16,
           "start": {
             "line": 15,
             "column": 5
@@ -428,16 +428,16 @@
       ],
       "declarations": [
         {
-          "kind": 128,
+          "kind": 130,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 129,
+              "kind": 131,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 48,
+                "kind": 47,
                 "modifiers": [],
                 "name": "f5",
                 "start": {
@@ -468,7 +468,7 @@
             "column": 26
           },
           "value": {
-            "kind": 45,
+            "kind": 44,
             "parameters": [],
             "start": {
               "line": 15,
@@ -481,7 +481,7 @@
             "modifiers": [],
             "throws": [],
             "body": {
-              "kind": 77,
+              "kind": 76,
               "modifiers": [],
               "value": 42,
               "radix": 10,

@@ -1,13 +1,13 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 130,
+      "kind": 132,
       "attributes": [],
       "modifiers": [
         {
-          "kind": 15,
+          "kind": 16,
           "start": {
             "line": 1,
             "column": 5
@@ -20,16 +20,16 @@
       ],
       "declarations": [
         {
-          "kind": 128,
+          "kind": 130,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 129,
+              "kind": 131,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 48,
+                "kind": 47,
                 "modifiers": [],
                 "name": "a",
                 "start": {
@@ -60,7 +60,7 @@
             "column": 20
           },
           "value": {
-            "kind": 59,
+            "kind": 58,
             "modifiers": [],
             "value": "HELLO",
             "start": {
@@ -84,11 +84,11 @@
       }
     },
     {
-      "kind": 130,
+      "kind": 132,
       "attributes": [],
       "modifiers": [
         {
-          "kind": 15,
+          "kind": 16,
           "start": {
             "line": 2,
             "column": 5
@@ -101,16 +101,16 @@
       ],
       "declarations": [
         {
-          "kind": 128,
+          "kind": 130,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 129,
+              "kind": 131,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 48,
+                "kind": 47,
                 "modifiers": [],
                 "name": "c",
                 "start": {
@@ -141,16 +141,16 @@
             "column": 34
           },
           "value": {
-            "kind": 18,
+            "kind": 17,
             "modifiers": [],
             "scope": {
               "kind": 2
             },
             "callee": {
-              "kind": 69,
+              "kind": 68,
               "modifiers": [],
               "object": {
-                "kind": 12,
+                "kind": 11,
                 "modifiers": [],
                 "operator": {
                   "kind": 2,
@@ -173,7 +173,7 @@
                   "column": 20
                 },
                 "left": {
-                  "kind": 48,
+                  "kind": 47,
                   "modifiers": [],
                   "name": "b",
                   "start": {
@@ -186,7 +186,7 @@
                   }
                 },
                 "right": {
-                  "kind": 48,
+                  "kind": 47,
                   "modifiers": [],
                   "name": "a",
                   "start": {
@@ -200,7 +200,7 @@
                 }
               },
               "property": {
-                "kind": 48,
+                "kind": 47,
                 "modifiers": [],
                 "name": "toLowerCase",
                 "start": {

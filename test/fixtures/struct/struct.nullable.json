@@ -1,13 +1,13 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 106,
+      "kind": 107,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 48,
+        "kind": 47,
         "modifiers": [],
         "name": "Point",
         "start": {
@@ -21,11 +21,11 @@
       },
       "fields": [
         {
-          "kind": 107,
+          "kind": 108,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 29,
+              "kind": 30,
               "start": {
                 "line": 2,
                 "column": 3
@@ -37,7 +37,7 @@
             }
           ],
           "name": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "x",
             "start": {
@@ -59,11 +59,11 @@
           }
         },
         {
-          "kind": 107,
+          "kind": 108,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 29,
+              "kind": 30,
               "start": {
                 "line": 3,
                 "column": 3
@@ -75,7 +75,7 @@
             }
           ],
           "name": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "y",
             "start": {
@@ -107,11 +107,11 @@
       }
     },
     {
-      "kind": 106,
+      "kind": 107,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 48,
+        "kind": 47,
         "modifiers": [],
         "name": "Pair2",
         "start": {
@@ -125,11 +125,11 @@
       },
       "fields": [
         {
-          "kind": 107,
+          "kind": 108,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 29,
+              "kind": 30,
               "start": {
                 "line": 7,
                 "column": 3
@@ -141,7 +141,7 @@
             }
           ],
           "name": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "x",
             "start": {
@@ -162,7 +162,7 @@
             "column": 8
           },
           "defaultValue": {
-            "kind": 77,
+            "kind": 76,
             "modifiers": [],
             "value": 1,
             "radix": 10,
@@ -177,11 +177,11 @@
           }
         },
         {
-          "kind": 107,
+          "kind": 108,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 29,
+              "kind": 30,
               "start": {
                 "line": 8,
                 "column": 3
@@ -193,7 +193,7 @@
             }
           ],
           "name": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "y",
             "start": {
@@ -214,7 +214,7 @@
             "column": 8
           },
           "defaultValue": {
-            "kind": 77,
+            "kind": 76,
             "modifiers": [],
             "value": 2,
             "radix": 10,

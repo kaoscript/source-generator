@@ -1,13 +1,13 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 130,
+      "kind": 132,
       "attributes": [],
       "modifiers": [
         {
-          "kind": 15,
+          "kind": 16,
           "start": {
             "line": 1,
             "column": 5
@@ -20,16 +20,16 @@
       ],
       "declarations": [
         {
-          "kind": 128,
+          "kind": 130,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 129,
+              "kind": 131,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 48,
+                "kind": 47,
                 "modifiers": [],
                 "name": "m",
                 "start": {
@@ -60,7 +60,7 @@
             "column": 18
           },
           "value": {
-            "kind": 59,
+            "kind": 58,
             "modifiers": [],
             "value": "qux",
             "start": {
@@ -84,11 +84,11 @@
       }
     },
     {
-      "kind": 130,
+      "kind": 132,
       "attributes": [],
       "modifiers": [
         {
-          "kind": 15,
+          "kind": 16,
           "start": {
             "line": 2,
             "column": 5
@@ -101,16 +101,16 @@
       ],
       "declarations": [
         {
-          "kind": 128,
+          "kind": 130,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 129,
+              "kind": 131,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 48,
+                "kind": 47,
                 "modifiers": [],
                 "name": "qux",
                 "start": {
@@ -141,7 +141,7 @@
             "column": 28
           },
           "value": {
-            "kind": 26,
+            "kind": 25,
             "modifiers": [],
             "start": {
               "line": 2,
@@ -152,7 +152,7 @@
               "column": 28
             },
             "condition": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "foo",
               "start": {
@@ -165,11 +165,11 @@
               }
             },
             "whenTrue": {
-              "kind": 5,
+              "kind": 4,
               "modifiers": [],
               "values": [
                 {
-                  "kind": 48,
+                  "kind": 47,
                   "modifiers": [],
                   "name": "m",
                   "start": {
@@ -192,7 +192,7 @@
               }
             },
             "whenFalse": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "m",
               "start": {

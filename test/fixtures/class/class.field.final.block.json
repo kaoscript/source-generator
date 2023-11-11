@@ -1,13 +1,13 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 20,
+      "kind": 19,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 48,
+        "kind": 47,
         "modifiers": [],
         "name": "Foobar",
         "start": {
@@ -21,11 +21,11 @@
       },
       "members": [
         {
-          "kind": 42,
+          "kind": 41,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 36,
+              "kind": 37,
               "start": {
                 "line": 2,
                 "column": 2
@@ -36,7 +36,7 @@
               }
             },
             {
-              "kind": 18,
+              "kind": 19,
               "start": {
                 "line": 3,
                 "column": 3
@@ -47,7 +47,7 @@
               }
             },
             {
-              "kind": 21,
+              "kind": 22,
               "start": {
                 "line": 3,
                 "column": 9
@@ -59,7 +59,7 @@
             }
           ],
           "name": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "ID",
             "start": {
@@ -80,10 +80,10 @@
             "column": 24
           },
           "type": {
-            "kind": 121,
+            "kind": 123,
             "modifiers": [],
             "typeName": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "String",
               "start": {
@@ -106,11 +106,11 @@
           }
         },
         {
-          "kind": 42,
+          "kind": 41,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 34,
+              "kind": 35,
               "start": {
                 "line": 5,
                 "column": 2
@@ -121,7 +121,7 @@
               }
             },
             {
-              "kind": 18,
+              "kind": 19,
               "start": {
                 "line": 6,
                 "column": 3
@@ -132,7 +132,7 @@
               }
             },
             {
-              "kind": 43,
+              "kind": 44,
               "start": {
                 "line": 6,
                 "column": 9
@@ -144,7 +144,7 @@
             }
           ],
           "name": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "x",
             "start": {
@@ -165,7 +165,7 @@
             "column": 16
           },
           "value": {
-            "kind": 77,
+            "kind": 76,
             "modifiers": [],
             "value": 42,
             "radix": 10,

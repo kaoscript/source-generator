@@ -1,13 +1,13 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 106,
+      "kind": 107,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 48,
+        "kind": 47,
         "modifiers": [],
         "name": "Unit",
         "start": {
@@ -30,11 +30,11 @@
       }
     },
     {
-      "kind": 130,
+      "kind": 132,
       "attributes": [],
       "modifiers": [
         {
-          "kind": 15,
+          "kind": 16,
           "start": {
             "line": 3,
             "column": 5
@@ -47,16 +47,16 @@
       ],
       "declarations": [
         {
-          "kind": 128,
+          "kind": 130,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 129,
+              "kind": 131,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 48,
+                "kind": 47,
                 "modifiers": [],
                 "name": "unit",
                 "start": {
@@ -87,13 +87,13 @@
             "column": 22
           },
           "value": {
-            "kind": 18,
+            "kind": 17,
             "modifiers": [],
             "scope": {
               "kind": 2
             },
             "callee": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "Unit",
               "start": {

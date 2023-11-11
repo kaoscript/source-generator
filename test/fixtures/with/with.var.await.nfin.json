@@ -1,17 +1,17 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 135,
+      "kind": 137,
       "attributes": [],
       "variables": [
         {
-          "kind": 128,
+          "kind": 130,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 11,
+              "kind": 12,
               "start": {
                 "line": 1,
                 "column": 6
@@ -24,11 +24,11 @@
           ],
           "variables": [
             {
-              "kind": 129,
+              "kind": 131,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 48,
+                "kind": 47,
                 "modifiers": [],
                 "name": "file",
                 "start": {
@@ -59,16 +59,16 @@
             "column": 29
           },
           "value": {
-            "kind": 11,
+            "kind": 10,
             "modifiers": [],
             "operation": {
-              "kind": 18,
+              "kind": 17,
               "modifiers": [],
               "scope": {
                 "kind": 2
               },
               "callee": {
-                "kind": 48,
+                "kind": 47,
                 "modifiers": [],
                 "name": "open",
                 "start": {
@@ -102,25 +102,25 @@
         }
       ],
       "body": {
-        "kind": 15,
+        "kind": 14,
         "attributes": [],
         "statements": [
           {
-            "kind": 130,
+            "kind": 132,
             "attributes": [],
             "modifiers": [],
             "declarations": [
               {
-                "kind": 128,
+                "kind": 130,
                 "attributes": [],
                 "modifiers": [],
                 "variables": [
                   {
-                    "kind": 129,
+                    "kind": 131,
                     "attributes": [],
                     "modifiers": [],
                     "name": {
-                      "kind": 48,
+                      "kind": 47,
                       "modifiers": [],
                       "name": "text",
                       "start": {
@@ -151,19 +151,19 @@
                   "column": 34
                 },
                 "value": {
-                  "kind": 11,
+                  "kind": 10,
                   "modifiers": [],
                   "operation": {
-                    "kind": 18,
+                    "kind": 17,
                     "modifiers": [],
                     "scope": {
                       "kind": 2
                     },
                     "callee": {
-                      "kind": 69,
+                      "kind": 68,
                       "modifiers": [],
                       "object": {
-                        "kind": 48,
+                        "kind": 47,
                         "modifiers": [],
                         "name": "file",
                         "start": {
@@ -176,7 +176,7 @@
                         }
                       },
                       "property": {
-                        "kind": 48,
+                        "kind": 47,
                         "modifiers": [],
                         "name": "readText",
                         "start": {

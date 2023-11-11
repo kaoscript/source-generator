@@ -1,29 +1,29 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 130,
+      "kind": 132,
       "attributes": [],
       "modifiers": [],
       "declarations": [
         {
-          "kind": 128,
+          "kind": 130,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 129,
+              "kind": 131,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 3,
+                "kind": 2,
                 "elements": [
                   {
-                    "kind": 13,
+                    "kind": 12,
                     "modifiers": [],
                     "internal": {
-                      "kind": 48,
+                      "kind": 47,
                       "modifiers": [],
                       "name": "x",
                       "start": {
@@ -45,10 +45,10 @@
                     }
                   },
                   {
-                    "kind": 13,
+                    "kind": 12,
                     "modifiers": [
                       {
-                        "kind": 38,
+                        "kind": 39,
                         "start": {
                           "line": 1,
                           "column": 9
@@ -59,7 +59,7 @@
                         }
                       },
                       {
-                        "kind": 29,
+                        "kind": 30,
                         "start": {
                           "line": 1,
                           "column": 12
@@ -108,13 +108,13 @@
             "column": 22
           },
           "value": {
-            "kind": 18,
+            "kind": 17,
             "modifiers": [],
             "scope": {
               "kind": 2
             },
             "callee": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "foo",
               "start": {

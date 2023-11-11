@@ -1,23 +1,23 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 130,
+      "kind": 132,
       "attributes": [],
       "modifiers": [],
       "declarations": [
         {
-          "kind": 128,
+          "kind": 130,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 129,
+              "kind": 131,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 48,
+                "kind": 47,
                 "modifiers": [],
                 "name": "lineBreaks",
                 "start": {
@@ -48,10 +48,10 @@
             "column": 4
           },
           "value": {
-            "kind": 59,
+            "kind": 58,
             "modifiers": [
               {
-                "kind": 23,
+                "kind": 24,
                 "start": {
                   "line": 1,
                   "column": 18

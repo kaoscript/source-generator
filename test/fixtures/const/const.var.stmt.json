@@ -1,13 +1,13 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 130,
+      "kind": 132,
       "attributes": [],
       "modifiers": [
         {
-          "kind": 10,
+          "kind": 11,
           "start": {
             "line": 1,
             "column": 1
@@ -20,16 +20,16 @@
       ],
       "declarations": [
         {
-          "kind": 128,
+          "kind": 130,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 129,
+              "kind": 131,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 48,
+                "kind": 47,
                 "modifiers": [],
                 "name": "x",
                 "start": {
@@ -60,11 +60,11 @@
             "column": 20
           },
           "value": {
-            "kind": 5,
+            "kind": 4,
             "modifiers": [],
             "values": [
               {
-                "kind": 77,
+                "kind": 76,
                 "modifiers": [],
                 "value": 1,
                 "radix": 10,
@@ -78,7 +78,7 @@
                 }
               },
               {
-                "kind": 77,
+                "kind": 76,
                 "modifiers": [],
                 "value": 2,
                 "radix": 10,
@@ -92,7 +92,7 @@
                 }
               },
               {
-                "kind": 77,
+                "kind": 76,
                 "modifiers": [],
                 "value": 3,
                 "radix": 10,

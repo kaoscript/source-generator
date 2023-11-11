@@ -1,13 +1,13 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 34,
+      "kind": 33,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 48,
+        "kind": 47,
         "modifiers": [],
         "name": "Foobar1",
         "start": {
@@ -21,11 +21,11 @@
       },
       "members": [
         {
-          "kind": 70,
+          "kind": 69,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "internal",
             "start": {
@@ -48,7 +48,7 @@
           },
           "throws": [],
           "body": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "false",
             "start": {
@@ -62,11 +62,11 @@
           }
         },
         {
-          "kind": 70,
+          "kind": 69,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "private",
             "start": {
@@ -89,7 +89,7 @@
           },
           "throws": [],
           "body": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "false",
             "start": {
@@ -103,11 +103,11 @@
           }
         },
         {
-          "kind": 70,
+          "kind": 69,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "public",
             "start": {
@@ -130,7 +130,7 @@
           },
           "throws": [],
           "body": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "false",
             "start": {
@@ -154,11 +154,11 @@
       }
     },
     {
-      "kind": 34,
+      "kind": 33,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 48,
+        "kind": 47,
         "modifiers": [],
         "name": "Foobar2",
         "start": {
@@ -172,11 +172,11 @@
       },
       "members": [
         {
-          "kind": 70,
+          "kind": 69,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 20,
+              "kind": 21,
               "start": {
                 "line": 8,
                 "column": 2
@@ -188,7 +188,7 @@
             }
           ],
           "name": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "internal",
             "start": {
@@ -211,7 +211,7 @@
           },
           "throws": [],
           "body": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "false",
             "start": {
@@ -225,11 +225,11 @@
           }
         },
         {
-          "kind": 70,
+          "kind": 69,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 34,
+              "kind": 35,
               "start": {
                 "line": 9,
                 "column": 2
@@ -241,7 +241,7 @@
             }
           ],
           "name": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "private",
             "start": {
@@ -264,7 +264,7 @@
           },
           "throws": [],
           "body": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "false",
             "start": {
@@ -278,11 +278,11 @@
           }
         },
         {
-          "kind": 70,
+          "kind": 69,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 36,
+              "kind": 37,
               "start": {
                 "line": 10,
                 "column": 2
@@ -294,7 +294,7 @@
             }
           ],
           "name": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "public",
             "start": {
@@ -317,7 +317,7 @@
           },
           "throws": [],
           "body": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "false",
             "start": {
@@ -341,11 +341,11 @@
       }
     },
     {
-      "kind": 34,
+      "kind": 33,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 48,
+        "kind": 47,
         "modifiers": [],
         "name": "Foobar3",
         "start": {
@@ -359,11 +359,11 @@
       },
       "members": [
         {
-          "kind": 70,
+          "kind": 69,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 41,
+              "kind": 42,
               "start": {
                 "line": 14,
                 "column": 2
@@ -375,7 +375,7 @@
             }
           ],
           "name": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "internal",
             "start": {
@@ -398,7 +398,7 @@
           },
           "throws": [],
           "body": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "false",
             "start": {
@@ -412,11 +412,11 @@
           }
         },
         {
-          "kind": 70,
+          "kind": 69,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 41,
+              "kind": 42,
               "start": {
                 "line": 15,
                 "column": 2
@@ -428,7 +428,7 @@
             }
           ],
           "name": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "private",
             "start": {
@@ -451,7 +451,7 @@
           },
           "throws": [],
           "body": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "false",
             "start": {
@@ -465,11 +465,11 @@
           }
         },
         {
-          "kind": 70,
+          "kind": 69,
           "attributes": [],
           "modifiers": [
             {
-              "kind": 41,
+              "kind": 42,
               "start": {
                 "line": 16,
                 "column": 2
@@ -481,7 +481,7 @@
             }
           ],
           "name": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "public",
             "start": {
@@ -504,7 +504,7 @@
           },
           "throws": [],
           "body": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "false",
             "start": {
