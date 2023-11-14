@@ -23,8 +23,8 @@ export namespace Generator {
 		`\(AssignmentOperatorKind.BitwiseRightShift)`	: ' +>= '
 		`\(AssignmentOperatorKind.BitwiseXor)`			: ' +^= '
 		`\(AssignmentOperatorKind.Division)`			: ' /= '
-		`\(AssignmentOperatorKind.Empty)`				: ' !#= '
-		`\(AssignmentOperatorKind.EmptyCoalescing)`		: ' ##= '
+		`\(AssignmentOperatorKind.Empty)`				: ' !?#= '
+		`\(AssignmentOperatorKind.EmptyCoalescing)`		: ' ?##= '
 		`\(AssignmentOperatorKind.Equals)`				: ' = '
 		`\(AssignmentOperatorKind.Existential)`			: ' ?= '
 		`\(AssignmentOperatorKind.LogicalAnd)`			: ' &&= '
@@ -32,7 +32,7 @@ export namespace Generator {
 		`\(AssignmentOperatorKind.LogicalXor)`			: ' ^^= '
 		`\(AssignmentOperatorKind.Modulo)`				: ' %= '
 		`\(AssignmentOperatorKind.Multiplication)`		: ' *= '
-		`\(AssignmentOperatorKind.NonEmpty)`			: ' #= '
+		`\(AssignmentOperatorKind.NonEmpty)`			: ' ?#= '
 		`\(AssignmentOperatorKind.NonExistential)`		: ' !?= '
 		`\(AssignmentOperatorKind.NullCoalescing)`		: ' ??= '
 		`\(AssignmentOperatorKind.Quotient)`			: ' /.= '
@@ -49,7 +49,7 @@ export namespace Generator {
 		`\(BinaryOperatorKind.BitwiseXor)`			: ' +^ '
 		`\(BinaryOperatorKind.Division)`			: ' / '
 		`\(BinaryOperatorKind.Equality)`			: ' == '
-		`\(BinaryOperatorKind.EmptyCoalescing)`		: ' ## '
+		`\(BinaryOperatorKind.EmptyCoalescing)`		: ' ?## '
 		`\(BinaryOperatorKind.GreaterThan)`			: ' > '
 		`\(BinaryOperatorKind.GreaterThanOrEqual)`	: ' >= '
 		`\(BinaryOperatorKind.Inequality)`			: ' != '
@@ -152,7 +152,7 @@ export namespace Generator {
 		filterExpression(data, writer = this) => @options.filters.expression(data, writer)
 		filterStatement(data, writer = this) => @options.filters.statement(data, writer)
 		getReference(name: String): Function? { # {{{
-			if var functions #= @references[name] {
+			if var functions ?#= @references[name] {
 				return functions[0]
 			}
 
@@ -163,7 +163,7 @@ export namespace Generator {
 			@mode = @stack.pop()
 		} # }}}
 		popReference(name: String): Void { # {{{
-			if var functions #= @references[name] {
+			if var functions ?#= @references[name] {
 				functions.shift()
 			}
 		} # }}}
@@ -596,7 +596,7 @@ export namespace Generator {
 				writer.code(']')
 			} # }}}
 			NodeKind.ArrayType { # {{{
-				if #data.properties {
+				if ?#data.properties {
 					writer.code('[')
 
 					for var property, index in data.properties {
@@ -1237,7 +1237,7 @@ export namespace Generator {
 				}
 			} # }}}
 			NodeKind.ObjectType { # {{{
-				if #data.properties {
+				if ?#data.properties {
 					var o = writer.newObject()
 
 					o.pushMode(KSWriterMode.Type)
@@ -1416,7 +1416,7 @@ export namespace Generator {
 						else if data.type.kind == NodeKind.VariantType {
 							writer.code('variant ').expression(data.name).code(': ').expression(data.type.master)
 
-							if #data.type.properties {
+							if ?#data.type.properties {
 								var block = writer.newBlock()
 
 								for var property in data.type.properties {
@@ -2020,7 +2020,7 @@ export namespace Generator {
 					}
 				}
 
-				if #data.arguments {
+				if ?#data.arguments {
 					writer.code('(')
 
 					for var argument, index in data.arguments {
@@ -2060,7 +2060,7 @@ export namespace Generator {
 						writer.code(' for ').expression(specifier)
 					}
 				}
-				else if #data.specifiers {
+				else if ?#data.specifiers {
 					writer.code(' for')
 
 					var block = writer.newBlock()
@@ -2540,7 +2540,7 @@ export namespace Generator {
 					line.code(' extends ').expression(data.extends)
 				}
 
-				if #data.implements {
+				if ?#data.implements {
 					line.code(' implements ')
 
 					for var implement, index in data.implements {
@@ -2631,7 +2631,7 @@ export namespace Generator {
 
 				line.pushMode(KSWriterMode.Export)
 
-				if data.declarations.length == 1 && ((data.declarations[0].kind == NodeKind.DeclarationSpecifier) -> (!#data.declarations[0].declaration.attributes)) {
+				if data.declarations.length == 1 && ((data.declarations[0].kind == NodeKind.DeclarationSpecifier) -> (!?#data.declarations[0].declaration.attributes)) {
 					line.code('export ').statement(data.declarations[0])
 				}
 				else {
@@ -2984,7 +2984,7 @@ export namespace Generator {
 
 				line.pushMode(KSWriterMode.Import)
 
-				if data.declarations.length == 1 && !#data.declarations[0].attributes {
+				if data.declarations.length == 1 && !?#data.declarations[0].attributes {
 					line.code('import ').expression(data.declarations[0])
 				}
 				else {
@@ -3060,7 +3060,7 @@ export namespace Generator {
 
 				var mut space = false
 
-				if #data.conditions {
+				if ?#data.conditions {
 					for var condition, index in data.conditions {
 						if index != 0 {
 							line.code(', ')
@@ -3435,7 +3435,7 @@ export namespace Generator {
 					line.code(' extends ').expression(data.extends)
 				}
 
-				if #data.implements {
+				if ?#data.implements {
 					line.code(' implements ')
 
 					for var implement, index in data.implements {
@@ -3463,7 +3463,7 @@ export namespace Generator {
 				if data.type?.kind == NodeKind.VariantType {
 					line.code('variant ').expression(data.name).code(': ').expression(data.type.master)
 
-					if #data.type.properties {
+					if ?#data.type.properties {
 						var block = line.newBlock()
 
 						for var property in data.type.properties {
@@ -3530,7 +3530,7 @@ export namespace Generator {
 					line.code(' extends ').expression(data.extends)
 				}
 
-				if #data.implements {
+				if ?#data.implements {
 					line.code(' implements ')
 
 					for var implement, index in data.implements {

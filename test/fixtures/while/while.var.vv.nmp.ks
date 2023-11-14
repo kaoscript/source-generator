@@ -1,6 +1,6 @@
 extern console
 func foobar(text: String) {
-	while var data #= quxbaz(text) {
+	while var data ?#= quxbaz(text) {
 		console.log(`\(data)`)
 	}
 }
