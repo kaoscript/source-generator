@@ -1,12 +1,13 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 43,
+      "kind": 45,
       "attributes": [],
+      "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "f1",
         "start": {
@@ -18,26 +19,17 @@
           "column": 8
         }
       },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 3,
-        "column": 2
-      },
       "parameters": [],
-      "modifiers": [],
       "throws": [],
       "body": {
-        "kind": 14,
+        "kind": 15,
         "attributes": [],
         "statements": [
           {
-            "kind": 99,
+            "kind": 101,
             "attributes": [],
             "value": {
-              "kind": 76,
+              "kind": 78,
               "modifiers": [],
               "value": 42,
               "radix": 10,
@@ -68,10 +60,18 @@
           "line": 3,
           "column": 2
         }
+      },
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 3,
+        "column": 2
       }
     },
     {
-      "kind": 132,
+      "kind": 133,
       "attributes": [],
       "modifiers": [
         {
@@ -88,16 +88,16 @@
       ],
       "declarations": [
         {
-          "kind": 130,
+          "kind": 131,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 131,
+              "kind": 132,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "f2",
                 "start": {
@@ -119,36 +119,20 @@
               }
             }
           ],
-          "start": {
-            "line": 5,
-            "column": 1
-          },
-          "end": {
-            "line": 7,
-            "column": 2
-          },
           "value": {
-            "kind": 44,
-            "parameters": [],
-            "start": {
-              "line": 5,
-              "column": 14
-            },
-            "end": {
-              "line": 7,
-              "column": 2
-            },
+            "kind": 46,
             "modifiers": [],
+            "parameters": [],
             "throws": [],
             "body": {
-              "kind": 14,
+              "kind": 15,
               "attributes": [],
               "statements": [
                 {
-                  "kind": 99,
+                  "kind": 101,
                   "attributes": [],
                   "value": {
-                    "kind": 76,
+                    "kind": 78,
                     "modifiers": [],
                     "value": 42,
                     "radix": 10,
@@ -179,7 +163,23 @@
                 "line": 7,
                 "column": 2
               }
+            },
+            "start": {
+              "line": 5,
+              "column": 14
+            },
+            "end": {
+              "line": 7,
+              "column": 2
             }
+          },
+          "start": {
+            "line": 5,
+            "column": 1
+          },
+          "end": {
+            "line": 7,
+            "column": 2
           }
         }
       ],
@@ -193,7 +193,7 @@
       }
     },
     {
-      "kind": 132,
+      "kind": 133,
       "attributes": [],
       "modifiers": [
         {
@@ -210,16 +210,16 @@
       ],
       "declarations": [
         {
-          "kind": 130,
+          "kind": 131,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 131,
+              "kind": 132,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "f3",
                 "start": {
@@ -241,27 +241,20 @@
               }
             }
           ],
-          "start": {
-            "line": 9,
-            "column": 1
-          },
-          "end": {
-            "line": 11,
-            "column": 2
-          },
           "value": {
-            "kind": 57,
+            "kind": 59,
             "modifiers": [],
             "parameters": [],
+            "throws": [],
             "body": {
-              "kind": 14,
+              "kind": 15,
               "attributes": [],
               "statements": [
                 {
-                  "kind": 99,
+                  "kind": 101,
                   "attributes": [],
                   "value": {
-                    "kind": 76,
+                    "kind": 78,
                     "modifiers": [],
                     "value": 42,
                     "radix": 10,
@@ -300,8 +293,15 @@
             "end": {
               "line": 11,
               "column": 2
-            },
-            "throws": []
+            }
+          },
+          "start": {
+            "line": 9,
+            "column": 1
+          },
+          "end": {
+            "line": 11,
+            "column": 2
           }
         }
       ],
@@ -315,7 +315,7 @@
       }
     },
     {
-      "kind": 132,
+      "kind": 133,
       "attributes": [],
       "modifiers": [
         {
@@ -332,16 +332,16 @@
       ],
       "declarations": [
         {
-          "kind": 130,
+          "kind": 131,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 131,
+              "kind": 132,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "f4",
                 "start": {
@@ -363,20 +363,13 @@
               }
             }
           ],
-          "start": {
-            "line": 13,
-            "column": 1
-          },
-          "end": {
-            "line": 13,
-            "column": 22
-          },
           "value": {
-            "kind": 57,
+            "kind": 59,
             "modifiers": [],
             "parameters": [],
+            "throws": [],
             "body": {
-              "kind": 76,
+              "kind": 78,
               "modifiers": [],
               "value": 42,
               "radix": 10,
@@ -396,8 +389,15 @@
             "end": {
               "line": 13,
               "column": 22
-            },
-            "throws": []
+            }
+          },
+          "start": {
+            "line": 13,
+            "column": 1
+          },
+          "end": {
+            "line": 13,
+            "column": 22
           }
         }
       ],
@@ -411,7 +411,7 @@
       }
     },
     {
-      "kind": 132,
+      "kind": 133,
       "attributes": [],
       "modifiers": [
         {
@@ -428,16 +428,16 @@
       ],
       "declarations": [
         {
-          "kind": 130,
+          "kind": 131,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 131,
+              "kind": 132,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "f5",
                 "start": {
@@ -459,29 +459,13 @@
               }
             }
           ],
-          "start": {
-            "line": 15,
-            "column": 1
-          },
-          "end": {
-            "line": 15,
-            "column": 26
-          },
           "value": {
-            "kind": 44,
-            "parameters": [],
-            "start": {
-              "line": 15,
-              "column": 14
-            },
-            "end": {
-              "line": 15,
-              "column": 26
-            },
+            "kind": 46,
             "modifiers": [],
+            "parameters": [],
             "throws": [],
             "body": {
-              "kind": 76,
+              "kind": 78,
               "modifiers": [],
               "value": 42,
               "radix": 10,
@@ -493,7 +477,23 @@
                 "line": 15,
                 "column": 26
               }
+            },
+            "start": {
+              "line": 15,
+              "column": 14
+            },
+            "end": {
+              "line": 15,
+              "column": 26
             }
+          },
+          "start": {
+            "line": 15,
+            "column": 1
+          },
+          "end": {
+            "line": 15,
+            "column": 26
           }
         }
       ],

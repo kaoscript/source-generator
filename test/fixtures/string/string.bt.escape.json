@@ -1,9 +1,9 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 132,
+      "kind": 133,
       "attributes": [],
       "modifiers": [
         {
@@ -20,16 +20,16 @@
       ],
       "declarations": [
         {
-          "kind": 130,
+          "kind": 131,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 131,
+              "kind": 132,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "foobar",
                 "start": {
@@ -51,20 +51,12 @@
               }
             }
           ],
-          "start": {
-            "line": 1,
-            "column": 1
-          },
-          "end": {
-            "line": 1,
-            "column": 33
-          },
           "value": {
-            "kind": 111,
+            "kind": 112,
             "modifiers": [],
             "elements": [
               {
-                "kind": 58,
+                "kind": 60,
                 "modifiers": [],
                 "value": "abc\\\\(xyz)def",
                 "start": {
@@ -85,6 +77,14 @@
               "line": 1,
               "column": 33
             }
+          },
+          "start": {
+            "line": 1,
+            "column": 1
+          },
+          "end": {
+            "line": 1,
+            "column": 33
           }
         }
       ],

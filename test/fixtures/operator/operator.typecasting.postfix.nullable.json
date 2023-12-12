@@ -1,12 +1,13 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 43,
+      "kind": 45,
       "attributes": [],
+      "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "foobar",
         "start": {
@@ -18,18 +19,9 @@
           "column": 12
         }
       },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 2,
-        "column": 2
-      },
       "parameters": [],
-      "modifiers": [],
       "type": {
-        "kind": 123,
+        "kind": 124,
         "modifiers": [
           {
             "kind": 30,
@@ -44,7 +36,7 @@
           }
         ],
         "typeName": {
-          "kind": 47,
+          "kind": 49,
           "modifiers": [],
           "name": "Number",
           "start": {
@@ -67,7 +59,7 @@
       },
       "throws": [],
       "body": {
-        "kind": 14,
+        "kind": 15,
         "attributes": [],
         "statements": [],
         "start": {
@@ -78,19 +70,27 @@
           "line": 2,
           "column": 2
         }
+      },
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 2,
+        "column": 2
       }
     },
     {
-      "kind": 39,
+      "kind": 41,
       "attributes": [],
       "expression": {
-        "kind": 17,
+        "kind": 18,
         "modifiers": [],
         "scope": {
           "kind": 2
         },
         "callee": {
-          "kind": 47,
+          "kind": 49,
           "modifiers": [],
           "name": "call",
           "start": {
@@ -104,7 +104,7 @@
         },
         "arguments": [
           {
-            "kind": 125,
+            "kind": 126,
             "modifiers": [
               {
                 "kind": 30,
@@ -130,13 +130,13 @@
               }
             },
             "argument": {
-              "kind": 17,
+              "kind": 18,
               "modifiers": [],
               "scope": {
                 "kind": 2
               },
               "callee": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "foobar",
                 "start": {

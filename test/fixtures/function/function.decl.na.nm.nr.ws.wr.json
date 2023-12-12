@@ -1,12 +1,13 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 43,
+      "kind": 45,
       "attributes": [],
+      "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "foo",
         "start": {
@@ -18,23 +19,14 @@
           "column": 9
         }
       },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 5,
-        "column": 2
-      },
       "parameters": [],
-      "modifiers": [],
       "throws": [],
       "body": {
-        "kind": 14,
+        "kind": 15,
         "attributes": [],
         "statements": [
           {
-            "kind": 132,
+            "kind": 133,
             "attributes": [],
             "modifiers": [
               {
@@ -51,16 +43,16 @@
             ],
             "declarations": [
               {
-                "kind": 130,
+                "kind": 131,
                 "attributes": [],
                 "modifiers": [],
                 "variables": [
                   {
-                    "kind": 131,
+                    "kind": 132,
                     "attributes": [],
                     "modifiers": [],
                     "name": {
-                      "kind": 47,
+                      "kind": 49,
                       "modifiers": [],
                       "name": "bar",
                       "start": {
@@ -82,16 +74,8 @@
                     }
                   }
                 ],
-                "start": {
-                  "line": 2,
-                  "column": 2
-                },
-                "end": {
-                  "line": 2,
-                  "column": 23
-                },
                 "value": {
-                  "kind": 58,
+                  "kind": 60,
                   "modifiers": [],
                   "value": "hello",
                   "start": {
@@ -102,6 +86,14 @@
                     "line": 2,
                     "column": 23
                   }
+                },
+                "start": {
+                  "line": 2,
+                  "column": 2
+                },
+                "end": {
+                  "line": 2,
+                  "column": 23
                 }
               }
             ],
@@ -115,10 +107,10 @@
             }
           },
           {
-            "kind": 99,
+            "kind": 101,
             "attributes": [],
             "value": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "bar",
               "start": {
@@ -148,6 +140,14 @@
           "line": 5,
           "column": 2
         }
+      },
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 5,
+        "column": 2
       }
     }
   ],

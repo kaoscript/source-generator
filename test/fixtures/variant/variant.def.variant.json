@@ -1,13 +1,13 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 133,
+      "kind": 134,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "SchoolPerson",
         "start": {
@@ -21,12 +21,12 @@
       },
       "fields": [
         {
-          "kind": 134,
+          "kind": 135,
           "attributes": [],
           "modifiers": [],
           "names": [
             {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "Director",
               "start": {
@@ -49,12 +49,12 @@
           }
         },
         {
-          "kind": 134,
+          "kind": 135,
           "attributes": [],
           "modifiers": [],
           "names": [
             {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "Student",
               "start": {
@@ -68,22 +68,14 @@
             }
           ],
           "type": {
-            "kind": 80,
+            "kind": 82,
             "modifiers": [],
             "properties": [
               {
-                "kind": 89,
+                "kind": 91,
                 "modifiers": [],
-                "start": {
-                  "line": 3,
-                  "column": 15
-                },
-                "end": {
-                  "line": 3,
-                  "column": 27
-                },
                 "name": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "name",
                   "start": {
@@ -96,10 +88,10 @@
                   }
                 },
                 "type": {
-                  "kind": 123,
+                  "kind": 124,
                   "modifiers": [],
                   "typeName": {
-                    "kind": 47,
+                    "kind": 49,
                     "modifiers": [],
                     "name": "String",
                     "start": {
@@ -119,6 +111,14 @@
                     "line": 3,
                     "column": 27
                   }
+                },
+                "start": {
+                  "line": 3,
+                  "column": 15
+                },
+                "end": {
+                  "line": 3,
+                  "column": 27
                 }
               }
             ],
@@ -141,12 +141,12 @@
           }
         },
         {
-          "kind": 134,
+          "kind": 135,
           "attributes": [],
           "modifiers": [],
           "names": [
             {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "Teacher",
               "start": {

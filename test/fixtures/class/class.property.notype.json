@@ -1,13 +1,13 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 19,
+      "kind": 20,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "Vector",
         "start": {
@@ -21,7 +21,7 @@
       },
       "members": [
         {
-          "kind": 88,
+          "kind": 90,
           "attributes": [],
           "modifiers": [
             {
@@ -37,7 +37,7 @@
             }
           ],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "x",
             "start": {
@@ -48,14 +48,6 @@
               "line": 2,
               "column": 10
             }
-          },
-          "start": {
-            "line": 2,
-            "column": 2
-          },
-          "end": {
-            "line": 2,
-            "column": 23
           },
           "accessor": {
             "kind": 1,
@@ -69,7 +61,7 @@
             }
           },
           "mutator": {
-            "kind": 72,
+            "kind": 74,
             "start": {
               "line": 2,
               "column": 18
@@ -78,6 +70,14 @@
               "line": 2,
               "column": 21
             }
+          },
+          "start": {
+            "line": 2,
+            "column": 2
+          },
+          "end": {
+            "line": 2,
+            "column": 23
           }
         }
       ],

@@ -1,13 +1,13 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 33,
+      "kind": 34,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "Color",
         "start": {
@@ -21,11 +21,11 @@
       },
       "members": [
         {
-          "kind": 41,
+          "kind": 35,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "Red",
             "start": {
@@ -47,11 +47,11 @@
           }
         },
         {
-          "kind": 41,
+          "kind": 35,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "Green",
             "start": {
@@ -73,11 +73,11 @@
           }
         },
         {
-          "kind": 41,
+          "kind": 35,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "Blue",
             "start": {
@@ -109,10 +109,11 @@
       }
     },
     {
-      "kind": 43,
+      "kind": 45,
       "attributes": [],
+      "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "foobar",
         "start": {
@@ -124,21 +125,13 @@
           "column": 12
         }
       },
-      "start": {
-        "line": 7,
-        "column": 1
-      },
-      "end": {
-        "line": 9,
-        "column": 2
-      },
       "parameters": [
         {
-          "kind": 82,
+          "kind": 84,
           "attributes": [],
           "modifiers": [],
           "external": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "red",
             "start": {
@@ -151,7 +144,7 @@
             }
           },
           "internal": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "red",
             "start": {
@@ -173,28 +166,27 @@
           }
         }
       ],
-      "modifiers": [],
       "throws": [],
       "body": {
-        "kind": 14,
+        "kind": 15,
         "attributes": [],
         "statements": [
           {
-            "kind": 132,
+            "kind": 133,
             "attributes": [],
             "modifiers": [],
             "declarations": [
               {
-                "kind": 130,
+                "kind": 131,
                 "attributes": [],
                 "modifiers": [],
                 "variables": [
                   {
-                    "kind": 131,
+                    "kind": 132,
                     "attributes": [],
                     "modifiers": [],
                     "name": {
-                      "kind": 47,
+                      "kind": 49,
                       "modifiers": [],
                       "name": "x",
                       "start": {
@@ -206,16 +198,8 @@
                         "column": 7
                       }
                     },
-                    "start": {
-                      "line": 8,
-                      "column": 6
-                    },
-                    "end": {
-                      "line": 8,
-                      "column": 15
-                    },
                     "type": {
-                      "kind": 123,
+                      "kind": 124,
                       "modifiers": [
                         {
                           "kind": 30,
@@ -230,7 +214,7 @@
                         }
                       ],
                       "typeName": {
-                        "kind": 47,
+                        "kind": 49,
                         "modifiers": [],
                         "name": "Color",
                         "start": {
@@ -250,19 +234,19 @@
                         "line": 8,
                         "column": 15
                       }
+                    },
+                    "start": {
+                      "line": 8,
+                      "column": 6
+                    },
+                    "end": {
+                      "line": 8,
+                      "column": 15
                     }
                   }
                 ],
-                "start": {
-                  "line": 8,
-                  "column": 6
-                },
-                "end": {
-                  "line": 8,
-                  "column": 35
-                },
                 "value": {
-                  "kind": 25,
+                  "kind": 26,
                   "modifiers": [],
                   "start": {
                     "line": 8,
@@ -273,7 +257,7 @@
                     "column": 35
                   },
                   "condition": {
-                    "kind": 47,
+                    "kind": 49,
                     "modifiers": [],
                     "name": "red",
                     "start": {
@@ -286,7 +270,7 @@
                     }
                   },
                   "whenTrue": {
-                    "kind": 125,
+                    "kind": 126,
                     "modifiers": [],
                     "operator": {
                       "kind": 4,
@@ -300,7 +284,7 @@
                       }
                     },
                     "argument": {
-                      "kind": 47,
+                      "kind": 49,
                       "modifiers": [],
                       "name": "Red",
                       "start": {
@@ -322,7 +306,7 @@
                     }
                   },
                   "whenFalse": {
-                    "kind": 47,
+                    "kind": 49,
                     "modifiers": [],
                     "name": "null",
                     "start": {
@@ -334,6 +318,14 @@
                       "column": 35
                     }
                   }
+                },
+                "start": {
+                  "line": 8,
+                  "column": 6
+                },
+                "end": {
+                  "line": 8,
+                  "column": 35
                 }
               }
             ],
@@ -355,6 +347,14 @@
           "line": 9,
           "column": 2
         }
+      },
+      "start": {
+        "line": 7,
+        "column": 1
+      },
+      "end": {
+        "line": 9,
+        "column": 2
       }
     }
   ],

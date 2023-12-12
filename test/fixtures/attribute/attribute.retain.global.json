@@ -1,10 +1,10 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [
     {
       "kind": 7,
       "declaration": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "retain-parameters",
         "start": {
@@ -28,16 +28,16 @@
   ],
   "body": [
     {
-      "kind": 39,
+      "kind": 41,
       "attributes": [],
       "expression": {
-        "kind": 17,
+        "kind": 18,
         "modifiers": [],
         "scope": {
           "kind": 2
         },
         "callee": {
-          "kind": 47,
+          "kind": 49,
           "modifiers": [],
           "name": "it",
           "start": {
@@ -51,7 +51,7 @@
         },
         "arguments": [
           {
-            "kind": 58,
+            "kind": 60,
             "modifiers": [],
             "value": "print",
             "start": {
@@ -64,15 +64,15 @@
             }
           },
           {
-            "kind": 57,
+            "kind": 59,
             "modifiers": [],
             "parameters": [
               {
-                "kind": 82,
+                "kind": 84,
                 "attributes": [],
                 "modifiers": [],
                 "external": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "done",
                   "start": {
@@ -85,7 +85,7 @@
                   }
                 },
                 "internal": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "done",
                   "start": {
@@ -107,21 +107,22 @@
                 }
               }
             ],
+            "throws": [],
             "body": {
-              "kind": 14,
+              "kind": 15,
               "attributes": [],
               "statements": [
                 {
-                  "kind": 39,
+                  "kind": 41,
                   "attributes": [],
                   "expression": {
-                    "kind": 17,
+                    "kind": 18,
                     "modifiers": [],
                     "scope": {
                       "kind": 2
                     },
                     "callee": {
-                      "kind": 47,
+                      "kind": 49,
                       "modifiers": [],
                       "name": "done",
                       "start": {
@@ -169,8 +170,7 @@
             "end": {
               "line": 5,
               "column": 2
-            },
-            "throws": []
+            }
           }
         ],
         "start": {

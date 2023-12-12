@@ -1,23 +1,23 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 132,
+      "kind": 133,
       "attributes": [],
       "modifiers": [],
       "declarations": [
         {
-          "kind": 130,
+          "kind": 131,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 131,
+              "kind": 132,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "addOne",
                 "start": {
@@ -39,22 +39,14 @@
               }
             }
           ],
-          "start": {
-            "line": 1,
-            "column": 5
-          },
-          "end": {
-            "line": 1,
-            "column": 25
-          },
           "value": {
-            "kind": 27,
+            "kind": 28,
             "modifiers": [],
             "scope": {
               "kind": 2
             },
             "callee": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "add",
               "start": {
@@ -68,7 +60,7 @@
             },
             "arguments": [
               {
-                "kind": 76,
+                "kind": 78,
                 "modifiers": [],
                 "value": 1,
                 "radix": 10,
@@ -82,7 +74,7 @@
                 }
               },
               {
-                "kind": 84,
+                "kind": 86,
                 "modifiers": [],
                 "start": {
                   "line": 1,
@@ -102,6 +94,14 @@
               "line": 1,
               "column": 25
             }
+          },
+          "start": {
+            "line": 1,
+            "column": 5
+          },
+          "end": {
+            "line": 1,
+            "column": 25
           }
         }
       ],

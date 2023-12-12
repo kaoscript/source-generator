@@ -1,17 +1,17 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 95,
+      "kind": 97,
       "attributes": [],
       "declarations": [
         {
-          "kind": 33,
+          "kind": 34,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "Space",
             "start": {
@@ -23,13 +23,38 @@
               "column": 12
             }
           },
+          "type": {
+            "kind": 124,
+            "modifiers": [],
+            "typeName": {
+              "kind": 49,
+              "modifiers": [],
+              "name": "String",
+              "start": {
+                "line": 2,
+                "column": 13
+              },
+              "end": {
+                "line": 2,
+                "column": 19
+              }
+            },
+            "start": {
+              "line": 2,
+              "column": 13
+            },
+            "end": {
+              "line": 2,
+              "column": 19
+            }
+          },
           "members": [
             {
-              "kind": 41,
+              "kind": 35,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "RGB",
                 "start": {
@@ -58,39 +83,14 @@
           "end": {
             "line": 4,
             "column": 3
-          },
-          "type": {
-            "kind": 123,
-            "modifiers": [],
-            "typeName": {
-              "kind": 47,
-              "modifiers": [],
-              "name": "String",
-              "start": {
-                "line": 2,
-                "column": 13
-              },
-              "end": {
-                "line": 2,
-                "column": 19
-              }
-            },
-            "start": {
-              "line": 2,
-              "column": 13
-            },
-            "end": {
-              "line": 2,
-              "column": 19
-            }
           }
         },
         {
-          "kind": 19,
+          "kind": 20,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "Color",
             "start": {
@@ -104,11 +104,11 @@
           },
           "members": [
             {
-              "kind": 69,
+              "kind": 71,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "space",
                 "start": {
@@ -121,19 +121,11 @@
                 }
               },
               "parameters": [],
-              "start": {
-                "line": 7,
-                "column": 3
-              },
-              "end": {
-                "line": 7,
-                "column": 17
-              },
               "type": {
-                "kind": 123,
+                "kind": 124,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "Space",
                   "start": {
@@ -154,14 +146,22 @@
                   "column": 17
                 }
               },
-              "throws": []
+              "throws": [],
+              "start": {
+                "line": 7,
+                "column": 3
+              },
+              "end": {
+                "line": 7,
+                "column": 17
+              }
             },
             {
-              "kind": 69,
+              "kind": 71,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "space",
                 "start": {
@@ -175,11 +175,11 @@
               },
               "parameters": [
                 {
-                  "kind": 82,
+                  "kind": 84,
                   "attributes": [],
                   "modifiers": [],
                   "external": {
-                    "kind": 47,
+                    "kind": 49,
                     "modifiers": [],
                     "name": "space",
                     "start": {
@@ -192,7 +192,7 @@
                     }
                   },
                   "internal": {
-                    "kind": 47,
+                    "kind": 49,
                     "modifiers": [],
                     "name": "space",
                     "start": {
@@ -205,10 +205,10 @@
                     }
                   },
                   "type": {
-                    "kind": 123,
+                    "kind": 124,
                     "modifiers": [],
                     "typeName": {
-                      "kind": 47,
+                      "kind": 49,
                       "modifiers": [],
                       "name": "Space",
                       "start": {
@@ -239,19 +239,11 @@
                   }
                 }
               ],
-              "start": {
-                "line": 8,
-                "column": 3
-              },
-              "end": {
-                "line": 8,
-                "column": 29
-              },
               "type": {
-                "kind": 123,
+                "kind": 124,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "Color",
                   "start": {
@@ -272,7 +264,15 @@
                   "column": 29
                 }
               },
-              "throws": []
+              "throws": [],
+              "start": {
+                "line": 8,
+                "column": 3
+              },
+              "end": {
+                "line": 8,
+                "column": 29
+              }
             }
           ],
           "start": {
@@ -295,10 +295,10 @@
       }
     },
     {
-      "kind": 50,
+      "kind": 52,
       "attributes": [],
       "variable": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "Color",
         "start": {
@@ -312,7 +312,7 @@
       },
       "properties": [
         {
-          "kind": 41,
+          "kind": 43,
           "attributes": [],
           "modifiers": [
             {
@@ -328,7 +328,7 @@
             }
           ],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "_luma",
             "start": {
@@ -340,19 +340,11 @@
               "column": 15
             }
           },
-          "start": {
-            "line": 13,
-            "column": 2
-          },
-          "end": {
-            "line": 13,
-            "column": 23
-          },
           "type": {
-            "kind": 123,
+            "kind": 124,
             "modifiers": [],
             "typeName": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "Number",
               "start": {
@@ -372,14 +364,22 @@
               "line": 13,
               "column": 23
             }
+          },
+          "start": {
+            "line": 13,
+            "column": 2
+          },
+          "end": {
+            "line": 13,
+            "column": 23
           }
         },
         {
-          "kind": 69,
+          "kind": 71,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "luma",
             "start": {
@@ -392,19 +392,11 @@
             }
           },
           "parameters": [],
-          "start": {
-            "line": 15,
-            "column": 2
-          },
-          "end": {
-            "line": 15,
-            "column": 30
-          },
           "type": {
-            "kind": 123,
+            "kind": 124,
             "modifiers": [],
             "typeName": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "Number",
               "start": {
@@ -427,10 +419,10 @@
           },
           "throws": [],
           "body": {
-            "kind": 68,
+            "kind": 70,
             "modifiers": [],
             "object": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "this",
               "start": {
@@ -443,7 +435,7 @@
               }
             },
             "property": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "_luma",
               "start": {
@@ -463,14 +455,22 @@
               "line": 15,
               "column": 30
             }
+          },
+          "start": {
+            "line": 15,
+            "column": 2
+          },
+          "end": {
+            "line": 15,
+            "column": 30
           }
         },
         {
-          "kind": 69,
+          "kind": 71,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "luma",
             "start": {
@@ -484,11 +484,11 @@
           },
           "parameters": [
             {
-              "kind": 82,
+              "kind": 84,
               "attributes": [],
               "modifiers": [],
               "external": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "luma",
                 "start": {
@@ -501,10 +501,10 @@
                 }
               },
               "internal": {
-                "kind": 112,
+                "kind": 113,
                 "modifiers": [],
                 "name": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "luma",
                   "start": {
@@ -535,17 +535,9 @@
               }
             }
           ],
-          "start": {
-            "line": 17,
-            "column": 2
-          },
-          "end": {
-            "line": 17,
-            "column": 21
-          },
           "throws": [],
           "body": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "this",
             "start": {
@@ -556,6 +548,14 @@
               "line": 17,
               "column": 21
             }
+          },
+          "start": {
+            "line": 17,
+            "column": 2
+          },
+          "end": {
+            "line": 17,
+            "column": 21
           }
         }
       ],
@@ -569,14 +569,14 @@
       }
     },
     {
-      "kind": 35,
+      "kind": 37,
       "attributes": [],
       "declarations": [
         {
-          "kind": 74,
+          "kind": 76,
           "modifiers": [],
           "internal": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "Color",
             "start": {
@@ -598,10 +598,10 @@
           }
         },
         {
-          "kind": 74,
+          "kind": 76,
           "modifiers": [],
           "internal": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "Space",
             "start": {

@@ -1,12 +1,12 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 59,
+      "kind": 61,
       "attributes": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "sayHello",
         "start": {
@@ -20,14 +20,14 @@
       },
       "parameters": [],
       "body": {
-        "kind": 14,
+        "kind": 15,
         "attributes": [],
         "statements": [
           {
-            "kind": 39,
+            "kind": 41,
             "attributes": [],
             "expression": {
-              "kind": 60,
+              "kind": 62,
               "attributes": [],
               "elements": [
                 {
@@ -81,16 +81,16 @@
       }
     },
     {
-      "kind": 39,
+      "kind": 41,
       "attributes": [],
       "expression": {
-        "kind": 17,
+        "kind": 18,
         "modifiers": [],
         "scope": {
           "kind": 2
         },
         "callee": {
-          "kind": 47,
+          "kind": 49,
           "modifiers": [],
           "name": "sayHello",
           "start": {

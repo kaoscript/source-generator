@@ -1,9 +1,9 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 19,
+      "kind": 20,
       "attributes": [],
       "modifiers": [
         {
@@ -19,7 +19,7 @@
         }
       ],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "AbstractGreetings",
         "start": {
@@ -33,7 +33,7 @@
       },
       "members": [
         {
-          "kind": 69,
+          "kind": 71,
           "attributes": [],
           "modifiers": [
             {
@@ -49,7 +49,7 @@
             }
           ],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "greet",
             "start": {
@@ -63,11 +63,11 @@
           },
           "parameters": [
             {
-              "kind": 82,
+              "kind": 84,
               "attributes": [],
               "modifiers": [],
               "external": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "name",
                 "start": {
@@ -80,7 +80,7 @@
                 }
               },
               "internal": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "name",
                 "start": {
@@ -102,19 +102,11 @@
               }
             }
           ],
-          "start": {
-            "line": 3,
-            "column": 3
-          },
-          "end": {
-            "line": 3,
-            "column": 22
-          },
           "type": {
-            "kind": 123,
+            "kind": 124,
             "modifiers": [],
             "typeName": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "String",
               "start": {
@@ -135,7 +127,15 @@
               "column": 22
             }
           },
-          "throws": []
+          "throws": [],
+          "start": {
+            "line": 3,
+            "column": 3
+          },
+          "end": {
+            "line": 3,
+            "column": 22
+          }
         }
       ],
       "start": {

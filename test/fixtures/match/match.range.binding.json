@@ -1,12 +1,13 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 43,
+      "kind": 45,
       "attributes": [],
+      "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "age",
         "start": {
@@ -18,21 +19,12 @@
           "column": 9
         }
       },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 1,
-        "column": 22
-      },
       "parameters": [],
-      "modifiers": [],
       "type": {
-        "kind": 123,
+        "kind": 124,
         "modifiers": [],
         "typeName": {
-          "kind": 47,
+          "kind": 49,
           "modifiers": [],
           "name": "int",
           "start": {
@@ -55,7 +47,7 @@
       },
       "throws": [],
       "body": {
-        "kind": 76,
+        "kind": 78,
         "modifiers": [],
         "value": 15,
         "radix": 10,
@@ -67,13 +59,22 @@
           "line": 1,
           "column": 22
         }
+      },
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 1,
+        "column": 22
       }
     },
     {
-      "kind": 43,
+      "kind": 45,
       "attributes": [],
+      "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "main",
         "start": {
@@ -85,32 +86,23 @@
           "column": 10
         }
       },
-      "start": {
-        "line": 3,
-        "column": 1
-      },
-      "end": {
-        "line": 10,
-        "column": 2
-      },
       "parameters": [],
-      "modifiers": [],
       "throws": [],
       "body": {
-        "kind": 14,
+        "kind": 15,
         "attributes": [],
         "statements": [
           {
-            "kind": 67,
+            "kind": 69,
             "attributes": [],
             "expression": {
-              "kind": 17,
+              "kind": 18,
               "modifiers": [],
               "scope": {
                 "kind": 2
               },
               "callee": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "age",
                 "start": {
@@ -134,10 +126,10 @@
             },
             "clauses": [
               {
-                "kind": 61,
+                "kind": 63,
                 "conditions": [
                   {
-                    "kind": 76,
+                    "kind": 78,
                     "modifiers": [],
                     "value": 0,
                     "radix": 10,
@@ -152,19 +144,19 @@
                   }
                 ],
                 "body": {
-                  "kind": 39,
+                  "kind": 41,
                   "attributes": [],
                   "expression": {
-                    "kind": 17,
+                    "kind": 18,
                     "modifiers": [],
                     "scope": {
                       "kind": 2
                     },
                     "callee": {
-                      "kind": 68,
+                      "kind": 70,
                       "modifiers": [],
                       "object": {
-                        "kind": 47,
+                        "kind": 49,
                         "modifiers": [],
                         "name": "console",
                         "start": {
@@ -177,7 +169,7 @@
                         }
                       },
                       "property": {
-                        "kind": 47,
+                        "kind": 49,
                         "modifiers": [],
                         "name": "log",
                         "start": {
@@ -200,11 +192,11 @@
                     },
                     "arguments": [
                       {
-                        "kind": 111,
+                        "kind": 112,
                         "modifiers": [],
                         "elements": [
                           {
-                            "kind": 58,
+                            "kind": 60,
                             "modifiers": [],
                             "value": "I'm not born yet I guess",
                             "start": {
@@ -255,12 +247,12 @@
                 }
               },
               {
-                "kind": 61,
+                "kind": 63,
                 "conditions": [
                   {
-                    "kind": 64,
+                    "kind": 66,
                     "from": {
-                      "kind": 76,
+                      "kind": 78,
                       "modifiers": [],
                       "value": 1,
                       "radix": 10,
@@ -274,7 +266,7 @@
                       }
                     },
                     "to": {
-                      "kind": 76,
+                      "kind": 78,
                       "modifiers": [],
                       "value": 12,
                       "radix": 10,
@@ -298,11 +290,11 @@
                   }
                 ],
                 "binding": {
-                  "kind": 131,
+                  "kind": 132,
                   "attributes": [],
                   "modifiers": [],
                   "name": {
-                    "kind": 47,
+                    "kind": 49,
                     "modifiers": [],
                     "name": "n",
                     "start": {
@@ -324,19 +316,19 @@
                   }
                 },
                 "body": {
-                  "kind": 39,
+                  "kind": 41,
                   "attributes": [],
                   "expression": {
-                    "kind": 17,
+                    "kind": 18,
                     "modifiers": [],
                     "scope": {
                       "kind": 2
                     },
                     "callee": {
-                      "kind": 68,
+                      "kind": 70,
                       "modifiers": [],
                       "object": {
-                        "kind": 47,
+                        "kind": 49,
                         "modifiers": [],
                         "name": "console",
                         "start": {
@@ -349,7 +341,7 @@
                         }
                       },
                       "property": {
-                        "kind": 47,
+                        "kind": 49,
                         "modifiers": [],
                         "name": "log",
                         "start": {
@@ -372,11 +364,11 @@
                     },
                     "arguments": [
                       {
-                        "kind": 111,
+                        "kind": 112,
                         "modifiers": [],
                         "elements": [
                           {
-                            "kind": 58,
+                            "kind": 60,
                             "modifiers": [],
                             "value": "I'm a child of age ",
                             "start": {
@@ -389,7 +381,7 @@
                             }
                           },
                           {
-                            "kind": 47,
+                            "kind": 49,
                             "modifiers": [],
                             "name": "n",
                             "start": {
@@ -440,12 +432,12 @@
                 }
               },
               {
-                "kind": 61,
+                "kind": 63,
                 "conditions": [
                   {
-                    "kind": 64,
+                    "kind": 66,
                     "from": {
-                      "kind": 76,
+                      "kind": 78,
                       "modifiers": [],
                       "value": 13,
                       "radix": 10,
@@ -459,7 +451,7 @@
                       }
                     },
                     "to": {
-                      "kind": 76,
+                      "kind": 78,
                       "modifiers": [],
                       "value": 19,
                       "radix": 10,
@@ -483,11 +475,11 @@
                   }
                 ],
                 "binding": {
-                  "kind": 131,
+                  "kind": 132,
                   "attributes": [],
                   "modifiers": [],
                   "name": {
-                    "kind": 47,
+                    "kind": 49,
                     "modifiers": [],
                     "name": "n",
                     "start": {
@@ -509,19 +501,19 @@
                   }
                 },
                 "body": {
-                  "kind": 39,
+                  "kind": 41,
                   "attributes": [],
                   "expression": {
-                    "kind": 17,
+                    "kind": 18,
                     "modifiers": [],
                     "scope": {
                       "kind": 2
                     },
                     "callee": {
-                      "kind": 68,
+                      "kind": 70,
                       "modifiers": [],
                       "object": {
-                        "kind": 47,
+                        "kind": 49,
                         "modifiers": [],
                         "name": "console",
                         "start": {
@@ -534,7 +526,7 @@
                         }
                       },
                       "property": {
-                        "kind": 47,
+                        "kind": 49,
                         "modifiers": [],
                         "name": "log",
                         "start": {
@@ -557,11 +549,11 @@
                     },
                     "arguments": [
                       {
-                        "kind": 111,
+                        "kind": 112,
                         "modifiers": [],
                         "elements": [
                           {
-                            "kind": 58,
+                            "kind": 60,
                             "modifiers": [],
                             "value": "I'm a teen of age ",
                             "start": {
@@ -574,7 +566,7 @@
                             }
                           },
                           {
-                            "kind": 47,
+                            "kind": 49,
                             "modifiers": [],
                             "name": "n",
                             "start": {
@@ -625,14 +617,14 @@
                 }
               },
               {
-                "kind": 61,
+                "kind": 63,
                 "conditions": [],
                 "binding": {
-                  "kind": 131,
+                  "kind": 132,
                   "attributes": [],
                   "modifiers": [],
                   "name": {
-                    "kind": 47,
+                    "kind": 49,
                     "modifiers": [],
                     "name": "n",
                     "start": {
@@ -654,19 +646,19 @@
                   }
                 },
                 "body": {
-                  "kind": 39,
+                  "kind": 41,
                   "attributes": [],
                   "expression": {
-                    "kind": 17,
+                    "kind": 18,
                     "modifiers": [],
                     "scope": {
                       "kind": 2
                     },
                     "callee": {
-                      "kind": 68,
+                      "kind": 70,
                       "modifiers": [],
                       "object": {
-                        "kind": 47,
+                        "kind": 49,
                         "modifiers": [],
                         "name": "console",
                         "start": {
@@ -679,7 +671,7 @@
                         }
                       },
                       "property": {
-                        "kind": 47,
+                        "kind": 49,
                         "modifiers": [],
                         "name": "log",
                         "start": {
@@ -702,11 +694,11 @@
                     },
                     "arguments": [
                       {
-                        "kind": 111,
+                        "kind": 112,
                         "modifiers": [],
                         "elements": [
                           {
-                            "kind": 58,
+                            "kind": 60,
                             "modifiers": [],
                             "value": "I'm an old person of age ",
                             "start": {
@@ -719,7 +711,7 @@
                             }
                           },
                           {
-                            "kind": 47,
+                            "kind": 49,
                             "modifiers": [],
                             "name": "n",
                             "start": {
@@ -788,6 +780,14 @@
           "line": 10,
           "column": 2
         }
+      },
+      "start": {
+        "line": 3,
+        "column": 1
+      },
+      "end": {
+        "line": 10,
+        "column": 2
       }
     }
   ],

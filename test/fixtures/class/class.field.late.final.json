@@ -1,13 +1,13 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 19,
+      "kind": 20,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "Foobar",
         "start": {
@@ -21,7 +21,7 @@
       },
       "members": [
         {
-          "kind": 41,
+          "kind": 43,
           "attributes": [],
           "modifiers": [
             {
@@ -59,7 +59,7 @@
             }
           ],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "ID",
             "start": {
@@ -71,19 +71,11 @@
               "column": 22
             }
           },
-          "start": {
-            "line": 2,
-            "column": 2
-          },
-          "end": {
-            "line": 2,
-            "column": 30
-          },
           "type": {
-            "kind": 123,
+            "kind": 124,
             "modifiers": [],
             "typeName": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "String",
               "start": {
@@ -103,10 +95,18 @@
               "line": 2,
               "column": 30
             }
+          },
+          "start": {
+            "line": 2,
+            "column": 2
+          },
+          "end": {
+            "line": 2,
+            "column": 30
           }
         },
         {
-          "kind": 41,
+          "kind": 43,
           "attributes": [],
           "modifiers": [
             {
@@ -155,7 +155,7 @@
             }
           ],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "x",
             "start": {

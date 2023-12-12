@@ -1,9 +1,9 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 132,
+      "kind": 133,
       "attributes": [],
       "modifiers": [
         {
@@ -20,16 +20,16 @@
       ],
       "declarations": [
         {
-          "kind": 130,
+          "kind": 131,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 131,
+              "kind": 132,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "x",
                 "start": {
@@ -51,16 +51,8 @@
               }
             }
           ],
-          "start": {
-            "line": 1,
-            "column": 1
-          },
-          "end": {
-            "line": 1,
-            "column": 14
-          },
           "value": {
-            "kind": 76,
+            "kind": 78,
             "modifiers": [],
             "value": 5,
             "radix": 10,
@@ -72,6 +64,14 @@
               "line": 1,
               "column": 14
             }
+          },
+          "start": {
+            "line": 1,
+            "column": 1
+          },
+          "end": {
+            "line": 1,
+            "column": 14
           }
         }
       ],
@@ -85,7 +85,7 @@
       }
     },
     {
-      "kind": 49,
+      "kind": 51,
       "attributes": [],
       "condition": {
         "kind": 11,
@@ -111,11 +111,11 @@
           "column": 8
         },
         "left": {
-          "kind": 23,
+          "kind": 24,
           "modifiers": [],
           "values": [
             {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "x",
               "start": {
@@ -140,7 +140,7 @@
               }
             },
             {
-              "kind": 76,
+              "kind": 78,
               "modifiers": [],
               "value": 3,
               "radix": 10,
@@ -164,11 +164,11 @@
           }
         },
         "right": {
-          "kind": 23,
+          "kind": 24,
           "modifiers": [],
           "values": [
             {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "x",
               "start": {
@@ -193,7 +193,7 @@
               }
             },
             {
-              "kind": 76,
+              "kind": 78,
               "modifiers": [],
               "value": 7,
               "radix": 10,
@@ -218,7 +218,7 @@
         }
       },
       "whenTrue": {
-        "kind": 14,
+        "kind": 15,
         "attributes": [],
         "statements": [],
         "start": {

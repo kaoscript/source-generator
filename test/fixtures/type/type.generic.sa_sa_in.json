@@ -1,12 +1,13 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 43,
+      "kind": 45,
       "attributes": [],
+      "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "foobar",
         "start": {
@@ -18,21 +19,13 @@
           "column": 12
         }
       },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 2,
-        "column": 2
-      },
       "parameters": [
         {
-          "kind": 82,
+          "kind": 84,
           "attributes": [],
           "modifiers": [],
           "external": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "x",
             "start": {
@@ -45,7 +38,7 @@
             }
           },
           "internal": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "x",
             "start": {
@@ -61,50 +54,18 @@
             "kind": 6,
             "modifiers": [],
             "properties": [],
-            "start": {
-              "line": 1,
-              "column": 16
-            },
-            "end": {
-              "line": 1,
-              "column": 27
-            },
             "rest": {
-              "kind": 89,
+              "kind": 91,
               "modifiers": [],
-              "start": {
-                "line": 1,
-                "column": 16
-              },
-              "end": {
-                "line": 1,
-                "column": 25
-              },
               "type": {
                 "kind": 6,
                 "modifiers": [],
                 "properties": [],
-                "start": {
-                  "line": 1,
-                  "column": 16
-                },
-                "end": {
-                  "line": 1,
-                  "column": 25
-                },
                 "rest": {
-                  "kind": 89,
+                  "kind": 91,
                   "modifiers": [],
-                  "start": {
-                    "line": 1,
-                    "column": 16
-                  },
-                  "end": {
-                    "line": 1,
-                    "column": 22
-                  },
                   "type": {
-                    "kind": 123,
+                    "kind": 124,
                     "modifiers": [
                       {
                         "kind": 30,
@@ -119,7 +80,7 @@
                       }
                     ],
                     "typeName": {
-                      "kind": 47,
+                      "kind": 49,
                       "modifiers": [],
                       "name": "Number",
                       "start": {
@@ -139,9 +100,41 @@
                       "line": 1,
                       "column": 23
                     }
+                  },
+                  "start": {
+                    "line": 1,
+                    "column": 16
+                  },
+                  "end": {
+                    "line": 1,
+                    "column": 22
                   }
+                },
+                "start": {
+                  "line": 1,
+                  "column": 16
+                },
+                "end": {
+                  "line": 1,
+                  "column": 25
                 }
+              },
+              "start": {
+                "line": 1,
+                "column": 16
+              },
+              "end": {
+                "line": 1,
+                "column": 25
               }
+            },
+            "start": {
+              "line": 1,
+              "column": 16
+            },
+            "end": {
+              "line": 1,
+              "column": 27
             }
           },
           "start": {
@@ -154,10 +147,9 @@
           }
         }
       ],
-      "modifiers": [],
       "throws": [],
       "body": {
-        "kind": 14,
+        "kind": 15,
         "attributes": [],
         "statements": [],
         "start": {
@@ -168,6 +160,14 @@
           "line": 2,
           "column": 2
         }
+      },
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 2,
+        "column": 2
       }
     }
   ],

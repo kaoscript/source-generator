@@ -1,13 +1,13 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 118,
+      "kind": 119,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "Unit",
         "start": {
@@ -30,7 +30,7 @@
       }
     },
     {
-      "kind": 132,
+      "kind": 133,
       "attributes": [],
       "modifiers": [
         {
@@ -47,16 +47,16 @@
       ],
       "declarations": [
         {
-          "kind": 130,
+          "kind": 131,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 131,
+              "kind": 132,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "unit",
                 "start": {
@@ -78,22 +78,14 @@
               }
             }
           ],
-          "start": {
-            "line": 3,
-            "column": 1
-          },
-          "end": {
-            "line": 3,
-            "column": 22
-          },
           "value": {
-            "kind": 17,
+            "kind": 18,
             "modifiers": [],
             "scope": {
               "kind": 2
             },
             "callee": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "Unit",
               "start": {
@@ -114,6 +106,14 @@
               "line": 3,
               "column": 22
             }
+          },
+          "start": {
+            "line": 3,
+            "column": 1
+          },
+          "end": {
+            "line": 3,
+            "column": 22
           }
         }
       ],

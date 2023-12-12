@@ -1,92 +1,157 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 33,
+      "kind": 34,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
-        "name": "Color",
+        "name": "CardSuit",
         "start": {
           "line": 1,
           "column": 6
         },
         "end": {
           "line": 1,
-          "column": 11
+          "column": 14
+        }
+      },
+      "type": {
+        "kind": 124,
+        "modifiers": [],
+        "typeName": {
+          "kind": 49,
+          "modifiers": [],
+          "name": "Number",
+          "start": {
+            "line": 1,
+            "column": 15
+          },
+          "end": {
+            "line": 1,
+            "column": 21
+          }
+        },
+        "start": {
+          "line": 1,
+          "column": 15
+        },
+        "end": {
+          "line": 1,
+          "column": 21
+        }
+      },
+      "initial": {
+        "kind": 78,
+        "modifiers": [],
+        "value": 100,
+        "radix": 10,
+        "start": {
+          "line": 1,
+          "column": 22
+        },
+        "end": {
+          "line": 1,
+          "column": 25
         }
       },
       "members": [
         {
-          "kind": 41,
+          "kind": 35,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
-            "name": "Red",
+            "name": "Clubs",
             "start": {
-              "line": 3,
+              "line": 2,
               "column": 2
             },
             "end": {
-              "line": 3,
-              "column": 5
-            }
-          },
-          "start": {
-            "line": 3,
-            "column": 2
-          },
-          "end": {
-            "line": 3,
-            "column": 5
-          }
-        },
-        {
-          "kind": 41,
-          "attributes": [],
-          "modifiers": [],
-          "name": {
-            "kind": 47,
-            "modifiers": [],
-            "name": "Green",
-            "start": {
-              "line": 4,
-              "column": 2
-            },
-            "end": {
-              "line": 4,
+              "line": 2,
               "column": 7
             }
           },
           "start": {
+            "line": 2,
+            "column": 2
+          },
+          "end": {
+            "line": 2,
+            "column": 7
+          }
+        },
+        {
+          "kind": 35,
+          "attributes": [],
+          "modifiers": [],
+          "name": {
+            "kind": 49,
+            "modifiers": [],
+            "name": "Diamonds",
+            "start": {
+              "line": 3,
+              "column": 2
+            },
+            "end": {
+              "line": 3,
+              "column": 10
+            }
+          },
+          "start": {
+            "line": 3,
+            "column": 2
+          },
+          "end": {
+            "line": 3,
+            "column": 10
+          }
+        },
+        {
+          "kind": 35,
+          "attributes": [],
+          "modifiers": [],
+          "name": {
+            "kind": 49,
+            "modifiers": [],
+            "name": "Hearts",
+            "start": {
+              "line": 4,
+              "column": 2
+            },
+            "end": {
+              "line": 4,
+              "column": 8
+            }
+          },
+          "start": {
             "line": 4,
             "column": 2
           },
           "end": {
             "line": 4,
-            "column": 7
+            "column": 8
           }
         },
         {
-          "kind": 41,
+          "kind": 35,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
-            "name": "Blue",
+            "name": "Spades",
             "start": {
               "line": 5,
               "column": 2
             },
             "end": {
               "line": 5,
-              "column": 6
+              "column": 8
             }
           },
           "start": {
@@ -95,7 +160,7 @@
           },
           "end": {
             "line": 5,
-            "column": 6
+            "column": 8
           }
         }
       ],

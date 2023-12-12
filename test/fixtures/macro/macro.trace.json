@@ -1,12 +1,12 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 59,
+      "kind": 61,
       "attributes": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "trace_build_age_with_reification",
         "start": {
@@ -20,25 +20,25 @@
       },
       "parameters": [],
       "body": {
-        "kind": 14,
+        "kind": 15,
         "attributes": [],
         "statements": [
           {
-            "kind": 132,
+            "kind": 133,
             "attributes": [],
             "modifiers": [],
             "declarations": [
               {
-                "kind": 130,
+                "kind": 131,
                 "attributes": [],
                 "modifiers": [],
                 "variables": [
                   {
-                    "kind": 131,
+                    "kind": 132,
                     "attributes": [],
                     "modifiers": [],
                     "name": {
-                      "kind": 47,
+                      "kind": 49,
                       "modifiers": [],
                       "name": "buildTime",
                       "start": {
@@ -60,25 +60,17 @@
                     }
                   }
                 ],
-                "start": {
-                  "line": 2,
-                  "column": 6
-                },
-                "end": {
-                  "line": 2,
-                  "column": 57
-                },
                 "value": {
-                  "kind": 17,
+                  "kind": 18,
                   "modifiers": [],
                   "scope": {
                     "kind": 2
                   },
                   "callee": {
-                    "kind": 68,
+                    "kind": 70,
                     "modifiers": [],
                     "object": {
-                      "kind": 47,
+                      "kind": 49,
                       "modifiers": [],
                       "name": "Math",
                       "start": {
@@ -91,7 +83,7 @@
                       }
                     },
                     "property": {
-                      "kind": 47,
+                      "kind": 49,
                       "modifiers": [],
                       "name": "floor",
                       "start": {
@@ -137,25 +129,25 @@
                         "column": 56
                       },
                       "left": {
-                        "kind": 17,
+                        "kind": 18,
                         "modifiers": [],
                         "scope": {
                           "kind": 2
                         },
                         "callee": {
-                          "kind": 68,
+                          "kind": 70,
                           "modifiers": [],
                           "object": {
-                            "kind": 17,
+                            "kind": 18,
                             "modifiers": [],
                             "scope": {
                               "kind": 2
                             },
                             "callee": {
-                              "kind": 68,
+                              "kind": 70,
                               "modifiers": [],
                               "object": {
-                                "kind": 47,
+                                "kind": 49,
                                 "modifiers": [],
                                 "name": "Date",
                                 "start": {
@@ -168,7 +160,7 @@
                                 }
                               },
                               "property": {
-                                "kind": 47,
+                                "kind": 49,
                                 "modifiers": [],
                                 "name": "now",
                                 "start": {
@@ -200,7 +192,7 @@
                             }
                           },
                           "property": {
-                            "kind": 47,
+                            "kind": 49,
                             "modifiers": [],
                             "name": "getTime",
                             "start": {
@@ -232,7 +224,7 @@
                         }
                       },
                       "right": {
-                        "kind": 76,
+                        "kind": 78,
                         "modifiers": [],
                         "value": 1000,
                         "radix": 10,
@@ -255,6 +247,14 @@
                     "line": 2,
                     "column": 57
                   }
+                },
+                "start": {
+                  "line": 2,
+                  "column": 6
+                },
+                "end": {
+                  "line": 2,
+                  "column": 57
                 }
               }
             ],
@@ -268,10 +268,10 @@
             }
           },
           {
-            "kind": 39,
+            "kind": 41,
             "attributes": [],
             "expression": {
-              "kind": 60,
+              "kind": 62,
               "attributes": [],
               "elements": [
                 {
@@ -312,7 +312,7 @@
                 {
                   "kind": 1,
                   "expression": {
-                    "kind": 47,
+                    "kind": 49,
                     "modifiers": [],
                     "name": "buildTime",
                     "start": {

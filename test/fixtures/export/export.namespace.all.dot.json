@@ -1,13 +1,13 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 75,
+      "kind": 77,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "NS",
         "start": {
@@ -21,16 +21,17 @@
       },
       "statements": [
         {
-          "kind": 35,
+          "kind": 37,
           "attributes": [],
           "declarations": [
             {
-              "kind": 28,
+              "kind": 29,
               "declaration": {
-                "kind": 43,
+                "kind": 45,
                 "attributes": [],
+                "modifiers": [],
                 "name": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "foo",
                   "start": {
@@ -42,19 +43,10 @@
                     "column": 17
                   }
                 },
-                "start": {
-                  "line": 2,
-                  "column": 9
-                },
-                "end": {
-                  "line": 3,
-                  "column": 3
-                },
                 "parameters": [],
-                "modifiers": [],
                 "throws": [],
                 "body": {
-                  "kind": 14,
+                  "kind": 15,
                   "attributes": [],
                   "statements": [],
                   "start": {
@@ -65,6 +57,14 @@
                     "line": 3,
                     "column": 3
                   }
+                },
+                "start": {
+                  "line": 2,
+                  "column": 9
+                },
+                "end": {
+                  "line": 3,
+                  "column": 3
                 }
               },
               "start": {
@@ -97,11 +97,11 @@
       }
     },
     {
-      "kind": 35,
+      "kind": 37,
       "attributes": [],
       "declarations": [
         {
-          "kind": 74,
+          "kind": 76,
           "modifiers": [
             {
               "kind": 45,
@@ -116,7 +116,7 @@
             }
           ],
           "internal": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "NS",
             "start": {

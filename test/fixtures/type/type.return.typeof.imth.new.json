@@ -1,13 +1,13 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 19,
+      "kind": 20,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "Foobar",
         "start": {
@@ -21,11 +21,11 @@
       },
       "members": [
         {
-          "kind": 69,
+          "kind": 71,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "foobar",
             "start": {
@@ -38,16 +38,8 @@
             }
           },
           "parameters": [],
-          "start": {
-            "line": 2,
-            "column": 2
-          },
-          "end": {
-            "line": 4,
-            "column": 3
-          },
           "type": {
-            "kind": 126,
+            "kind": 127,
             "modifiers": [],
             "operator": {
               "kind": 3,
@@ -61,7 +53,7 @@
               }
             },
             "argument": {
-              "kind": 126,
+              "kind": 127,
               "modifiers": [],
               "operator": {
                 "kind": 4,
@@ -75,7 +67,7 @@
                 }
               },
               "argument": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "this",
                 "start": {
@@ -107,23 +99,23 @@
           },
           "throws": [],
           "body": {
-            "kind": 14,
+            "kind": 15,
             "attributes": [],
             "statements": [
               {
-                "kind": 99,
+                "kind": 101,
                 "attributes": [],
                 "value": {
-                  "kind": 17,
+                  "kind": 18,
                   "modifiers": [],
                   "scope": {
                     "kind": 2
                   },
                   "callee": {
-                    "kind": 68,
+                    "kind": 70,
                     "modifiers": [],
                     "object": {
-                      "kind": 47,
+                      "kind": 49,
                       "modifiers": [],
                       "name": "Foobar",
                       "start": {
@@ -136,7 +128,7 @@
                       }
                     },
                     "property": {
-                      "kind": 47,
+                      "kind": 49,
                       "modifiers": [],
                       "name": "new",
                       "start": {
@@ -185,6 +177,14 @@
               "line": 4,
               "column": 3
             }
+          },
+          "start": {
+            "line": 2,
+            "column": 2
+          },
+          "end": {
+            "line": 4,
+            "column": 3
           }
         }
       ],

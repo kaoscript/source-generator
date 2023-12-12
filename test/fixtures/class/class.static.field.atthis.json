@@ -1,13 +1,13 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 19,
+      "kind": 20,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "Foobar",
         "start": {
@@ -21,7 +21,7 @@
       },
       "members": [
         {
-          "kind": 41,
+          "kind": 43,
           "attributes": [],
           "modifiers": [
             {
@@ -59,7 +59,7 @@
             }
           ],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "x",
             "start": {
@@ -71,19 +71,11 @@
               "column": 19
             }
           },
-          "start": {
-            "line": 2,
-            "column": 2
-          },
-          "end": {
-            "line": 2,
-            "column": 33
-          },
           "type": {
-            "kind": 123,
+            "kind": 124,
             "modifiers": [],
             "typeName": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "Number",
               "start": {
@@ -105,7 +97,7 @@
             }
           },
           "value": {
-            "kind": 76,
+            "kind": 78,
             "modifiers": [],
             "value": 42,
             "radix": 10,
@@ -117,6 +109,14 @@
               "line": 2,
               "column": 33
             }
+          },
+          "start": {
+            "line": 2,
+            "column": 2
+          },
+          "end": {
+            "line": 2,
+            "column": 33
           }
         }
       ],

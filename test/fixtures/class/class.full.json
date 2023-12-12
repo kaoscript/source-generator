@@ -1,13 +1,13 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 19,
+      "kind": 20,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "Shape",
         "start": {
@@ -21,7 +21,7 @@
       },
       "members": [
         {
-          "kind": 41,
+          "kind": 43,
           "attributes": [],
           "modifiers": [
             {
@@ -37,7 +37,7 @@
             }
           ],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "_color",
             "start": {
@@ -49,19 +49,11 @@
               "column": 9
             }
           },
-          "start": {
-            "line": 3,
-            "column": 3
-          },
-          "end": {
-            "line": 3,
-            "column": 22
-          },
           "type": {
-            "kind": 123,
+            "kind": 124,
             "modifiers": [],
             "typeName": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "string",
               "start": {
@@ -83,7 +75,7 @@
             }
           },
           "value": {
-            "kind": 58,
+            "kind": 60,
             "modifiers": [],
             "value": "",
             "start": {
@@ -94,14 +86,22 @@
               "line": 3,
               "column": 22
             }
+          },
+          "start": {
+            "line": 3,
+            "column": 3
+          },
+          "end": {
+            "line": 3,
+            "column": 22
           }
         },
         {
-          "kind": 69,
+          "kind": 71,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "constructor",
             "start": {
@@ -115,11 +115,11 @@
           },
           "parameters": [
             {
-              "kind": 82,
+              "kind": 84,
               "attributes": [],
               "modifiers": [],
               "external": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "color",
                 "start": {
@@ -132,10 +132,10 @@
                 }
               },
               "internal": {
-                "kind": 112,
+                "kind": 113,
                 "modifiers": [],
                 "name": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "color",
                   "start": {
@@ -166,6 +166,7 @@
               }
             }
           ],
+          "throws": [],
           "start": {
             "line": 6,
             "column": 2
@@ -173,15 +174,14 @@
           "end": {
             "line": 6,
             "column": 21
-          },
-          "throws": []
+          }
         },
         {
-          "kind": 69,
+          "kind": 71,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "color",
             "start": {
@@ -194,19 +194,11 @@
             }
           },
           "parameters": [],
-          "start": {
-            "line": 8,
-            "column": 2
-          },
-          "end": {
-            "line": 8,
-            "column": 32
-          },
           "type": {
-            "kind": 123,
+            "kind": 124,
             "modifiers": [],
             "typeName": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "string",
               "start": {
@@ -229,10 +221,10 @@
           },
           "throws": [],
           "body": {
-            "kind": 68,
+            "kind": 70,
             "modifiers": [],
             "object": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "this",
               "start": {
@@ -245,7 +237,7 @@
               }
             },
             "property": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "_color",
               "start": {
@@ -265,14 +257,22 @@
               "line": 8,
               "column": 32
             }
+          },
+          "start": {
+            "line": 8,
+            "column": 2
+          },
+          "end": {
+            "line": 8,
+            "column": 32
           }
         },
         {
-          "kind": 69,
+          "kind": 71,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "color",
             "start": {
@@ -286,11 +286,11 @@
           },
           "parameters": [
             {
-              "kind": 82,
+              "kind": 84,
               "attributes": [],
               "modifiers": [],
               "external": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "color",
                 "start": {
@@ -303,10 +303,10 @@
                 }
               },
               "internal": {
-                "kind": 112,
+                "kind": 113,
                 "modifiers": [],
                 "name": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "color",
                   "start": {
@@ -337,19 +337,11 @@
               }
             }
           ],
-          "start": {
-            "line": 10,
-            "column": 2
-          },
-          "end": {
-            "line": 10,
-            "column": 30
-          },
           "type": {
-            "kind": 123,
+            "kind": 124,
             "modifiers": [],
             "typeName": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "Shape",
               "start": {
@@ -372,7 +364,7 @@
           },
           "throws": [],
           "body": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "this",
             "start": {
@@ -383,14 +375,22 @@
               "line": 10,
               "column": 30
             }
+          },
+          "start": {
+            "line": 10,
+            "column": 2
+          },
+          "end": {
+            "line": 10,
+            "column": 30
           }
         },
         {
-          "kind": 69,
+          "kind": 71,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "color",
             "start": {
@@ -404,11 +404,11 @@
           },
           "parameters": [
             {
-              "kind": 82,
+              "kind": 84,
               "attributes": [],
               "modifiers": [],
               "external": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "shape",
                 "start": {
@@ -421,7 +421,7 @@
                 }
               },
               "internal": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "shape",
                 "start": {
@@ -434,10 +434,10 @@
                 }
               },
               "type": {
-                "kind": 123,
+                "kind": 124,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "Shape",
                   "start": {
@@ -468,19 +468,11 @@
               }
             }
           ],
-          "start": {
-            "line": 12,
-            "column": 2
-          },
-          "end": {
-            "line": 16,
-            "column": 3
-          },
           "type": {
-            "kind": 123,
+            "kind": 124,
             "modifiers": [],
             "typeName": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "Shape",
               "start": {
@@ -503,11 +495,11 @@
           },
           "throws": [],
           "body": {
-            "kind": 14,
+            "kind": 15,
             "attributes": [],
             "statements": [
               {
-                "kind": 39,
+                "kind": 41,
                 "attributes": [],
                 "expression": {
                   "kind": 11,
@@ -525,10 +517,10 @@
                     }
                   },
                   "left": {
-                    "kind": 68,
+                    "kind": 70,
                     "modifiers": [],
                     "object": {
-                      "kind": 47,
+                      "kind": 49,
                       "modifiers": [],
                       "name": "this",
                       "start": {
@@ -541,7 +533,7 @@
                       }
                     },
                     "property": {
-                      "kind": 47,
+                      "kind": 49,
                       "modifiers": [],
                       "name": "_color",
                       "start": {
@@ -563,16 +555,16 @@
                     }
                   },
                   "right": {
-                    "kind": 17,
+                    "kind": 18,
                     "modifiers": [],
                     "scope": {
                       "kind": 2
                     },
                     "callee": {
-                      "kind": 68,
+                      "kind": 70,
                       "modifiers": [],
                       "object": {
-                        "kind": 47,
+                        "kind": 49,
                         "modifiers": [],
                         "name": "shape",
                         "start": {
@@ -585,7 +577,7 @@
                         }
                       },
                       "property": {
-                        "kind": 47,
+                        "kind": 49,
                         "modifiers": [],
                         "name": "color",
                         "start": {
@@ -635,10 +627,10 @@
                 }
               },
               {
-                "kind": 99,
+                "kind": 101,
                 "attributes": [],
                 "value": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "this",
                   "start": {
@@ -668,6 +660,14 @@
               "line": 16,
               "column": 3
             }
+          },
+          "start": {
+            "line": 12,
+            "column": 2
+          },
+          "end": {
+            "line": 16,
+            "column": 3
           }
         }
       ],

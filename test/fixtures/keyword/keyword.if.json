@@ -1,9 +1,9 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 132,
+      "kind": 133,
       "attributes": [],
       "modifiers": [
         {
@@ -20,16 +20,16 @@
       ],
       "declarations": [
         {
-          "kind": 130,
+          "kind": 131,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 131,
+              "kind": 132,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "foo",
                 "start": {
@@ -51,33 +51,17 @@
               }
             }
           ],
-          "start": {
-            "line": 1,
-            "column": 1
-          },
-          "end": {
-            "line": 3,
-            "column": 2
-          },
           "value": {
-            "kind": 78,
+            "kind": 80,
             "modifiers": [],
             "attributes": [],
             "properties": [
               {
-                "kind": 79,
+                "kind": 81,
                 "attributes": [],
                 "modifiers": [],
-                "start": {
-                  "line": 2,
-                  "column": 2
-                },
-                "end": {
-                  "line": 2,
-                  "column": 10
-                },
                 "name": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "if",
                   "start": {
@@ -90,7 +74,7 @@
                   }
                 },
                 "value": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "true",
                   "start": {
@@ -101,6 +85,14 @@
                     "line": 2,
                     "column": 10
                   }
+                },
+                "start": {
+                  "line": 2,
+                  "column": 2
+                },
+                "end": {
+                  "line": 2,
+                  "column": 10
                 }
               }
             ],
@@ -112,6 +104,14 @@
               "line": 3,
               "column": 2
             }
+          },
+          "start": {
+            "line": 1,
+            "column": 1
+          },
+          "end": {
+            "line": 3,
+            "column": 2
           }
         }
       ],

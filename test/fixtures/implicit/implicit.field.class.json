@@ -1,13 +1,13 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 19,
+      "kind": 20,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "Style",
         "start": {
@@ -21,7 +21,7 @@
       },
       "members": [
         {
-          "kind": 41,
+          "kind": 43,
           "attributes": [],
           "modifiers": [
             {
@@ -48,7 +48,7 @@
             }
           ],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "fontWeight",
             "start": {
@@ -60,19 +60,11 @@
               "column": 14
             }
           },
-          "start": {
-            "line": 3,
-            "column": 3
-          },
-          "end": {
-            "line": 3,
-            "column": 36
-          },
           "type": {
-            "kind": 123,
+            "kind": 124,
             "modifiers": [],
             "typeName": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "FontWeight",
               "start": {
@@ -94,7 +86,7 @@
             }
           },
           "value": {
-            "kind": 125,
+            "kind": 126,
             "modifiers": [],
             "operator": {
               "kind": 4,
@@ -108,7 +100,7 @@
               }
             },
             "argument": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "Normal",
               "start": {
@@ -128,6 +120,14 @@
               "line": 3,
               "column": 36
             }
+          },
+          "start": {
+            "line": 3,
+            "column": 3
+          },
+          "end": {
+            "line": 3,
+            "column": 36
           }
         }
       ],

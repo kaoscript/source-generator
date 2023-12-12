@@ -1,23 +1,23 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 132,
+      "kind": 133,
       "attributes": [],
       "modifiers": [],
       "declarations": [
         {
-          "kind": 130,
+          "kind": 131,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 131,
+              "kind": 132,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "writeAppLogWithBreak",
                 "start": {
@@ -39,22 +39,14 @@
               }
             }
           ],
-          "start": {
-            "line": 1,
-            "column": 5
-          },
-          "end": {
-            "line": 1,
-            "column": 55
-          },
           "value": {
-            "kind": 27,
+            "kind": 28,
             "modifiers": [],
             "scope": {
               "kind": 2
             },
             "callee": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "writeAppLog",
               "start": {
@@ -68,7 +60,7 @@
             },
             "arguments": [
               {
-                "kind": 84,
+                "kind": 86,
                 "modifiers": [
                   {
                     "kind": 39,
@@ -92,7 +84,7 @@
                 }
               },
               {
-                "kind": 58,
+                "kind": 60,
                 "modifiers": [],
                 "value": "\\n---",
                 "start": {
@@ -113,6 +105,14 @@
               "line": 1,
               "column": 55
             }
+          },
+          "start": {
+            "line": 1,
+            "column": 5
+          },
+          "end": {
+            "line": 1,
+            "column": 55
           }
         }
       ],

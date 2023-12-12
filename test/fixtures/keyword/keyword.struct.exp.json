@@ -1,23 +1,23 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 132,
+      "kind": 133,
       "attributes": [],
       "modifiers": [],
       "declarations": [
         {
-          "kind": 130,
+          "kind": 131,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 131,
+              "kind": 132,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "struct",
                 "start": {
@@ -39,16 +39,8 @@
               }
             }
           ],
-          "start": {
-            "line": 1,
-            "column": 5
-          },
-          "end": {
-            "line": 1,
-            "column": 16
-          },
           "value": {
-            "kind": 76,
+            "kind": 78,
             "modifiers": [],
             "value": 42,
             "radix": 10,
@@ -60,6 +52,14 @@
               "line": 1,
               "column": 16
             }
+          },
+          "start": {
+            "line": 1,
+            "column": 5
+          },
+          "end": {
+            "line": 1,
+            "column": 16
           }
         }
       ],
@@ -73,19 +73,19 @@
       }
     },
     {
-      "kind": 39,
+      "kind": 41,
       "attributes": [],
       "expression": {
-        "kind": 17,
+        "kind": 18,
         "modifiers": [],
         "scope": {
           "kind": 2
         },
         "callee": {
-          "kind": 68,
+          "kind": 70,
           "modifiers": [],
           "object": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "console",
             "start": {
@@ -98,7 +98,7 @@
             }
           },
           "property": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "log",
             "start": {
@@ -144,7 +144,7 @@
               "column": 24
             },
             "left": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "struct",
               "start": {
@@ -157,7 +157,7 @@
               }
             },
             "right": {
-              "kind": 76,
+              "kind": 78,
               "modifiers": [],
               "value": 24,
               "radix": 10,

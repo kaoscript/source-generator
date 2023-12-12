@@ -1,12 +1,13 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 43,
+      "kind": 45,
       "attributes": [],
+      "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "foobar",
         "start": {
@@ -18,21 +19,13 @@
           "column": 12
         }
       },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 2,
-        "column": 2
-      },
       "parameters": [
         {
-          "kind": 82,
+          "kind": 84,
           "attributes": [],
           "modifiers": [],
           "external": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "x",
             "start": {
@@ -45,7 +38,7 @@
             }
           },
           "internal": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "x",
             "start": {
@@ -58,10 +51,10 @@
             }
           },
           "type": {
-            "kind": 123,
+            "kind": 124,
             "modifiers": [],
             "typeName": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "Number",
               "start": {
@@ -92,9 +85,8 @@
           }
         }
       ],
-      "modifiers": [],
       "type": {
-        "kind": 126,
+        "kind": 127,
         "modifiers": [],
         "operator": {
           "kind": 5,
@@ -108,7 +100,7 @@
           }
         },
         "argument": {
-          "kind": 47,
+          "kind": 49,
           "modifiers": [],
           "name": "x",
           "start": {
@@ -131,7 +123,7 @@
       },
       "throws": [],
       "body": {
-        "kind": 14,
+        "kind": 15,
         "attributes": [],
         "statements": [],
         "start": {
@@ -142,6 +134,14 @@
           "line": 2,
           "column": 2
         }
+      },
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 2,
+        "column": 2
       }
     }
   ],

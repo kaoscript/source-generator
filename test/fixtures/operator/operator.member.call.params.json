@@ -1,17 +1,17 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 36,
+      "kind": 38,
       "attributes": [],
       "declarations": [
         {
-          "kind": 131,
+          "kind": 132,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "foo",
             "start": {
@@ -43,7 +43,7 @@
       }
     },
     {
-      "kind": 132,
+      "kind": 133,
       "attributes": [],
       "modifiers": [
         {
@@ -60,16 +60,16 @@
       ],
       "declarations": [
         {
-          "kind": 130,
+          "kind": 131,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 131,
+              "kind": 132,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "tt",
                 "start": {
@@ -91,16 +91,8 @@
               }
             }
           ],
-          "start": {
-            "line": 3,
-            "column": 1
-          },
-          "end": {
-            "line": 3,
-            "column": 27
-          },
           "value": {
-            "kind": 17,
+            "kind": 18,
             "modifiers": [
               {
                 "kind": 30,
@@ -118,7 +110,7 @@
               "kind": 2
             },
             "callee": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "foo",
               "start": {
@@ -132,7 +124,7 @@
             },
             "arguments": [
               {
-                "kind": 76,
+                "kind": 78,
                 "modifiers": [],
                 "value": 1,
                 "radix": 10,
@@ -146,7 +138,7 @@
                 }
               },
               {
-                "kind": 76,
+                "kind": 78,
                 "modifiers": [],
                 "value": 2,
                 "radix": 10,
@@ -160,7 +152,7 @@
                 }
               },
               {
-                "kind": 76,
+                "kind": 78,
                 "modifiers": [],
                 "value": 3,
                 "radix": 10,
@@ -182,6 +174,14 @@
               "line": 3,
               "column": 27
             }
+          },
+          "start": {
+            "line": 3,
+            "column": 1
+          },
+          "end": {
+            "line": 3,
+            "column": 27
           }
         }
       ],
@@ -195,7 +195,7 @@
       }
     },
     {
-      "kind": 132,
+      "kind": 133,
       "attributes": [],
       "modifiers": [
         {
@@ -212,16 +212,16 @@
       ],
       "declarations": [
         {
-          "kind": 130,
+          "kind": 131,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 131,
+              "kind": 132,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "uu",
                 "start": {
@@ -243,16 +243,8 @@
               }
             }
           ],
-          "start": {
-            "line": 5,
-            "column": 1
-          },
-          "end": {
-            "line": 5,
-            "column": 21
-          },
           "value": {
-            "kind": 17,
+            "kind": 18,
             "modifiers": [
               {
                 "kind": 30,
@@ -270,7 +262,7 @@
               "kind": 2
             },
             "callee": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "foo",
               "start": {
@@ -284,7 +276,7 @@
             },
             "arguments": [
               {
-                "kind": 76,
+                "kind": 78,
                 "modifiers": [],
                 "value": 1,
                 "radix": 10,
@@ -306,6 +298,14 @@
               "line": 5,
               "column": 21
             }
+          },
+          "start": {
+            "line": 5,
+            "column": 1
+          },
+          "end": {
+            "line": 5,
+            "column": 21
           }
         }
       ],

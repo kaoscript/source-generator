@@ -1,16 +1,16 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 19,
+      "kind": 20,
       "attributes": [
         {
           "kind": 7,
           "declaration": {
             "kind": 8,
             "name": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "error",
               "start": {
@@ -24,7 +24,7 @@
             },
             "arguments": [
               {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "off",
                 "start": {
@@ -58,7 +58,7 @@
       ],
       "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "Foobar",
         "start": {
@@ -72,11 +72,11 @@
       },
       "members": [
         {
-          "kind": 69,
+          "kind": 71,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "foo",
             "start": {
@@ -89,17 +89,9 @@
             }
           },
           "parameters": [],
-          "start": {
-            "line": 4,
-            "column": 2
-          },
-          "end": {
-            "line": 5,
-            "column": 3
-          },
           "throws": [],
           "body": {
-            "kind": 14,
+            "kind": 15,
             "attributes": [],
             "statements": [],
             "start": {
@@ -110,14 +102,22 @@
               "line": 5,
               "column": 3
             }
+          },
+          "start": {
+            "line": 4,
+            "column": 2
+          },
+          "end": {
+            "line": 5,
+            "column": 3
           }
         },
         {
-          "kind": 69,
+          "kind": 71,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "bar",
             "start": {
@@ -130,17 +130,9 @@
             }
           },
           "parameters": [],
-          "start": {
-            "line": 7,
-            "column": 2
-          },
-          "end": {
-            "line": 8,
-            "column": 3
-          },
           "throws": [],
           "body": {
-            "kind": 14,
+            "kind": 15,
             "attributes": [],
             "statements": [],
             "start": {
@@ -151,6 +143,14 @@
               "line": 8,
               "column": 3
             }
+          },
+          "start": {
+            "line": 7,
+            "column": 2
+          },
+          "end": {
+            "line": 8,
+            "column": 3
           }
         }
       ],

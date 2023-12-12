@@ -1,23 +1,23 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 132,
+      "kind": 133,
       "attributes": [],
       "modifiers": [],
       "declarations": [
         {
-          "kind": 130,
+          "kind": 131,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 131,
+              "kind": 132,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "right",
                 "start": {
@@ -39,25 +39,17 @@
               }
             }
           ],
-          "start": {
-            "line": 1,
-            "column": 5
-          },
-          "end": {
-            "line": 1,
-            "column": 26
-          },
           "value": {
-            "kind": 17,
+            "kind": 18,
             "modifiers": [],
             "scope": {
               "kind": 2
             },
             "callee": {
-              "kind": 68,
+              "kind": 70,
               "modifiers": [],
               "object": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "Node",
                 "start": {
@@ -70,7 +62,7 @@
                 }
               },
               "property": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "new",
                 "start": {
@@ -93,7 +85,7 @@
             },
             "arguments": [
               {
-                "kind": 58,
+                "kind": 60,
                 "modifiers": [],
                 "value": "e",
                 "start": {
@@ -114,6 +106,14 @@
               "line": 1,
               "column": 26
             }
+          },
+          "start": {
+            "line": 1,
+            "column": 5
+          },
+          "end": {
+            "line": 1,
+            "column": 26
           }
         }
       ],
@@ -127,21 +127,21 @@
       }
     },
     {
-      "kind": 132,
+      "kind": 133,
       "attributes": [],
       "modifiers": [],
       "declarations": [
         {
-          "kind": 130,
+          "kind": 131,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 131,
+              "kind": 132,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "root",
                 "start": {
@@ -163,28 +163,20 @@
               }
             }
           ],
-          "start": {
-            "line": 2,
-            "column": 5
-          },
-          "end": {
-            "line": 9,
-            "column": 17
-          },
           "value": {
-            "kind": 100,
+            "kind": 102,
             "modifiers": [],
             "object": {
-              "kind": 17,
+              "kind": 18,
               "modifiers": [],
               "scope": {
                 "kind": 2
               },
               "callee": {
-                "kind": 68,
+                "kind": 70,
                 "modifiers": [],
                 "object": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "Node",
                   "start": {
@@ -197,7 +189,7 @@
                   }
                 },
                 "property": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "new",
                   "start": {
@@ -220,7 +212,7 @@
               },
               "arguments": [
                 {
-                  "kind": 58,
+                  "kind": 60,
                   "modifiers": [],
                   "value": "root",
                   "start": {
@@ -267,10 +259,10 @@
                   "column": 3
                 },
                 "left": {
-                  "kind": 68,
+                  "kind": 70,
                   "modifiers": [],
                   "object": {
-                    "kind": 92,
+                    "kind": 94,
                     "name": "main",
                     "start": {
                       "line": 2,
@@ -282,7 +274,7 @@
                     }
                   },
                   "property": {
-                    "kind": 47,
+                    "kind": 49,
                     "modifiers": [],
                     "name": "left",
                     "start": {
@@ -304,19 +296,19 @@
                   }
                 },
                 "right": {
-                  "kind": 100,
+                  "kind": 102,
                   "modifiers": [],
                   "object": {
-                    "kind": 17,
+                    "kind": 18,
                     "modifiers": [],
                     "scope": {
                       "kind": 2
                     },
                     "callee": {
-                      "kind": 68,
+                      "kind": 70,
                       "modifiers": [],
                       "object": {
-                        "kind": 47,
+                        "kind": 49,
                         "modifiers": [],
                         "name": "Node",
                         "start": {
@@ -329,7 +321,7 @@
                         }
                       },
                       "property": {
-                        "kind": 47,
+                        "kind": 49,
                         "modifiers": [],
                         "name": "new",
                         "start": {
@@ -352,7 +344,7 @@
                     },
                     "arguments": [
                       {
-                        "kind": 58,
+                        "kind": 60,
                         "modifiers": [],
                         "value": "a",
                         "start": {
@@ -399,10 +391,10 @@
                         "column": 4
                       },
                       "left": {
-                        "kind": 68,
+                        "kind": 70,
                         "modifiers": [],
                         "object": {
-                          "kind": 92,
+                          "kind": 94,
                           "name": "main",
                           "start": {
                             "line": 3,
@@ -414,7 +406,7 @@
                           }
                         },
                         "property": {
-                          "kind": 47,
+                          "kind": 49,
                           "modifiers": [],
                           "name": "left",
                           "start": {
@@ -436,19 +428,19 @@
                         }
                       },
                       "right": {
-                        "kind": 100,
+                        "kind": 102,
                         "modifiers": [],
                         "object": {
-                          "kind": 17,
+                          "kind": 18,
                           "modifiers": [],
                           "scope": {
                             "kind": 2
                           },
                           "callee": {
-                            "kind": 68,
+                            "kind": 70,
                             "modifiers": [],
                             "object": {
-                              "kind": 47,
+                              "kind": 49,
                               "modifiers": [],
                               "name": "Node",
                               "start": {
@@ -461,7 +453,7 @@
                               }
                             },
                             "property": {
-                              "kind": 47,
+                              "kind": 49,
                               "modifiers": [],
                               "name": "new",
                               "start": {
@@ -484,7 +476,7 @@
                           },
                           "arguments": [
                             {
-                              "kind": 58,
+                              "kind": 60,
                               "modifiers": [],
                               "value": "b",
                               "start": {
@@ -531,10 +523,10 @@
                               "column": 26
                             },
                             "left": {
-                              "kind": 68,
+                              "kind": 70,
                               "modifiers": [],
                               "object": {
-                                "kind": 92,
+                                "kind": 94,
                                 "name": "main",
                                 "start": {
                                   "line": 4,
@@ -546,7 +538,7 @@
                                 }
                               },
                               "property": {
-                                "kind": 47,
+                                "kind": 49,
                                 "modifiers": [],
                                 "name": "left",
                                 "start": {
@@ -568,16 +560,16 @@
                               }
                             },
                             "right": {
-                              "kind": 17,
+                              "kind": 18,
                               "modifiers": [],
                               "scope": {
                                 "kind": 2
                               },
                               "callee": {
-                                "kind": 68,
+                                "kind": 70,
                                 "modifiers": [],
                                 "object": {
-                                  "kind": 47,
+                                  "kind": 49,
                                   "modifiers": [],
                                   "name": "Node",
                                   "start": {
@@ -590,7 +582,7 @@
                                   }
                                 },
                                 "property": {
-                                  "kind": 47,
+                                  "kind": 49,
                                   "modifiers": [],
                                   "name": "new",
                                   "start": {
@@ -613,7 +605,7 @@
                               },
                               "arguments": [
                                 {
-                                  "kind": 58,
+                                  "kind": 60,
                                   "modifiers": [],
                                   "value": "c",
                                   "start": {
@@ -671,10 +663,10 @@
                         "column": 26
                       },
                       "left": {
-                        "kind": 68,
+                        "kind": 70,
                         "modifiers": [],
                         "object": {
-                          "kind": 92,
+                          "kind": 94,
                           "name": "main",
                           "start": {
                             "line": 3,
@@ -686,7 +678,7 @@
                           }
                         },
                         "property": {
-                          "kind": 47,
+                          "kind": 49,
                           "modifiers": [],
                           "name": "right",
                           "start": {
@@ -708,16 +700,16 @@
                         }
                       },
                       "right": {
-                        "kind": 17,
+                        "kind": 18,
                         "modifiers": [],
                         "scope": {
                           "kind": 2
                         },
                         "callee": {
-                          "kind": 68,
+                          "kind": 70,
                           "modifiers": [],
                           "object": {
-                            "kind": 47,
+                            "kind": 49,
                             "modifiers": [],
                             "name": "Node",
                             "start": {
@@ -730,7 +722,7 @@
                             }
                           },
                           "property": {
-                            "kind": 47,
+                            "kind": 49,
                             "modifiers": [],
                             "name": "new",
                             "start": {
@@ -753,7 +745,7 @@
                         },
                         "arguments": [
                           {
-                            "kind": 58,
+                            "kind": 60,
                             "modifiers": [],
                             "value": "d",
                             "start": {
@@ -811,10 +803,10 @@
                   "column": 17
                 },
                 "left": {
-                  "kind": 68,
+                  "kind": 70,
                   "modifiers": [],
                   "object": {
-                    "kind": 92,
+                    "kind": 94,
                     "name": "main",
                     "start": {
                       "line": 2,
@@ -826,7 +818,7 @@
                     }
                   },
                   "property": {
-                    "kind": 47,
+                    "kind": 49,
                     "modifiers": [],
                     "name": "right",
                     "start": {
@@ -848,7 +840,7 @@
                   }
                 },
                 "right": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "right",
                   "start": {
@@ -870,6 +862,14 @@
               "line": 9,
               "column": 17
             }
+          },
+          "start": {
+            "line": 2,
+            "column": 5
+          },
+          "end": {
+            "line": 9,
+            "column": 17
           }
         }
       ],

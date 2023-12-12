@@ -1,13 +1,13 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 19,
+      "kind": 20,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "Foobar",
         "start": {
@@ -21,7 +21,7 @@
       },
       "members": [
         {
-          "kind": 41,
+          "kind": 43,
           "attributes": [],
           "modifiers": [
             {
@@ -37,7 +37,7 @@
             }
           ],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "_x",
             "start": {
@@ -49,19 +49,11 @@
               "column": 5
             }
           },
-          "start": {
-            "line": 3,
-            "column": 3
-          },
-          "end": {
-            "line": 3,
-            "column": 13
-          },
           "type": {
-            "kind": 123,
+            "kind": 124,
             "modifiers": [],
             "typeName": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "Number",
               "start": {
@@ -81,14 +73,22 @@
               "line": 3,
               "column": 13
             }
+          },
+          "start": {
+            "line": 3,
+            "column": 3
+          },
+          "end": {
+            "line": 3,
+            "column": 13
           }
         },
         {
-          "kind": 69,
+          "kind": 71,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "constructor",
             "start": {
@@ -102,11 +102,11 @@
           },
           "parameters": [
             {
-              "kind": 82,
+              "kind": 84,
               "attributes": [],
               "modifiers": [],
               "external": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "x",
                 "start": {
@@ -119,10 +119,10 @@
                 }
               },
               "internal": {
-                "kind": 112,
+                "kind": 113,
                 "modifiers": [],
                 "name": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "x",
                   "start": {
@@ -153,6 +153,7 @@
               }
             }
           ],
+          "throws": [],
           "start": {
             "line": 5,
             "column": 2
@@ -160,15 +161,14 @@
           "end": {
             "line": 5,
             "column": 17
-          },
-          "throws": []
+          }
         },
         {
-          "kind": 69,
+          "kind": 71,
           "attributes": [],
           "modifiers": [],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "export",
             "start": {
@@ -181,28 +181,20 @@
             }
           },
           "parameters": [],
-          "start": {
-            "line": 6,
-            "column": 2
-          },
-          "end": {
-            "line": 8,
-            "column": 3
-          },
           "throws": [],
           "body": {
-            "kind": 78,
+            "kind": 80,
             "modifiers": [],
             "attributes": [],
             "properties": [
               {
-                "kind": 104,
+                "kind": 106,
                 "attributes": [],
                 "name": {
-                  "kind": 112,
+                  "kind": 113,
                   "modifiers": [],
                   "name": {
-                    "kind": 47,
+                    "kind": 49,
                     "modifiers": [],
                     "name": "x",
                     "start": {
@@ -241,6 +233,14 @@
               "line": 8,
               "column": 3
             }
+          },
+          "start": {
+            "line": 6,
+            "column": 2
+          },
+          "end": {
+            "line": 8,
+            "column": 3
           }
         }
       ],

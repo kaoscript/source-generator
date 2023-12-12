@@ -1,17 +1,17 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 51,
+      "kind": 53,
       "attributes": [],
       "declarations": [
         {
-          "kind": 52,
+          "kind": 54,
           "attributes": [],
           "modifiers": [],
           "source": {
-            "kind": 58,
+            "kind": 60,
             "modifiers": [],
             "value": "child_process",
             "start": {
@@ -25,14 +25,14 @@
           },
           "specifiers": [
             {
-              "kind": 46,
+              "kind": 48,
               "modifiers": [],
               "elements": [
                 {
-                  "kind": 74,
+                  "kind": 76,
                   "modifiers": [],
                   "internal": {
-                    "kind": 47,
+                    "kind": 49,
                     "modifiers": [],
                     "name": "exec",
                     "start": {
@@ -84,21 +84,21 @@
       }
     },
     {
-      "kind": 132,
+      "kind": 133,
       "attributes": [],
       "modifiers": [],
       "declarations": [
         {
-          "kind": 130,
+          "kind": 131,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 131,
+              "kind": 132,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "stdout",
                 "start": {
@@ -120,11 +120,11 @@
               }
             },
             {
-              "kind": 131,
+              "kind": 132,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "stderr",
                 "start": {
@@ -146,24 +146,16 @@
               }
             }
           ],
-          "start": {
-            "line": 3,
-            "column": 5
-          },
-          "end": {
-            "line": 3,
-            "column": 37
-          },
           "value": {
             "kind": 10,
             "modifiers": [],
             "variables": [
               {
-                "kind": 131,
+                "kind": 132,
                 "attributes": [],
                 "modifiers": [],
                 "name": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "stdout",
                   "start": {
@@ -185,11 +177,11 @@
                 }
               },
               {
-                "kind": 131,
+                "kind": 132,
                 "attributes": [],
                 "modifiers": [],
                 "name": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "stderr",
                   "start": {
@@ -212,13 +204,13 @@
               }
             ],
             "operation": {
-              "kind": 17,
+              "kind": 18,
               "modifiers": [],
               "scope": {
                 "kind": 2
               },
               "callee": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "exec",
                 "start": {
@@ -232,7 +224,7 @@
               },
               "arguments": [
                 {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "cmd",
                   "start": {
@@ -262,6 +254,14 @@
               "line": 3,
               "column": 37
             }
+          },
+          "start": {
+            "line": 3,
+            "column": 5
+          },
+          "end": {
+            "line": 3,
+            "column": 37
           }
         }
       ],

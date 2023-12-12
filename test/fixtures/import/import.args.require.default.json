@@ -1,17 +1,17 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 51,
+      "kind": 53,
       "attributes": [],
       "declarations": [
         {
-          "kind": 52,
+          "kind": 54,
           "attributes": [],
           "modifiers": [],
           "source": {
-            "kind": 58,
+            "kind": 60,
             "modifiers": [],
             "value": "module1",
             "start": {
@@ -25,7 +25,7 @@
           },
           "arguments": [
             {
-              "kind": 86,
+              "kind": 88,
               "modifiers": [
                 {
                   "kind": 38,
@@ -40,7 +40,7 @@
                 }
               ],
               "value": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "Foobar",
                 "start": {

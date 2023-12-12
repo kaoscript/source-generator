@@ -1,12 +1,13 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 43,
+      "kind": 45,
       "attributes": [],
+      "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "onlyStudent",
         "start": {
@@ -18,21 +19,13 @@
           "column": 17
         }
       },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 2,
-        "column": 2
-      },
       "parameters": [
         {
-          "kind": 82,
+          "kind": 84,
           "attributes": [],
           "modifiers": [],
           "external": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "student",
             "start": {
@@ -45,7 +38,7 @@
             }
           },
           "internal": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "student",
             "start": {
@@ -58,10 +51,10 @@
             }
           },
           "type": {
-            "kind": 123,
+            "kind": 124,
             "modifiers": [],
             "typeName": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "SchoolPerson",
               "start": {
@@ -75,7 +68,7 @@
             },
             "typeSubtypes": [
               {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "Student",
                 "start": {
@@ -107,10 +100,9 @@
           }
         }
       ],
-      "modifiers": [],
       "throws": [],
       "body": {
-        "kind": 14,
+        "kind": 15,
         "attributes": [],
         "statements": [],
         "start": {
@@ -121,13 +113,22 @@
           "line": 2,
           "column": 2
         }
+      },
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 2,
+        "column": 2
       }
     },
     {
-      "kind": 43,
+      "kind": 45,
       "attributes": [],
+      "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "onlyStudentOrTeacher",
         "start": {
@@ -139,21 +140,13 @@
           "column": 26
         }
       },
-      "start": {
-        "line": 4,
-        "column": 1
-      },
-      "end": {
-        "line": 5,
-        "column": 2
-      },
       "parameters": [
         {
-          "kind": 82,
+          "kind": 84,
           "attributes": [],
           "modifiers": [],
           "external": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "person",
             "start": {
@@ -166,7 +159,7 @@
             }
           },
           "internal": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "person",
             "start": {
@@ -179,10 +172,10 @@
             }
           },
           "type": {
-            "kind": 123,
+            "kind": 124,
             "modifiers": [],
             "typeName": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "SchoolPerson",
               "start": {
@@ -196,7 +189,7 @@
             },
             "typeSubtypes": [
               {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "Student",
                 "start": {
@@ -209,7 +202,7 @@
                 }
               },
               {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "Teacher",
                 "start": {
@@ -241,10 +234,9 @@
           }
         }
       ],
-      "modifiers": [],
       "throws": [],
       "body": {
-        "kind": 14,
+        "kind": 15,
         "attributes": [],
         "statements": [],
         "start": {
@@ -255,6 +247,14 @@
           "line": 5,
           "column": 2
         }
+      },
+      "start": {
+        "line": 4,
+        "column": 1
+      },
+      "end": {
+        "line": 5,
+        "column": 2
       }
     }
   ],

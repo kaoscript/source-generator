@@ -1,23 +1,23 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 132,
+      "kind": 133,
       "attributes": [],
       "modifiers": [],
       "declarations": [
         {
-          "kind": 130,
+          "kind": 131,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 131,
+              "kind": 132,
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "bits",
                 "start": {
@@ -39,14 +39,6 @@
               }
             }
           ],
-          "start": {
-            "line": 1,
-            "column": 5
-          },
-          "end": {
-            "line": 1,
-            "column": 79
-          },
           "value": {
             "kind": 11,
             "modifiers": [],
@@ -71,10 +63,10 @@
               "column": 79
             },
             "left": {
-              "kind": 68,
+              "kind": 70,
               "modifiers": [],
               "object": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "FooBits",
                 "start": {
@@ -87,7 +79,7 @@
                 }
               },
               "property": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "Bit0",
                 "start": {
@@ -109,7 +101,7 @@
               }
             },
             "right": {
-              "kind": 25,
+              "kind": 26,
               "modifiers": [],
               "start": {
                 "line": 1,
@@ -143,7 +135,7 @@
                   "column": 48
                 },
                 "left": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "main",
                   "start": {
@@ -156,10 +148,10 @@
                   }
                 },
                 "right": {
-                  "kind": 68,
+                  "kind": 70,
                   "modifiers": [],
                   "object": {
-                    "kind": 47,
+                    "kind": 49,
                     "modifiers": [],
                     "name": "FooBits",
                     "start": {
@@ -172,7 +164,7 @@
                     }
                   },
                   "property": {
-                    "kind": 47,
+                    "kind": 49,
                     "modifiers": [],
                     "name": "BitA",
                     "start": {
@@ -195,10 +187,10 @@
                 }
               },
               "whenTrue": {
-                "kind": 68,
+                "kind": 70,
                 "modifiers": [],
                 "object": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "FooBits",
                   "start": {
@@ -211,7 +203,7 @@
                   }
                 },
                 "property": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "BitB",
                   "start": {
@@ -233,10 +225,10 @@
                 }
               },
               "whenFalse": {
-                "kind": 68,
+                "kind": 70,
                 "modifiers": [],
                 "object": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "FooBits",
                   "start": {
@@ -249,7 +241,7 @@
                   }
                 },
                 "property": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "BitC",
                   "start": {
@@ -271,6 +263,14 @@
                 }
               }
             }
+          },
+          "start": {
+            "line": 1,
+            "column": 5
+          },
+          "end": {
+            "line": 1,
+            "column": 79
           }
         }
       ],

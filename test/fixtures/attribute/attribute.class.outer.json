@@ -1,13 +1,13 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 19,
+      "kind": 20,
       "attributes": [],
       "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "Foo",
         "start": {
@@ -21,12 +21,12 @@
       },
       "members": [
         {
-          "kind": 69,
+          "kind": 71,
           "attributes": [
             {
               "kind": 7,
               "declaration": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "foo",
                 "start": {
@@ -50,7 +50,7 @@
           ],
           "modifiers": [],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "bar",
             "start": {
@@ -63,17 +63,9 @@
             }
           },
           "parameters": [],
-          "start": {
-            "line": 2,
-            "column": 2
-          },
-          "end": {
-            "line": 4,
-            "column": 3
-          },
           "throws": [],
           "body": {
-            "kind": 14,
+            "kind": 15,
             "attributes": [],
             "statements": [],
             "start": {
@@ -84,6 +76,14 @@
               "line": 4,
               "column": 3
             }
+          },
+          "start": {
+            "line": 2,
+            "column": 2
+          },
+          "end": {
+            "line": 4,
+            "column": 3
           }
         }
       ],

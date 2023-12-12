@@ -1,12 +1,12 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 120,
+      "kind": 121,
       "attributes": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "Event",
         "start": {
@@ -19,22 +19,14 @@
         }
       },
       "type": {
-        "kind": 80,
+        "kind": 82,
         "modifiers": [],
         "properties": [
           {
-            "kind": 89,
+            "kind": 91,
             "modifiers": [],
-            "start": {
-              "line": 2,
-              "column": 2
-            },
-            "end": {
-              "line": 9,
-              "column": 3
-            },
             "name": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "ok",
               "start": {
@@ -47,12 +39,12 @@
               }
             },
             "type": {
-              "kind": 135,
+              "kind": 136,
               "master": {
-                "kind": 123,
+                "kind": 124,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 47,
+                  "kind": 49,
                   "modifiers": [],
                   "name": "Boolean",
                   "start": {
@@ -75,12 +67,12 @@
               },
               "properties": [
                 {
-                  "kind": 134,
+                  "kind": 135,
                   "attributes": [],
                   "modifiers": [],
                   "names": [
                     {
-                      "kind": 47,
+                      "kind": 49,
                       "modifiers": [],
                       "name": "false",
                       "start": {
@@ -93,7 +85,7 @@
                       }
                     },
                     {
-                      "kind": 47,
+                      "kind": 49,
                       "modifiers": [],
                       "name": "N",
                       "start": {
@@ -107,22 +99,14 @@
                     }
                   ],
                   "type": {
-                    "kind": 80,
+                    "kind": 82,
                     "modifiers": [],
                     "properties": [
                       {
-                        "kind": 89,
+                        "kind": 91,
                         "modifiers": [],
-                        "start": {
-                          "line": 4,
-                          "column": 4
-                        },
-                        "end": {
-                          "line": 4,
-                          "column": 21
-                        },
                         "name": {
-                          "kind": 47,
+                          "kind": 49,
                           "modifiers": [],
                           "name": "expecting",
                           "start": {
@@ -135,10 +119,10 @@
                           }
                         },
                         "type": {
-                          "kind": 123,
+                          "kind": 124,
                           "modifiers": [],
                           "typeName": {
-                            "kind": 47,
+                            "kind": 49,
                             "modifiers": [],
                             "name": "String",
                             "start": {
@@ -158,6 +142,14 @@
                             "line": 4,
                             "column": 21
                           }
+                        },
+                        "start": {
+                          "line": 4,
+                          "column": 4
+                        },
+                        "end": {
+                          "line": 4,
+                          "column": 21
                         }
                       }
                     ],
@@ -180,12 +172,12 @@
                   }
                 },
                 {
-                  "kind": 134,
+                  "kind": 135,
                   "attributes": [],
                   "modifiers": [],
                   "names": [
                     {
-                      "kind": 47,
+                      "kind": 49,
                       "modifiers": [],
                       "name": "true",
                       "start": {
@@ -198,7 +190,7 @@
                       }
                     },
                     {
-                      "kind": 47,
+                      "kind": 49,
                       "modifiers": [],
                       "name": "Y",
                       "start": {
@@ -212,22 +204,14 @@
                     }
                   ],
                   "type": {
-                    "kind": 80,
+                    "kind": 82,
                     "modifiers": [],
                     "properties": [
                       {
-                        "kind": 89,
+                        "kind": 91,
                         "modifiers": [],
-                        "start": {
-                          "line": 7,
-                          "column": 4
-                        },
-                        "end": {
-                          "line": 7,
-                          "column": 17
-                        },
                         "name": {
-                          "kind": 47,
+                          "kind": 49,
                           "modifiers": [],
                           "name": "value",
                           "start": {
@@ -240,10 +224,10 @@
                           }
                         },
                         "type": {
-                          "kind": 123,
+                          "kind": 124,
                           "modifiers": [],
                           "typeName": {
-                            "kind": 47,
+                            "kind": 49,
                             "modifiers": [],
                             "name": "String",
                             "start": {
@@ -263,6 +247,14 @@
                             "line": 7,
                             "column": 17
                           }
+                        },
+                        "start": {
+                          "line": 7,
+                          "column": 4
+                        },
+                        "end": {
+                          "line": 7,
+                          "column": 17
                         }
                       }
                     ],
@@ -293,6 +285,14 @@
                 "line": 9,
                 "column": 3
               }
+            },
+            "start": {
+              "line": 2,
+              "column": 2
+            },
+            "end": {
+              "line": 9,
+              "column": 3
             }
           }
         ],

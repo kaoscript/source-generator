@@ -1,12 +1,13 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 43,
+      "kind": 45,
       "attributes": [],
+      "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "foobar",
         "start": {
@@ -20,10 +21,10 @@
       },
       "typeParameters": [
         {
-          "kind": 122,
+          "kind": 123,
           "modifiers": [],
           "name": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "T",
             "start": {
@@ -45,21 +46,13 @@
           }
         }
       ],
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 3,
-        "column": 2
-      },
       "parameters": [
         {
-          "kind": 82,
+          "kind": 84,
           "attributes": [],
           "modifiers": [],
           "external": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "x",
             "start": {
@@ -72,7 +65,7 @@
             }
           },
           "internal": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "x",
             "start": {
@@ -85,10 +78,10 @@
             }
           },
           "type": {
-            "kind": 123,
+            "kind": 124,
             "modifiers": [],
             "typeName": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "T",
               "start": {
@@ -119,12 +112,11 @@
           }
         }
       ],
-      "modifiers": [],
       "type": {
-        "kind": 123,
+        "kind": 124,
         "modifiers": [],
         "typeName": {
-          "kind": 47,
+          "kind": 49,
           "modifiers": [],
           "name": "T",
           "start": {
@@ -147,14 +139,14 @@
       },
       "throws": [],
       "body": {
-        "kind": 14,
+        "kind": 15,
         "attributes": [],
         "statements": [
           {
-            "kind": 99,
+            "kind": 101,
             "attributes": [],
             "value": {
-              "kind": 47,
+              "kind": 49,
               "modifiers": [],
               "name": "x",
               "start": {
@@ -184,6 +176,14 @@
           "line": 3,
           "column": 2
         }
+      },
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 3,
+        "column": 2
       }
     }
   ],

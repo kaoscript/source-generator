@@ -1,14 +1,14 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 43,
+      "kind": 45,
       "attributes": [
         {
           "kind": 7,
           "declaration": {
-            "kind": 47,
+            "kind": 49,
             "modifiers": [],
             "name": "test",
             "start": {
@@ -30,8 +30,9 @@
           }
         }
       ],
+      "modifiers": [],
       "name": {
-        "kind": 47,
+        "kind": 49,
         "modifiers": [],
         "name": "foo",
         "start": {
@@ -43,19 +44,10 @@
           "column": 9
         }
       },
-      "start": {
-        "line": 1,
-        "column": 1
-      },
-      "end": {
-        "line": 4,
-        "column": 2
-      },
       "parameters": [],
-      "modifiers": [],
       "throws": [],
       "body": {
-        "kind": 14,
+        "kind": 15,
         "attributes": [],
         "statements": [],
         "start": {
@@ -66,6 +58,14 @@
           "line": 4,
           "column": 2
         }
+      },
+      "start": {
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "line": 4,
+        "column": 2
       }
     }
   ],

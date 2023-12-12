@@ -1598,6 +1598,10 @@ export namespace Generator {
 			} # }}}
 			NodeKind.TypeParameter { # {{{
 				writer.expression(data.name)
+
+				if ?data.constraint {
+					writer.code(' is ').expression(data.constraint)
+				}
 			} # }}}
 			NodeKind.TypeReference { # {{{
 				if ?data.properties {
@@ -1644,12 +1648,17 @@ export namespace Generator {
 					if ?data.typeSubtypes {
 						writer.code('(')
 
-						for var subtype, index in data.typeSubtypes {
-							if index != 0 {
-								writer.code(', ')
-							}
+						if data.typeSubtypes is Array {
+							for var subtype, index in data.typeSubtypes {
+								if index != 0 {
+									writer.code(', ')
+								}
 
-							writer.expression(subtype)
+								writer.expression(subtype)
+							}
+						}
+						else {
+							writer.expression(data.typeSubtypes)
 						}
 
 						writer.code(')')
@@ -2464,6 +2473,17 @@ export namespace Generator {
 				block.done()
 				line.done()
 			} # }}}
+			NodeKind.BitmaskValue { # {{{
+				var line = writer.newLine()
+
+				line.expression(data.name)
+
+				if ?data.value {
+					line.code(' = ').expression(data.value)
+				}
+
+				line.done()
+			} # }}}
 			NodeKind.BlockStatement { # {{{
 				writer
 					.newControl()
@@ -2614,16 +2634,47 @@ export namespace Generator {
 				line.code('enum ').expression(data.name)
 
 				if ?data.type {
-					line.code('<').expression(data.type).code('>')
+					line
+						.code('<').expression(data.type)
+						.code(';').expression(data.initial) if ?data.initial
+						.code(';').expression(data.step) if ?data.step
+						.code('>')
 				}
 
 				var block = line.newBlock()
+
 
 				for var member in data.members {
 					block.statement(member)
 				}
 
 				block.done()
+				line.done()
+			} # }}}
+			NodeKind.EnumValue { # {{{
+				var line = writer.newLine()
+
+				line.expression(data.name)
+
+				if ?data.arguments {
+					line.code(' = (')
+
+					for var argument, index in data.arguments {
+						line
+							..code(', ') if index != 0
+							..expression(argument)
+					}
+
+					line.code(')')
+
+					if ?data.value {
+						line.code(' & ').expression(data.value)
+					}
+				}
+				else if ?data.value {
+					line.code(' = ').expression(data.value)
+				}
+
 				line.done()
 			} # }}}
 			NodeKind.ExportDeclaration { # {{{
@@ -2737,6 +2788,9 @@ export namespace Generator {
 
 				for var modifier in data.modifiers {
 					match modifier.kind {
+						ModifierKind.Constant {
+							line.code('const ')
+						}
 						ModifierKind.Dynamic {
 							line.code('dyn ')
 						}
@@ -2775,16 +2829,31 @@ export namespace Generator {
 					}
 				}
 
-				line.expression(data.name)
+				if data.type?.kind == NodeKind.VariantType {
+					line.code('variant ').expression(data.name).code(': ').expression(data.type.master)
 
-				line.code('?') if nullable
+					if ?#data.type.properties {
+						var block = line.newBlock()
 
-				if ?data.type {
-					line.code(': ').expression(data.type)
+						for var property in data.type.properties {
+							block.newLine().expression(property).done()
+						}
+
+						block.done()
+					}
 				}
+				else {
+					line.expression(data.name)
 
-				if ?data.value {
-					line.code(' = ').expression(data.value)
+					line.code('?') if nullable
+
+					if ?data.type {
+						line.code(': ').expression(data.type)
+					}
+
+					if ?data.value {
+						line.code(' = ').expression(data.value)
+					}
 				}
 
 				line.done()
@@ -3453,34 +3522,6 @@ export namespace Generator {
 					}
 
 					block.done()
-				}
-
-				line.done()
-			} # }}}
-			NodeKind.StructField { # {{{
-				var line = writer.newLine()
-
-				if data.type?.kind == NodeKind.VariantType {
-					line.code('variant ').expression(data.name).code(': ').expression(data.type.master)
-
-					if ?#data.type.properties {
-						var block = line.newBlock()
-
-						for var property in data.type.properties {
-							block.newLine().expression(property).done()
-						}
-
-						block.done()
-					}
-				}
-				else {
-					line.expression(data.name)
-
-					toType(data, line)
-
-					if ?data.defaultValue {
-						line.code(' = ').expression(data.defaultValue)
-					}
 				}
 
 				line.done()

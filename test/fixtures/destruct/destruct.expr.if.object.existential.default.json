@@ -1,9 +1,9 @@
 {
-  "kind": 71,
+  "kind": 73,
   "attributes": [],
   "body": [
     {
-      "kind": 49,
+      "kind": 51,
       "attributes": [],
       "condition": {
         "kind": 11,
@@ -20,22 +20,14 @@
             "column": 17
           }
         },
-        "start": {
-          "line": 1,
-          "column": 4
-        },
-        "end": {
-          "line": 1,
-          "column": 21
-        },
         "left": {
-          "kind": 77,
+          "kind": 79,
           "elements": [
             {
               "kind": 12,
               "modifiers": [],
               "internal": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "bar",
                 "start": {
@@ -60,7 +52,7 @@
               "kind": 12,
               "modifiers": [],
               "internal": {
-                "kind": 47,
+                "kind": 49,
                 "modifiers": [],
                 "name": "baz",
                 "start": {
@@ -92,7 +84,7 @@
           }
         },
         "right": {
-          "kind": 47,
+          "kind": 49,
           "modifiers": [],
           "name": "foo",
           "start": {
@@ -103,10 +95,18 @@
             "line": 1,
             "column": 21
           }
+        },
+        "start": {
+          "line": 1,
+          "column": 4
+        },
+        "end": {
+          "line": 1,
+          "column": 21
         }
       },
       "whenTrue": {
-        "kind": 14,
+        "kind": 15,
         "attributes": [],
         "statements": [],
         "start": {
