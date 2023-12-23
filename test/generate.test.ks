@@ -13,10 +13,9 @@ extern {
 import {
 	'node:fs'
 	'node:path'
-	'npm:@kaoscript/parser'	for parse
 	'npm:chai'				for expect
 	'npm:klaw-sync'			=> klaw
-	'..'					for generate
+	'..'					for generate, NodeData
 }
 
 var debug = process.env.DEBUG == '1' || process.env.DEBUG == 'true' || process.env.DEBUG == 'on'
@@ -44,11 +43,15 @@ func prepare(file) { # {{{
 	}
 
 	it(name, () => {
-		var json = fs.readFileSync(file, {
+		var content = fs.readFileSync(file, {
 			encoding: 'utf8'
 		})
 
-		var data = generate(JSON.parse(json, (key, value) => value == 'Infinity' ? Infinity : value))
+		var node = JSON.parse(content, (key, value) => value == 'Infinity' ? Infinity : value) as NodeData
+
+		expect(node).to.exist
+
+		var data = generate(node)
 
 		var source = fs.readFileSync(path.join(root, name + '.ks'), {
 			encoding: 'utf8'

@@ -399,7 +399,7 @@ export namespace Generator {
 		return true
 	} # }}}
 
-	func generate(data, options? = null) { # {{{
+	func generate(data: NodeData, options? = null) { # {{{
 		var writer = KSWriter.new(options)
 
 		toStatement(data, writer)
@@ -1945,8 +1945,8 @@ export namespace Generator {
 
 	func toIfDeclaration(data, writer) { # {{{
 		writer
-			.expression(data.declaration)
-			.code(' ;; ').expression(data.condition) if ?data.condition
+			.expression(data[0])
+			.code(' ;; ').expression(data[1]) if ?data[1]
 	} # }}}
 
 	func toImport(data, writer) {
@@ -2437,9 +2437,9 @@ export namespace Generator {
 		writer.code('>')
 	} # }}}
 
-	func toStatement(mut data, writer) {
-		match data.kind {
-			NodeKind.AccessorDeclaration { # {{{
+	func toStatement(data: NodeData, writer) {
+		match data {
+			.AccessorDeclaration { # {{{
 				var line = writer
 					.newLine()
 					.code('get')
@@ -2455,7 +2455,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.BitmaskDeclaration { # {{{
+			.BitmaskDeclaration { # {{{
 				var line = writer.newLine()
 
 				line.code('bitmask ').expression(data.name)
@@ -2473,7 +2473,7 @@ export namespace Generator {
 				block.done()
 				line.done()
 			} # }}}
-			NodeKind.BitmaskValue { # {{{
+			.BitmaskValue { # {{{
 				var line = writer.newLine()
 
 				line.expression(data.name)
@@ -2484,7 +2484,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.BlockStatement { # {{{
+			.BlockStatement { # {{{
 				writer
 					.newControl()
 					.code('block ')
@@ -2493,7 +2493,7 @@ export namespace Generator {
 					.expression(data.body)
 					.done()
 			} # }}}
-			NodeKind.BreakStatement { # {{{
+			.BreakStatement { # {{{
 				var line = writer
 					.newLine()
 					.code('break')
@@ -2504,7 +2504,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.CatchClause { # {{{
+			.CatchClause { # {{{
 				if ?data.type {
 					writer
 						.code('on ')
@@ -2530,7 +2530,7 @@ export namespace Generator {
 					.step()
 					.expression(data.body)
 			} # }}}
-			NodeKind.ClassDeclaration { # {{{
+			.ClassDeclaration { # {{{
 				var line = writer.newLine()
 
 				for var modifier in data.modifiers {
@@ -2580,7 +2580,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.ContinueStatement { # {{{
+			.ContinueStatement { # {{{
 				var line = writer
 					.newLine()
 					.code('continue')
@@ -2591,7 +2591,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.DiscloseDeclaration { # {{{
+			.DiscloseDeclaration { # {{{
 				var line = writer
 					.newLine()
 					.code('disclose ')
@@ -2606,7 +2606,7 @@ export namespace Generator {
 				block.done()
 				line.done()
 			} # }}}
-			NodeKind.DoUntilStatement { # {{{
+			.DoUntilStatement { # {{{
 				writer
 					.newControl()
 					.code('do')
@@ -2617,7 +2617,7 @@ export namespace Generator {
 					.expression(data.condition)
 					.done()
 			} # }}}
-			NodeKind.DoWhileStatement { # {{{
+			.DoWhileStatement { # {{{
 				writer
 					.newControl()
 					.code('do')
@@ -2628,7 +2628,7 @@ export namespace Generator {
 					.expression(data.condition)
 					.done()
 			} # }}}
-			NodeKind.EnumDeclaration { # {{{
+			.EnumDeclaration { # {{{
 				var line = writer.newLine()
 
 				line.code('enum ').expression(data.name)
@@ -2651,7 +2651,7 @@ export namespace Generator {
 				block.done()
 				line.done()
 			} # }}}
-			NodeKind.EnumValue { # {{{
+			.EnumValue { # {{{
 				var line = writer.newLine()
 
 				line.expression(data.name)
@@ -2677,19 +2677,20 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.ExportDeclaration { # {{{
+			.ExportDeclaration { # {{{
 				var line = writer.newLine()
 
 				line.pushMode(KSWriterMode.Export)
 
-				if data.declarations.length == 1 && ((data.declarations[0].kind == NodeKind.DeclarationSpecifier) -> (!?#data.declarations[0].declaration.attributes)) {
+				if data.declarations.length == 1 && ((data.declarations[0] is .DeclarationSpecifier) -> (!?#data.declarations[0].declaration.attributes)) {
+				// if data.declarations.length == 1 && (((data.declarations[0] is .DeclarationSpecifier) && (!?#data.declarations[0].declaration.attributes)) || (data.declarations[0] is not .DeclarationSpecifier)) {
 					line.code('export ').statement(data.declarations[0])
 				}
 				else {
 					var block = line.code('export').newBlock()
 
 					for var declaration in data.declarations {
-						if declaration.kind == NodeKind.DeclarationSpecifier {
+						if declaration is .DeclarationSpecifier {
 							block.statement(declaration.declaration)
 						}
 						else {
@@ -2704,13 +2705,13 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.ExpressionStatement { # {{{
+			.ExpressionStatement { # {{{
 				writer
 					.newLine()
 					.expression(data.expression, ExpressionMode.Top)
 					.done()
 			} # }}}
-			NodeKind.ExternDeclaration { # {{{
+			.ExternDeclaration { # {{{
 				var line = writer.newLine()
 
 				if data.declarations.length == 1 {
@@ -2732,7 +2733,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.ExternOrRequireDeclaration { # {{{
+			.ExternOrRequireDeclaration { # {{{
 				var line = writer.newLine()
 
 				if data.declarations.length == 1 && data.declarations[0].attributes.length == 0 {
@@ -2754,7 +2755,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.ExternOrImportDeclaration { # {{{
+			.ExternOrImportDeclaration { # {{{
 				var line = writer.newLine()
 
 				line.pushMode(KSWriterMode.Import)
@@ -2778,10 +2779,10 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.FallthroughStatement { # {{{
+			.FallthroughStatement { # {{{
 				writer.newLine().code('fallthrough').done()
 			} # }}}
-			NodeKind.FieldDeclaration { # {{{
+			.FieldDeclaration { # {{{
 				var line = writer.newLine()
 
 				var mut nullable = false
@@ -2858,7 +2859,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.ForStatement { # {{{
+			.ForStatement { # {{{
 				if data.body.kind == NodeKind.ExpressionStatement {
 					var line = writer
 						.newLine()
@@ -2893,7 +2894,7 @@ export namespace Generator {
 						.done()
 				}
 			} # }}}
-			NodeKind.FunctionDeclaration { # {{{
+			.FunctionDeclaration { # {{{
 				var line = writer.newLine()
 
 				toFunctionHeader(data, writer => {
@@ -2906,9 +2907,9 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.IfStatement { # {{{
-				match data.whenTrue.kind {
-					NodeKind.Block {
+			.IfStatement { # {{{
+				match data.whenTrue {
+					.Block {
 						var ctrl = writer.newControl().code('if')
 
 						if ?data.declarations {
@@ -2931,31 +2932,40 @@ export namespace Generator {
 
 						ctrl.step().expression(data.whenTrue)
 
-						while ?data.whenFalse {
-							if data.whenFalse.kind == NodeKind.IfStatement {
-								data = data.whenFalse
+						var mut stmt = data
+
+						while ?stmt.whenFalse {
+							if stmt.whenFalse is .IfStatement {
+								stmt = stmt.whenFalse
 
 								ctrl.step().code('else if ')
 
-								if ?data.declaration {
-									ctrl.expression(data.declaration)
+								if ?stmt.declarations {
+									if stmt.declarations.length == 1 {
+										toIfDeclaration(stmt.declarations[0], ctrl.code(' '))
+									}
+									else {
+										ctrl.step()
 
-									if ?data.condition {
-										ctrl.code('; ').expression(data.condition)
+										for var declaration in stmt.declarations {
+											ctrl.newLine().run(declaration, toIfDeclaration).done()
+										}
+
+										ctrl.step().code('then')
 									}
 								}
-								else if ?data.condition {
-									ctrl.expression(data.condition)
+								else if ?stmt.condition {
+									ctrl.expression(stmt.condition)
 								}
 
-								ctrl.step().expression(data.whenTrue)
+								ctrl.step().expression(stmt.whenTrue)
 							}
 							else {
 								ctrl
 									.step()
 									.code('else')
 									.step()
-									.expression(data.whenFalse)
+									.expression(stmt.whenFalse)
 
 								break
 							}
@@ -2963,7 +2973,7 @@ export namespace Generator {
 
 						ctrl.done()
 					}
-					NodeKind.BreakStatement {
+					.BreakStatement {
 						var line = writer
 							.newLine()
 							.code('break ')
@@ -2977,7 +2987,7 @@ export namespace Generator {
 							.expression(data.condition)
 							.done()
 					}
-					NodeKind.ContinueStatement {
+					.ContinueStatement {
 						var line = writer
 							.newLine()
 							.code('continue ')
@@ -2991,7 +3001,7 @@ export namespace Generator {
 							.expression(data.condition)
 							.done()
 					}
-					NodeKind.ExpressionStatement {
+					.ExpressionStatement {
 						writer
 							.newLine()
 							.expression(data.whenTrue.expression)
@@ -2999,7 +3009,7 @@ export namespace Generator {
 							.expression(data.condition)
 							.done()
 					}
-					NodeKind.ReturnStatement {
+					.ReturnStatement {
 						if ?data.whenTrue.value {
 							writer
 								.newLine()
@@ -3017,7 +3027,7 @@ export namespace Generator {
 								.done()
 						}
 					}
-					NodeKind.ThrowStatement {
+					.ThrowStatement {
 						writer
 							.newLine()
 							.code('throw ')
@@ -3028,7 +3038,7 @@ export namespace Generator {
 					}
 				}
 			} # }}}
-			NodeKind.ImplementDeclaration { # {{{
+			.ImplementDeclaration { # {{{
 				var line = writer
 					.newLine()
 					.code('impl ')
@@ -3048,7 +3058,7 @@ export namespace Generator {
 				block.done()
 				line.done()
 			} # }}}
-			NodeKind.ImportDeclaration { # {{{
+			.ImportDeclaration { # {{{
 				var line = writer.newLine()
 
 				line.pushMode(KSWriterMode.Import)
@@ -3072,7 +3082,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.IncludeAgainDeclaration { # {{{
+			.IncludeAgainDeclaration { # {{{
 				var line = writer.newLine()
 
 				if data.declarations.length == 1 {
@@ -3090,7 +3100,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.IncludeDeclaration { # {{{
+			.IncludeDeclaration { # {{{
 				var line = writer.newLine()
 
 				var block = line.code('include').newBlock()
@@ -3103,7 +3113,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.MacroDeclaration { # {{{
+			.MacroDeclaration { # {{{
 				var line = writer.newLine()
 
 				toFunctionHeader(data, writer => {
@@ -3124,7 +3134,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.MatchClause { # {{{
+			.MatchClause { # {{{
 				var line = writer.newLine()
 
 				var mut space = false
@@ -3164,19 +3174,19 @@ export namespace Generator {
 					line.code('else')
 				}
 
-				match data.body.kind {
-					NodeKind.Block {
+				match data.body {
+					.Block {
 						line
 							.newBlock()
 							.expression(data.body)
 							.done()
 					}
-					NodeKind.ExpressionStatement {
+					.ExpressionStatement {
 						line
 							.code(' => ')
 							.expression(data.body.expression)
 					}
-					NodeKind.SetStatement {
+					.SetStatement {
 						line
 							.code(' => ')
 							.expression(data.body.value)
@@ -3190,7 +3200,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.MatchStatement { # {{{
+			.MatchStatement { # {{{
 				var ctrl = writer
 					.newControl()
 					.code('match ')
@@ -3203,7 +3213,7 @@ export namespace Generator {
 
 				ctrl.done()
 			} # }}}
-			NodeKind.MethodDeclaration { # {{{
+			.MethodDeclaration { # {{{
 				var line = writer.newLine()
 
 				toFunctionHeader(data, writer => {}, line)
@@ -3214,14 +3224,14 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.Module { # {{{
+			.Module { # {{{
 				toAttributes(data, AttributeMode.Inner, writer)
 
 				for var node in data.body {
 					writer.statement(node)
 				}
 			} # }}}
-			NodeKind.MutatorDeclaration { # {{{
+			.MutatorDeclaration { # {{{
 				var line = writer
 					.newLine()
 					.code('set')
@@ -3237,7 +3247,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.NamespaceDeclaration { # {{{
+			.NamespaceDeclaration { # {{{
 				var line = writer.newLine()
 
 				for var modifier in data.modifiers {
@@ -3262,10 +3272,10 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.PassStatement { # {{{
+			.PassStatement { # {{{
 				writer.newLine().code('pass').done()
 			} # }}}
-			NodeKind.PropertyDeclaration { # {{{
+			.PropertyDeclaration { # {{{
 				var line = writer.newLine()
 
 				for var modifier in data.modifiers {
@@ -3308,7 +3318,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.ProxyDeclaration { # {{{
+			.ProxyDeclaration { # {{{
 				var line = writer.newLine()
 
 				for var modifier in data.modifiers {
@@ -3338,21 +3348,21 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.ProxyGroupDeclaration { # {{{
+			.ProxyGroupDeclaration { # {{{
 				var line = writer.newLine()
 
 				for var modifier in data.modifiers {
-					match modifier.kind {
-						ModifierKind.Private {
+					match modifier {
+						.Private {
 							line.code('private ')
 						}
-						ModifierKind.Protected {
+						.Protected {
 							line.code('protected ')
 						}
-						ModifierKind.Public {
+						.Public {
 							line.code('public ')
 						}
-						ModifierKind.Static {
+						.Static {
 							line.code('static ')
 						}
 					}
@@ -3362,12 +3372,14 @@ export namespace Generator {
 
 				var block = line.newBlock()
 
-				for var element of data.elements {
+				for var element in data.elements {
 					var line = block.newLine()
 
 					line.expression(element.external)
 
-					if element.internal != element.external && element.internal.name != element.external.name {
+					// TODO!
+					// if element.internal != element.external && element.internal.name != element.external.?name {
+					if element.internal != element.external && (element.external is .Identifier -> element.internal.name != element.external.name) {
 						line.code(' => ')
 
 						line.expression(element.internal)
@@ -3380,7 +3392,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.RepeatStatement { # {{{
+			.RepeatStatement { # {{{
 				if data.body.kind == NodeKind.Block {
 					var ctrl = writer
 						.newControl()
@@ -3402,7 +3414,7 @@ export namespace Generator {
 						.done()
 				}
 			} # }}}
-			NodeKind.RequireDeclaration { # {{{
+			.RequireDeclaration { # {{{
 				var line = writer.newLine()
 
 				if data.declarations.length == 1 && data.declarations[0].attributes.length == 0 {
@@ -3424,7 +3436,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.RequireOrExternDeclaration { # {{{
+			.RequireOrExternDeclaration { # {{{
 				var line = writer.newLine()
 
 				if data.declarations.length == 1 && data.declarations[0].attributes.length == 0 {
@@ -3446,7 +3458,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.RequireOrImportDeclaration { # {{{
+			.RequireOrImportDeclaration { # {{{
 				var line = writer.newLine()
 
 				line.pushMode(KSWriterMode.Import)
@@ -3470,7 +3482,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.ReturnStatement { # {{{
+			.ReturnStatement { # {{{
 				if ?data.value {
 					writer
 						.newLine()
@@ -3485,17 +3497,17 @@ export namespace Generator {
 						.done()
 				}
 			} # }}}
-			NodeKind.SetStatement { # {{{
+			.SetStatement { # {{{
 				writer
 					.newLine()
 					.code('set ')
 					.expression(data.value)
 					.done()
 			} # }}}
-			NodeKind.ShebangDeclaration { # {{{
+			.ShebangDeclaration { # {{{
 				writer.line(`#!\(data.command)`)
 			} # }}}
-			NodeKind.StructDeclaration { # {{{
+			.StructDeclaration { # {{{
 				var line = writer.newLine()
 
 				line.code('struct ').expression(data.name)
@@ -3526,14 +3538,14 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.ThrowStatement { # {{{
+			.ThrowStatement { # {{{
 				writer
 					.newLine()
 					.code('throw ')
 					.expression(data.value)
 					.done()
 			} # }}}
-			NodeKind.TryStatement { # {{{
+			.TryStatement { # {{{
 				var ctrl = writer
 					.newControl()
 					.code('try')
@@ -3562,7 +3574,7 @@ export namespace Generator {
 
 				ctrl.done()
 			} # }}}
-			NodeKind.TupleDeclaration { # {{{
+			.TupleDeclaration { # {{{
 				var line = writer.newLine()
 
 				line.code('tuple ').expression(data.name)
@@ -3593,7 +3605,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.TupleField { # {{{
+			.TupleField { # {{{
 				if ?data.name {
 					writer.expression(data.name)
 
@@ -3607,7 +3619,7 @@ export namespace Generator {
 					writer.code(' = ').expression(data.defaultValue)
 				}
 			} # }}}
-			NodeKind.TypeAliasDeclaration { # {{{
+			.TypeAliasDeclaration { # {{{
 				var line = writer
 					.newLine()
 					.code('type ')
@@ -3622,9 +3634,9 @@ export namespace Generator {
 					.expression(data.type)
 					.done()
 			} # }}}
-			NodeKind.UnlessStatement { # {{{
-				match data.whenFalse.kind {
-					NodeKind.Block {
+			.UnlessStatement { # {{{
+				match data.whenFalse {
+					.Block {
 						var ctrl = writer
 							.newControl()
 							.code('unless ')
@@ -3634,7 +3646,7 @@ export namespace Generator {
 
 						ctrl.done()
 					}
-					NodeKind.BreakStatement {
+					.BreakStatement {
 						var line = writer
 							.newLine()
 							.code('break ')
@@ -3648,7 +3660,7 @@ export namespace Generator {
 							.expression(data.condition)
 							.done()
 					}
-					NodeKind.ContinueStatement {
+					.ContinueStatement {
 						var line = writer
 							.newLine()
 							.code('continue ')
@@ -3662,7 +3674,7 @@ export namespace Generator {
 							.expression(data.condition)
 							.done()
 					}
-					NodeKind.ExpressionStatement {
+					.ExpressionStatement {
 						writer
 							.newLine()
 							.expression(data.whenFalse.expression)
@@ -3670,7 +3682,7 @@ export namespace Generator {
 							.expression(data.condition)
 							.done()
 					}
-					NodeKind.ReturnStatement {
+					.ReturnStatement {
 						if ?data.whenFalse.value {
 							writer
 								.newLine()
@@ -3688,7 +3700,7 @@ export namespace Generator {
 								.done()
 						}
 					}
-					NodeKind.ThrowStatement {
+					.ThrowStatement {
 						writer
 							.newLine()
 							.code('throw ')
@@ -3699,7 +3711,7 @@ export namespace Generator {
 					}
 				}
 			} # }}}
-			NodeKind.UntilStatement { # {{{
+			.UntilStatement { # {{{
 				writer
 					.newControl()
 					.code('until ')
@@ -3708,7 +3720,7 @@ export namespace Generator {
 					.expression(data.body)
 					.done()
 			} # }}}
-			NodeKind.VariableStatement { # {{{
+			.VariableStatement { # {{{
 				var line = writer.newLine()
 				var mut declaration = false
 
@@ -3756,7 +3768,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.VariantDeclaration { # {{{
+			.VariantDeclaration { # {{{
 				var line = writer.newLine()
 
 				line.code('variant ').expression(data.name)
@@ -3773,7 +3785,7 @@ export namespace Generator {
 
 				line.done()
 			} # }}}
-			NodeKind.WhileStatement { # {{{
+			.WhileStatement { # {{{
 				writer
 					.newControl()
 					.code('while ')
@@ -3782,7 +3794,7 @@ export namespace Generator {
 					.expression(data.body)
 					.done()
 			} # }}}
-			NodeKind.WithStatement { # {{{
+			.WithStatement { # {{{
 				var ctrl = writer.newControl().code('with')
 
 				if data.variables.length == 1 {
@@ -3839,4 +3851,7 @@ export namespace Generator {
 	export generate, KSWriter, KSWriterMode
 }
 
-export Generator.generate
+export {
+	Generator.generate
+	NodeData
+}
