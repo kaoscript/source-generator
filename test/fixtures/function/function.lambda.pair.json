@@ -7,7 +7,7 @@
       "attributes": [],
       "modifiers": [
         {
-          "kind": 16,
+          "kind": 15,
           "start": {
             "line": 1,
             "column": 5
@@ -87,7 +87,7 @@
                 },
                 "operator": {
                   "kind": 2,
-                  "assignment": 10,
+                  "assignment": 15,
                   "start": {
                     "line": 1,
                     "column": 18

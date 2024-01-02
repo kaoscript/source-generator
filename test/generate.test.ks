@@ -47,7 +47,7 @@ func prepare(file) { # {{{
 			encoding: 'utf8'
 		})
 
-		var node = JSON.parse(content, (key, value) => value == 'Infinity' ? Infinity : value) as NodeData
+		var node = JSON.parse(content, (key, value) => value == 'Infinity' ? Infinity : value):>(NodeData)
 
 		expect(node).to.exist
 

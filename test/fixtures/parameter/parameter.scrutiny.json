@@ -65,7 +65,7 @@
           "attributes": [],
           "modifiers": [
             {
-              "kind": 30,
+              "kind": 29,
               "start": {
                 "line": 3,
                 "column": 14
@@ -266,7 +266,7 @@
           },
           "operator": {
             "kind": 2,
-            "assignment": 10,
+            "assignment": 15,
             "start": {
               "line": 7,
               "column": 15
@@ -455,7 +455,7 @@
             "kind": 124,
             "modifiers": [
               {
-                "kind": 30,
+                "kind": 29,
                 "start": {
                   "line": 11,
                   "column": 22
@@ -654,7 +654,7 @@
             "kind": 124,
             "modifiers": [
               {
-                "kind": 30,
+                "kind": 29,
                 "start": {
                   "line": 15,
                   "column": 22
@@ -689,7 +689,7 @@
           },
           "operator": {
             "kind": 2,
-            "assignment": 10,
+            "assignment": 15,
             "start": {
               "line": 15,
               "column": 24

@@ -10,7 +10,7 @@
         "modifiers": [],
         "operator": {
           "kind": 2,
-          "assignment": 10,
+          "assignment": 15,
           "start": {
             "line": 1,
             "column": 3
@@ -72,7 +72,7 @@
                 "kind": 78,
                 "modifiers": [
                   {
-                    "kind": 9,
+                    "kind": 8,
                     "start": {
                       "line": 1,
                       "column": 18
@@ -98,7 +98,7 @@
                 "kind": 78,
                 "modifiers": [
                   {
-                    "kind": 9,
+                    "kind": 8,
                     "start": {
                       "line": 1,
                       "column": 21

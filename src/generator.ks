@@ -16,75 +16,93 @@ include {
 
 export namespace Generator {
 	var AssignmentOperatorSymbol = {
-		`\(AssignmentOperatorKind.Addition)`			: ' += '
-		`\(AssignmentOperatorKind.BitwiseAnd)`			: ' +&= '
-		`\(AssignmentOperatorKind.BitwiseLeftShift)`	: ' +<= '
-		`\(AssignmentOperatorKind.BitwiseOr)`			: ' +|= '
-		`\(AssignmentOperatorKind.BitwiseRightShift)`	: ' +>= '
-		`\(AssignmentOperatorKind.BitwiseXor)`			: ' +^= '
-		`\(AssignmentOperatorKind.Division)`			: ' /= '
-		`\(AssignmentOperatorKind.Empty)`				: ' !?#= '
-		`\(AssignmentOperatorKind.EmptyCoalescing)`		: ' ?##= '
-		`\(AssignmentOperatorKind.Equals)`				: ' = '
-		`\(AssignmentOperatorKind.Existential)`			: ' ?= '
-		`\(AssignmentOperatorKind.LogicalAnd)`			: ' &&= '
-		`\(AssignmentOperatorKind.LogicalOr)`			: ' ||= '
-		`\(AssignmentOperatorKind.LogicalXor)`			: ' ^^= '
-		`\(AssignmentOperatorKind.Modulo)`				: ' %= '
-		`\(AssignmentOperatorKind.Multiplication)`		: ' *= '
-		`\(AssignmentOperatorKind.NonEmpty)`			: ' ?#= '
-		`\(AssignmentOperatorKind.NonExistential)`		: ' !?= '
-		`\(AssignmentOperatorKind.NullCoalescing)`		: ' ??= '
-		`\(AssignmentOperatorKind.Quotient)`			: ' /.= '
-		`\(AssignmentOperatorKind.Return)`				: ' <- '
-		`\(AssignmentOperatorKind.Subtraction)`			: ' -= '
+		`\(OperatorKind.Addition)`				: ' += '
+		`\(OperatorKind.BitwiseAnd)`			: ' +&= '
+		`\(OperatorKind.BitwiseLeftShift)`		: ' +<= '
+		`\(OperatorKind.BitwiseOr)`				: ' +|= '
+		`\(OperatorKind.BitwiseRightShift)`		: ' +>= '
+		`\(OperatorKind.BitwiseXor)`			: ' +^= '
+		`\(OperatorKind.Division)`				: ' /= '
+		`\(OperatorKind.Empty)`					: ' !?#= '
+		`\(OperatorKind.EmptyCoalescing)`		: ' ?##= '
+		`\(OperatorKind.Equals)`				: ' = '
+		`\(OperatorKind.Existential)`			: ' ?= '
+		`\(OperatorKind.Finite)`				: ' ?+= '
+		`\(OperatorKind.IntegerDivision)`		: ' /#= '
+		`\(OperatorKind.LogicalAnd)`			: ' &&= '
+		`\(OperatorKind.LogicalOr)`				: ' ||= '
+		`\(OperatorKind.LogicalXor)`			: ' ^^= '
+		`\(OperatorKind.Modulus)`				: ' %%= '
+		`\(OperatorKind.Multiplication)`		: ' *= '
+		`\(OperatorKind.NonEmpty)`				: ' ?#= '
+		`\(OperatorKind.NonExistential)`		: ' !?= '
+		`\(OperatorKind.NonFinite)`				: ' !?+= '
+		`\(OperatorKind.NonFiniteCoalescing)`	: ' ?++= '
+		`\(OperatorKind.NullCoalescing)`		: ' ??= '
+		`\(OperatorKind.Power)`					: ' **= '
+		`\(OperatorKind.Remainder)`				: ' %= '
+		`\(OperatorKind.Return)`				: ' <- '
+		`\(OperatorKind.Subtraction)`			: ' -= '
+		`\(OperatorKind.VariantNoCoalescing)`	: ' ?||= '
+		`\(OperatorKind.VariantNo)`				: ' !?|= '
+		`\(OperatorKind.VariantYes)`			: ' ?|= '
 	}
 
 	var BinaryOperatorSymbol = {
-		`\(BinaryOperatorKind.Addition)`			: ' + '
-		`\(BinaryOperatorKind.BitwiseAnd)`			: ' +& '
-		`\(BinaryOperatorKind.BitwiseLeftShift)`	: ' +< '
-		`\(BinaryOperatorKind.BitwiseOr)`			: ' +| '
-		`\(BinaryOperatorKind.BitwiseRightShift)`	: ' +> '
-		`\(BinaryOperatorKind.BitwiseXor)`			: ' +^ '
-		`\(BinaryOperatorKind.Division)`			: ' / '
-		`\(BinaryOperatorKind.Equality)`			: ' == '
-		`\(BinaryOperatorKind.EmptyCoalescing)`		: ' ?## '
-		`\(BinaryOperatorKind.GreaterThan)`			: ' > '
-		`\(BinaryOperatorKind.GreaterThanOrEqual)`	: ' >= '
-		`\(BinaryOperatorKind.Inequality)`			: ' != '
-		`\(BinaryOperatorKind.LessThan)`			: ' < '
-		`\(BinaryOperatorKind.LessThanOrEqual)`		: ' <= '
-		`\(BinaryOperatorKind.LogicalAnd)`			: ' && '
-		`\(BinaryOperatorKind.LogicalImply)`		: ' -> '
-		`\(BinaryOperatorKind.LogicalOr)`			: ' || '
-		`\(BinaryOperatorKind.LogicalXor)`			: ' ^^ '
-		`\(BinaryOperatorKind.Match)`				: ' ~~ '
-		`\(BinaryOperatorKind.Mismatch)`			: ' !~ '
-		`\(BinaryOperatorKind.Modulo)`				: ' % '
-		`\(BinaryOperatorKind.Multiplication)`		: ' * '
-		`\(BinaryOperatorKind.NullCoalescing)`		: ' ?? '
-		`\(BinaryOperatorKind.Quotient)`			: ' /. '
-		`\(BinaryOperatorKind.Subtraction)`			: ' - '
-		`\(BinaryOperatorKind.TypeEquality)`		: ' is '
-		`\(BinaryOperatorKind.TypeInequality)`		: ' is not '
+		`\(OperatorKind.Addition)`				: ' + '
+		`\(OperatorKind.BitwiseAnd)`			: ' +& '
+		`\(OperatorKind.BitwiseLeftShift)`		: ' +< '
+		`\(OperatorKind.BitwiseOr)`				: ' +| '
+		`\(OperatorKind.BitwiseRightShift)`		: ' +> '
+		`\(OperatorKind.BitwiseXor)`			: ' +^ '
+		`\(OperatorKind.Division)`				: ' / '
+		`\(OperatorKind.Equality)`				: ' == '
+		`\(OperatorKind.EmptyCoalescing)`		: ' ?## '
+		`\(OperatorKind.EuclideanDivision)`		: ' /& '
+		`\(OperatorKind.GreaterThan)`			: ' > '
+		`\(OperatorKind.GreaterThanOrEqual)`	: ' >= '
+		`\(OperatorKind.Inequality)`			: ' != '
+		`\(OperatorKind.IntegerDivision)`		: ' /# '
+		`\(OperatorKind.LessThan)`				: ' < '
+		`\(OperatorKind.LessThanOrEqual)`		: ' <= '
+		`\(OperatorKind.LogicalAnd)`			: ' && '
+		`\(OperatorKind.LogicalImply)`			: ' -> '
+		`\(OperatorKind.LogicalOr)`				: ' || '
+		`\(OperatorKind.LogicalXor)`			: ' ^^ '
+		`\(OperatorKind.Match)`					: ' ~~ '
+		`\(OperatorKind.Mismatch)`				: ' !~ '
+		`\(OperatorKind.Modulus)`				: ' %% '
+		`\(OperatorKind.Multiplication)`		: ' * '
+		`\(OperatorKind.NonFiniteCoalescing)`	: ' ?++ '
+		`\(OperatorKind.NullCoalescing)`		: ' ?? '
+		`\(OperatorKind.Power)`					: ' ** '
+		`\(OperatorKind.Remainder)`				: ' % '
+		`\(OperatorKind.Subtraction)`			: ' - '
+		`\(OperatorKind.TypeAssertion)`			: ':&'
+		`\(OperatorKind.TypeCasting)`			: ':>'
+		`\(OperatorKind.TypeEquality)`			: ' is '
+		`\(OperatorKind.TypeInequality)`		: ' is not '
+		`\(OperatorKind.VariantNoCoalescing)`	: ' ?|| '
 	}
 
 	var JunctionOperatorSymbol = {
-		`\(BinaryOperatorKind.JunctionAnd)`			: ' & '
-		`\(BinaryOperatorKind.JunctionOr)`			: ' | '
-		`\(BinaryOperatorKind.JunctionXor)`			: ' ^ '
+		`\(OperatorKind.JunctionAnd)`			: ' & '
+		`\(OperatorKind.JunctionOr)`			: ' | '
+		`\(OperatorKind.JunctionXor)`			: ' ^ '
 	}
 
 	var UnaryPrefixOperatorSymbol = {
-		`\(UnaryOperatorKind.BitwiseNegation)`		: '+^'
-		`\(UnaryOperatorKind.Constant)`				: 'const '
-		`\(UnaryOperatorKind.Existential)`			: '?'
-		`\(UnaryOperatorKind.Implicit)`				: '.'
-		`\(UnaryOperatorKind.LogicalNegation)`		: '!'
-		`\(UnaryOperatorKind.Negative)`				: '-'
-		`\(UnaryOperatorKind.NonEmpty)`				: '#'
-		`\(UnaryOperatorKind.Spread)`				: '...'
+		`\(OperatorKind.BitwiseNegation)`		: '+^'
+		`\(OperatorKind.Constant)`				: 'const '
+		`\(OperatorKind.Existential)`			: '?'
+		`\(OperatorKind.Finite)`				: '?+'
+		`\(OperatorKind.Implicit)`				: '.'
+		`\(OperatorKind.Length)`				: '#'
+		`\(OperatorKind.LogicalNegation)`		: '!'
+		`\(OperatorKind.Negative)`				: '-'
+		`\(OperatorKind.NonEmpty)`				: '?#'
+		`\(OperatorKind.Spread)`				: '...'
+		`\(OperatorKind.VariantYes)`			: '?|'
 	}
 
 	enum KSWriterMode {
@@ -650,35 +668,9 @@ export namespace Generator {
 				writer.code(' ').expression(data.operation) if ?data.operation
 			} # }}}
 			NodeKind.BinaryExpression { # {{{
-				if data.operator.kind == BinaryOperatorKind.TypeCasting {
-					writer.code('(').expression(data.left)
-
-					var mut nf = true
-
-					for var modifier in data.operator.modifiers {
-						if modifier.kind == ModifierKind.Forced {
-							writer.code(' as! ')
-
-							nf = false
-						}
-						else if modifier.kind == ModifierKind.Nullable {
-							writer.code(' as? ')
-
-							nf = false
-						}
-					}
-
-					if nf {
-						writer.code(' as ')
-					}
-
-					writer.expression(data.right).code(')')
-				}
-				else {
-					writer.wrap(data.left)
-
-					if data.operator.kind == BinaryOperatorKind.Assignment {
-						writer.code(AssignmentOperatorSymbol[data.operator.assignment])
+				match data.operator.kind {
+					OperatorKind.Assignment {
+						writer.wrap(data.left).code(AssignmentOperatorSymbol[data.operator.assignment])
 
 						if mode == .Rolling && data.right.kind == NodeKind.RollingExpression {
 							writer
@@ -696,7 +688,7 @@ export namespace Generator {
 							writer.wrap(data.right)
 						}
 					}
-					else if data.operator.kind == BinaryOperatorKind.BackwardPipeline | BinaryOperatorKind.ForwardPipeline {
+					OperatorKind.BackwardPipeline, OperatorKind.ForwardPipeline {
 						var mut existential = false
 						var mut nonEmpty = false
 						var mut destructuring = false
@@ -715,7 +707,9 @@ export namespace Generator {
 							}
 						}
 
-						if data.operator.kind == BinaryOperatorKind.BackwardPipeline {
+						writer.wrap(data.left)
+
+						if data.operator.kind == OperatorKind.BackwardPipeline {
 							writer
 								..code(' ')
 								..code('?') if existential
@@ -736,12 +730,35 @@ export namespace Generator {
 
 						writer.expression(data.right)
 					}
-					else {
-						writer.code(BinaryOperatorSymbol[data.operator.kind])
+					OperatorKind.TypeSignalment {
+						writer.expression(data.left).code(':!')
 
-						writer.wrap(data.right)
+						for var modifier in data.operator.modifiers {
+							if modifier.kind == ModifierKind.Forced {
+								writer.code('!')
+							}
+						}
+
+						writer.code('(').expression(data.right).code(')')
 					}
-			}
+					OperatorKind.TypeAssertion, OperatorKind.TypeCasting {
+						writer.expression(data.left).code(BinaryOperatorSymbol[data.operator.kind])
+
+						for var modifier in data.operator.modifiers {
+							if modifier.kind == ModifierKind.Nullable {
+								writer.code('?')
+							}
+						}
+
+						writer.code('(').expression(data.right).code(')')
+					}
+					else {
+						writer
+							.wrap(data.left)
+							.code(BinaryOperatorSymbol[data.operator.kind])
+							.wrap(data.right)
+					}
+				}
 			} # }}}
 			NodeKind.BindingElement { # {{{
 				var dyn computed = false
@@ -1690,7 +1707,7 @@ export namespace Generator {
 					writer.wrap(data.argument)
 
 					match data.operator.kind {
-						UnaryOperatorKind.TypeFitting {
+						OperatorKind.TypeFitting {
 							writer.code(nullable ? '!?' : '!!')
 						}
 					}
@@ -1919,20 +1936,7 @@ export namespace Generator {
 			writer.code(' => ').expression(data.value)
 		}
 		else {
-			var mut auto = false
-
-			for var modifier in modifiers {
-				if modifier.kind == ModifierKind.AutoType {
-					auto = true
-				}
-			}
-
-			if auto {
-				writer.code(' :> ')
-			}
-			else {
-				writer.code(' => ')
-			}
+			writer.code(' => ')
 
 			if data.kind == NodeKind.ObjectExpression {
 				writer.code('(').expression(data).code(')')
@@ -3830,7 +3834,7 @@ export namespace Generator {
 
 	func toWrap(data, writer) {
 		match data.kind {
-			NodeKind.BinaryExpression when data.operator.kind != BinaryOperatorKind.TypeCasting { # {{{
+			NodeKind.BinaryExpression when data.operator.kind != OperatorKind.TypeAssertion & OperatorKind.TypeCasting & OperatorKind.TypeSignalment { # {{{
 				writer
 					.code('(')
 					.expression(data)

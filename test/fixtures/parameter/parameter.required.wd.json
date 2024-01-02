@@ -25,7 +25,7 @@
           "attributes": [],
           "modifiers": [
             {
-              "kind": 38,
+              "kind": 37,
               "start": {
                 "line": 1,
                 "column": 11
@@ -64,7 +64,7 @@
           },
           "operator": {
             "kind": 2,
-            "assignment": 10,
+            "assignment": 15,
             "start": {
               "line": 1,
               "column": 13
@@ -143,7 +143,7 @@
           "attributes": [],
           "modifiers": [
             {
-              "kind": 38,
+              "kind": 37,
               "start": {
                 "line": 4,
                 "column": 11
@@ -154,7 +154,7 @@
               }
             },
             {
-              "kind": 30,
+              "kind": 29,
               "start": {
                 "line": 4,
                 "column": 12
@@ -193,7 +193,7 @@
           },
           "operator": {
             "kind": 2,
-            "assignment": 10,
+            "assignment": 15,
             "start": {
               "line": 4,
               "column": 14
@@ -272,7 +272,7 @@
           "attributes": [],
           "modifiers": [
             {
-              "kind": 38,
+              "kind": 37,
               "start": {
                 "line": 7,
                 "column": 11
@@ -336,7 +336,7 @@
           },
           "operator": {
             "kind": 2,
-            "assignment": 10,
+            "assignment": 15,
             "start": {
               "line": 7,
               "column": 21
@@ -415,7 +415,7 @@
           "attributes": [],
           "modifiers": [
             {
-              "kind": 38,
+              "kind": 37,
               "start": {
                 "line": 10,
                 "column": 11
@@ -456,7 +456,7 @@
             "kind": 124,
             "modifiers": [
               {
-                "kind": 30,
+                "kind": 29,
                 "start": {
                   "line": 10,
                   "column": 20
@@ -491,7 +491,7 @@
           },
           "operator": {
             "kind": 2,
-            "assignment": 10,
+            "assignment": 15,
             "start": {
               "line": 10,
               "column": 22

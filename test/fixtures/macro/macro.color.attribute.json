@@ -131,7 +131,7 @@
                         "kind": 126,
                         "modifiers": [],
                         "operator": {
-                          "kind": 3,
+                          "kind": 17,
                           "start": {
                             "line": 3,
                             "column": 6
@@ -385,7 +385,7 @@
                             "attributes": [],
                             "modifiers": [
                               {
-                                "kind": 16,
+                                "kind": 15,
                                 "start": {
                                   "line": 7,
                                   "column": 8
@@ -541,7 +541,7 @@
                                     "modifiers": [],
                                     "operator": {
                                       "kind": 2,
-                                      "assignment": 10,
+                                      "assignment": 15,
                                       "start": {
                                         "line": 9,
                                         "column": 11
@@ -1145,7 +1145,7 @@
                                     "modifiers": [],
                                     "operator": {
                                       "kind": 2,
-                                      "assignment": 10,
+                                      "assignment": 15,
                                       "start": {
                                         "line": 20,
                                         "column": 39
@@ -1162,7 +1162,7 @@
                                         "kind": 70,
                                         "modifiers": [
                                           {
-                                            "kind": 10,
+                                            "kind": 9,
                                             "start": {
                                               "line": 20,
                                               "column": 26

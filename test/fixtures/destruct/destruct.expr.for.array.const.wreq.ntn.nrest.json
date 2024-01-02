@@ -54,7 +54,7 @@
                 "kind": 12,
                 "modifiers": [
                   {
-                    "kind": 38,
+                    "kind": 37,
                     "start": {
                       "line": 1,
                       "column": 19
@@ -80,7 +80,7 @@
                 },
                 "operator": {
                   "kind": 2,
-                  "assignment": 10,
+                  "assignment": 15,
                   "start": {
                     "line": 1,
                     "column": 21
