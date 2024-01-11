@@ -1,5 +1,5 @@
 {
-  "kind": 73,
+  "kind": 72,
   "attributes": [],
   "body": [
     {
@@ -29,7 +29,7 @@
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 49,
+                "kind": 48,
                 "modifiers": [],
                 "name": "a",
                 "start": {
@@ -45,7 +45,7 @@
                 "kind": 124,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 49,
+                  "kind": 48,
                   "modifiers": [],
                   "name": "Number",
                   "start": {
@@ -77,7 +77,7 @@
             }
           ],
           "value": {
-            "kind": 78,
+            "kind": 77,
             "modifiers": [],
             "value": 0,
             "radix": 10,
@@ -109,7 +109,7 @@
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 49,
+                "kind": 48,
                 "modifiers": [],
                 "name": "b",
                 "start": {
@@ -125,7 +125,7 @@
                 "kind": 124,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 49,
+                  "kind": 48,
                   "modifiers": [],
                   "name": "Boolean",
                   "start": {
@@ -157,7 +157,7 @@
             }
           ],
           "value": {
-            "kind": 49,
+            "kind": 48,
             "modifiers": [],
             "name": "true",
             "start": {
@@ -188,7 +188,7 @@
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 49,
+                "kind": 48,
                 "modifiers": [],
                 "name": "c",
                 "start": {
@@ -204,7 +204,7 @@
                 "kind": 124,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 49,
+                  "kind": 48,
                   "modifiers": [],
                   "name": "String",
                   "start": {
@@ -236,7 +236,7 @@
             }
           ],
           "value": {
-            "kind": 60,
+            "kind": 59,
             "modifiers": [],
             "value": "",
             "start": {

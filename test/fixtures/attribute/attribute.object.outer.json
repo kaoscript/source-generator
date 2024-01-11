@@ -1,5 +1,5 @@
 {
-  "kind": 73,
+  "kind": 72,
   "attributes": [],
   "body": [
     {
@@ -17,7 +17,7 @@
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 49,
+                "kind": 48,
                 "modifiers": [],
                 "name": "foo",
                 "start": {
@@ -50,7 +50,7 @@
                   {
                     "kind": 7,
                     "declaration": {
-                      "kind": 49,
+                      "kind": 48,
                       "modifiers": [],
                       "name": "foo",
                       "start": {
@@ -74,7 +74,7 @@
                 ],
                 "modifiers": [],
                 "name": {
-                  "kind": 49,
+                  "kind": 48,
                   "modifiers": [],
                   "name": "bar",
                   "start": {
@@ -87,7 +87,7 @@
                   }
                 },
                 "value": {
-                  "kind": 46,
+                  "kind": 45,
                   "modifiers": [],
                   "parameters": [],
                   "throws": [],

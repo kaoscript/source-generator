@@ -1,5 +1,5 @@
 {
-  "kind": 73,
+  "kind": 72,
   "attributes": [],
   "body": [
     {
@@ -17,7 +17,7 @@
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 49,
+                "kind": 48,
                 "modifiers": [],
                 "name": "writeAppLog",
                 "start": {
@@ -40,13 +40,13 @@
             }
           ],
           "value": {
-            "kind": 28,
+            "kind": 27,
             "modifiers": [],
             "scope": {
               "kind": 2
             },
             "callee": {
-              "kind": 49,
+              "kind": 48,
               "modifiers": [],
               "name": "writeLog",
               "start": {
@@ -60,7 +60,7 @@
             },
             "arguments": [
               {
-                "kind": 60,
+                "kind": 59,
                 "modifiers": [],
                 "value": "[app]",
                 "start": {

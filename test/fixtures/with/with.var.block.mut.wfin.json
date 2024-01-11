@@ -1,5 +1,5 @@
 {
-  "kind": 73,
+  "kind": 72,
   "attributes": [],
   "body": [
     {
@@ -39,7 +39,7 @@
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 49,
+                "kind": 48,
                 "modifiers": [],
                 "name": "file",
                 "start": {
@@ -68,7 +68,7 @@
               "kind": 2
             },
             "callee": {
-              "kind": 49,
+              "kind": 48,
               "modifiers": [],
               "name": "open",
               "start": {
@@ -132,7 +132,7 @@
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 49,
+                "kind": 48,
                 "modifiers": [],
                 "name": "file2",
                 "start": {
@@ -161,7 +161,7 @@
               "kind": 2
             },
             "callee": {
-              "kind": 49,
+              "kind": 48,
               "modifiers": [],
               "name": "open2",
               "start": {
@@ -212,7 +212,7 @@
                     "attributes": [],
                     "modifiers": [],
                     "name": {
-                      "kind": 49,
+                      "kind": 48,
                       "modifiers": [],
                       "name": "text",
                       "start": {
@@ -244,10 +244,10 @@
                       "kind": 2
                     },
                     "callee": {
-                      "kind": 70,
+                      "kind": 69,
                       "modifiers": [],
                       "object": {
-                        "kind": 49,
+                        "kind": 48,
                         "modifiers": [],
                         "name": "file",
                         "start": {
@@ -260,7 +260,7 @@
                         }
                       },
                       "property": {
-                        "kind": 49,
+                        "kind": 48,
                         "modifiers": [],
                         "name": "readText",
                         "start": {
@@ -334,7 +334,7 @@
         "attributes": [],
         "statements": [
           {
-            "kind": 41,
+            "kind": 40,
             "attributes": [],
             "expression": {
               "kind": 18,
@@ -343,10 +343,10 @@
                 "kind": 2
               },
               "callee": {
-                "kind": 70,
+                "kind": 69,
                 "modifiers": [],
                 "object": {
-                  "kind": 49,
+                  "kind": 48,
                   "modifiers": [],
                   "name": "file",
                   "start": {
@@ -359,7 +359,7 @@
                   }
                 },
                 "property": {
-                  "kind": 49,
+                  "kind": 48,
                   "modifiers": [],
                   "name": "close",
                   "start": {

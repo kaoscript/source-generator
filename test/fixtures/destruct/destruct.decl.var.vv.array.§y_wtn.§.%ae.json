@@ -1,5 +1,5 @@
 {
-  "kind": 73,
+  "kind": 72,
   "attributes": [],
   "body": [
     {
@@ -47,7 +47,7 @@
                     "kind": 12,
                     "modifiers": [],
                     "internal": {
-                      "kind": 49,
+                      "kind": 48,
                       "modifiers": [],
                       "name": "y",
                       "start": {
@@ -95,7 +95,7 @@
               "kind": 2
             },
             "callee": {
-              "kind": 49,
+              "kind": 48,
               "modifiers": [],
               "name": "foo",
               "start": {

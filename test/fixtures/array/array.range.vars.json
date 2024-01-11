@@ -1,5 +1,5 @@
 {
-  "kind": 73,
+  "kind": 72,
   "attributes": [],
   "body": [
     {
@@ -17,7 +17,7 @@
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 49,
+                "kind": 48,
                 "modifiers": [],
                 "name": "min",
                 "start": {
@@ -40,7 +40,7 @@
             }
           ],
           "value": {
-            "kind": 78,
+            "kind": 77,
             "modifiers": [],
             "value": 1,
             "radix": 10,
@@ -87,7 +87,7 @@
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 49,
+                "kind": 48,
                 "modifiers": [],
                 "name": "max",
                 "start": {
@@ -110,7 +110,7 @@
             }
           ],
           "value": {
-            "kind": 78,
+            "kind": 77,
             "modifiers": [],
             "value": 5,
             "radix": 10,
@@ -157,7 +157,7 @@
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 49,
+                "kind": 48,
                 "modifiers": [],
                 "name": "a",
                 "start": {
@@ -182,7 +182,7 @@
           "value": {
             "kind": 5,
             "from": {
-              "kind": 49,
+              "kind": 48,
               "modifiers": [],
               "name": "min",
               "start": {
@@ -195,7 +195,7 @@
               }
             },
             "to": {
-              "kind": 49,
+              "kind": 48,
               "modifiers": [],
               "name": "max",
               "start": {

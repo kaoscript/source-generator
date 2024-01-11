@@ -1,5 +1,5 @@
 {
-  "kind": 73,
+  "kind": 72,
   "attributes": [],
   "body": [
     {
@@ -35,7 +35,7 @@
                     "kind": 12,
                     "modifiers": [],
                     "internal": {
-                      "kind": 49,
+                      "kind": 48,
                       "modifiers": [],
                       "name": "x",
                       "start": {
@@ -60,7 +60,7 @@
                     "kind": 12,
                     "modifiers": [],
                     "internal": {
-                      "kind": 49,
+                      "kind": 48,
                       "modifiers": [],
                       "name": "y",
                       "start": {
@@ -102,7 +102,7 @@
                       "kind": 124,
                       "modifiers": [],
                       "typeName": {
-                        "kind": 49,
+                        "kind": 48,
                         "modifiers": [],
                         "name": "Number",
                         "start": {
@@ -139,7 +139,7 @@
                       "kind": 124,
                       "modifiers": [],
                       "typeName": {
-                        "kind": 49,
+                        "kind": 48,
                         "modifiers": [],
                         "name": "Number",
                         "start": {
@@ -196,7 +196,7 @@
               "kind": 2
             },
             "callee": {
-              "kind": 49,
+              "kind": 48,
               "modifiers": [],
               "name": "foo",
               "start": {
@@ -270,7 +270,7 @@
                     "kind": 12,
                     "modifiers": [],
                     "internal": {
-                      "kind": 49,
+                      "kind": 48,
                       "modifiers": [],
                       "name": "x",
                       "start": {
@@ -295,7 +295,7 @@
                     "kind": 12,
                     "modifiers": [],
                     "internal": {
-                      "kind": 49,
+                      "kind": 48,
                       "modifiers": [],
                       "name": "y",
                       "start": {
@@ -330,7 +330,7 @@
                 "kind": 124,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 49,
+                  "kind": 48,
                   "modifiers": [],
                   "name": "Array",
                   "start": {
@@ -347,7 +347,7 @@
                     "kind": 124,
                     "modifiers": [],
                     "typeName": {
-                      "kind": 49,
+                      "kind": 48,
                       "modifiers": [],
                       "name": "Number",
                       "start": {
@@ -395,7 +395,7 @@
               "kind": 2
             },
             "callee": {
-              "kind": 49,
+              "kind": 48,
               "modifiers": [],
               "name": "foo",
               "start": {
@@ -463,13 +463,13 @@
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 79,
+                "kind": 78,
                 "elements": [
                   {
                     "kind": 12,
                     "modifiers": [],
                     "internal": {
-                      "kind": 49,
+                      "kind": 48,
                       "modifiers": [],
                       "name": "x",
                       "start": {
@@ -494,7 +494,7 @@
                     "kind": 12,
                     "modifiers": [],
                     "internal": {
-                      "kind": 49,
+                      "kind": 48,
                       "modifiers": [],
                       "name": "y",
                       "start": {
@@ -533,7 +533,7 @@
                     "kind": 91,
                     "modifiers": [],
                     "name": {
-                      "kind": 49,
+                      "kind": 48,
                       "modifiers": [],
                       "name": "x",
                       "start": {
@@ -549,7 +549,7 @@
                       "kind": 124,
                       "modifiers": [],
                       "typeName": {
-                        "kind": 49,
+                        "kind": 48,
                         "modifiers": [],
                         "name": "Number",
                         "start": {
@@ -583,7 +583,7 @@
                     "kind": 91,
                     "modifiers": [],
                     "name": {
-                      "kind": 49,
+                      "kind": 48,
                       "modifiers": [],
                       "name": "y",
                       "start": {
@@ -599,7 +599,7 @@
                       "kind": 124,
                       "modifiers": [],
                       "typeName": {
-                        "kind": 49,
+                        "kind": 48,
                         "modifiers": [],
                         "name": "Number",
                         "start": {
@@ -656,7 +656,7 @@
               "kind": 2
             },
             "callee": {
-              "kind": 49,
+              "kind": 48,
               "modifiers": [],
               "name": "foo",
               "start": {
@@ -724,13 +724,13 @@
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 79,
+                "kind": 78,
                 "elements": [
                   {
                     "kind": 12,
                     "modifiers": [],
                     "internal": {
-                      "kind": 49,
+                      "kind": 48,
                       "modifiers": [],
                       "name": "x",
                       "start": {
@@ -755,7 +755,7 @@
                     "kind": 12,
                     "modifiers": [],
                     "internal": {
-                      "kind": 49,
+                      "kind": 48,
                       "modifiers": [],
                       "name": "y",
                       "start": {
@@ -790,7 +790,7 @@
                 "kind": 124,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 49,
+                  "kind": 48,
                   "modifiers": [],
                   "name": "Object",
                   "start": {
@@ -807,7 +807,7 @@
                     "kind": 124,
                     "modifiers": [],
                     "typeName": {
-                      "kind": 49,
+                      "kind": 48,
                       "modifiers": [],
                       "name": "Number",
                       "start": {
@@ -855,7 +855,7 @@
               "kind": 2
             },
             "callee": {
-              "kind": 49,
+              "kind": 48,
               "modifiers": [],
               "name": "foo",
               "start": {

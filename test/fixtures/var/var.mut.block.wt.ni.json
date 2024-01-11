@@ -1,5 +1,5 @@
 {
-  "kind": 73,
+  "kind": 72,
   "attributes": [],
   "body": [
     {
@@ -29,7 +29,7 @@
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 49,
+                "kind": 48,
                 "modifiers": [],
                 "name": "a",
                 "start": {
@@ -45,7 +45,7 @@
                 "kind": 124,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 49,
+                  "kind": 48,
                   "modifiers": [],
                   "name": "Number",
                   "start": {
@@ -95,7 +95,7 @@
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 49,
+                "kind": 48,
                 "modifiers": [],
                 "name": "b",
                 "start": {
@@ -111,7 +111,7 @@
                 "kind": 124,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 49,
+                  "kind": 48,
                   "modifiers": [],
                   "name": "Boolean",
                   "start": {
@@ -161,7 +161,7 @@
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 49,
+                "kind": 48,
                 "modifiers": [],
                 "name": "c",
                 "start": {
@@ -177,7 +177,7 @@
                 "kind": 124,
                 "modifiers": [],
                 "typeName": {
-                  "kind": 49,
+                  "kind": 48,
                   "modifiers": [],
                   "name": "String",
                   "start": {

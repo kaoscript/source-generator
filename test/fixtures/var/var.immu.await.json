@@ -1,5 +1,5 @@
 {
-  "kind": 73,
+  "kind": 72,
   "attributes": [],
   "body": [
     {
@@ -17,7 +17,7 @@
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 49,
+                "kind": 48,
                 "modifiers": [],
                 "name": "a",
                 "start": {
@@ -43,7 +43,7 @@
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 49,
+                "kind": 48,
                 "modifiers": [],
                 "name": "b",
                 "start": {
@@ -74,7 +74,7 @@
                 "attributes": [],
                 "modifiers": [],
                 "name": {
-                  "kind": 49,
+                  "kind": 48,
                   "modifiers": [],
                   "name": "a",
                   "start": {
@@ -100,7 +100,7 @@
                 "attributes": [],
                 "modifiers": [],
                 "name": {
-                  "kind": 49,
+                  "kind": 48,
                   "modifiers": [],
                   "name": "b",
                   "start": {
@@ -129,7 +129,7 @@
                 "kind": 2
               },
               "callee": {
-                "kind": 49,
+                "kind": 48,
                 "modifiers": [],
                 "name": "foo",
                 "start": {

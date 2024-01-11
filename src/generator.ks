@@ -315,6 +315,11 @@ export namespace Generator {
 		popReference(name) => @writer.popReference(name)
 		pushMode(mode: KSWriterMode) => @writer.pushMode(mode)
 		pushReference(name, fn) => @writer.pushReference(name, fn)
+		run(data, fn) { # {{{
+			fn(data, this)
+
+			return this
+		} # }}}
 		transformExpression(data, writer = this) => @writer.transformExpression(data, this)
 		wrap(data) { # {{{
 			if !this.filterExpression(data) {
@@ -573,7 +578,7 @@ export namespace Generator {
 			NodeKind.ArrayComprehension { # {{{
 				writer
 					.code('[')
-					.expression(data.expression)
+					.expression(data.value)
 					.run(data.loop, toLoopHeader)
 					.code(']')
 			} # }}}
@@ -863,6 +868,10 @@ export namespace Generator {
 				}
 
 				writer.code('class ').expression(data.name)
+
+				if ?data.typeParameters {
+					toTypeParameters(data.typeParameters, writer)
+				}
 			} # }}}
 			NodeKind.ComparisonExpression { # {{{
 				for var value, i in data.values {
@@ -1220,6 +1229,15 @@ export namespace Generator {
 
 				writer.code('}')
 			} # }}}
+			NodeKind.ObjectComprehension { # {{{
+				writer
+					.code('{')
+					.expression(data.name)
+					.code(': ')
+					.expression(data.value)
+					.run(data.loop, toLoopHeader)
+					.code('}')
+			} # }}}
 			NodeKind.ObjectExpression { # {{{
 				var o = writer.newObject()
 
@@ -1328,10 +1346,11 @@ export namespace Generator {
 						writer.code('_ % ')
 					}
 				}
-				else if !?data.internal || isDifferentName(data.external, data.internal) {
-					writer.expression(data.external)
-
-					writer.code(' % ')
+				else if !?data.internal || (!?data.internal.alias && isDifferentName(data.external, data.internal)) {
+					writer.expression(data.external).code(' % ')
+				}
+				else if ?data.internal.alias && !isDifferentName(data.external, data.internal.alias) {
+					writer.expression(data.external).code(' & ')
 				}
 
 				for var modifier in data.modifiers {
@@ -1373,6 +1392,10 @@ export namespace Generator {
 
 				if ?data.internal {
 					writer.expression(data.internal)
+
+					if ?data.internal.alias && !?data.external {
+						writer.code(' & ').expression(data.internal.alias)
+					}
 
 					for var modifier in data.modifiers {
 						match modifier.kind {
@@ -2556,6 +2579,10 @@ export namespace Generator {
 
 				line.code('class ').expression(data.name)
 
+				if ?data.typeParameters {
+					toTypeParameters(data.typeParameters, line)
+				}
+
 				if ?data.version {
 					line.code(`@\(data.version.major).\(data.version.minor).\(data.version.patch)`)
 				}
@@ -2600,6 +2627,10 @@ export namespace Generator {
 					.newLine()
 					.code('disclose ')
 					.expression(data.name)
+
+				if ?data.typeParameters {
+					toTypeParameters(data.typeParameters, line)
+				}
 
 				var block = line.newBlock()
 

@@ -1,5 +1,5 @@
 {
-  "kind": 73,
+  "kind": 72,
   "attributes": [],
   "body": [
     {
@@ -29,7 +29,7 @@
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 49,
+                "kind": 48,
                 "modifiers": [],
                 "name": "foo",
                 "start": {
@@ -61,7 +61,7 @@
                 "attributes": [],
                 "modifiers": [],
                 "name": {
-                  "kind": 49,
+                  "kind": 48,
                   "modifiers": [],
                   "name": "bar",
                   "start": {
@@ -74,7 +74,7 @@
                   }
                 },
                 "value": {
-                  "kind": 60,
+                  "kind": 59,
                   "modifiers": [],
                   "value": "hello",
                   "start": {
@@ -100,7 +100,7 @@
                 "attributes": [],
                 "modifiers": [],
                 "name": {
-                  "kind": 60,
+                  "kind": 59,
                   "modifiers": [],
                   "value": "qux",
                   "start": {
@@ -113,7 +113,7 @@
                   }
                 },
                 "value": {
-                  "kind": 60,
+                  "kind": 59,
                   "modifiers": [],
                   "value": "world",
                   "start": {

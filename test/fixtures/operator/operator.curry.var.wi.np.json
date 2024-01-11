@@ -1,5 +1,5 @@
 {
-  "kind": 73,
+  "kind": 72,
   "attributes": [],
   "body": [
     {
@@ -17,7 +17,7 @@
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 49,
+                "kind": 48,
                 "modifiers": [],
                 "name": "printCAA",
                 "start": {
@@ -40,13 +40,13 @@
             }
           ],
           "value": {
-            "kind": 28,
+            "kind": 27,
             "modifiers": [],
             "scope": {
               "kind": 2
             },
             "callee": {
-              "kind": 49,
+              "kind": 48,
               "modifiers": [],
               "name": "printABC",
               "start": {
@@ -63,7 +63,7 @@
                 "kind": 86,
                 "modifiers": [],
                 "index": {
-                  "kind": 78,
+                  "kind": 77,
                   "modifiers": [],
                   "value": 2,
                   "radix": 10,
@@ -101,7 +101,7 @@
                 "kind": 86,
                 "modifiers": [],
                 "index": {
-                  "kind": 78,
+                  "kind": 77,
                   "modifiers": [],
                   "value": 0,
                   "radix": 10,

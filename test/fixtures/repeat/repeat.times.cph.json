@@ -1,5 +1,5 @@
 {
-  "kind": 73,
+  "kind": 72,
   "attributes": [],
   "body": [
     {
@@ -17,7 +17,7 @@
               "attributes": [],
               "modifiers": [],
               "name": {
-                "kind": 49,
+                "kind": 48,
                 "modifiers": [],
                 "name": "values",
                 "start": {
@@ -42,8 +42,8 @@
           "value": {
             "kind": 3,
             "modifiers": [],
-            "expression": {
-              "kind": 60,
+            "value": {
+              "kind": 59,
               "modifiers": [],
               "value": "Hello world!",
               "start": {
@@ -59,7 +59,7 @@
               "kind": 96,
               "attributes": [],
               "expression": {
-                "kind": 78,
+                "kind": 77,
                 "modifiers": [],
                 "value": 10,
                 "radix": 10,
