@@ -7,7 +7,7 @@
       "attributes": [],
       "declarations": [
         {
-          "kind": 132,
+          "kind": 133,
           "attributes": [],
           "modifiers": [],
           "name": {
@@ -43,7 +43,7 @@
       }
     },
     {
-      "kind": 133,
+      "kind": 134,
       "attributes": [],
       "modifiers": [
         {
@@ -60,12 +60,12 @@
       ],
       "declarations": [
         {
-          "kind": 131,
+          "kind": 132,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 132,
+              "kind": 133,
               "attributes": [],
               "modifiers": [],
               "name": {
@@ -92,7 +92,7 @@
             }
           ],
           "value": {
-            "kind": 126,
+            "kind": 127,
             "modifiers": [],
             "operator": {
               "kind": 33,
@@ -106,7 +106,7 @@
               }
             },
             "argument": {
-              "kind": 126,
+              "kind": 127,
               "modifiers": [],
               "operator": {
                 "kind": 17,

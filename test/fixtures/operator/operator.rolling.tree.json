@@ -3,17 +3,17 @@
   "attributes": [],
   "body": [
     {
-      "kind": 133,
+      "kind": 134,
       "attributes": [],
       "modifiers": [],
       "declarations": [
         {
-          "kind": 131,
+          "kind": 132,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 132,
+              "kind": 133,
               "attributes": [],
               "modifiers": [],
               "name": {
@@ -127,17 +127,17 @@
       }
     },
     {
-      "kind": 133,
+      "kind": 134,
       "attributes": [],
       "modifiers": [],
       "declarations": [
         {
-          "kind": 131,
+          "kind": 132,
           "attributes": [],
           "modifiers": [],
           "variables": [
             {
-              "kind": 132,
+              "kind": 133,
               "attributes": [],
               "modifiers": [],
               "name": {

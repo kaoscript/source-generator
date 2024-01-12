@@ -51,7 +51,7 @@
             },
             "operands": [
               {
-                "kind": 126,
+                "kind": 127,
                 "modifiers": [],
                 "operator": {
                   "kind": 22,
@@ -87,7 +87,7 @@
                 }
               },
               {
-                "kind": 126,
+                "kind": 127,
                 "modifiers": [],
                 "operator": {
                   "kind": 22,

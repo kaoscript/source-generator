@@ -466,6 +466,17 @@ export namespace Generator {
 		}
 	} # }}}
 
+	func toComprehension(data, writer) { # {{{
+		match data.kind {
+			IterationKind.Repeat {
+				writer.code(' repeat ').expression(data.expression).code(' times')
+			}
+			else {
+				writer.code(' for ').run(data, toIteration)
+			}
+		}
+	} # }}}
+
 	func toExport(data, writer) {
 		match data.kind {
 			NodeKind.DeclarationSpecifier { # {{{
@@ -579,7 +590,7 @@ export namespace Generator {
 				writer
 					.code('[')
 					.expression(data.value)
-					.run(data.loop, toLoopHeader)
+					.run(data.iteration, toComprehension)
 					.code(']')
 			} # }}}
 			NodeKind.ArrayExpression { # {{{
@@ -1235,7 +1246,7 @@ export namespace Generator {
 					.expression(data.name)
 					.code(': ')
 					.expression(data.value)
-					.run(data.loop, toLoopHeader)
+					.run(data.iteration, toComprehension)
 					.code('}')
 			} # }}}
 			NodeKind.ObjectExpression { # {{{
@@ -1708,6 +1719,17 @@ export namespace Generator {
 						writer.code('?')
 					}
 				}
+			} # }}}
+			NodeKind.TypedExpression { # {{{
+				writer.expression(data.expression).code('<')
+
+				for var type, index in data.typeParameters {
+					writer
+						.code(', ') if index > 0
+						.expression(type)
+				}
+
+				writer.code('>')
 			} # }}}
 			NodeKind.UnaryExpression { # {{{
 				var mut nullable = false
@@ -2371,17 +2393,6 @@ export namespace Generator {
 				if ?data.when {
 					writer.code(' when ').expression(data.when)
 				}
-			}
-		}
-	} # }}}
-
-	func toLoopHeader(data, writer) { # {{{
-		match data.kind {
-			NodeKind.ForStatement {
-				writer.code(' for ').run(data.iteration, toIteration)
-			}
-			NodeKind.RepeatStatement {
-				writer.code(' repeat ').expression(data.expression).code(' times')
 			}
 		}
 	} # }}}

@@ -290,7 +290,7 @@
                   }
                 ],
                 "binding": {
-                  "kind": 132,
+                  "kind": 133,
                   "attributes": [],
                   "modifiers": [],
                   "name": {
@@ -475,7 +475,7 @@
                   }
                 ],
                 "binding": {
-                  "kind": 132,
+                  "kind": 133,
                   "attributes": [],
                   "modifiers": [],
                   "name": {
@@ -620,7 +620,7 @@
                 "kind": 62,
                 "conditions": [],
                 "binding": {
-                  "kind": 132,
+                  "kind": 133,
                   "attributes": [],
                   "modifiers": [],
                   "name": {

@@ -19,7 +19,7 @@
         }
       },
       "type": {
-        "kind": 130,
+        "kind": 131,
         "types": [
           {
             "kind": 124,
@@ -89,7 +89,7 @@
             },
             "typeParameters": [
               {
-                "kind": 130,
+                "kind": 131,
                 "types": [
                   {
                     "kind": 124,

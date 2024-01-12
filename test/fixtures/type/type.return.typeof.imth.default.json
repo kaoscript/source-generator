@@ -150,7 +150,7 @@
           },
           "parameters": [],
           "type": {
-            "kind": 127,
+            "kind": 128,
             "modifiers": [],
             "operator": {
               "kind": 4,
@@ -290,7 +290,7 @@
             }
           ],
           "type": {
-            "kind": 127,
+            "kind": 128,
             "modifiers": [],
             "operator": {
               "kind": 4,

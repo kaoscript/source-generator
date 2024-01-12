@@ -39,7 +39,7 @@
           },
           "parameters": [],
           "type": {
-            "kind": 127,
+            "kind": 128,
             "modifiers": [],
             "operator": {
               "kind": 3,
@@ -53,7 +53,7 @@
               }
             },
             "argument": {
-              "kind": 127,
+              "kind": 128,
               "modifiers": [],
               "operator": {
                 "kind": 4,
