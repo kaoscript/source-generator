@@ -1,3 +1,3 @@
 extern foo
-func foobar(value ?||= foo()) {
+func foobar(value ?]]= foo()) {
 }

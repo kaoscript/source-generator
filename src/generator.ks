@@ -14,7 +14,7 @@ include {
 	'npm:@kaoscript/source-writer'
 }
 
-export namespace Generator {
+export namespace KSGeneration {
 	var AssignmentOperatorSymbol = {
 		`\(OperatorKind.Addition)`				: ' += '
 		`\(OperatorKind.BitwiseAnd)`			: ' +&= '
@@ -43,9 +43,9 @@ export namespace Generator {
 		`\(OperatorKind.Remainder)`				: ' %= '
 		`\(OperatorKind.Return)`				: ' <- '
 		`\(OperatorKind.Subtraction)`			: ' -= '
-		`\(OperatorKind.VariantNoCoalescing)`	: ' ?||= '
-		`\(OperatorKind.VariantNo)`				: ' !?|= '
-		`\(OperatorKind.VariantYes)`			: ' ?|= '
+		`\(OperatorKind.VariantNoCoalescing)`	: ' ?]]= '
+		`\(OperatorKind.VariantNo)`				: ' !?]= '
+		`\(OperatorKind.VariantYes)`			: ' ?]= '
 	}
 
 	var BinaryOperatorSymbol = {
@@ -82,7 +82,7 @@ export namespace Generator {
 		`\(OperatorKind.TypeCasting)`			: ':>'
 		`\(OperatorKind.TypeEquality)`			: ' is '
 		`\(OperatorKind.TypeInequality)`		: ' is not '
-		`\(OperatorKind.VariantNoCoalescing)`	: ' ?|| '
+		`\(OperatorKind.VariantNoCoalescing)`	: ' ?]] '
 	}
 
 	var JunctionOperatorSymbol = {
@@ -102,7 +102,7 @@ export namespace Generator {
 		`\(OperatorKind.Negative)`				: '-'
 		`\(OperatorKind.NonEmpty)`				: '?#'
 		`\(OperatorKind.Spread)`				: '...'
-		`\(OperatorKind.VariantYes)`			: '?|'
+		`\(OperatorKind.VariantYes)`			: '?]'
 	}
 
 	enum KSWriterMode {
@@ -135,7 +135,7 @@ export namespace Generator {
 		return args[0]
 	} # }}}
 
-	class KSWriter extends Writer {
+	class KSWriter extends SourceGeneration.Writer {
 		private {
 			@mode: KSWriterMode
 			@references: Function[]{}	= {}
@@ -225,7 +225,7 @@ export namespace Generator {
 		transformStatement(data, writer = this) => @options.transformers.statement(data, writer)
 	}
 
-	class KSBlockWriter extends BlockWriter {
+	class KSBlockWriter extends SourceGeneration.BlockWriter {
 		expression(data, mode: ExpressionMode = ExpressionMode.Default) { # {{{
 			if !this.filterExpression(data) {
 				match @mode() {
@@ -264,7 +264,7 @@ export namespace Generator {
 		transformStatement(data, writer = this) => @writer.transformStatement(data, this)
 	}
 
-	class KSControlWriter extends ControlWriter {
+	class KSControlWriter extends SourceGeneration.ControlWriter {
 		expression(data, mode: ExpressionMode = ExpressionMode.Default) { # {{{
 			if !this.filterExpression(data) {
 				toExpression(this.transformExpression(data), mode, this)
@@ -300,7 +300,7 @@ export namespace Generator {
 		} # }}}
 	}
 
-	class KSExpressionWriter extends ExpressionWriter {
+	class KSExpressionWriter extends SourceGeneration.ExpressionWriter {
 		expression(data, mode: ExpressionMode = ExpressionMode.Default) { # {{{
 			if !this.filterExpression(data) {
 				toExpression(this.transformExpression(data), mode, this)
@@ -330,7 +330,7 @@ export namespace Generator {
 		} # }}}
 	}
 
-	class KSLineWriter extends LineWriter {
+	class KSLineWriter extends SourceGeneration.LineWriter {
 		expression(data, mode: ExpressionMode = ExpressionMode.Default) { # {{{
 			if !this.filterExpression(data) {
 				match @mode() {
@@ -387,7 +387,7 @@ export namespace Generator {
 		} # }}}
 	}
 
-	class KSObjectWriter extends ObjectWriter {
+	class KSObjectWriter extends SourceGeneration.ObjectWriter {
 		filterExpression(data) => @writer.filterExpression(data, this)
 		filterStatement(data) => @writer.filterStatement(data, this)
 		getReference(name) => @writer.getReference(name)
@@ -448,7 +448,7 @@ export namespace Generator {
 	} # }}}
 
 	func toAttributes(data, mode: AttributeMode, writer) { # {{{
-		if data.attributes?.length > 0 {
+		if ?#data.attributes {
 			if mode == AttributeMode.Inline {
 				for var attribute in data.attributes {
 					toAttribute(attribute, mode, writer).code(' ')
@@ -777,6 +777,8 @@ export namespace Generator {
 				}
 			} # }}}
 			NodeKind.BindingElement { # {{{
+				toAttributes(data, AttributeMode.Inline, writer)
+
 				var dyn computed = false
 				var dyn thisAlias = false
 				var dyn rest = false
@@ -1732,10 +1734,14 @@ export namespace Generator {
 				writer.code('>')
 			} # }}}
 			NodeKind.UnaryExpression { # {{{
+				var mut forced = false
 				var mut nullable = false
 
 				for var modifier in data.modifiers {
 					match modifier.kind {
+						ModifierKind.Forced {
+							forced = true
+						}
 						ModifierKind.Nullable {
 							nullable = true
 						}
@@ -1753,7 +1759,10 @@ export namespace Generator {
 
 					match data.operator.kind {
 						OperatorKind.TypeFitting {
-							writer.code(nullable ? '!?' : '!!')
+							writer.code(forced ? '!!!' : '!!')
+						}
+						OperatorKind.TypeNotNull {
+							writer.code('!?')
 						}
 					}
 				}
@@ -1804,6 +1813,8 @@ export namespace Generator {
 				}
 
 				if declarative {
+					toAttributes(data, AttributeMode.Inline, writer)
+
 					writer
 						..code('var ')
 						..code('mut ') if mutable
@@ -2181,6 +2192,8 @@ export namespace Generator {
 				}
 
 				if declarative {
+					toAttributes(data, AttributeMode.Inline, writer)
+
 					writer
 						..code('var ')
 						..code('mut ') if mutable
@@ -2261,6 +2274,8 @@ export namespace Generator {
 				}
 
 				if declarative {
+					toAttributes(data, AttributeMode.Inline, writer)
+
 					writer
 						..code('var ')
 						..code('mut ') if mutable
@@ -2317,6 +2332,8 @@ export namespace Generator {
 				}
 
 				if declarative {
+					toAttributes(data, AttributeMode.Inline, writer)
+
 					writer
 						..code('var ')
 						..code('mut ') if mutable
@@ -2363,6 +2380,8 @@ export namespace Generator {
 				}
 
 				if declarative {
+					toAttributes(data, AttributeMode.Inline, writer)
+
 					writer
 						..code('var ')
 						..code('mut ') if mutable
@@ -3419,19 +3438,19 @@ export namespace Generator {
 				var block = line.newBlock()
 
 				for var element in data.elements {
-					var line = block.newLine()
+					var eLine = block.newLine()
 
-					line.expression(element.external)
+					eLine.expression(element.external)
 
 					// TODO!
 					// if element.internal != element.external && element.internal.name != element.external.?name {
 					if element.internal != element.external && (element.external is .Identifier -> element.internal.name != element.external.name) {
-						line.code(' => ')
-
-						line.expression(element.internal)
+						eLine
+							..code(' => ')
+							..expression(element.internal)
 					}
 
-					line.done()
+					eLine.done()
 				}
 
 				block.done()
@@ -3640,7 +3659,7 @@ export namespace Generator {
 				}
 
 				if data.fields.length != 0 {
-					var block = line.newBlock(null, BlockDelimiter.SQUARE_BRACKET)
+					var block = line.newBlock(null, SourceGeneration.BlockDelimiter.SQUARE_BRACKET)
 
 					for var field in data.fields {
 						block.newLine().statement(field).done()
@@ -3768,34 +3787,34 @@ export namespace Generator {
 			} # }}}
 			.VariableStatement { # {{{
 				var line = writer.newLine()
-				var mut declaration = false
+				var mut declare = false
 
 				for var modifier in data.modifiers {
 					match modifier.kind {
 						ModifierKind.Constant {
 							line.code('const')
 
-							declaration = true
+							declare = true
 						}
 						ModifierKind.Dynamic {
 							line.code('var dyn')
 
-							declaration = true
+							declare = true
 						}
 						ModifierKind.LateInit {
 							line.code('var late')
 
-							declaration = true
+							declare = true
 						}
 						ModifierKind.Mutable {
 							line.code('var mut')
 
-							declaration = true
+							declare = true
 						}
 					}
 				}
 
-				if !declaration {
+				if !declare {
 					line.code('var')
 				}
 
@@ -3843,7 +3862,7 @@ export namespace Generator {
 			.WithStatement { # {{{
 				var ctrl = writer.newControl().code('with')
 
-				if data.variables.length == 1 {
+				if #data.variables == 1 {
 					ctrl.code(' ').expression(data.variables[0]).step()
 
 				}
@@ -3898,6 +3917,6 @@ export namespace Generator {
 }
 
 export {
-	Generator.generate
+	KSGeneration.generate
 	NodeData
 }

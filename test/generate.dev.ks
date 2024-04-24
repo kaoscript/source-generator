@@ -11,12 +11,6 @@ import {
 	'npm:mocha' => Mocha
 }
 
-// TODO! remove
-disclose Array {
-	length: Number
-	push(...elements?): Number
-}
-
 func logSuccess(str) {
 	console.log('\u001b[32m  ✓ \u001b[0m\u001b[90m' + str + '\u001b[0m')
 }

@@ -3,4 +3,4 @@ extern {
 	bar
 }
 var mut tt = foo()
-tt ?|= bar()
+tt ?]= bar()
