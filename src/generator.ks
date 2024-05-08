@@ -442,7 +442,7 @@ export namespace KSGeneration {
 
 	func toAttribute(data, mode: AttributeMode, writer) { # {{{
 		return writer
-			.code(mode == AttributeMode.Inner ? '#![' : '#[')
+			.code(if mode == AttributeMode.Inner set '#![' else '#[')
 			.expression(data.declaration)
 			.code(']')
 	} # }}}
@@ -902,14 +902,6 @@ export namespace KSGeneration {
 					.expression(data.expression)
 					.code(']')
 			} # }}}
-			NodeKind.ConditionalExpression { # {{{
-				writer
-					.wrap(data.condition)
-					.code(' ? ')
-					.wrap(data.whenTrue)
-					.code(' : ')
-					.wrap(data.whenFalse)
-			} # }}}
 			NodeKind.CurryExpression { # {{{
 				writer.expression(data.callee)
 
@@ -969,7 +961,7 @@ export namespace KSGeneration {
 			NodeKind.ExclusionType { # {{{
 				for var type, index in data.types {
 					if index != 0 {
-						writer.code(type.kind == NodeKind.FunctionExpression ? ' ^^ ' : ' ^ ')
+						writer.code(if type.kind == NodeKind.FunctionExpression set ' ^^ ' else ' ^ ')
 					}
 
 					writer.expression(type)
@@ -1000,7 +992,7 @@ export namespace KSGeneration {
 			NodeKind.FusionType { # {{{
 				for var type, index in data.types {
 					if index != 0 {
-						writer.code(type.kind == NodeKind.FunctionExpression ? ' && ' : ' & ')
+						writer.code(if type.kind == NodeKind.FunctionExpression set ' && ' else ' & ')
 					}
 
 					writer.expression(type)
@@ -1023,35 +1015,47 @@ export namespace KSGeneration {
 					ctrl.expression(data.condition)
 				}
 
-				ctrl.step().expression(data.whenTrue)
+				ctrl.step()
 
-				while ?data.whenFalse {
-					if data.whenFalse.kind == NodeKind.IfStatement {
-						data = data.whenFalse
+				if data.whenTrue.kind == NodeKind.SetStatement {
+					ctrl
+						.statement(data.whenTrue)
+						.step()
+						.code('else')
+						.step()
+						.statement(data.whenFalse)
+				}
+				else {
+					ctrl.expression(data.whenTrue)
 
-						ctrl.step().code('else if ')
+					while ?data.whenFalse {
+						if data.whenFalse.kind == NodeKind.IfExpression {
+							data = data.whenFalse
 
-						if ?data.declaration {
-							ctrl.expression(data.declaration)
+							ctrl.step().code('else if ')
 
-							if ?data.condition {
-								ctrl.code('; ').expression(data.condition)
+							if ?data.declaration {
+								ctrl.expression(data.declaration)
+
+								if ?data.condition {
+									ctrl.code('; ').expression(data.condition)
+								}
 							}
-						}
-						else if ?data.condition {
-							ctrl.expression(data.condition)
-						}
+							else if ?data.condition {
+								ctrl.expression(data.condition)
+							}
 
-						ctrl.step().expression(data.whenTrue)
-					}
-					else {
-						ctrl
-							.step()
-							.code('else')
-							.step()
-							.expression(data.whenFalse)
+							ctrl.step().expression(data.whenTrue)
+						}
+						else {
+							ctrl
+								.step()
+								.code('else')
+								.step()
+								.expression(data.whenFalse)
 
-						break
+							break
+						}
 					}
 				}
 
@@ -1442,7 +1446,7 @@ export namespace KSGeneration {
 					}
 				}
 
-				writer.code(rest ? '...' : '^')
+				writer.code(if rest set '...' else '^')
 
 				if ?data.index {
 					writer.code(data.index.value)
@@ -1702,12 +1706,20 @@ export namespace KSGeneration {
 						writer.code('(')
 
 						if data.typeSubtypes is Array {
+							var prefix =
+								if hasModifier(data.typeSubtypes[0], ModifierKind.Exclusion) {
+									set '!'
+								}
+								else {
+									set ''
+								}
+
 							for var subtype, index in data.typeSubtypes {
 								if index != 0 {
 									writer.code(', ')
 								}
 
-								writer.expression(subtype)
+								writer.code(prefix).expression(subtype)
 							}
 						}
 						else {
@@ -1759,7 +1771,7 @@ export namespace KSGeneration {
 
 					match data.operator.kind {
 						OperatorKind.TypeFitting {
-							writer.code(forced ? '!!!' : '!!')
+							writer.code(if forced set '!!!' else '!!')
 						}
 						OperatorKind.TypeNotNull {
 							writer.code('!?')
@@ -1791,7 +1803,7 @@ export namespace KSGeneration {
 			NodeKind.UnionType { # {{{
 				for var type, index in data.types {
 					if index != 0 {
-						writer.code(type.kind == NodeKind.FunctionExpression ? ' || ' : ' | ')
+						writer.code(if type.kind == NodeKind.FunctionExpression set ' || ' else ' | ')
 					}
 
 					writer.expression(type)
@@ -2391,9 +2403,9 @@ export namespace KSGeneration {
 					.expression(data.value)
 					.code(' in ')
 					.expression(data.from)
-					.code(hasModifier(data.from, ModifierKind.Ballpark) ? '<' : '')
+					.code(if hasModifier(data.from, ModifierKind.Ballpark) set '<' else '')
 					.code('..')
-					.code(hasModifier(data.to, ModifierKind.Ballpark) ? '<' : '')
+					.code(if hasModifier(data.to, ModifierKind.Ballpark) set '<' else '')
 					.expression(data.to)
 
 				if ?data.step {
@@ -2482,6 +2494,7 @@ export namespace KSGeneration {
 
 	func toTypeParameters(data, writer) { # {{{
 		writer.code('<')
+
 
 		for var parameter, index in data {
 			if index != 0 {
@@ -3269,7 +3282,7 @@ export namespace KSGeneration {
 				var ctrl = writer
 					.newControl()
 					.code('match ')
-					.expression(?data.declaration ? data.declaration : data.expression)
+					.expression(if ?data.declaration set data.declaration else data.expression)
 					.step()
 
 				for var clause in data.clauses {
@@ -3901,7 +3914,7 @@ export namespace KSGeneration {
 					.expression(data)
 					.code(')')
 			} # }}}
-			NodeKind.ComparisonExpression, NodeKind.ConditionalExpression, NodeKind.PolyadicExpression { # {{{
+			NodeKind.ComparisonExpression, NodeKind.PolyadicExpression { # {{{
 				writer
 					.code('(')
 					.expression(data)

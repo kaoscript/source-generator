@@ -1,9 +1,9 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 40,
+      "kind": 39,
       "attributes": [],
       "expression": {
         "kind": 11,
@@ -21,7 +21,7 @@
           }
         },
         "left": {
-          "kind": 48,
+          "kind": 47,
           "modifiers": [],
           "name": "a",
           "start": {
@@ -37,7 +37,7 @@
           "kind": 3,
           "modifiers": [],
           "value": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "i",
             "start": {
@@ -51,9 +51,10 @@
           },
           "iteration": {
             "kind": 3,
+            "attributes": [],
             "modifiers": [],
             "value": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "i",
               "start": {
@@ -66,7 +67,7 @@
               }
             },
             "from": {
-              "kind": 77,
+              "kind": 76,
               "modifiers": [
                 {
                   "kind": 8,
@@ -92,7 +93,7 @@
               }
             },
             "to": {
-              "kind": 77,
+              "kind": 76,
               "modifiers": [
                 {
                   "kind": 8,
@@ -110,11 +111,11 @@
               "radix": 10,
               "start": {
                 "line": 1,
-                "column": 22
+                "column": 21
               },
               "end": {
                 "line": 1,
-                "column": 22
+                "column": 24
               }
             },
             "while": {
@@ -124,7 +125,7 @@
                 "kind": 2
               },
               "callee": {
-                "kind": 48,
+                "kind": 47,
                 "modifiers": [],
                 "name": "foo",
                 "start": {
@@ -138,7 +139,7 @@
               },
               "arguments": [
                 {
-                  "kind": 48,
+                  "kind": 47,
                   "modifiers": [],
                   "name": "i",
                   "start": {
@@ -167,7 +168,7 @@
                 "kind": 2
               },
               "callee": {
-                "kind": 48,
+                "kind": 47,
                 "modifiers": [],
                 "name": "bar",
                 "start": {
@@ -181,7 +182,7 @@
               },
               "arguments": [
                 {
-                  "kind": 48,
+                  "kind": 47,
                   "modifiers": [],
                   "name": "i",
                   "start": {

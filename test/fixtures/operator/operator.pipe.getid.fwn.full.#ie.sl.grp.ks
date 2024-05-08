@@ -1,4 +1,9 @@
 extern func parseInt(value: String): Number
 func getSupervisorId(enteredId: String?): Number {
-	return (enteredId |>? parseInt(_)) |> Number.isFinite(_) ? _ : 0
+	return (enteredId |>? parseInt(_)) |> if Number.isFinite(_) {
+		set _
+	}
+	else {
+		set 0
+	}
 }

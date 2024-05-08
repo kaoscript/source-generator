@@ -1,13 +1,14 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 43,
+      "kind": 42,
       "attributes": [],
       "iterations": [
         {
           "kind": 1,
+          "attributes": [],
           "modifiers": [
             {
               "kind": 11,
@@ -22,7 +23,7 @@
             }
           ],
           "variable": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "i",
             "start": {
@@ -35,7 +36,7 @@
             }
           },
           "from": {
-            "kind": 69,
+            "kind": 68,
             "modifiers": [
               {
                 "kind": 8,
@@ -50,7 +51,7 @@
               }
             ],
             "object": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "values",
               "start": {
@@ -63,7 +64,7 @@
               }
             },
             "property": {
-              "kind": 48,
+              "kind": 47,
               "modifiers": [],
               "name": "length",
               "start": {
@@ -77,15 +78,15 @@
             },
             "start": {
               "line": 1,
-              "column": 17
+              "column": 11
             },
             "end": {
               "line": 1,
-              "column": 16
+              "column": 30
             }
           },
           "to": {
-            "kind": 77,
+            "kind": 76,
             "modifiers": [],
             "value": 0,
             "radix": 10,
@@ -99,7 +100,7 @@
             }
           },
           "step": {
-            "kind": 77,
+            "kind": 76,
             "modifiers": [],
             "value": -1,
             "radix": 10,

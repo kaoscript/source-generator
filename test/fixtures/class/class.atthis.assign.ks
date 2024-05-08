@@ -1,6 +1,11 @@
 class Greetings {
 	private _message: String = ""
 	constructor(message: String?) {
-		@message = ((message == null) ? "Hello!" : message)
+		@message = if message == null {
+			set "Hello!"
+		}
+		else {
+			set message
+		}
 	}
 }

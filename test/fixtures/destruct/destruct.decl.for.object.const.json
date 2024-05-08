@@ -1,13 +1,14 @@
 {
-  "kind": 72,
+  "kind": 71,
   "attributes": [],
   "body": [
     {
-      "kind": 43,
+      "kind": 42,
       "attributes": [],
       "iterations": [
         {
           "kind": 0,
+          "attributes": [],
           "modifiers": [
             {
               "kind": 11,
@@ -22,7 +23,7 @@
             }
           ],
           "expression": {
-            "kind": 48,
+            "kind": 47,
             "modifiers": [],
             "name": "foo",
             "start": {
@@ -35,13 +36,13 @@
             }
           },
           "value": {
-            "kind": 78,
+            "kind": 77,
             "elements": [
               {
                 "kind": 12,
                 "modifiers": [],
                 "internal": {
-                  "kind": 48,
+                  "kind": 47,
                   "modifiers": [],
                   "name": "bar",
                   "start": {
@@ -66,7 +67,7 @@
                 "kind": 12,
                 "modifiers": [],
                 "internal": {
-                  "kind": 48,
+                  "kind": 47,
                   "modifiers": [],
                   "name": "baz",
                   "start": {
