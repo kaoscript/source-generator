@@ -149,6 +149,7 @@ export namespace KSGeneration {
 					control: KSControlWriter
 					expression: KSExpressionWriter
 					line: KSLineWriter
+					mark: KSMarkWriter
 					object: KSObjectWriter
 				}
 				filters: {
@@ -409,12 +410,19 @@ export namespace KSGeneration {
 		transformStatement(data, writer = this) => @writer.transformStatement(data, this)
 	}
 
+	class KSMarkWriter extends SourceGeneration.MarkWriter {
+		filterExpression(data, writer = this) => @writer.filterExpression(data, writer)
+		filterStatement(data, writer = this) => @writer.filterStatement(data, writer)
+		transformExpression(data, writer = this) => @writer.transformExpression(data, writer)
+		transformStatement(data, writer = this) => @writer.transformStatement(data, writer)
+	}
+
 	func isDifferentName(a, b): Boolean { # {{{
 		match b.kind {
-			NodeKind.Identifier {
+			AstKind.Identifier {
 				return a.name != b.name
 			}
-			NodeKind.ThisExpression {
+			AstKind.ThisExpression {
 				return a.name != b.name.name
 			}
 		}
@@ -422,7 +430,7 @@ export namespace KSGeneration {
 		return true
 	} # }}}
 
-	func generate(data: NodeData, options? = null) { # {{{
+	func generate(data: Ast, options? = null) { # {{{
 		var writer = KSWriter.new(options)
 
 		toStatement(data, writer)
@@ -479,12 +487,12 @@ export namespace KSGeneration {
 
 	func toExport(data, writer) {
 		match data.kind {
-			NodeKind.DeclarationSpecifier { # {{{
+			AstKind.DeclarationSpecifier { # {{{
 				writer.pushMode(KSWriterMode.Default)
 				writer.statement(data.declaration)
 				writer.popMode()
 			} # }}}
-			NodeKind.GroupSpecifier { # {{{
+			AstKind.GroupSpecifier { # {{{
 				var mut exclusion = false
 				var mut wildcard = false
 
@@ -528,7 +536,7 @@ export namespace KSGeneration {
 					}
 				}
 			} # }}}
-			NodeKind.NamedSpecifier { # {{{
+			AstKind.NamedSpecifier { # {{{
 				writer.expression(data.internal)
 
 				if ?data.external {
@@ -545,7 +553,7 @@ export namespace KSGeneration {
 
 				}
 			} # }}}
-			NodeKind.PropertiesSpecifier { # {{{
+			AstKind.PropertiesSpecifier { # {{{
 				var line = writer.newLine()
 
 				line.expression(data.object)
@@ -573,7 +581,7 @@ export namespace KSGeneration {
 
 	func toExpression(mut data, mode: ExpressionMode, writer, header? = null) {
 		match data.kind {
-			NodeKind.ArrayBinding { # {{{
+			AstKind.ArrayBinding { # {{{
 				writer.code('[')
 
 				for var element, index in data.elements {
@@ -586,14 +594,14 @@ export namespace KSGeneration {
 
 				writer.code(']')
 			} # }}}
-			NodeKind.ArrayComprehension { # {{{
+			AstKind.ArrayComprehension { # {{{
 				writer
 					.code('[')
 					.expression(data.value)
 					.run(data.iteration, toComprehension)
 					.code(']')
 			} # }}}
-			NodeKind.ArrayExpression { # {{{
+			AstKind.ArrayExpression { # {{{
 				writer.code('[')
 
 				for var value, index in data.values {
@@ -606,7 +614,7 @@ export namespace KSGeneration {
 
 				writer.code(']')
 			} # }}}
-			NodeKind.ArrayRange { # {{{
+			AstKind.ArrayRange { # {{{
 				writer.code('[')
 
 				if ?data.from {
@@ -629,7 +637,7 @@ export namespace KSGeneration {
 
 				writer.code(']')
 			} # }}}
-			NodeKind.ArrayType { # {{{
+			AstKind.ArrayType { # {{{
 				if ?#data.properties {
 					writer.code('[')
 
@@ -659,7 +667,7 @@ export namespace KSGeneration {
 					}
 				}
 			} # }}}
-			NodeKind.AttributeExpression { # {{{
+			AstKind.AttributeExpression { # {{{
 				writer.expression(data.name).code('(')
 
 				for var argument, index in data.arguments {
@@ -672,23 +680,23 @@ export namespace KSGeneration {
 
 				writer.code(')')
 			} # }}}
-			NodeKind.AttributeOperation { # {{{
+			AstKind.AttributeOperation { # {{{
 				writer
 					.expression(data.name)
 					.code(' = ')
 					.expression(data.value)
 			} # }}}
-			NodeKind.AwaitExpression { # {{{
+			AstKind.AwaitExpression { # {{{
 				writer.code('await')
 
 				writer.code(' ').expression(data.operation) if ?data.operation
 			} # }}}
-			NodeKind.BinaryExpression { # {{{
+			AstKind.BinaryExpression { # {{{
 				match data.operator.kind {
 					OperatorKind.Assignment {
 						writer.wrap(data.left).code(AssignmentOperatorSymbol[data.operator.assignment])
 
-						if mode == .Rolling && data.right.kind == NodeKind.RollingExpression {
+						if mode == .Rolling && data.right.kind == AstKind.RollingExpression {
 							writer
 								.code('(')
 								.pushIndent()
@@ -776,7 +784,7 @@ export namespace KSGeneration {
 					}
 				}
 			} # }}}
-			NodeKind.BindingElement { # {{{
+			AstKind.BindingElement { # {{{
 				toAttributes(data, AttributeMode.Inline, writer)
 
 				var dyn computed = false
@@ -829,14 +837,14 @@ export namespace KSGeneration {
 					writer.code(AssignmentOperatorSymbol[data.operator.assignment]).expression(data.defaultValue)
 				}
 			} # }}}
-			NodeKind.Block { # {{{
+			AstKind.Block { # {{{
 				toAttributes(data, AttributeMode.Inner, writer)
 
 				for var statement in data.statements {
 					writer.statement(statement)
 				}
 			} # }}}
-			NodeKind.CallExpression { # {{{
+			AstKind.CallExpression { # {{{
 				writer.expression(data.callee, mode)
 
 				if data.modifiers.some((modifier, ...) => modifier.kind == ModifierKind.Nullable) {
@@ -868,7 +876,7 @@ export namespace KSGeneration {
 
 				writer.code(')')
 			} # }}}
-			NodeKind.ClassDeclaration { # {{{
+			AstKind.ClassDeclaration { # {{{
 				for var modifier in data.modifiers {
 					match modifier.kind {
 						ModifierKind.Abstract {
@@ -886,7 +894,7 @@ export namespace KSGeneration {
 					toTypeParameters(data.typeParameters, writer)
 				}
 			} # }}}
-			NodeKind.ComparisonExpression { # {{{
+			AstKind.ComparisonExpression { # {{{
 				for var value, i in data.values {
 					if i % 2 == 0 {
 						writer.wrap(value)
@@ -896,13 +904,13 @@ export namespace KSGeneration {
 					}
 				}
 			} # }}}
-			NodeKind.ComputedPropertyName { # {{{
+			AstKind.ComputedPropertyName { # {{{
 				writer
 					.code('[')
 					.expression(data.expression)
 					.code(']')
 			} # }}}
-			NodeKind.CurryExpression { # {{{
+			AstKind.CurryExpression { # {{{
 				writer.expression(data.callee)
 
 				match data.scope.kind {
@@ -930,8 +938,8 @@ export namespace KSGeneration {
 
 				writer.code(')')
 			} # }}}
-			NodeKind.DisruptiveExpression { # {{{
-				var simpleTop = mode == .Top && data.mainExpression.kind == NodeKind.Identifier
+			AstKind.DisruptiveExpression { # {{{
+				var simpleTop = mode == .Top && data.mainExpression.kind == AstKind.Identifier
 
 				writer.pushReference('main', (writer) => {
 					writer
@@ -958,19 +966,19 @@ export namespace KSGeneration {
 					writer.code('\n').newIndent()
 				}
 			} # }}}
-			NodeKind.ExclusionType { # {{{
+			AstKind.ExclusionType { # {{{
 				for var type, index in data.types {
 					if index != 0 {
-						writer.code(if type.kind == NodeKind.FunctionExpression set ' ^^ ' else ' ^ ')
+						writer.code(if type.kind == AstKind.FunctionExpression set ' ^^ ' else ' ^ ')
 					}
 
 					writer.expression(type)
 				}
 			} # }}}
-			NodeKind.FunctionDeclaration { # {{{
+			AstKind.FunctionDeclaration { # {{{
 				toFunctionHeader(data, writer => writer.code('func '), writer)
 			} # }}}
-			NodeKind.FunctionExpression { # {{{
+			AstKind.FunctionExpression { # {{{
 				toFunctionHeader(data, writer => {
 					if writer.mode() == KSWriterMode.Type {
 						header?(writer)
@@ -981,7 +989,7 @@ export namespace KSGeneration {
 				}, writer)
 
 				if ?data.body {
-					if data.body.kind == NodeKind.Block {
+					if data.body.kind == AstKind.Block {
 						writer.newBlock().expression(data.body).done()
 					}
 					else {
@@ -989,19 +997,19 @@ export namespace KSGeneration {
 					}
 				}
 			} # }}}
-			NodeKind.FusionType { # {{{
+			AstKind.FusionType { # {{{
 				for var type, index in data.types {
 					if index != 0 {
-						writer.code(if type.kind == NodeKind.FunctionExpression set ' && ' else ' & ')
+						writer.code(if type.kind == AstKind.FunctionExpression set ' && ' else ' & ')
 					}
 
 					writer.expression(type)
 				}
 			} # }}}
-			NodeKind.Identifier { # {{{
+			AstKind.Identifier { # {{{
 				writer.code(data.name)
 			} # }}}
-			NodeKind.IfExpression { # {{{
+			AstKind.IfExpression { # {{{
 				var ctrl = writer.newControl(null, false, null, false).code('if ')
 
 				if ?data.declaration {
@@ -1017,7 +1025,7 @@ export namespace KSGeneration {
 
 				ctrl.step()
 
-				if data.whenTrue.kind == NodeKind.SetStatement {
+				if data.whenTrue.kind == AstKind.SetStatement {
 					ctrl
 						.statement(data.whenTrue)
 						.step()
@@ -1029,7 +1037,7 @@ export namespace KSGeneration {
 					ctrl.expression(data.whenTrue)
 
 					while ?data.whenFalse {
-						if data.whenFalse.kind == NodeKind.IfExpression {
+						if data.whenFalse.kind == AstKind.IfExpression {
 							data = data.whenFalse
 
 							ctrl.step().code('else if ')
@@ -1061,12 +1069,12 @@ export namespace KSGeneration {
 
 				ctrl.done()
 			} # }}}
-			NodeKind.IncludeDeclarator { # {{{
+			AstKind.IncludeDeclarator { # {{{
 				toAttributes(data, AttributeMode.Outer, writer)
 
 				writer.newLine().code(toQuote(data.file)).done()
 			} # }}}
-			NodeKind.JunctionExpression { # {{{
+			AstKind.JunctionExpression { # {{{
 				var operator = JunctionOperatorSymbol[data.operator.kind]
 
 				for var operand, i in data.operands {
@@ -1075,10 +1083,10 @@ export namespace KSGeneration {
 					writer.expression(operand)
 				}
 			} # }}}
-			NodeKind.LambdaExpression { # {{{
+			AstKind.LambdaExpression { # {{{
 				toFunctionHeader(data, writer => {}, writer)
 
-				if data.body.kind == NodeKind.Block {
+				if data.body.kind == AstKind.Block {
 					writer
 						.code(' =>')
 						.newBlock()
@@ -1089,7 +1097,7 @@ export namespace KSGeneration {
 					writer.code(' => ').expression(data.body)
 				}
 			} # }}}
-			NodeKind.Literal { # {{{
+			AstKind.Literal { # {{{
 				var dyn multiline = false
 
 				for var modifier in data.modifiers {
@@ -1117,23 +1125,7 @@ export namespace KSGeneration {
 					writer.code(toQuote(data.value))
 				}
 			} # }}}
-			NodeKind.MacroExpression { # {{{
-				writer.code('macro ')
-
-				if data.elements[0].start.line == data.elements[data.elements.length - 1].end.line {
-					toMacroElements(data.elements, writer)
-				}
-				else {
-					var o = writer.newObject()
-
-					var dyn line = o.newLine()
-
-					toMacroElements(data.elements, line, o)
-
-					o.done()
-				}
-			} # }}}
-			NodeKind.MatchConditionArray { # {{{
+			AstKind.MatchConditionArray { # {{{
 				writer.code('[')
 
 				for var value, index in data.values {
@@ -1146,7 +1138,7 @@ export namespace KSGeneration {
 
 				writer.code(']')
 			} # }}}
-			NodeKind.MatchConditionObject { # {{{
+			AstKind.MatchConditionObject { # {{{
 				writer.code('{')
 
 				for var property, index in data.properties {
@@ -1159,7 +1151,7 @@ export namespace KSGeneration {
 
 				writer.code('}')
 			} # }}}
-			NodeKind.MatchConditionRange { # {{{
+			AstKind.MatchConditionRange { # {{{
 				if ?data.from {
 					writer.expression(data.from)
 				}
@@ -1178,12 +1170,12 @@ export namespace KSGeneration {
 					writer.code('..').expression(data.by)
 				}
 			} # }}}
-			NodeKind.MatchConditionType { # {{{
+			AstKind.MatchConditionType { # {{{
 				writer
 					.code('is ')
 					.expression(data.type)
 			} # }}}
-			NodeKind.MatchExpression { # {{{
+			AstKind.MatchExpression { # {{{
 				writer
 					.code('match ')
 					.expression(data.expression)
@@ -1196,7 +1188,7 @@ export namespace KSGeneration {
 
 				block.done()
 			} # }}}
-			NodeKind.MemberExpression { # {{{
+			AstKind.MemberExpression { # {{{
 				var dyn nullable = false
 				var dyn computed = false
 
@@ -1227,13 +1219,13 @@ export namespace KSGeneration {
 					writer.code('.').expression(data.property)
 				}
 			} # }}}
-			NodeKind.NamedArgument { # {{{
+			AstKind.NamedArgument { # {{{
 				writer.expression(data.name).code(': ').expression(data.value)
 			} # }}}
-			NodeKind.NumericExpression { # {{{
+			AstKind.NumericExpression { # {{{
 				writer.code(data.value)
 			} # }}}
-			NodeKind.ObjectBinding { # {{{
+			AstKind.ObjectBinding { # {{{
 				writer.code('{')
 
 				for var element, index in data.elements {
@@ -1246,7 +1238,7 @@ export namespace KSGeneration {
 
 				writer.code('}')
 			} # }}}
-			NodeKind.ObjectComprehension { # {{{
+			AstKind.ObjectComprehension { # {{{
 				writer
 					.code('{')
 					.expression(data.name)
@@ -1255,7 +1247,7 @@ export namespace KSGeneration {
 					.run(data.iteration, toComprehension)
 					.code('}')
 			} # }}}
-			NodeKind.ObjectExpression { # {{{
+			AstKind.ObjectExpression { # {{{
 				var o = writer.newObject()
 
 				toAttributes(data, AttributeMode.Inner, o)
@@ -1272,7 +1264,7 @@ export namespace KSGeneration {
 
 				o.done()
 			} # }}}
-			NodeKind.ObjectMember { # {{{
+			AstKind.ObjectMember { # {{{
 				var value = data.value ?? data.type
 				if ?value {
 					var element = writer.transformExpression(value)
@@ -1288,7 +1280,7 @@ export namespace KSGeneration {
 					writer.expression(data.name)
 				}
 			} # }}}
-			NodeKind.ObjectType { # {{{
+			AstKind.ObjectType { # {{{
 				if ?#data.properties {
 					var o = writer.newObject()
 
@@ -1320,7 +1312,7 @@ export namespace KSGeneration {
 					}
 				}
 			} # }}}
-			NodeKind.OmittedExpression { # {{{
+			AstKind.OmittedExpression { # {{{
 				if data.spread {
 					writer.code('...')
 				}
@@ -1328,7 +1320,17 @@ export namespace KSGeneration {
 					writer.code('_')
 				}
 			} # }}}
-			NodeKind.Parameter { # {{{
+			AstKind.Operator { # {{{
+				match data.operator.kind {
+					OperatorKind.Assignment {
+						writer.code(AssignmentOperatorSymbol[data.operator.assignment].trim())
+					}
+					else {
+						writer.code(BinaryOperatorSymbol[data.operator.kind].trim())
+					}
+				}
+			} # }}}
+			AstKind.Parameter { # {{{
 				toAttributes(data, AttributeMode.Inline, writer)
 
 				var mut rest: Boolean = false
@@ -1356,7 +1358,7 @@ export namespace KSGeneration {
 				}
 
 				if !?data.external {
-					if only || !?data.internal || data.internal.kind != NodeKind.Identifier & NodeKind.ThisExpression {
+					if only || !?data.internal || data.internal.kind != AstKind.Identifier & AstKind.ThisExpression {
 						pass
 					}
 					else {
@@ -1372,9 +1374,6 @@ export namespace KSGeneration {
 
 				for var modifier in data.modifiers {
 					match modifier.kind {
-						ModifierKind.AutoEvaluate {
-							writer.code('@')
-						}
 						ModifierKind.Rest {
 							writer.code('...')
 
@@ -1435,7 +1434,7 @@ export namespace KSGeneration {
 					writer.code(AssignmentOperatorSymbol[data.operator.assignment]).expression(data.defaultValue)
 				}
 			} # }}}
-			NodeKind.PlaceholderArgument { # {{{
+			AstKind.PlaceholderArgument { # {{{
 				var mut rest = false
 
 				for var modifier in data.modifiers {
@@ -1452,7 +1451,7 @@ export namespace KSGeneration {
 					writer.code(data.index.value)
 				}
 			} # }}}
-			NodeKind.PolyadicExpression { # {{{
+			AstKind.PolyadicExpression { # {{{
 				writer.wrap(data.operands[0])
 
 				for var operand in data.operands from 1 {
@@ -1461,16 +1460,16 @@ export namespace KSGeneration {
 						.wrap(operand)
 				}
 			} # }}}
-			NodeKind.PositionalArgument { # {{{
+			AstKind.PositionalArgument { # {{{
 				writer.code('\\').expression(data.value)
 			} # }}}
-			NodeKind.PropertyType { # {{{
+			AstKind.PropertyType { # {{{
 				if ?data.name {
 					if ?data.type {
-						if data.type.kind == NodeKind.FunctionExpression {
+						if data.type.kind == AstKind.FunctionExpression {
 							toExpression(data.type, ExpressionMode.Top, writer, writer => writer.expression(data.name))
 						}
-						else if data.type.kind == NodeKind.VariantType {
+						else if data.type.kind == AstKind.VariantType {
 							writer.code('variant ').expression(data.name).code(': ').expression(data.type.master)
 
 							if ?#data.type.properties {
@@ -1503,15 +1502,31 @@ export namespace KSGeneration {
 					}
 				}
 			} # }}}
-			NodeKind.Reference { # {{{
+			AstKind.QuoteExpression { # {{{
+				writer.code('quote ')
+
+				if data.elements[0].start.line == data.elements[data.elements.length - 1].end.line {
+					toQuoteElements(data.elements, writer)
+				}
+				else {
+					var o = writer.newObject()
+
+					var dyn line = o.newLine()
+
+					toQuoteElements(data.elements, line, o)
+
+					o.done()
+				}
+			} # }}}
+			AstKind.Reference { # {{{
 				if var reference ?= writer.getReference(data.name) {
 					reference(writer)
 				}
 			} # }}}
-			NodeKind.RegularExpression { # {{{
+			AstKind.RegularExpression { # {{{
 				writer.code(data.value)
 			} # }}}
-			NodeKind.RestrictiveExpression { # {{{
+			AstKind.RestrictiveExpression { # {{{
 				writer.expression(data.expression)
 
 				match data.operator.kind {
@@ -1525,7 +1540,7 @@ export namespace KSGeneration {
 
 				writer.expression(data.condition)
 			} # }}}
-			NodeKind.RollingExpression { # {{{
+			AstKind.RollingExpression { # {{{
 				toAttributes(data, AttributeMode.Inner, writer)
 
 				writer.expression(data.object)
@@ -1538,7 +1553,7 @@ export namespace KSGeneration {
 					writer.code('\n').newIndent().code('.').expression(expression, ExpressionMode.Rolling)
 				}
 			} # }}}
-			NodeKind.SequenceExpression { # {{{
+			AstKind.SequenceExpression { # {{{
 				writer.code('(')
 
 				for var expression, index in data.expressions {
@@ -1551,10 +1566,10 @@ export namespace KSGeneration {
 
 				writer.code(')')
 			} # }}}
-			NodeKind.ShorthandProperty { # {{{
+			AstKind.ShorthandProperty { # {{{
 				writer.expression(data.name)
 			} # }}}
-			NodeKind.SpreadExpression { # {{{
+			AstKind.SpreadExpression { # {{{
 				writer
 					.code('...')
 					.expression(data.operand)
@@ -1577,10 +1592,39 @@ export namespace KSGeneration {
 
 				o.done()
 			} # }}}
-			NodeKind.TaggedTemplateExpression { # {{{
+			AstKind.SyntimeCallExpression { # {{{
+				writer
+					.expression(data.callee, mode)
+					.code('!(')
+					.unlimit()
+
+				for var argument, index in data.arguments {
+					writer
+						..code(', ') if index != 0
+						..statement(argument)
+				}
+
+				writer.code(')')
+			} # }}}
+			AstKind.SyntimeExpression { # {{{
+				var line = writer.newLine().code('syntime')
+
+				if data.body.kind == AstKind.Block {
+					line
+						.newBlock()
+						.expression(data.body)
+						.done()
+				}
+				else {
+					line.code(' ').statement(data.body)
+				}
+
+				line.done()
+			} # }}}
+			AstKind.TaggedTemplateExpression { # {{{
 				writer.expression(data.tag).expression(data.template)
 			} # }}}
-			NodeKind.TemplateExpression { # {{{
+			AstKind.TemplateExpression { # {{{
 				var dyn multiline = false
 
 				for var modifier in data.modifiers {
@@ -1593,7 +1637,7 @@ export namespace KSGeneration {
 					writer.code('```\n').newIndent()
 
 					for var element in data.elements {
-						if element.kind == NodeKind.Literal {
+						if element.kind == AstKind.Literal {
 							var lines = element.value.split(/\n/g)
 
 							for var line, index in lines {
@@ -1615,7 +1659,7 @@ export namespace KSGeneration {
 					writer.code('`')
 
 					for var element in data.elements {
-						if element.kind == NodeKind.Literal {
+						if element.kind == AstKind.Literal {
 							writer.code(element.value)
 						}
 						else {
@@ -1626,7 +1670,7 @@ export namespace KSGeneration {
 					writer.code('`')
 				}
 			} # }}}
-			NodeKind.TopicReference { # {{{
+			AstKind.TopicReference { # {{{
 				for var { kind } in data.modifiers {
 					if kind == ModifierKind.Spread {
 						writer.code('...')
@@ -1637,10 +1681,10 @@ export namespace KSGeneration {
 
 				writer.code('_')
 			} # }}}
-			NodeKind.ThisExpression { # {{{
+			AstKind.ThisExpression { # {{{
 				writer.code('@').expression(data.name)
 			} # }}}
-			NodeKind.TryExpression { # {{{
+			AstKind.TryExpression { # {{{
 				writer.code('try')
 
 				if data.modifiers.some((modifier, ...) => modifier.kind == ModifierKind.Disabled) {
@@ -1653,14 +1697,14 @@ export namespace KSGeneration {
 					writer.code(' ~~ ').expression(data.defaultValue)
 				}
 			} # }}}
-			NodeKind.TypeParameter { # {{{
+			AstKind.TypeParameter { # {{{
 				writer.expression(data.name)
 
 				if ?data.constraint {
 					writer.code(' is ').expression(data.constraint)
 				}
 			} # }}}
-			NodeKind.TypeReference { # {{{
+			AstKind.TypeReference { # {{{
 				if ?data.properties {
 					var o = writer.newObject()
 
@@ -1734,7 +1778,7 @@ export namespace KSGeneration {
 					}
 				}
 			} # }}}
-			NodeKind.TypedExpression { # {{{
+			AstKind.TypedExpression { # {{{
 				writer.expression(data.expression).code('<')
 
 				for var type, index in data.typeParameters {
@@ -1745,7 +1789,7 @@ export namespace KSGeneration {
 
 				writer.code('>')
 			} # }}}
-			NodeKind.UnaryExpression { # {{{
+			AstKind.UnaryExpression { # {{{
 				var mut forced = false
 				var mut nullable = false
 
@@ -1779,7 +1823,7 @@ export namespace KSGeneration {
 					}
 				}
 			} # }}}
-			NodeKind.UnaryTypeExpression { # {{{
+			AstKind.UnaryTypeExpression { # {{{
 				match data.operator.kind {
 					UnaryTypeOperatorKind.Constant {
 						writer.code(`const `)
@@ -1800,16 +1844,16 @@ export namespace KSGeneration {
 
 				writer.expression(data.argument)
 			} # }}}
-			NodeKind.UnionType { # {{{
+			AstKind.UnionType { # {{{
 				for var type, index in data.types {
 					if index != 0 {
-						writer.code(if type.kind == NodeKind.FunctionExpression set ' || ' else ' | ')
+						writer.code(if type.kind == AstKind.FunctionExpression set ' || ' else ' | ')
 					}
 
 					writer.expression(type)
 				}
 			} # }}}
-			NodeKind.VariableDeclaration { # {{{
+			AstKind.VariableDeclaration { # {{{
 				var mut declarative = false
 				var mut mutable = false
 
@@ -1855,7 +1899,7 @@ export namespace KSGeneration {
 					writer.expression(data.value, ExpressionMode.Top)
 				}
 			} # }}}
-			NodeKind.VariableDeclarator { # {{{
+			AstKind.VariableDeclarator { # {{{
 				var mut nullable = false
 
 				for var modifier in data.modifiers {
@@ -1880,7 +1924,7 @@ export namespace KSGeneration {
 					writer.code(': ').expression(data.type)
 				}
 			} # }}}
-			NodeKind.VariantField { # {{{
+			AstKind.VariantField { # {{{
 				for var name, index in data.names {
 					writer
 						..code(', ') if index > 0
@@ -1981,13 +2025,13 @@ export namespace KSGeneration {
 	} # }}}
 
 	func toFunctionBody(modifiers, data, writer) { # {{{
-		if data.kind == NodeKind.Block {
+		if data.kind == AstKind.Block {
 			writer
 				.newBlock()
 				.expression(data)
 				.done()
 		}
-		else if data.kind == NodeKind.IfStatement {
+		else if data.kind == AstKind.IfStatement {
 			writer
 				.code(' => ')
 				.expression(data.whenTrue.value)
@@ -2000,13 +2044,13 @@ export namespace KSGeneration {
 					.expression(data.whenFalse.value)
 			}
 		}
-		else if data.kind == NodeKind.ReturnStatement {
+		else if data.kind == AstKind.ReturnStatement {
 			writer.code(' => ').expression(data.value)
 		}
 		else {
 			writer.code(' => ')
 
-			if data.kind == NodeKind.ObjectExpression {
+			if data.kind == AstKind.ObjectExpression {
 				writer.code('(').expression(data).code(')')
 			}
 			else {
@@ -2023,7 +2067,7 @@ export namespace KSGeneration {
 
 	func toImport(data, writer) {
 		match data.kind {
-			NodeKind.NamedArgument, NodeKind.PositionalArgument { # {{{
+			AstKind.NamedArgument, AstKind.PositionalArgument { # {{{
 				for var modifier in data.modifiers {
 					if modifier.kind == ModifierKind.Required {
 						writer.code('require ')
@@ -2036,7 +2080,7 @@ export namespace KSGeneration {
 
 				writer.expression(data.value)
 			} # }}}
-			NodeKind.GroupSpecifier { # {{{
+			AstKind.GroupSpecifier { # {{{
 				var mut alias = false
 				var mut exclusion = false
 				var mut wildcard = false
@@ -2090,7 +2134,7 @@ export namespace KSGeneration {
 					block.done()
 				}
 			} # }}}
-			NodeKind.ImportDeclarator { # {{{
+			AstKind.ImportDeclarator { # {{{
 				writer.expression(data.source)
 
 				var mut autofill = false
@@ -2119,7 +2163,7 @@ export namespace KSGeneration {
 				}
 
 				if ?data.type {
-					if data.type.kind == NodeKind.ClassDeclaration {
+					if data.type.kind == AstKind.ClassDeclaration {
 						var block = writer.newBlock()
 
 						block.newLine().expression(data.type).done()
@@ -2134,7 +2178,7 @@ export namespace KSGeneration {
 				if data.specifiers.length == 1 {
 					var specifier = data.specifiers[0]
 
-					if specifier.kind == NodeKind.GroupSpecifier {
+					if specifier.kind == AstKind.GroupSpecifier {
 						writer.expression(specifier)
 					}
 					else {
@@ -2153,7 +2197,7 @@ export namespace KSGeneration {
 					block.done()
 				}
 			} # }}}
-			NodeKind.NamedSpecifier { # {{{
+			AstKind.NamedSpecifier { # {{{
 				if ?data.external {
 					writer.expression(data.external).code(` => \(data.internal.name)`)
 				}
@@ -2161,7 +2205,7 @@ export namespace KSGeneration {
 					writer.expression(data.internal)
 				}
 			} # }}}
-			NodeKind.TypeList { # {{{
+			AstKind.TypeList { # {{{
 				var block = writer.newBlock()
 
 				for var type in data.types {
@@ -2172,7 +2216,7 @@ export namespace KSGeneration {
 
 				block.done()
 			} # }}}
-			NodeKind.TypedSpecifier { # {{{
+			AstKind.TypedSpecifier { # {{{
 				writer.statement(data.type)
 			} # }}}
 			else { # {{{
@@ -2428,12 +2472,16 @@ export namespace KSGeneration {
 		}
 	} # }}}
 
-	func toMacroElements(elements, writer, parent? = null) { # {{{
+	func toQuote(value) { # {{{
+		return '"' + value.replace(/"/g, '\\"').replace(/\n/g, '\\n') + '"'
+	} # }}}
+
+	func toQuoteElements(elements, writer, parent? = null) { # {{{
 		var last = elements.length - 1
 
 		for var element, index in elements {
 			match element.kind {
-				MacroElementKind.Expression {
+				QuoteElementKind.Expression {
 					writer.code('#')
 
 					if !?element.reification {
@@ -2461,20 +2509,16 @@ export namespace KSGeneration {
 						writer.code('(').expression(element.expression).code(')')
 					}
 				}
-				MacroElementKind.Literal {
+				QuoteElementKind.Literal {
 					writer.code(element.value)
 				}
-				MacroElementKind.NewLine {
-					if index != 0 && index != last && elements[index - 1].kind != MacroElementKind.NewLine {
+				QuoteElementKind.NewLine {
+					if index != 0 && index != last && elements[index - 1].kind != QuoteElementKind.NewLine {
 						parent.newLine()
 					}
 				}
 			}
 		}
-	} # }}}
-
-	func toQuote(value) { # {{{
-		return '"' + value.replace(/"/g, '\\"').replace(/\n/g, '\\n') + '"'
 	} # }}}
 
 	func toType(data, writer) { # {{{
@@ -2507,7 +2551,7 @@ export namespace KSGeneration {
 		writer.code('>')
 	} # }}}
 
-	func toStatement(data: NodeData, writer) {
+	func toStatement(data: Ast, writer) {
 		match data {
 			.AccessorDeclaration { # {{{
 				var line = writer
@@ -2515,7 +2559,7 @@ export namespace KSGeneration {
 					.code('get')
 
 				if ?data.body {
-					if data.body.kind == NodeKind.Block {
+					if data.body.kind == AstKind.Block {
 						line.newBlock().expression(data.body).done()
 					}
 					else {
@@ -2761,7 +2805,6 @@ export namespace KSGeneration {
 				line.pushMode(KSWriterMode.Export)
 
 				if data.declarations.length == 1 && ((data.declarations[0] is .DeclarationSpecifier) -> (!?#data.declarations[0].declaration.attributes)) {
-				// if data.declarations.length == 1 && (((data.declarations[0] is .DeclarationSpecifier) && (!?#data.declarations[0].declaration.attributes)) || (data.declarations[0] is not .DeclarationSpecifier)) {
 					line.code('export ').statement(data.declarations[0])
 				}
 				else {
@@ -2908,7 +2951,7 @@ export namespace KSGeneration {
 					}
 				}
 
-				if data.type?.kind == NodeKind.VariantType {
+				if data.type?.kind == AstKind.VariantType {
 					line.code('variant ').expression(data.name).code(': ').expression(data.type.master)
 
 					if ?#data.type.properties {
@@ -2938,7 +2981,7 @@ export namespace KSGeneration {
 				line.done()
 			} # }}}
 			.ForStatement { # {{{
-				if data.body.kind == NodeKind.ExpressionStatement {
+				if data.body.kind == AstKind.ExpressionStatement {
 					var line = writer
 						.newLine()
 						.expression(data.body.expression)
@@ -3191,27 +3234,6 @@ export namespace KSGeneration {
 
 				line.done()
 			} # }}}
-			.MacroDeclaration { # {{{
-				var line = writer.newLine()
-
-				toFunctionHeader(data, writer => {
-					writer.code('macro ')
-				}, line)
-
-				if data.body.kind == NodeKind.ExpressionStatement && data.body.expression.kind == NodeKind.MacroExpression {
-					line.code(' => ')
-
-					toMacroElements(data.body.expression.elements, line)
-				}
-				else {
-					line
-						.newBlock()
-						.expression(data.body)
-						.done()
-				}
-
-				line.done()
-			} # }}}
 			.MatchClause { # {{{
 				var line = writer.newLine()
 
@@ -3315,7 +3337,7 @@ export namespace KSGeneration {
 					.code('set')
 
 				if ?data.body {
-					if data.body.kind == NodeKind.Block {
+					if data.body.kind == AstKind.Block {
 						line.newBlock().expression(data.body).done()
 					}
 					else {
@@ -3471,7 +3493,7 @@ export namespace KSGeneration {
 				line.done()
 			} # }}}
 			.RepeatStatement { # {{{
-				if data.body.kind == NodeKind.Block {
+				if data.body.kind == AstKind.Block {
 					var ctrl = writer
 						.newControl()
 						.code('repeat')
@@ -3482,7 +3504,7 @@ export namespace KSGeneration {
 
 					ctrl.step().expression(data.body).done()
 				}
-				else if data.body.kind == NodeKind.ExpressionStatement {
+				else if data.body.kind == AstKind.ExpressionStatement {
 					writer
 						.newLine()
 						.expression(data.body.expression)
@@ -3575,6 +3597,21 @@ export namespace KSGeneration {
 						.done()
 				}
 			} # }}}
+			.SemtimeStatement { # {{{
+				var line = writer.newLine().code('semtime')
+
+				if data.body.kind == AstKind.Block {
+					line
+						.newBlock()
+						.expression(data.body)
+						.done()
+				}
+				else {
+					line.code(' ').expression(data.body)
+				}
+
+				line.done()
+			} # }}}
 			.SetStatement { # {{{
 				writer
 					.newLine()
@@ -3584,6 +3621,13 @@ export namespace KSGeneration {
 			} # }}}
 			.ShebangDeclaration { # {{{
 				writer.line(`#!\(data.command)`)
+			} # }}}
+			.StatementList { # {{{
+				toAttributes(data, AttributeMode.Inner, writer)
+
+				for var node in data.body {
+					writer.statement(node)
+				}
 			} # }}}
 			.StructDeclaration { # {{{
 				var line = writer.newLine()
@@ -3612,6 +3656,27 @@ export namespace KSGeneration {
 					}
 
 					block.done()
+				}
+
+				line.done()
+			} # }}}
+			.SyntimeFunctionDeclaration { # {{{
+				var line = writer.newLine()
+
+				toFunctionHeader(data, writer => {
+					writer.code('syntime func ')
+				}, line)
+
+				if data.body.kind == AstKind.QuoteExpression {
+					line.code(' => ')
+
+					toQuoteElements(data.body.elements, line)
+				}
+				else {
+					line
+						.newBlock()
+						.expression(data.body)
+						.done()
 				}
 
 				line.done()
@@ -3908,13 +3973,13 @@ export namespace KSGeneration {
 
 	func toWrap(data, writer) {
 		match data.kind {
-			NodeKind.BinaryExpression when data.operator.kind != OperatorKind.TypeAssertion & OperatorKind.TypeCasting & OperatorKind.TypeSignalment { # {{{
+			AstKind.BinaryExpression when data.operator.kind != OperatorKind.TypeAssertion & OperatorKind.TypeCasting & OperatorKind.TypeSignalment { # {{{
 				writer
 					.code('(')
 					.expression(data)
 					.code(')')
 			} # }}}
-			NodeKind.ComparisonExpression, NodeKind.PolyadicExpression { # {{{
+			AstKind.ComparisonExpression, AstKind.PolyadicExpression { # {{{
 				writer
 					.code('(')
 					.expression(data)
@@ -3931,5 +3996,5 @@ export namespace KSGeneration {
 
 export {
 	KSGeneration.generate
-	NodeData
+	Ast
 }

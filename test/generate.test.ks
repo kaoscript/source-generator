@@ -15,7 +15,7 @@ import {
 	'node:path'
 	'npm:chai'				for expect
 	'npm:klaw-sync'			=> klaw
-	'..'					for generate, NodeData
+	'..'					for generate, Ast
 }
 
 var debug = process.env.DEBUG == '1' || process.env.DEBUG == 'true' || process.env.DEBUG == 'on'
@@ -47,7 +47,7 @@ func prepare(file) { # {{{
 			encoding: 'utf8'
 		})
 
-		var node = JSON.parse(content, (key, value) => if value == 'Infinity' set Infinity else value):>(NodeData)
+		var node = JSON.parse(content, (key, value) => if value == 'Infinity' set Infinity else value):>(Ast)
 
 		expect(node).to.exist
 

@@ -1,5 +1,5 @@
 {
-  "kind": 71,
+  "kind": 69,
   "attributes": [],
   "body": [],
   "start": {
@@ -7,7 +7,7 @@
     "column": 1
   },
   "end": {
-    "line": 18,
+    "line": 1,
     "column": 1
   }
 }
