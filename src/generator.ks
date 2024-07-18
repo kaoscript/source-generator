@@ -413,6 +413,7 @@ export namespace KSGeneration {
 	class KSMarkWriter extends SourceGeneration.MarkWriter {
 		filterExpression(data, writer = this) => @writer.filterExpression(data, writer)
 		filterStatement(data, writer = this) => @writer.filterStatement(data, writer)
+		mode() => @writer.mode()
 		transformExpression(data, writer = this) => @writer.transformExpression(data, writer)
 		transformStatement(data, writer = this) => @writer.transformStatement(data, writer)
 	}
