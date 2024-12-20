@@ -111,6 +111,7 @@ export namespace KSGeneration {
 		Extern
 		Import
 		Property
+		// Syntime
 		Type
 	}
 
@@ -137,9 +138,12 @@ export namespace KSGeneration {
 
 	class KSWriter extends SourceGeneration.Writer {
 		private {
+			@filterExpression
+			@filterStatement
+			@filterStack: Array				= []
 			@mode: KSWriterMode
-			@references: Function[]{}	= {}
-			@stack: Array				= []
+			@references: Function[]{}		= {}
+			@modeStack: Array				= []
 		}
 		constructor(options? = null) { # {{{
 			super(Object.merge({
@@ -166,10 +170,13 @@ export namespace KSGeneration {
 				}
 			}, options))
 
+			@filterExpression = @options.filters.expression
+			@filterStatement = @options.filters.statement
+
 			@mode = @options.mode
 		} # }}}
-		filterExpression(data, writer = this) => @options.filters.expression(data, writer)
-		filterStatement(data, writer = this) => @options.filters.statement(data, writer)
+		filterExpression(data, writer = this) => this._filterExpression(data, writer)
+		filterStatement(data, writer = this) => this._filterStatement(data, writer)
 		getReference(name: String): Function? { # {{{
 			if var functions ?#= @references[name] {
 				return functions[0]
@@ -178,16 +185,25 @@ export namespace KSGeneration {
 			return null
 		} # }}}
 		mode() => @mode
-		popMode() { # {{{
-			@mode = @stack.pop()
+		popFilters(): Void { # {{{
+			@filterStatement = @filterStack.pop()
+			@filterExpression = @filterStack.pop()
+		} # }}}
+		popMode(): Void { # {{{
+			@mode = @modeStack.pop()
 		} # }}}
 		popReference(name: String): Void { # {{{
 			if var functions ?#= @references[name] {
 				functions.shift()
 			}
 		} # }}}
+		pushFilters(expressionFilter, statementFilter) { # {{{
+			@filterStack.push(@filterExpression, @filterStatement)
+			@filterExpression = expressionFilter
+			@filterStatement = statementFilter
+		} # }}}
 		pushMode(mode: KSWriterMode) { # {{{
-			@stack.push(@mode)
+			@modeStack.push(@mode)
 
 			@mode = mode
 		} # }}}
@@ -248,8 +264,10 @@ export namespace KSGeneration {
 		filterStatement(data) => @writer.filterStatement(data, this)
 		getReference(name) => @writer.getReference(name)
 		mode() => @writer.mode()
+		popFilters() => @writer.popFilters()
 		popMode() => @writer.popMode()
 		popReference(name) => @writer.popReference(name)
+		pushFilters(expressionFilter, statementFilter) => @writer.pushFilters(expressionFilter, statementFilter)
 		pushMode(mode: KSWriterMode) => @writer.pushMode(mode)
 		pushReference(name, fn) => @writer.pushReference(name, fn)
 		statement(data) { # {{{
@@ -489,9 +507,10 @@ export namespace KSGeneration {
 	func toExport(data, writer) {
 		match data.kind {
 			AstKind.DeclarationSpecifier { # {{{
-				writer.pushMode(KSWriterMode.Default)
-				writer.statement(data.declaration)
-				writer.popMode()
+				writer
+					..pushMode(KSWriterMode.Default)
+					..statement(data.declaration)
+					..popMode()
 			} # }}}
 			AstKind.GroupSpecifier { # {{{
 				var mut exclusion = false
@@ -655,7 +674,9 @@ export namespace KSGeneration {
 					writer.code(']')
 				}
 				else {
-					writer.expression(data.rest)
+					if ?data.rest {
+						writer.expression(data.rest)
+					}
 
 					writer.code('[]')
 				}
@@ -1300,7 +1321,9 @@ export namespace KSGeneration {
 					o.done()
 				}
 				else {
-					writer.expression(data.rest)
+					if ?data.rest {
+						writer.expression(data.rest)
+					}
 
 					writer.code('{}')
 				}
@@ -1606,21 +1629,6 @@ export namespace KSGeneration {
 				}
 
 				writer.code(')')
-			} # }}}
-			AstKind.SyntimeExpression { # {{{
-				var line = writer.newLine().code('syntime')
-
-				if data.body.kind == AstKind.Block {
-					line
-						.newBlock()
-						.expression(data.body)
-						.done()
-				}
-				else {
-					line.code(' ').statement(data.body)
-				}
-
-				line.done()
 			} # }}}
 			AstKind.TaggedTemplateExpression { # {{{
 				writer.expression(data.tag).expression(data.template)
@@ -2482,29 +2490,31 @@ export namespace KSGeneration {
 
 		for var element, index in elements {
 			match element.kind {
+				QuoteElementKind.Escape {
+					writer.code(`#\(element.value)`)
+				}
 				QuoteElementKind.Expression {
 					writer.code('#')
 
-					if !?element.reification {
+					if !?#element.reifications {
 						writer.code('(').expression(element.expression).code(')')
 					}
-					else if element.reification.kind == ReificationKind.Join {
-						writer.code('j(').expression(element.expression).code(', ').expression(element.separator).code(')')
+					else if element.reifications[0].kind == ReificationKind.Join {
+						writer.code('j')
+
+						if #element.reifications == 2 {
+							toReification(element.reifications[1], writer)
+
+							writer.code('c')
+						}
+
+						writer.code('(').expression(element.expression).code(', ').expression(element.separator).code(')')
 					}
 					else {
-						match element.reification.kind {
-							ReificationKind.Argument {
-								writer.code('a')
-							}
-							ReificationKind.Expression {
-								writer.code('e')
-							}
-							ReificationKind.Statement {
-								writer.code('s')
-							}
-							ReificationKind.Write {
-								writer.code('w')
-							}
+						toReification(element.reifications[0], writer)
+
+						if #element.reifications == 2 {
+							toReification(element.reifications[1], writer)
 						}
 
 						writer.code('(').expression(element.expression).code(')')
@@ -2518,6 +2528,26 @@ export namespace KSGeneration {
 						parent.newLine()
 					}
 				}
+			}
+		}
+	} # }}}
+
+	func toReification(data, writer) { # {{{
+		match data.kind {
+			ReificationKind.Argument {
+				writer.code('a')
+			}
+			ReificationKind.Block {
+				writer.code('b')
+			}
+			ReificationKind.Code {
+				writer.code('c')
+			}
+			ReificationKind.Identifier {
+				writer.code('i')
+			}
+			ReificationKind.Value {
+				writer.code('v')
 			}
 		}
 	} # }}}
@@ -3020,7 +3050,12 @@ export namespace KSGeneration {
 				var line = writer.newLine()
 
 				toFunctionHeader(data, writer => {
-					writer.code('func ')
+					// if writer.mode() == KSWriterMode.Syntime {
+					// 	writer.code('macro ')
+					// }
+					// else {
+						writer.code('func ')
+					// }
 				}, line)
 
 				if ?data.body {
@@ -3232,6 +3267,17 @@ export namespace KSGeneration {
 				}
 
 				block.done()
+
+				line.done()
+			} # }}}
+			.MacroDeclaration { # {{{
+				var line = writer.newLine()
+
+				toFunctionHeader(data, writer => {
+					writer.code('macro ')
+				}, line)
+
+				toFunctionBody(data.modifiers, data.body, line)
 
 				line.done()
 			} # }}}
@@ -3661,26 +3707,45 @@ export namespace KSGeneration {
 
 				line.done()
 			} # }}}
-			.SyntimeFunctionDeclaration { # {{{
-				var line = writer.newLine()
+			.SyntimeDeclaration { # {{{
+				// if writer.mode() == KSWriterMode.Syntime {
+				// 	for var declaration in data.declarations {
+				// 		writer.statement(declaration)
+				// 	}
+				// }
+				// else {
+					var line = writer.newLine()
 
-				toFunctionHeader(data, writer => {
-					writer.code('syntime func ')
-				}, line)
+					// line.pushMode(KSWriterMode.Syntime)
 
-				if data.body.kind == AstKind.QuoteExpression {
-					line.code(' => ')
+					if #data.declarations == 1 {
+						line.code('syntime ').statement(data.declarations[0])
+					}
+					else {
+						line.code('syntime')
 
-					toQuoteElements(data.body.elements, line)
-				}
-				else {
+						var block = line.newBlock()
+
+						for var declaration in data.declarations {
+							block.statement(declaration)
+						}
+
+						block.done()
+					}
+
 					line
-						.newBlock()
-						.expression(data.body)
-						.done()
-				}
+						// ..popMode()
+						..done()
+				// }
+			} # }}}
+			.SyntimeStatement { # {{{
+				toAttributes(data, AttributeMode.Inner, writer)
 
-				line.done()
+				// writer.pushMode(KSWriterMode.Syntime)
+
+				writer.newControl().code('syntime do').step().expression(data.body).done()
+
+				// writer.popMode()
 			} # }}}
 			.ThrowStatement { # {{{
 				writer

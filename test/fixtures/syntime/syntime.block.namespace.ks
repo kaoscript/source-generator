@@ -1,0 +1,1 @@
+syntime namespace Foobar

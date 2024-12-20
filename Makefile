@@ -38,6 +38,6 @@ dev:
 	@make cls
 
 	@# tests
-	npx kaoscript test/generate.dev.ks "generate syntime.call.adv.op.bin"
+	npx kaoscript test/generate.dev.ks "generate test"
 
 .PHONY: test coverage sync
